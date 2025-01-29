@@ -33,6 +33,14 @@ except AttributeError as e:
 
 ---
 
+### **🔹 TODO**
+- Implement a Label class for binary labelling + VQA generation + CLIP-prompt generation.
+- Implement a test function to make sure: (1) Pos and Neg are non-overlapping, (2) Easy/Hard negs are strict subset of Neg.
+
+---
+
+---
+
 ### **🔹 Rules for Initialization**
 ✅ You **must use** the `.create()` function for `CameraMotionData`, `CameraSetupData`, and `LightingSetupData`.  
 ✅ You **should not** create instances of these classes manually.  
