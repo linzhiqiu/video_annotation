@@ -13,20 +13,20 @@ import json
 # Create a VideoData object
 video_sample = VideoData()
 
-# 🔹 Initializing camera_motion_data
-# You can initialize camera_motion_data with a dictionary of parameters or a CameraMotionData instance
+# 🔹 Initializing cam_motion
+# You can initialize cam_motion with a dictionary of parameters or a CameraMotionData instance
 # However, you should never create a CameraMotionData instance directly without using its create() function.
 
-video_sample.camera_motion_data = camera_motion_params_demo  # Correct way to set
+video_sample.cam_motion = camera_motion_params_demo  # Correct way to set
 
 # 🔹 Displaying camera_motion_params_demo dictionary
 print("camera_motion_params_demo:")
 print(json.dumps(camera_motion_params_demo, indent=4))
 
 # 🔹 Trying to access an uninitialized attribute (this will raise an error)
-print(f"If you try to access camera_setup_data before setting it, it will raise an Error.")
+print(f"If you try to access cam_setup before setting it, it will raise an Error.")
 try:
-    print(video_sample.camera_setup_data)
+    print(video_sample.cam_setup)
 except AttributeError as e:
     print(f"AttributeError: {e}")
 ```

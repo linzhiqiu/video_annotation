@@ -4,66 +4,66 @@ from lighting_setup_data import LightingSetupData
 
 class VideoData:
     def __init__(self):
-        self._camera_motion_data = None
-        self._camera_setup_data = None
-        self._lighting_setup_data = None
+        self._cam_motion = None  # Short for camera_motion_data
+        self._cam_setup = None   # Short for camera_setup_data
+        self._light_setup = None  # Short for lighting_setup_data
 
     @property
-    def camera_motion_data(self):
-        if self._camera_motion_data is None:
-            raise AttributeError("camera_motion_data has not been set")
-        return self._camera_motion_data
+    def cam_motion(self):
+        if self._cam_motion is None:
+            raise AttributeError("cam_motion has not been set")
+        return self._cam_motion
 
-    @camera_motion_data.setter
-    def camera_motion_data(self, value):
+    @cam_motion.setter
+    def cam_motion(self, value):
         if isinstance(value, dict):
-            self._camera_motion_data = CameraMotionData.create(**value)  # Auto-create instance
+            self._cam_motion = CameraMotionData.create(**value)  # Auto-create instance
         elif isinstance(value, CameraMotionData):
-            self._camera_motion_data = value
+            self._cam_motion = value
         else:
-            raise TypeError("camera_motion_data must be a CameraMotionData instance or a dictionary of parameters")
+            raise TypeError("cam_motion must be a CameraMotionData instance or a dictionary of parameters")
 
     @property
-    def camera_setup_data(self):
-        if self._camera_setup_data is None:
-            raise AttributeError("camera_setup_data has not been set")
-        return self._camera_setup_data
+    def cam_setup(self):
+        if self._cam_setup is None:
+            raise AttributeError("cam_setup has not been set")
+        return self._cam_setup
 
-    @camera_setup_data.setter
-    def camera_setup_data(self, value):
+    @cam_setup.setter
+    def cam_setup(self, value):
         if isinstance(value, dict):
-            self._camera_setup_data = CameraSetupData.create(**value)  # Auto-create instance
+            self._cam_setup = CameraSetupData.create(**value)  # Auto-create instance
         elif isinstance(value, CameraSetupData):
-            self._camera_setup_data = value
+            self._cam_setup = value
         else:
-            raise TypeError("camera_setup_data must be a CameraSetupData instance or a dictionary of parameters")
+            raise TypeError("cam_setup must be a CameraSetupData instance or a dictionary of parameters")
 
     @property
-    def lighting_setup_data(self):
-        if self._lighting_setup_data is None:
-            raise AttributeError("lighting_setup_data has not been set")
-        return self._lighting_setup_data
+    def light_setup(self):
+        if self._light_setup is None:
+            raise AttributeError("light_setup has not been set")
+        return self._light_setup
 
-    @lighting_setup_data.setter
-    def lighting_setup_data(self, value):
+    @light_setup.setter
+    def light_setup(self, value):
         if isinstance(value, dict):
-            self._lighting_setup_data = LightingSetupData.create(**value)  # Auto-create instance
+            self._light_setup = LightingSetupData.create(**value)  # Auto-create instance
         elif isinstance(value, LightingSetupData):
-            self._lighting_setup_data = value
+            self._light_setup = value
         else:
-            raise TypeError("lighting_setup_data must be a LightingSetupData instance or a dictionary of parameters")
+            raise TypeError("light_setup must be a LightingSetupData instance or a dictionary of parameters")
 
 
 def create_video_data_demo():
     video_sample = VideoData()
     from camera_motion_data import camera_motion_params_demo
-    print(f"You can initialize camera_motion_data with a dictionary of parameters or a CameraMotionData instance.")
+    print(f"You can initialize cam_motion with a dictionary of parameters or a CameraMotionData instance.")
     print(f"However, you should never create a CameraMotionData instance directly without using its create() function.")
-    video_sample.camera_motion_data = camera_motion_params_demo
+    video_sample.cam_motion = camera_motion_params_demo
     
-    print(f"If you try to access camera_setup_data before setting it, it will raise an Error.")
+    print(f"If you try to access cam_setup before setting it, it will raise an Error.")
     try:
-        print(video_sample.camera_setup_data)
+        print(video_sample.cam_setup)
     except AttributeError as e:
         print(f"AttributeError: {e}")
         
