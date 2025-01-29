@@ -1,0 +1,52 @@
+{
+    "label": "Fixed Camera (Somewhat Shaky)",
+    "label_name": "fixed_camera_with_shake",
+    "def_question": [
+      "Is the camera stationary with minor vibrations or shaking?",
+      "Is the camera stationary with some shaking?",
+      "Is the camera stable with minor vibrations?",
+      "Is the camera primarily stationary but not entirely stable?",
+      "Is the camera locked off but shows signs of slight instability?",
+      "Does the camera remain mostly stationary but with slight shaking?",
+      "Does the camera stay still but show some minor vibrations throughout the shot?",
+      "Is this a fixed camera shot with minor shaking?",
+      "Is the camera locked in place but with visible shaking or vibrations?",
+      "Is the camera locked but not perfectly stable?"
+    ],
+    "alt_question": [
+      "Is the camera fixed but slightly shaky?",
+      "Is the camera stationary but not perfectly steady?",
+      "Is the camera fixed with slight movement?",
+      "Is the camera mostly still?",
+      "Is the camera not entirely steady?"
+    ],
+    "def_prompt": [
+      "A video where the camera is mostly stationary but has minor vibrations or shaking.",
+      "A video where the camera is stationary but experiences some shaking.",
+      "A video where the camera is stable but has minor vibrations.",
+      "A video where the camera is primarily stationary but not entirely stable.",
+      "A video where the camera is locked off but shows signs of slight instability.",
+      "A video where the camera remains mostly stationary but with slight shaking.",
+      "A video where the camera stays still but shows some minor vibrations.",
+      "A video featuring a fixed camera shot with minor shaking.",
+      "A video where the camera is locked in place but has visible shaking or vibrations."
+    ],
+    "alt_prompt": [
+      "A video with a fixed camera that shows slight shaking.",
+      "A video where the camera is stationary but not perfectly steady.",
+      "A video where the camera is fixed but has slight movement.",
+      "A video where the camera is mostly still.",
+      "A video where the camera is not entirely steady.",
+      "A video where the camera is locked but not perfectly stable."
+    ],
+    "pos_rule_str": "self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']",
+    "neg_rule_str": "self.cam_motion.steadiness in ['static', 'very_smooth']",
+    "easy_neg_rule_str": {
+      "not_fixed_camera": "self.cam_motion.camera_movement not in ['no']"
+    },
+    "hard_neg_rule_str": {
+      "fixed_without_shaking": "self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']",
+      "shaky_camera_that_moves": "self.cam_motion.steadiness not in ['static', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']"
+    }
+  }
+  

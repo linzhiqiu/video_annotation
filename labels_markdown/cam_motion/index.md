@@ -106,4 +106,4 @@ Does the video include one or more shot transitions?
 
 ## Subcategories
 
-- [Steadiness](./steadiness/index.md)
+- [Steadiness_and_movement](./steadiness_and_movement/index.md)

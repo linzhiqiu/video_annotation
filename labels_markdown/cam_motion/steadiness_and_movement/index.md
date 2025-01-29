@@ -1,4 +1,4 @@
-# Steadiness Overview
+# Steadiness_and_movement Overview
 
 <details>
 <summary><h2>Fixed Camera (Stable)</h2></summary>
@@ -134,6 +134,119 @@ Is the camera completely still without any motion or shaking?
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
 - <b>fixed_but_slightly_shaky</b>: <code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>Fixed Camera (Somewhat Shaky)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>fixed_camera_with_shake</code>
+
+
+<h3>📖 Definition:</h3>
+Is the camera stationary with minor vibrations or shaking?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Is the camera stationary with some shaking?
+
+- Is the camera stable with minor vibrations?
+
+- Is the camera primarily stationary but not entirely stable?
+
+- Is the camera locked off but shows signs of slight instability?
+
+- Does the camera remain mostly stationary but with slight shaking?
+
+- Does the camera stay still but show some minor vibrations throughout the shot?
+
+- Is this a fixed camera shot with minor shaking?
+
+- Is the camera locked in place but with visible shaking or vibrations?
+
+- Is the camera locked but not perfectly stable?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the camera fixed but slightly shaky?
+
+- Is the camera stationary but not perfectly steady?
+
+- Is the camera fixed with slight movement?
+
+- Is the camera mostly still?
+
+- Is the camera not entirely steady?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A video where the camera is mostly stationary but has minor vibrations or shaking.
+
+- A video where the camera is stationary but experiences some shaking.
+
+- A video where the camera is stable but has minor vibrations.
+
+- A video where the camera is primarily stationary but not entirely stable.
+
+- A video where the camera is locked off but shows signs of slight instability.
+
+- A video where the camera remains mostly stationary but with slight shaking.
+
+- A video where the camera stays still but shows some minor vibrations.
+
+- A video featuring a fixed camera shot with minor shaking.
+
+- A video where the camera is locked in place but has visible shaking or vibrations.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video with a fixed camera that shows slight shaking.
+
+- A video where the camera is stationary but not perfectly steady.
+
+- A video where the camera is fixed but has slight movement.
+
+- A video where the camera is mostly still.
+
+- A video where the camera is not entirely steady.
+
+- A video where the camera is locked but not perfectly stable.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_motion.steadiness in ['static', 'very_smooth']</code>
+
+<details>
+<summary><h4>🔴 Negative (Easy)</h4></summary>
+
+- <b>not_fixed_camera</b>: <code>self.cam_motion.camera_movement not in ['no']</code>
+
+</details>
+
+<details>
+<summary><h4>🔴 Negative (Hard)</h4></summary>
+
+- <b>fixed_without_shaking</b>: <code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
+
+- <b>shaky_camera_that_moves</b>: <code>self.cam_motion.steadiness not in ['static', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']</code>
 
 </details>
 
