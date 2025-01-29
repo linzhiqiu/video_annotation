@@ -5,9 +5,7 @@
 
 
 <h3>🔵 Label Name:</h3>
-```ini
-[fixed_camera]
-```
+<code>fixed_camera</code>
 
 <details>
 <summary><h4>🟠 Question (Definition)</h4></summary>
@@ -118,26 +116,22 @@
 </details>
 
 <h4>🟢 Positive:</h4>
-```diff
-+ self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']
-```
+<code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
 
 <h4>🔴 Negative:</h4>
-```diff
-- self.cam_motion.steadiness not in ['static']
-```
+<code>self.cam_motion.steadiness not in ['static']</code>
 
 <details>
-<summary><h4>🟠 Negative (Easy)</h4></summary>
+<summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- **not_fixed_camera**: `self.cam_motion.camera_movement not in ['no']`
+- <b>not_fixed_camera</b>: <code>self.cam_motion.camera_movement not in ['no']</code>
 
 </details>
 
 <details>
-<summary><h4>🟠 Negative (Hard)</h4></summary>
+<summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- **fixed_but_slightly_shaky**: `self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']`
+- <b>fixed_but_slightly_shaky</b>: <code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
 
 </details>
 
