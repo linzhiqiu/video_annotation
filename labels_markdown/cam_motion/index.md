@@ -12,6 +12,17 @@
 Does the video include one or more shot transitions?
 
 <details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does the video contain hard cuts or soft transitions, or a combination of both?
+
+- Are there any shot transitions in the video?
+
+- Does this footage feature one or more cuts or soft transitions?
+
+</details>
+
+<details>
 <summary><h4> Alternative Question</h4></summary>
 
 - Is there a transition between shots?

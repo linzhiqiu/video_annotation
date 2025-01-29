@@ -38,7 +38,7 @@ def process_json_file(file_path):
         markdown_content.append(f"\n<h3>📖 Definition:</h3>\n{definition}\n")
 
     for json_key, display_name in FIELD_MAPPING.items():
-        if json_key in entry and json_key != "label_name" and json_key != "def_question" and entry[json_key]:
+        if json_key in entry and json_key != "label_name" and entry[json_key]:
             field_content = entry[json_key]
 
             if isinstance(field_content, dict):  # Handle dictionary fields

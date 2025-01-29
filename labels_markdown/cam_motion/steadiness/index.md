@@ -12,6 +12,31 @@
 Is the camera completely still without any motion or shaking?
 
 <details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Is the camera completely still without any movement?
+
+- Does the camera remain perfectly stationary throughout?
+
+- Does the camera remain perfectly still throughout the shot?
+
+- Is the camera entirely stationary with no visible vibrations?
+
+- Is the camera locked off without any instability?
+
+- Is there absolutely no shake or motion in the camera?
+
+- Is the camera entirely stable with no visible shaking?
+
+- Is this a fixed camera shot without any shaking?
+
+- Is the camera locked and stationary with no signs of movement?
+
+- Is the camera locked in place without any motion or shaking?
+
+</details>
+
+<details>
 <summary><h4> Alternative Question</h4></summary>
 
 - Is the camera still?
