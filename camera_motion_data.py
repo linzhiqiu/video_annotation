@@ -248,7 +248,7 @@ class CameraMotionData:
     
     @classmethod
     def create(cls, **kwargs):
-        """Create a CameraSetupData instance ensuring all attributes are set using setters."""
+        """Create a CameraSetupData instance ensuring all attributes are set using setters and are verified."""
         instance = cls()
         for key, value in kwargs.items():
             setter_method = getattr(instance, f"set_{key}", None)
