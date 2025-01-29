@@ -7,21 +7,12 @@
 <h3>🔵 Label Name:</h3>
 <code>has_shot_transition_cam_motion</code>
 
-<details>
-<summary><h4>🟠 Question (Definition)</h4></summary>
 
-- Does the video include one or more shot transitions?
-
-- Does the video contain hard cuts or soft transitions, or a combination of both?
-
-- Are there any shot transitions in the video?
-
-- Does this footage feature one or more cuts or soft transitions?
-
-</details>
+<h3>📖 Definition:</h3>
+Does the video include one or more shot transitions?
 
 <details>
-<summary><h4>🟠 Alternative Question</h4></summary>
+<summary><h4> Alternative Question</h4></summary>
 
 - Is there a transition between shots?
 
@@ -40,7 +31,7 @@
 </details>
 
 <details>
-<summary><h4>🟠 Prompt (Definition)</h4></summary>
+<summary><h4> Prompt (Definition)</h4></summary>
 
 - A video showing one or more shot transitions.
 
@@ -59,7 +50,7 @@
 </details>
 
 <details>
-<summary><h4>🟠 Alternative Prompt</h4></summary>
+<summary><h4> Alternative Prompt</h4></summary>
 
 - The video includes either a hard cut or a soft transition.
 

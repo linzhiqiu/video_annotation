@@ -24,15 +24,21 @@ def process_json_file(file_path):
     entry = load_json(file_path)
     label = entry["label"]
 
-    # Start collapsible section with styled title
+    # Start collapsible section for the label
     markdown_content = [f"<details>\n<summary><h2>{label}</h2></summary>\n"]
 
     # Add Label Name (H3 for Larger Font)
     label_name = entry.get("label_name", "")
     markdown_content.append(f"\n<h3>🔵 Label Name:</h3>\n<code>{label_name}</code>\n")
 
+    # Extract the first definition from def_question (if available)
+    def_question = entry.get("def_question", [])
+    if def_question:
+        definition = def_question[0]  # First item in def_question
+        markdown_content.append(f"\n<h3>📖 Definition:</h3>\n{definition}\n")
+
     for json_key, display_name in FIELD_MAPPING.items():
-        if json_key in entry and json_key != "label_name" and entry[json_key]:
+        if json_key in entry and json_key != "label_name" and json_key != "def_question" and entry[json_key]:
             field_content = entry[json_key]
 
             if isinstance(field_content, dict):  # Handle dictionary fields
@@ -42,10 +48,17 @@ def process_json_file(file_path):
                 markdown_content.append("</details>\n")
 
             elif isinstance(field_content, list):  # Handle list fields
-                markdown_content.append(f'<details>\n<summary><h4>🟠 {display_name}</h4></summary>\n')
-                for item in field_content:
-                    markdown_content.append(f"- {item}\n")
-                markdown_content.append("</details>\n")
+                # Special handling for def_question (so that it's not duplicated)
+                if json_key == "def_question":
+                    markdown_content.append(f'<details>\n<summary><h4> Question (Definition)</h4></summary>\n')
+                    for item in field_content[1:]:  # Exclude the first definition
+                        markdown_content.append(f"- {item}\n")
+                    markdown_content.append("</details>\n")
+                else:
+                    markdown_content.append(f'<details>\n<summary><h4> {display_name}</h4></summary>\n')
+                    for item in field_content:
+                        markdown_content.append(f"- {item}\n")
+                    markdown_content.append("</details>\n")
 
             else:  # Handle string fields (Rules & Others)
                 emoji = "🟢" if "pos_rule" in json_key else "🔴" if "neg_rule" in json_key else "🔵"
@@ -53,6 +66,7 @@ def process_json_file(file_path):
 
     markdown_content.append("</details>\n")  # Close outer label collapse
     return "\n".join(markdown_content)
+
 
 
 
