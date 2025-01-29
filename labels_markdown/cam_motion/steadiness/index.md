@@ -1,13 +1,13 @@
 # Steadiness Overview
 
 <details>
-<summary><b>Fixed Camera (Stable)</b></summary>
+<summary><h2 style="color:#2E86C1;">Fixed Camera (Stable)</h2></summary>
 
 
-**Label Name:** `fixed_camera`
+<h3 style="color:#1F618D;">Label Name:</h3> <code>fixed_camera</code>
 
 <details>
-<summary><b>Question (Definition)</b></summary>
+<summary><h4 style="color:#F39C12;">Question (Definition)</h4></summary>
 
 - Is the camera completely still without any motion or shaking?
 
@@ -34,7 +34,7 @@
 </details>
 
 <details>
-<summary><b>Alternative Question</b></summary>
+<summary><h4 style="color:#F39C12;">Alternative Question</h4></summary>
 
 - Is the camera still?
 
@@ -61,7 +61,7 @@
 </details>
 
 <details>
-<summary><b>Prompt (Definition)</b></summary>
+<summary><h4 style="color:#F39C12;">Prompt (Definition)</h4></summary>
 
 - A video where the camera remains completely still with no motion or shaking.
 
@@ -88,7 +88,7 @@
 </details>
 
 <details>
-<summary><b>Alternative Prompt</b></summary>
+<summary><h4 style="color:#F39C12;">Alternative Prompt</h4></summary>
 
 - A video with a still camera.
 
@@ -114,21 +114,21 @@
 
 </details>
 
-**Positive:** `self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']`
+<h4 style="color:#27AE60;">Positive:</h4> <code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
 
-**Negative:** `self.cam_motion.steadiness not in ['static']`
+<h4 style="color:#C0392B;">Negative:</h4> <code>self.cam_motion.steadiness not in ['static']</code>
 
 <details>
-<summary><b>Negative (Easy)</b></summary>
+<summary><h4 style="color:#F39C12;">Negative (Easy)</h4></summary>
 
-- **not_fixed_camera**: `self.cam_motion.camera_movement not in ['no']`
+- <b>not_fixed_camera</b>: <code>self.cam_motion.camera_movement not in ['no']</code>
 
 </details>
 
 <details>
-<summary><b>Negative (Hard)</b></summary>
+<summary><h4 style="color:#F39C12;">Negative (Hard)</h4></summary>
 
-- **fixed_but_slightly_shaky**: `self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']`
+- <b>fixed_but_slightly_shaky</b>: <code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
 
 </details>
 
