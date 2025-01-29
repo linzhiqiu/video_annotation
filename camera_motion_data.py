@@ -217,7 +217,14 @@ class CameraMotionData:
             "crane": self.camera_crane,
             "roll": self.camera_roll
         }
-    
+        
+    def check_if_no_motion(self, exclude=None):
+        """Checks if only the specified motion(s) exist and all others are 'no'."""
+        if exclude is None:
+            exclude = []
+
+        return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
+  
     def camera_motion_list(self):
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
                 self.camera_pan, self.camera_up_down, self.camera_tilt, self.camera_arc,
