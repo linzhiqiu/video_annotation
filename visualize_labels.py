@@ -20,36 +20,36 @@ def load_json(file_path):
         return json.load(f)
 
 def process_json_file(file_path):
-    """Convert a single JSON label file into a visually enhanced Markdown section with colors and font sizes."""
+    """Convert a single JSON label file into a GitHub-compatible Markdown section."""
     entry = load_json(file_path)
     label = entry["label"]
 
-    # Start collapsible section with styled title
-    markdown_content = [f'<details>\n<summary><h2 style="color:#2E86C1;">{label}</h2></summary>\n']
+    # Start collapsible section with a styled title
+    markdown_content = [f"<details>\n<summary><b>### {label}</b></summary>\n"]
     
-    # Add Label Name (Styled in Blue)
+    # Add Label Name (Styled with 🔵 Emoji)
     label_name = entry.get("label_name", "")
-    markdown_content.append(f'\n<h3 style="color:#1F618D;">Label Name:</h3> <code>{label_name}</code>\n')
+    markdown_content.append(f"\n### 🔵 Label Name\n`{label_name}`\n")
 
     for json_key, display_name in FIELD_MAPPING.items():
         if json_key in entry and json_key != "label_name" and entry[json_key]:
             field_content = entry[json_key]
 
             if isinstance(field_content, dict):  # Handle dictionary fields
-                markdown_content.append(f'<details>\n<summary><h4 style="color:#F39C12;">{display_name}</h4></summary>\n')
+                markdown_content.append(f'<details>\n<summary>#### 🟠 {display_name}</summary>\n')
                 for key, value in field_content.items():
-                    markdown_content.append(f"- <b>{key}</b>: <code>{value}</code>\n")
+                    markdown_content.append(f"- **{key}**: `{value}`\n")
                 markdown_content.append("</details>\n")
 
             elif isinstance(field_content, list):  # Handle list fields
-                markdown_content.append(f'<details>\n<summary><h4 style="color:#F39C12;">{display_name}</h4></summary>\n')
+                markdown_content.append(f'<details>\n<summary>#### 🟠 {display_name}</summary>\n')
                 for item in field_content:
                     markdown_content.append(f"- {item}\n")
                 markdown_content.append("</details>\n")
 
             else:  # Handle string fields (Rules & Others)
-                color = "#27AE60" if "pos_rule" in json_key else "#C0392B" if "neg_rule" in json_key else "#1F618D"
-                markdown_content.append(f'<h4 style="color:{color};">{display_name}:</h4> <code>{field_content}</code>\n')
+                emoji = "🟢" if "pos_rule" in json_key else "🔴" if "neg_rule" in json_key else "🔵"
+                markdown_content.append(f"#### {emoji} {display_name}\n`{field_content}`\n")
 
     markdown_content.append("</details>\n")  # Close outer label collapse
     return "\n".join(markdown_content)

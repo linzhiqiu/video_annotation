@@ -1,13 +1,14 @@
 # Cam_motion Overview
 
 <details>
-<summary><h2 style="color:#2E86C1;">Shot transition</h2></summary>
+<summary><b>### Shot transition</b></summary>
 
 
-<h3 style="color:#1F618D;">Label Name:</h3> <code>has_shot_transition_cam_motion</code>
+### 🔵 Label Name
+`has_shot_transition_cam_motion`
 
 <details>
-<summary><h4 style="color:#F39C12;">Question (Definition)</h4></summary>
+<summary>#### 🟠 Question (Definition)</summary>
 
 - Does the video include one or more shot transitions?
 
@@ -20,7 +21,7 @@
 </details>
 
 <details>
-<summary><h4 style="color:#F39C12;">Alternative Question</h4></summary>
+<summary>#### 🟠 Alternative Question</summary>
 
 - Is there a transition between shots?
 
@@ -39,7 +40,7 @@
 </details>
 
 <details>
-<summary><h4 style="color:#F39C12;">Prompt (Definition)</h4></summary>
+<summary>#### 🟠 Prompt (Definition)</summary>
 
 - A video showing one or more shot transitions.
 
@@ -58,7 +59,7 @@
 </details>
 
 <details>
-<summary><h4 style="color:#F39C12;">Alternative Prompt</h4></summary>
+<summary>#### 🟠 Alternative Prompt</summary>
 
 - The video includes either a hard cut or a soft transition.
 
@@ -92,9 +93,11 @@
 
 </details>
 
-<h4 style="color:#27AE60;">Positive:</h4> <code>self.cam_motion.shot_transition</code>
+#### 🟢 Positive
+`self.cam_motion.shot_transition`
 
-<h4 style="color:#C0392B;">Negative:</h4> <code>not self.cam_motion.shot_transition</code>
+#### 🔴 Negative
+`not self.cam_motion.shot_transition`
 
 </details>
 
