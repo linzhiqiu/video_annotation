@@ -20,16 +20,16 @@ def load_json(file_path):
         return json.load(f)
 
 def process_json_file(file_path):
-    """Convert a single JSON label file into a GitHub-friendly collapsible Markdown section with font sizes."""
+    """Convert a single JSON label file into a GitHub-friendly collapsible Markdown section with proper colors."""
     entry = load_json(file_path)
     label = entry["label"]
 
     # Start collapsible section with styled title
     markdown_content = [f"<details>\n<summary><h2>{label}</h2></summary>\n"]
 
-    # Add Label Name (H3 for Larger Font)
+    # Add Label Name (H3 for Larger Font, Blue Background)
     label_name = entry.get("label_name", "")
-    markdown_content.append(f"\n<h3>🔵 Label Name:</h3>\n<code>{label_name}</code>\n")
+    markdown_content.append(f"\n<h3>🔵 Label Name:</h3>\n```ini\n[{label_name}]\n```\n")
 
     for json_key, display_name in FIELD_MAPPING.items():
         if json_key in entry and json_key != "label_name" and entry[json_key]:
@@ -38,7 +38,7 @@ def process_json_file(file_path):
             if isinstance(field_content, dict):  # Handle dictionary fields
                 markdown_content.append(f'<details>\n<summary><h4>🟠 {display_name}</h4></summary>\n')
                 for key, value in field_content.items():
-                    markdown_content.append(f"- <b>{key}</b>: <code>{value}</code>\n")
+                    markdown_content.append(f"- **{key}**: `{value}`\n")
                 markdown_content.append("</details>\n")
 
             elif isinstance(field_content, list):  # Handle list fields
@@ -48,11 +48,16 @@ def process_json_file(file_path):
                 markdown_content.append("</details>\n")
 
             else:  # Handle string fields (Rules & Others)
-                emoji = "🟢" if "pos_rule" in json_key else "🔴" if "neg_rule" in json_key else "🔵"
-                markdown_content.append(f"<h4>{emoji} {display_name}:</h4>\n<code>{field_content}</code>\n")
+                if "pos_rule" in json_key:
+                    markdown_content.append(f"<h4>🟢 {display_name}:</h4>\n```diff\n+ {field_content}\n```\n")
+                elif "neg_rule" in json_key:
+                    markdown_content.append(f"<h4>🔴 {display_name}:</h4>\n```diff\n- {field_content}\n```\n")
+                else:
+                    markdown_content.append(f"<h4>🔴 {display_name}:</h4>\n```bash\n{field_content}\n```\n")
 
     markdown_content.append("</details>\n")  # Close outer label collapse
     return "\n".join(markdown_content)
+
 
 
 

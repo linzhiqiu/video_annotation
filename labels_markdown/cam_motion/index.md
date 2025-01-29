@@ -5,7 +5,9 @@
 
 
 <h3>🔵 Label Name:</h3>
-<code>has_shot_transition_cam_motion</code>
+```ini
+[has_shot_transition_cam_motion]
+```
 
 <details>
 <summary><h4>🟠 Question (Definition)</h4></summary>
@@ -94,10 +96,14 @@
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.shot_transition</code>
+```diff
++ self.cam_motion.shot_transition
+```
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.shot_transition</code>
+```diff
+- not self.cam_motion.shot_transition
+```
 
 </details>
 
