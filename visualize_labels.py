@@ -20,38 +20,41 @@ def load_json(file_path):
         return json.load(f)
 
 def process_json_file(file_path):
-    """Convert a single JSON label file into a collapsible Markdown section."""
+    """Convert a single JSON label file into a visually enhanced Markdown section with colors and font sizes."""
     entry = load_json(file_path)
     label = entry["label"]
+
+    # Start collapsible section with styled title
+    markdown_content = [f'<details>\n<summary><h2 style="color:#2E86C1;">{label}</h2></summary>\n']
     
-    # Start collapsible section
-    markdown_content = [f"<details>\n<summary><b>{label}</b></summary>\n"]
-    
-    # Add Label Name once
+    # Add Label Name (Styled in Blue)
     label_name = entry.get("label_name", "")
-    markdown_content.append(f"\n**Label Name:** `{label_name}`\n")
+    markdown_content.append(f'\n<h3 style="color:#1F618D;">Label Name:</h3> <code>{label_name}</code>\n')
 
     for json_key, display_name in FIELD_MAPPING.items():
         if json_key in entry and json_key != "label_name" and entry[json_key]:
             field_content = entry[json_key]
 
             if isinstance(field_content, dict):  # Handle dictionary fields
-                markdown_content.append(f"<details>\n<summary><b>{display_name}</b></summary>\n")
+                markdown_content.append(f'<details>\n<summary><h4 style="color:#F39C12;">{display_name}</h4></summary>\n')
                 for key, value in field_content.items():
-                    markdown_content.append(f"- **{key}**: `{value}`\n")
+                    markdown_content.append(f"- <b>{key}</b>: <code>{value}</code>\n")
                 markdown_content.append("</details>\n")
 
             elif isinstance(field_content, list):  # Handle list fields
-                markdown_content.append(f"<details>\n<summary><b>{display_name}</b></summary>\n")
+                markdown_content.append(f'<details>\n<summary><h4 style="color:#F39C12;">{display_name}</h4></summary>\n')
                 for item in field_content:
                     markdown_content.append(f"- {item}\n")
                 markdown_content.append("</details>\n")
 
-            else:  # Handle string fields
-                markdown_content.append(f"**{display_name}:** `{field_content}`\n")
+            else:  # Handle string fields (Rules & Others)
+                color = "#27AE60" if "pos_rule" in json_key else "#C0392B" if "neg_rule" in json_key else "#1F618D"
+                markdown_content.append(f'<h4 style="color:{color};">{display_name}:</h4> <code>{field_content}</code>\n')
 
     markdown_content.append("</details>\n")  # Close outer label collapse
     return "\n".join(markdown_content)
+
+
 
 
 def generate_folder_markdown(folder_path):
