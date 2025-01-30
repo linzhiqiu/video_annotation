@@ -1,0 +1,63 @@
+{
+    "label": "Has Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+    "label_name": "has_backward_wrt_ground",
+    "def_question": [
+        "Does the camera move backward (not zooming out) in the scene?",
+        "Is the camera moving backward in the scene?",
+        "Is the camera moving backward?",
+        "Is the camera moving backward, creating a noticeable parallax effect?",
+        "Is the camera moving backward (not zooming out) in the scene, creating a noticeable parallax effect?",
+        "Does the camera move in the backward direction relative to the ground?",
+        "Is the camera pulling back through the space?",
+        "Is the camera pulling out?",
+        "Is the camera dollying out?",
+        "Is the camera dollying backward?",
+        "Does the shot feature a clear backward motion of the camera?",
+        "Is the camera's movement progressing backward rather than forward?",
+        "Is the backward motion of the camera clear in this shot?",
+        "Does the camera travel backward in space, rather than zooming out?"
+    ],
+    "alt_question": [
+        "Is the camera retreating in the scene?",
+        "Does the perspective shift backward rather than relying on zoom?",
+        "Is the camera physically traveling backward instead of adjusting focal length?",
+        "Is the camera retreating, creating a strong sense of depth?"
+    ],
+    "def_prompt": [
+        "A shot where the camera moves backward, rather than zooming out.",
+        "A video where the camera travels backward, creating noticeable parallax.",
+        "A scene where the camera moves physically backward instead of zooming.",
+        "A tracking shot where the camera moves backward relative to the ground plane.",
+        "A shot where the camera moves straight back, maintaining a sense of backward motion.",
+        "A video where the camera moves backward (not zooming out) in the scene.",
+        "A shot where the camera is moving backward within the scene.",
+        "A video where the camera moves backward, creating a noticeable parallax effect.",
+        "A shot where the camera moves in the backward direction relative to the ground.",
+        "A video where the camera pulls back through space.",
+        "A scene where the camera pulls out.",
+        "A video where the camera performs a dolly-out motion.",
+        "A shot where the camera dollies backward.",
+        "The camera dollies out, moving backward in the scene.",
+        "A video where the camera progresses backward rather than forward.",
+        "A shot where the backward motion of the camera is clearly visible.",
+        "A video where the camera travels backward in space rather than zooming out."
+    ],
+    "alt_prompt": [
+        "A scene where the shot features a clear backward motion of the camera.",
+        "A shot where the camera dolly moves straight back.",
+        "A video where the camera moves in a backward direction within the scene.",
+        "A shot where the camera retreats rather than zooming out.",
+        "A video where the camera progresses backward, creating depth.",
+        "A scene where the camera moves back rather than pushing forward.",
+        "A shot where the perspective shifts backward dynamically.",
+        "A video where the camera maintains a continuous backward movement."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "easy_neg_rule_str": {
+        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'forward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    },
+    "hard_neg_rule_str": {
+        "zooming_out": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    }
+}
