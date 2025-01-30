@@ -66,6 +66,7 @@ def create_video_data_demo():
         print(video_sample.cam_setup)
     except AttributeError as e:
         print(f"AttributeError: {e}")
+        return video_sample
 
 if __name__ == "__main__":
     create_video_data_demo()

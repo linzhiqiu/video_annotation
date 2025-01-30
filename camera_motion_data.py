@@ -220,7 +220,7 @@ class CameraMotionData:
             "roll": self.camera_roll
         }
         
-    def check_if_no_motion(self, exclude=[]: List[str]):
+    def check_if_no_motion(self, exclude: List[str] = []):
         """Checks if only the specified motion(s) exist and all others are 'no'."""
         return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
     
@@ -237,7 +237,7 @@ class CameraMotionData:
             "roll": self.camera_roll
         }
         
-    def check_if_no_motion_cam_frame(self, exclude=[]: List[str]):
+    def check_if_no_motion_cam_frame(self, exclude: List[str] = []):
         """Checks if only the specified motion(s) exist and all others are 'no'."""
         return all(value == "no" for key, value in self.camera_motion_dict_cam_frame().items() if key not in exclude)
   
