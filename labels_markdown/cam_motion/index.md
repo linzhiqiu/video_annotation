@@ -106,4 +106,8 @@ Does the video include one or more shot transitions?
 
 ## Subcategories
 
+- [Camera_centric_movement](./camera_centric_movement/index.md)
+- [Ground_centric_movement](./ground_centric_movement/index.md)
+- [Object_centric_movement](./object_centric_movement/index.md)
+- [Scene_movement](./scene_movement/index.md)
 - [Steadiness_and_movement](./steadiness_and_movement/index.md)

@@ -1,0 +1,50 @@
+{
+  "label": "Lead Tracking Shot",
+  "label_name": "lead_tracking_shot",
+  "def_question": [
+    "Is it a tracking shot with the camera moving ahead of the subject?",
+    "Does the tracking shot show the camera moving ahead of the subjects?",
+    "Does the shot show the camera leading the subject by moving backward?",
+    "Does the camera track the subjects by leading from the front?",
+    "Is it a leading shot?"
+  ],
+  "alt_question": [
+    "Is the camera moving back as the subjects approach?",
+    "Is the camera moving backward while the subject moves toward it?",
+    "Does the camera pull back while the subject moves forward?",
+    "Does the tracking shot involve the camera moving forward ahead of the subject?",
+    "Is the tracking shot filmed with the camera moving in front of the subjects?",
+    "Is the camera positioned ahead of the moving subject?",
+    "Is the subject following the camera's movement?",
+    "Does the camera guide the viewer by leading the subject?",
+    "Is the perspective framed with the camera in front of the action?",
+    "Is the scene composed with the camera tracking ahead rather than behind?"
+  ],
+  "def_prompt": [
+    "A tracking shot where the camera moves ahead of the subject.",
+    "A tracking shot where the camera moves ahead of the subjects as they move.",
+    "A shot where the camera leads the subject by moving backward.",
+    "A scene where the camera tracks the subject while staying in front.",
+    "A leading tracking shot where the camera moves ahead of the subjects."
+  ],
+  "alt_prompt": [
+    "A shot where the camera moves backward as the subjects approach.",
+    "A video where the camera moves in reverse while tracking a moving subject.",
+    "A scene where the camera pulls back as the subject moves forward.",
+    "A tracking shot where the perspective is set ahead of the subject.",
+    "A shot where the camera stays ahead of the subject as they move.",
+    "A video where the subject moves toward the camera as it leads them.",
+    "A tracking shot where the camera maintains a position in front of the subject.",
+    "A video where the camera guides the movement by staying ahead of the subject.",
+    "A scene where the camera continuously pulls away as the subject moves forward."
+  ],
+  "pos_rule_str": "self.cam_motion.tracking_shot_types == ['lead']",
+  "neg_rule_str": "'lead' not in self.cam_motion.tracking_shot_types",
+  "easy_neg_rule_str": {
+    "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+  },
+  "hard_neg_rule_str": {
+    "other_tracking_shots": "self.cam_motion.is_tracking and 'lead' not in self.cam_motion.tracking_shot_types",
+    "tail_tracking_shot": "self.cam_motion.is_tracking and 'tail' in self.cam_motion.tracking_shot_types"
+  }
+}

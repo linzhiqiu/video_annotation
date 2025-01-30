@@ -1,0 +1,45 @@
+{
+    "label": "Arc Tracking Shot",
+    "label_name": "arc_tracking_shot",
+    "def_question": [
+        "Does the camera follow the subject while moving in an arc?",
+        "Is this an arc tracking shot?",
+        "Is the camera tracking the subject while arcing clockwise or counterclockwise around them?",
+        "Does the camera follow the subject while moving in an orbit?",
+        "Is the subject tracked with the camera circling around them?",
+        "Does the shot involve the camera arcing around the subject while tracking?"
+    ],
+    "alt_question": [
+        "Is the camera moving in a circular path around the subject while tracking?",
+        "Does the camera track the subject while rotating around them?",
+        "Is the subject framed dynamically as the camera moves in an arc?",
+        "Does the camera move in a semi-circle or full orbit while following the subject?",
+        "Is the tracking movement executed in a curved path?",
+        "Does the shot provide a sense of rotation by following the subject in an arc?",
+        "Is the camera moving along a circular trajectory while tracking the subject?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the camera follows the subject while moving in an arc.",
+        "An arc-tracking shot.",
+        "A shot where the camera moves in an arc around the subject while tracking.",
+        "A video where the camera tracks the subject while arcing clockwise or counterclockwise around them.",
+        "A scene where the camera moves in an orbit around the subject while tracking."
+    ],
+    "alt_prompt": [
+        "A video where the camera follows the subject by rotating in an arc.",
+        "A shot where the subject remains centered while the camera moves in a semi-circle.",
+        "A tracking shot where the camera circles around the subject in a smooth motion.",
+        "A shot where the camera moves in a curved motion around the subject while tracking.",
+        "A video where the camera tracks the subject while arcing around them.",
+        "A shot where the camera moves in a curved trajectory while following the subject.",
+        "A scene where the subject remains in frame while the camera orbits.",
+        "A shot where the camera movement forms a circular motion around the subject.",
+        "A video where the tracking movement follows a curved path.",
+        "A scene where the subject is followed while the camera moves in a circular pattern."
+    ],
+    "pos_rule_str": "'arc' in self.cam_motion.tracking_shot_types",
+    "neg_rule_str": "'arc' not in self.cam_motion.tracking_shot_types",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "label": "Very Shaky Camera",
+  "label_name": "very_shaky_camera",
+  "def_question": [
+    "Does the camera appear highly unsteady, as if it’s handheld and unstable?",
+    "Does the camera show noticable vibrations, shaking, or wobbling?",
+    "Is there significant shaking or vibration in the camera?",
+    "Is the camera heavily vibrating or shaking?"
+  ],
+  "alt_question": [
+    "Is the footage extremely shaky or vibrating?",
+    "Does the camera show strong vibrations typical of unstable handheld operation?",
+    "Is there extreme handheld-like shaking or wobbling in the camera?",
+    "Does the camera have an excessive handheld-like shake or wobble?",
+    "Does the shot feel extremely shaky, as if it was filmed with unstable hands?",
+    "Is the camera highly unsteady?",
+    "Does the shot feel extremely unstable?",
+    "Does the camera have an intense and noticeable wobble?",
+    "Is there excessive movement causing an extremely unsteady frame?",
+    "Does the video have a highly unstable, handheld-like feel?",
+    "Does the camera lack stability and control?",
+    "Is the camera motion erratic, uncontrolled, or excessively unbalanced?"
+  ],
+  "def_prompt": [
+    "A video where the camera shows noticable vibrations, shaking, or wobbling.",
+    "A video where the camera is obviously shaking or vibrating.",
+    "A shot where the camera exhibits significant unintended shaking or wobbling.",
+    "A scene where the camera shows highly unstable, handheld-like vibrations.",
+    "A video where the camera demonstrates excessive handheld-like shake or wobble."
+  ],
+  "alt_prompt": [
+    "A shot where the camera appears extremely unsteady, resembling uncontrolled handheld footage.",
+    "A video where the camera lacks stability and shakes intensely during the shot.",
+    "A shot where the camera is highly unsteady.",
+    "A video where the camera movement feels completely unstable.",
+    "A scene where the camera has intense and extreme wobble.",
+    "A video where excessive movement causes an extremely unsteady frame.",
+    "A shot with an extreme handheld-like feel due to erratic camera motion.",
+    "A video where the footage appears highly shaky or vibrating.",
+    "A shot where the camera completely lacks stability.",
+    "A scene where the camera motion is erratic, uncontrolled, or excessively unbalanced."
+  ],
+  "pos_rule_str": "self.cam_motion.steadiness in ['very_unsteady']",
+  "neg_rule_str": "self.cam_motion.steadiness not in ['very_unsteady', 'unsteady']",
+  "easy_neg_rule_str": {
+    "not_very_shaky_camera_excluding_smooth": "self.cam_motion.steadiness in ['smooth', 'very_smooth']"
+  }
+}

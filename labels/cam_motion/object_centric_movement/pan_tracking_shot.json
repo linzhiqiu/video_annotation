@@ -1,0 +1,47 @@
+{
+    "label": "Pan Tracking Shot",
+    "label_name": "pan_tracking_shot",
+    "def_question": [
+        "Does the camera pan to track the subjects?",
+        "Does the camera pan to follow the subjects?",
+        "Is this a pan-tracking shot?",
+        "Does the camera pan horizontally to follow the subjects?",
+        "Does the camera pan left or right to track the subjects?",
+        "Is the camera panning to keep the subjects in frame?",
+        "Does the shot involve the camera panning to track the motion of the subjects?",
+        "Is this a tracking shot achieved through camera panning?"
+    ],
+    "alt_question": [
+        "Does the camera rotate left or right to follow the subjects?",
+        "Is the camera panning rather than physically moving to track motion?",
+        "Is the camera swiveling in place to track a subject’s movement?",
+        "Does the camera maintain the subject in frame through horizontal rotation?",
+        "Is the motion of the subject followed solely through panning?",
+        "Is the camera fixed in position while rotating to follow the action?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the camera pans to follow the subjects.",
+        "A pan-tracking shot.",
+        "A shot where the camera pans left or right to track subject's motion.",
+        "A video where the camera maintains the subject in frame through panning.",
+        "A scene where the camera pans horizontally to follow the subjects.",
+        "A shot where the camera pans left or right while keeping the subject centered."
+    ],
+    "alt_prompt": [
+        "A shot where the camera rotates to track the subject’s movement.",
+        "A video where the camera follows the motion using horizontal panning.",
+        "A scene where the camera remains stationary while panning to follow action.",
+        "A video where the camera keeps the subject in view through controlled panning.",
+        "A shot where the camera does not move forward but instead pivots left or right.",
+        "A scene where subject tracking is achieved purely through camera rotation."
+    ],
+    "pos_rule_str": "self.cam_motion.tracking_shot_types == ['pan']",
+    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['pan']",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+        "other_tracking_shots": "self.cam_motion.is_tracking and not 'pan' in self.cam_motion.tracking_shot_types",
+        "side_tracking_shot": "'side' in self.cam_motion.tracking_shot_types and not 'pan' in self.cam_motion.tracking_shot_types"
+    }
+}

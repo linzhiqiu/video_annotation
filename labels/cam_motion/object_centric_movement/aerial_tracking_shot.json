@@ -1,0 +1,41 @@
+{
+    "label": "Aerial Tracking Shot",
+    "label_name": "aerial_tracking_shot",
+    "def_question": [
+        "Does the camera track the subject from above?",
+        "Is this an aerial tracking shot?",
+        "Does the camera follow the subject from overhead?",
+        "Is the subject tracked with the camera positioned above?",
+        "Does the shot involve the camera moving from a high vantage point to follow the subject?",
+        "Is the tracking done from an aerial perspective?"
+    ],
+    "alt_question": [
+        "Does the camera move above the subject to maintain tracking?",
+        "Is the camera positioned at a high angle while following the subject?",
+        "Is the subject followed from an overhead perspective?",
+        "Does the camera track the subject while maintaining a bird’s-eye view?",
+        "Is the tracking movement executed from an elevated position?",
+        "Does the shot provide a top-down tracking perspective?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the camera follows the subject from above.",
+        "A shot where the camera moves overhead while tracking the subject.",
+        "A video where the camera maintains an aerial perspective while tracking.",
+        "A scene where the camera follows the subject from a high vantage point.",
+        "A tracking shot executed from an elevated position."
+    ],
+    "alt_prompt": [
+        "A video where the camera moves from above to track the subject.",
+        "A shot where the subject is tracked from a bird’s-eye view.",
+        "A shot where the camera maintains an overhead view while following the subject.",
+        "A scene where the tracking is performed from a high position.",
+        "A shot where the subject is framed from an aerial tracking perspective.",
+        "A video where the tracking movement keeps the camera above the action.",
+        "A scene where the camera moves at an elevated position while following motion."
+    ],
+    "pos_rule_str": "'aerial' in self.cam_motion.tracking_shot_types",
+    "neg_rule_str": "'aerial' not in self.cam_motion.tracking_shot_types",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    }
+}

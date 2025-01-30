@@ -1,0 +1,48 @@
+{
+  "label": "Very Stable Camera Motion",
+  "label_name": "very_stable_camera_motion",
+  "def_question": [
+    "Is the camera movement exceptionally smooth and highly stable?",
+    "Does the camera move in an ultra-steady, controlled manner?",
+    "Is the camera motion perfectly stable, like a professional steadicam or gimbal shot?",
+    "Is the camera motion completely free of shakiness?",
+    "Does the camera show perfectly smooth, gimbal-like movement?",
+    "Does the camera move seamlessly without any wobble or instability?"
+],
+"alt_question": [
+    "Does the camera move flawlessly without any unintended vibrations or shaking?",
+    "Does the shot feel extremely smooth, like it was filmed using high-end stabilization?",
+    "Does the camera move effortlessly and fluidly?",
+    "Is the camera motion completely free of sudden jerks?",
+    "Does the camera exhibit precision-controlled movement?",
+    "Is the camera absolutely free from any noticeable vibrations?",
+    "Does the camera glide through the scene with flawless stability?",
+    "Is the footage perfectly stabilized and smooth?"
+  ],
+  "def_prompt": [
+    "A video where the camera movement is exceptionally smooth and highly stable.",
+    "A video where the camera moves in an ultra-steady, controlled manner.",
+    "A shot where the camera exhibits perfectly stable motion like a professional steadicam or gimbal.",
+    "A video where the camera motion is completely free of shakiness.",
+    "A shot where the camera shows perfectly smooth, gimbal-like movement.",
+    "A scene where the camera moves seamlessly without any wobble or instability."
+],
+"alt_prompt": [
+    "A scene where the camera moves flawlessly without any unintended vibrations or shaking.",
+    "A video where the shot feels extremely smooth, like it was filmed using high-end stabilization.",
+    "A shot where the camera moves effortlessly and fluidly.",
+    "A video where the camera motion is completely free of sudden jerks.",
+    "A scene where the camera exhibits precision-controlled movement.",
+    "A shot where the camera is absolutely free from any noticeable vibrations.",
+    "A shot where the camera glides through the scene with flawless stability.",
+    "A video where the footage is perfectly stabilized and smooth."
+  ],
+  "pos_rule_str": "self.cam_motion.steadiness in ['very_smooth'] and self.cam_motion.camera_movement not in ['no']",
+  "neg_rule_str": "self.cam_motion.steadiness not in ['very_smooth', 'smooth'] or self.cam_motion.camera_movement in ['no']",
+  "hard_neg_rule_str": {
+    "fixed_camera_without_motion": "self.cam_motion.steadiness in ['static'] or self.cam_motion.camera_movement in ['no']"
+  },
+  "easy_neg_rule_str": {
+    "somewhat_shaky_camera": "self.cam_motion.steadiness in ['unsteady', 'very_unsteady']"
+  }
+}

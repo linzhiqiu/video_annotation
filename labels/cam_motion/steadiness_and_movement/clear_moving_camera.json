@@ -1,0 +1,42 @@
+{
+    "label": "Clearly Moving Camera",
+    "label_name": "clear_moving_camera",
+    "def_question": [
+      "Does the camera have noticeable motion beyond minor shake or wobble?",
+      "Is there a distinct camera movement beyond slight shaking or wobbling?",
+      "Is there a clear and significant camera motion?",
+      "Is the camera’s movement clear and intentional?"
+    ],
+    "alt_question": [
+      "Is the camera clearly moving, with noticeable motion?",
+      "Does the camera exhibit noticeable movement?",
+      "Is the camera actively moving, rather than being mostly static?",
+      "Does the camera have a noticeable motion?",
+      "Is the camera clearly moving in the shot?",
+      "Does the camera motion stand out?",
+      "Is the camera movement easy to perceive?",
+      "Is the camera moving in a way that is obvious?",
+      "Does the camera display clear directional movement?",
+      "Is the camera moving beyond subtle adjustments?"
+    ],
+    "def_prompt": [
+      "A video where the camera has noticeable motion beyond minor shake or wobble.",
+      "A video where the camera exhibits distinct movement beyond slight shaking or wobbling.",
+      "A shot where the camera’s movement is clear and intentional.",
+      "A video featuring a clear and significant camera motion."
+    ],
+    "alt_prompt": [
+      "A shot where the camera clearly moves with noticeable motion.",
+      "A scene where the camera displays noticeable movement.",
+      "A scene where the camera is actively moving rather than being mostly static.",
+      "A video where the camera has a noticeable motion.",
+      "A shot where the camera is clearly moving.",
+      "A video where the camera’s motion stands out.",
+      "A scene where the camera movement is easy to perceive.",
+      "A video where the camera is moving in an obvious way.",
+      "A shot where the camera displays clear directional movement.",
+      "A video where the camera moves beyond subtle adjustments."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])",
+    "neg_rule_str": "self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']"
+  }

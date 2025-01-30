@@ -1,0 +1,55 @@
+{
+    "label": "Moving Camera",
+    "label_name": "moving_camera",
+    "def_question": [
+      "Is there any camera movement?",
+      "Does the camera move at all?",
+      "Does the camera exhibit motion at any point?",
+      "Is the camera moving instead of remaining still?",
+      "Is there any motion in the camera?",
+      "Does the shot include any camera motion?",
+      "Is there any motion in the camera?",
+      "Is the shot recorded with a non-stationary camera?"
+    ],
+    "alt_question": [
+      "Is the camera shifting, panning, tilting, or zooming?",
+      "Does the camera’s position change during the scene?",
+      "Does the shot involve a dynamic camera?",
+      "Is the camera actively changing position during the shot?",
+      "Is there movement in the camera during the shot?",
+      "Does the camera shift its position while capturing the scene?",
+      "Is the camera moving, panning, tilting, or zooming?",
+      "Does the camera’s perspective shift dynamically?",
+      "Is the camera following the action instead of staying in place?",
+      "Does the camera move in any way?",
+      "Does the camera track a subject or change viewpoints?"
+    ],
+    "def_prompt": [
+      "A video where the camera moves.",
+      "A scene where the camera exhibits movement.",
+      "A shot featuring a moving camera.",
+      "The camera moves.",
+      "A video recorded with a non-stationary camera.",
+      "A video with camera motion.",
+      "A video with a moving camera.",
+      "A video where the camera exhibits motion.",
+      "A video featuring any kind of camera movement.",
+      "A shot where the camera moves during filming.",
+      "A video where the camera does not remain still.",
+      "A video where the camera is not static."
+    ],
+    "alt_prompt": [
+      "A shot where the camera’s position changes instead of staying fixed.",
+      "A video where the camera is not static and moves throughout the shot.",
+      "A scene where the camera shifts, tilts, pans, or zooms dynamically.",
+      "A video capturing movement through an actively moving camera.",
+      "A shot where the camera actively changes position.",
+      "A scene where the camera follows movement dynamically.",
+      "A video with a handheld or tracking camera.",
+      "A shot where the camera’s framing changes through motion.",
+      "A video with a camera that does not stay fixed in one spot.",
+      "A video where the camera moves to capture action dynamically."
+    ],
+    "pos_rule_str": "(self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['minor', 'major_simple', 'major_complex']) or (self.cam_motion.steadiness in ['unsteady', 'very_unsteady'] and self.cam_motion.camera_movement in ['no'])",
+    "neg_rule_str": "self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']"
+  }

@@ -1,0 +1,50 @@
+{
+  "label": "Tail Tracking Shot",
+  "label_name": "tail_tracking_shot",
+  "def_question": [
+    "Is it a tracking shot with the camera following behind the subject?",
+    "Is it a following shot?",
+    "Does the tracking shot show the camera moving behind the subjects?",
+    "Is it a tracking shot from behind?",
+    "Does the camera track the subjects by following from behind?",
+    "Is the camera moving forward while the subject moves ahead of it?",
+    "Is the tracking shot filmed with the camera moving behind the subjects?"
+],
+"alt_question": [
+    "Is the camera moving forward as the subjects move away?",
+    "Is the subject leading while the camera follows?",
+    "Is the camera positioned behind the moving subject?",
+    "Does the camera follow the movement rather than leading it?",
+    "Is the perspective framed from behind the subject?",
+    "Is the scene composed with the camera tracking behind rather than ahead?",
+    "Does the shot create a sense of movement by following the subject?"
+  ],
+  "def_prompt": [
+    "A tracking shot where the camera follows behind the subject.",
+    "A tracking shot where the camera moves behind the subjects as they move.",
+    "A shot where the camera follows the subject by moving forward.",
+    "A scene where the camera tracks the subject while staying behind.",
+    "A following tracking shot.",
+    "A following shot."
+  ],
+  "alt_prompt": [
+    "A shot where the camera moves forward as the subject moves away.",
+    "A video where the camera follows a moving subject from behind.",
+    "A scene where the camera moves forward while tracking a subject ahead.",
+    "A tracking shot where the perspective is set behind the subject.",
+    "A shot where the camera stays behind the subject as they move.",
+    "A video where the subject moves ahead while the camera follows.",
+    "A tracking shot where the camera maintains a position behind the subject.",
+    "A video where the camera follows the movement instead of leading it.",
+    "A scene where the camera continuously follows behind the subject."
+  ],
+  "pos_rule_str": "self.cam_motion.tracking_shot_types == ['tail']",
+  "neg_rule_str": "'tail' not in self.cam_motion.tracking_shot_types",
+  "easy_neg_rule_str": {
+    "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+  },
+  "hard_neg_rule_str": {
+    "other_tracking_shots": "self.cam_motion.is_tracking and 'tail' not in self.cam_motion.tracking_shot_types",
+    "front_tracking_shot": "self.cam_motion.is_tracking and 'lead' in self.cam_motion.tracking_shot_types"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "label": "Dynamic Scene",
+  "label_name": "dynamic_scene",
+  "def_question": [
+    "Is the scene in the video dynamic?",
+    "Does the video feature a dynamic, moving scene?",
+    "Are there objects moving in the scene?"
+],
+"alt_question": [
+    "Are there moving objects in the scene?",
+    "Is the environment in the video changing dynamically?",
+    "Does the frame contain moving elements?",
+    "Are people, vehicles, or objects in motion?",
+    "Is there a lot of movement happening in the scene?",
+    "Does the shot contain visible object motion?"
+  ],
+  "def_prompt": [
+    "A video where the scene is dynamic and features movement.",
+    "A video where multiple objects in the scene move independently.",
+    "A shot where the environment does not remain static."
+],
+"alt_prompt": [
+    "A scene where motion occurs naturally within the frame.",
+    "A video where the scene contains multiple moving objects.",
+    "A video where the scene is not static and contains movement.",
+    "A shot where various objects in the frame are moving.",
+    "A scene where the environment appears active.",
+    "A video where there are moving people, vehicles, or objects.",
+    "A shot that features a lively and dynamic setting.",
+    "A video where the objects in the scene continuously move.",
+    "A scene where movement is apparent in the composition."
+  ],
+  "pos_rule_str": "self.cam_motion.scene_movement in ['dynamic']",
+  "neg_rule_str": "self.cam_motion.scene_movement in ['static']"
+}

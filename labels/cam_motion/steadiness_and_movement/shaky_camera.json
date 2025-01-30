@@ -1,0 +1,48 @@
+{
+  "label": "Shaky Camera",
+  "label_name": "shaky_camera",
+  "def_question": [
+    "Does the camera show any vibrations, shaking, or wobbling?",
+    "Is there any shaking or vibration in the camera?",
+    "Is the camera visibly vibrating or shaking?",
+    "Is the camera showing unintended vibrations or shaking?",
+    "Does the camera appear unsteady, as if it’s handheld?",
+    "Is the footage shaky or vibrating?"
+],
+"alt_question": [
+    "Does the camera show vibrations typical of handheld operation?",
+    "Is there handheld-like shaking or wobbling in the camera?",
+    "Does the camera have a handheld-like shake or wobble?",
+    "Does the shot feel shaky, like it was filmed handheld?",
+    "Is the camera unsteady?",
+    "Does the shot feel unstable?",
+    "Does the camera have a noticeable wobble?",
+    "Is there movement causing an unsteady frame?",
+    "Does the video have a handheld-like feel?",
+    "Does the camera lack stability?"
+  ],
+  "def_prompt": [
+    "A video where the camera shows vibrations, shaking, or wobbling.",
+    "A video where the camera is visibly shaking or vibrating.",
+    "A shot where the camera exhibits unintended shaking or wobbling.",
+    "A scene where the camera shows handheld-like vibrations.",
+    "A video where the camera demonstrates a handheld-like shake or wobble."
+],
+"alt_prompt": [
+    "A shot where the camera appears unsteady, resembling handheld footage.",
+    "A video where the camera lacks stability and shakes during the shot.",
+    "A shot where the camera is unsteady.",
+    "A video where the camera movement feels unstable.",
+    "A scene where the camera has noticeable wobble.",
+    "A video where movement causes an unsteady frame.",
+    "A shot with a handheld-like feel due to camera motion.",
+    "A video where the footage appears shaky or vibrating.",
+    "A shot where the camera lacks stability.",
+    "A scene where the camera motion is erratic or unbalanced."
+  ],
+  "pos_rule_str": "self.cam_motion.steadiness in ['unsteady', 'very_unsteady']",
+  "neg_rule_str": "self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']",
+  "easy_neg_rule_str": {
+    "not_shaky_camera_excluding_smooth": "self.cam_motion.steadiness not in ['smooth', 'unsteady', 'very_unsteady']"
+  }
+}

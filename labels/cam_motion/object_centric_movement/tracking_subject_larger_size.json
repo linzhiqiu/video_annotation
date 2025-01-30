@@ -1,0 +1,46 @@
+{
+    "label": "Tracking Shot: Subject Larger",
+    "label_name": "tracking_subject_larger_size",
+    "def_question": [
+        "Does the subject look larger during the tracking shot?",
+        "Does the subject appear to grow larger in the frame during the tracking shot?",
+        "Does the subject take up more of the frame during the tracking shot?",
+        "Is the camera moving closer to the subject or zooming in during the tracking motion?",
+        "Does the subject take up more of the frame as the tracking progresses?",
+        "Does the camera reduce the distance to the subject or zoom in during the shot?"
+    ],
+    "alt_question": [
+        "Is the camera making the subject look larger by moving closer or zooming in?",
+        "Does the subject’s size appear to increase as the camera tracks?",
+        "Is the camera emphasizing the subject by making it appear larger?",
+        "Does the tracking movement result in the subject filling more of the frame?",
+        "Is the camera’s movement reducing the background space while enlarging the subject?",
+        "Does the tracking shot make the subject appear more dominant by increasing its size?",
+        "Is the shot designed to gradually bring the subject closer to the viewer?",
+        "Does the tracking result in a magnified appearance of the subject?",
+        "Is the subject framed to increase in size as the camera moves?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the subject looks larger as the camera moves.",
+        "A shot where the subject grows in size within the frame while tracking.",
+        "A video where the camera moves closer to the subject or zooms in during the tracking motion.",
+        "A scene where the subject fills more of the frame as tracking progresses.",
+        "A tracking shot where the subject appears more dominant due to size increase."
+    ],
+    "alt_prompt": [
+        "A video where the subject is emphasized by appearing larger as the camera tracks.",
+        "A shot where the camera movement results in the subject filling more of the frame.",
+        "A scene where the camera reduces background space to enlarge the subject.",
+        "A video where the tracking makes the subject appear progressively bigger.",
+        "A shot where the camera adjusts its movement to frame the subject larger.",
+        "A scene where the subject’s presence in the frame grows as the shot continues."
+    ],
+    "pos_rule_str": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger'",
+    "neg_rule_str": "not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'larger'",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+        "subject_gets_smaller_or_same": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change != 'larger'"
+    }
+}

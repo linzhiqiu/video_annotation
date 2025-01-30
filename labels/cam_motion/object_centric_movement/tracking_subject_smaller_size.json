@@ -1,0 +1,45 @@
+{
+    "label": "Tracking Shot: Subject Smaller",
+    "label_name": "tracking_subject_smaller_size",
+    "def_question": [
+        "Does the subject look smaller during the tracking shot?",
+        "Does the subject appear to shrink in the frame during the tracking shot?",
+        "Does the subject take up less of the frame as the tracking progresses?",
+        "Does the subject’s size appear to decrease as the camera tracks?",
+        "Is the camera making the subject look smaller by moving away or zooming out?",
+        "Does the tracking movement result in the subject occupying less of the frame?",
+        "Is the camera moving further away from the subject or zooming out during the tracking motion?"
+    ],
+    "alt_question": [
+        "Does the camera increase the distance to the subject or zoom out?",
+        "Is the camera emphasizing distance by making the subject appear smaller?",
+        "Is the camera’s movement increasing background space while shrinking the subject?",
+        "Does the tracking shot make the subject appear less dominant by decreasing its size?",
+        "Is the shot designed to gradually distance the subject from the viewer?",
+        "Does the tracking result in a minimized appearance of the subject?",
+        "Is the subject framed to reduce in size as the camera moves?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the subject looks smaller as the camera moves.",
+        "A shot where the subject shrinks in size within the frame while tracking.",
+        "A video where the camera moves away from the subject or zooms out during the tracking motion.",
+        "A scene where the subject occupies less of the frame as tracking progresses.",
+        "A tracking shot where the subject appears less dominant due to size decrease."
+    ],
+    "alt_prompt": [
+        "A video where the subject is de-emphasized by appearing smaller as the camera tracks.",
+        "A shot where the camera movement results in the subject occupying less of the frame.",
+        "A scene where the camera increases background space to reduce the subject’s size.",
+        "A video where the tracking makes the subject appear progressively smaller.",
+        "A shot where the camera adjusts its movement to frame the subject smaller.",
+        "A scene where the subject’s presence in the frame diminishes as the shot continues."
+    ],
+    "pos_rule_str": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'smaller'",
+    "neg_rule_str": "not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'smaller'",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+        "subject_gets_larger_or_same": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change != 'smaller'"
+    }
+}

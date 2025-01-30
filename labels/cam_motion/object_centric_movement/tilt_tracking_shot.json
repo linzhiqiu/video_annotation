@@ -1,0 +1,47 @@
+{
+    "label": "Tilt Tracking Shot",
+    "label_name": "tilt_tracking_shot",
+    "def_question": [
+      "Does the camera tilt to track the subjects?",
+      "Is this a tilt-tracking shot?",
+      "Does the camera tilt to follow the subjects?",
+      "Does the camera tilt vertically to follow the subjects?",
+      "Does the camera tilt up or down to track the subjects?",
+      "Does the shot involve the camera tilting to keep the subject in frame?",
+      "Is the subject tracked with a vertical camera tilt?",
+      "Does the camera angle shift up or down to follow the subjects?",
+      "Does the camera maintain the subject in frame by tilting up or down?",
+      "Is this a tracking shot achieved through camera tilting?"
+    ],
+    "alt_question": [
+      "Is the camera tilting instead of panning to track motion?",
+      "Is the camera adjusting its vertical angle to follow a subject’s movement?",
+      "Is the motion of the subject followed solely through tilting?",
+      "Is the camera fixed in position while tilting to follow the action?"
+    ],
+    "def_prompt": [
+      "A tracking shot where the camera tilts to follow the subjects.",
+      "A tilt-tracking shot.",
+      "A shot where the camera tilts up or down to track the subject’s motion.",
+      "A video where the camera maintains the subject in frame through vertical tilting.",
+      "A scene where the camera tilts vertically to follow the subjects.",
+      "A shot where the camera tilts to track the subject’s movement."
+    ],
+    "alt_prompt": [
+      "A shot where the camera tilts up or down while keeping the subject centered.",
+      "A video where the camera follows the motion using vertical tilting.",
+      "A scene where the camera remains stationary while tilting to follow action.",
+      "A video where the camera keeps the subject in view through controlled tilting.",
+      "A scene where subject tracking is achieved purely through camera tilting."
+    ],
+    "pos_rule_str": "self.cam_motion.tracking_shot_types == ['tilt']",
+    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['tilt']",
+    "easy_neg_rule_str": {
+      "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+      "other_tracking_shots": "self.cam_motion.is_tracking and not 'tilt' in self.cam_motion.tracking_shot_types",
+      "aerial_tracking_shot": "'aerial' in self.cam_motion.tracking_shot_types and not 'tilt' in self.cam_motion.tracking_shot_types",
+      "side_tracking_shot": "'side' in self.cam_motion.tracking_shot_types and not 'tilt' in self.cam_motion.tracking_shot_types"
+    }
+}

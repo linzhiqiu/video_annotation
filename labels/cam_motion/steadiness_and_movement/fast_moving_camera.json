@@ -1,0 +1,47 @@
+{
+    "label": "Fast Moving Camera",
+    "label_name": "fast_moving_camera",
+    "def_question": [
+      "Does the camera have noticeable motion at a fast speed?",
+      "Is the camera moving rapidly in the shot?",
+      "Is the camera moving at a noticeably high speed?"
+    ],
+    "alt_question": [
+      "Is the camera's movement quick?",
+      "Does the camera motion feel fast and dynamic?",
+      "Is the camera shifting positions rapidly?",
+      "Does the camera travel across the scene at high speed?",
+      "Is the camera movement sudden and energetic?",
+      "Is the camera capturing motion in a fast-paced manner?",
+      "Does the camera exhibit noticeable movement at a fast speed?",
+      "Is the camera moving quickly?",
+      "Is the camera shifting directions rapidly?",
+      "Does the camera move at an accelerated pace?",
+      "Is the camera motion fast and engaging?",
+      "Is the camera capturing motion dynamically?",
+      "Is the camera's movement swift and noticeable?"
+    ],
+    "def_prompt": [
+      "A video where the camera has noticeable motion at a fast speed.",
+      "A video where the camera moves rapidly within the shot.",
+      "A shot where the camera moves at a noticeably high speed."
+    ],
+    "alt_prompt": [
+      "A scene where the camera motion feels fast and dynamic.",
+      "A video where the camera's movement is quick and energetic.",
+      "A shot where the camera shifts positions rapidly.",
+      "A scene where the camera travels across the frame at high speed.",
+      "A video where the camera movement is sudden and engaging.",
+      "A shot where the camera captures motion in a fast-paced manner.",
+      "A shot where the camera exhibits noticeable movement at a fast speed.",
+      "A video where the camera moves quickly.",
+      "A scene where the camera shifts directions rapidly.",
+      "A shot where the camera moves at an accelerated pace.",
+      "A video where the camera motion is fast and engaging.",
+      "A shot where the camera captures motion dynamically.",
+      "A video where the camera's movement is swift and noticeable."
+    ],
+    "pos_rule_str": "(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'fast'",
+    "neg_rule_str": "(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'fast')"
+  }
+  

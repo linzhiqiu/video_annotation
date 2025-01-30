@@ -1,0 +1,46 @@
+{
+    "label": "Side Tracking Shot",
+    "label_name": "side_tracking_shot",
+    "def_question": [
+        "Is it a tracking shot with the camera moving from the side to follow the subject?",
+        "Is this a side-tracking shot?",
+        "Does the camera move left or right to follow the subject?",
+        "Does the camera truck left or right to follow the subject?",
+        "Is the subject tracked with the camera moving sideways?",
+        "Does the shot involve the camera trucking from the side to follow the motion?",
+        "Is the camera moving along the side of the subject in this tracking shot?"
+    ],
+    "alt_question": [
+        "Does the camera move parallel to the subject?",
+        "Is the subject followed with a lateral camera movement?",
+        "Does the camera track the subjects from the side without leading or trailing?",
+        "Is the perspective framed from a direct side angle?",
+        "Is the camera movement strictly horizontal along the subject’s motion?"
+    ],
+    "def_prompt": [
+        "A tracking shot where the camera moves from the side to follow the subject.",
+        "A side-tracking shot.",
+        "A side-tracking shot where the camera moves parallel to the subject.",
+        "A shot where the camera trucks left or right to track the subject’s movement.",
+        "A video where the camera follows the subject’s motion from the side.",
+        "A shot where the camera moves along the side of the subject while tracking."
+    ],
+    "alt_prompt": [
+        "A video where the camera follows the subject from a lateral position.",
+        "A scene where the camera moves strictly sideways to maintain framing.",
+        "A shot where the camera moves laterally to track the subject’s movement.",
+        "A scene where the camera remains at the side while tracking the subject.",
+        "A video where the camera keeps a constant distance while trucking left or right.",
+        "A shot where the camera moves alongside the subject’s movement.",
+        "A scene where the tracking shot is achieved purely through lateral movement."
+    ],
+    "pos_rule_str": "self.cam_motion.tracking_shot_types == ['side']",
+    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['side']",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+        "other_tracking_shots": "self.cam_motion.is_tracking and not 'side' in self.cam_motion.tracking_shot_types",
+        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types"
+    }
+}

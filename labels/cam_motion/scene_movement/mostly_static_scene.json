@@ -1,0 +1,35 @@
+{
+  "label": "Mostly Static Scene",
+  "label_name": "mostly_static_scene",
+  "def_question": [
+    "Is the scene in the video mostly static with minimal movement?",
+    "Does the video feature a primarily still scene with minor motion?",
+    "Is the scene mostly still without motion?"
+],
+"alt_question": [
+    "Are there small, infrequent movements in an otherwise static scene?",
+    "Is the scene almost completely still but not entirely?",
+    "Does the scene contain occasional minor movement?",
+    "Are there small, subtle movements in the frame?",
+    "Is the environment largely static with only slight motion?",
+    "Does the shot contain minimal but noticeable object motion?",
+    "Is the movement in the scene limited and infrequent?",
+    "Are only a few objects moving slightly while the rest remain still?"
+  ],
+  "def_prompt": [
+    "A video where the scene is mostly static with minimal movement.",
+    "A shot where the scene is primarily motionless.",
+    "A video where the scene is mostly still without motion."
+  ],
+  "alt_prompt": [
+    "A scene where most of the frame remains still with some minor movement.",
+    "A video where movement is minimal but present.",
+    "A shot where a mostly static environment contains occasional motion.",
+    "A scene where objects are largely still but not entirely motionless.",
+    "A video where only a few elements shift while the rest remain still.",
+    "A shot where subtle movements exist in an otherwise still scene.",
+    "A video where minor object motion is present in a mostly static setting."
+  ],
+  "pos_rule_str": "self.cam_motion.scene_movement in ['mostly_static', 'static']",
+  "neg_rule_str": "self.cam_motion.scene_movement in ['dynamic']"
+}

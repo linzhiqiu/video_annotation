@@ -1,0 +1,43 @@
+{
+    "label": "Slowly Moving Camera",
+    "label_name": "slow_moving_camera",
+    "def_question": [
+      "Does the camera have noticeable motion but at a slow motion speed?",
+      "Is the camera moving slowly in the shot?",
+      "Is the camera’s movement slow?",
+      "Is the camera moving at a noticeably slow rate?"
+    ],
+    "alt_question": [
+      "Is the camera shifting position at a slow and steady pace?",
+      "Does the camera pan, tilt, or move smoothly at a slow speed?",
+      "Does the camera’s movement appear slow and deliberate?",
+      "Is the camera’s motion smooth and gradual rather than fast or abrupt?",
+      "Is the camera moving at a controlled and slow speed?",
+      "Does the camera have a noticeable motion at a slow speed?",
+      "Is the camera shifting position at a slow speed?",
+      "Does the camera move smoothly and at a slow pace?",
+      "Is the camera tracking or following the subject at a slow speed?",
+      "Is the camera movement gentle and unhurried?"
+    ],
+    "def_prompt": [
+      "A video where the camera has noticeable motion but at a slow motion speed.",
+      "A shot where the camera is moving slowly.",
+      "A video where the camera moves at a slow speed."
+    ],
+    "alt_prompt": [
+      "A video where the camera moves at a controlled and slow speed.",
+      "A shot where the camera’s motion is smooth and gradual rather than fast or abrupt.",
+      "A scene where the camera’s movement appears slow and deliberate.",
+      "A video where the camera shifts position at a slow and steady pace.",
+      "A shot where the camera pans, tilts, or moves smoothly at a slow speed.",
+      "A video where the camera tracks or moves at a noticeably slow rate.",
+      "A scene where the camera’s movement is gradual.",
+      "A video where the camera shifts position slowly.",
+      "A shot where the camera moves smoothly at a slow pace.",
+      "A video where the camera tracks or follows the subject at a slow speed.",
+      "A video where the camera movement is gentle and unhurried."
+    ],
+    "pos_rule_str": "(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'slow'",
+    "neg_rule_str": "(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'slow')"
+  }
+  

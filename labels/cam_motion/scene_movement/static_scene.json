@@ -1,0 +1,45 @@
+{
+    "label": "Static Scene",
+    "label_name": "static_scene",
+    "def_question": [
+      "Is the scene in the video completely static?",
+      "Is the scene in the video completely static, aside from potential camera movement?",
+      "Does the video feature a static, unmoving scene?",
+      "Is everything in the scene still, aside from potential camera motion?",
+      "Are there no objects moving in the scene, despite any camera motion?",
+      "Is the scene static, with no movement apart from the camera?"
+    ],
+    "alt_question": [
+      "Is there no movement in the scene itself?",
+      "Does the scene contain no dynamic motion?",
+      "Is everything in the frame motionless?",
+      "Is the environment completely still?",
+      "Does nothing move within the scene, aside from the camera?",
+      "Is the scene entirely devoid of moving elements?",
+      "Is the content of the scene static while the camera moves?"
+    ],
+    "def_prompt": [
+      "A video where the scene is completely static.",
+      "A video where the scene remains still, with no movement except for possible camera motion.",
+      "A shot where everything in the scene remains motionless.",
+      "A scene where no objects move, despite any camera motion.",
+      "A video where the environment is entirely still.",
+      "A video with a completely still scene.",
+      "A shot where the scene stays fixed while the camera may move.",
+      "A video where the environment stays motionless.",
+      "A scene where nothing moves apart from the potential camera's motion."
+    ],
+    "alt_prompt": [
+      "A shot where nothing within the frame moves.",
+      "A scene where no elements exhibit motion.",
+      "A video where the content remains static.",
+      "A shot where the objects in the scene do not move.",
+      "A scene where there is no dynamic motion within the frame."
+    ],
+    "pos_rule_str": "self.cam_motion.scene_movement in ['static']",
+    "neg_rule_str": "self.cam_motion.scene_movement not in ['mostly_static', 'dynamic']",
+    "easy_neg_rule_str": {
+      "dynamic_scene": "self.cam_motion.scene_movement not in ['dynamic']"
+    }
+  }
+  

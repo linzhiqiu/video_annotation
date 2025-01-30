@@ -1,0 +1,59 @@
+{
+    "label": "Only Forward Movement (Relative to Camera)",
+    "label_name": "only_forward_wrt_camera",
+    "def_question": [
+        "Does the camera move only forward (not zooming in) with respect to the initial frame?",
+        "Is forward motion the only camera movement from the initial frame?",
+        "Is there no other camera motion except forward movement relative to the initial frame?",
+        "Does the camera move forward with respect to itself without any other movement or zooming?",
+        "Is the camera only moving forward relative to the first frame?",
+        "Is the camera only dollying in with respect to itself?",
+        "Is the camera only dollying forward with respect to itself?",
+        "Is the camera only pushing forward without zooming in relative to the first frame?"
+    ],
+    "alt_question": [
+        "Is the camera only moving forward?",
+        "Is the camera only moving forward (not zooming in) in the scene, creating a noticeable parallax effect?",
+        "Is forward motion the only camera movement in this shot?",
+        "Does the camera travel only forward in space, rather than zooming in?",
+        "Is the camera exclusively moving forward relative to its initial position?",
+        "Does the camera advance in a straight forward direction without any other motions?",
+        "Is the only movement in this shot a forward motion?",
+        "Is there no side, tilt, or zoom adjustments while moving forward?",
+        "Does the camera progress ahead without any vertical or lateral changes?",
+        "Does the tracking movement consist only of a forward push?",
+        "Is the camera strictly advancing forward with no other motion applied?",
+        "Does the shot feature only a single directional forward movement?"
+    ],
+    "def_prompt": [
+        "A video where the camera moves only forward (not zooming in) with respect to the initial frame.",
+        "A shot where the camera advances in space relative to its starting position without any additional motion.",
+        "A video where the camera exclusively moves forward with respect to the initial frame, creating a noticeable parallax effect.",
+        "A scene where the camera progresses forward with respect to itself without any lateral or vertical movement.",
+        "The camera only dollying forward with respect to itself.",
+        "The camera only pushes forward with respect to itself."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves forward with no additional movement type.",
+        "The camera moves forward without incorporating other movement types.",
+        "The camera dollies forward.",
+        "The camera advances forward.",
+        "Camera moves forward.",
+        "A shot where the forward motion is the only movement present in the scene.",
+        "A shot where the camera moves strictly forward without side-to-side or vertical adjustments.",
+        "A video where the camera advances in a single direction without any motion complexity.",
+        "A scene where the camera moves straight ahead without tilting or panning.",
+        "A video where the camera strictly maintains forward movement with no deviation.",
+        "A shot where the tracking movement is purely forward without other motions.",
+        "A scene where the only motion is the camera pushing ahead in a single direction."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "self.cam_motion.camera_forward_backward_cam_frame != 'forward' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "easy_neg_rule_str": {
+        "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'"
+    },
+    "hard_neg_rule_str": {
+        "zooming_in": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'forward' and self.cam_motion.camera_zoom == 'in'",
+        "compound_motion_with_forward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward'])"
+    }
+}

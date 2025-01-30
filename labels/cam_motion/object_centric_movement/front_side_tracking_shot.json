@@ -1,0 +1,46 @@
+{
+  "label": "Front-Side Tracking Shot",
+  "label_name": "front_side_tracking_shot",
+  "def_question": [
+    "Is it a tracking shot with the camera leading from the front and to the side of the subject?",
+    "Is it a front-side tracking shot?",
+    "Does the tracking shot lead from the front and slightly to the side of the subject?",
+    "Is the camera positioned ahead and to the side of the subject while tracking?",
+    "Does the shot show the camera leading from a front-side angle?",
+    "Is it a tracking shot filmed from in front and to the side of the subjects?"
+  ],
+  "alt_question": [
+    "Does the camera track the subject from a diagonal front position?",
+    "Is the camera slightly ahead and off to the side while tracking?",
+    "Does the camera follow the subject while remaining in front and angled?",
+    "Is the perspective framed slightly to the front and side of the subject?",
+    "Does the shot create a leading effect while maintaining a side view?",
+    "Is the camera positioned in a way that guides the subject while staying angled?"
+  ],
+  "def_prompt": [
+    "A tracking shot where the camera leads from the front and to the side of the subject.",
+    "A shot where the camera moves diagonally ahead of the subject while tracking.",
+    "A video where the camera leads the subject from a front-side perspective.",
+    "A scene where the camera maintains a leading position at an angle.",
+    "A tracking shot filmed with the camera positioned slightly ahead and to the side."
+  ],
+  "alt_prompt": [
+    "A shot where the camera leads from a diagonal front position.",
+    "A video where the subject moves behind while the camera tracks slightly ahead and to the side.",
+    "A scene where the camera leads the movement from an angled front perspective.",
+    "A video where the camera is not directly in front but slightly off to the side.",
+    "A shot where the subject is framed from a leading diagonal view.",
+    "A scene where the camera leads in a front-side direction while maintaining subject visibility.",
+    "A shot where the perspective is positioned slightly off-center ahead of the subject."
+  ],
+  "pos_rule_str": "set(self.cam_motion.tracking_shot_types) == set(['lead','side'])",
+  "neg_rule_str": "set(self.cam_motion.tracking_shot_types) != set(['lead','side'])",
+  "easy_neg_rule_str": {
+    "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+  },
+  "hard_neg_rule_str": {
+    "other_tracking_shots": "self.cam_motion.is_tracking and not ('lead' in self.cam_motion.tracking_shot_types and 'side' in self.cam_motion.tracking_shot_types)",
+    "lead_tracking_shot": "'lead' in self.cam_motion.tracking_shot_types and 'side' not in self.cam_motion.tracking_shot_types",
+    "side_tracking_shot": "'side' in self.cam_motion.tracking_shot_types and 'lead' not in self.cam_motion.tracking_shot_types"
+  }
+}

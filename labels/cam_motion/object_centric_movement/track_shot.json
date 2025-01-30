@@ -1,0 +1,40 @@
+{
+    "label": "Tracking Shot",
+    "label_name": "tracking_shot",
+    "def_question": [
+      "Is it a tracking shot?",
+      "Does the camera move to follow the subjects in the scene?",
+      "Is this a shot where the camera follows the movement of subjects?",
+      "Does the camera track the subjects as they move?",
+      "Does the camera follow one or more subjects in this scene?"
+    ],
+    "alt_question": [
+      "Is the camera tracking a moving subject?",
+      "Does the camera maintain focus on a subject while moving?",
+      "Is the camera following an object or person throughout the scene?",
+      "Does the camera stay locked onto a subject while in motion?",
+      "Is this a shot where the camera dynamically follows an actor or object?",
+      "Does the shot involve a moving camera that follows the scene's action?",
+      "Is the perspective shifting to maintain framing of a moving subject?"
+    ],
+    "def_prompt": [
+      "A video where the camera moves to follow the subjects in the scene.",
+      "A shot where the camera tracks a moving subject throughout the frame.",
+      "The camera tracks the subjects as they move in the scene.",
+      "A video where the camera follows the movement of subjects.",
+      "A shot where the camera follows the subjects as they move."
+    ],
+    "alt_prompt": [
+      "A video where the camera continuously moves to maintain focus on a subject.",
+      "A shot that follows an actor, object, or scene movement in a continuous motion.",
+      "A video where the camera stays locked onto a moving subject.",
+      "A shot where the perspective follows a subject dynamically.",
+      "A video where the camera adjusts its movement to match a moving character.",
+      "A scene where the camera is tracking a person or object.",
+      "A shot where the camera movement is synchronized with the subject’s motion.",
+      "A video where the camera follows a character through the environment.",
+      "A scene where the camera moves continuously to follow a subject."
+    ],
+    "pos_rule_str": "self.cam_motion.is_tracking",
+    "neg_rule_str": "not self.cam_motion.is_tracking"
+}  

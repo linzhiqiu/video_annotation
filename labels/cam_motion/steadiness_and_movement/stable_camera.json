@@ -1,0 +1,49 @@
+{
+    "label": "Stable Camera Motion",
+    "label_name": "stable_camera_motion",
+    "def_question": [
+      "Is the camera movement smooth and stable?",
+      "Does the camera move in a steady, controlled manner?",
+      "Is the camera motion stable, like a steadicam shot?",
+      "Does the camera move without unintended vibrations or shaking?",
+      "Is the camera motion free of shakiness?",
+      "Does the camera show smooth, steadicam-like movement?",
+      "Does the camera move smoothly without any wobble?",
+      "Does the shot feel smooth, like it was filmed using a steadicam?"
+    ],
+    "alt_question": [
+      "Does the camera move fluidly?",
+      "Is the camera motion free of sudden jerks?",
+      "Does the camera exhibit controlled movement?",
+      "Is the camera free from excessive vibrations?",
+      "Does the camera glide through the scene without shaking?",
+      "Is the footage stabilized and smooth?"
+    ],
+    "def_prompt": [
+      "A video where the camera movement is smooth and stable.",
+      "A video where the camera moves in a steady, controlled manner.",
+      "A shot where the camera exhibits stable motion like a steadicam.",
+      "A scene where the camera moves without unintended vibrations or shaking.",
+      "A video where the camera motion is free of shakiness.",
+      "A shot where the camera shows smooth, steadicam-like movement.",
+      "A scene where the camera moves smoothly without any wobble.",
+      "A video where the shot feels smooth, like it was filmed using a steadicam."
+    ],
+    "alt_prompt": [
+      "A shot where the camera moves fluidly.",
+      "A video where the camera motion is free of sudden jerks.",
+      "A scene where the camera exhibits controlled movement.",
+      "A shot where the camera is free from excessive vibrations.",
+      "A shot where the camera glides through the scene without shaking.",
+      "A video where the footage is stabilized and smooth."
+    ],
+    "pos_rule_str": "self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']",
+    "neg_rule_str": "self.cam_motion.steadiness not in ['smooth', 'very_smooth'] or self.cam_motion.camera_movement in ['no']",
+    "hard_neg_rule_str": {
+      "fixed_camera_without_motion": "self.cam_motion.steadiness in ['static'] or self.cam_motion.camera_movement in ['no']"
+    },
+    "easy_neg_rule_str": {
+      "quite_shaky_camera": "self.cam_motion.steadiness in ['unsteady', 'very_unsteady']"
+    }
+  }
+  
