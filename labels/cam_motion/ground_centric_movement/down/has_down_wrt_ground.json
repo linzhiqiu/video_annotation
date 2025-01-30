@@ -1,0 +1,63 @@
+{
+    "label": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+    "label_name": "has_down_wrt_ground",
+    "def_question": [
+        "Does the camera move downward (not tilting down) in the scene?",
+        "Is the camera moving downward in the scene?",
+        "Is the camera moving downward?",
+        "Is the camera moving downward, creating a noticeable vertical parallax effect?",
+        "Is the camera moving downward (not tilting down) in the scene, creating a noticeable vertical parallax effect?",
+        "Does the camera move in the downward direction relative to the ground?",
+        "Is the camera lowering through the space?",
+        "Is the camera performing a pedestal down?",
+        "Is the camera descending downward?",
+        "Is the camera moving vertically downward?",
+        "Does the shot feature a clear downward motion of the camera?",
+        "Is the camera's movement progressing downward rather than upward?",
+        "Is the downward motion of the camera clear in this shot?",
+        "Does the camera travel downward in space, rather than tilting down?"
+    ],
+    "alt_question": [
+        "Is the camera descending in the scene?",
+        "Does the perspective shift downward rather than relying on tilt?",
+        "Is the camera physically traveling downward instead of rotating?",
+        "Is the camera lowering, creating a strong sense of vertical movement?"
+    ],
+    "def_prompt": [
+        "A shot where the camera lowers downward, rather than tilting down.",
+        "A video where the camera travels downward, creating noticeable vertical parallax.",
+        "A scene where the camera moves physically downward instead of tilting.",
+        "A tracking shot where the camera moves downward relative to the ground plane.",
+        "A shot where the camera moves straight down, maintaining a sense of vertical motion.",
+        "A video where the camera moves downward (not tilting down) in the scene.",
+        "A shot where the camera is moving downward within the scene.",
+        "A video where the camera moves downward, creating a noticeable vertical parallax effect.",
+        "A shot where the camera moves in the downward direction relative to the ground.",
+        "A video where the camera lowers through space.",
+        "A scene where the camera performs a pedestal down.",
+        "A video where the camera descends vertically.",
+        "A shot where the camera moves vertically downward.",
+        "The camera descends downward, moving vertically in the scene.",
+        "A video where the camera progresses downward rather than upward.",
+        "A shot where the downward motion of the camera is clearly visible.",
+        "A video where the camera travels downward in space rather than tilting down."
+    ],
+    "alt_prompt": [
+        "A scene where the shot features a clear downward motion of the camera.",
+        "A shot where the camera pedestal moves straight down.",
+        "A video where the camera moves in a downward direction within the scene.",
+        "A shot where the camera lowers rather than tilting down.",
+        "A video where the camera progresses downward, creating depth.",
+        "A scene where the camera moves down rather than up.",
+        "A shot where the perspective shifts downward dynamically.",
+        "A video where the camera maintains a continuous downward movement."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down == 'up')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "easy_neg_rule_str": {
+        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    },
+    "hard_neg_rule_str": {
+        "tilting_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    }
+}

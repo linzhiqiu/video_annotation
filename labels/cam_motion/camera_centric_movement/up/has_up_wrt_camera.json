@@ -1,0 +1,63 @@
+{
+    "label": "Has Upward Movement (Relative to Camera)",
+    "label_name": "has_up_wrt_camera",
+    "def_question": [
+        "Does the camera move upward (not tilting up) with respect to the initial frame?",
+        "Is the camera moving upward in space based on its starting position?",
+        "Is the camera moving upward (not tilting up) with respect to itself, creating a noticeable vertical parallax effect?",
+        "Is the upward motion of the camera clear in this shot by comparing the start and end of the shot?",
+        "Is the camera performing a pedestal up movement?",
+        "Is the camera elevating with respect to itself?"
+    ],
+    "alt_question": [
+        "Does the camera move upward (not tilting up)?",
+        "Is the camera moving upward?",
+        "Is there clear upward movement when comparing the start and end of the shot?",
+        "Does the camera travel upward in space, rather than tilting up?",
+        "Is the camera rising through the space?",
+        "Does the shot feature a clear upward motion of the camera?",
+        "Is the camera's movement progressing upward rather than downward?",
+        "Is the upward motion of the camera clear in this shot?",
+        "Does the camera travel upward in space, rather than tilting up?",
+        "Is the camera ascending in the scene?",
+        "Does the perspective shift upward rather than relying on tilt?",
+        "Is the camera physically traveling upward instead of rotating?",
+        "Is the camera rising, creating a strong sense of vertical movement?"
+    ],
+    "def_prompt": [
+        "A video where the camera moves upward (not tilting up) with respect to the initial frame.",
+        "A shot where the camera moves upward in space based on its starting position.",
+        "A video where the camera moves upward (not tilting up) with respect to itself, creating a noticeable vertical parallax effect.",
+        "A scene where the upward motion of the camera is clear by comparing the start and end of the shot.",
+        "The camera performs a pedestal up movement.",
+        "The camera elevates with respect to itself.",
+        "A video where the camera physically rises with respect to itself."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves upward, not tilting up.",
+        "A video where the camera is moving upward.",
+        "The camera moves upward in space based on its starting position.",
+        "The camera rises through the space.",
+        "The camera moves upward.",
+        "Camera ascends upward.",
+        "A scene where there is clear upward movement when comparing the start and end of the shot.",
+        "A video where the camera travels upward in space, rather than tilting up.",
+        "A shot where the camera rises through the space.",
+        "A video where the shot features a clear upward motion of the camera.",
+        "A scene where the camera's movement progresses upward rather than downward.",
+        "A video where the upward motion of the camera is clear.",
+        "A shot where the camera travels upward in space rather than tilting up.",
+        "A scene where the camera is ascending in the shot.",
+        "A video where the perspective shifts upward rather than relying on tilt.",
+        "A shot where the camera physically travels upward instead of rotating.",
+        "A video where the camera rises, creating a strong sense of vertical movement."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'",
+    "neg_rule_str": "(self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down_cam_frame != 'up') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down') and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "easy_neg_rule_str": {
+        "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    },
+    "hard_neg_rule_str": {
+        "tilting_up": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'up' and self.cam_motion.camera_tilt == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    }
+}

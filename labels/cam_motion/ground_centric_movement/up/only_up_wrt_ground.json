@@ -1,0 +1,49 @@
+{
+    "label": "Only Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+    "label_name": "only_up_wrt_ground",
+    "def_question": [
+        "Does the camera only move upward (not tilting up) with respect to the ground?",
+        "Is the camera only moving upward with respect to the ground?",
+        "Is the camera only moving upward without tilting up relative to the ground?",
+        "Is the camera only rising with respect to the ground?",
+        "Is the camera only performing a pedestal up (not tilting up) relative to the ground?"
+    ],
+    "alt_question": [
+        "Is the camera only moving upward in the scene?",
+        "Is the camera only moving upward (not tilting up) in the scene, creating a noticeable vertical parallax effect?",
+        "Relative to ground, is upward motion the only camera movement in this shot?",
+        "Does the camera travel only upward in space, rather than tilting up?",
+        "Is the camera exclusively moving upward in the scene?",
+        "Does the camera move straight up without any other motion?",
+        "Is the camera's motion restricted to only upward movement?",
+        "Does the tracking movement involve only an upward rise?",
+        "Is the camera moving up without any horizontal or rotational adjustments?"
+    ],
+    "def_prompt": [
+        "A video where the camera only moves upward (not tilting up) relative to the ground.",
+        "A shot where the camera moves straight up with respect to the ground without any other motion.",
+        "A video where the camera exclusively moves upward relative to the ground plane, creating a noticeable vertical parallax effect.",
+        "A scene where the camera moves only upward relative to the ground, avoiding tilting or other motions.",
+        "The camera is only performing a pedestal up with respect to the ground.",
+        "The camera is only rising with respect to the ground."
+    ],
+    "alt_prompt": [
+        "A tracking shot where the camera moves upward without incorporating other movement types.",
+        "A shot where the upward motion is the only movement present in the scene.",
+        "A shot where the camera moves strictly upward without horizontal or rotational movement.",
+        "A video where the camera rises in a single direction without any other adjustments.",
+        "A scene where the camera moves up without shifting horizontally.",
+        "A video where the camera strictly maintains upward movement with no deviation.",
+        "A shot where the tracking movement is purely upward with no other motion.",
+        "A scene where the only movement present is the camera rising vertically."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'up' and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "self.cam_motion.camera_up_down != 'up' or not self.cam_motion.check_if_no_motion(exclude=['up_down']) or self.cam_motion.camera_movement not in ['major_simple'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "easy_neg_rule_str": {
+        "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+    },
+    "hard_neg_rule_str": {
+        "tilting_up": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down != 'up' and self.cam_motion.camera_tilt == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "compound_motion_with_up": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'up' and not self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+    }
+}

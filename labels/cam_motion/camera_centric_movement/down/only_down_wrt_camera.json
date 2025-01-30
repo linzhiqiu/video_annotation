@@ -1,0 +1,55 @@
+{
+    "label": "Only Downward Movement (Relative to Camera)",
+    "label_name": "only_down_wrt_camera",
+    "def_question": [
+        "Does the camera only move downward (not tilting down) with respect to the initial frame?",
+        "Is downward motion the only camera movement from the initial frame?",
+        "Is there no other camera motion except downward movement relative to the initial frame?",
+        "Does the camera move downward with respect to itself without any other movement or tilting?",
+        "Is the camera only moving downward relative to the first frame?",
+        "Is the camera only performing a pedestal down movement?",
+        "Is the camera only descending with respect to itself?",
+        "Is the camera only moving downward without tilting down relative to the first frame?"
+    ],
+    "alt_question": [
+        "Is the camera only moving downward?",
+        "Is the camera only moving downward (not tilting down) in the scene, creating a noticeable vertical parallax effect?",
+        "Is downward motion the only camera movement in this shot?",
+        "Does the camera travel only downward in space, rather than tilting down?",
+        "Is the camera exclusively moving downward relative to its initial position?",
+        "Does the camera lower in a straight downward direction without any other motions?",
+        "Is the only movement in this shot a downward motion?",
+        "Is there no forward, sideways, or tilt adjustments while moving downward?",
+        "Does the camera descend without any horizontal changes?",
+        "Does the tracking movement consist only of a downward drop?",
+        "Is the camera strictly descending downward with no other motion applied?",
+        "Does the shot feature only a single directional downward movement?"
+    ],
+    "def_prompt": [
+        "A video where the camera only moves downward (not tilting down) relative to the initial frame.",
+        "A shot where the camera lowers straight down with respect to the initial frame without any other motion.",
+        "A video where the camera exclusively moves downward relative to the initial frame, creating a noticeable vertical parallax effect.",
+        "A scene where the camera moves only downward relative to itself, avoiding tilting or other motions.",
+        "The camera is only performing a pedestal down movement.",
+        "The camera is only descending with respect to itself."
+    ],
+    "alt_prompt": [
+        "A tracking shot where the camera moves downward without incorporating other movement types.",
+        "A shot where the downward motion is the only movement present in the scene.",
+        "A shot where the camera moves strictly downward without forward or sideways movement.",
+        "A video where the camera descends in a single direction without any other adjustments.",
+        "A scene where the camera lowers without shifting horizontally.",
+        "A video where the camera strictly maintains downward movement with no deviation.",
+        "A shot where the tracking movement is purely downward with no other motion.",
+        "A scene where the only movement present is the camera lowering vertically."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'down' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "self.cam_motion.camera_up_down_cam_frame != 'down' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "easy_neg_rule_str": {
+        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'"
+    },
+    "hard_neg_rule_str": {
+        "tilting_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'down' and self.cam_motion.camera_tilt == 'down'",
+        "compound_motion_with_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'down' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down'])"
+    }
+}
