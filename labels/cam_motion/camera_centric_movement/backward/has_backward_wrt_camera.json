@@ -1,0 +1,63 @@
+{
+    "label": "Has Backward Movement (Relative to Camera)",
+    "label_name": "has_backward_wrt_camera",
+    "def_question": [
+        "Does the camera move backward (not zooming out) with respect to the initial frame?",
+        "Does the camera move backward in space based on its starting position?",
+        "Is the camera moving backward (not zooming out) with respect to itself, creating a noticeable parallax effect?",
+        "Is the backward motion of the camera clear in this shot by comparing the start and end of the shot?",
+        "Is the camera dollying out with respect to itself?",
+        "Is the camera pulling back with respect to itself?"
+    ],
+    "alt_question": [
+        "Does the camera move backward (not zooming out)?",
+        "Is the camera moving backward?",
+        "Is there clear backward movement when comparing the start and end of the shot?",
+        "Does the camera travel backward in space, rather than zooming out?",
+        "Is the camera pulling back through the space?",
+        "Does the shot feature a clear backward motion of the camera?",
+        "Is the camera's movement progressing backward rather than forward?",
+        "Is the backward motion of the camera clear in this shot?",
+        "Does the camera travel backward in space, rather than zooming out?",
+        "Is the camera retreating in the scene?",
+        "Does the perspective shift backward rather than relying on zoom?",
+        "Is the camera physically traveling backward instead of adjusting focal length?",
+        "Is the camera pulling back, creating a strong sense of depth?"
+    ],
+    "def_prompt": [
+        "A video where the camera moves backward (not zooming out) with respect to the initial frame.",
+        "A shot where the camera moves backward in space based on its starting position.",
+        "A video where the camera moves backward (not zooming out) with respect to itself, creating a noticeable parallax effect.",
+        "A scene where the backward motion of the camera is clear by comparing the start and end of the shot.",
+        "The camera pulls back with respect to itself.",
+        "The camera dollies backward with respect to itself.",
+        "A video where the camera dolly moves backward with respect to itself."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves backward (not zooming out).",
+        "A video where the camera is moving backward.",
+        "The camera moves backward in space based on its starting position.",
+        "The camera pulls back through the space.",
+        "The camera moves backward.",
+        "Camera retreats backward.",
+        "A scene where there is clear backward movement when comparing the start and end of the shot.",
+        "A video where the camera travels backward in space, rather than zooming out.",
+        "A shot where the camera pulls back through the space.",
+        "A video where the shot features a clear backward motion of the camera.",
+        "A scene where the camera's movement progresses backward rather than forward.",
+        "A video where the backward motion of the camera is clear.",
+        "A shot where the camera travels backward in space rather than zooming out.",
+        "A scene where the camera is retreating in the shot.",
+        "A video where the perspective shifts backward rather than relying on zoom.",
+        "A shot where the camera physically travels backward instead of adjusting focal length.",
+        "A video where the camera pulls back, creating a strong sense of depth."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'",
+    "neg_rule_str": "(self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward') and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "easy_neg_rule_str": {
+        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    },
+    "hard_neg_rule_str": {
+        "zooming_out": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    }
+}

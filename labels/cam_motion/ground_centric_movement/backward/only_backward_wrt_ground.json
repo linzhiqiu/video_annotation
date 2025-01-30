@@ -1,0 +1,49 @@
+{
+    "label": "Only Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+    "label_name": "only_backward_wrt_ground",
+    "def_question": [
+        "Does the camera only move backward (not zooming out) with respect to the ground?",
+        "Is the camera only moving backward with respect to the ground?",
+        "Is the camera only moving backward without zooming out relative to the ground?",
+        "Is the camera only pulling back with respect to the ground?",
+        "Is the camera only dollying backward (not zooming out) relative to the ground?"
+    ],
+    "alt_question": [
+        "Is the camera only moving backward in the scene?",
+        "Is the camera only moving backward (not zooming out) in the scene, creating a noticeable parallax effect?",
+        "Relative to ground, is backward motion the only camera movement in this shot?",
+        "Does the camera travel only backward in space, rather than zooming out?",
+        "Is the camera exclusively moving backward in the scene?",
+        "Does the camera move straight back without any other motion?",
+        "Is the camera's motion restricted to only backward movement?",
+        "Does the tracking movement involve only a backward pull?",
+        "Is the camera moving back without any vertical or lateral adjustments?"
+    ],
+    "def_prompt": [
+        "A video where the camera only moves backward (not zooming out) relative to the ground.",
+        "A shot where the camera moves straight back with respect to the ground without any other motion.",
+        "A video where the camera exclusively moves backward relative to the ground plane, creating a noticeable parallax effect.",
+        "A scene where the camera moves only backward relative to the ground, avoiding zooming or other motions.",
+        "The camera is only dollying backward with respect to the ground.",
+        "The camera is only pulling back with respect to the ground."
+    ],
+    "alt_prompt": [
+        "A tracking shot where the camera moves backward without incorporating other movement types.",
+        "A shot where the backward motion is the only movement present in the scene.",
+        "A shot where the camera moves strictly backward without lateral or vertical movement.",
+        "A video where the camera retreats in a single direction without any other adjustments.",
+        "A scene where the camera moves back without shifting side to side.",
+        "A video where the camera strictly maintains backward movement with no deviation.",
+        "A shot where the tracking movement is purely backward with no other motion.",
+        "A scene where the only movement present is the camera pulling back."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "self.cam_motion.camera_forward_backward != 'backward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "easy_neg_rule_str": {
+        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'forward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+    },
+    "hard_neg_rule_str": {
+        "zooming_out": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "compound_motion_with_backward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+    }
+}

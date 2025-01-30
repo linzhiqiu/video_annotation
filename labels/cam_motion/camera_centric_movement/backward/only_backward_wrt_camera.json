@@ -1,0 +1,59 @@
+{
+    "label": "Only Backward Movement (Relative to Camera)",
+    "label_name": "only_backward_wrt_camera",
+    "def_question": [
+        "Does the camera move only backward (not zooming out) with respect to the initial frame?",
+        "Is backward motion the only camera movement from the initial frame?",
+        "Is there no other camera motion except backward movement relative to the initial frame?",
+        "Does the camera move backward with respect to itself without any other movement or zooming?",
+        "Is the camera only moving backward relative to the first frame?",
+        "Is the camera only dollying out with respect to itself?",
+        "Is the camera only pulling back with respect to itself?",
+        "Is the camera only moving backward without zooming out relative to the first frame?"
+    ],
+    "alt_question": [
+        "Is the camera only moving backward?",
+        "Is the camera only moving backward (not zooming out) in the scene, creating a noticeable parallax effect?",
+        "Is backward motion the only camera movement in this shot?",
+        "Does the camera travel only backward in space, rather than zooming out?",
+        "Is the camera exclusively moving backward relative to its initial position?",
+        "Does the camera retreat in a straight backward direction without any other motions?",
+        "Is the only movement in this shot a backward motion?",
+        "Is there no side, tilt, or zoom adjustments while moving backward?",
+        "Does the camera pull back without any vertical or lateral changes?",
+        "Does the tracking movement consist only of a backward pull?",
+        "Is the camera strictly retreating backward with no other motion applied?",
+        "Does the shot feature only a single directional backward movement?"
+    ],
+    "def_prompt": [
+        "A video where the camera moves only backward (not zooming out) with respect to the initial frame.",
+        "A shot where the camera retreats in space relative to its starting position without any additional motion.",
+        "A video where the camera exclusively moves backward with respect to the initial frame, creating a noticeable parallax effect.",
+        "A scene where the camera pulls back with respect to itself without any lateral or vertical movement.",
+        "The camera only dollying backward with respect to itself.",
+        "The camera only pulls back with respect to itself."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves backward with no additional movement type.",
+        "The camera moves backward without incorporating other movement types.",
+        "The camera dollies backward.",
+        "The camera retreats backward.",
+        "Camera moves backward.",
+        "A shot where the backward motion is the only movement present in the scene.",
+        "A shot where the camera moves strictly backward without side-to-side or vertical adjustments.",
+        "A video where the camera retreats in a single direction without any motion complexity.",
+        "A scene where the camera moves straight back without tilting or panning.",
+        "A video where the camera strictly maintains backward movement with no deviation.",
+        "A shot where the tracking movement is purely backward without other motions.",
+        "A scene where the only motion is the camera pulling back in a single direction."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "self.cam_motion.camera_forward_backward_cam_frame != 'backward' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "easy_neg_rule_str": {
+        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward'"
+    },
+    "hard_neg_rule_str": {
+        "zooming_out": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward' and self.cam_motion.camera_zoom == 'out'",
+        "compound_motion_with_backward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward'])"
+    }
+}
