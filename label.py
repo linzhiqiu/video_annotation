@@ -1,6 +1,41 @@
-from typing import List, Dict
-from video_data import VideoData
+from __future__ import annotations
+from typing import List, Dict, Any
+from pathlib import Path
 import json
+import os
+
+from video_data import VideoData
+
+
+class LabelCollection:
+    def __init__(self) -> None:
+        self._labels: Dict[str, Label | LabelCollection] = {}
+        
+    def __getattr__(self, name: str) -> Label | LabelCollection:
+        try:
+            return self._labels[name]
+        except KeyError:
+            raise AttributeError(f"'LabelCollection' object has no attribute '{name}'")
+    
+    def _add_label(self, path_parts: List[str], label: Label) -> None:
+        current = self._labels
+        *dirs, filename = path_parts
+        
+        # Create nested structure for directories
+        for part in dirs:
+            if part not in current:
+                current[part] = LabelCollection()
+            current = current[part]._labels
+            
+        # Add the label under its filename (without .json)
+        current[filename.replace('.json', '')] = label
+    
+    def __str__(self, indent: str = "") -> str:
+        return "\n".join(
+            f"{indent}{key}/" + ("\n" + value.__str__(indent + "  ") if isinstance(value, LabelCollection)
+            else f": {value.label}")
+            for key, value in self._labels.items()
+        )
 class Rule:
     def __init__(self, rule: str):
         self.rule = rule
@@ -115,21 +150,63 @@ class Label:
     def __str__(self):
         return f"Label: {self.label}"
     
+    @classmethod
+    def load_all_labels(cls, labels_dir: str = "labels") -> LabelCollection:
+        """Load all label JSON files into a nested LabelCollection structure.
+        
+        The structure mirrors the directory hierarchy, allowing dot notation access:
+        labels.cam_motion.forward.has_forward_wrt_ground
+        
+        Args:
+            labels_dir: Path to the labels directory
+            
+        Returns:
+            A nested LabelCollection matching the directory hierarchy
+        """
+        labels_path = Path(labels_dir)
+        collection = LabelCollection()
+        success_count = 0
+        
+        def process_json_file(file_path: Path) -> None:
+            nonlocal success_count
+            try:
+                label = cls.from_json(file_path)
+                rel_path = file_path.relative_to(labels_path)
+                collection._add_label(rel_path.parts, label)
+                success_count += 1
+            except Exception as e:
+                print(f"\033[91mError loading {file_path}:\033[0m")
+                print(f"  {str(e)}")
+        
+        # Process all JSON files in directory tree
+        json_files = labels_path.rglob("*.json")
+        for file_path in json_files:
+            process_json_file(file_path)
+        
+        print(f"\nSuccessfully loaded {success_count} label files")
+        return collection
+    
     
 if __name__ == "__main__":
     from video_data import create_video_data_demo
     data = create_video_data_demo()
-    print(data)
-    # read rules from labels/cam_motion/ground_centric_movement/forward/has_forward_wrt_ground.json
-    rule_file = 'labels/cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included.json'
-    label = Label.from_json(rule_file)
-    print(label.label)
-    print(label.label_name)
-    print(label.def_question[0])
     
-    pos_rule = label.pos_rule
-    print(pos_rule.rule)
+    # Load all labels with nested structure
+    labels = Label.load_all_labels()
     
-    print(f"Evaluate pos_rule: {label.pos_rule(data)}")
-    print(f"Evaluate neg_rule: {label.neg_rule(data)}")
+    # Print the entire label hierarchy
+    print("\nLabel Hierarchy:")
+    print(labels)
+    
+    # Example: Access a specific label using dot notation
+    try:
+        # Access a label (adjust path based on your actual structure)
+        label = labels.cam_motion.ground_centric_movement.forward.has_forward_wrt_ground_birds_worms_included
+        print(f"\nAccessed specific label: {label}")
+        print(f"Label name: {label.label_name}")
+        print(f"First question: {label.def_question[0]}")
+        print(f"Evaluate pos_rule: {label.pos_rule(data)}")
+        print(f"Evaluate neg_rule: {label.neg_rule(data)}")
+    except AttributeError as e:
+        print(f"\nCouldn't access label: {e}")
     
