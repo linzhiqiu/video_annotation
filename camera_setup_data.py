@@ -15,7 +15,7 @@ class CameraSetupData:
         self.video_speed = "regular"
 
         # Camera point-of-view options:
-        # Options: "unknown", "first_person", "third_person_full_body", 
+        # Options: "unknown", "first_person", "third_person_full_body", "drone_pov",
         # "third_person_over_shoulder", "third_person_over_hip", 
         # "third_person_side_view", "third_person_top_down", 
         # "third_person_isometric", "broadcast_pov", "overhead_pov", 
@@ -108,7 +108,7 @@ class CameraSetupData:
     def set_camera_pov(self, pov):
         valid_options = ["unknown", "first_person", "third_person_full_body", "third_person_over_shoulder",
                          "third_person_over_hip", "third_person_side_view", "third_person_top_down",
-                         "third_person_isometric", "broadcast_pov", "overhead_pov", "selfie_pov",
+                         "third_person_isometric", "broadcast_pov", "overhead_pov", "selfie_pov", "drone_pov",
                          "screen_recording", "dashcam_pov", "locked_on_pov"]
         if pov in valid_options:
             self.camera_pov = pov
