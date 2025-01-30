@@ -190,8 +190,8 @@ class Label:
     
     
 if __name__ == "__main__":
-    # from video_data import create_video_data_demo
-    # data = create_video_data_demo()
+    from video_data import create_video_data_demo
+    data = create_video_data_demo()
     
     # Load all labels with nested structure
     labels = Label.load_all_labels()
