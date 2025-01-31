@@ -1,0 +1,52 @@
+{
+    "label": "Has Pan Right Movement",
+    "label_name": "has_pan_right",
+    "def_question": [
+        "Does the camera pan right in the scene?",
+        "Is the camera panning right in the scene?",
+        "Is this a rightward panning shot?",
+        "Does the camera execute a pan movement to the right?",
+        "Does the camera pan right (not move/truck right)?",
+        "Is this a right panning motion (not lateral movement)?",
+        "Does the shot feature a camera pan to the right (rotating, not moving sideways)?",
+        "Is the camera rotating right on its axis (not tracking right)?"
+    ],
+    "alt_question": [
+        "Is the camera rotating to the right?",
+        "Does the view shift from left to right?",
+        "Is the camera turning rightward?",
+        "Does the camera sweep to the right?",
+        "Is the camera swiveling right?",
+        "Is the camera pivoting right?",
+        "Does the camera move horizontally from left to right?",
+        "Is this a horizontal camera movement from left to right?"
+    ],
+    "def_prompt": [
+        "A shot where the camera pans right.",
+        "A video featuring a rightward panning movement.",
+        "A scene where the camera pans right (not trucks/moves right).",
+        "A shot with a right panning motion (camera rotating, not moving sideways).",
+        "A video where the camera rotates right on its axis, not tracking right.",
+        "A scene featuring a right panning camera movement (not lateral movement).",
+        "A shot where the camera pans right without sideways translation.",
+        "A video demonstrating a pure right panning motion (rotating, not tracking)."
+    ],
+    "alt_prompt": [
+        "A scene where the camera rotates to the right.",
+        "A shot where the view shifts from left to right.",
+        "A video where the camera turns rightward.",
+        "A scene where the camera sweeps to the right.",
+        "A shot with rightward camera rotation.",
+        "A video where the camera swivels right.",
+        "A scene where the camera pivots right.",
+        "A shot with horizontal camera movement from left to right."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'right'",
+    "neg_rule_str": "((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_pan != 'right') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_pan == 'left')) and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])",
+    "easy_neg_rule_str": {
+        "panning_left": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    },
+    "hard_neg_rule_str": {
+        "moving_right": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+    }
+}
