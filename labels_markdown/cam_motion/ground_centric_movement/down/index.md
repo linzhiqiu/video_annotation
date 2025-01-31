@@ -119,7 +119,7 @@ Does the camera move downward (not tilting down) in the scene?
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down == 'up')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down == 'up')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -228,7 +228,7 @@ Does the camera move downward (not tilting down) in the scene, or move west if i
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down'</code>
 
 <h4>🔴 Negative:</h4>
-<code>(self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_up_down != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down == 'up')</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_up_down != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down == 'up')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

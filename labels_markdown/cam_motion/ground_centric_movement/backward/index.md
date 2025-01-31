@@ -228,7 +228,7 @@ Does the camera move backward (not zooming out) in the scene, or move south if i
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward'</code>
 
 <h4>🔴 Negative:</h4>
-<code>(self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

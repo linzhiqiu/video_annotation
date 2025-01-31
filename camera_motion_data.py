@@ -224,6 +224,13 @@ class CameraMotionData:
         """Checks if only the specified motion(s) exist and all others are 'no'."""
         return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
     
+    def check_if_any_motion(self, include: List[str] = []):
+        """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
+        if not include:
+            return any(value != "no" for _, value in self.camera_motion_dict().items())
+        else:
+            return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
+    
     def camera_motion_dict_cam_frame(self):
         return {
             "forward_backward": self.camera_forward_backward_cam_frame, # Use this for camera-centric motion
@@ -240,7 +247,14 @@ class CameraMotionData:
     def check_if_no_motion_cam_frame(self, exclude: List[str] = []):
         """Checks if only the specified motion(s) exist and all others are 'no'."""
         return all(value == "no" for key, value in self.camera_motion_dict_cam_frame().items() if key not in exclude)
-  
+
+    def check_if_any_motion_cam_frame(self, include: List[str] = []):
+        """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
+        if not include:
+            return any(value != "no" for _, value in self.camera_motion_dict_cam_frame().items())
+        else:
+            return any(value != "no" for key, value in self.camera_motion_dict_cam_frame().items() if key in include)
+
     def camera_motion_list(self):
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
                 self.camera_pan, self.camera_up_down, self.camera_tilt, self.camera_arc,
