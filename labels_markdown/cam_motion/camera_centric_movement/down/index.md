@@ -119,7 +119,7 @@ Does the camera move downward (not tilting down) with respect to the initial fra
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down'</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down_cam_frame != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up')) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_up_down_cam_frame != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

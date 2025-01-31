@@ -119,7 +119,7 @@ Does the camera move backward (not zooming out) with respect to the initial fram
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward')) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward'))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

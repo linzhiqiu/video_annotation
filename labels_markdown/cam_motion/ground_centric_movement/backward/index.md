@@ -119,7 +119,7 @@ Does the camera move backward (not zooming out) in the scene?
 <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
