@@ -45,7 +45,61 @@ class CameraMotionData:
 
         # Text box for complex descriptions
         self.complex_motion_description = ""
-
+    
+    def set_camera_motion_attributes(self):
+        # Initialize all attributes to False
+        attributes = [
+            "forward", "backward", "zoom_in", "zoom_out", "up", "down", "tilt_up", "tilt_down", 
+            "roll_cw", "roll_ccw", "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam", 
+            "forward_cam", "backward_cam", "pan_right", "pan_left", "left", "right"
+        ]
+        
+        # if shot_transition is True, all attributes should be None
+        if self.shot_transition:
+            for attr in attributes:
+                setattr(self, attr, None)
+            return
+        
+        # If steadiness is "static" or camera movement is "no", all should be False
+        if self.steadiness == "static" or self.camera_movement == "no":
+            for attr in attributes:
+                setattr(self, attr, False)
+            return
+        
+        # If steadiness is "unsteady" or "very_unsteady", or camera_movement is "major_complex" or "minor", or arc/crane shot
+        uncertain_state = self.steadiness in ["unsteady", "very_unsteady"] or self.camera_movement in ["major_complex", "minor"] \
+                            or self.camera_arc != "no" or self.camera_crane != "no"
+        
+        def set_motion(attr, is_attr, no_or_unknown):
+            if uncertain_state and no_or_unknown:
+                is_attr = None
+            setattr(self, attr, is_attr)
+        
+        set_motion("forward", self.camera_forward_backward == "forward", self.camera_forward_backward == "no")
+        set_motion("backward", self.camera_forward_backward == "backward", self.camera_forward_backward == "no")
+        set_motion("zoom_in", self.camera_zoom == "in", self.camera_zoom == "no")
+        set_motion("zoom_out", self.camera_zoom == "out", self.camera_zoom == "no")
+        set_motion("up", self.camera_up_down == "up", self.camera_up_down == "no")
+        set_motion("down", self.camera_up_down == "down", self.camera_up_down == "no")
+        set_motion("tilt_up", self.camera_tilt == "up", self.camera_tilt == "no")
+        set_motion("tilt_down", self.camera_tilt == "down", self.camera_tilt == "no")
+        set_motion("roll_cw", self.camera_roll == "clockwise", self.camera_roll == "no")
+        set_motion("roll_ccw", self.camera_roll == "counter_clockwise", self.camera_roll == "no")
+        set_motion("crane_up", self.camera_crane == "crane_up", self.camera_crane == "no")
+        set_motion("crane_down", self.camera_crane == "crane_down", self.camera_crane == "no")
+        set_motion("arc_cw", self.camera_arc == "clockwise", self.camera_arc == "no")
+        set_motion("arc_ccw", self.camera_arc == "counter_clockwise", self.camera_arc == "no")
+        set_motion("pan_right", self.camera_pan == "right_to_left", self.camera_pan == "no")
+        set_motion("pan_left", self.camera_pan == "left_to_right", self.camera_pan == "no")
+        set_motion("left", self.camera_left_right == "left_to_right", self.camera_left_right == "no")
+        set_motion("right", self.camera_left_right == "right_to_left", self.camera_left_right == "no")
+        set_motion("up_cam", self.camera_up_down_cam_frame == "up", self.camera_up_down_cam_frame in ["no", "unknown"])
+        set_motion("down_cam", self.camera_up_down_cam_frame == "down", self.camera_up_down_cam_frame in ["no", "unknown"])
+        set_motion("forward_cam", self.camera_forward_backward_cam_frame == "forward", self.camera_forward_backward_cam_frame in ["no", "unknown"])
+        set_motion("backward_cam", self.camera_forward_backward_cam_frame == "backward", self.camera_forward_backward_cam_frame in ["no", "unknown"])
+        
+        
+        
     def set_steadiness(self, steadiness):
         valid_options = ["static", "very_smooth", "smooth", "unsteady", "very_unsteady"]
         if steadiness in valid_options:
@@ -259,7 +313,7 @@ class CameraMotionData:
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
                 self.camera_pan, self.camera_up_down, self.camera_tilt, self.camera_arc,
                 self.camera_crane, self.camera_roll]
-    
+        
     @classmethod
     def create(cls, **kwargs):
         """Create a CameraSetupData instance ensuring all attributes are set using setters and are verified."""
@@ -271,7 +325,19 @@ class CameraMotionData:
             else:
                 raise AttributeError(f"Invalid attribute: {key} or setter method not found")
         instance.verify()
+        instance.set_camera_motion_attributes()
         return instance
+    
+    def update(self, **kwargs):
+        """Update attributes of the CameraSetupData instance."""
+        for key, value in kwargs.items():
+            setter_method = getattr(self, f"set_{key}", None)
+            if setter_method and callable(setter_method):
+                setter_method(value)
+            else:
+                raise AttributeError(f"Invalid attribute: {key} or setter method not found")
+        self.verify()
+        self.set_camera_motion_attributes()
         
     def verify(self):
         if self.steadiness == "static" and self.camera_movement in ["major_simple", "minor"]:
