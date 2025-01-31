@@ -53,7 +53,7 @@
         "A video where the camera lowers, creating a strong sense of vertical movement."
     ],
     "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down'",
-    "neg_rule_str": "(self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down_cam_frame != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up') and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.camera_up_down_cam_frame != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up')) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
     "easy_neg_rule_str": {
         "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
