@@ -47,7 +47,7 @@
         "A video where the camera maintains strict backward motion with no deviation."
     ],
     "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
-    "neg_rule_str": "self.cam_motion.camera_forward_backward != 'backward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "neg_rule_str": "self.cam_motion.camera_forward_backward != 'backward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple', 'minor']",
     "easy_neg_rule_str": {
         "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'forward'"
     },
