@@ -3,15 +3,20 @@
     "label_name": "has_pan_left",
     "def_question": [
         "Does the camera pan left in the scene?",
+        "Does the camera pan leftward in the scene?",
+        "Does the camera pan from right to left?",
+        "Does the camera pan leftward?",
         "Is the camera panning left in the scene?",
-        "Is this a leftward panning shot?",
+        "Is the camera panning leftward?",
+        "Is the camera panning from right to left?",
         "Does the camera execute a pan movement to the left?",
         "Does the camera pan left (not move/truck left)?",
-        "Is this a left panning motion (not lateral movement)?",
         "Does the shot feature a camera pan to the left (rotating, not moving sideways)?",
-        "Is the camera rotating left on its axis (not tracking left)?"
+        "Is the camera rotating left on its axis (not trucking left)?"
     ],
     "alt_question": [
+        "Is this a leftward panning shot?",
+        "Is this a left panning motion (not lateral movement)?",
         "Is the camera rotating to the left?",
         "Does the view shift from right to left?",
         "Is the camera turning leftward?",
@@ -23,13 +28,18 @@
     ],
     "def_prompt": [
         "A shot where the camera pans left.",
+        "A shot where the camera pans leftward.",
+        "A shot where the camera pans from right to left.",
+        "The camera pans leftward.",
+        "The camera pans left in the scene.",
+        "The camera pans from right to left.",
         "A video featuring a leftward panning movement.",
         "A scene where the camera pans left (not trucks/moves left).",
         "A shot with a left panning motion (camera rotating, not moving sideways).",
-        "A video where the camera rotates left on its axis, not tracking left.",
+        "A video where the camera rotates left on its axis, not trucking left.",
         "A scene featuring a left panning camera movement (not lateral movement).",
         "A shot where the camera pans left without sideways translation.",
-        "A video demonstrating a pure left panning motion (rotating, not tracking)."
+        "A video demonstrating a pure left panning motion (rotating, not trucking)."
     ],
     "alt_prompt": [
         "A scene where the camera rotates to the left.",

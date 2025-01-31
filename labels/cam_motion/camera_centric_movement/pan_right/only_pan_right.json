@@ -2,13 +2,19 @@
     "label": "Only Pan Right Movement",
     "label_name": "only_pan_right",
     "def_question": [
+        "Does the camera only pan from left to right?",
         "Does the camera only pan right in the scene, without any other camera movements?",
+        "Does the camera only pan rightward, without any other camera movements?",
+        "Does the camera only pan rightward?",
+        "Is this a rightward panning shot?",
+        "Is this a panning shot from left to right?",
+        "Is the camera only panning rightward?",
         "Is the camera movement purely a rightward pan?",
         "Is this exclusively a right panning shot?",
         "Does the camera only execute a pan movement to the right?",
-        "Is this purely a right panning motion (no tracking or other movements)?",
+        "Is this purely a right panning motion (no trucking or other movements)?",
         "Does the shot feature only a camera pan to the right (rotating, not moving sideways)?",
-        "Is the camera only rotating right on its axis (no tracking or other movements)?"
+        "Is the camera only rotating right on its axis (no trucking or other movements)?"
     ],
     "alt_question": [
         "Is the camera only rotating to the right?",
@@ -22,15 +28,23 @@
     ],
     "def_prompt": [
         "A shot where the camera only pans right.",
-        "A video featuring exclusively rightward panning movement.",
-        "A scene with only a right panning motion (no tracking or other movements).",
-        "A shot containing only a rightward pan (camera rotating, not moving sideways).",
+        "A shot where the camera only pans rightward.",
+        "A shot where the camera only pans from left to right.",
+        "The camera only pans rightward.",
+        "The camera only pans right in the scene.",
+        "The camera only pans from left to right.",
+        "A scene where the camera pans right only (not trucks/moves right).",
+        "A video with pure right panning motion (rotating only, no translation).",
+        "A shot with a right panning motion (camera rotating, not moving sideways).",
         "A video where the camera only rotates right on its axis.",
-        "A scene with nothing but a right panning camera movement (no lateral movement).",
-        "A shot demonstrating exclusively right panning motion (no tracking).",
-        "A video with pure right panning motion (rotating only, no translation)."
+        "A shot demonstrating exclusively right panning motion (no trucking)."
     ],
     "alt_prompt": [
+        "A video featuring exclusively rightward panning movement.",
+        "A video featuring a rightward panning movement.",
+        "A scene with only a right panning motion (no trucking or other movements).",
+        "A shot containing only a rightward pan (camera rotating, not moving sideways).",
+        "A scene with nothing but a right panning camera movement (no lateral movement).",
         "A scene where the camera only rotates to the right.",
         "A shot with just a rightward turning motion.",
         "A video showing only a right sweeping movement.",
@@ -39,12 +53,12 @@
         "A video where the camera only pivots right.",
         "A scene with just horizontal camera movement from left to right."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'right' and not self.cam_motion.check_if_any_motion(exclude=['pan'])",
-    "neg_rule_str": "(self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan != 'right') or (self.cam_motion.camera_movement == 'major_complex') and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "pos_rule_str": "self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'right' and self.cam_motion.check_if_no_motion(exclude=['pan'])",
+    "neg_rule_str": "self.cam_motion.camera_pan != 'right' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) or self.cam_motion.camera_movement not in ['major_simple']",
     "easy_neg_rule_str": {
-        "only_panning_left": "self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'left' and not self.cam_motion.check_if_any_motion(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "only_panning_left": "self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'left' and self.cam_motion.check_if_no_motion(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
     "hard_neg_rule_str": {
-        "pan_right_with_other": "self.cam_motion.camera_movement == 'major_complex' and self.cam_motion.camera_pan == 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "pan_right_with_other": "self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'right' and not self.cam_motion.check_if_no_motion(exclude=['pan'])"
     }
 }
