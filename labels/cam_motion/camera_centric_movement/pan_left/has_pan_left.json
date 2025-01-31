@@ -9,12 +9,12 @@
         "Is the camera panning left in the scene?",
         "Is the camera panning leftward?",
         "Is the camera panning from right to left?",
-        "Does the camera execute a pan movement to the left?",
-        "Does the camera pan left (not move/truck left)?",
-        "Does the shot feature a camera pan to the left (rotating, not moving sideways)?",
-        "Is the camera rotating left on its axis (not trucking left)?"
+        "Does the camera execute a pan movement to the left?"
     ],
     "alt_question": [
+        "Does the camera pan left (not move/truck left)?",
+        "Does the shot feature a camera pan to the left (rotating, not moving sideways)?",
+        "Is the camera rotating left on its axis (not trucking left)?",
         "Is this a leftward panning shot?",
         "Is this a left panning motion (not lateral movement)?",
         "Is the camera rotating to the left?",
@@ -33,15 +33,15 @@
         "The camera pans leftward.",
         "The camera pans left in the scene.",
         "The camera pans from right to left.",
-        "A video featuring a leftward panning movement.",
+        "A video featuring a leftward panning movement."
+    ],
+    "alt_prompt": [
         "A scene where the camera pans left (not trucks/moves left).",
         "A shot with a left panning motion (camera rotating, not moving sideways).",
         "A video where the camera rotates left on its axis, not trucking left.",
         "A scene featuring a left panning camera movement (not lateral movement).",
         "A shot where the camera pans left without sideways translation.",
-        "A video demonstrating a pure left panning motion (rotating, not trucking)."
-    ],
-    "alt_prompt": [
+        "A video demonstrating a pure left panning motion (rotating, not trucking).",
         "A scene where the camera rotates to the left.",
         "A shot where the view shifts from right to left.",
         "A video where the camera turns leftward.",
@@ -57,6 +57,6 @@
         "panning_right": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
     "hard_neg_rule_str": {
-        "moving_left": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan != 'left' and self.cam_motion.camera_left_right == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_left": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'left' and self.cam_motion.camera_left_right == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     }
 }

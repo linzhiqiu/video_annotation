@@ -57,6 +57,6 @@
         "panning_left": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
     "hard_neg_rule_str": {
-        "moving_right": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_right": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     }
 }
