@@ -116,10 +116,10 @@ Does the camera move upward (not tilting up) with respect to the initial frame?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'</code>
+<code>self.cam_motion.up_cam</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_up_down_cam_frame != 'up') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down'))</code>
+<code>not self.cam_motion.up_cam and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -235,10 +235,10 @@ Does the camera only move upward (not tilting up) with respect to the initial fr
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'up' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>self.cam_motion.up_cam and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_up_down_cam_frame != 'up' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) or self.cam_motion.camera_movement not in ['major_simple']</code>
+<code>not (self.cam_motion.up_cam and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

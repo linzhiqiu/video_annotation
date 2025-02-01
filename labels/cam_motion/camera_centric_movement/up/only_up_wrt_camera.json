@@ -43,8 +43,8 @@
         "A shot where the tracking movement is purely upward with no other motion.",
         "A scene where the only movement present is the camera rising vertically."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'up' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
-    "neg_rule_str": "self.cam_motion.camera_up_down_cam_frame != 'up' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "pos_rule_str": "self.cam_motion.up_cam and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "not (self.cam_motion.up_cam and self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down']))",
     "easy_neg_rule_str": {
         "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down'"
     },

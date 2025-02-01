@@ -28,16 +28,16 @@ Does the camera pan left in the scene?
 
 - Does the camera execute a pan movement to the left?
 
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
 - Does the camera pan left (not move/truck left)?
 
 - Does the shot feature a camera pan to the left (rotating, not moving sideways)?
 
 - Is the camera rotating left on its axis (not trucking left)?
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
 
 - Is this a leftward panning shot?
 
@@ -78,6 +78,11 @@ Does the camera pan left in the scene?
 
 - A video featuring a leftward panning movement.
 
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
 - A scene where the camera pans left (not trucks/moves left).
 
 - A shot with a left panning motion (camera rotating, not moving sideways).
@@ -89,11 +94,6 @@ Does the camera pan left in the scene?
 - A shot where the camera pans left without sideways translation.
 
 - A video demonstrating a pure left panning motion (rotating, not trucking).
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
 
 - A scene where the camera rotates to the left.
 
@@ -114,10 +114,10 @@ Does the camera pan left in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'left'</code>
+<code>self.cam_motion.pan_left</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_pan != 'left') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_pan == 'right')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
+<code>not self.cam_motion.pan_left and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -129,7 +129,7 @@ Does the camera pan left in the scene?
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>moving_left</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan != 'left' and self.cam_motion.camera_left_right == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_left</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'left' and self.cam_motion.camera_left_right == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 </details>
 
@@ -253,10 +253,10 @@ Does the camera only pan from right to left?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'left' and self.cam_motion.check_if_no_motion(exclude=['pan'])</code>
+<code>self.cam_motion.pan_left and self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_pan != 'left' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) or self.cam_motion.camera_movement not in ['major_simple']</code>
+<code>not (self.cam_motion.pan_left and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

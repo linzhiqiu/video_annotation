@@ -37,8 +37,8 @@
         "A shot where the tracking movement is purely downward with no other motion.",
         "A scene where the only movement present is the camera lowering vertically."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'down' and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "self.cam_motion.camera_up_down != 'down' or not self.cam_motion.check_if_no_motion(exclude=['up_down']) or self.cam_motion.camera_movement not in ['major_simple'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_motion.down and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
         "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     },

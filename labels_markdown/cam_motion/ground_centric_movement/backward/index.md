@@ -116,10 +116,10 @@ Does the camera move backward (not zooming out) in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.backward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not self.cam_motion.backward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -225,10 +225,10 @@ Does the camera move backward (not zooming out) in the scene, or move south if i
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward'</code>
+<code>self.cam_motion.backward</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward != 'backward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward == 'forward')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
+<code>not self.cam_motion.backward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -332,10 +332,10 @@ Does the camera only move backward (not zooming out) with respect to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.backward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_forward_backward != 'backward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -459,10 +459,10 @@ Does the camera move only backward (not zooming out) in the scene, or only south
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>self.cam_motion.backward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_forward_backward != 'backward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple']</code>
+<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['forward_backward'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

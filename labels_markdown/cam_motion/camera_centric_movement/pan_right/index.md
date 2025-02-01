@@ -114,10 +114,10 @@ Does the camera pan right in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'right'</code>
+<code>self.cam_motion.pan_right</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_pan != 'right') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_pan == 'left')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
+<code>not self.cam_motion.pan_right and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -129,7 +129,7 @@ Does the camera pan right in the scene?
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>moving_right</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_right</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 </details>
 
@@ -253,10 +253,10 @@ Does the camera only pan from left to right?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'right' and self.cam_motion.check_if_no_motion(exclude=['pan'])</code>
+<code>self.cam_motion.pan_right and self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_pan != 'right' or not self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) or self.cam_motion.camera_movement not in ['major_simple']</code>
+<code>not (self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
