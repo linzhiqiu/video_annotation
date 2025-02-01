@@ -66,38 +66,68 @@ class CameraMotionData:
                 setattr(self, attr, False)
             return
         
-        # If steadiness is "unsteady" or "very_unsteady", or camera_movement is "major_complex" or "minor", or arc/crane shot
-        uncertain_state = self.steadiness in ["unsteady", "very_unsteady"] or self.camera_movement in ["major_complex", "minor"] \
-                            or self.camera_arc != "no" or self.camera_crane != "no"
-        
-        def set_motion(attr, is_attr, no_or_unknown):
-            if uncertain_state and no_or_unknown:
-                is_attr = None
-            setattr(self, attr, is_attr)
-        
-        set_motion("forward", self.camera_forward_backward == "forward", self.camera_forward_backward == "no")
-        set_motion("backward", self.camera_forward_backward == "backward", self.camera_forward_backward == "no")
-        set_motion("zoom_in", self.camera_zoom == "in", self.camera_zoom == "no")
-        set_motion("zoom_out", self.camera_zoom == "out", self.camera_zoom == "no")
-        set_motion("up", self.camera_up_down == "up", self.camera_up_down == "no")
-        set_motion("down", self.camera_up_down == "down", self.camera_up_down == "no")
-        set_motion("tilt_up", self.camera_tilt == "up", self.camera_tilt == "no")
-        set_motion("tilt_down", self.camera_tilt == "down", self.camera_tilt == "no")
-        set_motion("roll_cw", self.camera_roll == "clockwise", self.camera_roll == "no")
-        set_motion("roll_ccw", self.camera_roll == "counter_clockwise", self.camera_roll == "no")
-        set_motion("crane_up", self.camera_crane == "crane_up", self.camera_crane == "no")
-        set_motion("crane_down", self.camera_crane == "crane_down", self.camera_crane == "no")
-        set_motion("arc_cw", self.camera_arc == "clockwise", self.camera_arc == "no")
-        set_motion("arc_ccw", self.camera_arc == "counter_clockwise", self.camera_arc == "no")
-        set_motion("pan_right", self.camera_pan == "right_to_left", self.camera_pan == "no")
-        set_motion("pan_left", self.camera_pan == "left_to_right", self.camera_pan == "no")
-        set_motion("left", self.camera_left_right == "left_to_right", self.camera_left_right == "no")
-        set_motion("right", self.camera_left_right == "right_to_left", self.camera_left_right == "no")
-        set_motion("up_cam", self.camera_up_down_cam_frame == "up", self.camera_up_down_cam_frame in ["no", "unknown"])
-        set_motion("down_cam", self.camera_up_down_cam_frame == "down", self.camera_up_down_cam_frame in ["no", "unknown"])
-        set_motion("forward_cam", self.camera_forward_backward_cam_frame == "forward", self.camera_forward_backward_cam_frame in ["no", "unknown"])
-        set_motion("backward_cam", self.camera_forward_backward_cam_frame == "backward", self.camera_forward_backward_cam_frame in ["no", "unknown"])
-        
+        # If arc or crane shot, all attributes except for arc and crane should be None
+        if self.camera_arc != "no" or self.camera_crane != "no":
+            for attr in attributes:
+                if attr not in ["arc_cw", "arc_ccw", "crane_up", "crane_down"]:
+                    setattr(self, attr, None)
+            
+            # Then set arc and crane motion. First because arc and crane will not co-occur, we can set them directly
+            if self.camera_arc != "no":
+                # set crane to None
+                setattr(self, "crane_up", None)
+                setattr(self, "crane_down", None)
+                
+                setattr(self, "arc_cw", self.camera_arc == "clockwise")
+                setattr(self, "arc_ccw", self.camera_arc == "counter_clockwise")
+            else:
+                # set arc to None
+                setattr(self, "arc_cw", None)
+                setattr(self, "arc_ccw", None)
+                
+                setattr(self, "crane_up", self.camera_crane == "crane_up")
+                setattr(self, "crane_down", self.camera_crane == "crane_down")
+        else:
+            # First set arc and crane to False
+            setattr(self, "arc_cw", False)
+            setattr(self, "arc_ccw", False)
+            setattr(self, "crane_up", False)
+            setattr(self, "crane_down", False)
+            
+            
+            uncertain_if_no = self.steadiness in ["unsteady", "very_unsteady"] or self.camera_movement in ["major_complex", "minor"]
+            uncertain_if_gt = self.camera_movement in ["minor"]
+            
+            def set_motion(attr, answer, gt):
+                if answer == "no" and uncertain_if_no:
+                    value = None
+                elif answer == "unknown":
+                    value = None
+                else:
+                    value = answer == gt
+                    if value and uncertain_if_gt:
+                        value = None
+                    
+                setattr(self, attr, value)
+            
+            set_motion("forward", self.camera_forward_backward, "forward")
+            set_motion("backward", self.camera_forward_backward, "backward")
+            set_motion("forward_cam", self.camera_forward_backward_cam_frame, "forward")
+            set_motion("backward_cam", self.camera_forward_backward_cam_frame, "backward")
+            set_motion("zoom_in", self.camera_zoom, "in")
+            set_motion("zoom_out", self.camera_zoom, "out")
+            set_motion("up", self.camera_up_down, "up")
+            set_motion("down", self.camera_up_down, "down")
+            set_motion("up_cam", self.camera_up_down_cam_frame, "up")
+            set_motion("down_cam", self.camera_up_down_cam_frame, "down")
+            set_motion("tilt_up", self.camera_tilt, "up")
+            set_motion("tilt_down", self.camera_tilt, "down")
+            set_motion("roll_cw", self.camera_roll, "clockwise")
+            set_motion("roll_ccw", self.camera_roll, "counter_clockwise")
+            set_motion("pan_right", self.camera_pan, "left_to_right")
+            set_motion("pan_left", self.camera_pan, "right_to_left")
+            set_motion("right", self.camera_left_right, "left_to_right")
+            set_motion("left", self.camera_left_right, "right_to_left")
         
         
     def set_steadiness(self, steadiness):
