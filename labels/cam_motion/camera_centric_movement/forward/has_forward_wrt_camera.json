@@ -52,8 +52,8 @@
         "A shot where the camera physically travels forward instead of adjusting focal length.",
         "A video where the camera advances, creating a strong sense of depth."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward'",
-    "neg_rule_str": "((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_forward_backward_cam_frame != 'forward') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'))",
+    "pos_rule_str": "self.cam_motion.forward_cam",
+    "neg_rule_str": "not self.cam_motion.forward_cam and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']",
     "easy_neg_rule_str": {
         "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
