@@ -46,8 +46,8 @@
         "A scene where the only movement present is the forward motion of the camera.",
         "A video where the camera maintains strict forward motion with no deviation."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'forward' and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
-    "neg_rule_str": "self.cam_motion.camera_forward_backward != 'forward' or not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) or self.cam_motion.camera_movement not in ['major_simple']",
+    "pos_rule_str": "self.cam_motion.forward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']",
+    "neg_rule_str": "not (self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward_backward'])",
     "easy_neg_rule_str": {
         "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward'"
     },
