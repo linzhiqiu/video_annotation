@@ -47,8 +47,8 @@
         "A shot where the tracking movement is purely forward without other motions.",
         "A scene where the only motion is the camera pushing ahead in a single direction."
     ],
-    "pos_rule_str": "self.cam_motion.forward_cam and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
-    "neg_rule_str": "not (self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']))",
+    "pos_rule_str": "self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])",
+    "neg_rule_str": "not (self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))",
     "easy_neg_rule_str": {
         "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'"
     },

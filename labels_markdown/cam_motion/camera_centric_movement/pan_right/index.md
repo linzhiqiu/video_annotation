@@ -117,7 +117,7 @@ Does the camera pan right in the scene?
 <code>self.cam_motion.pan_right</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.pan_right and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>not self.cam_motion.pan_right</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -253,10 +253,10 @@ Does the camera only pan from left to right?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.pan_right and self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam_frame(exclude=['pan']))</code>
+<code>not (self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

@@ -119,7 +119,7 @@ Does the camera move forward (not zooming in) with respect to the initial frame?
 <code>self.cam_motion.forward_cam</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.forward_cam and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>not self.cam_motion.forward_cam</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -243,10 +243,10 @@ Does the camera move only forward (not zooming in) with respect to the initial f
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.forward_cam and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']))</code>
+<code>not (self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

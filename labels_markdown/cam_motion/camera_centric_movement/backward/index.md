@@ -119,7 +119,7 @@ Does the camera move backward (not zooming out) with respect to the initial fram
 <code>self.cam_motion.backward_cam</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.backward_cam and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>not self.cam_motion.backward_cam</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -243,10 +243,10 @@ Does the camera move only backward (not zooming out) with respect to the initial
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward_cam and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+<code>self.cam_motion.backward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.backward_cam and self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward']))</code>
+<code>not (self.cam_motion.backward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
