@@ -119,7 +119,7 @@ Does the camera move backward (not zooming out) in the scene?
 <code>self.cam_motion.backward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.backward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not self.cam_motion.backward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -228,7 +228,7 @@ Does the camera move backward (not zooming out) in the scene, or move south if i
 <code>self.cam_motion.backward</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.backward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>not self.cam_motion.backward</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -332,10 +332,10 @@ Does the camera only move backward (not zooming out) with respect to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -459,10 +459,10 @@ Does the camera move only backward (not zooming out) in the scene, or only south
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']</code>
+<code>self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['forward_backward'])</code>
+<code>not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

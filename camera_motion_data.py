@@ -45,6 +45,20 @@ class CameraMotionData:
 
         # Text box for complex descriptions
         self.complex_motion_description = ""
+
+        # Camera Motion List (ground_based)
+        self.camera_motion_list = [
+            "forward", "backward", "zoom_in", "zoom_out", "up", "down",
+            "tilt_up", "tilt_down","roll_cw", "roll_ccw", "crane_up",
+            "crane_down", "arc_cw", "arc_ccw", "pan_right", "pan_left", "left", "right"
+        ]
+
+        # Camera motion List (camera_based)
+        self.camera_motion_cam_list = [
+            "zoom_in", "zoom_out", "tilt_up", "tilt_down", "roll_cw", "roll_ccw",
+            "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam",
+            "forward_cam", "backward_cam", "pan_right", "pan_left", "left", "right"
+        ]
     
     def set_camera_motion_attributes(self):
         # Initialize all attributes to False
@@ -303,10 +317,17 @@ class CameraMotionData:
             "crane": self.camera_crane,
             "roll": self.camera_roll
         }
-        
+
+
     def check_if_no_motion(self, exclude: List[str] = []):
-        """Checks if only the specified motion(s) exist and all others are 'no'."""
-        return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
+        return all(motion == False for motion in self.camera_motion_list if motion not in exclude)
+
+    def check_if_no_motion_cam(self, exclude: List[str] = []):
+        return all(motion == False for motion in self.camera_motion_cam_list if motion not in exclude)
+
+    # def check_if_no_motion(self, exclude: List[str] = []):
+    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
+    #     return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
     
     def check_if_any_motion(self, include: List[str] = []):
         """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
