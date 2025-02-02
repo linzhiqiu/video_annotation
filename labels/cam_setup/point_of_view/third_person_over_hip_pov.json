@@ -1,0 +1,24 @@
+{
+    "label": "Third-Person Over-the-Hip POV",
+    "label_name": "third_person_over_hip_pov",
+    "def_question": [
+        "Is the camera framing the character from the hip up?"
+    ],
+    "alt_question": [
+        "Is this a third-person over-the-hip perspective used in gaming or film?",
+        "Does the shot frame the character from the waist while capturing their movement?",
+        "Is the camera following the character at a mid-body height?"
+    ],
+    "def_prompt": [
+        "A third-person over-the-hip POV shot showing a character from waist height"
+    ],
+    "alt_prompt": [
+        "A scene where the camera tracks a character from hip level, capturing both them and their surroundings.",
+        "A video with a waist-level perspective showing character movement.",
+        "A shot where the camera is positioned at mid-body height while framing the scene."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_over_hip'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_over_hip'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

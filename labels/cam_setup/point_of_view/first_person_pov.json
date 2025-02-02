@@ -1,0 +1,22 @@
+{
+    "label": "First-Person POV",
+    "label_name": "first_person_pov",
+    "def_question": [
+        "Is the scene shown from the character’s perspective, as if through their eyes?"
+    ],
+    "alt_question": [
+        "Does the video depict a first-person perspective?",
+        "Is the camera viewpoint aligned with what the character would see?"
+    ],
+    "def_prompt": [
+        "A first-person POV shot where the scene is viewed from the character’s perspective."
+    ],
+    "alt_prompt": [
+        "A video showing a person's direct viewpoint, as if from their eyes.",
+        "A scene where the viewer sees the world through the character’s vision."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'first_person'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'first_person'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

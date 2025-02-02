@@ -1,0 +1,26 @@
+{
+    "label": "Drone POV",
+    "label_name": "drone_pov",
+    "def_question": [
+        "Is this video captured by a drone?",
+        "Does the video show a drone's perspective?"
+    ],
+    "alt_question": [
+        "Is this an aerial view captured by a drone?",
+        "Does the video provide a high-angle perspective from a drone?",
+        "Is the shot taken from an airborne device looking down?"
+    ],
+    "def_prompt": [
+        "A video filmed by a drone.",
+        "A drone POV shot."
+    ],
+    "alt_prompt": [
+        "A drone POV shot where the camera captures an aerial view.",
+        "A video filmed from a drone, showing a high-altitude perspective.",
+        "A scene with a bird’s-eye view captured by an unmanned aerial device."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'drone_pov'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'drone_pov'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

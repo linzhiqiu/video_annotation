@@ -1,0 +1,29 @@
+{
+    "label": "No Lens Distortion",
+    "label_name": "no_lens_distortion",
+    "def_question": [
+        "Does this shot have no noticeable lens distortion?",
+        "Does this shot have no noticeable barrel or fisheye distortion?",
+        "Is this shot captured with a regular lens without distortion?"
+    ],
+    "alt_question": [
+        "Is the lens distortion absent in this scene?",
+        "Is there no fisheye or barrel distortion in this shot?",
+        "Does the frame appear natural without noticeable warping?",
+        "Is the perspective straight without lens-induced bending?"
+    ],
+    "def_prompt": [
+        "A shot captured without noticeable lens distortion.",
+        "A video with a natural, undistorted perspective.",
+        "A scene where the frame is clear of any fisheye or barrel distortion."
+    ],
+    "alt_prompt": [
+        "A shot with a regular lens and no distortion.",
+        "A perspective without bending or warping effects.",
+        "A natural-looking shot without any lens artifacts."
+    ],
+    "pos_rule_str": "self.cam_setup.lens_distortion == 'regular'",
+    "neg_rule_str": "self.cam_setup.lens_distortion != 'regular'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

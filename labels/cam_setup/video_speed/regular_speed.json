@@ -1,0 +1,24 @@
+{
+    "label": "Regular Speed",
+    "label_name": "regular_speed",
+    "def_question": [
+        "Is this video played at normal real-time speed without noticeable acceleration or slowing?"
+    ],
+    "alt_question": [
+        "Does the scene play at a natural, unaltered speed?",
+        "Is the video not sped up or slowed down?",
+        "Does the movement appear to match real-world timing?"
+    ],
+    "def_prompt": [
+        "A regular-speed video where events play in real-time without acceleration or slowing."
+    ],
+    "alt_prompt": [
+        "A shot captured at standard playback speed.",
+        "A video showing motion at a natural, unmodified pace.",
+        "A scene where time progresses at a normal rate."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'regular'",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['regular', 'stop_motion', 'time_reversed']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

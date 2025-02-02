@@ -1,0 +1,25 @@
+{
+    "label": "Screen Recording POV",
+    "label_name": "screen_recording_pov",
+    "def_question": [
+        "Does this video capture a screen recording with visible UI elements?"
+    ],
+    "alt_question": [
+        "Is this a recording of a computer screen, often used for tutorials or virtual meetings?",
+        "Does this video capture a software interface or desktop screen?",
+        "Is this a screen recording used for instructional or communication purposes?",
+        "Does the footage consist entirely of a digital display capture?"
+    ],
+    "def_prompt": [
+        "This is a recording of a computer screen with visible UI elements."
+    ],
+    "alt_prompt": [
+        "A tutorial or demonstration video showing only a computer screen.",
+        "A screen-captured video, common in online classes or gaming streams.",
+        "A digital display recording used for instructional or meeting purposes."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'screen_recording'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'screen_recording'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

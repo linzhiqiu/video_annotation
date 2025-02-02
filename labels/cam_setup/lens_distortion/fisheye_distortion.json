@@ -1,0 +1,32 @@
+{
+    "label": "Fisheye Distortion",
+    "label_name": "fisheye_distortion",
+    "def_question": [
+        "Does this shot have a fisheye lens distortion?",
+        "Is the scene heavily warped due to a fisheye effect?",
+        "Is the perspective highly curved outward in a fisheye-like manner?"
+    ],
+    "alt_question": [
+        "Does the shot have extreme barrel distortion?",
+        "Is the field of view significantly exaggerated?",
+        "Does the image look highly curved, especially near the edges?"
+    ],
+    "def_prompt": [
+        "A shot with strong fisheye distortion.",
+        "A video where the perspective is heavily curved outward.",
+        "A scene with extreme warping caused by a fisheye lens."
+    ],
+    "alt_prompt": [
+        "A shot where straight lines appear curved due to fisheye distortion.",
+        "A perspective heavily stretched near the frame edges.",
+        "A video effect caused by an ultra-wide fisheye lens."
+    ],
+    "pos_rule_str": "self.cam_setup.lens_distortion == 'fisheye'",
+    "neg_rule_str": "self.cam_setup.lens_distortion != 'fisheye'",
+    "easy_neg_rule_str": {
+        "no_lens_distortion": "self.cam_setup.lens_distortion == 'regular'"
+    },
+    "hard_neg_rule_str": {
+        "barrel_distortion": "self.cam_setup.lens_distortion == 'barrel'"
+    }
+}

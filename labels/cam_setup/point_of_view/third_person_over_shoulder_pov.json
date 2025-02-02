@@ -1,0 +1,22 @@
+{
+    "label": "Third-Person Over-the-Shoulder POV",
+    "label_name": "third_person_over_shoulder_pov",
+    "def_question": [
+        "Is the camera positioned behind the character, showing their upper body and the scene ahead?"
+    ],
+    "alt_question": [
+        "Is this a third-person over-the-shoulder perspective used in gaming or film?",
+        "Does the shot depict the back of a character while focusing on the scene ahead?"
+    ],
+    "def_prompt": [
+        "A third-person over-the-shoulder POV shot showing a character’s upper body from behind."
+    ],
+    "alt_prompt": [
+        "A scene where the camera follows behind a character, focusing on their perspective.",
+        "A video framing the character from the back while capturing their surroundings."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_over_shoulder'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_over_shoulder'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

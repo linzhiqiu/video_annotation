@@ -1,0 +1,24 @@
+{
+    "label": "Speed-Ramp",
+    "label_name": "speed_ramp",
+    "def_question": [
+        "Does this shot feature a speed ramp effect where playback speed smoothly transitions between faster and slower speeds?"
+    ],
+    "alt_question": [
+        "Does the video contain gradual speed changes within a single shot?",
+        "Is the motion dynamically adjusted between fast and slow playback?",
+        "Does the scene include smooth speed variations instead of a single fixed speed?"
+    ],
+    "def_prompt": [
+        "A video with a speed ramp effect where playback speed smoothly transitions between fast and slow."
+    ],
+    "alt_prompt": [
+        "A shot where the motion speed dynamically increases and decreases.",
+        "A video featuring smooth transitions between fast and slow speeds.",
+        "A scene that changes playback speed to enhance action or pacing."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'speed_ramp'",
+    "neg_rule_str": "self.cam_setup.video_speed != 'speed_ramp'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,24 @@
+{
+    "label": "Broadcast POV",
+    "label_name": "broadcast_pov",
+    "def_question": [
+        "Is this a professional viewpoint used in television broadcasts?"
+    ],
+    "alt_question": [
+        "Is the camera positioned like a television broadcast setup?",
+        "Does the shot resemble a news, sports, or studio broadcast?",
+        "Is the framing professional and meant for mass viewing?"
+    ],
+    "def_prompt": [
+        "A broadcast POV shot where the camera is set up for television production."
+    ],
+    "alt_prompt": [
+        "A scene filmed with a professional broadcast-style camera setup.",
+        "A video resembling a sports, news, or television studio broadcast.",
+        "A shot that is professionally framed for wide distribution."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'broadcast_pov'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'broadcast_pov'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

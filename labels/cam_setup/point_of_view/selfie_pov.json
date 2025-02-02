@@ -1,0 +1,25 @@
+{
+    "label": "Selfie POV",
+    "label_name": "selfie_pov",
+    "def_question": [
+        "Is the camera facing the person holding it?"
+    ],
+    "alt_question": [
+        "Is the camera facing the person holding it, showing their face and sometimes their upper body?",
+        "Is this shot taken from a front-facing camera held by the subject?",
+        "Does this video feature a self-captured perspective with the person's face visible?",
+        "Is this a selfie-style recording where the camera is pointed at the subject's own face?"
+    ],
+    "def_prompt": [
+        "A selfie POV shot where the camera is facing the person holding it."
+    ],
+    "alt_prompt": [
+        "A video where a person records themselves using a front-facing camera.",
+        "A scene where the subject captures their own face or upper body.",
+        "A selfie-style shot, common in vlogs or personal recordings."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'selfie_pov'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'selfie_pov'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

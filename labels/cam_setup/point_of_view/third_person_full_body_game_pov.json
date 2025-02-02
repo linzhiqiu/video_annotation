@@ -1,0 +1,24 @@
+{
+    "label": "Third-Person Full-Body Game POV",
+    "label_name": "third_person_full_body_game_pov",
+    "def_question": [
+        "Is this a 3D gaming video featuring a third-person perspective with the character’s full body visible?"
+    ],
+    "alt_question": [
+        "Is this a full-body third-person view, commonly seen in gaming?",
+        "Does the shot frame the character’s entire body within the scene?",
+        "Is the camera positioned far enough to show the entire character in the environment?"
+    ],
+    "def_prompt": [
+        "A third-person 3D game video with the entire character visible."
+    ],
+    "alt_prompt": [
+        "A scene showing a character’s full-body from a third-person perspective.",
+        "A video where the character is fully framed within their surroundings.",
+        "A gaming-style shot where the entire character is visible."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_full_body'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_full_body'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

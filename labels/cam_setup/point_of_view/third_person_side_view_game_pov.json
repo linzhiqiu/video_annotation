@@ -1,0 +1,24 @@
+{
+    "label": "Third-Person Side View Game POV",
+    "label_name": "third_person_side_view_game_pov",
+    "def_question": [
+        "Is this a 2D or 3D gaming video where the camera is positioned at the side of the character?"
+    ],
+    "alt_question": [
+        "Does this video feature a side-scrolling third-person perspective?",
+        "Is the character viewed from a lateral angle in a gaming scene?",
+        "Is the game presented with a side-on camera perspective?"
+    ],
+    "def_prompt": [
+        "A third-person side-view gaming video where the camera follows the character from a lateral perspective."
+    ],
+    "alt_prompt": [
+        "A scene where the character moves side-to-side in a third-person game.",
+        "A 2D or 3D gaming video where the camera tracks the character from the side.",
+        "A game shot with a lateral perspective, commonly used in platformers or fighting games."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_side_view'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_side_view'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

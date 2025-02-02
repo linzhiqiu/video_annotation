@@ -1,0 +1,28 @@
+{
+    "label": "Third-Person Isometric Game POV",
+    "label_name": "third_person_isometric_game_pov",
+    "def_question": [
+        "Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing the environment in a three-quarters perspective?",
+        "Does this third-person isometric (2.5D) gaming video use a tilted overhead angle to display the environment in a three-quarters view?"
+    ],
+    "alt_question": [
+        "Does this game use an isometric third-person perspective?",
+        "Is this a third-person isometric (2.5D) gaming video where the environment is viewed from an overhead tilted angle, creating a three-quarters perspective?",
+        "Is the environment shown in a three-quarters overhead view?",
+        "Does the camera provide a slightly tilted top-down perspective, common in strategy or RPG games?"
+    ],
+    "def_prompt": [
+        "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing the environment in a three-quarters perspective."
+    ],
+    "alt_prompt": [
+        "A third-person isometric (2.5D) gaming video where the environment is viewed from a tilted overhead, three-quarters perspective.",
+        "A third-person isometric (2.5D) gaming video featuring a three-quarters view of the environment from a tilted overhead angle.",
+        "A scene where the game world is viewed from an isometric perspective.",
+        "A video showing a three-quarters view of a game world.",
+        "A gaming shot with an isometric layout, commonly seen in strategy and RPG games."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_isometric'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_isometric'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

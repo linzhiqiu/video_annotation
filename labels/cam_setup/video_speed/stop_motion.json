@@ -1,0 +1,24 @@
+{
+    "label": "Stop-Motion",
+    "label_name": "stop_motion",
+    "def_question": [
+        "Is this a stop-motion video where objects are moved frame by frame to create motion?"
+    ],
+    "alt_question": [
+        "Does the video use frame-by-frame animation techniques?",
+        "Is this shot animated by moving objects between still frames?",
+        "Does the video create the illusion of movement using manual frame adjustments?"
+    ],
+    "def_prompt": [
+        "A stop-motion video where objects are moved frame by frame to create motion."
+    ],
+    "alt_prompt": [
+        "A shot where stop-motion animation is used for movement.",
+        "A scene animated using a frame-by-frame capture technique.",
+        "A video where objects shift between frames to simulate movement."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'stop_motion'",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['stop_motion', 'time_reversed']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

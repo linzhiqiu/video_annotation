@@ -1,0 +1,25 @@
+{
+    "label": "Slow-Motion",
+    "label_name": "slow_motion",
+    "def_question": [
+        "Is this video played at a slower speed than real-time?"
+    ],
+    "alt_question": [
+        "Does the motion in this shot appear dramatically slowed down?",
+        "Is this video played at a slower speed than real-time, making actions appear 1x-3x slower?",
+        "Is the playback speed reduced to emphasize details in movement?",
+        "Does the video stretch time by making movements appear smooth and slow?"
+    ],
+    "def_prompt": [
+        "A slow-motion video where playback speed is reduced, making actions appear slower than real-time."
+    ],
+    "alt_prompt": [
+        "A shot where movement is slowed down for dramatic effect.",
+        "A video where time appears stretched due to reduced playback speed.",
+        "A scene captured in slow-motion, emphasizing small details in movement."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'slow_motion'",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['slow_motion', 'speed_ramp', 'time_reversed']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

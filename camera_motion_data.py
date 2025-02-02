@@ -83,22 +83,13 @@ class CameraMotionData:
         # If arc or crane shot, all attributes except for arc and crane should be None
         if self.camera_arc != "no" or self.camera_crane != "no":
             for attr in attributes:
-                if attr not in ["arc_cw", "arc_ccw", "crane_up", "crane_down"]:
-                    setattr(self, attr, None)
+                setattr(self, attr, None)
             
             # Then set arc and crane motion. First because arc and crane will not co-occur, we can set them directly
             if self.camera_arc != "no":
-                # set crane to None
-                setattr(self, "crane_up", None)
-                setattr(self, "crane_down", None)
-                
                 setattr(self, "arc_cw", self.camera_arc == "clockwise")
                 setattr(self, "arc_ccw", self.camera_arc == "counter_clockwise")
             else:
-                # set arc to None
-                setattr(self, "arc_cw", None)
-                setattr(self, "arc_ccw", None)
-                
                 setattr(self, "crane_up", self.camera_crane == "crane_up")
                 setattr(self, "crane_down", self.camera_crane == "crane_down")
         else:

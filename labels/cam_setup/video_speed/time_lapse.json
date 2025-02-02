@@ -1,0 +1,27 @@
+{
+    "label": "Time-Lapse",
+    "label_name": "time_lapse",
+    "def_question": [
+        "Does this shot speed up time significantly to show changes over minutes or hours?",
+        "Is this a time-lapse video where time appears to move rapidly over an extended period?"
+    ],
+    "alt_question": [
+        "Is this a time-lapse video?",
+        "Is this video played at an extremely high speed to condense long durations?",
+        "Does the scene depict fast changes that would normally take much longer?"
+    ],
+    "def_prompt": [
+        "A time-lapse video where time appears to move rapidly over an extended period."
+    ],
+    "alt_prompt": [
+        "A shot showcasing accelerated time progression.",
+        "A video where clouds, crowds, or objects move unnaturally fast due to time-lapse.",
+        "A scene with exaggerated speed, condensing long durations into seconds."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'time_lapse'",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['time_lapse', 'speed_ramp', 'time_reversed']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {
+        "fast_motion": "self.cam_motion.video_speed == 'fast_motion'"
+    }
+}

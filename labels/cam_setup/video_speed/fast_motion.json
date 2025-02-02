@@ -1,0 +1,24 @@
+{
+    "label": "Fast-Motion",
+    "label_name": "fast_motion",
+    "def_question": [
+        "Is this video played at a faster speed than real-time?"
+    ],
+    "alt_question": [
+        "Does the scene appear quicker than normal?",
+        "Is the motion speed increased to enhance pacing?",
+        "Does the video show an acceleration of real-time movement?"
+    ],
+    "def_prompt": [
+        "A fast-motion video where playback speed is faster than real-time."
+    ],
+    "alt_prompt": [
+        "A shot where actions appear slightly accelerated.",
+        "A scene with movement that is faster than normal speed.",
+        "A video where motion is enhanced by speed-up effects."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed in ['fast_motion', 'time_lapse']",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['fast_motion', 'time_lapse', 'speed_ramp', 'time_reversed']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

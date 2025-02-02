@@ -1,0 +1,24 @@
+{
+    "label": "Time-Reversed",
+    "label_name": "time_reversed",
+    "def_question": [
+        "Is this video played in reverse, with events unfolding backward in time?"
+    ],
+    "alt_question": [
+        "Does the motion appear unnatural, as if time is moving backward?",
+        "Is the sequence reversed, showing actions in reverse order?",
+        "Does the video playback events from end to start instead of start to end?"
+    ],
+    "def_prompt": [
+        "A time-reversed video where events unfold backward in time."
+    ],
+    "alt_prompt": [
+        "A shot where movement is reversed, playing from end to beginning.",
+        "A video where all actions appear to happen in reverse.",
+        "A scene where objects and motion follow a backward timeline."
+    ],
+    "pos_rule_str": "self.cam_setup.video_speed == 'time_reversed'",
+    "neg_rule_str": "self.cam_setup.video_speed not in ['time_reversed', 'speed_ramp', 'time_lapse']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,35 @@
+{
+    "label": "Has Overlays",
+    "label_name": "has_overlays",
+    "def_question": [
+        "Does the shot contain on-screen overlays, such as watermarks, or titles, or subtitles, or icons, or heads-up displays, or framing elements?"
+    ],
+    "alt_question": [
+        "Does the video have any added text or graphics on the screen?",
+        "Are there watermarks, titles, or subtitles visible in the shot?",
+        "Does this shot contain icons, labels, or other graphical elements?",
+        "Is there a heads-up display or interface overlay present?",
+        "Are there any framing elements like borders or guide markers?",
+        "Does the video include non-diegetic text or symbols on-screen?",
+        "Are any subtitles or captions displayed in the scene?",
+        "Does this shot contain on-screen information not naturally part of the scene?"
+    ],
+    "def_prompt": [
+        "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, HUDs, or framing elements."
+    ],
+    "alt_prompt": [
+        "A scene containing on-screen overlays such as text, graphics, or icons.",
+        "A shot with visible watermarks, titles, or subtitles.",
+        "A video where a heads-up display or user interface is present.",
+        "A frame that includes added graphical elements like icons or labels.",
+        "A shot where on-screen elements are visible, such as subtitles or branding.",
+        "A shot featuring non-diegetic overlays like game HUDs or captions.",
+        "A video containing persistent watermarks or text elements.",
+        "A scene with embedded UI components or informational graphics.",
+        "A shot displaying subtitles or interactive elements."
+    ],
+    "pos_rule_str": "self.has_overlays is True",
+    "neg_rule_str": "self.has_overlays is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

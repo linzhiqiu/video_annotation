@@ -1,0 +1,30 @@
+{
+    "label": "With Lens Distortion",
+    "label_name": "with_lens_distortion",
+    "def_question": [
+        "Does this shot contain noticeable lens distortion?",
+        "Does this shot contain noticeable barrel or fisheye distortion?",
+        "Does this shot show any fisheye or barrel distortion?"
+    ],
+    "alt_question": [
+        "Is there any warping or bending effect in this scene?",
+        "Is this video captured using a lens that distorts the perspective?",
+        "Is the frame bending or curving due to lens effects?",
+        "Does the perspective appear exaggerated or stretched?"
+    ],
+    "def_prompt": [
+        "A shot captured with noticeable lens distortion.",
+        "A video with visible barrel or fisheye distortion.",
+        "A scene with visible fisheye or barrel distortion."
+    ],
+    "alt_prompt": [
+        "A video where the frame appears warped due to lens effects.",
+        "A shot where the edges appear curved or stretched.",
+        "A perspective altered by lens-induced warping.",
+        "A scene with an exaggerated field of view due to lens distortion."
+    ],
+    "pos_rule_str": "self.cam_setup.lens_distortion in ['barrel', 'fisheye']",
+    "neg_rule_str": "self.cam_setup.lens_distortion == 'regular'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

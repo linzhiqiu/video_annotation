@@ -1,0 +1,27 @@
+{
+    "label": "Third-Person Top-Down Game POV",
+    "label_name": "third_person_top_down_game_pov",
+    "def_question": [
+        "Is this a gaming video with a camera positioned directly above the character, showing a top-down or top-down oblique view?"
+    ],
+    "alt_question": [
+        "Does this game use a top-down third-person perspective?",
+        "Does this gaming video feature a top-down or top-down oblique perspective with the camera directly above the character?",
+        "Is the character viewed from an overhead angle in a pseudo-3D game?",
+        "Is the camera positioned high above the scene, offering a bird’s-eye view?"
+    ],
+    "def_prompt": [
+        "A third-person top-down or oblique gaming video with the camera directly above the character."
+    ],
+    "alt_prompt": [
+        "A third-person gaming video with a top-down or oblique perspective, where the camera is positioned directly overhead.",
+        "A third-person top-down or oblique perspective gaming video with the camera placed directly above the character.",
+        "A scene where the game is played from an overhead perspective.",
+        "A video showcasing a game with a bird’s-eye view of the environment.",
+        "A gaming shot where the camera is placed at a high top-down angle."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_top_down'",
+    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_top_down'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
