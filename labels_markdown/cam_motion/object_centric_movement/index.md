@@ -491,7 +491,7 @@ Does the camera pan to track the subjects?
 <code>self.cam_motion.tracking_shot_types == ['pan']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.tracking_shot_types != ['pan']</code>
+<code>'pan' not in self.cam_motion.tracking_shot_types</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -697,7 +697,7 @@ Is it a tracking shot with the camera moving from the side to follow the subject
 <code>self.cam_motion.tracking_shot_types == ['side']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.tracking_shot_types != ['side']</code>
+<code>'side' not in self.cam_motion.tracking_shot_types</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -911,7 +911,7 @@ Does the camera tilt to track the subjects?
 <code>self.cam_motion.tracking_shot_types == ['tilt']</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.tracking_shot_types != ['tilt']</code>
+<code>tilt not in self.cam_motion.tracking_shot_types</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -1107,7 +1107,7 @@ Does the subject look larger during the tracking shot?
 <code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'larger'</code>
+<code>not (self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger')</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -1195,10 +1195,10 @@ Does the subject remain roughly the same size throughout the tracking shot?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'no'</code>
+<code>None</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'no'</code>
+<code>None</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -1299,7 +1299,7 @@ Does the subject look smaller during the tracking shot?
 <code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'smaller'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'smaller'</code>
+<code>not (self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'smaller')</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

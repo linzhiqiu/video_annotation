@@ -35,7 +35,7 @@
       "A scene where subject tracking is achieved purely through camera tilting."
     ],
     "pos_rule_str": "self.cam_motion.tracking_shot_types == ['tilt']",
-    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['tilt']",
+    "neg_rule_str": "tilt not in self.cam_motion.tracking_shot_types",
     "easy_neg_rule_str": {
       "not_a_tracking_shot": "not self.cam_motion.is_tracking"
     },

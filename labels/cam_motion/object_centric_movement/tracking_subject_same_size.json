@@ -29,8 +29,8 @@
         "A video where the subject’s proportion remains unchanged despite camera motion.",
         "A shot where the subject’s appearance in the frame remains the same while tracking."
     ],
-    "pos_rule_str": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'no'",
-    "neg_rule_str": "not self.cam_motion.is_tracking or self.cam_motion.subject_size_change != 'no'",
+    "pos_rule_str": "None",
+    "neg_rule_str": "None",
     "easy_neg_rule_str": {
         "not_a_tracking_shot": "not self.cam_motion.is_tracking"
     },
