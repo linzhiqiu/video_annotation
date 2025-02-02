@@ -39,7 +39,7 @@
         "A video where the camera maintains a continuous upward movement."
     ],
     "pos_rule_str": "self.cam_motion.up",
-    "neg_rule_str": "not self.cam_motion.up and self.steadiness not in ['unsteady', 'very_unsteady']",
+    "neg_rule_str": "not self.cam_motion.up",
     "easy_neg_rule_str": {
         "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
