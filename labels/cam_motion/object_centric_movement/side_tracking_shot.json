@@ -35,7 +35,7 @@
         "A scene where the tracking shot is achieved purely through lateral movement."
     ],
     "pos_rule_str": "self.cam_motion.tracking_shot_types == ['side']",
-    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['side']",
+    "neg_rule_str": "'side' not in self.cam_motion.tracking_shot_types",
     "easy_neg_rule_str": {
         "not_a_tracking_shot": "not self.cam_motion.is_tracking"
     },

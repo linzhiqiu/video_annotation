@@ -36,7 +36,7 @@
         "A scene where subject tracking is achieved purely through camera rotation."
     ],
     "pos_rule_str": "self.cam_motion.tracking_shot_types == ['pan']",
-    "neg_rule_str": "self.cam_motion.tracking_shot_types != ['pan']",
+    "neg_rule_str": "'pan' not in self.cam_motion.tracking_shot_types",
     "easy_neg_rule_str": {
         "not_a_tracking_shot": "not self.cam_motion.is_tracking"
     },
