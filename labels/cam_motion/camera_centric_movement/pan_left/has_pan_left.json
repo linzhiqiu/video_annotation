@@ -52,7 +52,7 @@
         "A shot with horizontal camera movement from right to left."
     ],
     "pos_rule_str": "self.cam_motion.pan_left",
-    "neg_rule_str": "not self.cam_motion.pan_left and self.cam_motion.steadiness not in ['unsteady','very_unsteady']",
+    "neg_rule_str": "not self.cam_motion.pan_left",
     "easy_neg_rule_str": {
         "panning_right": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
