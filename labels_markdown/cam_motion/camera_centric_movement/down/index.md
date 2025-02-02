@@ -20,7 +20,7 @@ Does the camera move downward (not tilting down) with respect to the initial fra
 
 - Is the downward motion of the camera clear in this shot by comparing the start and end of the shot?
 
-- Is the camera performing a pedestal down movement?
+- Is the camera performing a pedestal down movement relative to its initial position?
 
 - Is the camera descending with respect to itself?
 
@@ -68,7 +68,7 @@ Does the camera move downward (not tilting down) with respect to the initial fra
 
 - A scene where the downward motion of the camera is clear by comparing the start and end of the shot.
 
-- The camera performs a pedestal down movement.
+- The camera performs a pedestal down movement with respect to itself.
 
 - The camera descends with respect to itself.
 
@@ -116,22 +116,22 @@ Does the camera move downward (not tilting down) with respect to the initial fra
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down_cam</code>
+<code>self.cam_motion.down_cam is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.down_cam</code>
+<code>self.cam_motion.down_cam is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_up</b>: <code>self.cam_motion.up_cam is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>tilting_down</b>: <code>self.cam_motion.tilt_down is True and self.cam_motion.down_cam is False</code>
 
 </details>
 
@@ -159,7 +159,7 @@ Does the camera only move downward (not tilting down) with respect to the initia
 
 - Is the camera only moving downward relative to the first frame?
 
-- Is the camera only performing a pedestal down movement?
+- Is the camera only performing a pedestal down movement with respect to itself?
 
 - Is the camera only descending with respect to itself?
 
@@ -207,7 +207,7 @@ Does the camera only move downward (not tilting down) with respect to the initia
 
 - A scene where the camera moves only downward relative to itself, avoiding tilting or other motions.
 
-- The camera is only performing a pedestal down movement.
+- The camera is only performing a pedestal down movement with respect to itself.
 
 - The camera is only descending with respect to itself.
 
@@ -235,24 +235,26 @@ Does the camera only move downward (not tilting down) with respect to the initia
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down_cam and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])</code>
+<code>self.cam_motion.down_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.down_cam and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam']))</code>
+<code>self.cam_motion.down_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'</code>
+- <b>moving_up</b>: <code>self.cam_motion.up_cam is True</code>
+
+- <b>only_moving_up</b>: <code>self.cam_motion.up_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'down' and self.cam_motion.camera_tilt == 'down'</code>
+- <b>tilting_down</b>: <code>self.cam_motion.down_cam is False and self.cam_motion.tilt_down is True</code>
 
-- <b>compound_motion_with_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'down' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down'])</code>
+- <b>compound_motion_with_down</b>: <code>self.cam_motion.down_cam is True and not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])</code>
 
 </details>
 

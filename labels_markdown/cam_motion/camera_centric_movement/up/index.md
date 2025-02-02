@@ -116,22 +116,22 @@ Does the camera move upward (not tilting up) with respect to the initial frame?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.up_cam</code>
+<code>self.cam_motion.up_cam is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.up_cam</code>
+<code>self.cam_motion.up_cam is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_down</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_down</b>: <code>self.cam_motion.down_cam is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_up</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'up' and self.cam_motion.camera_tilt == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>tilting_up</b>: <code>self.cam_motion.up_cam is False and self.cam_motion.tilt_up is True</code>
 
 </details>
 
@@ -235,24 +235,26 @@ Does the camera only move upward (not tilting up) with respect to the initial fr
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.up_cam and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])</code>
+<code>self.cam_motion.up_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.up_cam and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam']))</code>
+<code>self.cam_motion.up_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['up_cam']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_down</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down'</code>
+- <b>moving_down</b>: <code>self.cam_motion.down_cam is True</code>
+
+- <b>only_moving_down</b>: <code>self.cam_motion.down_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_up</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'up' and self.cam_motion.camera_tilt == 'up'</code>
+- <b>tilting_up</b>: <code>self.cam_motion.up_cam is False and self.cam_motion.tilt_up is True</code>
 
-- <b>compound_motion_with_up</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'up' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down'])</code>
+- <b>compound_motion_with_up</b>: <code>self.cam_motion.up_cam is True and not self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])</code>
 
 </details>
 

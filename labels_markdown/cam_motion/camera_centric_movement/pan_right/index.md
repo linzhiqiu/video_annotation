@@ -114,22 +114,22 @@ Does the camera pan right in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.pan_right</code>
+<code>self.cam_motion.pan_right is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.pan_right</code>
+<code>self.cam_motion.pan_right is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>panning_left</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>panning_left</b>: <code>self.cam_motion.pan_left is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>moving_right</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_right</b>: <code>self.cam_motion.right is True and self.cam_motion.pan_right is False</code>
 
 </details>
 
@@ -253,22 +253,26 @@ Does the camera only pan from left to right?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
+<code>self.cam_motion.pan_right is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.pan_right and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right']))</code>
+<code>self.cam_motion.pan_right is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_right']))</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>only_panning_left</b>: <code>self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'left' and self.cam_motion.check_if_no_motion(exclude=['pan']) and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>panning_left</b>: <code>self.cam_motion.pan_left is True</code>
+
+- <b>only_panning_left</b>: <code>self.cam_motion.pan_left is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>pan_right_with_other</b>: <code>self.cam_motion.camera_movement == 'major_simple' and self.cam_motion.camera_pan == 'right' and not self.cam_motion.check_if_no_motion(exclude=['pan'])</code>
+- <b>moving_right</b>: <code>self.cam_motion.right is True and self.cam_motion.pan_right is False</code>
+
+- <b>compound_motion_with_pan_right</b>: <code>self.cam_motion.pan_right is True and not self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
 
 </details>
 

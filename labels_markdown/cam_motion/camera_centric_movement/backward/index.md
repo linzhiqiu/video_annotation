@@ -124,14 +124,14 @@ Does the camera move backward (not zooming out) with respect to the initial fram
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_forward</b>: <code>self.cam_motion.forward_cam</code>
+- <b>moving_forward</b>: <code>self.cam_motion.forward_cam is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>zooming_out</b>: <code>self.cam_motion.backward_cam is False and self.cam_motion.zoom_out</code>
+- <b>zooming_out</b>: <code>self.cam_motion.backward_cam is False and self.cam_motion.zoom_out is True</code>
 
 </details>
 
@@ -252,6 +252,8 @@ Does the camera move only backward (not zooming out) with respect to the initial
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
 - <b>moving_forward</b>: <code>self.cam_motion.forward_cam is True</code>
+
+- <b>only_moving_forward</b>: <code>self.cam_motion.forward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])</code>
 
 </details>
 

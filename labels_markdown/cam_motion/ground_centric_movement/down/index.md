@@ -116,22 +116,22 @@ Does the camera move downward (not tilting down) in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.down is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.down is False and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_up</b>: <code>self.cam_motion.up is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>tilting_down</b>: <code>self.cam_motion.down is False and self.cam_motion.tilt_down is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 </details>
 
@@ -195,7 +195,7 @@ Does the camera move downward (not tilting down) in the scene, or move west if i
 
 - A video where the camera moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view, creating a noticeable vertical parallax effect.
 
-- A tracking shot where the camera moves downward (not tilting down) relative to the ground plane.
+- A shot where the camera moves downward (not tilting down) relative to the ground plane.
 
 </details>
 
@@ -225,22 +225,22 @@ Does the camera move downward (not tilting down) in the scene, or move west if i
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down</code>
+<code>self.cam_motion.down is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.down</code>
+<code>self.cam_motion.down is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_up</b>: <code>self.cam_motion.up is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>tilting_down</b>: <code>self.cam_motion.down is False and self.cam_motion.tilt_down is True</code>
 
 </details>
 
@@ -332,24 +332,26 @@ Does the camera only move downward (not tilting down) with respect to the ground
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>(self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+- <b>moving_up</b>: <code>self.cam_motion.up is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+
+- <b>only_moving_up</b>: <code>self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+- <b>tilting_down</b>: <code>self.cam_motion.down is False and self.cam_motion.tilt_down is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
-- <b>compound_motion_with_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'down' and not self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+- <b>compound_motion_with_down</b>: <code>self.cam_motion.down is True and not self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 </details>
 
@@ -415,7 +417,7 @@ Does the camera move only downward (not tilting down) in the scene, or only west
 
 - A video where the camera only moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view, creating a noticeable vertical parallax effect.
 
-- A tracking shot where the camera only moves downward (not tilting down) relative to the ground plane.
+- A shot where the camera only moves downward (not tilting down) relative to the ground plane.
 
 </details>
 
@@ -459,24 +461,26 @@ Does the camera move only downward (not tilting down) in the scene, or only west
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])</code>
+<code>self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])</code>
+<code>self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up'</code>
+- <b>moving_up</b>: <code>self.cam_motion.up is True</code>
+
+- <b>only_moving_up</b>: <code>self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up'])</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>tilting_down</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down'</code>
+- <b>tilting_down</b>: <code>self.cam_motion.down is False and self.cam_motion.tilt_down is True</code>
 
-- <b>compound_motion_with_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'down' and not self.cam_motion.check_if_no_motion(exclude=['up_down'])</code>
+- <b>compound_motion_with_down</b>: <code>self.cam_motion.down is True and not self.cam_motion.check_if_no_motion(exclude=['down'])</code>
 
 </details>
 

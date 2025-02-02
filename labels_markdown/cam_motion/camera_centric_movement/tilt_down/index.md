@@ -16,7 +16,7 @@ Does the camera tilt down in the scene?
 
 - Does the camera tilt downward in the scene?
 
-- Does the camera tilt from top to bottom?
+- Does the camera tilt downward?
 
 - Does the camera execute a tilt movement downward?
 
@@ -24,12 +24,14 @@ Does the camera tilt down in the scene?
 
 - Is the camera tilting downward?
 
-- Is the camera tilting from top to bottom?
-
 </details>
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Does the camera tilt from top to bottom?
+
+- Is the camera tilting from top to bottom?
 
 - Does the camera tilt down (not pedestal down)?
 
@@ -64,13 +66,11 @@ Does the camera tilt down in the scene?
 
 - A shot where the camera tilts downward.
 
-- A shot where the camera tilts from top to bottom.
-
 - The camera tilts downward.
 
 - The camera tilts down in the scene.
 
-- The camera tilts from top to bottom.
+- A video where the camera angles downward.
 
 - A video featuring a downward tilting movement.
 
@@ -81,6 +81,10 @@ Does the camera tilt down in the scene?
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
+- A shot where the camera tilts from top to bottom.
+
+- The camera tilts from top to bottom.
+
 - A scene where the camera tilts down (not pedestals down).
 
 - A shot with a downward tilting motion (not a pedestal movement).
@@ -88,8 +92,6 @@ Does the camera tilt down in the scene?
 - A scene where the camera rotates downward.
 
 - A shot where the view shifts from top to bottom.
-
-- A video where the camera angles downward.
 
 - A scene where the camera sweeps downward.
 
@@ -102,22 +104,22 @@ Does the camera tilt down in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_tilt == 'down'</code>
+<code>self.cam_motion.tilt_down is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>((self.cam_motion.camera_movement in ['major_simple','no'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady'] and self.cam_motion.camera_tilt != 'down') or (self.cam_motion.camera_movement in ['major_complex'] and self.cam_motion.camera_tilt == 'up')) and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
+<code>self.cam_motion.tilt_down is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>tilting_up</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_tilt == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>tilting_up</b>: <code>self.cam_motion.tilt_up is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>moving_down</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_tilt != 'down' and self.cam_motion.camera_up_down == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_down</b>: <code>self.cam_motion.down is True and self.cam_motion.tilt_down is False</code>
 
 </details>
 
