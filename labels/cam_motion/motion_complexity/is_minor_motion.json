@@ -1,0 +1,28 @@
+{
+    "label": "Has Minor Motion",
+    "label_name": "is_minor_motion",
+    "def_question": [
+        "Is the camera motion minimal, hard to discern, or very subtle?",
+        "Does the shot feature only slight or barely noticeable movement?"
+    ],
+    "alt_question": [
+        "Is the camera movement too small to classify clearly?",
+        "Does the scene contain only minor or insignificant camera motion?",
+        "Is the motion so subtle that it is difficult to detect?",
+        "Does the camera exhibit slight drifting or shaking with no clear direction?",
+        "Is there barely any noticeable movement in the shot?"
+    ],
+    "def_prompt": [
+        "A scene where the camera movement is minimal or difficult to perceive.",
+        "A shot with barely noticeable or insignificant camera motion."
+    ],
+    "alt_prompt": [
+        "A video where the camera motion is too minor to classify.",
+        "A scene featuring subtle, low-magnitude camera movement.",
+        "A shot where the camera drifts slightly without clear motion."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement == 'minor'",
+    "neg_rule_str": "self.cam_motion.camera_movement != 'minor' and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

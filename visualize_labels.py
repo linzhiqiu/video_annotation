@@ -1,5 +1,6 @@
 import os
 import json
+from label import Label
 
 # Mapping JSON field names to human-readable names
 FIELD_MAPPING = {
@@ -129,6 +130,13 @@ def process_labels_directory(input_dir, output_dir):
 if __name__ == "__main__":
     LABELS_DIR = "labels"
     MARKDOWN_OUTPUT_DIR = "labels_markdown"
+    
+    # Load all labels with nested structure
+    labels = Label.load_all_labels()
+    
+    # Print the entire label hierarchy
+    # print("\nLabel Hierarchy:")
+    # print(labels)
 
     print(f"Processing '{LABELS_DIR}' into '{MARKDOWN_OUTPUT_DIR}'...")
     process_labels_directory(LABELS_DIR, MARKDOWN_OUTPUT_DIR)

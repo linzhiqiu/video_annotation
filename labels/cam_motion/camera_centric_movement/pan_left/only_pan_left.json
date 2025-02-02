@@ -54,7 +54,7 @@
         "A scene with just horizontal camera movement from right to left."
     ],
     "pos_rule_str": "self.cam_motion.pan_left is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])",
-    "neg_rule_str": "self.cam_motion.pan_left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_left']))",
+    "neg_rule_str": "self.cam_motion.pan_left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])",
     "easy_neg_rule_str": {
         "panning_right": "self.cam_motion.pan_right is True",
         "only_panning_right": "self.cam_motion.pan_right is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])"

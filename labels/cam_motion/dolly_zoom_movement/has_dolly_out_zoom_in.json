@@ -1,0 +1,43 @@
+{
+    "label": "Has Dolly Out and Zoom In Movement",
+    "label_name": "has_dolly_out_zoom_in",
+    "def_question": [
+        "Does the shot feature a dolly zoom effect with the camera moving backward and zooming in?",
+        "Is the camera performing a dolly-out while zooming in?",
+        "Does the shot create a dolly zoom effect by retreating while zooming in?",
+        "Is the camera moving backward while simultaneously zooming in?"
+    ],
+    "alt_question": [
+        "Is there a perspective distortion due to dolly-out and zoom-in?",
+        "Does the scene demonstrate a classic reverse dolly zoom effect?",
+        "Does the background appear to shrink as the camera moves backward?",
+        "Is the subject staying the same size while the background changes due to zooming in?",
+        "Does the depth of field shift dramatically as the camera moves outward?",
+        "Is the frame compressing inward while the camera retreats?",
+        "Does the background appear to move closer while the foreground remains steady?"
+    ],
+    "def_prompt": [
+        "A scene featuring a dolly zoom effect with a backward camera movement and zoom-in.",
+        "A dolly zoom shot with the camera moving backward and zooming in.",
+        "A dolly out and zoom in shot.",
+        "The camera retreats while the field of view narrows due to zooming in.",
+        "A video where the subject remains the same size, but the background compresses due to dollying out and zooming in."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves backward while optically pushing in.",
+        "A dolly zoom shot.",
+        "The camera moves outward while zooming in to create a perspective distortion effect.",
+        "A shot demonstrating a dramatic warping effect caused by dolly-out and zoom-in.",
+        "A shot where the camera tracks backward while zooming in.",
+        "A scene demonstrating the reverse Vertigo Effect with backward movement and zoom-in.",
+        "A video where the subject stays fixed while the background appears to compress.",
+        "The camera moves outward while maintaining focus, creating a shifting depth effect.",
+        "A cinematic perspective shift caused by simultaneous dolly-out and zoom-in."
+    ],
+    "pos_rule_str": "self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom",
+    "neg_rule_str": "not self.cam_motion.dolly_zoom",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {
+        "dolly_in_zoom_out": "self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom"
+    }
+}

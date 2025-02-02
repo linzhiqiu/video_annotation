@@ -373,7 +373,7 @@ class CameraMotionData:
     #     else:
     #         return any(value != "no" for key, value in self.camera_motion_dict_cam_frame().items() if key in include)
 
-    def camera_motion_list(self):
+    def get_raw_camera_motion_list(self):
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
                 self.camera_pan, self.camera_up_down, self.camera_tilt, self.camera_arc,
                 self.camera_crane, self.camera_roll]
@@ -420,7 +420,7 @@ class CameraMotionData:
             if self.complex_motion_description:
                 raise ValueError("When camera_movement is not 'major_complex', complex_motion_description must be empty.")
 
-        camera_movements = self.camera_motion_list()
+        camera_movements = self.get_raw_camera_motion_list()
         if self.camera_movement == "major_simple":
             if all(movement == "no" for movement in camera_movements):
                 raise ValueError("When camera_movement is 'major_simple', at least one direction movement must be specified.")

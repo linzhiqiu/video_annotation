@@ -246,7 +246,7 @@ Does the camera move only forward (not zooming in) with respect to the initial f
 <code>self.cam_motion.forward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.forward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))</code>
+<code>self.cam_motion.forward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

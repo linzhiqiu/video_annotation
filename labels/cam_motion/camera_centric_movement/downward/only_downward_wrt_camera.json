@@ -44,7 +44,7 @@
         "A scene where the only movement present is the camera lowering vertically."
     ],
     "pos_rule_str": "self.cam_motion.down_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])",
-    "neg_rule_str": "self.cam_motion.down_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam']))",
+    "neg_rule_str": "self.cam_motion.down_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])",
     "easy_neg_rule_str": {
         "moving_up": "self.cam_motion.up_cam is True",
         "only_moving_up": "self.cam_motion.up_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])"

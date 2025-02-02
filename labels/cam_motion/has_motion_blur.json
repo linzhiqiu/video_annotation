@@ -1,0 +1,39 @@
+{
+    "label": "Has Motion Blur Effect",
+    "label_name": "has_motion_blur",
+    "def_question": [
+        "Does the video contain noticeable motion blur?",
+        "Is there a motion blur effect present in the shot?",
+        "Does fast movement in the video create a blurred effect?",
+        "Does the shot exhibit motion blur due to rapid movement?"
+    ],
+    "alt_question": [
+        "Is the motion in the scene accompanied by streaking or blurring?",
+        "Is the video affected by motion blur when objects move quickly?",
+        "Does the scene contain visible blurring from motion?",
+        "Is the image smeared due to rapid movement?",
+        "Does the camera movement create a motion blur effect?",
+        "Is there a blurred trail behind moving objects?",
+        "Does the shot include intentional motion blur for a cinematic effect?",
+        "Is the video affected by a loss of clarity due to motion?"
+    ],
+    "def_prompt": [
+        "A scene where the video exhibits a motion blur effect.",
+        "A shot where moving objects appear blurred due to rapid motion.",
+        "A video where motion creates a smeared visual effect.",
+        "The camera movement results in noticeable motion blur.",
+        "A sequence where fast action introduces streaking or blurring effects.",
+        "A moment in the video where motion blur is strongly visible."
+    ],
+    "alt_prompt": [
+        "A video with a blurry effect due to high-speed movement.",
+        "A shot where fast motion causes objects to blur together.",
+        "A scene demonstrating motion blur from rapid camera movement.",
+        "A video where the subject appears streaked due to fast motion.",
+        "A cinematic shot featuring intentional motion blur."
+    ],
+    "pos_rule_str": "self.cam_motion.motion_blur is True",
+    "neg_rule_str": "self.cam_motion.motion_blur is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

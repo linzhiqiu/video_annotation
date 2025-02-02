@@ -3,15 +3,21 @@
     "label_name": "has_roll_clockwise",
     "def_question": [
         "Does the camera roll clockwise in the scene?",
-        "Does the camera rotate clockwise around its optical axis?",
+        "Does the camera roll clockwise?",
+        "Is there a clockwise roll motion in the scene?",
+        "Is the camera rolling in a clockwise direction?",
+        "Is the camera rotating around its optical axis in a clockwise manner?",
+        "Is there a clockwise roll in the shot?",
+        "Is the camera rolling clockwise?",
+        "Does the camera rotate clockwise around its optical axis?"
+    ],
+    "alt_question": [
+        "Does the camera spin clockwise along its forward axis?",
         "Is there a clockwise Dutch roll in the shot?",
         "Does the camera perform a clockwise barrel roll?",
         "Is the camera rolling clockwise relative to the horizon?",
         "Does the horizon rotate clockwise in the shot?",
-        "Is there a clockwise Dutch angle movement?"
-    ],
-    "alt_question": [
-        "Does the camera spin clockwise along its forward axis?",
+        "Is there a clockwise Dutch angle movement?",
         "Is there a clockwise canted angle movement?",
         "Does the frame rotate clockwise while keeping the subject centered?",
         "Is the camera executing a clockwise roll motion?",
@@ -26,14 +32,20 @@
     ],
     "def_prompt": [
         "A shot where the camera rolls clockwise.",
-        "A shot featuring a clockwise Dutch roll.",
         "A scene with clockwise camera rotation around its optical axis.",
+        "The camera executes a clockwise roll motion.",
+        "A shot with a clockwise camera roll.",
+        "A scene featuring a clockwise roll motion.",
+        "The camera rolls clockwise in the shot.",
+        "The camera rolls clockwise.",
+        "The camera rolls in a clockwise direction.",
+        "A camera roll movement in a clockwise direction."
+    ],
+    "alt_prompt": [
+        "A shot featuring a clockwise Dutch roll.",
         "The camera performs a clockwise barrel roll.",
         "A video showing clockwise rotation relative to the horizon.",
         "A shot with clockwise Dutch angle movement.",
-        "The camera executes a clockwise roll motion."
-    ],
-    "alt_prompt": [
         "A scene where the camera spins clockwise along its forward axis.",
         "A shot demonstrating clockwise canted angle movement.",
         "A video where the frame rotates clockwise around the center.",
@@ -52,7 +64,5 @@
     "easy_neg_rule_str": {
         "rolling_counterclockwise": "self.cam_motion.roll_ccw is True"
     },
-    "hard_neg_rule_str": {
-        "panning_rotation": "self.cam_motion.pan_right is True or self.cam_motion.pan_left is True"
-    }
+    "hard_neg_rule_str": {}
 }

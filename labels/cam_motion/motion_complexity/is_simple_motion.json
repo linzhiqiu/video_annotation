@@ -1,0 +1,33 @@
+{
+    "label": "Is Simple Motion",
+    "label_name": "is_simple_motion",
+    "def_question": [
+        "Does the camera show simple motion, such as moving in a single direction, maintaining a consistent speed, or following a clear and predictable path?",
+        "Does the camera show motion that is easy to classify?"
+    ],
+    "alt_question": [
+        "Is the camera performing a straightforward, single-direction movement?",
+        "Does the shot contain a simple and consistent camera motion?",
+        "Is there a smooth, predictable motion in the scene?",
+        "Does the camera move in a steady and controlled manner?",
+        "Does the shot feature a single, clearly defined camera movement?",
+        "Is the camera motion easy to describe with a single label?",
+        "Does the camera follow a clear and intentional movement path?",
+        "Is there a stable and natural camera motion in the shot?"
+    ],
+    "def_prompt": [
+        "The camera moves in a simple, straightforward way that is easy to classify.",
+        "The camera follows a single, clear motion without complex changes."
+    ],
+    "alt_prompt": [
+        "A scene featuring a smooth, predictable camera movement.",
+        "A shot where the camera moves in a clear and steady direction.",
+        "A video where the camera motion remains simple and controlled.",
+        "A shot demonstrating a basic and easily understandable camera movement.",
+        "A scene where the camera follows a linear or predictable motion path."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement == 'major_simple'",
+    "neg_rule_str": "self.cam_motion.camera_movement != 'major_simple'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

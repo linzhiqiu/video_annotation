@@ -11,11 +11,11 @@
         "Is this exclusively an upward tilting shot?",
         "Does the camera only execute a tilt movement upward?",
         "Is this purely an upward tilting motion (no pedestal or other movements)?",
-        "Does the shot feature only a camera tilt upward (rotating, not moving up)?",
-        "Is the camera only rotating upward on its horizontal axis (no pedestal or other movements)?"
+        "Does the shot feature only a camera tilt upward (rotating, not moving up)?"
     ],
     "alt_question": [
         "Does the camera only tilt from bottom to top?",
+        "Is the camera only rotating upward on its horizontal axis (no pedestal or other movements)?",
         "Is the camera only tilting from bottom to top?",
         "Is the camera only rotating upward?",
         "Does the camera just angle upward?",
@@ -35,11 +35,11 @@
         "A scene where the camera tilts up only (not pedestals/moves up).",
         "A video with pure upward tilting motion (rotating only, no translation).",
         "A shot with an upward tilting motion (camera rotating, not moving up).",
-        "A video where the camera only rotates upward on its horizontal axis.",
         "A shot demonstrating exclusively upward tilting motion (no pedestal movement)."
     ],
     "alt_prompt": [
         "A video featuring exclusively upward tilting movement.",
+        "A video where the camera only rotates upward on its horizontal axis.",
         "A scene with only an upward tilting motion (no pedestal or other movements).",
         "A shot containing only an upward tilt (camera rotating, not moving up).",
         "A scene with nothing but an upward tilting camera movement (no vertical movement).",
@@ -51,7 +51,7 @@
         "A scene with just vertical camera rotation from bottom to top."
     ],
     "pos_rule_str": "self.cam_motion.tilt_up is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_up'])",
-    "neg_rule_str": "self.cam_motion.tilt_up is False or not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_up']))",
+    "neg_rule_str": "self.cam_motion.tilt_up is False or not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_up'])",
     "easy_neg_rule_str": {
         "tilting_down": "self.cam_motion.tilt_down is True",
         "only_tilting_down": "self.cam_motion.tilt_down is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])"

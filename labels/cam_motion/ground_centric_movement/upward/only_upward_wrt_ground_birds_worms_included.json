@@ -47,7 +47,7 @@
         "A video where the camera maintains strict upward motion with no deviation."
     ],
     "pos_rule_str": "self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up'])",
-    "neg_rule_str": "self.cam_motion.up is False or not self.cam_motion.check_if_no_motion(exclude=['up']))",
+    "neg_rule_str": "self.cam_motion.up is False or not self.cam_motion.check_if_no_motion(exclude=['up'])",
     "easy_neg_rule_str": {
         "moving_down": "self.cam_motion.down is True",
         "only_moving_down": "self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down'])"

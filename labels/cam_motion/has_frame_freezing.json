@@ -1,0 +1,40 @@
+{
+    "label": "Has Frame Freezing Effect",
+    "label_name": "has_frame_freezing",
+    "def_question": [
+        "Does the video contain a frame freeze effect at any point?",
+        "Does the shot feature a frame that stays still while the video continues?",
+        "Is there a paused frame effect within the video?",
+        "Does the video include a sudden freeze of a specific frame?"
+    ],
+    "alt_question": [
+        "Is a single frame held for a period before resuming motion?",
+        "Does the scene contain a sudden freeze of motion?",
+        "Is there a moment where movement stops while the video continues playing?",
+        "Does the video create a still frame effect in the middle of playback?",
+        "Is the action interrupted by a frame freeze?",
+        "Does the shot momentarily pause on a single frame before resuming?",
+        "Is a still image effect applied to a moving video?"
+    ],
+    "def_prompt": [
+        "A scene where the video includes a frame freezing effect.",
+        "A shot where a single frame is frozen at some point.",
+        "A video where the motion stops temporarily due to a frame freeze.",
+        "The video pauses on a still frame before continuing.",
+        "A sequence where a single frame is held for dramatic effect."
+    ],
+    "alt_prompt": [
+        "A moment in the video where the motion is held still before resuming.",
+        "A video with a brief still-frame effect in the middle of an action.",
+        "A scene where movement is interrupted by a frozen frame.",
+        "A shot where a still image effect is applied temporarily.",
+        "A video where a specific frame is paused momentarily.",
+        "A cinematic freeze-frame moment within the video sequence."
+    ],
+    "pos_rule_str": "self.cam_motion.frame_freezing is True",
+    "neg_rule_str": "self.cam_motion.frame_freezing is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {
+        "static_camera": "self.cam_motion.steadiness in ['static'] and self.cam_motion.frame_freezing is False"
+    }
+}

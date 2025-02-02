@@ -256,7 +256,7 @@ Does the camera only pan from left to right?
 <code>self.cam_motion.pan_right is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.pan_right is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_right']))</code>
+<code>self.cam_motion.pan_right is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

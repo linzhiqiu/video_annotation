@@ -48,7 +48,7 @@
         "A video featuring exclusively clockwise roll movement."
     ],
     "pos_rule_str": "self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])",
-    "neg_rule_str": "self.cam_motion.roll_cw is False or not self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw']))",
+    "neg_rule_str": "self.cam_motion.roll_cw is False or not self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])",
     "easy_neg_rule_str": {
         "rolling_counterclockwise": "self.cam_motion.roll_ccw is True",
         "only_rolling_counterclockwise": "self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])"

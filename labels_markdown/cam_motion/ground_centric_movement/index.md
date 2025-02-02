@@ -4,6 +4,6 @@
 ## Subcategories
 
 - [Backward](./backward/index.md)
-- [Down](./down/index.md)
+- [Downward](./downward/index.md)
 - [Forward](./forward/index.md)
-- [Up](./up/index.md)
+- [Upward](./upward/index.md)

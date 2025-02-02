@@ -38,7 +38,7 @@
         "A scene where the only movement present is the camera lowering vertically."
     ],
     "pos_rule_str": "self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "(self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "(self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down'])) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
         "moving_up": "self.cam_motion.up is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
         "only_moving_up": "self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"

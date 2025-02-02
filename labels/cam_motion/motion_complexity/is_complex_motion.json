@@ -1,0 +1,36 @@
+{
+    "label": "Is Complex Motion",
+    "label_name": "is_complex_motion",
+    "def_question": [
+        "Does the camera show complex motion, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear?",
+        "Does the camera show complex motion that is hard to classify?"
+    ],
+    "alt_question": [
+        "Is the camera performing conflicting or multi-step movements?",
+        "Does the shot contain a combination of different camera motions?",
+        "Is there sequential, conflicting, or speed-varying motion in the scene?",
+        "Does the camera motion change direction, sequence, or speed in a complex way?",
+        "Does the camera move in multiple directions within the shot?",
+        "Is there an advanced or unpredictable camera movement?",
+        "Does the camera motion shift unexpectedly or in distinct phases?",
+        "Is the shot difficult to describe with a single camera movement label?",
+        "Does the camera perform a complex maneuver with multiple changes?"
+    ],
+    "def_prompt": [
+        "The camera executes a complex movement that is hard to classify.",
+        "The camera moves in a complex way that doesn't fit standard motion categories."
+    ],
+    "alt_prompt": [
+        "A scene featuring complex camera motion with multiple phases or directions.",
+        "A shot where the camera performs sequential or conflicting movements.",
+        "A video where different camera motions occur at varying speeds.",
+        "A video with intricate or multi-step camera movement.",
+        "A shot where the camera shifts direction or sequence unpredictably.",
+        "A scene where multiple camera motions occur with different speeds.",
+        "A cinematic movement that combines conflicting, sequential, or varied-speed motions."
+    ],
+    "pos_rule_str": "self.cam_motion.camera_movement == 'major_complex'",
+    "neg_rule_str": "self.cam_motion.camera_movement != 'major_complex'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

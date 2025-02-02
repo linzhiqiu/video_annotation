@@ -48,7 +48,7 @@
         "A scene where the only motion is the camera pushing ahead in a single direction."
     ],
     "pos_rule_str": "self.cam_motion.forward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])",
-    "neg_rule_str": "self.cam_motion.forward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))",
+    "neg_rule_str": "self.cam_motion.forward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])",
     "easy_neg_rule_str": {
         "moving_backward": "self.cam_motion.backward_cam is True",
         "only_moving_backward": "self.cam_motion.backward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])"
