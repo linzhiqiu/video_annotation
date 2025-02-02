@@ -318,15 +318,15 @@ class CameraMotionData:
             "roll": self.camera_roll
         }
 
-    # Check if there is any motion that satisfy the condition (ground based)
     def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
+        # Check if there is any motion that satisfy the condition (ground based)
         if include:
             return any(motion in condition for motion in self.camera_motion_list if motion in include)
         else:
             return any(motion in condition for motion in self.camera_motion_list)
 
-    # Check if there is any motion that satisfy the condition (camera based)
     def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
+        # Check if there is any motion that satisfy the condition (camera based)
         if include:
             return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
         else:

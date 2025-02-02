@@ -9,4 +9,5 @@
 - [Pan_left](./pan_left/index.md)
 - [Pan_right](./pan_right/index.md)
 - [Tilt_down](./tilt_down/index.md)
+- [Tilt_up](./tilt_up/index.md)
 - [Up](./up/index.md)

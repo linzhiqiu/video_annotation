@@ -52,12 +52,12 @@
         "A shot where the camera physically travels backward instead of adjusting focal length.",
         "A video where the camera pulls back, creating a strong sense of depth."
     ],
-    "pos_rule_str": "self.cam_motion.backward_cam",
-    "neg_rule_str": "not self.cam_motion.backward_cam",
+    "pos_rule_str": "self.cam_motion.backward_cam is True",
+    "neg_rule_str": "self.cam_motion.backward_cam is False",
     "easy_neg_rule_str": {
-        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_forward": "self.cam_motion.forward_cam"
     },
     "hard_neg_rule_str": {
-        "zooming_out": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "zooming_out": "self.cam_motion.backward_cam is False and self.cam_motion.zoom_out"
     }
 }

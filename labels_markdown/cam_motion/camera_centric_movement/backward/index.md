@@ -116,22 +116,22 @@ Does the camera move backward (not zooming out) with respect to the initial fram
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward_cam</code>
+<code>self.cam_motion.backward_cam is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.backward_cam</code>
+<code>self.cam_motion.backward_cam is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_forward</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>moving_forward</b>: <code>self.cam_motion.forward_cam</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>zooming_out</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']</code>
+- <b>zooming_out</b>: <code>self.cam_motion.backward_cam is False and self.cam_motion.zoom_out</code>
 
 </details>
 
@@ -243,24 +243,24 @@ Does the camera move only backward (not zooming out) with respect to the initial
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])</code>
+<code>self.cam_motion.backward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.backward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam']))</code>
+<code>self.cam_motion.backward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>moving_forward</b>: <code>self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward'</code>
+- <b>moving_forward</b>: <code>self.cam_motion.forward_cam is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>zooming_out</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'backward' and self.cam_motion.camera_zoom == 'out'</code>
+- <b>zooming_out</b>: <code>self.cam_motion.backward_cam is False and self.cam_motion.zoom_out is True</code>
 
-- <b>compound_motion_with_backward</b>: <code>self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward'])</code>
+- <b>compound_motion_with_backward</b>: <code>self.cam_motion.backward_cam is True and not self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])</code>
 
 </details>
 
