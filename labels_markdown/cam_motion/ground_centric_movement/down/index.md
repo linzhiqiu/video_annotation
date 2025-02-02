@@ -119,7 +119,7 @@ Does the camera move downward (not tilting down) in the scene?
 <code>self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.down and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -228,7 +228,7 @@ Does the camera move downward (not tilting down) in the scene, or move west if i
 <code>self.cam_motion.down</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.down and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>not self.cam_motion.down</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -332,10 +332,10 @@ Does the camera only move downward (not tilting down) with respect to the ground
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -459,10 +459,10 @@ Does the camera move only downward (not tilting down) in the scene, or only west
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.down and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']</code>
+<code>self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['up_down'])</code>
+<code>not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

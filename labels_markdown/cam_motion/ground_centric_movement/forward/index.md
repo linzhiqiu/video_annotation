@@ -119,7 +119,7 @@ Does the camera move forward (not zooming in) in the scene?
 <code>self.cam_motion.forward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.forward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and not self.cam_motion.check_if_any_motion(include=['arc', 'crane'])</code>
+<code>not self.cam_motion.forward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -228,7 +228,7 @@ Does the camera move forward (not zooming in) in the scene, or move north if it'
 <code>self.cam_motion.forward</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.forward and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>not self.cam_motion.forward</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -332,10 +332,10 @@ Does the camera only move forward (not zooming in) with respect to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.forward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
+<code>not (self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward'])) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
@@ -459,10 +459,10 @@ Does the camera move only forward (not zooming in) in the scene, or only northwa
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.forward and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']</code>
+<code>self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward_backward'])</code>
+<code>not (self.cam_motion.forward and self.cam_motion.check_if_no_motion(exclude=['forward'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>

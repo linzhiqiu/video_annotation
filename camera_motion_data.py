@@ -45,6 +45,20 @@ class CameraMotionData:
 
         # Text box for complex descriptions
         self.complex_motion_description = ""
+
+        # Camera Motion List (ground_based)
+        self.camera_motion_list = [
+            "forward", "backward", "zoom_in", "zoom_out", "up", "down",
+            "tilt_up", "tilt_down","roll_cw", "roll_ccw",
+            "pan_right", "pan_left", "left", "right"
+        ]
+
+        # Camera motion List (camera_based)
+        self.camera_motion_cam_list = [
+            "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
+            "up_cam", "down_cam", "forward_cam", "backward_cam",
+            "roll_cw", "roll_ccw", "pan_right", "pan_left"
+        ]
     
     def set_camera_motion_attributes(self):
         # Initialize all attributes to False
@@ -303,17 +317,37 @@ class CameraMotionData:
             "crane": self.camera_crane,
             "roll": self.camera_roll
         }
-        
-    def check_if_no_motion(self, exclude: List[str] = []):
-        """Checks if only the specified motion(s) exist and all others are 'no'."""
-        return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
-    
-    def check_if_any_motion(self, include: List[str] = []):
-        """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
-        if not include:
-            return any(value != "no" for _, value in self.camera_motion_dict().items())
+
+    # Check if there is any motion that satisfy the condition (ground based)
+    def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
+        if include:
+            return any(motion in condition for motion in self.camera_motion_list if motion in include)
         else:
-            return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
+            return any(motion in condition for motion in self.camera_motion_list)
+
+    # Check if there is any motion that satisfy the condition (camera based)
+    def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
+        if include:
+            return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
+        else:
+            return any(motion in condition for motion in self.camera_motion_cam_list)
+
+    def check_if_no_motion(self, exclude: List[str] = []):
+        return all(motion == False for motion in self.camera_motion_list if motion not in exclude)
+
+    def check_if_no_motion_cam(self, exclude: List[str] = []):
+        return all(motion == False for motion in self.camera_motion_cam_list if motion not in exclude)
+
+    # def check_if_no_motion(self, exclude: List[str] = []):
+    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
+    #     return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
+    
+    # def check_if_any_motion(self, include: List[str] = []):
+    #     """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
+    #     if not include:
+    #         return any(value != "no" for _, value in self.camera_motion_dict().items())
+    #     else:
+    #         return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
     
     def camera_motion_dict_cam_frame(self):
         return {

@@ -46,8 +46,8 @@
         "A scene where the only movement present is the upward motion of the camera.",
         "A video where the camera maintains strict upward motion with no deviation."
     ],
-    "pos_rule_str": "self.cam_motion.up and self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_motion.steadiness in ['smooth', 'very_smooth']",
-    "neg_rule_str": "not (self.cam_motion.up and self.cam_motion.check_if_no_motion(exclude=['up_down']))",
+    "pos_rule_str": "self.cam_motion.up and self.cam_motion.camera_movement and self.cam_motion.check_if_no_motion(exclude=['up'])",
+    "neg_rule_str": "not (self.cam_motion.up and self.cam_motion.check_if_no_motion(exclude=['up']))",
     "easy_neg_rule_str": {
         "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down'"
     },

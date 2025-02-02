@@ -53,7 +53,7 @@
         "A video where the camera maintains a continuous downward movement."
     ],
     "pos_rule_str": "self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "not self.cam_motion.down and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady'] and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "not self.cam_motion.down and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
         "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
     },
