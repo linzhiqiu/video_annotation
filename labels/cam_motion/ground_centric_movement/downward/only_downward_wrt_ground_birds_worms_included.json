@@ -1,6 +1,6 @@
 {
     "label": "Only Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
-    "label_name": "only_down_wrt_ground_birds_worms_included",
+    "label_name": "only_downward_wrt_ground_birds_worms_included",
     "def_question": [
         "Does the camera move only downward (not tilting down) in the scene, or only westward in a bird's eye view, or only eastward in a worm's eye view?",
         "Does the camera move only downward (not tilting down) in the scene, or only leftward in a bird's eye view, or only rightward in a worm's eye view?",

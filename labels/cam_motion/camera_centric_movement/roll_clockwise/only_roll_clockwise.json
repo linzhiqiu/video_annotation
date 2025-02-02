@@ -1,0 +1,60 @@
+{
+    "label": "Only Clockwise Roll Movement",
+    "label_name": "only_roll_clockwise",
+    "def_question": [
+        "Does the camera only roll clockwise in the scene?",
+        "Does the camera only rotate clockwise around its optical axis?",
+        "Is there only a clockwise Dutch roll in the shot?",
+        "Does the camera perform only a clockwise barrel roll?",
+        "Is the camera only rolling clockwise relative to the horizon?",
+        "Does the horizon only rotate clockwise in the shot?",
+        "Is there exclusively a clockwise Dutch angle movement?"
+    ],
+    "alt_question": [
+        "Is the camera only spinning clockwise along its forward axis?",
+        "Is there only a clockwise canted angle movement?",
+        "Does the frame only rotate clockwise while keeping the subject centered?",
+        "Is the camera executing only a clockwise roll motion?",
+        "Does the shot feature exclusively clockwise rotational movement around the lens axis?",
+        "Is there only a clockwise spinning motion of the frame?",
+        "Does the camera only twist clockwise in the scene?",
+        "Is this purely a clockwise Dutch roll shot?",
+        "Does the camera create only a clockwise rotating horizon effect?",
+        "Is there exclusively a clockwise angular rotation of the frame?",
+        "Does the shot employ only a clockwise rolling technique?",
+        "Is the camera performing exclusively clockwise rotational movement?"
+    ],
+    "def_prompt": [
+        "A shot where the camera only rolls clockwise.",
+        "A shot featuring only a clockwise Dutch roll.",
+        "A scene with only clockwise camera rotation around its optical axis.",
+        "The camera performs only a clockwise barrel roll.",
+        "A video showing only clockwise rotation relative to the horizon.",
+        "A shot with exclusively clockwise Dutch angle movement.",
+        "The camera executes only a clockwise roll motion."
+    ],
+    "alt_prompt": [
+        "A scene where the camera only spins clockwise along its forward axis.",
+        "A shot demonstrating purely clockwise canted angle movement.",
+        "A video where the frame only rotates clockwise around the center.",
+        "A scene featuring exclusively clockwise Dutch roll technique.",
+        "A shot where the horizon only rotates clockwise.",
+        "A video showing purely clockwise angular rotation of the frame.",
+        "A scene with only clockwise barrel roll movement.",
+        "A shot employing exclusively clockwise Dutch angle technique.",
+        "A video demonstrating only clockwise rotational movement around the lens axis.",
+        "A scene where the camera only twists clockwise.",
+        "A shot with purely clockwise spinning motion of the frame.",
+        "A video featuring exclusively clockwise roll movement."
+    ],
+    "pos_rule_str": "self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])",
+    "neg_rule_str": "self.cam_motion.roll_cw is False or not self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw']))",
+    "easy_neg_rule_str": {
+        "rolling_counterclockwise": "self.cam_motion.roll_ccw is True",
+        "only_rolling_counterclockwise": "self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])"
+    },
+    "hard_neg_rule_str": {
+        "panning_rotation": "self.cam_motion.pan_right is True or self.cam_motion.pan_left is True",
+        "compound_motion_with_roll_cw": "self.cam_motion.roll_cw is True and not self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])"
+    }
+}

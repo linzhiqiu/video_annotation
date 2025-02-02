@@ -1,6 +1,6 @@
 {
     "label": "Has Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
-    "label_name": "has_up_wrt_ground",
+    "label_name": "has_upward_wrt_ground",
     "def_question": [
         "Does the camera move upward (not tilting up) in the scene?",
         "Is the camera moving upward in the scene?",

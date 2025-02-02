@@ -1,0 +1,62 @@
+{
+    "label": "Has Rightward Movement",
+    "label_name": "has_rightward",
+    "def_question": [
+        "Does the camera move right in the scene?",
+        "Does the camera move rightward in the scene?",
+        "Does the camera move from left to right?",
+        "Does the camera truck right in the scene?",
+        "Does the camera truck rightward?",
+        "Does the camera truck from left to right?",
+        "Is the camera moving rightward?",
+        "Is the camera trucking right?"
+    ],
+    "alt_question": [
+        "Does the camera move right (not pan right)?",
+        "Does the shot feature a rightward camera movement (moving, not rotating)?",
+        "Is the camera traveling right in the scene?",
+        "Is this a rightward tracking shot?",
+        "Is this a right trucking motion (not panning)?",
+        "Is the camera translating to the right?",
+        "Does the camera physically move from left to right?",
+        "Is the camera tracking rightward?",
+        "Is this a lateral movement to the right?",
+        "Does the camera dolly right?",
+        "Is this a rightward dolly shot?",
+        "Is the camera sliding right?",
+        "Does the camera track from left to right?"
+    ],
+    "def_prompt": [
+        "A shot where the camera moves right.",
+        "A shot where the camera moves rightward.",
+        "A shot where the camera moves from left to right.",
+        "A shot where the camera trucks right.",
+        "A shot where the camera trucks rightward.",
+        "A shot where the camera trucks from left to right.",
+        "The camera moves rightward.",
+        "The camera trucks right in the scene.",
+        "A video featuring rightward camera movement."
+    ],
+    "alt_prompt": [
+        "A scene where the camera moves right (not panning right).",
+        "A shot with rightward camera motion (moving sideways, not rotating).",
+        "A video where the camera travels right.",
+        "A scene featuring rightward tracking movement.",
+        "A shot where the camera trucks right without rotation.",
+        "A video demonstrating rightward camera translation.",
+        "A scene where the camera physically moves from left to right.",
+        "A shot with lateral rightward movement.",
+        "A video where the camera dollies right.",
+        "A scene with rightward tracking motion.",
+        "A shot where the camera slides right.",
+        "A video featuring a right trucking movement."
+    ],
+    "pos_rule_str": "self.cam_motion.right is True",
+    "neg_rule_str": "self.cam_motion.right is False",
+    "easy_neg_rule_str": {
+        "moving_left": "self.cam_motion.left is True"
+    },
+    "hard_neg_rule_str": {
+        "panning_right": "self.cam_motion.pan_right is True and self.cam_motion.right is False"
+    }
+}

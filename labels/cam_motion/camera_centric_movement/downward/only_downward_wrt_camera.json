@@ -1,6 +1,6 @@
 {
     "label": "Only Downward Movement (Relative to Camera)",
-    "label_name": "only_down_wrt_camera",
+    "label_name": "only_downward_wrt_camera",
     "def_question": [
         "Does the camera only move downward (not tilting down) with respect to the initial frame?",
         "Is downward motion the only camera movement from the initial frame?",

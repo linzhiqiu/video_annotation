@@ -1,0 +1,63 @@
+{
+    "label": "Only Rightward Movement",
+    "label_name": "only_rightward",
+    "def_question": [
+        "Does the camera only move right in the scene?",
+        "Does the camera only move rightward, without any other camera movements?",
+        "Does the camera only move from left to right?",
+        "Does the camera only truck right in the scene?",
+        "Does the camera only truck rightward?",
+        "Does the camera only truck from left to right?",
+        "Is the camera movement purely rightward?",
+        "Is this exclusively a rightward tracking shot?"
+    ],
+    "alt_question": [
+        "Is the camera only moving right (no panning or other movements)?",
+        "Does the shot feature only rightward camera movement?",
+        "Is the camera only traveling right in the scene?",
+        "Is this just a rightward tracking shot?",
+        "Is this strictly a right trucking motion?",
+        "Is the camera only translating to the right?",
+        "Does the camera only move physically from left to right?",
+        "Is this just a lateral movement to the right?",
+        "Does the camera only dolly right?",
+        "Is this purely a rightward dolly shot?",
+        "Is the camera only sliding right?",
+        "Is this exclusively a right trucking shot?"
+    ],
+    "def_prompt": [
+        "A shot where the camera only moves right.",
+        "A shot where the camera only moves rightward.",
+        "A shot where the camera only moves from left to right.",
+        "A shot where the camera only trucks right.",
+        "A shot where the camera only trucks rightward.",
+        "A shot where the camera only trucks from left to right.",
+        "The camera only moves rightward.",
+        "The camera only trucks right in the scene.",
+        "A video featuring exclusively rightward camera movement."
+    ],
+    "alt_prompt": [
+        "A scene where the camera only moves right (no panning or other movements).",
+        "A shot with pure rightward camera motion (moving sideways only).",
+        "A video where the camera only travels right.",
+        "A scene featuring only rightward tracking movement.",
+        "A shot where the camera only trucks right.",
+        "A video demonstrating pure rightward camera translation.",
+        "A scene where the camera only moves physically from left to right.",
+        "A shot with only lateral rightward movement.",
+        "A video where the camera only dollies right.",
+        "A scene with pure rightward tracking motion.",
+        "A shot where the camera only slides right.",
+        "A video featuring only right trucking movement."
+    ],
+    "pos_rule_str": "self.cam_motion.right is True and self.cam_motion.check_if_no_motion_cam(exclude=['right'])",
+    "neg_rule_str": "self.cam_motion.right is False or not self.cam_motion.check_if_no_motion_cam(exclude=['right']))",
+    "easy_neg_rule_str": {
+        "moving_left": "self.cam_motion.left is True",
+        "only_moving_left": "self.cam_motion.left is True and self.cam_motion.check_if_no_motion_cam(exclude=['left'])"
+    },
+    "hard_neg_rule_str": {
+        "panning_right": "self.cam_motion.pan_right is True and self.cam_motion.right is False",
+        "compound_motion_with_right": "self.cam_motion.right is True and not self.cam_motion.check_if_no_motion_cam(exclude=['right'])"
+    }
+}
