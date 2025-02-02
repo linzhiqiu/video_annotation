@@ -1,0 +1,63 @@
+{
+    "label": "Only Leftward Movement",
+    "label_name": "only_leftward",
+    "def_question": [
+        "Does the camera only move left in the scene?",
+        "Does the camera only move leftward, without any other camera movements?",
+        "Does the camera only move from right to left?",
+        "Does the camera only truck left in the scene?",
+        "Does the camera only truck leftward?",
+        "Does the camera only truck from right to left?",
+        "Is the camera movement purely leftward?",
+        "Is this exclusively a leftward tracking shot?"
+    ],
+    "alt_question": [
+        "Is the camera only moving left (no panning or other movements)?",
+        "Does the shot feature only leftward camera movement?",
+        "Is the camera only traveling left in the scene?",
+        "Is this just a leftward tracking shot?",
+        "Is this strictly a left trucking motion?",
+        "Is the camera only translating to the left?",
+        "Does the camera only move physically from right to left?",
+        "Is this just a lateral movement to the left?",
+        "Does the camera only dolly left?",
+        "Is this purely a leftward dolly shot?",
+        "Is the camera only sliding left?",
+        "Is this exclusively a left trucking shot?"
+    ],
+    "def_prompt": [
+        "A shot where the camera only moves left.",
+        "A shot where the camera only moves leftward.",
+        "A shot where the camera only moves from right to left.",
+        "A shot where the camera only trucks left.",
+        "A shot where the camera only trucks leftward.",
+        "A shot where the camera only trucks from right to left.",
+        "The camera only moves leftward.",
+        "The camera only trucks left in the scene.",
+        "A video featuring exclusively leftward camera movement."
+    ],
+    "alt_prompt": [
+        "A scene where the camera only moves left (no panning or other movements).",
+        "A shot with pure leftward camera motion (moving sideways only).",
+        "A video where the camera only travels left.",
+        "A scene featuring only leftward tracking movement.",
+        "A shot where the camera only trucks left.",
+        "A video demonstrating pure leftward camera translation.",
+        "A scene where the camera only moves physically from right to left.",
+        "A shot with only lateral leftward movement.",
+        "A video where the camera only dollies left.",
+        "A scene with pure leftward tracking motion.",
+        "A shot where the camera only slides left.",
+        "A video featuring only left trucking movement."
+    ],
+    "pos_rule_str": "self.cam_motion.left is True and self.cam_motion.check_if_no_motion_cam(exclude=['left'])",
+    "neg_rule_str": "self.cam_motion.left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['left']))",
+    "easy_neg_rule_str": {
+        "moving_right": "self.cam_motion.right is True",
+        "only_moving_right": "self.cam_motion.right is True and self.cam_motion.check_if_no_motion_cam(exclude=['right'])"
+    },
+    "hard_neg_rule_str": {
+        "panning_left": "self.cam_motion.pan_left is True and self.cam_motion.left is False",
+        "compound_motion_with_left": "self.cam_motion.left is True and not self.cam_motion.check_if_no_motion_cam(exclude=['left'])"
+    }
+}

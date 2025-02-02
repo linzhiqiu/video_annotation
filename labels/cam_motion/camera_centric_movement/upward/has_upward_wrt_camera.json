@@ -1,6 +1,6 @@
 {
     "label": "Has Upward Movement (Relative to Camera)",
-    "label_name": "has_up_wrt_camera",
+    "label_name": "has_upward_wrt_camera",
     "def_question": [
         "Does the camera move upward (not tilting up) with respect to the initial frame?",
         "Is the camera moving upward in space based on its starting position?",

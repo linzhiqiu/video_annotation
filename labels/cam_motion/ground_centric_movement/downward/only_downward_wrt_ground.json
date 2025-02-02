@@ -1,6 +1,6 @@
 {
     "label": "Only Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
-    "label_name": "only_down_wrt_ground",
+    "label_name": "only_downward_wrt_ground",
     "def_question": [
         "Does the camera only move downward (not tilting down) with respect to the ground?",
         "Is the camera only moving downward with respect to the ground?",

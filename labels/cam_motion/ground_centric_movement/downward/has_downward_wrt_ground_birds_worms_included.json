@@ -1,6 +1,6 @@
 {
     "label": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
-    "label_name": "has_down_wrt_ground_birds_worms_included",
+    "label_name": "has_downward_wrt_ground_birds_worms_included",
     "def_question": [
         "Does the camera move downward (not tilting down) in the scene, or move west if it's a bird's eye view, or move east if it's a worm's eye view?",
         "Does the camera move downward (not tilting down) in the scene, or move left if it's a bird's eye view, or move right if it's a worm's eye view?",

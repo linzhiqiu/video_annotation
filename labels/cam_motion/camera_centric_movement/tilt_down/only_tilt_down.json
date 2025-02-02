@@ -1,0 +1,63 @@
+{
+    "label": "Only Tilt Down Movement",
+    "label_name": "only_tilt_down",
+    "def_question": [
+        "Does the camera only tilt down in the scene?",
+        "Does the camera only tilt downward in the scene, without any other camera movements?",
+        "Does the camera only tilt downward?",
+        "Is this a downward tilting shot?",
+        "Is the camera only tilting downward?",
+        "Is the camera movement purely a downward tilt?",
+        "Is this exclusively a downward tilting shot?",
+        "Does the camera only execute a tilt movement downward?",
+        "Is this purely a downward tilting motion (no pedestal or other movements)?",
+        "Does the shot feature only a camera tilt downward (rotating, not moving down)?",
+        "Is the camera only rotating downward on its horizontal axis (no pedestal or other movements)?"
+    ],
+    "alt_question": [
+        "Does the camera only tilt from top to bottom?",
+        "Is the camera only tilting from top to bottom?",
+        "Is the camera only rotating downward?",
+        "Does the camera just angle downward?",
+        "Is the movement limited to a downward rotation?",
+        "Is this just a downward sweep of the camera?",
+        "Is the camera only pivoting down?",
+        "Is this strictly a vertical movement from top to bottom?",
+        "Does the camera only move vertically from top to bottom?"
+    ],
+    "def_prompt": [
+        "A shot where the camera only tilts down.",
+        "A shot where the camera only tilts downward.",
+        "A shot where the camera only tilts from top to bottom.",
+        "The camera only tilts downward.",
+        "The camera only tilts down in the scene.",
+        "The camera only tilts from top to bottom.",
+        "A scene where the camera tilts down only (not pedestals/moves down).",
+        "A video with pure downward tilting motion (rotating only, no translation).",
+        "A shot with a downward tilting motion (camera rotating, not moving down).",
+        "A video where the camera only rotates downward on its horizontal axis.",
+        "A shot demonstrating exclusively downward tilting motion (no pedestal movement)."
+    ],
+    "alt_prompt": [
+        "A video featuring exclusively downward tilting movement.",
+        "A scene with only a downward tilting motion (no pedestal or other movements).",
+        "A shot containing only a downward tilt (camera rotating, not moving down).",
+        "A scene with nothing but a downward tilting camera movement (no vertical movement).",
+        "A scene where the camera only rotates downward.",
+        "A shot with just a downward turning motion.",
+        "A video showing only a downward sweeping movement.",
+        "A scene limited to downward camera rotation.",
+        "A shot where the camera just pivots down.",
+        "A scene with just vertical camera rotation from top to bottom."
+    ],
+    "pos_rule_str": "self.cam_motion.tilt_down is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])",
+    "neg_rule_str": "self.cam_motion.tilt_down is False or not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down']))",
+    "easy_neg_rule_str": {
+        "tilting_up": "self.cam_motion.tilt_up is True",
+        "only_tilting_up": "self.cam_motion.tilt_up is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_up'])"
+    },
+    "hard_neg_rule_str": {
+        "moving_down": "self.cam_motion.down is True and self.cam_motion.tilt_down is False",
+        "compound_motion_with_tilt_down": "self.cam_motion.tilt_down is True and not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])"
+    }
+}

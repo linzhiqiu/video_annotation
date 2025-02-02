@@ -1,0 +1,57 @@
+{
+    "label": "Has Tilt Up Movement",
+    "label_name": "has_tilt_up",
+    "def_question": [
+        "Does the camera tilt up in the scene?",
+        "Does the camera tilt upward in the scene?",
+        "Does the camera tilt upward?",
+        "Does the camera execute a tilt movement upward?",
+        "Is the camera tilting up in the scene?",
+        "Is the camera tilting upward?"
+    ],
+    "alt_question": [
+        "Does the camera tilt from bottom to top?",
+        "Is the camera tilting from bottom to top?",
+        "Does the camera tilt up (not pedestal up)?",
+        "Does the shot feature a camera tilt upward (not a pedestal movement)?",
+        "Is the camera tilting upward (not pedestaling up)?",
+        "Is this an upward tilting shot?",
+        "Is this an up tilting motion (not moving up)?",
+        "Is the camera rotating upward on its horizontal axis?",
+        "Does the view shift from bottom to top?",
+        "Is the camera angling upward?",
+        "Does the camera sweep upward?",
+        "Is the camera pivoting up?",
+        "Does the camera rotate vertically upward?",
+        "Is this a vertical rotation of the camera upward?"
+    ],
+    "def_prompt": [
+        "A shot where the camera tilts up.",
+        "A shot where the camera tilts upward.",
+        "The camera tilts upward.",
+        "The camera tilts up in the scene.",
+        "A video where the camera angles upward.",
+        "A video featuring an upward tilting movement.",
+        "A scene featuring an upward tilting camera movement."
+    ],
+    "alt_prompt": [
+        "A shot where the camera tilts from bottom to top.",
+        "The camera tilts from bottom to top.",
+        "A scene where the camera tilts up (not pedestals up).",
+        "A shot with an upward tilting motion (not a pedestal movement).",
+        "A scene where the camera rotates upward.",
+        "A shot where the view shifts from bottom to top.",
+        "A scene where the camera sweeps upward.",
+        "A shot with upward camera rotation.",
+        "A video where the camera pivots up.",
+        "A scene where the camera rotates vertically upward."
+    ],
+    "pos_rule_str": "self.cam_motion.tilt_up is True",
+    "neg_rule_str": "self.cam_motion.tilt_up is False",
+    "easy_neg_rule_str": {
+        "tilting_down": "self.cam_motion.tilt_down is True"
+    },
+    "hard_neg_rule_str": {
+        "moving_up": "self.cam_motion.up is True and self.cam_motion.tilt_up is False"
+    }
+}
