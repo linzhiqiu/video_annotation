@@ -51,12 +51,12 @@
         "A scene where the camera pivots right.",
         "A shot with horizontal camera movement from left to right."
     ],
-    "pos_rule_str": "self.cam_motion.pan_right",
-    "neg_rule_str": "not self.cam_motion.pan_right",
+    "pos_rule_str": "self.cam_motion.pan_right is True",
+    "neg_rule_str": "self.cam_motion.pan_right is False",
     "easy_neg_rule_str": {
-        "panning_left": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_pan == 'left' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "panning_left": "self.cam_motion.pan_left is True"
     },
     "hard_neg_rule_str": {
-        "moving_right": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_pan != 'right' and self.cam_motion.camera_left_right == 'right' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_right": "self.cam_motion.right is True and self.cam_motion.pan_right is False"
     }
 }

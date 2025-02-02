@@ -37,13 +37,14 @@
         "A shot where the tracking movement is purely downward with no other motion.",
         "A scene where the only movement present is the camera lowering vertically."
     ],
-    "pos_rule_str": "self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "(self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
-        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+        "moving_up": "self.cam_motion.up is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "only_moving_up": "self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     },
     "hard_neg_rule_str": {
-        "tilting_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-        "compound_motion_with_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'down' and not self.cam_motion.check_if_no_motion(exclude=['up_down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+        "tilting_down": "self.cam_motion.down is False and self.cam_motion.tilt_down is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "compound_motion_with_down": "self.cam_motion.down is True and not self.cam_motion.check_if_no_motion(exclude=['down']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     }
 }

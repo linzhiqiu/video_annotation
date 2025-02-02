@@ -7,7 +7,7 @@
         "Is there no other camera motion except downward movement relative to the initial frame?",
         "Does the camera move downward with respect to itself without any other movement or tilting?",
         "Is the camera only moving downward relative to the first frame?",
-        "Is the camera only performing a pedestal down movement?",
+        "Is the camera only performing a pedestal down movement with respect to itself?",
         "Is the camera only descending with respect to itself?",
         "Is the camera only moving downward without tilting down relative to the first frame?"
     ],
@@ -30,7 +30,7 @@
         "A shot where the camera lowers straight down with respect to the initial frame without any other motion.",
         "A video where the camera exclusively moves downward relative to the initial frame, creating a noticeable vertical parallax effect.",
         "A scene where the camera moves only downward relative to itself, avoiding tilting or other motions.",
-        "The camera is only performing a pedestal down movement.",
+        "The camera is only performing a pedestal down movement with respect to itself.",
         "The camera is only descending with respect to itself."
     ],
     "alt_prompt": [
@@ -43,13 +43,14 @@
         "A shot where the tracking movement is purely downward with no other motion.",
         "A scene where the only movement present is the camera lowering vertically."
     ],
-    "pos_rule_str": "self.cam_motion.down_cam and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])",
-    "neg_rule_str": "not (self.cam_motion.down_cam and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam']))",
+    "pos_rule_str": "self.cam_motion.down_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])",
+    "neg_rule_str": "self.cam_motion.down_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam']))",
     "easy_neg_rule_str": {
-        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up'"
+        "moving_up": "self.cam_motion.up_cam is True",
+        "only_moving_up": "self.cam_motion.up_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['up_cam'])"
     },
     "hard_neg_rule_str": {
-        "tilting_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'down' and self.cam_motion.camera_tilt == 'down'",
-        "compound_motion_with_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame == 'down' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['up_down'])"
+        "tilting_down": "self.cam_motion.down_cam is False and self.cam_motion.tilt_down is True",
+        "compound_motion_with_down": "self.cam_motion.down_cam is True and not self.cam_motion.check_if_no_motion_cam(exclude=['down_cam'])"
     }
 }

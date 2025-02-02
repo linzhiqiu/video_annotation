@@ -6,7 +6,7 @@
         "Is the camera moving downward in space based on its starting position?",
         "Is the camera moving downward (not tilting down) with respect to itself, creating a noticeable vertical parallax effect?",
         "Is the downward motion of the camera clear in this shot by comparing the start and end of the shot?",
-        "Is the camera performing a pedestal down movement?",
+        "Is the camera performing a pedestal down movement relative to its initial position?",
         "Is the camera descending with respect to itself?"
     ],
     "alt_question": [
@@ -29,7 +29,7 @@
         "A shot where the camera moves downward in space based on its starting position.",
         "A video where the camera moves downward (not tilting down) with respect to itself, creating a noticeable vertical parallax effect.",
         "A scene where the downward motion of the camera is clear by comparing the start and end of the shot.",
-        "The camera performs a pedestal down movement.",
+        "The camera performs a pedestal down movement with respect to itself.",
         "The camera descends with respect to itself.",
         "A video where the camera physically lowers with respect to itself."
     ],
@@ -52,12 +52,12 @@
         "A shot where the camera physically travels downward instead of rotating.",
         "A video where the camera lowers, creating a strong sense of vertical movement."
     ],
-    "pos_rule_str": "self.cam_motion.down_cam",
-    "neg_rule_str": "not self.cam_motion.down_cam",
+    "pos_rule_str": "self.cam_motion.down_cam is True",
+    "neg_rule_str": "self.cam_motion.down_cam is False",
     "easy_neg_rule_str": {
-        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_up": "self.cam_motion.up_cam is True"
     },
     "hard_neg_rule_str": {
-        "tilting_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'down' and self.cam_motion.camera_tilt == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "tilting_down": "self.cam_motion.tilt_down is True and self.cam_motion.down_cam is False"
     }
 }

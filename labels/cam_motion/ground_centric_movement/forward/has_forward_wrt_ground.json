@@ -52,12 +52,12 @@
         "A shot where the perspective shifts forward dynamically.",
         "A video where the camera maintains a continuous forward movement."
     ],
-    "pos_rule_str": "self.cam_motion.forward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "not self.cam_motion.forward and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_motion.forward is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "self.cam_motion.forward is False and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
-        "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'backward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_backward": "self.cam_motion.backward is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     },
     "hard_neg_rule_str": {
-        "zooming_in": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward != 'forward' and self.cam_motion.camera_zoom == 'in' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown'] and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "zooming_in": "self.cam_motion.forward is False and self.cam_motion.zoom_in is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     }
 }

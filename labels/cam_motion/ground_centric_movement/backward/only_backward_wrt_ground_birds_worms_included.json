@@ -25,7 +25,7 @@
         "A video where the camera moves only backward (not zooming out) in the scene, or only south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera only moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera only moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view, creating a noticeable parallax effect.",
-        "A tracking shot where the camera only moves backward (not zooming out) relative to the ground plane."
+        "A shot where the camera only moves backward (not zooming out) relative to the ground plane."
     ],
     "alt_prompt": [
         "A shot where the camera moves backward without shifting side-to-side.",
@@ -46,13 +46,14 @@
         "A scene where the only movement present is the backward motion of the camera.",
         "A video where the camera maintains strict backward motion with no deviation."
     ],
-    "pos_rule_str": "self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward'])",
-    "neg_rule_str": "not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward'])",
+    "pos_rule_str": "self.cam_motion.backward is True and self.cam_motion.check_if_no_motion(exclude=['backward'])",
+    "neg_rule_str": "self.cam_motion.backward is False or not self.cam_motion.check_if_no_motion(exclude=['backward'])",
     "easy_neg_rule_str": {
-        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'forward'"
+        "moving_forward": "self.cam_motion.forward is True",
+        "only_moving_forward": "self.cam_motion.forward is True and self.cam_motion.check_if_no_motion(exclude=['forward'])"
     },
     "hard_neg_rule_str": {
-        "zooming_out": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward != 'backward' and self.cam_motion.camera_zoom == 'out'",
-        "compound_motion_with_backward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and not self.cam_motion.check_if_no_motion(exclude=['forward_backward'])"
+        "zooming_out": "self.cam_motion.backward is False and self.cam_motion.zoom_out is True",
+        "compound_motion_with_backward": "self.cam_motion.backward is True and not self.cam_motion.check_if_no_motion(exclude=['backward'])"
     }
 }

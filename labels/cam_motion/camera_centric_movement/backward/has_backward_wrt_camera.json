@@ -55,9 +55,9 @@
     "pos_rule_str": "self.cam_motion.backward_cam is True",
     "neg_rule_str": "self.cam_motion.backward_cam is False",
     "easy_neg_rule_str": {
-        "moving_forward": "self.cam_motion.forward_cam"
+        "moving_forward": "self.cam_motion.forward_cam is True"
     },
     "hard_neg_rule_str": {
-        "zooming_out": "self.cam_motion.backward_cam is False and self.cam_motion.zoom_out"
+        "zooming_out": "self.cam_motion.backward_cam is False and self.cam_motion.zoom_out is True"
     }
 }

@@ -24,7 +24,7 @@
     "def_prompt": [
         "A video where the camera moves upward (not tilting up) in the scene or moves east in a bird's eye view or west in a worm's eye view.",
         "A video where the camera moves upward (not tilting up) in the scene or moves east in a bird's eye view or west in a worm's eye view, creating a noticeable vertical parallax effect.",
-        "A tracking shot where the camera moves upward (not tilting up) relative to the ground plane."
+        "A shot where the camera moves upward (not tilting up) relative to the ground plane."
     ],
     "alt_prompt": [
         "A shot where the camera moves upward, not tilting up.",
@@ -38,12 +38,12 @@
         "A shot where the perspective shifts upward dynamically.",
         "A video where the camera maintains a continuous upward movement."
     ],
-    "pos_rule_str": "self.cam_motion.up",
-    "neg_rule_str": "not self.cam_motion.up",
+    "pos_rule_str": "self.cam_motion.up is True",
+    "neg_rule_str": "self.cam_motion.up is False",
     "easy_neg_rule_str": {
-        "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_down": "self.cam_motion.down is True"
     },
     "hard_neg_rule_str": {
-        "tilting_up": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down != 'up' and self.cam_motion.camera_tilt == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "tilting_up": "self.cam_motion.up is False and self.cam_motion.tilt_up is True"
     }
 }

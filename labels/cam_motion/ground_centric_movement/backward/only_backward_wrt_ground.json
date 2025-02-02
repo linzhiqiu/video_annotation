@@ -37,13 +37,14 @@
         "A shot where the tracking movement is purely backward with no other motion.",
         "A scene where the only movement present is the camera pulling back."
     ],
-    "pos_rule_str": "self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-    "neg_rule_str": "not (self.cam_motion.backward and self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_motion.backward is True and self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+    "neg_rule_str": "(self.cam_motion.backward is False or not self.cam_motion.check_if_no_motion(exclude=['backward'])) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {
-        "moving_forward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward == 'forward' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+        "moving_forward": "self.cam_motion.forward is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "only_moving_forward": "self.cam_motion.forward is True and self.cam_motion.check_if_no_motion(exclude=['forward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     },
     "hard_neg_rule_str": {
-        "zooming_out": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward != 'backward' and self.cam_motion.camera_zoom == 'out' and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
-        "compound_motion_with_backward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward == 'backward' and not self.cam_motion.check_if_no_motion(exclude=['forward_backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
+        "zooming_out": "self.cam_motion.backward is False and self.cam_motion.zoom_out is True and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']",
+        "compound_motion_with_backward": "self.cam_motion.backward is True and not self.cam_motion.check_if_no_motion(exclude=['backward']) and self.cam_setup.camera_angle_start not in ['bird_eye_angle', 'worm_eye_angle', 'unknown']"
     }
 }

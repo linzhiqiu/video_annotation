@@ -52,12 +52,12 @@
         "A shot where the camera physically travels upward instead of rotating.",
         "A video where the camera rises, creating a strong sense of vertical movement."
     ],
-    "pos_rule_str": "self.cam_motion.up_cam",
-    "neg_rule_str": "not self.cam_motion.up_cam",
+    "pos_rule_str": "self.cam_motion.up_cam is True",
+    "neg_rule_str": "self.cam_motion.up_cam is False",
     "easy_neg_rule_str": {
-        "moving_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down_cam_frame == 'down' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "moving_down": "self.cam_motion.down_cam is True"
     },
     "hard_neg_rule_str": {
-        "tilting_up": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down_cam_frame != 'up' and self.cam_motion.camera_tilt == 'up' and self.cam_motion.steadiness not in ['unsteady','very_unsteady']"
+        "tilting_up": "self.cam_motion.up_cam is False and self.cam_motion.tilt_up is True"
     }
 }

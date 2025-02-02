@@ -47,13 +47,14 @@
         "A shot where the tracking movement is purely forward without other motions.",
         "A scene where the only motion is the camera pushing ahead in a single direction."
     ],
-    "pos_rule_str": "self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])",
-    "neg_rule_str": "not (self.cam_motion.forward_cam and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))",
+    "pos_rule_str": "self.cam_motion.forward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])",
+    "neg_rule_str": "self.cam_motion.forward_cam is False or not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam']))",
     "easy_neg_rule_str": {
-        "moving_backward": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_forward_backward_cam_frame == 'backward'"
+        "moving_backward": "self.cam_motion.backward_cam is True",
+        "only_moving_backward": "self.cam_motion.backward_cam is True and self.cam_motion.check_if_no_motion_cam(exclude=['backward_cam'])"
     },
     "hard_neg_rule_str": {
-        "zooming_in": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame != 'forward' and self.cam_motion.camera_zoom == 'in'",
-        "compound_motion_with_forward": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_forward_backward_cam_frame == 'forward' and not self.cam_motion.check_if_no_motion_cam_frame(exclude=['forward_backward'])"
+        "zooming_in": "self.cam_motion.forward_cam is False and self.cam_motion.zoom_in is True",
+        "compound_motion_with_forward": "self.cam_motion.forward_cam is True and not self.cam_motion.check_if_no_motion_cam(exclude=['forward_cam'])"
     }
 }

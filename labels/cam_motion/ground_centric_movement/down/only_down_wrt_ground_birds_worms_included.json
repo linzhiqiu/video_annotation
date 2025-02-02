@@ -25,7 +25,7 @@
         "A video where the camera moves only downward (not tilting down) in the scene, or only west in a bird's eye view or east in a worm's eye view.",
         "A video where the camera only moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view.",
         "A video where the camera only moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view, creating a noticeable vertical parallax effect.",
-        "A tracking shot where the camera only moves downward (not tilting down) relative to the ground plane."
+        "A shot where the camera only moves downward (not tilting down) relative to the ground plane."
     ],
     "alt_prompt": [
         "A shot where the camera lowers downward without shifting horizontally.",
@@ -46,13 +46,14 @@
         "A scene where the only movement present is the downward motion of the camera.",
         "A video where the camera maintains strict downward motion with no deviation."
     ],
-    "pos_rule_str": "self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])",
-    "neg_rule_str": "not (self.cam_motion.down and self.cam_motion.check_if_no_motion(exclude=['down'])",
+    "pos_rule_str": "self.cam_motion.down is True and self.cam_motion.check_if_no_motion(exclude=['down'])",
+    "neg_rule_str": "self.cam_motion.down is False or not self.cam_motion.check_if_no_motion(exclude=['down'])",
     "easy_neg_rule_str": {
-        "moving_up": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down == 'up'"
+        "moving_up": "self.cam_motion.up is True",
+        "only_moving_up": "self.cam_motion.up is True and self.cam_motion.check_if_no_motion(exclude=['up'])"
     },
     "hard_neg_rule_str": {
-        "tilting_down": "self.cam_motion.camera_movement in ['major_simple','major_complex'] and self.cam_motion.camera_up_down != 'down' and self.cam_motion.camera_tilt == 'down'",
-        "compound_motion_with_down": "self.cam_motion.camera_movement in ['major_simple'] and self.cam_motion.camera_up_down == 'down' and not self.cam_motion.check_if_no_motion(exclude=['up_down'])"
+        "tilting_down": "self.cam_motion.down is False and self.cam_motion.tilt_down is True",
+        "compound_motion_with_down": "self.cam_motion.down is True and not self.cam_motion.check_if_no_motion(exclude=['down'])"
     }
 }
