@@ -207,7 +207,7 @@ def convert_to_data_format(annotations_dict: Dict[str, Any], taxonomy_lookup: Di
     return result
 
 def load_issues(issues_dir: str) -> set:
-    """Load video IDs from issues directory that should be skipped."""
+    """Load video IDs from issues directory."""
     issue_ids = set()
     if not os.path.exists(issues_dir):
         return issue_ids
@@ -219,16 +219,17 @@ def load_issues(issues_dir: str) -> set:
                     try:
                         record = json.loads(line.strip())
                         video_id = record.get('data_row', {}).get('id')
-                        if video_id:
-                            issue_ids.add(video_id)
+                        video_name = record.get('data_row', {}).get('external_id', video_id)
+                        if video_name:
+                            issue_ids.add(video_name)
                     except json.JSONDecodeError:
                         continue
     return issue_ids
 
-def collect_valid_video_names(ndjson_dir: str, issues_dir: str) -> set:
-    """Collect all valid video names by scanning NDJSON files and removing ones with issues."""
-    valid_videos = set()
-    issue_ids = load_issues(issues_dir)
+def collect_valid_video_names(ndjson_dir: str, issues_dir: str) -> tuple[set, set]:
+    """Collect all video names and identify which ones are from issues directory."""
+    all_videos = set()
+    issue_videos = load_issues(issues_dir)
     
     for filename in os.listdir(ndjson_dir):
         if not filename.endswith('.ndjson'):
@@ -242,21 +243,21 @@ def collect_valid_video_names(ndjson_dir: str, issues_dir: str) -> set:
                     video_id = record.get('data_row', {}).get('id')
                     video_name = record.get('data_row', {}).get('external_id', video_id)
                     
-                    if video_id and video_id not in issue_ids:
-                        valid_videos.add(video_name)
+                    if video_name:
+                        all_videos.add(video_name)
                 except Exception as e:
                     logging.error(f"Error processing line {line_number} in {filepath}: {e}")
                     
-    return valid_videos
+    return all_videos, issue_videos
 
 def process_ndjson_files(ndjson_dir: str, issues_dir: str) -> Dict[str, VideoData]:
     """Process all NDJSON files in directory and return dictionary of VideoData objects."""
     taxonomy_lookup = load_taxonomy()
-    valid_videos = collect_valid_video_names(ndjson_dir, issues_dir)
-    video_data_dict = {name: VideoData() for name in valid_videos}
+    all_videos, issue_videos = collect_valid_video_names(ndjson_dir, issues_dir)
+    video_data_dict = {name: VideoData() for name in all_videos}
     video_annotations = defaultdict(list)
     
-    logging.info(f"Processing {len(valid_videos)} videos...")
+    logging.info(f"Processing {len(all_videos)} videos ({len(issue_videos)} marked as shot transitions)...")
     
     # Process NDJSON files and collect annotations
     for filename in os.listdir(ndjson_dir):
@@ -271,7 +272,7 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str) -> Dict[str, VideoDat
                     video_id = record.get('data_row', {}).get('id')
                     video_name = record.get('data_row', {}).get('external_id', video_id)
                     
-                    if video_name not in valid_videos:
+                    if video_name not in all_videos:
                         continue
                     
                     # Create or get VideoData object
@@ -344,13 +345,18 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str) -> Dict[str, VideoDat
         video_data = video_data_dict[video_name]
         
         try:
-            if all_camera_motion:
-                motion_params = all_camera_motion[-1]
-                video_data.cam_motion = motion_params
-                
-            if all_camera_setup:
-                setup_params = all_camera_setup[-1]
-                video_data.cam_setup = setup_params
+            # For issue videos, set shot_transition to True and use default values
+            if video_name in issue_videos:
+                video_data.cam_motion = {'shot_transition': True}
+                video_data.cam_setup = {'shot_transition': True}
+            else:
+                if all_camera_motion:
+                    motion_params = all_camera_motion[-1]
+                    video_data.cam_motion = motion_params
+                    
+                if all_camera_setup:
+                    setup_params = all_camera_setup[-1]
+                    video_data.cam_setup = setup_params
                 
             if all_lighting_setup:
                 lighting_params = all_lighting_setup[-1]
