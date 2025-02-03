@@ -46,94 +46,78 @@ class CameraMotionData:
         # Text box for complex descriptions
         self.complex_motion_description = ""
 
-        # Camera Motion List (ground_based)
-        self.camera_motion_list = [
+        # Change camera_motion_list to store active motions instead of all possible motions
+        self.camera_motion_list = []  # Will contain active motions
+        self.camera_motion_cam_list = []  # Will contain active camera-centric motions
+        
+        # Keep these as references of all possible motions (renamed for clarity)
+        self.possible_motions = [
             "forward", "backward", "zoom_in", "zoom_out", "up", "down",
-            "tilt_up", "tilt_down","roll_cw", "roll_ccw",
+            "tilt_up", "tilt_down", "roll_cw", "roll_ccw",
             "pan_right", "pan_left", "left", "right"
         ]
 
         # Camera motion List (camera_based)
-        self.camera_motion_cam_list = [
+        self.possible_cam_motions = [
             "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
             "up_cam", "down_cam", "forward_cam", "backward_cam",
             "roll_cw", "roll_ccw", "pan_right", "pan_left"
         ]
     
     def set_camera_motion_attributes(self):
-        # Initialize all attributes to False
-        attributes = [
-            "forward", "backward", "zoom_in", "zoom_out", "up", "down", "tilt_up", "tilt_down", 
-            "roll_cw", "roll_ccw", "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam", 
-            "forward_cam", "backward_cam", "pan_right", "pan_left", "left", "right"
-        ]
+        # Clear the current motion lists
+        self.camera_motion_list = []
+        self.camera_motion_cam_list = []
         
-        # if shot_transition is True, all attributes should be None
-        if self.shot_transition:
-            for attr in attributes:
-                setattr(self, attr, None)
+        # if shot_transition is True or camera is static, return
+        if self.shot_transition or self.steadiness == "static" or self.camera_movement == "no":
             return
-        
-        # If steadiness is "static" or camera movement is "no", all should be False
-        if self.steadiness == "static" or self.camera_movement == "no":
-            for attr in attributes:
-                setattr(self, attr, False)
-            return
-        
-        # If arc or crane shot, all attributes except for arc and crane should be None
-        if self.camera_arc != "no" or self.camera_crane != "no":
-            for attr in attributes:
-                setattr(self, attr, None)
             
-            # Then set arc and crane motion. First because arc and crane will not co-occur, we can set them directly
-            if self.camera_arc != "no":
-                setattr(self, "arc_cw", self.camera_arc == "clockwise")
-                setattr(self, "arc_ccw", self.camera_arc == "counter_clockwise")
-            else:
-                setattr(self, "crane_up", self.camera_crane == "crane_up")
-                setattr(self, "crane_down", self.camera_crane == "crane_down")
-        else:
-            # First set arc and crane to False
-            setattr(self, "arc_cw", False)
-            setattr(self, "arc_ccw", False)
-            setattr(self, "crane_up", False)
-            setattr(self, "crane_down", False)
-            
-            
-            uncertain_if_no = self.steadiness in ["unsteady", "very_unsteady"] or self.camera_movement in ["major_complex", "minor"]
-            uncertain_if_gt = self.camera_movement in ["minor"]
-            
-            def set_motion(attr, answer, gt):
-                if answer == "no" and uncertain_if_no:
-                    value = None
-                elif answer == "unknown":
-                    value = None
-                else:
-                    value = answer == gt
-                    if value and uncertain_if_gt:
-                        value = None
-                    
-                setattr(self, attr, value)
-            
-            set_motion("forward", self.camera_forward_backward, "forward")
-            set_motion("backward", self.camera_forward_backward, "backward")
-            set_motion("forward_cam", self.camera_forward_backward_cam_frame, "forward")
-            set_motion("backward_cam", self.camera_forward_backward_cam_frame, "backward")
-            set_motion("zoom_in", self.camera_zoom, "in")
-            set_motion("zoom_out", self.camera_zoom, "out")
-            set_motion("up", self.camera_up_down, "up")
-            set_motion("down", self.camera_up_down, "down")
-            set_motion("up_cam", self.camera_up_down_cam_frame, "up")
-            set_motion("down_cam", self.camera_up_down_cam_frame, "down")
-            set_motion("tilt_up", self.camera_tilt, "up")
-            set_motion("tilt_down", self.camera_tilt, "down")
-            set_motion("roll_cw", self.camera_roll, "clockwise")
-            set_motion("roll_ccw", self.camera_roll, "counter_clockwise")
-            set_motion("pan_right", self.camera_pan, "left_to_right")
-            set_motion("pan_left", self.camera_pan, "right_to_left")
-            set_motion("right", self.camera_left_right, "left_to_right")
-            set_motion("left", self.camera_left_right, "right_to_left")
-        
+        # Add ground-centric motions
+        if self.camera_forward_backward == "forward":
+            self.camera_motion_list.append("forward")
+        if self.camera_forward_backward == "backward":
+            self.camera_motion_list.append("backward")
+        if self.camera_zoom == "in":
+            self.camera_motion_list.append("zoom_in")
+        if self.camera_zoom == "out":
+            self.camera_motion_list.append("zoom_out")
+        if self.camera_up_down == "up":
+            self.camera_motion_list.append("up")
+        if self.camera_up_down == "down":
+            self.camera_motion_list.append("down")
+        if self.camera_tilt == "up":
+            self.camera_motion_list.append("tilt_up")
+        if self.camera_tilt == "down":
+            self.camera_motion_list.append("tilt_down")
+        if self.camera_roll == "clockwise":
+            self.camera_motion_list.append("roll_cw")
+        if self.camera_roll == "counter_clockwise":
+            self.camera_motion_list.append("roll_ccw")
+        if self.camera_pan == "left_to_right":
+            self.camera_motion_list.append("pan_right")
+        if self.camera_pan == "right_to_left":
+            self.camera_motion_list.append("pan_left")
+        if self.camera_left_right == "left_to_right":
+            self.camera_motion_list.append("left")
+        if self.camera_left_right == "right_to_left":
+            self.camera_motion_list.append("right")
+
+        # Add camera-centric motions
+        if self.camera_forward_backward_cam_frame == "forward":
+            self.camera_motion_cam_list.append("forward_cam")
+        if self.camera_forward_backward_cam_frame == "backward":
+            self.camera_motion_cam_list.append("backward_cam")
+        if self.camera_up_down_cam_frame == "up":
+            self.camera_motion_cam_list.append("up_cam")
+        if self.camera_up_down_cam_frame == "down":
+            self.camera_motion_cam_list.append("down_cam")
+        if self.camera_arc != "no":
+            self.camera_motion_cam_list.append("tilt_up" if self.camera_arc == "clockwise" else "tilt_down")
+        if self.camera_crane != "no":
+            self.camera_motion_cam_list.append("crane_up" if self.camera_crane == "crane_up" else "crane_down")
+        if self.camera_arc != "no":
+            self.camera_motion_cam_list.append("arc_cw" if self.camera_arc == "clockwise" else "arc_ccw")
         
     def set_steadiness(self, steadiness):
         valid_options = ["static", "very_smooth", "smooth", "unsteady", "very_unsteady"]
@@ -310,36 +294,121 @@ class CameraMotionData:
         }
 
     def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (ground based)
+        """Returns True if any of the specified ground-centric motions are active"""
         if include:
-            return any(motion in condition for motion in self.camera_motion_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_list)
+            return any(motion in self.camera_motion_list for motion in include)
+        return len(self.camera_motion_list) > 0
 
     def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (camera based)
+        """Returns True if any of the specified camera-centric motions are active"""
         if include:
-            return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_cam_list)
+            return any(motion in self.camera_motion_cam_list for motion in include)
+        return len(self.camera_motion_cam_list) > 0
 
     def check_if_no_motion(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_list if motion not in exclude)
+        """Returns True if there are no active ground-centric motions (except excluded ones)"""
+        active_motions = set(self.camera_motion_list) - set(exclude)
+        return len(active_motions) == 0
 
     def check_if_no_motion_cam(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_cam_list if motion not in exclude)
+        """Returns True if there are no active camera-centric motions (except excluded ones)"""
+        active_motions = set(self.camera_motion_cam_list) - set(exclude)
+        return len(active_motions) == 0
 
-    # def check_if_no_motion(self, exclude: List[str] = []):
-    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
-    #     return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
+    # Add property getters for common motion checks
+    @property
+    def forward(self):
+        return "forward" in self.camera_motion_list
+        
+    @property
+    def backward(self):
+        return "backward" in self.camera_motion_list
+        
+    @property
+    def zoom_in(self):
+        return "zoom_in" in self.camera_motion_list
+        
+    @property
+    def zoom_out(self):
+        return "zoom_out" in self.camera_motion_list
+
+    @property
+    def up(self):
+        return "up" in self.camera_motion_list
+        
+    @property
+    def down(self):
+        return "down" in self.camera_motion_list
+
+    @property
+    def left(self):
+        return "left" in self.camera_motion_list
+        
+    @property
+    def right(self):
+        return "right" in self.camera_motion_list
+
+    # Camera-centric properties
+    @property
+    def forward_cam(self):
+        return "forward_cam" in self.camera_motion_cam_list
+        
+    @property
+    def backward_cam(self):
+        return "backward_cam" in self.camera_motion_cam_list
+
+    @property
+    def up_cam(self):
+        return "up_cam" in self.camera_motion_cam_list
+        
+    @property
+    def down_cam(self):
+        return "down_cam" in self.camera_motion_cam_list
+
+    @property
+    def arc_cw(self):
+        return self.camera_arc == "clockwise"
+        
+    @property
+    def arc_ccw(self):
+        return self.camera_arc == "counter_clockwise"
+
+    # Pan properties
+    @property
+    def pan_left(self):
+        return self.camera_pan == "right_to_left"
     
-    # def check_if_any_motion(self, include: List[str] = []):
-    #     """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
-    #     if not include:
-    #         return any(value != "no" for _, value in self.camera_motion_dict().items())
-    #     else:
-    #         return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
+    @property
+    def pan_right(self):
+        return self.camera_pan == "left_to_right"
     
+    # Tilt properties
+    @property
+    def tilt_up(self):
+        return self.camera_tilt == "up"
+    
+    @property
+    def tilt_down(self):
+        return self.camera_tilt == "down"
+    
+    # Roll properties
+    @property
+    def roll_cw(self):
+        return self.camera_roll == "clockwise"
+    
+    @property
+    def roll_ccw(self):
+        return self.camera_roll == "counter_clockwise"
+    
+    # Crane properties
+    @property
+    def crane_up(self):
+        return self.camera_crane == "crane_up"
+    
+    @property
+    def crane_down(self):
+        return self.camera_crane == "crane_down"
+
     def camera_motion_dict_cam_frame(self):
         return {
             "forward_backward": self.camera_forward_backward_cam_frame, # Use this for camera-centric motion
@@ -353,17 +422,6 @@ class CameraMotionData:
             "roll": self.camera_roll
         }
         
-    # def check_if_no_motion_cam_frame(self, exclude: List[str] = []):
-    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
-    #     return all(value == "no" for key, value in self.camera_motion_dict_cam_frame().items() if key not in exclude)
-    #
-    # def check_if_any_motion_cam_frame(self, include: List[str] = []):
-    #     """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
-    #     if not include:
-    #         return any(value != "no" for _, value in self.camera_motion_dict_cam_frame().items())
-    #     else:
-    #         return any(value != "no" for key, value in self.camera_motion_dict_cam_frame().items() if key in include)
-
     def get_raw_camera_motion_list(self):
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
                 self.camera_pan, self.camera_up_down, self.camera_tilt, self.camera_arc,

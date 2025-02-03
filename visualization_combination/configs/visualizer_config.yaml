@@ -1,0 +1,145 @@
+# Data source paths
+data:
+  ndjson_dir: exports/ndjson
+  issues_dir: exports/issues_ndjson
+  videos_dir: ../../../datasets/SelectedVideos_video_segments
+
+# Batch constraints
+constraints:
+  video_names_file: visualization/video_lists/donesection.json
+  approver: null
+  time_range: null
+
+# Labels to analyze
+labels:
+  # Camera Movements
+  # Arc & Crane Movements
+  - cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+  - cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+  - cam_motion/arc_crane_movement/crane_down/has_crane_down
+  - cam_motion/arc_crane_movement/crane_up/has_crane_up
+
+  # # Camera-Centric Movements
+  # ## Translation
+  # - cam_motion/camera_centric_movement/forward/has_forward_wrt_camera
+  # - cam_motion/camera_centric_movement/forward/only_forward_wrt_camera
+  # - cam_motion/camera_centric_movement/backward/has_backward_wrt_camera
+  # - cam_motion/camera_centric_movement/backward/only_backward_wrt_camera
+  # - cam_motion/camera_centric_movement/leftward/has_leftward
+  # - cam_motion/camera_centric_movement/leftward/only_leftward
+  # - cam_motion/camera_centric_movement/rightward/has_rightward
+  # - cam_motion/camera_centric_movement/rightward/only_rightward
+  # - cam_motion/camera_centric_movement/upward/has_upward_wrt_camera
+  # - cam_motion/camera_centric_movement/upward/only_upward_wrt_camera
+  # - cam_motion/camera_centric_movement/downward/has_downward_wrt_camera
+  # - cam_motion/camera_centric_movement/downward/only_downward_wrt_camera
+
+  ## Rotation
+  - cam_motion/camera_centric_movement/pan_left/has_pan_left
+  - cam_motion/camera_centric_movement/pan_left/only_pan_left
+  - cam_motion/camera_centric_movement/pan_right/has_pan_right
+  - cam_motion/camera_centric_movement/pan_right/only_pan_right
+  - cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+  - cam_motion/camera_centric_movement/tilt_up/only_tilt_up
+  - cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+  - cam_motion/camera_centric_movement/tilt_down/only_tilt_down
+  - cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+  - cam_motion/camera_centric_movement/roll_clockwise/only_roll_clockwise
+  - cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+  - cam_motion/camera_centric_movement/roll_counterclockwise/only_roll_counterclockwise
+
+  # # Dolly Zoom Movements
+  # - cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
+  # - cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
+
+  # Ground-Centric Movements
+  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
+  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
+  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
+  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
+  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
+  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
+  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
+  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
+  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
+
+  # # Object-Centric Movements
+  # ## Tracking Shots
+  # - cam_motion/object_centric_movement/track_shot
+  # - cam_motion/object_centric_movement/aerial_tracking_shot
+  # - cam_motion/object_centric_movement/arc_tracking_shot
+  # - cam_motion/object_centric_movement/front_side_tracking_shot
+  # - cam_motion/object_centric_movement/lead_tracking_shot
+  # - cam_motion/object_centric_movement/pan_tracking_shot
+  # - cam_motion/object_centric_movement/rear_side_tracking_shot
+  # - cam_motion/object_centric_movement/side_tracking_shot
+  # - cam_motion/object_centric_movement/tail_tracking_shot
+  # - cam_motion/object_centric_movement/tilt_tracking_shot
+  
+  # ## Subject Size Changes
+  # - cam_motion/object_centric_movement/tracking_subject_larger_size
+  # - cam_motion/object_centric_movement/tracking_subject_smaller_size
+
+
+  # # Shot Composition & Camera Setup
+  # - cam_setup/lens_distortion/fisheye_distortion
+  # - cam_setup/lens_distortion/no_lens_distortion
+  # - cam_setup/lens_distortion/with_lens_distortion
+  # - cam_setup/point_of_view/broadcast_pov
+  # - cam_setup/point_of_view/dashcam_pov
+  # - cam_setup/point_of_view/drone_pov
+  # - cam_setup/point_of_view/first_person_pov
+  # - cam_setup/point_of_view/locked_on_pov
+  # - cam_setup/point_of_view/overhead_pov
+  # - cam_setup/point_of_view/screen_recording_pov
+  # - cam_setup/point_of_view/selfie_pov
+  # - cam_setup/point_of_view/third_person_full_body_game_pov
+  # - cam_setup/point_of_view/third_person_isometric_game_pov
+  # - cam_setup/point_of_view/third_person_over_hip_pov
+  # - cam_setup/point_of_view/third_person_over_shoulder_pov
+  # - cam_setup/point_of_view/third_person_side_view_game_pov
+  # - cam_setup/point_of_view/third_person_top_down_game_pov
+
+
+  # # Miscellaneous
+  # - cam_motion/has_frame_freezing
+  # - cam_motion/has_motion_blur
+  # - cam_motion/has_shot_transition_cam_motion
+  # - cam_motion/motion_complexity/is_complex_motion
+  # - cam_motion/motion_complexity/is_minor_motion
+  # - cam_motion/motion_complexity/is_simple_motion
+  # - cam_motion/scene_movement/dynamic_scene
+  # - cam_motion/scene_movement/mostly_static_scene
+  # - cam_motion/scene_movement/static_scene
+  # - cam_motion/steadiness_and_movement/clear_moving_camera
+  # - cam_motion/steadiness_and_movement/fast_moving_camera
+  # - cam_motion/steadiness_and_movement/fixed_camera
+  # - cam_motion/steadiness_and_movement/fixed_camera_with_shake
+  # - cam_motion/steadiness_and_movement/moving_camera
+  # - cam_motion/steadiness_and_movement/shaky_camera
+  # - cam_motion/steadiness_and_movement/slow_moving_camera
+  # - cam_motion/steadiness_and_movement/stable_camera
+  # - cam_motion/steadiness_and_movement/very_shaky_camera
+  # - cam_motion/steadiness_and_movement/very_stable_camera
+  # - cam_setup/has_overlays
+  # - cam_setup/has_shot_transition_cam_setup
+  # - cam_setup/video_speed/fast_motion
+  # - cam_setup/video_speed/fast_motion_without_time_lapse
+  # - cam_setup/video_speed/regular_speed
+  # - cam_setup/video_speed/slow_motion
+  # - cam_setup/video_speed/speed_ramp
+  # - cam_setup/video_speed/stop_motion
+  # - cam_setup/video_speed/time_lapse
+  # - cam_setup/video_speed/time_reversed
+
+# Server settings
+server:
+  host: localhost
+  port: 8086
