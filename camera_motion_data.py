@@ -46,19 +46,19 @@ class CameraMotionData:
         # Text box for complex descriptions
         self.complex_motion_description = ""
 
-        # Camera Motion List (ground_based)
-        self.camera_motion_list = [
-            "forward", "backward", "zoom_in", "zoom_out", "up", "down",
-            "tilt_up", "tilt_down","roll_cw", "roll_ccw",
-            "pan_right", "pan_left", "left", "right"
-        ]
-
-        # Camera motion List (camera_based)
-        self.camera_motion_cam_list = [
-            "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
-            "up_cam", "down_cam", "forward_cam", "backward_cam",
-            "roll_cw", "roll_ccw", "pan_right", "pan_left"
-        ]
+        # # Camera Motion List (ground_based)
+        # self.camera_motion_list = [
+        #     "forward", "backward", "zoom_in", "zoom_out", "up", "down",
+        #     "tilt_up", "tilt_down","roll_cw", "roll_ccw",
+        #     "pan_right", "pan_left", "left", "right"
+        # ]
+        #
+        # # Camera motion List (camera_based)
+        # self.camera_motion_cam_list = [
+        #     "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
+        #     "up_cam", "down_cam", "forward_cam", "backward_cam",
+        #     "roll_cw", "roll_ccw", "pan_right", "pan_left"
+        # ]
     
     def set_camera_motion_attributes(self):
         # Initialize all attributes to False
@@ -83,21 +83,21 @@ class CameraMotionData:
         # If arc or crane shot, all attributes except for arc and crane should be None
         if self.camera_arc != "no" or self.camera_crane != "no":
             for attr in attributes:
-                if attr not in ["arc_cw", "arc_ccw", "crane_up", "crane_down"]:
-                    setattr(self, attr, None)
+                # if attr not in ["arc_cw", "arc_ccw", "crane_up", "crane_down"]:
+                setattr(self, attr, None)
             
             # Then set arc and crane motion. First because arc and crane will not co-occur, we can set them directly
             if self.camera_arc != "no":
                 # set crane to None
-                setattr(self, "crane_up", None)
-                setattr(self, "crane_down", None)
+                # setattr(self, "crane_up", None)
+                # setattr(self, "crane_down", None)
                 
                 setattr(self, "arc_cw", self.camera_arc == "clockwise")
                 setattr(self, "arc_ccw", self.camera_arc == "counter_clockwise")
             else:
                 # set arc to None
-                setattr(self, "arc_cw", None)
-                setattr(self, "arc_ccw", None)
+                # setattr(self, "arc_cw", None)
+                # setattr(self, "arc_ccw", None)
                 
                 setattr(self, "crane_up", self.camera_crane == "crane_up")
                 setattr(self, "crane_down", self.camera_crane == "crane_down")
@@ -318,25 +318,61 @@ class CameraMotionData:
             "roll": self.camera_roll
         }
 
-    def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (ground based)
-        if include:
-            return any(motion in condition for motion in self.camera_motion_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_list)
+    def camera_motion_list(self):
+        return{
+            'forward': self.forward,
+            'backward': self.backward,
+            'zoom_in': self.zoom_in,
+            'zoom_out': self.zoom_out,
+            'up': self.up,
+            'down': self.down,
+            'tilt_up': self.tilt_up,
+            'tilt_down': self.tilt_down,
+            'pan_right': self.pan_right,
+            'pan_left': self.pan_left,
+            'roll_cw': self.roll_cw,
+            'roll_ccw': self.roll_ccw,
+            'left': self.left,
+            'right': self.right
+        }
 
-    def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (camera based)
-        if include:
-            return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_cam_list)
+    def camera_motion_cam_list(self):
+        return{
+            'forward_cam': self.forward_cam,
+            'backward_cam': self.backward_cam,
+            'zoom_in': self.zoom_in,
+            'zoom_out': self.zoom_out,
+            'up_cam': self.up_cam,
+            'down_cam': self.down_cam,
+            'tilt_up': self.tilt_up,
+            'tilt_down': self.tilt_down,
+            'pan_right': self.pan_right,
+            'pan_left': self.pan_left,
+            'roll_cw': self.roll_cw,
+            'roll_ccw': self.roll_ccw,
+            'left': self.left,
+            'right': self.right
+        }
 
     def check_if_no_motion(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_list if motion not in exclude)
+        return all(value == False for motion, value in self.camera_motion_list().items() if motion not in exclude)
 
     def check_if_no_motion_cam(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_cam_list if motion not in exclude)
+        return all(value == False for motion, value in self.camera_motion_cam_list().items() if motion not in exclude)
+
+    # def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
+    #     # Check if there is any motion that satisfy the condition (ground based)
+    #     if include:
+    #         return any(motion in condition for motion in self.camera_motion_list if motion in include)
+    #     else:
+    #         return any(motion in condition for motion in self.camera_motion_list)
+    #
+    # def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
+    #     # Check if there is any motion that satisfy the condition (camera based)
+    #     if include:
+    #         return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
+    #     else:
+    #         return any(motion in condition for motion in self.camera_motion_cam_list)
 
     # def check_if_no_motion(self, exclude: List[str] = []):
     #     """Checks if only the specified motion(s) exist and all others are 'no'."""
@@ -348,7 +384,8 @@ class CameraMotionData:
     #         return any(value != "no" for _, value in self.camera_motion_dict().items())
     #     else:
     #         return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
-    
+
+
     def camera_motion_dict_cam_frame(self):
         return {
             "forward_backward": self.camera_forward_backward_cam_frame, # Use this for camera-centric motion
