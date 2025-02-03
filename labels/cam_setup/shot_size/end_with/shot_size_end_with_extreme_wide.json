@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size End With Extreme Wide",
+    "label_name": "shot_size_end_with_extreme_wide",
+    "def_question": [
+        "Does the video end with extreme wide?"
+    ],
+    "alt_question": [
+        "Does the shot end with extreme wide?",
+        "Is the ending frame showing extreme wide?",
+        "Does the video end using extreme wide?",
+        "Is the final shot at extreme wide?",
+        "Does the sequence end with extreme wide?",
+        "Is the last shot at extreme wide?",
+        "Does the video close with extreme wide?",
+        "Is the ending frame at extreme wide?"
+    ],
+    "def_prompt": [
+        "A video that ends with extreme wide."
+    ],
+    "alt_prompt": [
+        "A shot ending with extreme wide.",
+        "A video ending at extreme wide.",
+        "A sequence concluding with extreme wide.",
+        "A shot finally at extreme wide.",
+        "A video closing with extreme wide.",
+        "A shot ending at extreme wide.",
+        "A video concluding with extreme wide.",
+        "A sequence ending at extreme wide."
+    ],
+    "pos_rule_str": "self.shot_size_info['end'] == 'extreme_wide'",
+    "neg_rule_str": "self.shot_size_info['end'] not in ['extreme_wide', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Has Many Subjects",
+    "label_name": "has_many_subjects",
+    "def_question": [
+        "Does the video contain multiple subjects or multiple groups of subjects?"
+    ],
+    "alt_question": [
+        "Are there several distinct subjects present in the video?",
+        "Does the shot feature multiple different subjects or groups?",
+        "Can you identify more than one main subject in the frame?",
+        "Does the video show various subjects or subject groups?",
+        "Are multiple subjects visible throughout the shot?",
+        "Does the frame contain several different subjects?",
+        "Is there more than one subject group in the video?",
+        "Are there multiple distinct elements or subjects to focus on?"
+    ],
+    "def_prompt": [
+        "A shot containing multiple subjects or multiple groups of subjects."
+    ],
+    "alt_prompt": [
+        "A video featuring several distinct subjects.",
+        "A shot showing multiple subject groups.",
+        "A video with various subjects in frame.",
+        "A shot containing multiple focal subjects.",
+        "A video displaying several different subjects.",
+        "A shot with multiple subject elements.",
+        "A video presenting various subject groups.",
+        "A shot featuring multiple distinct subjects."
+    ],
+    "pos_rule_str": "self.has_many_subjects is True",
+    "neg_rule_str": "self.has_many_subjects is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

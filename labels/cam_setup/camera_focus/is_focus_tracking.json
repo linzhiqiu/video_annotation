@@ -1,0 +1,34 @@
+{
+    "label": "Is Focus Tracking",
+    "label_name": "is_focus_tracking",
+    "def_question": [
+        "Is there focus tracking on a moving subject in the video?"
+    ],
+    "alt_question": [
+        "Does the focus follow a moving subject?",
+        "Is there continuous focus on a mobile subject?",
+        "Does the shot maintain focus on moving elements?",
+        "Is there dynamic focus following movement?",
+        "Does the focus adapt to subject motion?",
+        "Is there automated focus following?",
+        "Does the shot track focus with movement?",
+        "Is there responsive focus on motion?"
+    ],
+    "def_prompt": [
+        "A shot that maintains focus on a subject as it moves through the frame."
+    ],
+    "alt_prompt": [
+        "A video with moving subject focus.",
+        "A shot tracking subject movement.",
+        "A video maintaining mobile focus.",
+        "A shot following subject motion.",
+        "A video with dynamic focus tracking.",
+        "A shot adapting to movement.",
+        "A video with continuous focus.",
+        "A shot following moving elements."
+    ],
+    "pos_rule_str": "self.is_focus_tracking is True",
+    "neg_rule_str": "self.is_focus_tracking is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Different Subject In Focus Shot",
+    "label_name": "is_just_different_subject_in_focus_shot",
+    "def_question": [
+        "Does the video feature different subjects in focus, making it difficult to classify shot size?"
+    ],
+    "alt_question": [
+        "Does the focus shift between different subjects?",
+        "Are various subjects brought into focus throughout the shot?",
+        "Does the shot emphasize different subjects at different times?",
+        "Is there a changing focus between multiple subjects?",
+        "Does the video alternate focus between subjects?",
+        "Are different subjects highlighted through focus changes?",
+        "Does the shot's focus move between subjects?",
+        "Is there variable subject focus throughout the video?"
+    ],
+    "def_prompt": [
+        "A shot where focus shifts between different subjects, complicating shot size classification."
+    ],
+    "alt_prompt": [
+        "A video with changing subject focus.",
+        "A shot alternating between different subjects.",
+        "A video highlighting multiple subjects through focus.",
+        "A shot with dynamic subject emphasis.",
+        "A video showing focus transitions between subjects.",
+        "A shot featuring variable subject focus.",
+        "A video alternating between subject focuses.",
+        "A shot with changing subject emphasis."
+    ],
+    "pos_rule_str": "self.complex_shot_type == 'different_subject_in_focus'",
+    "neg_rule_str": "self.complex_shot_type != 'different_subject_in_focus'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

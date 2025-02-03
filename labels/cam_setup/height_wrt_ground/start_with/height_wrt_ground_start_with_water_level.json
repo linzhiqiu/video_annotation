@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground Start With Water Level",
+    "label_name": "height_wrt_ground_start_with_water_level",
+    "def_question": [
+        "Does the video start with water level?"
+    ],
+    "alt_question": [
+        "Does the shot start with water level?",
+        "Is the starting frame showing water level?",
+        "Does the video start using water level?",
+        "Is the initial shot at water level?",
+        "Does the sequence start with water level?",
+        "Is the first shot at water level?",
+        "Does the video open with water level?",
+        "Is the starting frame at water level?"
+    ],
+    "def_prompt": [
+        "A video that starts with water level."
+    ],
+    "alt_prompt": [
+        "A shot starting with water level.",
+        "A video starting at water level.",
+        "A sequence beginning with water level.",
+        "A shot initially at water level.",
+        "A video opening with water level.",
+        "A shot starting at water level.",
+        "A video beginning with water level.",
+        "A sequence starting at water level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'water_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['water_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

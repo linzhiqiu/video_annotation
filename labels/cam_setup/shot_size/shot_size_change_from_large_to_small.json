@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size Change From Large To Small",
+    "label_name": "shot_size_change_from_large_to_small",
+    "def_question": [
+        "Does the shot size change from large to small?"
+    ],
+    "alt_question": [
+        "Does the camera move from a wider to a tighter shot?",
+        "Is there a transition from a broader to a closer view?",
+        "Does the framing become more intimate over time?",
+        "Is there a progression from wide to tight framing?",
+        "Does the shot narrow its field of view?",
+        "Is there a shift from expansive to confined framing?",
+        "Does the camera move in closer to the subject?",
+        "Is there a change from distant to close framing?"
+    ],
+    "def_prompt": [
+        "A shot that transitions from a larger to a smaller frame size."
+    ],
+    "alt_prompt": [
+        "A video moving from wide to tight framing.",
+        "A shot transitioning to closer view.",
+        "A video showing increasing intimacy.",
+        "A shot with decreasing frame width.",
+        "A video moving closer to subject.",
+        "A shot narrowing its perspective.",
+        "A video with reducing frame size.",
+        "A shot closing in on subject."
+    ],
+    "pos_rule_str": "self.shot_size_change_from_large_to_small is True",
+    "neg_rule_str": "self.shot_size_change_from_large_to_small is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

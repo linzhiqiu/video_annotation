@@ -1,0 +1,34 @@
+{
+    "label": "Is Dutch Angle Varying",
+    "label_name": "is_dutch_angle_varying",
+    "def_question": [
+        "Does the degree of the Dutch angle shift throughout the video?"
+    ],
+    "alt_question": [
+        "Does the tilted angle change during the shot?",
+        "Is there variation in the camera's rotational tilt?",
+        "Does the Dutch angle degree fluctuate?",
+        "Is there dynamic change in the frame's tilt?",
+        "Does the oblique angle vary throughout?",
+        "Is there movement in the canted angle?",
+        "Does the frame rotation change over time?",
+        "Is there variation in the tilted perspective?"
+    ],
+    "def_prompt": [
+        "A shot where the degree of Dutch angle changes throughout its duration."
+    ],
+    "alt_prompt": [
+        "A video with varying tilt angles.",
+        "A shot showing dynamic frame rotation.",
+        "A video with changing oblique angles.",
+        "A shot featuring variable Dutch angles.",
+        "A video with fluctuating frame tilt.",
+        "A shot showing rotation changes.",
+        "A video with dynamic angle shifts.",
+        "A shot featuring varying tilts."
+    ],
+    "pos_rule_str": "self.is_dutch_angle_varying is True",
+    "neg_rule_str": "self.is_dutch_angle_varying is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

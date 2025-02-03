@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Many Subject No Focus Shot",
+    "label_name": "is_just_many_subject_no_focus_shot",
+    "def_question": [
+        "Does the video feature multiple subjects with no clear focus on any one subject?"
+    ],
+    "alt_question": [
+        "Are there multiple subjects without a primary focus?",
+        "Does the shot show several subjects of equal importance?",
+        "Is there no dominant subject among multiple elements?",
+        "Does the video present multiple subjects without hierarchy?",
+        "Are various subjects shown without emphasizing any one?",
+        "Does the shot maintain equal focus on multiple subjects?",
+        "Is there an even distribution of focus among subjects?",
+        "Does the video avoid emphasizing any particular subject?"
+    ],
+    "def_prompt": [
+        "A shot showing multiple subjects without emphasizing any single one as the main focus."
+    ],
+    "alt_prompt": [
+        "A video with multiple equal-emphasis subjects.",
+        "A shot showing various subjects without hierarchy.",
+        "A video featuring multiple balanced subjects.",
+        "A shot with distributed subject focus.",
+        "A video presenting multiple subjects equally.",
+        "A shot without subject hierarchy.",
+        "A video showing multiple concurrent subjects.",
+        "A shot with balanced subject emphasis."
+    ],
+    "pos_rule_str": "self.complex_shot_type == 'many_subject_no_focus'",
+    "neg_rule_str": "self.complex_shot_type != 'many_subject_no_focus'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

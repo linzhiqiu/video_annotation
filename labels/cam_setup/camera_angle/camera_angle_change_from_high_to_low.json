@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Change From High To Low",
+    "label_name": "camera_angle_change_from_high_to_low",
+    "def_question": [
+        "Does the camera angle decrease noticeably relative to the ground?"
+    ],
+    "alt_question": [
+        "Does the camera tilt downward during the shot?",
+        "Is there a transition from high to low angle?",
+        "Does the camera perspective shift downward?",
+        "Is there a descending camera movement?",
+        "Does the shot angle move from high to low?",
+        "Is there a downward tilt in camera angle?",
+        "Does the viewing angle decrease vertically?",
+        "Is there a lowering of camera perspective?"
+    ],
+    "def_prompt": [
+        "A shot where the camera angle transitions from a higher to a lower position relative to the ground."
+    ],
+    "alt_prompt": [
+        "A video showing downward camera tilt.",
+        "A shot transitioning to lower angle.",
+        "A video with descending perspective.",
+        "A shot featuring downward movement.",
+        "A video showing angle reduction.",
+        "A shot with lowering camera view.",
+        "A video transitioning downward.",
+        "A shot with decreasing angle."
+    ],
+    "pos_rule_str": "self.camera_angle_change_from_high_to_low is True",
+    "neg_rule_str": "self.camera_angle_change_from_high_to_low is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

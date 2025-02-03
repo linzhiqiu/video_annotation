@@ -1,0 +1,34 @@
+{
+    "label": "Is Shot Size Applicable",
+    "label_name": "is_shot_size_applicable",
+    "def_question": [
+        "Is shot size classification possible for this video?"
+    ],
+    "alt_question": [
+        "Can the shot size be meaningfully categorized?",
+        "Is it possible to determine the shot size classification?",
+        "Can we assess the framing distance in this shot?",
+        "Is the shot size clear enough to classify?",
+        "Can the camera distance be effectively categorized?",
+        "Is it feasible to determine the shot scale?",
+        "Can we meaningfully analyze the shot size?",
+        "Is the framing distance classifiable?"
+    ],
+    "def_prompt": [
+        "A shot where the size classification can be meaningfully determined."
+    ],
+    "alt_prompt": [
+        "A video with classifiable shot size.",
+        "A shot with determinable framing distance.",
+        "A video where shot scale can be assessed.",
+        "A shot with clear distance categorization.",
+        "A video suitable for size classification.",
+        "A shot with analyzable framing.",
+        "A video with measurable shot scale.",
+        "A shot with definable camera distance."
+    ],
+    "pos_rule_str": "self.complex_shot_type != 'unknown' or (self.complex_shot_type == 'description' and self.shot_size_description_type != 'others')",
+    "neg_rule_str": "not (self.complex_shot_type != 'unknown' or (self.complex_shot_type == 'description' and self.shot_size_description_type != 'others'))",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

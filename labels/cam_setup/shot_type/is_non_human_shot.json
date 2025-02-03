@@ -1,0 +1,34 @@
+{
+    "label": "Is Non Human Shot",
+    "label_name": "is_non_human_shot",
+    "def_question": [
+        "Is the shot focused on non-human subjects?"
+    ],
+    "alt_question": [
+        "Does the video primarily feature non-human subjects?",
+        "Is the main focus on animals, objects, or other non-human elements?",
+        "Are non-human subjects the primary focus of this shot?",
+        "Does the camera mainly follow non-human subjects?",
+        "Is this shot centered on non-human elements?",
+        "Are the main subjects in this shot non-human?",
+        "Does this shot primarily capture non-human subjects?",
+        "Is the focus primarily on subjects other than humans?"
+    ],
+    "def_prompt": [
+        "A shot that primarily focuses on non-human subjects."
+    ],
+    "alt_prompt": [
+        "A video centered on non-human subjects.",
+        "A shot where non-human elements are the main focus.",
+        "A video primarily featuring animals or objects.",
+        "A shot emphasizing non-human subjects.",
+        "A video where non-human elements are central.",
+        "A shot focusing on non-human characters or objects.",
+        "A video capturing non-human-centered action.",
+        "A shot predominantly featuring non-human subjects."
+    ],
+    "pos_rule_str": "self.is_non_human_shot is True",
+    "neg_rule_str": "self.is_non_human_shot is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject Start With Above Subject",
+    "label_name": "height_wrt_subject_start_with_above_subject",
+    "def_question": [
+        "Does the video start with above subject?"
+    ],
+    "alt_question": [
+        "Does the shot start with above subject?",
+        "Is the starting frame showing above subject?",
+        "Does the video start using above subject?",
+        "Is the initial shot at above subject?",
+        "Does the sequence start with above subject?",
+        "Is the first shot at above subject?",
+        "Does the video open with above subject?",
+        "Is the starting frame at above subject?"
+    ],
+    "def_prompt": [
+        "A video that starts with above subject."
+    ],
+    "alt_prompt": [
+        "A shot starting with above subject.",
+        "A video starting at above subject.",
+        "A sequence beginning with above subject.",
+        "A shot initially at above subject.",
+        "A video opening with above subject.",
+        "A shot starting at above subject.",
+        "A video beginning with above subject.",
+        "A sequence starting at above subject."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'above_subject'",
+    "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

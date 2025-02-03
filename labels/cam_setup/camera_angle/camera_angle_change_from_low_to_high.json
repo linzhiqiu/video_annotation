@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Change From Low To High",
+    "label_name": "camera_angle_change_from_low_to_high",
+    "def_question": [
+        "Does the camera angle increase noticeably relative to the ground?"
+    ],
+    "alt_question": [
+        "Does the camera tilt upward during the shot?",
+        "Is there a transition from low to high angle?",
+        "Does the camera perspective shift upward?",
+        "Is there an ascending camera movement?",
+        "Does the shot angle move from low to high?",
+        "Is there an upward tilt in camera angle?",
+        "Does the viewing angle increase vertically?",
+        "Is there a raising of camera perspective?"
+    ],
+    "def_prompt": [
+        "A shot where the camera angle transitions from a lower to a higher position relative to the ground."
+    ],
+    "alt_prompt": [
+        "A video showing upward camera tilt.",
+        "A shot transitioning to higher angle.",
+        "A video with ascending perspective.",
+        "A shot featuring upward movement.",
+        "A video showing angle increase.",
+        "A shot with rising camera view.",
+        "A video transitioning upward.",
+        "A shot with increasing angle."
+    ],
+    "pos_rule_str": "self.camera_angle_change_from_low_to_high is True",
+    "neg_rule_str": "self.camera_angle_change_from_low_to_high is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

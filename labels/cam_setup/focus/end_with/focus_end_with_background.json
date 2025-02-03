@@ -1,0 +1,34 @@
+{
+    "label": "Focus End With Background",
+    "label_name": "focus_end_with_background",
+    "def_question": [
+        "Does the video end with background?"
+    ],
+    "alt_question": [
+        "Does the shot end with background?",
+        "Is the ending frame showing background?",
+        "Does the video end using background?",
+        "Is the final shot at background?",
+        "Does the sequence end with background?",
+        "Is the last shot at background?",
+        "Does the video close with background?",
+        "Is the ending frame at background?"
+    ],
+    "def_prompt": [
+        "A video that ends with background."
+    ],
+    "alt_prompt": [
+        "A shot ending with background.",
+        "A video ending at background.",
+        "A sequence concluding with background.",
+        "A shot finally at background.",
+        "A video closing with background.",
+        "A shot ending at background.",
+        "A video concluding with background.",
+        "A sequence ending at background."
+    ],
+    "pos_rule_str": "self.focus_info['end'] == 'background'",
+    "neg_rule_str": "self.focus_info['end'] not in ['background', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

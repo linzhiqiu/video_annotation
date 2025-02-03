@@ -1,0 +1,34 @@
+{
+    "label": "Is Dutch Angle Fixed",
+    "label_name": "is_dutch_angle_fixed",
+    "def_question": [
+        "Does the Dutch angle remain the same throughout the video?"
+    ],
+    "alt_question": [
+        "Is the tilted angle consistent throughout the shot?",
+        "Does the camera maintain a steady Dutch angle?",
+        "Is there a constant degree of frame tilt?",
+        "Does the oblique angle stay fixed?",
+        "Is the canted angle maintained steadily?",
+        "Does the rotational tilt remain unchanged?",
+        "Is there a consistent frame rotation?",
+        "Does the tilted perspective stay stable?"
+    ],
+    "def_prompt": [
+        "A shot maintaining a consistent Dutch angle throughout its duration."
+    ],
+    "alt_prompt": [
+        "A video with steady tilt angle.",
+        "A shot maintaining fixed rotation.",
+        "A video with constant oblique angle.",
+        "A shot showing stable Dutch angle.",
+        "A video with unchanging frame tilt.",
+        "A shot keeping consistent rotation.",
+        "A video with fixed angular position.",
+        "A shot maintaining steady tilt."
+    ],
+    "pos_rule_str": "self.is_dutch_angle_fixed is True",
+    "neg_rule_str": "self.is_dutch_angle_fixed is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

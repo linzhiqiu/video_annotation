@@ -1,0 +1,34 @@
+{
+    "label": "Is Framing Subject",
+    "label_name": "is_framing_subject",
+    "def_question": [
+        "Are there one or more subjects that remain consistently framed in the shot?"
+    ],
+    "alt_question": [
+        "Does the video keep its subject(s) properly framed throughout?",
+        "Is there consistent framing of the main subject(s) in this shot?",
+        "Are the subjects maintained within the frame's composition throughout the video?",
+        "Does the camera maintain proper composition of the subject(s)?",
+        "Is the framing stable and consistent for the main subject(s)?",
+        "Are the subjects well-positioned within the frame throughout?",
+        "Does the shot maintain its focus on the subject(s) with consistent framing?",
+        "Is there a steady and deliberate framing of the subject(s) in this video?"
+    ],
+    "def_prompt": [
+        "A shot that maintains consistent framing of one or more subjects throughout its duration."
+    ],
+    "alt_prompt": [
+        "A video that keeps its subjects properly framed from start to finish.",
+        "A shot with consistent and stable framing of its main subjects.",
+        "A video where subjects remain well-positioned within the frame.",
+        "A shot demonstrating deliberate and maintained subject framing.",
+        "A video with careful attention to subject positioning and framing.",
+        "A shot where the camera maintains proper composition of subjects.",
+        "A video showing intentional and steady framing of its subjects.",
+        "A shot with controlled and purposeful subject positioning."
+    ],
+    "pos_rule_str": "self.is_framing_subject is True",
+    "neg_rule_str": "self.is_framing_subject is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

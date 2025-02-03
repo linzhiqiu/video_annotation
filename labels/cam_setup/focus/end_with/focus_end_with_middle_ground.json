@@ -1,0 +1,34 @@
+{
+    "label": "Focus End With Middle Ground",
+    "label_name": "focus_end_with_middle_ground",
+    "def_question": [
+        "Does the video end with middle ground?"
+    ],
+    "alt_question": [
+        "Does the shot end with middle ground?",
+        "Is the ending frame showing middle ground?",
+        "Does the video end using middle ground?",
+        "Is the final shot at middle ground?",
+        "Does the sequence end with middle ground?",
+        "Is the last shot at middle ground?",
+        "Does the video close with middle ground?",
+        "Is the ending frame at middle ground?"
+    ],
+    "def_prompt": [
+        "A video that ends with middle ground."
+    ],
+    "alt_prompt": [
+        "A shot ending with middle ground.",
+        "A video ending at middle ground.",
+        "A sequence concluding with middle ground.",
+        "A shot finally at middle ground.",
+        "A video closing with middle ground.",
+        "A shot ending at middle ground.",
+        "A video concluding with middle ground.",
+        "A sequence ending at middle ground."
+    ],
+    "pos_rule_str": "self.focus_info['end'] == 'middle_ground'",
+    "neg_rule_str": "self.focus_info['end'] not in ['middle_ground', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

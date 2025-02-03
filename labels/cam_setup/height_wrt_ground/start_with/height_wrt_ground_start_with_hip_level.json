@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground Start With Hip Level",
+    "label_name": "height_wrt_ground_start_with_hip_level",
+    "def_question": [
+        "Does the video start with hip level?"
+    ],
+    "alt_question": [
+        "Does the shot start with hip level?",
+        "Is the starting frame showing hip level?",
+        "Does the video start using hip level?",
+        "Is the initial shot at hip level?",
+        "Does the sequence start with hip level?",
+        "Is the first shot at hip level?",
+        "Does the video open with hip level?",
+        "Is the starting frame at hip level?"
+    ],
+    "def_prompt": [
+        "A video that starts with hip level."
+    ],
+    "alt_prompt": [
+        "A shot starting with hip level.",
+        "A video starting at hip level.",
+        "A sequence beginning with hip level.",
+        "A shot initially at hip level.",
+        "A video opening with hip level.",
+        "A shot starting at hip level.",
+        "A video beginning with hip level.",
+        "A sequence starting at hip level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'hip_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

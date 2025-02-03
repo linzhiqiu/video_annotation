@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Subject Scene Mismatch Shot",
+    "label_name": "is_just_subject_scene_mismatch_shot",
+    "def_question": [
+        "Does the video feature a subject and scene that do not match, making it difficult to classify shot size?"
+    ],
+    "alt_question": [
+        "Is there a disconnect between subject and scene scale?",
+        "Does the subject seem out of proportion with its environment?",
+        "Is there a mismatch between subject and scene sizes?",
+        "Does the scene scale conflict with the subject size?",
+        "Is there an unusual relationship between subject and setting?",
+        "Does the subject appear mismatched with the environment?",
+        "Is there a scale disparity between subject and scene?",
+        "Does the setting seem inappropriately sized for the subject?"
+    ],
+    "def_prompt": [
+        "A shot where the subject and scene scales are mismatched, complicating shot size classification."
+    ],
+    "alt_prompt": [
+        "A video showing scale mismatch between subject and scene.",
+        "A shot with conflicting subject and environment sizes.",
+        "A video featuring unusual subject-scene proportions.",
+        "A shot showing scale inconsistencies.",
+        "A video with mismatched subject-environment scale.",
+        "A shot displaying unusual size relationships.",
+        "A video with disproportionate scene elements.",
+        "A shot featuring scale incongruities."
+    ],
+    "pos_rule_str": "self.shot_size_description_type == 'subject_scene_mismatch'",
+    "neg_rule_str": "self.shot_size_description_type != 'subject_scene_mismatch'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

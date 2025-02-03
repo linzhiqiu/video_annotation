@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Human Shot",
+    "label_name": "is_just_human_shot",
+    "def_question": [
+        "Does the video consistently feature one dominant human subject or a single group of human subjects in the frame?"
+    ],
+    "alt_question": [
+        "Is there a single human subject or group that dominates the frame?",
+        "Does the shot maintain focus on one primary human subject?",
+        "Is the video centered on a single human or human group?",
+        "Does one human subject or group remain the main focus?",
+        "Is there a consistent human subject throughout the shot?",
+        "Does the camera stay focused on one human subject or group?",
+        "Is there a single dominant human presence in the frame?",
+        "Does the shot maintain emphasis on one human subject?"
+    ],
+    "def_prompt": [
+        "A shot consistently featuring one dominant human subject or group."
+    ],
+    "alt_prompt": [
+        "A video focused on a single human subject.",
+        "A shot maintaining focus on one human group.",
+        "A video centered on a primary human subject.",
+        "A shot emphasizing a single human presence.",
+        "A video tracking one main human subject.",
+        "A shot dedicated to a single human group.",
+        "A video highlighting one human subject.",
+        "A shot following a single human presence."
+    ],
+    "pos_rule_str": "self.shot_type == 'human'",
+    "neg_rule_str": "self.shot_type != 'human'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

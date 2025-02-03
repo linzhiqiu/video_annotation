@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject End With Above Subject",
+    "label_name": "height_wrt_subject_end_with_above_subject",
+    "def_question": [
+        "Does the video end with above subject?"
+    ],
+    "alt_question": [
+        "Does the shot end with above subject?",
+        "Is the ending frame showing above subject?",
+        "Does the video end using above subject?",
+        "Is the final shot at above subject?",
+        "Does the sequence end with above subject?",
+        "Is the last shot at above subject?",
+        "Does the video close with above subject?",
+        "Is the ending frame at above subject?"
+    ],
+    "def_prompt": [
+        "A video that ends with above subject."
+    ],
+    "alt_prompt": [
+        "A shot ending with above subject.",
+        "A video ending at above subject.",
+        "A sequence concluding with above subject.",
+        "A shot finally at above subject.",
+        "A video closing with above subject.",
+        "A shot ending at above subject.",
+        "A video concluding with above subject.",
+        "A sequence ending at above subject."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_info['end'] == 'above_subject'",
+    "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

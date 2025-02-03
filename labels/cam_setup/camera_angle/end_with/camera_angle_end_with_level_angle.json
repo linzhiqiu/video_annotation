@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle End With Level Angle",
+    "label_name": "camera_angle_end_with_level_angle",
+    "def_question": [
+        "Does the video end with level angle?"
+    ],
+    "alt_question": [
+        "Does the shot end with level angle?",
+        "Is the ending frame showing level angle?",
+        "Does the video end using level angle?",
+        "Is the final shot at level angle?",
+        "Does the sequence end with level angle?",
+        "Is the last shot at level angle?",
+        "Does the video close with level angle?",
+        "Is the ending frame at level angle?"
+    ],
+    "def_prompt": [
+        "A video that ends with level angle."
+    ],
+    "alt_prompt": [
+        "A shot ending with level angle.",
+        "A video ending at level angle.",
+        "A sequence concluding with level angle.",
+        "A shot finally at level angle.",
+        "A video closing with level angle.",
+        "A shot ending at level angle.",
+        "A video concluding with level angle.",
+        "A sequence ending at level angle."
+    ],
+    "pos_rule_str": "self.camera_angle_info['end'] == 'level_angle'",
+    "neg_rule_str": "self.camera_angle_info['end'] not in ['level_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

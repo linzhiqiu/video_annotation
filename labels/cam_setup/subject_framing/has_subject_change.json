@@ -1,0 +1,34 @@
+{
+    "label": "Has Subject Change",
+    "label_name": "has_subject_change",
+    "def_question": [
+        "Does the subject change in the video, such as in a revealing shot where a subject appears, disappears, or transitions to another subject?"
+    ],
+    "alt_question": [
+        "Are there any transitions between different subjects in this video?",
+        "Does the video show any subject appearing or disappearing from view?",
+        "Is there a shift or change in the main subject during the video?",
+        "Does the focus transition from one subject to another?",
+        "Are there moments where new subjects enter or existing ones leave?",
+        "Does the video include any revealing or concealing of subjects?",
+        "Is there a handoff or switch between different subjects?",
+        "Does the video's subject matter change during its duration?"
+    ],
+    "def_prompt": [
+        "A shot where the subject changes, including appearances, disappearances, or transitions between subjects."
+    ],
+    "alt_prompt": [
+        "A video featuring transitions between different subjects.",
+        "A shot where subjects enter or leave the frame.",
+        "A video showing clear changes in its main subject.",
+        "A shot demonstrating subject transitions or reveals.",
+        "A video where the focus shifts between different subjects.",
+        "A shot containing subject appearances or disappearances.",
+        "A video with dynamic changes in subject matter.",
+        "A shot showing deliberate subject transitions."
+    ],
+    "pos_rule_str": "self.has_subject_change is True",
+    "neg_rule_str": "self.has_subject_change is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

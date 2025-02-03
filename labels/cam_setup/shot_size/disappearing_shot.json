@@ -1,0 +1,34 @@
+{
+    "label": "Disappearing Shot",
+    "label_name": "disappearing_shot",
+    "def_question": [
+        "Does the main subject disappear from the shot?"
+    ],
+    "alt_question": [
+        "Does the primary subject leave the frame?",
+        "Is there a moment where the main subject vanishes?",
+        "Does the subject exit from view?",
+        "Is there a planned disappearance of the subject?",
+        "Does the main subject fade from view?",
+        "Is there a point where the subject leaves the shot?",
+        "Does the primary focus disappear from frame?",
+        "Is there a deliberate removal of the subject?"
+    ],
+    "def_prompt": [
+        "A shot where the main subject disappears or exits from view."
+    ],
+    "alt_prompt": [
+        "A video showing subject disappearance.",
+        "A shot featuring subject exit.",
+        "A video with planned subject removal.",
+        "A shot showing subject departure.",
+        "A video where the subject leaves view.",
+        "A shot with subject disappearance.",
+        "A video featuring subject exit.",
+        "A shot showing subject removal."
+    ],
+    "pos_rule_str": "self.disappearing_shot is True",
+    "neg_rule_str": "self.disappearing_shot is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

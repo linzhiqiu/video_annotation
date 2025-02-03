@@ -1,0 +1,34 @@
+{
+    "label": "Is Rack Pull Focus",
+    "label_name": "is_rack_pull_focus",
+    "def_question": [
+        "Is rack focus or pull focus used in the video?"
+    ],
+    "alt_question": [
+        "Does the shot use deliberate focus transitions?",
+        "Is there intentional shifting of focus planes?",
+        "Does the video employ focus pulling technique?",
+        "Is there controlled change in focal point?",
+        "Does the shot use focus racking effects?",
+        "Is there purposeful focus manipulation?",
+        "Does the video show planned focus shifts?",
+        "Is there deliberate refocusing in the shot?"
+    ],
+    "def_prompt": [
+        "A shot using rack focus or pull focus techniques to shift focus between subjects."
+    ],
+    "alt_prompt": [
+        "A video with deliberate focus changes.",
+        "A shot using focus transition effects.",
+        "A video featuring focus manipulation.",
+        "A shot with controlled focus shifts.",
+        "A video employing rack focus.",
+        "A shot showing planned refocusing.",
+        "A video with intentional focus pulls.",
+        "A shot using focus racking technique."
+    ],
+    "pos_rule_str": "self.is_rack_pull_focus is True",
+    "neg_rule_str": "self.is_rack_pull_focus is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

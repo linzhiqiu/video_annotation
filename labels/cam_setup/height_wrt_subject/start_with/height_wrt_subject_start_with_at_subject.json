@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject Start With At Subject",
+    "label_name": "height_wrt_subject_start_with_at_subject",
+    "def_question": [
+        "Does the video start with at subject?"
+    ],
+    "alt_question": [
+        "Does the shot start with at subject?",
+        "Is the starting frame showing at subject?",
+        "Does the video start using at subject?",
+        "Is the initial shot at at subject?",
+        "Does the sequence start with at subject?",
+        "Is the first shot at at subject?",
+        "Does the video open with at subject?",
+        "Is the starting frame at at subject?"
+    ],
+    "def_prompt": [
+        "A video that starts with at subject."
+    ],
+    "alt_prompt": [
+        "A shot starting with at subject.",
+        "A video starting at at subject.",
+        "A sequence beginning with at subject.",
+        "A shot initially at at subject.",
+        "A video opening with at subject.",
+        "A shot starting at at subject.",
+        "A video beginning with at subject.",
+        "A sequence starting at at subject."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'at_subject'",
+    "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
