@@ -183,4 +183,5 @@ Does the video include one or more shot transitions?
 
 - [Lens_distortion](./lens_distortion/index.md)
 - [Point_of_view](./point_of_view/index.md)
+- [Shot_type](./shot_type/index.md)
 - [Video_speed](./video_speed/index.md)
