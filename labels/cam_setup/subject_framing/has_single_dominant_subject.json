@@ -1,0 +1,34 @@
+{
+    "label": "Has Single Dominant Subject",
+    "label_name": "has_single_dominant_subject",
+    "def_question": [
+        "Is there a single dominant subject or group of subjects in the frame throughout the video?"
+    ],
+    "alt_question": [
+        "Does one main subject or group dominate the frame throughout?",
+        "Is there a primary subject that remains dominant in the video?",
+        "Does a single subject or group stand out as the main focus?",
+        "Is the video primarily focused on one dominant subject?",
+        "Can you identify a single main subject throughout the shot?",
+        "Does one subject or group clearly command more attention?",
+        "Is there a clear primary subject maintained throughout?",
+        "Does the video emphasize one particular subject or group?"
+    ],
+    "def_prompt": [
+        "A shot that maintains focus on a single dominant subject or group of subjects throughout the video."
+    ],
+    "alt_prompt": [
+        "A video centered on one main subject or group.",
+        "A shot where a single subject clearly dominates the frame.",
+        "A video maintaining focus on one primary subject.",
+        "A shot emphasizing a single dominant subject group.",
+        "A video where one subject commands primary attention.",
+        "A shot consistently featuring one main subject.",
+        "A video focused on a single primary subject or group.",
+        "A shot where one subject remains the clear focus."
+    ],
+    "pos_rule_str": "self.has_single_dominant_subject is True",
+    "neg_rule_str": "self.has_single_dominant_subject is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size End With Medium",
+    "label_name": "shot_size_end_with_medium",
+    "def_question": [
+        "Does the video end with medium?"
+    ],
+    "alt_question": [
+        "Does the shot end with medium?",
+        "Is the ending frame showing medium?",
+        "Does the video end using medium?",
+        "Is the final shot at medium?",
+        "Does the sequence end with medium?",
+        "Is the last shot at medium?",
+        "Does the video close with medium?",
+        "Is the ending frame at medium?"
+    ],
+    "def_prompt": [
+        "A video that ends with medium."
+    ],
+    "alt_prompt": [
+        "A shot ending with medium.",
+        "A video ending at medium.",
+        "A sequence concluding with medium.",
+        "A shot finally at medium.",
+        "A video closing with medium.",
+        "A shot ending at medium.",
+        "A video concluding with medium.",
+        "A sequence ending at medium."
+    ],
+    "pos_rule_str": "self.shot_size_info['end'] == 'medium'",
+    "neg_rule_str": "self.shot_size_info['end'] not in ['medium', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

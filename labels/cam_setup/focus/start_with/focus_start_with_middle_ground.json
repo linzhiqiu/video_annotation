@@ -1,0 +1,34 @@
+{
+    "label": "Focus Start With Middle Ground",
+    "label_name": "focus_start_with_middle_ground",
+    "def_question": [
+        "Does the video start with middle ground?"
+    ],
+    "alt_question": [
+        "Does the shot start with middle ground?",
+        "Is the starting frame showing middle ground?",
+        "Does the video start using middle ground?",
+        "Is the initial shot at middle ground?",
+        "Does the sequence start with middle ground?",
+        "Is the first shot at middle ground?",
+        "Does the video open with middle ground?",
+        "Is the starting frame at middle ground?"
+    ],
+    "def_prompt": [
+        "A video that starts with middle ground."
+    ],
+    "alt_prompt": [
+        "A shot starting with middle ground.",
+        "A video starting at middle ground.",
+        "A sequence beginning with middle ground.",
+        "A shot initially at middle ground.",
+        "A video opening with middle ground.",
+        "A shot starting at middle ground.",
+        "A video beginning with middle ground.",
+        "A sequence starting at middle ground."
+    ],
+    "pos_rule_str": "self.focus_info['start'] == 'middle_ground'",
+    "neg_rule_str": "self.focus_info['start'] not in ['middle_ground', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

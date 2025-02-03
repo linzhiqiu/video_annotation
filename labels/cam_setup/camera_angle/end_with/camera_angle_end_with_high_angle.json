@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle End With High Angle",
+    "label_name": "camera_angle_end_with_high_angle",
+    "def_question": [
+        "Does the video end with high angle?"
+    ],
+    "alt_question": [
+        "Does the shot end with high angle?",
+        "Is the ending frame showing high angle?",
+        "Does the video end using high angle?",
+        "Is the final shot at high angle?",
+        "Does the sequence end with high angle?",
+        "Is the last shot at high angle?",
+        "Does the video close with high angle?",
+        "Is the ending frame at high angle?"
+    ],
+    "def_prompt": [
+        "A video that ends with high angle."
+    ],
+    "alt_prompt": [
+        "A shot ending with high angle.",
+        "A video ending at high angle.",
+        "A sequence concluding with high angle.",
+        "A shot finally at high angle.",
+        "A video closing with high angle.",
+        "A shot ending at high angle.",
+        "A video concluding with high angle.",
+        "A sequence ending at high angle."
+    ],
+    "pos_rule_str": "self.camera_angle_info['end'] == 'high_angle'",
+    "neg_rule_str": "self.camera_angle_info['end'] not in ['high_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

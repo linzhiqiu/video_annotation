@@ -1,0 +1,34 @@
+{
+    "label": "Revealing Shot",
+    "label_name": "revealing_shot",
+    "def_question": [
+        "Does the video include a revealing shot where a subject appears?"
+    ],
+    "alt_question": [
+        "Is there a moment where a new subject is revealed?",
+        "Does the shot introduce a subject through revelation?",
+        "Is there a dramatic reveal of a subject?",
+        "Does a subject emerge or appear in the shot?",
+        "Is there a planned reveal of a subject?",
+        "Does the video show a subject coming into view?",
+        "Is there a moment where a subject is unveiled?",
+        "Does the shot gradually reveal a subject?"
+    ],
+    "def_prompt": [
+        "A shot that includes the revelation or appearance of a subject."
+    ],
+    "alt_prompt": [
+        "A video featuring a subject reveal.",
+        "A shot showing a subject appearance.",
+        "A video with a dramatic subject introduction.",
+        "A shot containing a planned reveal.",
+        "A video showing subject emergence.",
+        "A shot with a calculated revelation.",
+        "A video featuring subject unveiling.",
+        "A shot with gradual subject appearance."
+    ],
+    "pos_rule_str": "self.revealing_shot is True",
+    "neg_rule_str": "self.revealing_shot is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

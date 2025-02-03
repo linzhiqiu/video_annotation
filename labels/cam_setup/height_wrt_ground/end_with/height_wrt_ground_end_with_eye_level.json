@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground End With Eye Level",
+    "label_name": "height_wrt_ground_end_with_eye_level",
+    "def_question": [
+        "Does the video end with eye level?"
+    ],
+    "alt_question": [
+        "Does the shot end with eye level?",
+        "Is the ending frame showing eye level?",
+        "Does the video end using eye level?",
+        "Is the final shot at eye level?",
+        "Does the sequence end with eye level?",
+        "Is the last shot at eye level?",
+        "Does the video close with eye level?",
+        "Is the ending frame at eye level?"
+    ],
+    "def_prompt": [
+        "A video that ends with eye level."
+    ],
+    "alt_prompt": [
+        "A shot ending with eye level.",
+        "A video ending at eye level.",
+        "A sequence concluding with eye level.",
+        "A shot finally at eye level.",
+        "A video closing with eye level.",
+        "A shot ending at eye level.",
+        "A video concluding with eye level.",
+        "A sequence ending at eye level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'eye_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['eye_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

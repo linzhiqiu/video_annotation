@@ -1,0 +1,34 @@
+{
+    "label": "Focus Change From Far To Near",
+    "label_name": "focus_change_from_far_to_near",
+    "def_question": [
+        "Does the focal plane transition from distant to close?"
+    ],
+    "alt_question": [
+        "Does the focus shift from far to near objects?",
+        "Is there a focus transition to the foreground?",
+        "Does the sharp focus move toward camera?",
+        "Is there a focus pull from distant to close?",
+        "Does the focus change from background to foreground?",
+        "Is there a shift in focus to closer elements?",
+        "Does the focal point move to nearby objects?",
+        "Is there a focus transition toward foreground?"
+    ],
+    "def_prompt": [
+        "A shot where the focus transitions from far to near elements."
+    ],
+    "alt_prompt": [
+        "A video with focus moving closer.",
+        "A shot transitioning to near focus.",
+        "A video pulling focus to foreground.",
+        "A shot shifting focus inward.",
+        "A video with approaching focus point.",
+        "A shot changing focus to proximity.",
+        "A video with inward focus shift.",
+        "A shot moving focus closer."
+    ],
+    "pos_rule_str": "self.focus_change_from_far_to_near is True",
+    "neg_rule_str": "self.focus_change_from_far_to_near is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

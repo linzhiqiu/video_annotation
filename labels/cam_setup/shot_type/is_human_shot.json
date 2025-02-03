@@ -1,0 +1,34 @@
+{
+    "label": "Is Human Shot",
+    "label_name": "is_human_shot",
+    "def_question": [
+        "Is the shot focused on human subjects?"
+    ],
+    "alt_question": [
+        "Does the video primarily feature human subjects?",
+        "Are people the main focus of this shot?",
+        "Is this shot centered on human characters?",
+        "Does the camera primarily follow human subjects?",
+        "Are humans the principal subjects in this shot?",
+        "Is the video's focus on human figures?",
+        "Does this shot mainly capture human subjects?",
+        "Are human subjects the primary focus of the camera?"
+    ],
+    "def_prompt": [
+        "A shot that primarily focuses on human subjects."
+    ],
+    "alt_prompt": [
+        "A video centered on human subjects.",
+        "A shot where people are the main focus.",
+        "A video primarily featuring human figures.",
+        "A shot focusing on human characters.",
+        "A video where humans are the principal subjects.",
+        "A shot emphasizing human subjects.",
+        "A video capturing human-centered action.",
+        "A shot predominantly featuring people."
+    ],
+    "pos_rule_str": "self.is_human_shot is True",
+    "neg_rule_str": "self.is_human_shot is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

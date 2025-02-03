@@ -1,0 +1,34 @@
+{
+    "label": "Is Ultra Shallow Focus",
+    "label_name": "is_ultra_shallow_focus",
+    "def_question": [
+        "Does the video have an extremely shallow depth of field?"
+    ],
+    "alt_question": [
+        "Is the focus range extremely narrow?",
+        "Does the shot show extreme background blur?",
+        "Is there a dramatically thin plane of focus?",
+        "Does the video use extreme selective focus?",
+        "Is the depth of field exceptionally shallow?",
+        "Does the shot have minimal focus depth?",
+        "Is there intense separation of focus planes?",
+        "Does the video show extreme focus limitation?"
+    ],
+    "def_prompt": [
+        "A shot using extremely shallow depth of field, with a very narrow focus range."
+    ],
+    "alt_prompt": [
+        "A video with extremely selective focus.",
+        "A shot showing intense background blur.",
+        "A video with minimal focus depth.",
+        "A shot emphasizing thin focal plane.",
+        "A video with extreme focus limitation.",
+        "A shot using dramatic focus separation.",
+        "A video with intense selective focus.",
+        "A shot with extremely narrow focus."
+    ],
+    "pos_rule_str": "self.is_ultra_shallow_focus is True",
+    "neg_rule_str": "self.is_ultra_shallow_focus is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

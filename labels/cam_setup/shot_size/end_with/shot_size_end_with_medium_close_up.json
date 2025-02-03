@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size End With Medium Close Up",
+    "label_name": "shot_size_end_with_medium_close_up",
+    "def_question": [
+        "Does the video end with medium close up?"
+    ],
+    "alt_question": [
+        "Does the shot end with medium close up?",
+        "Is the ending frame showing medium close up?",
+        "Does the video end using medium close up?",
+        "Is the final shot at medium close up?",
+        "Does the sequence end with medium close up?",
+        "Is the last shot at medium close up?",
+        "Does the video close with medium close up?",
+        "Is the ending frame at medium close up?"
+    ],
+    "def_prompt": [
+        "A video that ends with medium close up."
+    ],
+    "alt_prompt": [
+        "A shot ending with medium close up.",
+        "A video ending at medium close up.",
+        "A sequence concluding with medium close up.",
+        "A shot finally at medium close up.",
+        "A video closing with medium close up.",
+        "A shot ending at medium close up.",
+        "A video concluding with medium close up.",
+        "A sequence ending at medium close up."
+    ],
+    "pos_rule_str": "self.shot_size_info['end'] == 'medium_close_up'",
+    "neg_rule_str": "self.shot_size_info['end'] not in ['medium_close_up', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

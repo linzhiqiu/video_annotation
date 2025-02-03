@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Clear Subject Atypical Shot",
+    "label_name": "is_just_clear_subject_atypical_shot",
+    "def_question": [
+        "Is there a clear subject in the video, but its anatomy looks unnatural or exaggerated, as seen in games or CGI?"
+    ],
+    "alt_question": [
+        "Does the subject have unusual or exaggerated proportions?",
+        "Is the subject clearly visible but anatomically unrealistic?",
+        "Does the video show a subject with non-standard features?",
+        "Is there a distinct but anatomically unusual subject?",
+        "Does the subject appear stylized or non-realistic?",
+        "Is the main subject visibly different from natural anatomy?",
+        "Does the video feature a subject with exaggerated features?",
+        "Is there a clear but anatomically stylized subject?"
+    ],
+    "def_prompt": [
+        "A shot with a clear subject that has unnatural or exaggerated anatomy, typical in games or CGI."
+    ],
+    "alt_prompt": [
+        "A video featuring an anatomically stylized subject.",
+        "A shot showing a subject with exaggerated proportions.",
+        "A video with a clear but unrealistic subject.",
+        "A shot featuring non-standard anatomy.",
+        "A video showing CGI-style subject features.",
+        "A shot with an anatomically unusual subject.",
+        "A video displaying stylized character proportions.",
+        "A shot emphasizing non-realistic anatomy."
+    ],
+    "pos_rule_str": "self.complex_shot_type == 'clear_subject_atypical'",
+    "neg_rule_str": "self.complex_shot_type != 'clear_subject_atypical'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

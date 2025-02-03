@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground Start With Aerial Level",
+    "label_name": "height_wrt_ground_start_with_aerial_level",
+    "def_question": [
+        "Does the video start with aerial level?"
+    ],
+    "alt_question": [
+        "Does the shot start with aerial level?",
+        "Is the starting frame showing aerial level?",
+        "Does the video start using aerial level?",
+        "Is the initial shot at aerial level?",
+        "Does the sequence start with aerial level?",
+        "Is the first shot at aerial level?",
+        "Does the video open with aerial level?",
+        "Is the starting frame at aerial level?"
+    ],
+    "def_prompt": [
+        "A video that starts with aerial level."
+    ],
+    "alt_prompt": [
+        "A shot starting with aerial level.",
+        "A video starting at aerial level.",
+        "A sequence beginning with aerial level.",
+        "A shot initially at aerial level.",
+        "A video opening with aerial level.",
+        "A shot starting at aerial level.",
+        "A video beginning with aerial level.",
+        "A sequence starting at aerial level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'aerial_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['aerial_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

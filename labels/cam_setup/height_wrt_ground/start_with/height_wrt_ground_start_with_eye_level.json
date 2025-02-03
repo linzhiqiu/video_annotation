@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground Start With Eye Level",
+    "label_name": "height_wrt_ground_start_with_eye_level",
+    "def_question": [
+        "Does the video start with eye level?"
+    ],
+    "alt_question": [
+        "Does the shot start with eye level?",
+        "Is the starting frame showing eye level?",
+        "Does the video start using eye level?",
+        "Is the initial shot at eye level?",
+        "Does the sequence start with eye level?",
+        "Is the first shot at eye level?",
+        "Does the video open with eye level?",
+        "Is the starting frame at eye level?"
+    ],
+    "def_prompt": [
+        "A video that starts with eye level."
+    ],
+    "alt_prompt": [
+        "A shot starting with eye level.",
+        "A video starting at eye level.",
+        "A sequence beginning with eye level.",
+        "A shot initially at eye level.",
+        "A video opening with eye level.",
+        "A shot starting at eye level.",
+        "A video beginning with eye level.",
+        "A sequence starting at eye level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'eye_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

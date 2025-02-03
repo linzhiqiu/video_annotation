@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size Start With Wide",
+    "label_name": "shot_size_start_with_wide",
+    "def_question": [
+        "Does the video start with wide?"
+    ],
+    "alt_question": [
+        "Does the shot start with wide?",
+        "Is the starting frame showing wide?",
+        "Does the video start using wide?",
+        "Is the initial shot at wide?",
+        "Does the sequence start with wide?",
+        "Is the first shot at wide?",
+        "Does the video open with wide?",
+        "Is the starting frame at wide?"
+    ],
+    "def_prompt": [
+        "A video that starts with wide."
+    ],
+    "alt_prompt": [
+        "A shot starting with wide.",
+        "A video starting at wide.",
+        "A sequence beginning with wide.",
+        "A shot initially at wide.",
+        "A video opening with wide.",
+        "A shot starting at wide.",
+        "A video beginning with wide.",
+        "A sequence starting at wide."
+    ],
+    "pos_rule_str": "self.shot_size_info['start'] == 'wide'",
+    "neg_rule_str": "self.shot_size_info['start'] not in ['wide', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

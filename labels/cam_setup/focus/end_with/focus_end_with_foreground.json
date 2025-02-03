@@ -1,0 +1,34 @@
+{
+    "label": "Focus End With Foreground",
+    "label_name": "focus_end_with_foreground",
+    "def_question": [
+        "Does the video end with foreground?"
+    ],
+    "alt_question": [
+        "Does the shot end with foreground?",
+        "Is the ending frame showing foreground?",
+        "Does the video end using foreground?",
+        "Is the final shot at foreground?",
+        "Does the sequence end with foreground?",
+        "Is the last shot at foreground?",
+        "Does the video close with foreground?",
+        "Is the ending frame at foreground?"
+    ],
+    "def_prompt": [
+        "A video that ends with foreground."
+    ],
+    "alt_prompt": [
+        "A shot ending with foreground.",
+        "A video ending at foreground.",
+        "A sequence concluding with foreground.",
+        "A shot finally at foreground.",
+        "A video closing with foreground.",
+        "A shot ending at foreground.",
+        "A video concluding with foreground.",
+        "A sequence ending at foreground."
+    ],
+    "pos_rule_str": "self.focus_info['end'] == 'foreground'",
+    "neg_rule_str": "self.focus_info['end'] not in ['foreground', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

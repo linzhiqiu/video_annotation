@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Start With Bird Eye Angle",
+    "label_name": "camera_angle_start_with_bird_eye_angle",
+    "def_question": [
+        "Does the video start with bird eye angle?"
+    ],
+    "alt_question": [
+        "Does the shot start with bird eye angle?",
+        "Is the starting frame showing bird eye angle?",
+        "Does the video start using bird eye angle?",
+        "Is the initial shot at bird eye angle?",
+        "Does the sequence start with bird eye angle?",
+        "Is the first shot at bird eye angle?",
+        "Does the video open with bird eye angle?",
+        "Is the starting frame at bird eye angle?"
+    ],
+    "def_prompt": [
+        "A video that starts with bird eye angle."
+    ],
+    "alt_prompt": [
+        "A shot starting with bird eye angle.",
+        "A video starting at bird eye angle.",
+        "A sequence beginning with bird eye angle.",
+        "A shot initially at bird eye angle.",
+        "A video opening with bird eye angle.",
+        "A shot starting at bird eye angle.",
+        "A video beginning with bird eye angle.",
+        "A sequence starting at bird eye angle."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'bird_eye_angle'",
+    "neg_rule_str": "self.camera_angle_info['start'] not in ['bird_eye_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

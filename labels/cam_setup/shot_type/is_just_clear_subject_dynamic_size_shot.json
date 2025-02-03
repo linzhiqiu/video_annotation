@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Clear Subject Dynamic Size Shot",
+    "label_name": "is_just_clear_subject_dynamic_size_shot",
+    "def_question": [
+        "Does the video feature a clear subject, but changes in framing make shot size classification tricky?"
+    ],
+    "alt_question": [
+        "Is there a distinct subject with varying frame sizes?",
+        "Does the shot maintain a clear subject despite changing distances?",
+        "Is the subject clear but shown at different scales?",
+        "Does the framing change while following a clear subject?",
+        "Is there dynamic framing of an identifiable subject?",
+        "Does the shot size vary while tracking a clear subject?",
+        "Is the subject consistent but shown at different sizes?",
+        "Does the frame distance to the subject change significantly?"
+    ],
+    "def_prompt": [
+        "A shot with a clear subject but variable framing that complicates shot size classification."
+    ],
+    "alt_prompt": [
+        "A video showing a subject at varying distances.",
+        "A shot with dynamic framing of a clear subject.",
+        "A video maintaining subject focus despite size changes.",
+        "A shot featuring variable distances to the subject.",
+        "A video with changing shot sizes of a clear subject.",
+        "A shot showing subject scale variations.",
+        "A video with dynamic subject sizing.",
+        "A shot featuring distance variations to a subject."
+    ],
+    "pos_rule_str": "self.complex_shot_type == 'clear_subject_dynamic_size'",
+    "neg_rule_str": "self.complex_shot_type != 'clear_subject_dynamic_size'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

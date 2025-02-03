@@ -181,7 +181,13 @@ Does the video include one or more shot transitions?
 
 ## Subcategories
 
+- [Camera_angle](./camera_angle/index.md)
+- [Camera_focus](./camera_focus/index.md)
+- [Camera_height_wrt_ground](./camera_height_wrt_ground/index.md)
+- [Camera_height_wrt_subject](./camera_height_wrt_subject/index.md)
 - [Lens_distortion](./lens_distortion/index.md)
 - [Point_of_view](./point_of_view/index.md)
+- [Shot_size](./shot_size/index.md)
 - [Shot_type](./shot_type/index.md)
+- [Subject_framing](./subject_framing/index.md)
 - [Video_speed](./video_speed/index.md)

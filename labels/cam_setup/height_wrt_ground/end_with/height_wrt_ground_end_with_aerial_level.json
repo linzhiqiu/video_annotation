@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground End With Aerial Level",
+    "label_name": "height_wrt_ground_end_with_aerial_level",
+    "def_question": [
+        "Does the video end with aerial level?"
+    ],
+    "alt_question": [
+        "Does the shot end with aerial level?",
+        "Is the ending frame showing aerial level?",
+        "Does the video end using aerial level?",
+        "Is the final shot at aerial level?",
+        "Does the sequence end with aerial level?",
+        "Is the last shot at aerial level?",
+        "Does the video close with aerial level?",
+        "Is the ending frame at aerial level?"
+    ],
+    "def_prompt": [
+        "A video that ends with aerial level."
+    ],
+    "alt_prompt": [
+        "A shot ending with aerial level.",
+        "A video ending at aerial level.",
+        "A sequence concluding with aerial level.",
+        "A shot finally at aerial level.",
+        "A video closing with aerial level.",
+        "A shot ending at aerial level.",
+        "A video concluding with aerial level.",
+        "A sequence ending at aerial level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'aerial_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

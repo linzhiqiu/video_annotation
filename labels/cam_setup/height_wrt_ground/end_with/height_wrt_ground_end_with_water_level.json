@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground End With Water Level",
+    "label_name": "height_wrt_ground_end_with_water_level",
+    "def_question": [
+        "Does the video end with water level?"
+    ],
+    "alt_question": [
+        "Does the shot end with water level?",
+        "Is the ending frame showing water level?",
+        "Does the video end using water level?",
+        "Is the final shot at water level?",
+        "Does the sequence end with water level?",
+        "Is the last shot at water level?",
+        "Does the video close with water level?",
+        "Is the ending frame at water level?"
+    ],
+    "def_prompt": [
+        "A video that ends with water level."
+    ],
+    "alt_prompt": [
+        "A shot ending with water level.",
+        "A video ending at water level.",
+        "A sequence concluding with water level.",
+        "A shot finally at water level.",
+        "A video closing with water level.",
+        "A shot ending at water level.",
+        "A video concluding with water level.",
+        "A sequence ending at water level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'water_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['water_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

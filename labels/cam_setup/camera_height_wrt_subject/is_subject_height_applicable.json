@@ -1,0 +1,34 @@
+{
+    "label": "Is Subject Height Applicable",
+    "label_name": "is_subject_height_applicable",
+    "def_question": [
+        "Is subject height classification possible for this video?"
+    ],
+    "alt_question": [
+        "Can the camera height relative to subject be classified?",
+        "Is it possible to determine the camera's position relative to the subject?",
+        "Can we assess the vertical relationship between camera and subject?",
+        "Is the camera's height relative to subject measurable?",
+        "Can we classify the vertical angle to the subject?",
+        "Is it feasible to determine camera-to-subject height?",
+        "Can the vertical positioning relative to subject be assessed?",
+        "Is the camera-subject height relationship clear enough to classify?"
+    ],
+    "def_prompt": [
+        "A shot where the camera height relative to the subject can be meaningfully classified."
+    ],
+    "alt_prompt": [
+        "A video with classifiable camera-subject height relationship.",
+        "A shot with clear vertical camera positioning.",
+        "A video where subject-relative height is apparent.",
+        "A shot showing definable camera-to-subject angle.",
+        "A video with measurable vertical camera position.",
+        "A shot displaying clear height relationship.",
+        "A video with assessable camera elevation.",
+        "A shot with determinable vertical positioning."
+    ],
+    "pos_rule_str": "any(height != 'unknown' for height in self.height_wrt_subject_info.values())",
+    "neg_rule_str": "not any(height != 'unknown' for height in self.height_wrt_subject_info.values())",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Start With Low Angle",
+    "label_name": "camera_angle_start_with_low_angle",
+    "def_question": [
+        "Does the video start with low angle?"
+    ],
+    "alt_question": [
+        "Does the shot start with low angle?",
+        "Is the starting frame showing low angle?",
+        "Does the video start using low angle?",
+        "Is the initial shot at low angle?",
+        "Does the sequence start with low angle?",
+        "Is the first shot at low angle?",
+        "Does the video open with low angle?",
+        "Is the starting frame at low angle?"
+    ],
+    "def_prompt": [
+        "A video that starts with low angle."
+    ],
+    "alt_prompt": [
+        "A shot starting with low angle.",
+        "A video starting at low angle.",
+        "A sequence beginning with low angle.",
+        "A shot initially at low angle.",
+        "A video opening with low angle.",
+        "A shot starting at low angle.",
+        "A video beginning with low angle.",
+        "A sequence starting at low angle."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'low_angle'",
+    "neg_rule_str": "self.camera_angle_info['start'] not in ['low_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

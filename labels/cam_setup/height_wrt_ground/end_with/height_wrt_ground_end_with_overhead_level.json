@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground End With Overhead Level",
+    "label_name": "height_wrt_ground_end_with_overhead_level",
+    "def_question": [
+        "Does the video end with overhead level?"
+    ],
+    "alt_question": [
+        "Does the shot end with overhead level?",
+        "Is the ending frame showing overhead level?",
+        "Does the video end using overhead level?",
+        "Is the final shot at overhead level?",
+        "Does the sequence end with overhead level?",
+        "Is the last shot at overhead level?",
+        "Does the video close with overhead level?",
+        "Is the ending frame at overhead level?"
+    ],
+    "def_prompt": [
+        "A video that ends with overhead level."
+    ],
+    "alt_prompt": [
+        "A shot ending with overhead level.",
+        "A video ending at overhead level.",
+        "A sequence concluding with overhead level.",
+        "A shot finally at overhead level.",
+        "A video closing with overhead level.",
+        "A shot ending at overhead level.",
+        "A video concluding with overhead level.",
+        "A sequence ending at overhead level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'overhead_level'",
+    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

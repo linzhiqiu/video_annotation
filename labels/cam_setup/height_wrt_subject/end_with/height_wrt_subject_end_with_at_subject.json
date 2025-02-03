@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject End With At Subject",
+    "label_name": "height_wrt_subject_end_with_at_subject",
+    "def_question": [
+        "Does the video end with at subject?"
+    ],
+    "alt_question": [
+        "Does the shot end with at subject?",
+        "Is the ending frame showing at subject?",
+        "Does the video end using at subject?",
+        "Is the final shot at at subject?",
+        "Does the sequence end with at subject?",
+        "Is the last shot at at subject?",
+        "Does the video close with at subject?",
+        "Is the ending frame at at subject?"
+    ],
+    "def_prompt": [
+        "A video that ends with at subject."
+    ],
+    "alt_prompt": [
+        "A shot ending with at subject.",
+        "A video ending at at subject.",
+        "A sequence concluding with at subject.",
+        "A shot finally at at subject.",
+        "A video closing with at subject.",
+        "A shot ending at at subject.",
+        "A video concluding with at subject.",
+        "A sequence ending at at subject."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_info['end'] == 'at_subject'",
+    "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Is Scenery Shot",
+    "label_name": "is_scenery_shot",
+    "def_question": [
+        "Is the shot focused on scenery or environment without emphasis on human or non-human subjects?"
+    ],
+    "alt_question": [
+        "Does the video primarily showcase the environment or landscape?",
+        "Is the main focus on the scenery rather than specific subjects?",
+        "Does this shot emphasize the surrounding environment?",
+        "Is the shot primarily about the location or setting?",
+        "Does the camera focus on the overall scene rather than subjects?",
+        "Is the emphasis on capturing the environment or backdrop?",
+        "Does this shot prioritize scenery over specific subjects?",
+        "Is the video mainly focused on showing the surroundings?"
+    ],
+    "def_prompt": [
+        "A shot that focuses on scenery or environment without emphasizing specific subjects."
+    ],
+    "alt_prompt": [
+        "A video showcasing natural or urban landscapes.",
+        "A shot emphasizing environmental elements.",
+        "A video capturing scenic views or locations.",
+        "A shot focused on the surrounding environment.",
+        "A video highlighting landscape or setting.",
+        "A shot that prioritizes scenery over subjects.",
+        "A video emphasizing environmental composition.",
+        "A shot centered on location or backdrop."
+    ],
+    "pos_rule_str": "self.shot_type in ['scenery']",
+    "neg_rule_str": "self.shot_type not in ['scenery']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

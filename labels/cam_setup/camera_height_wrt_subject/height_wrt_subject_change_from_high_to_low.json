@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject Change From High To Low",
+    "label_name": "height_wrt_subject_change_from_high_to_low",
+    "def_question": [
+        "Does the camera height decrease noticeably in relation to the subject?"
+    ],
+    "alt_question": [
+        "Does the camera move downward relative to the subject?",
+        "Is there a descent in camera position compared to subject?",
+        "Does the vertical angle decrease relative to the subject?",
+        "Is there a lowering of camera height versus subject?",
+        "Does the shot transition from high to low angle?",
+        "Is there a downward shift in camera position?",
+        "Does the camera perspective lower relative to subject?",
+        "Is there a decrease in vertical camera position?"
+    ],
+    "def_prompt": [
+        "A shot where the camera height decreases notably in relation to the subject."
+    ],
+    "alt_prompt": [
+        "A video showing downward camera movement.",
+        "A shot with decreasing vertical angle.",
+        "A video transitioning to lower position.",
+        "A shot featuring camera descent.",
+        "A video with lowering perspective.",
+        "A shot showing downward transition.",
+        "A video with decreasing camera height.",
+        "A shot moving to lower position."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_change_from_high_to_low is True",
+    "neg_rule_str": "self.height_wrt_subject_change_from_high_to_low is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

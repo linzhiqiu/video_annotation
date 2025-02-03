@@ -1,0 +1,34 @@
+{
+    "label": "Is Just Many Subject One Focus Shot",
+    "label_name": "is_just_many_subject_one_focus_shot",
+    "def_question": [
+        "Does the video feature multiple subjects, but one clearly stands out as the main focus?"
+    ],
+    "alt_question": [
+        "Are there multiple subjects with one primary focus?",
+        "Does one subject dominate despite others being present?",
+        "Is there a clear main subject among multiple elements?",
+        "Does the shot highlight one subject among many?",
+        "Is there a primary focus despite multiple subjects?",
+        "Does one subject stand out from the group?",
+        "Is there a dominant subject among several?",
+        "Does the video emphasize one subject among many?"
+    ],
+    "def_prompt": [
+        "A shot featuring multiple subjects where one clearly dominates as the main focus."
+    ],
+    "alt_prompt": [
+        "A video emphasizing one subject among many.",
+        "A shot with a clear primary subject in a group.",
+        "A video focusing on one dominant element.",
+        "A shot highlighting one subject among several.",
+        "A video with one standout subject.",
+        "A shot emphasizing a primary subject.",
+        "A video with clear subject hierarchy.",
+        "A shot focusing on one main element."
+    ],
+    "pos_rule_str": "self.complex_shot_type == 'many_subject_one_focus'",
+    "neg_rule_str": "self.complex_shot_type != 'many_subject_one_focus'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
