@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Start With Low Angle",
+    "label_name": "camera_angle_start_with_low_angle",
+    "def_question": [
+        "Does the video start with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below?"
+    ],
+    "alt_question": [
+        "Does the shot start with an upward-tilted camera angle?",
+        "Is the starting frame positioned below a level viewpoint?",
+        "Does the video begin with the camera angled upward from a low position?",
+        "Is the initial shot taken from a perspective looking up?",
+        "Does the sequence open with the camera angled lower than a level view?",
+        "Is the first shot framed from a low vantage point looking up?",
+        "Does the video open with the camera positioned below the main subject or scene?",
+        "Is the starting frame captured from a lower-than-normal camera height?"
+    ],
+    "def_prompt": [
+        "The video starts with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below."
+    ],
+    "alt_prompt": [
+        "A shot starting at a low angle, looking upward.",
+        "A video beginning with a low-angle perspective.",
+        "A sequence that starts with the camera positioned below eye level.",
+        "A shot showing the environment from a low vantage point.",
+        "A video opening with an upward-tilted view.",
+        "A shot where the camera is positioned at a low height, pointing up.",
+        "A video that starts with an angle looking up at the subject or scene.",
+        "A scene that opens with a low-positioned, upward-facing camera."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'low_angle'",
+    "neg_rule_str": "self.camera_angle_info['start'] not in ['low_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

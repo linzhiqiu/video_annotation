@@ -27,7 +27,7 @@
         "A scene that is consistently framed from an overhead level."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'overhead_level' and self.height_wrt_ground_info['end'] == 'overhead_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'overhead_level' and self.height_wrt_ground_info['end'] == 'overhead_level')",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['overhead_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['overhead_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

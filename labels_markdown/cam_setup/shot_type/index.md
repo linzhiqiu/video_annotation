@@ -94,26 +94,18 @@ Does the video have a clear subject with back-and-forth changes in shot size?
 
 - Does the shot size alternate between closer and farther views?
 
-- Is there a pattern of changing distances to the subject?
-
 - Does the framing repeatedly shift between different sizes?
 
 - Is there an oscillating pattern in the shot size?
 
-- Does the camera distance vary back and forth?
-
-- Is there a rhythmic change in shot size?
-
 - Does the framing alternate between different scales?
-
-- Is there a pattern of size changes in the shot?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot featuring alternating changes in size while maintaining a clear subject.
+- The video has a clear subject with back-and-forth changes in shot size.
 
 </details>
 
@@ -122,27 +114,17 @@ Does the video have a clear subject with back-and-forth changes in shot size?
 
 - A video with oscillating shot sizes.
 
-- A shot showing rhythmic distance changes.
-
 - A video featuring alternating frame scales.
 
 - A shot with patterned size variations.
 
-- A video showing regular framing changes.
-
-- A shot with systematic size alterations.
-
-- A video featuring cyclic distance changes.
-
-- A shot with regular scale variations.
-
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_description_type == 'back_and_forth_change'</code>
+<code>self.is_just_back_and_forth_change_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_description_type != 'back_and_forth_change'</code>
+<code>self.is_just_back_and_forth_change_shot is False</code>
 
 </details>
 
@@ -155,7 +137,7 @@ Does the video have a clear subject with back-and-forth changes in shot size?
 
 
 <h3>📖 Definition:</h3>
-Does the video include a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another?
+The video includes a subject change, where a subject appears, disappears, or transitions to another.
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -171,8 +153,6 @@ Does the video include a subject change, such as a revealing shot where a subjec
 
 - Does the focus shift from one subject to another?
 
-- Is there a revealing or transitional element to the shot?
-
 - Does the video show subjects appearing or disappearing?
 
 - Is there a handoff between different subjects?
@@ -186,7 +166,7 @@ Does the video include a subject change, such as a revealing shot where a subjec
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot featuring a change in subject, including appearances, disappearances, or transitions.
+- The video includes a subject change, where a subject appears in a revealing shot, disappears, or transitions to another.
 
 </details>
 
@@ -207,15 +187,13 @@ Does the video include a subject change, such as a revealing shot where a subjec
 
 - A video transitioning between subjects.
 
-- A shot with evolving subject focus.
-
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_type == 'change_of_subject'</code>
+<code>self.is_just_change_of_subject_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_type != 'change_of_subject'</code>
+<code>self.is_just_change_of_subject_shot is False</code>
 
 </details>
 
@@ -272,7 +250,7 @@ Is there a clear subject in the video, but its anatomy looks unnatural or exagge
 
 - A video with a clear but unrealistic subject.
 
-- A shot featuring non-standard anatomy.
+- A shot featuring subjects with non-standard anatomy.
 
 - A video showing CGI-style subject features.
 
@@ -285,10 +263,10 @@ Is there a clear subject in the video, but its anatomy looks unnatural or exagge
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type == 'clear_subject_atypical'</code>
+<code>self.is_just_clear_subject_atypical_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.complex_shot_type != 'clear_subject_atypical'</code>
+<code>self.is_just_clear_subject_atypical_shot is False</code>
 
 </details>
 
@@ -325,14 +303,12 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 
 - Is the subject consistent but shown at different sizes?
 
-- Does the frame distance to the subject change significantly?
-
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot with a clear subject but variable framing that complicates shot size classification.
+- The video features a clear subject, but changes in framing make shot size classification tricky.
 
 </details>
 
@@ -353,15 +329,13 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 
 - A video with dynamic subject sizing.
 
-- A shot featuring distance variations to a subject.
-
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type == 'clear_subject_dynamic_size'</code>
+<code>self.is_just_clear_subject_dynamic_size_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.complex_shot_type != 'clear_subject_dynamic_size'</code>
+<code>self.is_just_clear_subject_dynamic_size_shot is False</code>
 
 </details>
 
@@ -374,7 +348,7 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 
 
 <h3>📖 Definition:</h3>
-Does the video feature different subjects in focus, making it difficult to classify shot size?
+Does the video feature different subjects, varying in type or size, making shot size classification difficult?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -384,57 +358,33 @@ Does the video feature different subjects in focus, making it difficult to class
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the focus shift between different subjects?
-
 - Are various subjects brought into focus throughout the shot?
 
 - Does the shot emphasize different subjects at different times?
-
-- Is there a changing focus between multiple subjects?
-
-- Does the video alternate focus between subjects?
-
-- Are different subjects highlighted through focus changes?
-
-- Does the shot's focus move between subjects?
-
-- Is there variable subject focus throughout the video?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where focus shifts between different subjects, complicating shot size classification.
+- The video features different subjects (e.g., varying in type or size) in focus, making shot size classification difficult.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video with changing subject focus.
-
 - A shot alternating between different subjects.
 
 - A video highlighting multiple subjects through focus.
 
-- A shot with dynamic subject emphasis.
-
-- A video showing focus transitions between subjects.
-
-- A shot featuring variable subject focus.
-
-- A video alternating between subject focuses.
-
-- A shot with changing subject emphasis.
-
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type == 'different_subject_in_focus'</code>
+<code>self.is_just_different_subject_in_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.complex_shot_type != 'different_subject_in_focus'</code>
+<code>self.is_just_different_subject_in_focus_shot is False</code>
 
 </details>
 
@@ -478,7 +428,7 @@ Does the video consistently feature one dominant human subject or a single group
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot consistently featuring one dominant human subject or group.
+- A shot consistently featuring either a single human subject or a single group of humans.
 
 </details>
 
@@ -504,10 +454,10 @@ Does the video consistently feature one dominant human subject or a single group
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_type == 'human'</code>
+<code>self.is_just_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_type != 'human'</code>
+<code>self.is_just_human_shot is False</code>
 
 </details>
 
@@ -536,8 +486,6 @@ Does the video feature multiple subjects with no clear focus on any one subject?
 
 - Is there no dominant subject among multiple elements?
 
-- Does the video present multiple subjects without hierarchy?
-
 - Are various subjects shown without emphasizing any one?
 
 - Does the shot maintain equal focus on multiple subjects?
@@ -560,27 +508,19 @@ Does the video feature multiple subjects with no clear focus on any one subject?
 
 - A video with multiple equal-emphasis subjects.
 
-- A shot showing various subjects without hierarchy.
-
-- A video featuring multiple balanced subjects.
-
-- A shot with distributed subject focus.
-
 - A video presenting multiple subjects equally.
 
-- A shot without subject hierarchy.
+- A shot featuring multiple subjects with no dominant focus.
 
-- A video showing multiple concurrent subjects.
-
-- A shot with balanced subject emphasis.
+- A video showing various subjects without a primary focus.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type == 'many_subject_no_focus'</code>
+<code>self.is_just_many_subject_no_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.complex_shot_type != 'many_subject_no_focus'</code>
+<code>self.is_just_many_subject_no_focus_shot is False</code>
 
 </details>
 
@@ -641,19 +581,15 @@ Does the video feature multiple subjects, but one clearly stands out as the main
 
 - A video with one standout subject.
 
-- A shot emphasizing a primary subject.
-
-- A video with clear subject hierarchy.
-
-- A shot focusing on one main element.
+- A shot emphasizing a primary subject among many.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type == 'many_subject_one_focus'</code>
+<code>self.is_just_many_subject_one_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.complex_shot_type != 'many_subject_one_focus'</code>
+<code>self.is_just_many_subject_one_focus_shot is False</code>
 
 </details>
 
@@ -697,7 +633,7 @@ Does the video consistently feature one dominant non-human subject or a single g
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot consistently featuring one dominant non-human subject or group.
+- A shot consistently featuring either a single non-human subject or a single group of non-human subjects.
 
 </details>
 
@@ -723,10 +659,10 @@ Does the video consistently feature one dominant non-human subject or a single g
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_type == 'non_human'</code>
+<code>self.is_just_non_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_type != 'non_human'</code>
+<code>self.is_just_non_human_shot is False</code>
 
 </details>
 
@@ -770,7 +706,7 @@ Does the video focus on scenery or environment without emphasis on any subjects?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot focusing exclusively on scenery or environment without any subject emphasis.
+- A shot focusing on scenery or environment without emphasis on any subjects.
 
 </details>
 
@@ -791,15 +727,13 @@ Does the video focus on scenery or environment without emphasis on any subjects?
 
 - A video highlighting only scenery.
 
-- A shot centered on location views.
-
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_type == 'scenery'</code>
+<code>self.is_just_scenery_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_type != 'scenery'</code>
+<code>self.is_just_scenery_shot is False</code>
 
 </details>
 
@@ -822,21 +756,11 @@ Does the video feature a subject and scene that do not match, making it difficul
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Is there a disconnect between subject and scene scale?
+- Is the shot size difficult to classify due to a mismatch between the subject and the scene?
 
-- Does the subject seem out of proportion with its environment?
+- Does the video present a subject-scene mismatch that makes shot size classification challenging?
 
-- Is there a mismatch between subject and scene sizes?
-
-- Does the scene scale conflict with the subject size?
-
-- Is there an unusual relationship between subject and setting?
-
-- Does the subject appear mismatched with the environment?
-
-- Is there a scale disparity between subject and scene?
-
-- Does the setting seem inappropriately sized for the subject?
+- Is there a mismatch between subject and scene shot sizes?
 
 </details>
 
@@ -850,29 +774,19 @@ Does the video feature a subject and scene that do not match, making it difficul
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video showing scale mismatch between subject and scene.
+- The video presents a subject-scene mismatch that makes shot size classification challenging.
 
-- A shot with conflicting subject and environment sizes.
+- The video presents an inconsistency between the subject and the scene, making shot size classification challenging.
 
-- A video featuring unusual subject-scene proportions.
-
-- A shot showing scale inconsistencies.
-
-- A video with mismatched subject-environment scale.
-
-- A shot displaying unusual size relationships.
-
-- A video with disproportionate scene elements.
-
-- A shot featuring scale incongruities.
+- The video shows a mismatch between the subject and the scene, making shot size classification difficult.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_description_type == 'subject_scene_mismatch'</code>
+<code>self.is_just_subject_scene_mismatch_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_description_type != 'subject_scene_mismatch'</code>
+<code>self.is_just_subject_scene_mismatch_shot is False</code>
 
 </details>
 
@@ -946,78 +860,5 @@ Is the shot focused on non-human subjects?
 
 <h4>🔴 Negative:</h4>
 <code>self.is_non_human_shot is False</code>
-
-</details>
-
-<details>
-<summary><h2>Is Scenery Shot</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>is_scenery_shot</code>
-
-
-<h3>📖 Definition:</h3>
-Is the shot focused on scenery or environment without emphasis on human or non-human subjects?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the video primarily showcase the environment or landscape?
-
-- Is the main focus on the scenery rather than specific subjects?
-
-- Does this shot emphasize the surrounding environment?
-
-- Is the shot primarily about the location or setting?
-
-- Does the camera focus on the overall scene rather than subjects?
-
-- Is the emphasis on capturing the environment or backdrop?
-
-- Does this shot prioritize scenery over specific subjects?
-
-- Is the video mainly focused on showing the surroundings?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- A shot that focuses on scenery or environment without emphasizing specific subjects.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video showcasing natural or urban landscapes.
-
-- A shot emphasizing environmental elements.
-
-- A video capturing scenic views or locations.
-
-- A shot focused on the surrounding environment.
-
-- A video highlighting landscape or setting.
-
-- A shot that prioritizes scenery over subjects.
-
-- A video emphasizing environmental composition.
-
-- A shot centered on location or backdrop.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.shot_type in ['scenery']</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.shot_type not in ['scenery']</code>
 
 </details>

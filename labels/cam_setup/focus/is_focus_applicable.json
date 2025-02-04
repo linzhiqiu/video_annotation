@@ -1,0 +1,33 @@
+{
+    "label": "Is Focus Applicable",
+    "label_name": "is_focus_applicable",
+    "def_question": [
+        "Is it possible to determine the camera focus properties?"
+    ],
+    "alt_question": [
+        "Can the camera's focus characteristics be classified?",
+        "Can we assess the depth of field in this shot?",
+        "Is the focus style clear enough to classify?",
+        "Can the focusing technique be categorized?",
+        "Is it feasible to analyze the focus pattern?",
+        "Can we meaningfully evaluate the focus type?",
+        "Is the focusing method classifiable?"
+    ],
+    "def_prompt": [
+        "A shot where the camera focus characteristics can be meaningfully classified."
+    ],
+    "alt_prompt": [
+        "A video with classifiable focus properties.",
+        "A shot with determinable focus style.",
+        "A video where focus technique is apparent.",
+        "A shot with clear focus characteristics.",
+        "A video suitable for focus analysis.",
+        "A shot with analyzable focus method.",
+        "A video with measurable focus properties.",
+        "A shot with definable focus pattern."
+    ],
+    "pos_rule_str": "self.is_focus_applicable is True",
+    "neg_rule_str": "self.is_focus_applicable is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

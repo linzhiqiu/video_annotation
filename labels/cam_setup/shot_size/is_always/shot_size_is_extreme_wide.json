@@ -2,7 +2,7 @@
     "label": "Shot Size Is Extreme Wide",
     "label_name": "shot_size_is_extreme_wide",
     "def_question": [
-        "Does the video maintain an extreme wide shot throughout, showing a vast area or landscape with subjects appearing very small?"
+        "Is the video an extreme wide shot that emphasizes the setting over any subjects?"
     ],
     "alt_question": [
         "Is the entire video filmed in an extreme wide shot, capturing a vast expanse?",
@@ -15,7 +15,7 @@
         "Does the video maintain an extreme wide focus that emphasizes the vastness of the setting?"
     ],
     "def_prompt": [
-        "A video that maintains an extreme wide shot throughout, showing a vast area or landscape with subjects appearing very small."
+        "A video that maintains an extreme wide shot throughout, emphasizing the setting over any subjects."
     ],
     "alt_prompt": [
         "A video shot entirely in extreme wide angle showing vast expanses.",
@@ -28,7 +28,7 @@
         "A sequence maintaining an extreme wide perspective on the scene."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide' and self.shot_size_info['end'] == 'extreme_wide'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'extreme_wide' and self.shot_size_info['end'] == 'extreme_wide')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['extreme_wide', 'unknown'] and self.shot_size_info['end'] in ['extreme_wide', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

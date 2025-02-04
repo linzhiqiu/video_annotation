@@ -27,7 +27,7 @@
         "A scene that is consistently framed from a water-level height."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'water_level' and self.height_wrt_ground_info['end'] == 'water_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'water_level' and self.height_wrt_ground_info['end'] == 'water_level')",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['water_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['water_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

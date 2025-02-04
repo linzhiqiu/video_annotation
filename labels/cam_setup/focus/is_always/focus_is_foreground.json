@@ -1,0 +1,34 @@
+{
+    "label": "Focus Is Foreground",
+    "label_name": "focus_is_foreground",
+    "def_question": [
+        "Is the video consistently focused on the foreground using a shallow depth of field?"
+    ],
+    "alt_question": [
+        "Does the video maintain a sharp focus on the foreground throughout?",
+        "Is the foreground the primary focus for the entire video?",
+        "Does the depth of field keep the foreground clear while blurring the background?",
+        "Is the subject in the foreground emphasized through selective focus?",
+        "Does the focus remain on the foreground without shifting?",
+        "Is the entire sequence framed with a strong foreground focus?",
+        "Does the video consistently highlight the foreground as the focal area?",
+        "Is the foreground isolated in sharp focus across the video?"
+    ],
+    "def_prompt": [
+        "The video remains focused on the foreground using a shallow depth of field."
+    ],
+    "alt_prompt": [
+        "A shot maintaining a sharp foreground focus throughout.",
+        "A video consistently emphasizing the foreground with shallow depth of field.",
+        "A sequence where the foreground is clear while the background is blurred.",
+        "A shot keeping the foreground as the focal plane without shifting.",
+        "A video that consistently isolates the foreground as the main focus.",
+        "A scene where selective focus highlights only the foreground.",
+        "A video maintaining a depth of field that prioritizes the foreground.",
+        "A composition where the background remains blurred while the foreground is in sharp focus."
+    ],
+    "pos_rule_str": "self.focus_info['start'] == 'foreground' and self.focus_info['end'] == 'foreground'",
+    "neg_rule_str": "not (self.focus_info['start'] in ['foreground', 'unknown'] and self.focus_info['end'] in ['foreground', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -2,30 +2,30 @@
     "label": "Focus Start With Foreground",
     "label_name": "focus_start_with_foreground",
     "def_question": [
-        "Does the video start with foreground?"
+        "Does the video start with a focus on the foreground, using a shallow depth of field to blur other areas?"
     ],
     "alt_question": [
-        "Does the shot start with foreground?",
-        "Is the starting frame showing foreground?",
-        "Does the video start using foreground?",
-        "Is the initial shot at foreground?",
-        "Does the sequence start with foreground?",
-        "Is the first shot at foreground?",
-        "Does the video open with foreground?",
-        "Is the starting frame at foreground?"
+        "Does the shot start with a clear focus on the foreground while other areas are blurred?",
+        "Is the starting frame emphasizing foreground elements with a shallow depth of field?",
+        "Does the video begin with a sharp foreground while the middle ground or background is out of focus?",
+        "Is the initial shot captured with a clear foreground subject and a softened depth?",
+        "Does the sequence open with the foreground in focus while other areas appear blurred?",
+        "Is the first shot framed to highlight the foreground using selective focus?",
+        "Does the video open with a foreground focus while creating depth with blur?",
+        "Is the starting frame composed with a crisp foreground while the depth is softened?"
     ],
     "def_prompt": [
-        "A video that starts with foreground."
+        "The video starts with a focus on the foreground, using a shallow depth of field to blur other areas."
     ],
     "alt_prompt": [
-        "A shot starting with foreground.",
-        "A video starting at foreground.",
-        "A sequence beginning with foreground.",
-        "A shot initially at foreground.",
-        "A video opening with foreground.",
-        "A shot starting at foreground.",
-        "A video beginning with foreground.",
-        "A sequence starting at foreground."
+        "A shot starting with a sharp foreground and a blurred depth.",
+        "A video opening with a foreground focus and a shallow depth of field.",
+        "A sequence beginning with the foreground in focus while the background is softened.",
+        "A shot where the foreground is emphasized while the middle or background fades out.",
+        "A video that starts with a foreground subject in sharp focus and a shallow depth of field.",
+        "A shot using selective focus on the foreground while the rest of the scene blurs.",
+        "A video that begins with a crisp foreground and a gradual loss of focus behind it.",
+        "A scene that opens with a sharp foreground and a progressively blurred depth."
     ],
     "pos_rule_str": "self.focus_info['start'] == 'foreground'",
     "neg_rule_str": "self.focus_info['start'] not in ['foreground', 'unknown']",

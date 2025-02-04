@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle End With High Angle",
+    "label_name": "camera_angle_end_with_high_angle",
+    "def_question": [
+        "Does the video end with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?"
+    ],
+    "alt_question": [
+        "Does the shot end with the camera angled slightly downward?",
+        "Is the ending frame positioned at a high-angle perspective?",
+        "Does the video conclude with a downward camera angle?",
+        "Is the final shot captured from above, looking down at a subject or environment?",
+        "Does the sequence close with a high-angle view?",
+        "Is the last shot taken from an elevated position, angled downward?",
+        "Does the video close with a slightly top-down perspective?",
+        "Is the final frame recorded with the camera looking downward at an angle?"
+    ],
+    "def_prompt": [
+        "The video ends with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down."
+    ],
+    "alt_prompt": [
+        "A shot ending at a high angle, looking slightly downward.",
+        "A video concluding with a high-angle perspective, capturing the subject from above.",
+        "A sequence that ends with the camera positioned higher than the subject.",
+        "A shot showing the environment from an elevated, downward-facing viewpoint.",
+        "A video closing with a subtly top-down, downward angle.",
+        "A shot where the camera is positioned higher than eye level and facing down.",
+        "A video that ends with the camera framing subjects from a slightly elevated perspective.",
+        "A scene that closes with the camera tilted downward, emphasizing height differences."
+    ],
+    "pos_rule_str": "self.camera_angle_info['end'] == 'high_angle'",
+    "neg_rule_str": "self.camera_angle_info['end'] not in ['high_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

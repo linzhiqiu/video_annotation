@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle End With Level Angle",
+    "label_name": "camera_angle_end_with_level_angle",
+    "def_question": [
+        "Does the video end with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle?"
+    ],
+    "alt_question": [
+        "Does the shot end with the camera at a level angle?",
+        "Is the ending frame positioned at a straight-on perspective?",
+        "Does the video conclude with a level camera angle?",
+        "Is the final shot captured with the camera parallel to the ground?",
+        "Does the sequence close with a straight-on viewpoint?",
+        "Is the last shot taken at a neutral, balanced angle?",
+        "Does the video close with an eye-level or flat horizon perspective?",
+        "Is the final frame recorded with no vertical tilt?"
+    ],
+    "def_prompt": [
+        "The video ends with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle."
+    ],
+    "alt_prompt": [
+        "A shot ending at a level angle, positioned parallel to the ground.",
+        "A video concluding with a neutral camera perspective.",
+        "A sequence that ends with the camera at a straight-on viewpoint.",
+        "A shot showing the environment from a flat horizon level.",
+        "A video closing with a balanced, natural perspective.",
+        "A shot where the camera maintains a level position without tilting.",
+        "A video that ends with an eye-level or straight-on angle.",
+        "A scene that closes with a perfectly horizontal framing."
+    ],
+    "pos_rule_str": "self.camera_angle_info['end'] == 'level_angle'",
+    "neg_rule_str": "self.camera_angle_info['end'] not in ['level_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

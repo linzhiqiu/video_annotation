@@ -228,7 +228,7 @@ Does the subject change in the video, such as in a revealing shot where a subjec
 
 
 <h3>📖 Definition:</h3>
-Are there one or more subjects that remain consistently framed in the shot?
+Does the video include one or more subjects in the frame at any point, instead of just a scenery shot with no clear subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Are there one or more subjects that remain consistently framed in the shot?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that maintains consistent framing of one or more subjects throughout its duration.
+- The video features at least one main subject rather than just a scenery shot.
 
 </details>
 

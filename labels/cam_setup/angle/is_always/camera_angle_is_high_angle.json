@@ -1,0 +1,33 @@
+{
+    "label": "Camera Angle Is High Angle",
+    "label_name": "camera_angle_is_high_angle",
+    "def_question": [
+        "Is the camera positioned at a high angle throughout the video, looking down at the scene but not completely top-down?"
+    ],
+    "alt_question": [
+        "Does the camera remain at a high angle for the entire video?",
+        "Is the starting and ending frame taken from a downward-tilted perspective?",
+        "Does the video maintain a high vantage point from start to finish?",
+        "Is the camera positioned slightly above level angle throughout?",
+        "Does the sequence keep a high-angle perspective the whole time?",
+        "Is the video filmed entirely at a high angle without changing?",
+        "Does the framing stay at an elevated viewpoint for the whole video?",
+        "Is the entire video shot with the camera angled downward?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at a high angle throughout the video, looking down at the scene but not completely top-down."
+    ],
+    "alt_prompt": [
+        "A video maintaining a high-angle perspective from start to finish.",
+        "A shot consistently captured from a slightly downward-tilted angle.",
+        "A video where the camera stays at an elevated position without changing.",
+        "A sequence entirely framed from a high-angle viewpoint.",
+        "A shot maintaining a high perspective without shifting angles.",
+        "A video where the camera remains angled downward throughout.",
+        "A scene consistently framed from a high perspective."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'high_angle' and self.camera_angle_info['end'] == 'high_angle'",
+    "neg_rule_str": "not (self.camera_angle_info['start'] in ['high_angle', 'unknown'] and self.camera_angle_info['end'] in ['high_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

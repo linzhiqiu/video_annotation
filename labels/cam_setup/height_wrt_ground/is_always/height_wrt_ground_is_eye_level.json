@@ -27,7 +27,7 @@
         "A scene that is consistently framed from an eye-level height."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'eye_level' and self.height_wrt_ground_info['end'] == 'eye_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'eye_level' and self.height_wrt_ground_info['end'] == 'eye_level')",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['eye_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['eye_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

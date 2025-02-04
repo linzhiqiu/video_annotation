@@ -2,7 +2,7 @@
     "label": "Shot Size Is Medium Close Up",
     "label_name": "shot_size_is_medium_close_up",
     "def_question": [
-        "Does the video maintain a medium close-up shot throughout, showing subjects from approximately chest up?"
+        "Does the video show a medium close-up shot that frames the human subject from the chest upward?"
     ],
     "alt_question": [
         "Is the entire video filmed in medium close-up, framing subjects from chest up?",
@@ -15,7 +15,7 @@
         "Does the video maintain a medium close-up focus that emphasizes facial expressions?"
     ],
     "def_prompt": [
-        "A video that maintains a medium close-up shot throughout, showing subjects from approximately chest up."
+        "A medium close-up shot framing the human subject from the chest upward."
     ],
     "alt_prompt": [
         "A video shot entirely in medium close-up showing subjects from chest up.",
@@ -28,7 +28,7 @@
         "A sequence maintaining medium close-up perspective of subjects."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium_close_up' and self.shot_size_info['end'] == 'medium_close_up'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'medium_close_up' and self.shot_size_info['end'] == 'medium_close_up')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['medium_close_up', 'unknown'] and self.shot_size_info['end'] in ['medium_close_up', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

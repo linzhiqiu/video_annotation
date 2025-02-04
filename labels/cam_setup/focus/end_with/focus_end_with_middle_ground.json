@@ -2,30 +2,30 @@
     "label": "Focus End With Middle Ground",
     "label_name": "focus_end_with_middle_ground",
     "def_question": [
-        "Does the video end with middle ground?"
+        "Does the video end with the middle ground in focus while the foreground and background are blurred?"
     ],
     "alt_question": [
-        "Does the shot end with middle ground?",
-        "Is the ending frame showing middle ground?",
-        "Does the video end using middle ground?",
-        "Is the final shot at middle ground?",
-        "Does the sequence end with middle ground?",
-        "Is the last shot at middle ground?",
-        "Does the video close with middle ground?",
-        "Is the ending frame at middle ground?"
+        "Does the shot end with the middle ground as the focal point?",
+        "Is the final frame focused on the middle ground while the foreground and background are out of focus?",
+        "Does the video conclude with the middle ground in sharp focus?",
+        "Is the last shot emphasizing the middle ground using depth of field?",
+        "Does the sequence close with a sharp middle ground and blurred surroundings?",
+        "Is the final shot highlighting the middle ground while other elements are softened?",
+        "Does the video close with a clear middle-ground focus while the foreground and background are defocused?",
+        "Is the ending frame framed with a strong middle ground emphasis?"
     ],
     "def_prompt": [
-        "A video that ends with middle ground."
+        "The video ends with the middle ground in focus, with the foreground and background blurred."
     ],
     "alt_prompt": [
-        "A shot ending with middle ground.",
-        "A video ending at middle ground.",
-        "A sequence concluding with middle ground.",
-        "A shot finally at middle ground.",
-        "A video closing with middle ground.",
-        "A shot ending at middle ground.",
-        "A video concluding with middle ground.",
-        "A sequence ending at middle ground."
+        "A shot ending with the middle ground in sharp focus.",
+        "A video concluding with the middle ground as the focal plane.",
+        "A sequence that ends with a blurred foreground and background, keeping the middle ground clear.",
+        "A shot emphasizing the middle ground through selective focus.",
+        "A video closing with a well-defined middle ground while the rest is out of focus.",
+        "A shot where depth of field isolates the middle ground at the end.",
+        "A video ending with the middle ground standing out as the main point of focus.",
+        "A scene that concludes with a sharp middle ground while surroundings are blurred."
     ],
     "pos_rule_str": "self.focus_info['end'] == 'middle_ground'",
     "neg_rule_str": "self.focus_info['end'] not in ['middle_ground', 'unknown']",

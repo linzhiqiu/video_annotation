@@ -2,7 +2,7 @@
     "label": "Shot Size Is Medium Full",
     "label_name": "shot_size_is_medium_full",
     "def_question": [
-        "Does the video maintain a medium full shot throughout, showing subjects from approximately knee up?"
+        "Does the video show a medium-full shot that frames the human subject from mid-thigh (or knee) upward?"
     ],
     "alt_question": [
         "Is the entire video filmed in medium full shot, framing subjects from knee up?",
@@ -15,7 +15,7 @@
         "Does the video maintain a medium full focus throughout?"
     ],
     "def_prompt": [
-        "A video that maintains a medium full shot throughout, showing subjects from approximately knee up."
+        "A medium-full shot framing the human subject from the mid-thigh (or knee) upward."
     ],
     "alt_prompt": [
         "A video shot entirely in medium full view showing subjects from knee up.",
@@ -28,7 +28,7 @@
         "A sequence maintaining medium full perspective of subjects."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium_full' and self.shot_size_info['end'] == 'medium_full'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'medium_full' and self.shot_size_info['end'] == 'medium_full')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['medium_full', 'unknown'] and self.shot_size_info['end'] in ['medium_full', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

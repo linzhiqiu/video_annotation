@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Start With Bird's Eye Angle",
+    "label_name": "camera_angle_start_with_bird_eye_angle",
+    "def_question": [
+        "Does the video start with the camera positioned at a bird's eye angle, offering a top-down view directly looking down at the ground?"
+    ],
+    "alt_question": [
+        "Does the shot start with a bird's eye perspective?",
+        "Is the starting frame taken from a top-down viewpoint?",
+        "Does the video begin with the camera looking straight down at the ground?",
+        "Is the initial shot captured from an overhead, bird's eye perspective?",
+        "Does the sequence open with a shot where the camera is directly above the scene?",
+        "Is the first shot positioned in a strict top-down orientation?",
+        "Does the video open with an aerial viewpoint looking directly downward?",
+        "Is the starting frame recorded from a high, perpendicular angle?"
+    ],
+    "def_prompt": [
+        "The video starts with the camera positioned at a bird's eye angle, looking directly downward at the ground."
+    ],
+    "alt_prompt": [
+        "A shot starting from a strict top-down perspective.",
+        "A video beginning with a bird's eye view, directly above the scene.",
+        "A sequence that starts with an overhead camera looking straight down.",
+        "A shot where the environment is captured from a top-down orientation.",
+        "A video opening with a high, perpendicular perspective.",
+        "A shot where the camera is positioned vertically above the ground.",
+        "A video that starts with a fully downward-facing angle.",
+        "A scene that opens with a bird's eye framing of the environment."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'bird_eye_angle'",
+    "neg_rule_str": "self.camera_angle_info['start'] not in ['bird_eye_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

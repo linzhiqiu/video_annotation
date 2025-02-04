@@ -1,0 +1,34 @@
+{
+    "label": "Focus Start With Out of Focus",
+    "label_name": "focus_start_with_out_of_focus",
+    "def_question": [
+        "Does the video start completely out of focus?"
+    ],
+    "alt_question": [
+        "Does the shot start with a blurred or unfocused frame?",
+        "Is the starting frame entirely out of focus?",
+        "Does the video begin with an indistinct, blurry image?",
+        "Is the initial shot lacking a clear focal point due to blur?",
+        "Does the sequence open with no sharp focus?",
+        "Is the first shot completely blurred or unfocused?",
+        "Does the video open with an entirely out-of-focus frame?",
+        "Is the starting frame hazy with no clear subject in focus?"
+    ],
+    "def_prompt": [
+        "The video starts completely out of focus."
+    ],
+    "alt_prompt": [
+        "A shot starting with a blurred, unfocused frame.",
+        "A video opening with no clear focal point due to blur.",
+        "A sequence beginning with an indistinct, out-of-focus image.",
+        "A shot where the entire frame lacks clarity and focus.",
+        "A video that starts with an intentionally unfocused view.",
+        "A shot with no sharpness at the beginning of the video.",
+        "A video beginning with a hazy, unclear frame.",
+        "A scene that opens with a completely blurred composition."
+    ],
+    "pos_rule_str": "self.focus_info['start'] == 'out_of_focus'",
+    "neg_rule_str": "self.focus_info['start'] not in ['out_of_focus', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

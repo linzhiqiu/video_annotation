@@ -2,7 +2,7 @@
     "label": "Shot Size Is Medium",
     "label_name": "shot_size_is_medium",
     "def_question": [
-        "Does the video maintain a medium shot throughout, showing subjects from approximately waist up?"
+        "Does the video show a medium shot that frames about half of the subject?"
     ],
     "alt_question": [
         "Is the entire video filmed in medium shot, framing subjects from the waist up?",
@@ -15,7 +15,7 @@
         "Does the video maintain a medium-distance focus throughout?"
     ],
     "def_prompt": [
-        "A video that maintains a medium shot throughout, showing subjects from approximately waist up."
+        "A medium shot framing about half of the subject."
     ],
     "alt_prompt": [
         "A video shot entirely in medium view showing subjects from waist up.",
@@ -28,7 +28,7 @@
         "A sequence maintaining medium-range perspective of subjects."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium' and self.shot_size_info['end'] == 'medium'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'medium' and self.shot_size_info['end'] == 'medium')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['medium', 'unknown'] and self.shot_size_info['end'] in ['medium', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

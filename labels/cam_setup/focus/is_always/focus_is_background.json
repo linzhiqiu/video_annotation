@@ -1,0 +1,34 @@
+{
+    "label": "Focus Is Background",
+    "label_name": "focus_is_background",
+    "def_question": [
+        "Is the video consistently focused on the background using a shallow depth of field?"
+    ],
+    "alt_question": [
+        "Does the video maintain a sharp focus on the background throughout?",
+        "Is the background the primary focus for the entire video?",
+        "Does the depth of field keep the background clear while blurring the foreground?",
+        "Is the focus centered on the background without shifting?",
+        "Does the sequence emphasize the background using selective focus?",
+        "Is the background clearly framed as the focal area in every shot?",
+        "Does the video consistently highlight the background while blurring the foreground?",
+        "Is the entire video composed with a strong background focus?"
+    ],
+    "def_prompt": [
+        "The video remains focused on the background using a shallow depth of field."
+    ],
+    "alt_prompt": [
+        "A shot maintaining sharp focus on the background throughout.",
+        "A video consistently emphasizing the background with selective focus.",
+        "A sequence where the background is clear while the foreground is blurred.",
+        "A shot keeping the background as the focal plane without shifting.",
+        "A video that consistently isolates the background as the main focus.",
+        "A scene where selective focus highlights only the background.",
+        "A video maintaining a depth of field that prioritizes the background.",
+        "A composition where the foreground remains blurred while the background stays in sharp focus."
+    ],
+    "pos_rule_str": "self.focus_info['start'] == 'background' and self.focus_info['end'] == 'background'",
+    "neg_rule_str": "not (self.focus_info['start'] in ['background', 'unknown'] and self.focus_info['end'] in ['background', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

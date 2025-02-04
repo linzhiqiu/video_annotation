@@ -2,30 +2,30 @@
     "label": "Focus Start With Background",
     "label_name": "focus_start_with_background",
     "def_question": [
-        "Does the video start with background?"
+        "Does the video start with the background in focus, using a shallow depth of field?"
     ],
     "alt_question": [
-        "Does the shot start with background?",
-        "Is the starting frame showing background?",
-        "Does the video start using background?",
-        "Is the initial shot at background?",
-        "Does the sequence start with background?",
-        "Is the first shot at background?",
-        "Does the video open with background?",
-        "Is the starting frame at background?"
+        "Does the shot start with a focused background and blurred foreground?",
+        "Is the starting frame focused on the background with a shallow depth of field?",
+        "Does the video begin with the background in sharp focus while other areas are blurred?",
+        "Is the initial shot framed with the background as the focal point?",
+        "Does the sequence open with a background focus and selective blur?",
+        "Is the first shot emphasizing the background while softening other elements?",
+        "Does the video open with the background clearly in focus?",
+        "Is the starting frame composed to highlight the background?"
     ],
     "def_prompt": [
-        "A video that starts with background."
+        "The video starts with the background in focus, using a shallow depth of field."
     ],
     "alt_prompt": [
-        "A shot starting with background.",
-        "A video starting at background.",
-        "A sequence beginning with background.",
-        "A shot initially at background.",
-        "A video opening with background.",
-        "A shot starting at background.",
-        "A video beginning with background.",
-        "A sequence starting at background."
+        "A shot starting with the background in focus and a shallow depth of field.",
+        "A video opening with the background sharp while other areas are softened.",
+        "A sequence beginning with a focused background and blurred surroundings.",
+        "A shot where the background is the focal point with selective focus.",
+        "A video that starts with the background clearly in focus.",
+        "A shot with background emphasis and softened surrounding elements.",
+        "A video beginning with background clarity and a shallow depth effect.",
+        "A scene that opens with the background as the main focus."
     ],
     "pos_rule_str": "self.focus_info['start'] == 'background'",
     "neg_rule_str": "self.focus_info['start'] not in ['background', 'unknown']",

@@ -28,7 +28,7 @@
         "A sequence maintaining extreme close-up focus on intricate features."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_close_up' and self.shot_size_info['end'] == 'extreme_close_up'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'extreme_close_up' and self.shot_size_info['end'] == 'extreme_close_up')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['extreme_close_up', 'unknown'] and self.shot_size_info['end'] in ['extreme_close_up', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -2,30 +2,30 @@
     "label": "Focus End With Background",
     "label_name": "focus_end_with_background",
     "def_question": [
-        "Does the video end with background?"
+        "Does the video end with the background in focus, using a shallow depth of field?"
     ],
     "alt_question": [
-        "Does the shot end with background?",
-        "Is the ending frame showing background?",
-        "Does the video end using background?",
-        "Is the final shot at background?",
-        "Does the sequence end with background?",
-        "Is the last shot at background?",
-        "Does the video close with background?",
-        "Is the ending frame at background?"
+        "Does the shot end with the background as the focal point?",
+        "Is the final frame focused on the background while the foreground is blurred?",
+        "Does the video conclude with the background in sharp focus?",
+        "Is the last shot emphasizing the background through shallow depth of field?",
+        "Does the sequence close with a sharp background and blurred foreground?",
+        "Is the final shot highlighting the background while other elements are softened?",
+        "Does the video close with a clear background focus while the foreground is defocused?",
+        "Is the ending frame framed with a strong background emphasis?"
     ],
     "def_prompt": [
-        "A video that ends with background."
+        "The video ends with the background in focus, using a shallow depth of field."
     ],
     "alt_prompt": [
-        "A shot ending with background.",
-        "A video ending at background.",
-        "A sequence concluding with background.",
-        "A shot finally at background.",
-        "A video closing with background.",
-        "A shot ending at background.",
-        "A video concluding with background.",
-        "A sequence ending at background."
+        "A shot ending with the background in sharp focus.",
+        "A video concluding with the background as the focal plane.",
+        "A sequence that ends with a blurred foreground, keeping the background clear.",
+        "A shot emphasizing the background through selective focus.",
+        "A video closing with a well-defined background while the rest is out of focus.",
+        "A shot where depth of field isolates the background at the end.",
+        "A video ending with the background standing out as the main point of focus.",
+        "A scene that concludes with a sharp background while foreground elements are blurred."
     ],
     "pos_rule_str": "self.focus_info['end'] == 'background'",
     "neg_rule_str": "self.focus_info['end'] not in ['background', 'unknown']",

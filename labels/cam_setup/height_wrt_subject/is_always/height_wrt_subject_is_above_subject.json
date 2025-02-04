@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Subject Is Above Subject",
+    "label_name": "height_wrt_subject_is_above_subject",
+    "def_question": [
+        "Is the camera positioned noticeably higher than the subject throughout the video?"
+    ],
+    "alt_question": [
+        "Does the camera remain above the subject for the entire video?",
+        "Is the subject consistently framed from a higher perspective?",
+        "Does the video maintain a high camera position relative to the subject?",
+        "Is the shot taken from above the subject throughout the sequence?",
+        "Does the framing stay elevated in relation to the subject?",
+        "Is the subject viewed from a noticeably higher viewpoint for the whole video?",
+        "Does the video consistently present the subject from an overhead or high-angle perspective?",
+        "Is the subject framed from an elevated camera position without transitioning?"
+    ],
+    "def_prompt": [
+        "The camera remains positioned above the subject throughout the video."
+    ],
+    "alt_prompt": [
+        "A video maintaining a high-angle perspective on the subject.",
+        "A sequence where the subject is framed from an elevated viewpoint.",
+        "A shot that keeps the camera consistently above the subject.",
+        "A video where the subject is viewed from a higher perspective throughout.",
+        "A scene that remains framed from a noticeably elevated position.",
+        "A shot with the subject appearing lower in the frame throughout the video.",
+        "A video maintaining an overhead or high-angle framing without shifting positions.",
+        "A sequence that keeps the camera looking down at the subject the entire time."
+    ],
+    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'above_subject' and self.height_wrt_subject_info['end'] == 'above_subject'",
+    "neg_rule_str": "not (self.height_wrt_subject_info['start'] in ['above_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['above_subject', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

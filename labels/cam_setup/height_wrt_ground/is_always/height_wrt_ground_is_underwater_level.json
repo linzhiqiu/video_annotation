@@ -28,7 +28,7 @@
         "A shot where the camera stays beneath the water for the entire duration."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'underwater_level' and self.height_wrt_ground_info['end'] == 'underwater_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'underwater_level' and self.height_wrt_ground_info['end'] == 'underwater_level')",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['underwater_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['underwater_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

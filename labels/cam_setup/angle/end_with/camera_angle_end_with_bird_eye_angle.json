@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle End With Bird Eye Angle",
+    "label_name": "camera_angle_end_with_bird_eye_angle",
+    "def_question": [
+        "Does the video end with the camera positioned at a bird’s eye angle, looking directly downward at the ground?"
+    ],
+    "alt_question": [
+        "Does the shot end with the camera looking straight down?",
+        "Is the ending frame positioned at a bird’s eye perspective?",
+        "Does the video conclude with an extreme high-angle shot looking downward?",
+        "Is the final shot captured from above, looking down at the environment?",
+        "Does the sequence close with a bird’s eye view, looking vertically down?",
+        "Is the last shot taken from the highest perspective, directed downward?",
+        "Does the video close with a top-down perspective?",
+        "Is the final frame recorded with the camera positioned directly overhead?"
+    ],
+    "def_prompt": [
+        "The video ends with the camera positioned at a bird’s eye angle, looking directly downward at the ground."
+    ],
+    "alt_prompt": [
+        "A shot ending at a bird’s eye angle, looking directly downward.",
+        "A video concluding with a bird’s eye perspective, capturing the ground below.",
+        "A sequence that ends with the camera positioned directly overhead and looking down.",
+        "A shot showing the environment from a bird’s eye perspective.",
+        "A video closing with a top-down, overhead framing.",
+        "A shot where the camera is positioned high above and facing downward.",
+        "A video that ends with the camera capturing subjects from a top-down viewpoint.",
+        "A scene that closes with the camera looking sharply downward at the ground."
+    ],
+    "pos_rule_str": "self.camera_angle_info['end'] == 'bird_eye_angle'",
+    "neg_rule_str": "self.camera_angle_info['end'] not in ['bird_eye_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

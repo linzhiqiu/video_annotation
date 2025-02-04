@@ -1,79 +1,6 @@
 # Shot_size Overview
 
 <details>
-<summary><h2>Disappearing Shot</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>disappearing_shot</code>
-
-
-<h3>📖 Definition:</h3>
-Does the main subject disappear from the shot?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the primary subject leave the frame?
-
-- Is there a moment where the main subject vanishes?
-
-- Does the subject exit from view?
-
-- Is there a planned disappearance of the subject?
-
-- Does the main subject fade from view?
-
-- Is there a point where the subject leaves the shot?
-
-- Does the primary focus disappear from frame?
-
-- Is there a deliberate removal of the subject?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- A shot where the main subject disappears or exits from view.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video showing subject disappearance.
-
-- A shot featuring subject exit.
-
-- A video with planned subject removal.
-
-- A shot showing subject departure.
-
-- A video where the subject leaves view.
-
-- A shot with subject disappearance.
-
-- A video featuring subject exit.
-
-- A shot showing subject removal.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.disappearing_shot is True</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.disappearing_shot is False</code>
-
-</details>
-
-<details>
 <summary><h2>Is Shot Size Applicable</h2></summary>
 
 
@@ -94,128 +21,43 @@ Is shot size classification possible for this video?
 
 - Can the shot size be meaningfully categorized?
 
-- Is it possible to determine the shot size classification?
-
-- Can we assess the framing distance in this shot?
+- Is it possible to determine the shot size?
 
 - Is the shot size clear enough to classify?
 
-- Can the camera distance be effectively categorized?
-
-- Is it feasible to determine the shot scale?
+- Is it feasible to determine the shot size?
 
 - Can we meaningfully analyze the shot size?
 
-- Is the framing distance classifiable?
-
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the size classification can be meaningfully determined.
+- A shot where the shot size can be meaningfully determined.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video with classifiable shot size.
+- The shot size can be meaningfully categorized.
 
-- A shot with determinable framing distance.
+- It is possible to determine the shot size.
 
-- A video where shot scale can be assessed.
+- The shot size is clear enough to classify.
 
-- A shot with clear distance categorization.
+- It is feasible to determine the shot size.
 
-- A video suitable for size classification.
-
-- A shot with analyzable framing.
-
-- A video with measurable shot scale.
-
-- A shot with definable camera distance.
+- We can meaningfully analyze the shot size.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.complex_shot_type != 'unknown' or (self.complex_shot_type == 'description' and self.shot_size_description_type != 'others')</code>
+<code>is_shot_size_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.complex_shot_type != 'unknown' or (self.complex_shot_type == 'description' and self.shot_size_description_type != 'others'))</code>
-
-</details>
-
-<details>
-<summary><h2>Revealing Shot</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>revealing_shot</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video include a revealing shot where a subject appears?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Is there a moment where a new subject is revealed?
-
-- Does the shot introduce a subject through revelation?
-
-- Is there a dramatic reveal of a subject?
-
-- Does a subject emerge or appear in the shot?
-
-- Is there a planned reveal of a subject?
-
-- Does the video show a subject coming into view?
-
-- Is there a moment where a subject is unveiled?
-
-- Does the shot gradually reveal a subject?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- A shot that includes the revelation or appearance of a subject.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video featuring a subject reveal.
-
-- A shot showing a subject appearance.
-
-- A video with a dramatic subject introduction.
-
-- A shot containing a planned reveal.
-
-- A video showing subject emergence.
-
-- A shot with a calculated revelation.
-
-- A video featuring subject unveiling.
-
-- A shot with gradual subject appearance.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.revealing_shot is True</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.revealing_shot is False</code>
+<code>is_shot_size_applicable is False</code>
 
 </details>
 
@@ -238,49 +80,37 @@ Does the shot size change throughout the video?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Is there variation in the camera distance?
+- Does the shot size vary throughout the video?
 
-- Does the framing distance change during the shot?
+- Are there changes in shot size during the video?
 
-- Is there a shift in how much of the subject is shown?
+- Does the video feature shifts in shot size?
 
-- Does the camera move closer or farther from the subject?
+- Is the shot size inconsistent across the video?
 
-- Is there a change in the frame's coverage area?
-
-- Does the shot scale vary throughout?
-
-- Is there alteration in the shot's field of view?
-
-- Does the framing size change during the video?
+- Does the shot size change dynamically throughout the video?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that changes in size or scale throughout its duration.
+- The shot size changes throughout the video.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video with varying shot sizes.
+- The shot size varies throughout the video.
 
-- A shot showing distance changes.
+- There are changes in shot size throughout the video.
 
-- A video with dynamic framing.
+- The video features shifts in shot size.
 
-- A shot featuring scale changes.
+- The shot size is not consistent across the video.
 
-- A video with varying camera distances.
-
-- A shot showing size transitions.
-
-- A video with changing frame coverage.
-
-- A shot featuring distance variations.
+- Throughout the video, the shot size changes dynamically.
 
 </details>
 
@@ -311,28 +141,30 @@ Does the shot size change from large to small?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera move from a wider to a tighter shot?
+- Does the camera move from a wide to a tighter shot?
 
-- Is there a transition from a broader to a closer view?
-
-- Does the framing become more intimate over time?
+- Does the framing become more constrained over time?
 
 - Is there a progression from wide to tight framing?
 
 - Does the shot narrow its field of view?
 
-- Is there a shift from expansive to confined framing?
+- Does the shot size transition from large to small?
 
-- Does the camera move in closer to the subject?
+- Does the shot size decrease over time?
 
-- Is there a change from distant to close framing?
+- Is there a change in shot size from a wide view to a close-up?
+
+- Does the framing shift from a larger to a smaller shot size?
+
+- Does the video tighten from a wide shot to a closer composition?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that transitions from a larger to a smaller frame size.
+- The shot size transitions from large to small.
 
 </details>
 
@@ -341,19 +173,23 @@ Does the shot size change from large to small?
 
 - A video moving from wide to tight framing.
 
-- A shot transitioning to closer view.
+- A shot transitioning to a more focused view.
 
-- A video showing increasing intimacy.
+- A video showing a narrowing perspective.
 
 - A shot with decreasing frame width.
 
-- A video moving closer to subject.
+- A video with a contracting frame size.
 
-- A shot narrowing its perspective.
+- The shot size decreases over time.
 
-- A video with reducing frame size.
+- The shot size changes from a wide view to a close-up.
 
-- A shot closing in on subject.
+- The framing shifts from a larger to a smaller shot size.
+
+- The video tightens from a wide shot to a closer composition.
+
+- The shot gradually or abruptly moves from a broader to a narrower perspective.
 
 </details>
 
@@ -386,26 +222,28 @@ Does the shot size change from small to large?
 
 - Does the camera move from a tight to a wider shot?
 
-- Is there a transition from close-up to broader view?
-
 - Does the framing become more expansive over time?
 
 - Is there a progression from tight to wide framing?
 
 - Does the shot expand its field of view?
 
-- Is there a shift from confined to expansive framing?
+- Does the shot size transition from small to large?
 
-- Does the camera pull back from the subject?
+- Does the shot size increase over time?
 
-- Is there a change from close to distant framing?
+- Is there a change in shot size from close-up to a wider view?
+
+- Does the framing shift from a smaller to a larger shot size?
+
+- Does the video expand from a tight shot to a wider composition?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that transitions from a smaller to a larger frame size.
+- The shot size transitions from small to large.
 
 </details>
 
@@ -420,13 +258,17 @@ Does the shot size change from small to large?
 
 - A shot with increasing frame width.
 
-- A video moving away from subject.
-
-- A shot widening its perspective.
-
 - A video with expanding frame size.
 
-- A shot pulling back from subject.
+- The shot size increases over time.
+
+- The shot size changes from a close-up to a wider view.
+
+- The framing shifts from a smaller to a larger shot size.
+
+- The video expands from a tight shot to a wider composition.
+
+- The shot gradually or abruptly moves from a narrow to a broader perspective.
 
 </details>
 
@@ -439,11 +281,137 @@ Does the shot size change from small to large?
 </details>
 
 <details>
+<summary><h2>Is Subject Disappearing</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>subject_disappearing</code>
+
+
+<h3>📖 Definition:</h3>
+Does the main subject disappear from the frame?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the primary subject leave the frame?
+
+- Is there a moment where the main subject vanishes?
+
+- Does the subject exit from view?
+
+- Is there a planned disappearance of the subject?
+
+- Does the main subject fade from view?
+
+- Is there a point where the subject leaves the shot?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A shot where the main subject disappears or exits from view.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- The primary subject leaves the frame.
+
+- There is a moment where the main subject vanishes.
+
+- The subject exits from view.
+
+- The subject disappears from the frame as planned.
+
+- The main subject fades from view.
+
+- There is a point where the subject leaves the shot.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.subject_disappearing is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.subject_disappearing is False</code>
+
+</details>
+
+<details>
+<summary><h2>Is Subject Revealing</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>subject_revealing</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video include a revealing shot where a subject appears?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is there a moment where a new subject is revealed?
+
+- Does the video introduce a subject through a revealing shot?
+
+- Does a subject emerge or appear in the shot?
+
+- Does the video show a subject coming into view?
+
+- Does the shot gradually reveal a subject?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A revealing shot where a subject appears.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- There is a moment where a new subject is revealed.
+
+- The video introduces a subject through a revealing shot.
+
+- A subject emerges or appears in the shot.
+
+- The video shows a subject coming into view.
+
+- The shot gradually reveals a subject.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.subject_revealing is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.subject_revealing is False</code>
+
+</details>
+
+<details>
 <summary><h2>Subject Switch</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>subject_switch</code>
+<code>subject_switching</code>
 
 
 <h3>📖 Definition:</h3>
@@ -461,17 +429,11 @@ Does the main subject change to another subject?
 
 - Does the focus shift from one subject to another?
 
-- Is there a change in the primary subject?
-
 - Does the shot switch between different subjects?
-
-- Is there a handoff between main subjects?
 
 - Does the primary focus change to a new subject?
 
-- Is there a transition in the main focus?
-
-- Does the shot change its principal subject?
+- Does the shot change its principal subject to another?
 
 </details>
 
@@ -485,28 +447,29 @@ Does the main subject change to another subject?
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video with subject transition.
+- There is a transition between main subjects.
 
-- A shot showing subject change.
+- The focus shifts from one subject to another.
 
-- A video featuring focus shift.
+- The shot switches between different subjects.
 
-- A shot with subject handoff.
+- The primary focus changes to a new subject.
 
-- A video showing main subject change.
-
-- A shot transitioning between subjects.
-
-- A video with focus transition.
-
-- A shot changing primary subjects.
+- The shot changes its principal subject to another.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.subject_switch is True</code>
+<code>self.subject_switching is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.subject_switch is False</code>
+<code>self.subject_switching is False</code>
 
 </details>
+
+
+## Subcategories
+
+- [End_with](./end_with/index.md)
+- [Is_always](./is_always/index.md)
+- [Start_with](./start_with/index.md)

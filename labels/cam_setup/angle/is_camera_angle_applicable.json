@@ -1,0 +1,34 @@
+{
+    "label": "Is Camera Angle Applicable",
+    "label_name": "is_camera_angle_applicable",
+    "def_question": [
+        "Is camera angle classification possible for this video?"
+    ],
+    "alt_question": [
+        "Can the camera angle be meaningfully categorized?",
+        "Is it possible to determine the camera's angular position?",
+        "Can we assess the camera's rotational angle?",
+        "Is the camera angle clear enough to classify?",
+        "Can the camera's orientation be effectively categorized?",
+        "Is it feasible to determine the shot angle?",
+        "Can we meaningfully analyze the camera angle?",
+        "Is the camera's angular position classifiable?"
+    ],
+    "def_prompt": [
+        "A shot where the camera angle can be meaningfully classified."
+    ],
+    "alt_prompt": [
+        "A video with classifiable camera angle.",
+        "A shot with determinable angular position.",
+        "A video where camera orientation can be assessed.",
+        "A shot with clear angle categorization.",
+        "A video suitable for angle classification.",
+        "A shot with analyzable camera position.",
+        "A video with measurable camera angle.",
+        "A shot with definable orientation."
+    ],
+    "pos_rule_str": "self.is_camera_angle_applicable is True",
+    "neg_rule_str": "self.is_camera_angle_applicable is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

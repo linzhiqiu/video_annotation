@@ -2,7 +2,7 @@
     "label": "Shot Size Is Full",
     "label_name": "shot_size_is_full",
     "def_question": [
-        "Does the video maintain a full shot throughout, showing the entire subject from head to toe?"
+        "Does the video maintain a full shot that frames the entire body of the subject?"
     ],
     "alt_question": [
         "Is the entire video filmed in a full shot, capturing the complete subject?",
@@ -15,7 +15,7 @@
         "Does the video maintain a full-body framing from start to finish?"
     ],
     "def_prompt": [
-        "A video that maintains a full shot throughout, showing the entire subject from head to toe."
+        "A video that maintains a full shot throughout, framing the entire subject while maintaining focus on it."
     ],
     "alt_prompt": [
         "A video shot entirely in full view showing complete subjects.",
@@ -28,7 +28,7 @@
         "A sequence maintaining full-body perspective of subjects."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'full' and self.shot_size_info['end'] == 'full'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'full' and self.shot_size_info['end'] == 'full')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['full', 'unknown'] and self.shot_size_info['end'] in ['full', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

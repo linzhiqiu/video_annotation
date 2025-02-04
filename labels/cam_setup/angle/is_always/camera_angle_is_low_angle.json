@@ -1,0 +1,33 @@
+{
+    "label": "Camera Angle Is Low Angle",
+    "label_name": "camera_angle_is_low_angle",
+    "def_question": [
+        "Is the camera positioned at a low angle throughout the video, looking upward from a lower perspective but not directly from below?"
+    ],
+    "alt_question": [
+        "Does the camera remain at a low angle for the entire video?",
+        "Is the starting and ending frame taken from an upward-facing perspective?",
+        "Does the video maintain a low vantage point from start to finish?",
+        "Is the camera positioned slightly below level angle throughout?",
+        "Does the sequence keep a low-angle perspective the whole time?",
+        "Is the video filmed entirely at a low angle without changing?",
+        "Does the framing stay at an upward viewpoint for the whole video?",
+        "Is the entire video shot with the camera angled slightly upward?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at a low angle throughout the video, looking upward from a lower perspective but not directly from below."
+    ],
+    "alt_prompt": [
+        "A video maintaining a low-angle perspective from start to finish.",
+        "A shot consistently captured from a slightly upward-tilted angle.",
+        "A video where the camera stays at a low position without changing.",
+        "A sequence entirely framed from a low-angle viewpoint.",
+        "A shot maintaining a low perspective without shifting angles.",
+        "A video where the camera remains angled upward throughout.",
+        "A scene consistently framed from a low perspective."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'low_angle' and self.camera_angle_info['end'] == 'low_angle'",
+    "neg_rule_str": "not (self.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.camera_angle_info['end'] in ['low_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

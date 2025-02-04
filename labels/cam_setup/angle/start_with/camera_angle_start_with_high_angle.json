@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Start With High Angle",
+    "label_name": "camera_angle_start_with_high_angle",
+    "def_question": [
+        "Does the video start with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?"
+    ],
+    "alt_question": [
+        "Does the shot start with a downward-facing high angle?",
+        "Is the starting frame taken from a higher viewpoint, looking down compared to a level angle?",
+        "Does the video begin with the camera angled downward but not entirely overhead?",
+        "Is the initial shot captured from an elevated position, looking slightly down?",
+        "Does the sequence open with a perspective higher than a level angle but lower than a bird’s-eye view?",
+        "Is the first shot positioned with a noticeable downward tilt compared to a straight-on view?",
+        "Does the video open with a view looking downward, but not completely top-down?",
+        "Is the starting frame recorded from a higher elevation than a neutral level angle?"
+    ],
+    "def_prompt": [
+        "The video starts with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down."
+    ],
+    "alt_prompt": [
+        "A shot starting from a high-angle perspective, looking downward compared to a neutral angle.",
+        "A video beginning with an elevated viewpoint, angled downward but not extreme.",
+        "A sequence that starts with a high-angle framing, positioned above level angle.",
+        "A shot where the camera is higher than a level angle, tilting downward.",
+        "A video opening with a perspective slightly above normal eye level, looking down.",
+        "A shot where the camera is positioned at a high angle, but not completely top-down.",
+        "A video that starts with an elevated framing, angled slightly downward.",
+        "A scene that opens with the camera positioned higher than a neutral level shot, tilting downward."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'high_angle'",
+    "neg_rule_str": "self.camera_angle_info['start'] not in ['high_angle', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

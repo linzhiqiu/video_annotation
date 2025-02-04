@@ -2,7 +2,7 @@
     "label": "Shot Size Is Wide",
     "label_name": "shot_size_is_wide",
     "def_question": [
-        "Does the video maintain a wide shot throughout, showing the full subject and their immediate surroundings?"
+        "Does the video show a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?"
     ],
     "alt_question": [
         "Is the entire video filmed in wide shot, capturing subjects and their environment?",
@@ -15,7 +15,7 @@
         "Does the video maintain a wide focus that captures the complete setting?"
     ],
     "def_prompt": [
-        "A video that maintains a wide shot throughout, showing the full subject and their immediate surroundings."
+        "A wide shot of scenery or a wide shot that frames the subject while keeping enough background context."
     ],
     "alt_prompt": [
         "A video shot entirely in wide view showing subjects and environment.",
@@ -28,7 +28,7 @@
         "A sequence maintaining wide perspective of the entire scene."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'wide' and self.shot_size_info['end'] == 'wide'",
-    "neg_rule_str": "not (self.shot_size_info['start'] == 'wide' and self.shot_size_info['end'] == 'wide')",
+    "neg_rule_str": "not (self.shot_size_info['start'] in ['wide', 'unknown'] and self.shot_size_info['end'] in ['wide', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

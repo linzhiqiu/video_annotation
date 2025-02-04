@@ -2,30 +2,30 @@
     "label": "Focus End With Foreground",
     "label_name": "focus_end_with_foreground",
     "def_question": [
-        "Does the video end with foreground?"
+        "Does the video end with the foreground in focus, using a shallow depth of field?"
     ],
     "alt_question": [
-        "Does the shot end with foreground?",
-        "Is the ending frame showing foreground?",
-        "Does the video end using foreground?",
-        "Is the final shot at foreground?",
-        "Does the sequence end with foreground?",
-        "Is the last shot at foreground?",
-        "Does the video close with foreground?",
-        "Is the ending frame at foreground?"
+        "Does the shot end with a sharp focus on the foreground?",
+        "Is the final frame focused on the foreground while the rest is blurred?",
+        "Does the video conclude with only the foreground in clear focus?",
+        "Is the last shot emphasizing the foreground through shallow depth of field?",
+        "Does the sequence close with a blurred background and a focused foreground?",
+        "Is the final shot composed with the foreground in sharp focus?",
+        "Does the video close with a subject in the foreground while the rest is out of focus?",
+        "Is the ending frame framed with a distinct foreground focus?"
     ],
     "def_prompt": [
-        "A video that ends with foreground."
+        "The video ends with the foreground in focus, using a shallow depth of field."
     ],
     "alt_prompt": [
-        "A shot ending with foreground.",
-        "A video ending at foreground.",
-        "A sequence concluding with foreground.",
-        "A shot finally at foreground.",
-        "A video closing with foreground.",
-        "A shot ending at foreground.",
-        "A video concluding with foreground.",
-        "A sequence ending at foreground."
+        "A shot ending with a sharp focus on the foreground.",
+        "A video concluding with the foreground clearly in focus.",
+        "A sequence that ends with a blurred background but sharp foreground.",
+        "A shot emphasizing the foreground while the rest is out of focus.",
+        "A video that closes with a focused foreground and a soft background.",
+        "A shot with shallow depth of field highlighting the foreground at the end.",
+        "A video ending with a strong foreground focus while the background fades.",
+        "A scene that concludes with the subject in the foreground in sharp focus."
     ],
     "pos_rule_str": "self.focus_info['end'] == 'foreground'",
     "neg_rule_str": "self.focus_info['end'] not in ['foreground', 'unknown']",

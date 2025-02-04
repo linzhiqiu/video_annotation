@@ -1,0 +1,33 @@
+{
+    "label": "Camera Angle Is Level Angle",
+    "label_name": "camera_angle_is_level_angle",
+    "def_question": [
+        "Is the camera positioned at a level angle throughout the video, parallel to the ground regardless of Dutch angle?"
+    ],
+    "alt_question": [
+        "Does the camera remain at a level angle for the entire video?",
+        "Is the starting and ending frame taken from a straight-on perspective?",
+        "Does the video maintain a neutral camera angle throughout?",
+        "Is the camera positioned parallel to the ground for the entire duration?",
+        "Does the sequence keep a level viewpoint from start to finish?",
+        "Is the video filmed entirely at a level angle without changing?",
+        "Does the framing remain neutral and parallel to the ground?",
+        "Is the entire video shot at a flat horizon level?"
+    ],
+    "def_prompt": [
+        "The camera remains at a level angle throughout the video, parallel to the ground regardless of Dutch angle."
+    ],
+    "alt_prompt": [
+        "A video maintaining a level perspective from start to finish.",
+        "A shot consistently captured from a straight-on angle.",
+        "A video where the camera stays at a neutral position without tilting.",
+        "A sequence entirely framed at a level viewpoint.",
+        "A shot maintaining a level angle without shifting.",
+        "A video where the camera remains flat and parallel to the ground.",
+        "A scene consistently framed at a level perspective."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'level_angle' and self.camera_angle_info['end'] == 'level_angle'",
+    "neg_rule_str": "not (self.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.camera_angle_info['end'] in ['level_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

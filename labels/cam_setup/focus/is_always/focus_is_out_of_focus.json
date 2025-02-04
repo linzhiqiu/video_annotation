@@ -1,0 +1,34 @@
+{
+    "label": "Focus Is Out of Focus",
+    "label_name": "focus_is_out_of_focus",
+    "def_question": [
+        "Is the video consistently out of focus throughout?"
+    ],
+    "alt_question": [
+        "Does the video remain entirely blurred from start to finish?",
+        "Is the focus unclear for the entire duration of the video?",
+        "Does the depth of field fail to establish a sharp subject throughout?",
+        "Is there no clearly focused area in the entire sequence?",
+        "Does the video maintain an unfocused appearance without transition?",
+        "Is every frame lacking a distinct point of focus?",
+        "Does the video stay blurry across the entire duration?",
+        "Is the entire video composed without a clear focal point?"
+    ],
+    "def_prompt": [
+        "The video remains out of focus throughout."
+    ],
+    "alt_prompt": [
+        "A shot maintaining an unfocused appearance from start to finish.",
+        "A video where no clear subject is sharply in focus.",
+        "A sequence that stays blurry throughout.",
+        "A shot where depth of field does not establish a clear focal plane.",
+        "A video that remains in soft focus or lacks a defined sharpness.",
+        "A scene where everything remains blurred without a shift in focus.",
+        "A video that does not provide a distinct point of sharp focus.",
+        "A composition that is consistently out of focus across its duration."
+    ],
+    "pos_rule_str": "self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] == 'out_of_focus'",
+    "neg_rule_str": "not (self.focus_info['start'] in ['out_of_focus', 'unknown'] and self.focus_info['end'] in ['out_of_focus', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

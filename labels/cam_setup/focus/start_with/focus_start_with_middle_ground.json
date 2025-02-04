@@ -2,30 +2,30 @@
     "label": "Focus Start With Middle Ground",
     "label_name": "focus_start_with_middle_ground",
     "def_question": [
-        "Does the video start with middle ground?"
+        "Does the video start with a focus on the middle ground, using a shallow depth of field to blur both the foreground and background?"
     ],
     "alt_question": [
-        "Does the shot start with middle ground?",
-        "Is the starting frame showing middle ground?",
-        "Does the video start using middle ground?",
-        "Is the initial shot at middle ground?",
-        "Does the sequence start with middle ground?",
-        "Is the first shot at middle ground?",
-        "Does the video open with middle ground?",
-        "Is the starting frame at middle ground?"
+        "Does the shot start with a sharp focus on the middle ground while the foreground and background are blurred?",
+        "Is the starting frame emphasizing the middle ground with a shallow depth of field?",
+        "Does the video begin with a focus on the middle ground while the foreground and background fade out?",
+        "Is the initial shot captured with the middle ground in focus while other areas are blurred?",
+        "Does the sequence open with a balanced focus on the middle ground while surrounding areas lack sharpness?",
+        "Is the first shot framed to highlight the middle ground while the foreground and background remain out of focus?",
+        "Does the video open with selective focus on the middle ground, creating depth?",
+        "Is the starting frame composed with the middle ground in sharp focus while other planes are softened?"
     ],
     "def_prompt": [
-        "A video that starts with middle ground."
+        "The video starts with a focus on the middle ground, using a shallow depth of field to blur both the foreground and background."
     ],
     "alt_prompt": [
-        "A shot starting with middle ground.",
-        "A video starting at middle ground.",
-        "A sequence beginning with middle ground.",
-        "A shot initially at middle ground.",
-        "A video opening with middle ground.",
-        "A shot starting at middle ground.",
-        "A video beginning with middle ground.",
-        "A sequence starting at middle ground."
+        "A shot starting with the middle ground in sharp focus while the surrounding areas blur.",
+        "A video opening with a middle-ground focus and a shallow depth of field.",
+        "A sequence beginning with the middle ground in focus while both foreground and background fade out.",
+        "A shot where the middle ground is emphasized while the other planes remain blurred.",
+        "A video that starts with the middle ground in focus and a selective depth of field.",
+        "A shot using selective focus on the middle ground while the foreground and background are out of focus.",
+        "A video that begins with a sharp middle-ground focus, keeping the other areas soft.",
+        "A scene that opens with a middle-ground subject in focus while the depth gradually blurs."
     ],
     "pos_rule_str": "self.focus_info['start'] == 'middle_ground'",
     "neg_rule_str": "self.focus_info['start'] not in ['middle_ground', 'unknown']",

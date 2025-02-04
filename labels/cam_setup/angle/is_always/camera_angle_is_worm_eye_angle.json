@@ -1,0 +1,33 @@
+{
+    "label": "Camera Angle Is Worm Eye Angle",
+    "label_name": "camera_angle_is_worm_eye_angle",
+    "def_question": [
+        "Is the camera positioned at a worm’s eye angle throughout the video, looking sharply upward to the sky?"
+    ],
+    "alt_question": [
+        "Does the camera remain at a worm’s eye angle for the entire video?",
+        "Is the starting and ending frame taken from an extreme low-angle perspective?",
+        "Does the video maintain an upward-facing camera position throughout?",
+        "Is the camera positioned extremely low and directed sharply upward from start to finish?",
+        "Does the sequence keep a worm’s eye viewpoint the whole time?",
+        "Is the video filmed entirely at a worm’s eye angle without changing?",
+        "Does the framing stay at a low-angle perspective for the whole video?",
+        "Is the entire video shot with the camera pointed significantly upward?"
+    ],
+    "def_prompt": [
+        "The camera remains at a worm’s eye angle throughout the video, looking sharply upward to the sky."
+    ],
+    "alt_prompt": [
+        "A video maintaining a worm’s eye perspective from start to finish.",
+        "A shot consistently captured from an extreme low-angle viewpoint.",
+        "A video where the camera stays at a worm’s eye position without tilting away.",
+        "A sequence entirely framed from a worm’s eye perspective.",
+        "A shot maintaining an extreme low angle without shifting.",
+        "A video where the camera remains angled steeply upward throughout.",
+        "A scene consistently framed from a worm’s eye perspective, emphasizing height."
+    ],
+    "pos_rule_str": "self.camera_angle_info['start'] == 'worm_eye_angle' and self.camera_angle_info['end'] == 'worm_eye_angle'",
+    "neg_rule_str": "not (self.camera_angle_info['start'] in ['worm_eye_angle', 'unknown'] and self.camera_angle_info['end'] in ['worm_eye_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
