@@ -28,8 +28,8 @@
         "A scene with embedded UI components or informational graphics.",
         "A shot displaying subtitles or interactive elements."
     ],
-    "pos_rule_str": "self.has_overlays is True",
-    "neg_rule_str": "self.has_overlays is False",
+    "pos_rule_str": "self.cam_setup.has_overlays is True",
+    "neg_rule_str": "self.cam_setup.has_overlays is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
