@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size Is Medium Close Up",
+    "label_name": "shot_size_is_medium_close_up",
+    "def_question": [
+        "Does the video maintain a medium close-up shot throughout, showing subjects from approximately chest up?"
+    ],
+    "alt_question": [
+        "Is the entire video filmed in medium close-up, framing subjects from chest up?",
+        "Does the shot remain at medium close-up distance throughout?",
+        "Is the video consistently framed as a medium close-up, showing upper chest and head?",
+        "Does the video maintain a medium close-up perspective focusing on the upper torso and face?",
+        "Is the entire sequence shot from a medium close-up distance?",
+        "Does the video keep a consistent medium close-up framing?",
+        "Are subjects consistently shown from chest up throughout the video?",
+        "Does the video maintain a medium close-up focus that emphasizes facial expressions?"
+    ],
+    "def_prompt": [
+        "A video that maintains a medium close-up shot throughout, showing subjects from approximately chest up."
+    ],
+    "alt_prompt": [
+        "A video shot entirely in medium close-up showing subjects from chest up.",
+        "A sequence maintaining a medium close-up that captures upper torso and face.",
+        "A video consistently framed at medium close-up distance.",
+        "A sequence shot entirely from medium close-up range.",
+        "A video maintaining medium close-up framing to emphasize expressions.",
+        "A shot that consistently shows subjects from chest level up.",
+        "A video where subjects are seen at medium close-up distance throughout.",
+        "A sequence maintaining medium close-up perspective of subjects."
+    ],
+    "pos_rule_str": "self.shot_size_info['start'] == 'medium_close_up' and self.shot_size_info['end'] == 'medium_close_up'",
+    "neg_rule_str": "not (self.shot_size_info['start'] == 'medium_close_up' and self.shot_size_info['end'] == 'medium_close_up')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size Is Medium Full",
+    "label_name": "shot_size_is_medium_full",
+    "def_question": [
+        "Does the video maintain a medium full shot throughout, showing subjects from approximately knee up?"
+    ],
+    "alt_question": [
+        "Is the entire video filmed in medium full shot, framing subjects from knee up?",
+        "Does the shot remain at medium full distance throughout the video?",
+        "Is the video consistently framed as a medium full shot, showing subjects from knees to head?",
+        "Does the video maintain a medium full perspective where most of the body is visible?",
+        "Is the entire sequence shot from a medium full distance?",
+        "Does the video keep a consistent medium full framing that shows subjects from knee level?",
+        "Are subjects consistently shown from knees up throughout the video?",
+        "Does the video maintain a medium full focus throughout?"
+    ],
+    "def_prompt": [
+        "A video that maintains a medium full shot throughout, showing subjects from approximately knee up."
+    ],
+    "alt_prompt": [
+        "A video shot entirely in medium full view showing subjects from knee up.",
+        "A sequence maintaining a medium full shot that captures most of the body.",
+        "A video consistently framed at medium full distance.",
+        "A sequence shot entirely from medium full range.",
+        "A video maintaining medium full framing to show subjects from knees up.",
+        "A shot that consistently shows subjects from knee level.",
+        "A video where subjects are seen at medium full distance throughout.",
+        "A sequence maintaining medium full perspective of subjects."
+    ],
+    "pos_rule_str": "self.shot_size_info['start'] == 'medium_full' and self.shot_size_info['end'] == 'medium_full'",
+    "neg_rule_str": "not (self.shot_size_info['start'] == 'medium_full' and self.shot_size_info['end'] == 'medium_full')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

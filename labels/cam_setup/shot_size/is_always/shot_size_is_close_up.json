@@ -1,0 +1,36 @@
+{
+    "label": "Shot Size Is Close Up",
+    "label_name": "shot_size_is_close_up",
+    "def_question": [
+        "Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context?"
+    ],
+    "alt_question": [
+        "Is the entire video filmed in close-up, focusing on the subject's prominent features?",
+        "Does the shot remain a close-up throughout the video where the subject fills most of the frame?",
+        "Is the video consistently framed as a close-up, capturing key details of the subject?",
+        "Does the video maintain a close-up perspective where the subject's face, hands, or defining features remain visible?",
+        "Is the entire sequence shot in close-up, framing the subject closely while providing enough context?",
+        "Does the video keep a consistent close-up that emphasizes specific portions of the subject?",
+        "Is the subject consistently occupying 50%-100% of the frame's height or width throughout?",
+        "Does the video maintain a close-up focus on the subject's defining features?",
+        "Is the entire sequence shot at close range to emphasize the subject's details?"
+    ],
+    "def_prompt": [
+        "A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context."
+    ],
+    "alt_prompt": [
+        "A video shot entirely in close-up where the subject's defining features fill most of the frame.",
+        "A sequence maintaining a close-up shot that emphasizes specific details of the subject.",
+        "A video consistently framed in close-up, providing tight yet identifiable framing.",
+        "A sequence shot entirely in close-up, focusing on the subject's key features.",
+        "A video maintaining close-up framing while preserving essential context.",
+        "A shot that consistently captures the subject closely with surrounding context.",
+        "A video where the subject consistently occupies 50%-100% of the frame.",
+        "A sequence maintaining close-up focus on the subject's defining characteristics.",
+        "A video shot entirely in close-up to enhance the subject's presence."
+    ],
+    "pos_rule_str": "self.shot_size_info['start'] == 'close_up' and self.shot_size_info['end'] == 'close_up'",
+    "neg_rule_str": "not (self.shot_size_info['start'] == 'close_up' and self.shot_size_info['end'] == 'close_up')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
