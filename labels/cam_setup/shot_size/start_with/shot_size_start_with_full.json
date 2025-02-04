@@ -1,25 +1,35 @@
 {
-    "label": "Shot Size Start With Full",
+    "label": "Shot Size Start With Full (Subject Only)",
     "label_name": "shot_size_start_with_full",
     "def_question": [
-        "Does the video start with a full shot?"
+        "Does the video start with a full shot that frames the entire body of the subject?"
     ],
     "alt_question": [
-        "Does the video open with a full shot?",
-        "Is the first shot of the video a full shot?",
-        "Does the video start with a full shot?",
-        "Is the opening shot of the video a full shot?",
-        "Does the video begin with a full shot?"
+        "Does the video open with a full shot where the subject is clearly framed?",
+        "Is the first shot a full shot capturing the entire body of the subject?",
+        "Does the video begin with a full shot focusing primarily on the subject?",
+        "Is the opening shot a full shot where the subject is the main focus?",
+        "Does the first shot provide a full-body view of the subject?",
+        "Is the initial shot a full shot with the subject occupying most of the frame?",
+        "Does the video start with a shot where the subject takes up more than 50% of the frame?",
+        "Is the first frame composed to fully capture the subject while maintaining a clear focus?",
+        "Does the video begin with a shot that ensures the entire subject is visible?",
+        "Is the opening shot taken at a distance that fully includes the subject in the frame?"
     ],
     "def_prompt": [
-        "A video that starts with a full shot."
+        "A video that starts with a full shot, framing the entire subject while maintaining focus on it."
     ],
     "alt_prompt": [
-        "The video starts with a full shot.",
-        "The video opens with a full shot.",
-        "The first shot of the video is a full shot.",
-        "The opening shot is a full shot.",
-        "The opening shot of the video is a full shot."
+        "The video starts with a full shot where the subject is fully visible.",
+        "The video opens with a full shot, focusing on the entire body of the subject.",
+        "The first shot of the video is a full-body view of the subject.",
+        "The opening shot includes the subject’s entire form with minimal background emphasis.",
+        "The opening shot of the video is a full shot, ensuring the whole subject is captured.",
+        "A shot that fully frames the subject while keeping the focus primarily on them.",
+        "A video where the subject takes up most of the frame, emphasizing their full form.",
+        "A shot where the entire subject is visible, but some minor parts (e.g., foot, tail) may be cropped.",
+        "A video starting with a full-body shot that prioritizes the subject over the background.",
+        "A cinematic full shot that ensures the subject is the focal point of the composition."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'full'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['full', 'unknown']",

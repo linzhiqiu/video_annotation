@@ -2,7 +2,7 @@
     "label": "Shot Size Start With Extreme Close Up",
     "label_name": "shot_size_start_with_extreme_close_up",
     "def_question": [
-        "Does the video start with a up shot?"
+        "Does the video start with an extreme close-up shot?"
     ],
     "alt_question": [
         "Does the video open with a extreme close-up shot?",
@@ -12,7 +12,7 @@
         "Does the video begin with a extreme close-up shot?"
     ],
     "def_prompt": [
-        "A video that starts with a extreme close-up shot."
+        "A video that starts with an extreme close-up shot."
     ],
     "alt_prompt": [
         "The video starts with a extreme close-up shot.",

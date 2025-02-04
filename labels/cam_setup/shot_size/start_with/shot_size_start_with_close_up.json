@@ -2,7 +2,7 @@
     "label": "Shot Size Start With Close Up",
     "label_name": "shot_size_start_with_close_up",
     "def_question": [
-        "Does the video start with a up shot?"
+        "Does the video start with a close-up shot?"
     ],
     "alt_question": [
         "Does the video open with a close-up shot?",

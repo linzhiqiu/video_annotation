@@ -1,25 +1,35 @@
 {
-    "label": "Shot Size Start With Medium Full",
+    "label": "Shot Size Start With Medium Full (Human Only)",
     "label_name": "shot_size_start_with_medium_full",
     "def_question": [
-        "Does the video start with a full shot?"
+        "Does the video start with a medium-full shot that frames the human subject from mid-thigh (or knee) upward?"
     ],
     "alt_question": [
-        "Does the video open with a medium-full shot?",
-        "Is the first shot of the video a medium-full shot?",
-        "Does the video start with a medium-full shot?",
-        "Is the opening shot of the video a medium-full shot?",
-        "Does the video begin with a medium-full shot?"
+        "Does the video open with a medium-full shot featuring a human subject?",
+        "Is the first shot a medium-full shot where the subject is framed from the thighs up?",
+        "Does the video start with a medium-full shot that includes the upper body and part of the legs?",
+        "Is the opening shot a medium-full shot capturing the subject from mid-thigh up?",
+        "Does the first shot show the human subject clearly from the thighs upward?",
+        "Is the initial shot a medium-full shot where the subject is fully visible from the knee upward?",
+        "Does the video begin with a shot that provides a medium-full view of the subject?",
+        "Is the first frame a medium-full shot that avoids cropping above the thighs?",
+        "Does the video start with a shot that includes both the subject’s face and partial legs?",
+        "Is the opening shot framed from the knee or thigh upward while keeping the subject fully visible?"
     ],
     "def_prompt": [
-        "A video that starts with a medium-full shot."
+        "A video that starts with a medium-full shot, framing the human subject from the mid-thigh (or knee) upward."
     ],
     "alt_prompt": [
-        "The video starts with a medium-full shot.",
-        "The video opens with a medium-full shot.",
-        "The first shot of the video is a medium-full shot.",
-        "The opening shot is a medium-full shot.",
-        "The opening shot of the video is a medium-full shot."
+        "The video starts with a medium-full shot where the subject is framed from the thighs up.",
+        "The video opens with a medium-full shot capturing the upper body and part of the legs.",
+        "The first shot of the video is a medium-full shot featuring the subject’s full upper body.",
+        "The opening shot is a medium-full shot that avoids cropping the subject above the thighs.",
+        "The opening shot of the video is a medium-full shot, ensuring the subject is clearly visible.",
+        "A shot that includes the subject’s head, torso, and partial legs within the frame.",
+        "A video where the subject is visible from the mid-thigh up, ensuring a natural composition.",
+        "A shot where the subject is framed from the thighs up, providing clear detail.",
+        "A video starting with a medium-full shot that focuses on a human subject while keeping part of their legs visible.",
+        "A cinematic medium-full shot ensuring the subject is framed naturally within the scene."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium_full'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['medium_full', 'unknown']",

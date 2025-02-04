@@ -2,24 +2,34 @@
     "label": "Shot Size Start With Wide",
     "label_name": "shot_size_start_with_wide",
     "def_question": [
-        "Does the video start with a wide shot?"
+        "Does the video start with a wide shot that frames the entire subject while maintaining background context?"
     ],
     "alt_question": [
-        "Does the video open with a wide shot?",
-        "Is the first shot of the video a wide shot?",
-        "Does the video start with a wide shot?",
-        "Is the opening shot of the video a wide shot?",
-        "Does the video begin with a wide shot?"
+        "Does the video open with a wide shot that balances the subject and surroundings?",
+        "Is the first shot a wide shot where the subject is clearly visible but not dominant?",
+        "Does the video begin with a wide shot that includes both the subject and its environment?",
+        "Is the opening shot a wide shot where the surroundings remain a key part of the composition?",
+        "Does the first shot frame the subject fully while still showing background details?",
+        "Is the initial shot a wide view where no single element dominates?",
+        "Does the video start with a shot where the subject occupies around 15-50% of the frame?",
+        "Is the first frame composed to show the subject in relation to its environment?",
+        "Does the video begin with a shot that is not too far (extreme wide) but still provides context?",
+        "Is the first shot a wide-angle view offering more detail than an extreme wide shot?"
     ],
     "def_prompt": [
-        "A video that starts with a wide shot."
+        "A video that starts with a wide shot, framing the entire subject while maintaining background context."
     ],
     "alt_prompt": [
-        "The video starts with a wide shot.",
-        "The video opens with a wide shot.",
-        "The first shot of the video is a wide shot.",
-        "The opening shot is a wide shot.",
-        "The opening shot of the video is a wide shot."
+        "The video starts with a wide shot where the subject is fully visible.",
+        "The video opens with a wide shot, balancing subject and environment.",
+        "The first shot of the video is a wide view that emphasizes both subject and surroundings.",
+        "The opening shot includes the entire subject but maintains scene context.",
+        "The opening shot of the video is a wide shot, offering more detail than an extreme wide shot.",
+        "A shot that frames the subject while keeping the background visible.",
+        "A video where the subject occupies 15-50% of the frame while the setting remains clear.",
+        "A shot where the entire subject is visible, but surroundings are also important.",
+        "A video starting with a balanced wide shot where no single element dominates.",
+        "A cinematic wide shot that includes both the subject and contextual environment."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'wide'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['wide', 'unknown']",

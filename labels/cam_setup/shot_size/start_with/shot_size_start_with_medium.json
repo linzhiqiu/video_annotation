@@ -1,25 +1,35 @@
 {
-    "label": "Shot Size Start With Medium",
+    "label": "Shot Size Start With Medium (Subject Only)",
     "label_name": "shot_size_start_with_medium",
     "def_question": [
-        "Does the video start with a medium shot?"
+        "Does the video start with a medium shot that frames about half of the subject?"
     ],
     "alt_question": [
-        "Does the video open with a medium shot?",
-        "Is the first shot of the video a medium shot?",
-        "Does the video start with a medium shot?",
-        "Is the opening shot of the video a medium shot?",
-        "Does the video begin with a medium shot?"
+        "Does the video open with a medium shot framing the subject from the waist or mid-torso up?",
+        "Is the first shot a medium shot where about half of the subject is visible?",
+        "Does the video begin with a medium shot that provides a balanced view of the subject?",
+        "Is the opening shot a medium shot where the subject occupies around 50% of the frame?",
+        "Does the first shot focus on the subject without being a close-up or full-body shot?",
+        "Is the initial shot a medium shot where the framing emphasizes the upper half of the subject?",
+        "Does the video start with a shot where the subject's face and torso are visible?",
+        "Is the first frame a medium shot that keeps the subject in clear view?",
+        "Does the video begin with a shot that includes the upper half of the subject while maintaining some background context?",
+        "Is the opening shot taken at a medium distance, showing about half of the subject?"
     ],
     "def_prompt": [
-        "A video that starts with a medium shot."
+        "A video that starts with a medium shot, framing about half of the subject."
     ],
     "alt_prompt": [
-        "The video starts with a medium shot.",
-        "The video opens with a medium shot.",
-        "The first shot of the video is a medium shot.",
-        "The opening shot is a medium shot.",
-        "The opening shot of the video is a medium shot."
+        "The video starts with a medium shot where the subject is visible from the waist or mid-torso up.",
+        "The video opens with a medium shot capturing about half of the subject’s body.",
+        "The first shot of the video is a medium shot, offering a balanced view of the subject.",
+        "The opening shot includes the subject’s upper half while maintaining some scene context.",
+        "The opening shot of the video is a medium shot, ensuring the subject is well-framed.",
+        "A shot that frames the subject from the mid-torso up, avoiding close-ups or full-body shots.",
+        "A video where the subject occupies about 50% of the frame while still allowing background details.",
+        "A shot where the subject's face and upper body are clearly visible.",
+        "A video starting with a medium shot that provides a natural composition of the subject.",
+        "A cinematic medium shot that ensures a balanced framing between the subject and background."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['medium', 'unknown']",
