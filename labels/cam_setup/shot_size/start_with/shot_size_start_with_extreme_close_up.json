@@ -2,30 +2,23 @@
     "label": "Shot Size Start With Extreme Close Up",
     "label_name": "shot_size_start_with_extreme_close_up",
     "def_question": [
-        "Does the video start with extreme close up?"
+        "Does the video begin with an extreme close-up shot?"
     ],
     "alt_question": [
-        "Does the shot start with extreme close up?",
-        "Is the starting frame showing extreme close up?",
-        "Does the video start using extreme close up?",
-        "Is the initial shot at extreme close up?",
-        "Does the sequence start with extreme close up?",
-        "Is the first shot at extreme close up?",
-        "Does the video open with extreme close up?",
-        "Is the starting frame at extreme close up?"
+        "Does the video open with an extreme close-up?",
+        "Is the first shot of the video an extreme close-up?",
+        "Does the video start with a tightly framed extreme close-up?",
+        "Is the opening shot of the video an extreme close-up?"
     ],
     "def_prompt": [
-        "A video that starts with extreme close up."
+        "A video that starts with an extreme close-up shot."
     ],
     "alt_prompt": [
-        "A shot starting with extreme close up.",
-        "A video starting at extreme close up.",
-        "A sequence beginning with extreme close up.",
-        "A shot initially at extreme close up.",
-        "A video opening with extreme close up.",
-        "A shot starting at extreme close up.",
-        "A video beginning with extreme close up.",
-        "A sequence starting at extreme close up."
+        "The video begins with an extreme close-up shot.",
+        "The video opens with an extreme close-up.",
+        "The first shot of the video is an extreme close-up.",
+        "The video starts with a tightly framed extreme close-up.",
+        "The opening shot of the video is an extreme close-up."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_close_up'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_close_up', 'unknown']",
