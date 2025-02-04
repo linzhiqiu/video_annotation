@@ -2,30 +2,23 @@
     "label": "Shot Size Start With Extreme Wide",
     "label_name": "shot_size_start_with_extreme_wide",
     "def_question": [
-        "Does the video start with extreme wide?"
+        "Does the video begin with an extreme wide shot?"
     ],
     "alt_question": [
-        "Does the shot start with extreme wide?",
-        "Is the starting frame showing extreme wide?",
-        "Does the video start using extreme wide?",
-        "Is the initial shot at extreme wide?",
-        "Does the sequence start with extreme wide?",
-        "Is the first shot at extreme wide?",
-        "Does the video open with extreme wide?",
-        "Is the starting frame at extreme wide?"
+        "Does the video open with an extreme wide shot?",
+        "Is the first shot of the video an extreme wide shot?",
+        "Does the video start with a tightly framed extreme wide shot?",
+        "Is the opening shot of the video an extreme wide shot?"
     ],
     "def_prompt": [
-        "A video that starts with extreme wide."
+        "A video that starts with an extreme wide shot."
     ],
     "alt_prompt": [
-        "A shot starting with extreme wide.",
-        "A video starting at extreme wide.",
-        "A sequence beginning with extreme wide.",
-        "A shot initially at extreme wide.",
-        "A video opening with extreme wide.",
-        "A shot starting at extreme wide.",
-        "A video beginning with extreme wide.",
-        "A sequence starting at extreme wide."
+        "The video begins with an extreme wide shot.",
+        "The video opens with an extreme wide shot.",
+        "The first shot of the video is an extreme wide shot.",
+        "The video starts with a tightly framed extreme wide shot.",
+        "The opening shot of the video is an extreme wide shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_wide', 'unknown']",

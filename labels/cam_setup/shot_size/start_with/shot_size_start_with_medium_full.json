@@ -2,30 +2,23 @@
     "label": "Shot Size Start With Medium Full",
     "label_name": "shot_size_start_with_medium_full",
     "def_question": [
-        "Does the video start with medium full?"
+        "Does the video begin with a medium full shot?"
     ],
     "alt_question": [
-        "Does the shot start with medium full?",
-        "Is the starting frame showing medium full?",
-        "Does the video start using medium full?",
-        "Is the initial shot at medium full?",
-        "Does the sequence start with medium full?",
-        "Is the first shot at medium full?",
-        "Does the video open with medium full?",
-        "Is the starting frame at medium full?"
+        "Does the video open with a medium full shot?",
+        "Is the first shot of the video a medium full shot?",
+        "Does the video start with a tightly framed medium full shot?",
+        "Is the opening shot of the video a medium full shot?"
     ],
     "def_prompt": [
-        "A video that starts with medium full."
+        "A video that starts with a medium full shot."
     ],
     "alt_prompt": [
-        "A shot starting with medium full.",
-        "A video starting at medium full.",
-        "A sequence beginning with medium full.",
-        "A shot initially at medium full.",
-        "A video opening with medium full.",
-        "A shot starting at medium full.",
-        "A video beginning with medium full.",
-        "A sequence starting at medium full."
+        "The video begins with a medium full shot.",
+        "The video opens with a medium full shot.",
+        "The first shot of the video is a medium full shot.",
+        "The video starts with a tightly framed medium full shot.",
+        "The opening shot of the video is a medium full shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium_full'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['medium_full', 'unknown']",

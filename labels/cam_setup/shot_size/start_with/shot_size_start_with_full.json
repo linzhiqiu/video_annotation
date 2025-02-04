@@ -2,30 +2,23 @@
     "label": "Shot Size Start With Full",
     "label_name": "shot_size_start_with_full",
     "def_question": [
-        "Does the video start with full?"
+        "Does the video begin with a full shot?"
     ],
     "alt_question": [
-        "Does the shot start with full?",
-        "Is the starting frame showing full?",
-        "Does the video start using full?",
-        "Is the initial shot at full?",
-        "Does the sequence start with full?",
-        "Is the first shot at full?",
-        "Does the video open with full?",
-        "Is the starting frame at full?"
+        "Does the video open with a full shot?",
+        "Is the first shot of the video a full shot?",
+        "Does the video start with a tightly framed full shot?",
+        "Is the opening shot of the video a full shot?"
     ],
     "def_prompt": [
-        "A video that starts with full."
+        "A video that starts with a full shot."
     ],
     "alt_prompt": [
-        "A shot starting with full.",
-        "A video starting at full.",
-        "A sequence beginning with full.",
-        "A shot initially at full.",
-        "A video opening with full.",
-        "A shot starting at full.",
-        "A video beginning with full.",
-        "A sequence starting at full."
+        "The video begins with a full shot.",
+        "The video opens with a full shot.",
+        "The first shot of the video is a full shot.",
+        "The video starts with a tightly framed full shot.",
+        "The opening shot of the video is a full shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'full'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['full', 'unknown']",
