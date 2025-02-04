@@ -1,0 +1,34 @@
+{
+    "label": "Shot Size Is Extreme Close Up",
+    "label_name": "shot_size_is_extreme_close_up",
+    "def_question": [
+        "Does the video maintain an extreme close-up shot throughout, focusing very tightly on specific details or features?"
+    ],
+    "alt_question": [
+        "Is the entire video filmed in extreme close-up, showing minute details?",
+        "Does the shot remain an extreme close-up throughout, focusing on very specific features?",
+        "Is the video consistently framed as an extreme close-up, showing intimate details?",
+        "Does the video maintain an extreme close-up that reveals fine details or textures?",
+        "Is the entire sequence shot in extreme close-up, emphasizing tiny details?",
+        "Does the video keep a consistent extreme close-up that magnifies specific elements?",
+        "Is the subject's detail consistently filling the entire frame throughout?",
+        "Does the video maintain an extreme close-up focus that reveals intricate features?"
+    ],
+    "def_prompt": [
+        "A video that maintains an extreme close-up shot throughout, focusing very tightly on specific details or features."
+    ],
+    "alt_prompt": [
+        "A video shot entirely in extreme close-up showing minute details.",
+        "A sequence maintaining an extreme close-up that emphasizes specific features.",
+        "A video consistently framed in extreme close-up, revealing intimate details.",
+        "A sequence shot entirely in extreme close-up, focusing on fine textures.",
+        "A video maintaining extreme close-up framing to highlight specific elements.",
+        "A shot that consistently captures the subject's finest details.",
+        "A video where intimate details fill the entire frame throughout.",
+        "A sequence maintaining extreme close-up focus on intricate features."
+    ],
+    "pos_rule_str": "self.shot_size_info['start'] == 'extreme_close_up' and self.shot_size_info['end'] == 'extreme_close_up'",
+    "neg_rule_str": "not (self.shot_size_info['start'] == 'extreme_close_up' and self.shot_size_info['end'] == 'extreme_close_up')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
