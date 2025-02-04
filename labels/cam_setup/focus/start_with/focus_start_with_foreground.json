@@ -27,8 +27,8 @@
         "A video that begins with a crisp foreground and a gradual loss of focus behind it.",
         "A scene that opens with a sharp foreground and a progressively blurred depth."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'foreground'",
-    "neg_rule_str": "self.focus_info['start'] not in ['foreground', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'foreground'",
+    "neg_rule_str": "self.cam_setup.focus_info['start'] not in ['foreground', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

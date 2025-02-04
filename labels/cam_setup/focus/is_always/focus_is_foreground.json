@@ -27,8 +27,8 @@
         "A video maintaining a depth of field that prioritizes the foreground.",
         "A composition where the background remains blurred while the foreground is in sharp focus."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'foreground' and self.focus_info['end'] == 'foreground'",
-    "neg_rule_str": "not (self.focus_info['start'] in ['foreground', 'unknown'] and self.focus_info['end'] in ['foreground', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'foreground'",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

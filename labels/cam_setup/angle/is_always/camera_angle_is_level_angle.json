@@ -26,8 +26,8 @@
         "A video where the camera remains flat and parallel to the ground.",
         "A scene consistently framed at a level perspective."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'level_angle' and self.camera_angle_info['end'] == 'level_angle'",
-    "neg_rule_str": "not (self.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.camera_angle_info['end'] in ['level_angle', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'level_angle' and self.cam_setup.camera_angle_info['end'] == 'level_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['level_angle', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

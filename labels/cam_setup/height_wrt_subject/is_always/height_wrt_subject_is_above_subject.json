@@ -27,8 +27,8 @@
         "A video maintaining an overhead or high-angle framing without shifting positions.",
         "A sequence that keeps the camera looking down at the subject the entire time."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'above_subject' and self.height_wrt_subject_info['end'] == 'above_subject'",
-    "neg_rule_str": "not (self.height_wrt_subject_info['start'] in ['above_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['above_subject', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['start'] == 'above_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'above_subject'",
+    "neg_rule_str": "not (self.cam_setup.height_wrt_subject_info['start'] in ['above_subject', 'unknown'] and self.cam_setup.height_wrt_subject_info['end'] in ['above_subject', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

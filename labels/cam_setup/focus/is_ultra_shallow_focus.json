@@ -27,8 +27,8 @@
         "A video with intense selective focus.",
         "A shot with extremely narrow focus."
     ],
-    "pos_rule_str": "self.is_ultra_shallow_focus is True",
-    "neg_rule_str": "self.is_ultra_shallow_focus is False",
+    "pos_rule_str": "self.cam_setup.is_ultra_shallow_focus is True",
+    "neg_rule_str": "self.cam_setup.is_ultra_shallow_focus is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

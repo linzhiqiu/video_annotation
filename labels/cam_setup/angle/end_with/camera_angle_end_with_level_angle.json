@@ -27,8 +27,8 @@
         "A video that ends with an eye-level or straight-on angle.",
         "A scene that closes with a perfectly horizontal framing."
     ],
-    "pos_rule_str": "self.camera_angle_info['end'] == 'level_angle'",
-    "neg_rule_str": "self.camera_angle_info['end'] not in ['level_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['end'] == 'level_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['end'] not in ['level_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -27,8 +27,8 @@
         "A video that ends with the camera framing subjects from a slightly elevated perspective.",
         "A scene that closes with the camera tilted downward, emphasizing height differences."
     ],
-    "pos_rule_str": "self.camera_angle_info['end'] == 'high_angle'",
-    "neg_rule_str": "self.camera_angle_info['end'] not in ['high_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['end'] == 'high_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['end'] not in ['high_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

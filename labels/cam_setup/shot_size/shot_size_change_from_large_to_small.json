@@ -30,8 +30,8 @@
         "The video tightens from a wide shot to a closer composition.",
         "The shot gradually or abruptly moves from a broader to a narrower perspective."
     ],
-    "pos_rule_str": "self.shot_size_change_from_large_to_small is True",
-    "neg_rule_str": "self.shot_size_change_from_large_to_small is False",
+    "pos_rule_str": "self.cam_setup.shot_size_change_from_large_to_small is True",
+    "neg_rule_str": "self.cam_setup.shot_size_change_from_large_to_small is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

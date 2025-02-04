@@ -21,8 +21,8 @@
         "It is feasible to determine the shot size.",
         "We can meaningfully analyze the shot size."
     ],
-    "pos_rule_str": "is_shot_size_applicable is True",
-    "neg_rule_str": "is_shot_size_applicable is False",
+    "pos_rule_str": "self.cam_setup.is_shot_size_applicable is True",
+    "neg_rule_str": "self.cam_setup.is_shot_size_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

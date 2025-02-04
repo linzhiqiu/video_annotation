@@ -27,8 +27,8 @@
         "A video where the vast environment dominates the frame throughout.",
         "A sequence maintaining an extreme wide perspective on the scene."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide' and self.shot_size_info['end'] == 'extreme_wide'",
-    "neg_rule_str": "not (self.shot_size_info['start'] in ['extreme_wide', 'unknown'] and self.shot_size_info['end'] in ['extreme_wide', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'extreme_wide' and self.cam_setup.shot_size_info['end'] == 'extreme_wide'",
+    "neg_rule_str": "not (self.cam_setup.shot_size_info['start'] in ['extreme_wide', 'unknown'] and self.cam_setup.shot_size_info['end'] in ['extreme_wide', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

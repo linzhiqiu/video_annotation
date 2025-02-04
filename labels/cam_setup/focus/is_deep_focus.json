@@ -27,8 +27,8 @@
         "A video with consistent focus depth.",
         "A shot with complete scene clarity."
     ],
-    "pos_rule_str": "self.is_deep_focus is True",
-    "neg_rule_str": "self.is_deep_focus is False",
+    "pos_rule_str": "self.cam_setup.is_deep_focus is True",
+    "neg_rule_str": "self.cam_setup.is_deep_focus is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -26,8 +26,8 @@
         "A video where the camera remains just above the ground surface.",
         "A scene that is consistently framed from a ground-level height."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'ground_level' and self.height_wrt_ground_info['end'] == 'ground_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['ground_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['ground_level', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'ground_level' and self.cam_setup.height_wrt_ground_info['end'] == 'ground_level'",
+    "neg_rule_str": "not (self.cam_setup.height_wrt_ground_info['start'] in ['ground_level', 'unknown'] and self.cam_setup.height_wrt_ground_info['end'] in ['ground_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

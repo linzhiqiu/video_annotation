@@ -27,8 +27,8 @@
         "A sequence beginning with the subject viewed from an at-subject position.",
         "A video opening with a neutral-height framing of the subject."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'at_subject'",
-    "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['start'] == 'at_subject'",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

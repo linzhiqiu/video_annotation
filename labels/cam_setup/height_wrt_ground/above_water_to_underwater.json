@@ -27,8 +27,8 @@
         "A sequence showing a smooth descent from above water to underwater.",
         "A video depicting a downward shift from air into water."
     ],
-    "pos_rule_str": "self.above_water_to_underwater is True",
-    "neg_rule_str": "self.above_water_to_underwater is False",
+    "pos_rule_str": "self.cam_setup.above_water_to_underwater is True",
+    "neg_rule_str": "self.cam_setup.above_water_to_underwater is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

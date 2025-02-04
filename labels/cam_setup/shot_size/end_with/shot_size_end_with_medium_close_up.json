@@ -31,8 +31,8 @@
         "A video ending with a medium close-up shot that highlights the subject’s expressions.",
         "A cinematic medium close-up shot that ensures a clear balance between face and upper body."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'medium_close_up'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['medium_close_up', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'medium_close_up'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['medium_close_up', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

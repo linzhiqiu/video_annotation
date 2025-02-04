@@ -27,8 +27,8 @@
         "A video that ends with a top-down or high-altitude framing.",
         "A scene that concludes with a drone-like aerial viewpoint."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'aerial_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'aerial_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -27,8 +27,8 @@
         "A video transitioning upward.",
         "A shot with increasing angle."
     ],
-    "pos_rule_str": "self.camera_angle_change_from_low_to_high is True",
-    "neg_rule_str": "self.camera_angle_change_from_low_to_high is False",
+    "pos_rule_str": "self.cam_setup.camera_angle_change_from_low_to_high is True",
+    "neg_rule_str": "self.cam_setup.camera_angle_change_from_low_to_high is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

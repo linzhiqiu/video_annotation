@@ -27,8 +27,8 @@
         "A video focused on a single primary subject or group.",
         "A shot where one subject remains the clear focus."
     ],
-    "pos_rule_str": "self.has_single_dominant_subject is True",
-    "neg_rule_str": "self.has_single_dominant_subject is False",
+    "pos_rule_str": "self.cam_setup.has_single_dominant_subject is True",
+    "neg_rule_str": "self.cam_setup.has_single_dominant_subject is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

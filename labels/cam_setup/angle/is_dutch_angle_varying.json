@@ -27,8 +27,8 @@
         "A video with dynamic angle shifts.",
         "A shot featuring varying tilts."
     ],
-    "pos_rule_str": "self.is_dutch_angle_varying is True",
-    "neg_rule_str": "self.is_dutch_angle_varying is False",
+    "pos_rule_str": "self.cam_setup.is_dutch_angle_varying is True",
+    "neg_rule_str": "self.cam_setup.is_dutch_angle_varying is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

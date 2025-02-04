@@ -27,8 +27,8 @@
         "A video with dynamic changes in subject matter.",
         "A shot showing deliberate subject transitions."
     ],
-    "pos_rule_str": "self.has_subject_change is True",
-    "neg_rule_str": "self.has_subject_change is False",
+    "pos_rule_str": "self.cam_setup.has_subject_change is True",
+    "neg_rule_str": "self.cam_setup.has_subject_change is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

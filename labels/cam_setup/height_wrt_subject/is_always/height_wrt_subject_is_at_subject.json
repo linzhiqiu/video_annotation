@@ -27,8 +27,8 @@
         "A video maintaining a straight-on perspective at subject level.",
         "A sequence that keeps the camera level with the subject the entire time."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'at_subject' and self.height_wrt_subject_info['end'] == 'at_subject'",
-    "neg_rule_str": "not (self.height_wrt_subject_info['start'] in ['at_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['at_subject', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['start'] == 'at_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'at_subject'",
+    "neg_rule_str": "not (self.cam_setup.height_wrt_subject_info['start'] in ['at_subject', 'unknown'] and self.cam_setup.height_wrt_subject_info['end'] in ['at_subject', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

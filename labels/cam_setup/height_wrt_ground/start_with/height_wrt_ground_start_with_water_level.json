@@ -27,8 +27,8 @@
         "A video that starts with a floating camera angle, capturing the water surface.",
         "A scene that opens with a near-waterline framing of the environment."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'water_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['water_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'water_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['start'] not in ['water_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -26,8 +26,8 @@
         "A video where the camera remains angled steeply upward throughout.",
         "A scene consistently framed from a worm’s eye perspective, emphasizing height."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'worm_eye_angle' and self.camera_angle_info['end'] == 'worm_eye_angle'",
-    "neg_rule_str": "not (self.camera_angle_info['start'] in ['worm_eye_angle', 'unknown'] and self.camera_angle_info['end'] in ['worm_eye_angle', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'worm_eye_angle' and self.cam_setup.camera_angle_info['end'] == 'worm_eye_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['worm_eye_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['worm_eye_angle', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

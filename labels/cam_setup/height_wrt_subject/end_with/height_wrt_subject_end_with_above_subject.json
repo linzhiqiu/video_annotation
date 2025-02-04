@@ -27,8 +27,8 @@
         "A sequence concluding with the subject framed from a high perspective.",
         "A video closing with an overhead or high-angle framing of the subject."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['end'] == 'above_subject'",
-    "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['end'] == 'above_subject'",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

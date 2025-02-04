@@ -26,8 +26,8 @@
         "A video with measurable focus properties.",
         "A shot with definable focus pattern."
     ],
-    "pos_rule_str": "self.is_focus_applicable is True",
-    "neg_rule_str": "self.is_focus_applicable is False",
+    "pos_rule_str": "self.cam_setup.is_focus_applicable is True",
+    "neg_rule_str": "self.cam_setup.is_focus_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -24,8 +24,8 @@
         "A video opening with a high view but not an extreme aerial perspective.",
         "A shot where the camera is positioned at 1.5 to 3 person-heights above ground."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'overhead_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['overhead_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'overhead_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['start'] not in ['overhead_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

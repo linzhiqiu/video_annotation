@@ -27,8 +27,8 @@
         "A video that ends with a framing that emphasizes mid-body perspective.",
         "A scene that closes with a hip-level camera position."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'hip_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['hip_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'hip_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['hip_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

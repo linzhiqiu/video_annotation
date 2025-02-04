@@ -27,8 +27,8 @@
         "A video ending with a strong foreground focus while the background fades.",
         "A scene that concludes with the subject in the foreground in sharp focus."
     ],
-    "pos_rule_str": "self.focus_info['end'] == 'foreground'",
-    "neg_rule_str": "self.focus_info['end'] not in ['foreground', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['end'] == 'foreground'",
+    "neg_rule_str": "self.cam_setup.focus_info['end'] not in ['foreground', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

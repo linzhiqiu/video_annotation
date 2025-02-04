@@ -27,8 +27,8 @@
         "A video that starts with an angle looking up at the subject or scene.",
         "A scene that opens with a low-positioned, upward-facing camera."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'low_angle'",
-    "neg_rule_str": "self.camera_angle_info['start'] not in ['low_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'low_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['low_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

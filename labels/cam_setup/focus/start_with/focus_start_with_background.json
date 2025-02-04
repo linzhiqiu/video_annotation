@@ -27,8 +27,8 @@
         "A video beginning with background clarity and a shallow depth effect.",
         "A scene that opens with the background as the main focus."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'background'",
-    "neg_rule_str": "self.focus_info['start'] not in ['background', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'background'",
+    "neg_rule_str": "self.cam_setup.focus_info['start'] not in ['background', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

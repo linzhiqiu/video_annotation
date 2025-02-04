@@ -27,8 +27,8 @@
         "A video where subjects are seen at medium full distance throughout.",
         "A sequence maintaining medium full perspective of subjects."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'medium_full' and self.shot_size_info['end'] == 'medium_full'",
-    "neg_rule_str": "not (self.shot_size_info['start'] in ['medium_full', 'unknown'] and self.shot_size_info['end'] in ['medium_full', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'medium_full' and self.cam_setup.shot_size_info['end'] == 'medium_full'",
+    "neg_rule_str": "not (self.cam_setup.shot_size_info['start'] in ['medium_full', 'unknown'] and self.cam_setup.shot_size_info['end'] in ['medium_full', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

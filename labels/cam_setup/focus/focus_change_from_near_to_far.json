@@ -26,8 +26,8 @@
         "A video with outward focus shift.",
         "A shot moving focus away."
     ],
-    "pos_rule_str": "self.focus_change_from_near_to_far is True",
-    "neg_rule_str": "self.focus_change_from_near_to_far is False",
+    "pos_rule_str": "self.cam_setup.focus_change_from_near_to_far is True",
+    "neg_rule_str": "self.cam_setup.focus_change_from_near_to_far is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

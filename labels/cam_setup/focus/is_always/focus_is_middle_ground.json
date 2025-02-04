@@ -27,8 +27,8 @@
         "A video maintaining a depth of field that prioritizes the middle ground.",
         "A composition where both the foreground and background remain blurred while the middle ground stays in sharp focus."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'middle_ground' and self.focus_info['end'] == 'middle_ground'",
-    "neg_rule_str": "not (self.focus_info['start'] in ['middle_ground', 'unknown'] and self.focus_info['end'] in ['middle_ground', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'middle_ground'",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['middle_ground', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

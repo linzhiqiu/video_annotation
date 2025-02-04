@@ -26,8 +26,8 @@
         "A video where the camera remains at mid-body height.",
         "A scene that is consistently framed from a hip-level height."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'hip_level' and self.height_wrt_ground_info['end'] == 'hip_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['hip_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['hip_level', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'hip_level' and self.cam_setup.height_wrt_ground_info['end'] == 'hip_level'",
+    "neg_rule_str": "not (self.cam_setup.height_wrt_ground_info['start'] in ['hip_level', 'unknown'] and self.cam_setup.height_wrt_ground_info['end'] in ['hip_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

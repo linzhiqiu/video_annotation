@@ -27,8 +27,8 @@
         "A video beginning with level angle.",
         "A sequence starting at level angle."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'level_angle'",
-    "neg_rule_str": "self.camera_angle_info['start'] not in ['level_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'level_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['level_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

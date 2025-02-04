@@ -27,8 +27,8 @@
         "A video that begins with a sharp middle-ground focus, keeping the other areas soft.",
         "A scene that opens with a middle-ground subject in focus while the depth gradually blurs."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'middle_ground'",
-    "neg_rule_str": "self.focus_info['start'] not in ['middle_ground', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'middle_ground'",
+    "neg_rule_str": "self.cam_setup.focus_info['start'] not in ['middle_ground', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

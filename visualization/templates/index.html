@@ -39,6 +39,16 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .camera-info {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        .camera-info .text-muted {
+            color: #6c757d;
+        }
         video {
             width: 100%;
             max-width: 320px;  /* Reduce max width of videos */
@@ -134,6 +144,23 @@
                     {% for video in videos %}
                     <div class="video-container">
                         <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
+                        <div class="camera-info">
+                            <!-- <small class="text-muted">
+                                Height wrt Ground: 
+                                {% if video.details.camera_setup.height_wrt_ground_info %}
+                                    Start: {{ video.details.camera_setup.height_wrt_ground_start }},
+                                    End: {{ video.details.camera_setup.height_wrt_ground_end }},
+                                    total: {{ video.details.camera_setup.height_wrt_ground_info }}
+                                    {% if video.details.camera_setup.is_height_wrt_ground_applicable %}
+                                    (Applicable)
+                                    {% else %}
+                                    (Not Applicable)
+                                    {% endif %}
+                                {% else %}
+                                    No height information available
+                                {% endif %}
+                            </small> -->
+                        </div>
                         <button class="expand-button" onclick="toggleVideo('{{ video.name }}')">Show/Hide Video</button>
                         <div id="player-{{ video.name }}" class="video-player">
                             <!-- Video element will be created when button is clicked -->

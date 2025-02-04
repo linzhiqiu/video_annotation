@@ -17,8 +17,8 @@
         "The video presents an inconsistency between the subject and the scene, making shot size classification challenging.",
         "The video shows a mismatch between the subject and the scene, making shot size classification difficult."
     ],
-    "pos_rule_str": "self.is_just_subject_scene_mismatch_shot is True",
-    "neg_rule_str": "self.is_just_subject_scene_mismatch_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_subject_scene_mismatch_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_subject_scene_mismatch_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

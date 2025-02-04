@@ -32,8 +32,8 @@
         "The first frame of the video establishes the surroundings rather than a character.",
         "A video that opens with a wide-angle scene where the environment is more prominent than the subject."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_wide', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'extreme_wide'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['extreme_wide', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

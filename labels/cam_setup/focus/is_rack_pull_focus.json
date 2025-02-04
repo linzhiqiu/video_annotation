@@ -27,8 +27,8 @@
         "A video with intentional focus pulls.",
         "A shot using focus racking technique."
     ],
-    "pos_rule_str": "self.is_rack_pull_focus is True",
-    "neg_rule_str": "self.is_rack_pull_focus is False",
+    "pos_rule_str": "self.cam_setup.is_rack_pull_focus is True",
+    "neg_rule_str": "self.cam_setup.is_rack_pull_focus is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

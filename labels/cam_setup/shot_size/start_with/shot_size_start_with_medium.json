@@ -31,8 +31,8 @@
         "A video starting with a medium shot that provides a natural composition of the subject.",
         "A cinematic medium shot that ensures a balanced framing between the subject and background."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'medium'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['medium', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'medium'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['medium', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -21,8 +21,8 @@
         "The closing shot is a extreme wide shot.",
         "The closing shot of the video is a extreme wide shot."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'extreme_wide'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['extreme_wide', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'extreme_wide'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['extreme_wide', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

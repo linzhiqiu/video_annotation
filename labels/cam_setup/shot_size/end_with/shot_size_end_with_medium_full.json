@@ -31,8 +31,8 @@
         "A video ending with a medium full shot that provides a natural subject framing.",
         "A cinematic medium full shot that ensures the subject remains the focal point."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'medium_full'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['medium_full', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'medium_full'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['medium_full', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

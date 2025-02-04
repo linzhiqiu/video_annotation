@@ -27,8 +27,8 @@
         "A video with increasing camera height.",
         "A shot moving to higher position."
     ],
-    "pos_rule_str": "self.height_wrt_subject_change_from_low_to_high is True",
-    "neg_rule_str": "self.height_wrt_subject_change_from_low_to_high is False",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_change_from_low_to_high is True",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_change_from_low_to_high is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

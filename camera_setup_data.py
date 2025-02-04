@@ -85,6 +85,23 @@ class CameraSetupData:
         self.focus_change_reason = "no_change"
         
         self.camera_focus_description = ""
+
+        # Initialize derived attributes
+        self.camera_angle_info = {'start': self.camera_angle_start, 'end': self.camera_angle_end}
+        self.is_camera_angle_applicable = False
+        self.is_dutch_angle = False
+        self.is_dutch_angle_varying = False
+        self.is_dutch_angle_fixed = False
+        self.camera_angle_change_from_high_to_low = False
+        self.camera_angle_change_from_low_to_high = False
+
+        # Initialize other info dictionaries
+        self.shot_size_info = {'start': self.shot_size_start, 'end': self.shot_size_end}
+        self.height_wrt_subject_info = {'start': self.subject_height_start, 'end': self.subject_height_end}
+        self.height_wrt_ground_info = {'start': self.overall_height_start, 'end': self.overall_height_end}
+        
+        # Call set_camera_setup_attributes to initialize all derived attributes
+        self.set_camera_setup_attributes()
     
     def set_camera_setup_attributes(self):
         self._set_framing_subject_attributes()
@@ -322,6 +339,15 @@ class CameraSetupData:
         
         
 
+    def set_camera_setup_attributes(self):
+        self._set_framing_subject_attributes()
+        self._set_shot_type_attributes()
+        self._set_shot_size_attributes()
+        self._set_height_relative_to_subject_attributes()
+        self._set_height_relative_to_ground_attributes()
+        self._set_camera_angle_attributes()
+        self._set_focus_attributes()
+    
     def set_shot_transition(self, shot_transition):
         if isinstance(shot_transition, bool):
             self.shot_transition = shot_transition
@@ -602,9 +628,9 @@ class CameraSetupData:
         if self.overall_height_start == self.overall_height_end and self.overall_height_start != "unknown":
             raise ValueError("Overall height start and end should not be the same")
 
-        # Camera angle start and end should not be the same unless for "unknown"
-        if self.camera_angle_start == self.camera_angle_end and self.camera_angle_start != "unknown":
-            raise ValueError("Camera angle start and end should not be the same")
+        # # Camera angle start and end should not be the same unless for "unknown"
+        # if self.camera_angle_start == self.camera_angle_end and self.camera_angle_start != "unknown":
+        #     raise ValueError("Camera angle start and end should not be the same")
 
         # Focus plane start and end should not be the same unless for "unknown"
         if self.focus_plane_start == self.focus_plane_end and self.focus_plane_start != "unknown":

@@ -27,8 +27,8 @@
         "A video with continuous focus.",
         "A shot following moving elements."
     ],
-    "pos_rule_str": "self.is_focus_tracking is True",
-    "neg_rule_str": "self.is_focus_tracking is False",
+    "pos_rule_str": "self.cam_setup.is_focus_tracking is True",
+    "neg_rule_str": "self.cam_setup.is_focus_tracking is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

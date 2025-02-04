@@ -168,43 +168,75 @@ class BatchVisualizer:
                 f"Label '{label_name}' not found. Available labels:\n{self.labels}"
             )
     
-    def _get_video_details(self, video: VideoData) -> Dict[str, Any]:
-        """Extract all relevant details from a video."""
+    def _get_video_details(self, video: VideoData) -> dict:
+        """Get relevant details from a video for categorization."""
         details = {
             'camera_motion': {},
             'camera_setup': {},
-            'lighting_setup': {}  # Default empty dict if light_setup is not set
+            'lighting_setup': {}
         }
-
-        # Try to get camera motion details
+        
         try:
+            motion_data = video.cam_motion
             details['camera_motion'] = {
-                attr: getattr(video.cam_motion, attr)
-                for attr in dir(video.cam_motion)
-                if not attr.startswith('_') and not callable(getattr(video.cam_motion, attr))
+                'major_simple': motion_data.camera_movement == 'major_simple',
+                'forward': motion_data.camera_forward_backward == 'forward',
+                'backward': motion_data.camera_forward_backward == 'backward',
+                'steadiness': motion_data.steadiness
             }
-        except AttributeError:
-            logging.warning(f"Camera motion not set for video")
-        
-        # Try to get camera setup details
+        except AttributeError as e:
+            logging.warning(f"Camera motion not set: {e}")
+            
         try:
+            setup_data = video.cam_setup
+            # Initialize camera angle info and focus info
+            setup_data._set_camera_angle_attributes()
+            setup_data._set_height_relative_to_ground_attributes()  # Make sure height attributes are initialized
             details['camera_setup'] = {
-                attr: getattr(video.cam_setup, attr)
-                for attr in dir(video.cam_setup)
-                if not attr.startswith('_') and not callable(getattr(video.cam_setup, attr))
+                'camera_angle_info': setup_data.camera_angle_info,
+                'is_camera_angle_applicable': setup_data.is_camera_angle_applicable,
+                'camera_angle_start': setup_data.camera_angle_start,
+                'camera_angle_end': setup_data.camera_angle_end,
+                'is_dutch_angle': setup_data.is_dutch_angle,
+                'is_dutch_angle_varying': setup_data.is_dutch_angle_varying,
+                'is_dutch_angle_fixed': setup_data.is_dutch_angle_fixed,
+                'camera_angle_change_from_high_to_low': setup_data.camera_angle_change_from_high_to_low,
+                'camera_angle_change_from_low_to_high': setup_data.camera_angle_change_from_low_to_high,
+                'height_wrt_ground_info': setup_data.height_wrt_ground_info,
+                'is_height_wrt_ground_applicable': setup_data.is_height_wrt_ground_applicable,
+                'height_wrt_ground_start': setup_data.overall_height_start,
+                'height_wrt_ground_end': setup_data.overall_height_end
             }
-        except AttributeError:
-            logging.warning(f"Camera setup not set for video")
-        
-        # Try to get lighting setup details
+        except AttributeError as e:
+            logging.warning(f"Camera setup not set: {e}")
+            details['camera_setup'] = {
+                'camera_angle_info': {'start': 'unknown', 'end': 'unknown'},
+                'is_camera_angle_applicable': False,
+                'camera_angle_start': 'unknown',
+                'camera_angle_end': 'unknown',
+                'is_dutch_angle': False,
+                'is_dutch_angle_varying': False,
+                'is_dutch_angle_fixed': False,
+                'camera_angle_change_from_high_to_low': False,
+                'camera_angle_change_from_low_to_high': False,
+                'focus_info': {'start': 'unknown', 'end': 'unknown'},
+                'camera_focus': 'unknown',
+                'focus_plane_start': 'unknown',
+                'focus_plane_end': 'unknown',
+                'focus_change_reason': 'no_change',
+                'height_wrt_ground_info': 'unknown',
+                'is_height_wrt_ground_applicable': False,
+                'height_wrt_ground_start': 'unknown',
+                'height_wrt_ground_end': 'unknown'
+            }
+            
         try:
+            light_data = video.light_setup
             details['lighting_setup'] = {
-                attr: getattr(video.light_setup, attr)
-                for attr in dir(video.light_setup)
-                if not attr.startswith('_') and not callable(getattr(video.light_setup, attr))
+                # Add lighting setup details here if needed
             }
-        except AttributeError:
-            logging.warning(f"Light setup not set for video")
+        except AttributeError as e:
+            logging.warning(f"Light setup not set: {e}")
             
         return details
 
@@ -255,7 +287,11 @@ class BatchVisualizer:
                     logging.info("  Forward/Backward: Not set")
 
                 try:
-                    logging.info(f"  Camera angle: {video.cam_setup.camera_angle_start}")
+                    # Print detailed camera angle info
+                    logging.info(f"  Camera angle info:")
+                    logging.info(f"    Start: {video.cam_setup.camera_angle_info['start']}")
+                    logging.info(f"    End: {video.cam_setup.camera_angle_info['end']}")
+                    logging.info(f"    Is applicable: {video.cam_setup.is_camera_angle_applicable}")
                 except AttributeError:
                     logging.info("  Camera angle: Not set")
 

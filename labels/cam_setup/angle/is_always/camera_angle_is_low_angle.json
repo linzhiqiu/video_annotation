@@ -26,8 +26,8 @@
         "A video where the camera remains angled upward throughout.",
         "A scene consistently framed from a low perspective."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'low_angle' and self.camera_angle_info['end'] == 'low_angle'",
-    "neg_rule_str": "not (self.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.camera_angle_info['end'] in ['low_angle', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'low_angle' and self.cam_setup.camera_angle_info['end'] == 'low_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['low_angle', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

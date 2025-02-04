@@ -31,8 +31,8 @@
         "A video starting with a medium-full shot that focuses on a human subject while keeping part of their legs visible.",
         "A cinematic medium-full shot ensuring the subject is framed naturally within the scene."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'medium_full'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['medium_full', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'medium_full'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['medium_full', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

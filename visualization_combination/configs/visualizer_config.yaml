@@ -12,7 +12,7 @@ constraints:
 
 # Labels to analyze
 labels:
-  # Camera Movements
+  # # Camera Movements
   # # Arc & Crane Movements
   # - cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
   # - cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
@@ -52,23 +52,23 @@ labels:
   # - cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
   # - cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
 
-  # Ground-Centric Movements
-  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
-  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
-  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
-  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
-  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
-  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
-  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
-  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
-  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
-  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
+  # # Ground-Centric Movements
+  # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
+  # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
+  # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
+  # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
+  # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
+  # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
+  # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
+  # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+  # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
+  # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
 
   # # Object-Centric Movements
   # # Tracking Shots
@@ -108,52 +108,52 @@ labels:
 
   # # Camera Setup
   # # Camera Angle
-  # - cam_setup/camera_angle/camera_angle_change_from_high_to_low
-  # - cam_setup/camera_angle/camera_angle_change_from_low_to_high
-  # - cam_setup/camera_angle/end_with/camera_angle_end_with_bird_eye_angle
-  # - cam_setup/camera_angle/end_with/camera_angle_end_with_high_angle
-  # - cam_setup/camera_angle/end_with/camera_angle_end_with_level_angle
-  # - cam_setup/camera_angle/end_with/camera_angle_end_with_low_angle
-  # - cam_setup/camera_angle/end_with/camera_angle_end_with_worm_eye_angle
-  # - cam_setup/camera_angle/is_camera_angle_applicable
-  # - cam_setup/camera_angle/is_dutch_angle
-  # - cam_setup/camera_angle/is_dutch_angle_fixed
-  # - cam_setup/camera_angle/is_dutch_angle_varying
-  # - cam_setup/camera_angle/start_with/camera_angle_start_with_bird_eye_angle
-  # - cam_setup/camera_angle/start_with/camera_angle_start_with_high_angle
-  # - cam_setup/camera_angle/start_with/camera_angle_start_with_level_angle
-  # - cam_setup/camera_angle/start_with/camera_angle_start_with_low_angle
-  # - cam_setup/camera_angle/start_with/camera_angle_start_with_worm_eye_angle
+  # - cam_setup/angle/camera_angle_change_from_high_to_low
+  # - cam_setup/angle/camera_angle_change_from_low_to_high
+  # - cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+  # - cam_setup/angle/end_with/camera_angle_end_with_high_angle
+  # - cam_setup/angle/end_with/camera_angle_end_with_level_angle
+  # - cam_setup/angle/end_with/camera_angle_end_with_low_angle
+  # - cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+  # - cam_setup/angle/is_always/camera_angle_is_bird_eye_angle
+  # - cam_setup/angle/is_always/camera_angle_is_high_angle
+  # - cam_setup/angle/is_always/camera_angle_is_level_angle
+  # - cam_setup/angle/is_always/camera_angle_is_low_angle
+  # - cam_setup/angle/is_always/camera_angle_is_worm_eye_angle
+  # - cam_setup/angle/is_camera_angle_applicable
+  # - cam_setup/angle/is_dutch_angle
+  # - cam_setup/angle/is_dutch_angle_fixed
+  # - cam_setup/angle/is_dutch_angle_varying
+  # - cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+  # - cam_setup/angle/start_with/camera_angle_start_with_high_angle
+  # - cam_setup/angle/start_with/camera_angle_start_with_level_angle
+  # - cam_setup/angle/start_with/camera_angle_start_with_low_angle
+  # - cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
 
   # # Camera Focus
-  # - cam_setup/camera_focus/focus_change_from_far_to_near
-  # - cam_setup/camera_focus/focus_change_from_near_to_far
-  # - cam_setup/camera_focus/is_deep_focus
-  # - cam_setup/camera_focus/is_focus_applicable
-  # - cam_setup/camera_focus/is_focus_tracking
-  # - cam_setup/camera_focus/is_rack_pull_focus
-  # - cam_setup/camera_focus/is_shallow_focus
-  # - cam_setup/camera_focus/is_ultra_shallow_focus
-
-  # # Camera Height
-  # - cam_setup/camera_height_wrt_ground/above_water_to_underwater
-  # - cam_setup/camera_height_wrt_ground/height_wrt_ground_change_from_high_to_low
-  # - cam_setup/camera_height_wrt_ground/height_wrt_ground_change_from_low_to_high
-  # - cam_setup/camera_height_wrt_ground/is_overall_height_applicable
-  # - cam_setup/camera_height_wrt_ground/underwater_to_above_water
-  # - cam_setup/camera_height_wrt_subject/height_wrt_subject_change_from_high_to_low
-  # - cam_setup/camera_height_wrt_subject/height_wrt_subject_change_from_low_to_high
-  # - cam_setup/camera_height_wrt_subject/is_subject_height_applicable
-
-  # # Focus
   # - cam_setup/focus/end_with/focus_end_with_background
   # - cam_setup/focus/end_with/focus_end_with_foreground
   # - cam_setup/focus/end_with/focus_end_with_middle_ground
+  # - cam_setup/focus/end_with/focus_end_with_out_of_focus
+  # - cam_setup/focus/focus_change_from_far_to_near
+  # - cam_setup/focus/focus_change_from_near_to_far
+  # - cam_setup/focus/is_always/focus_is_background
+  # - cam_setup/focus/is_always/focus_is_foreground
+  # - cam_setup/focus/is_always/focus_is_middle_ground
+  # - cam_setup/focus/is_always/focus_is_out_of_focus
+  # - cam_setup/focus/is_deep_focus
+  # - cam_setup/focus/is_focus_applicable
+  # - cam_setup/focus/is_focus_tracking
+  # - cam_setup/focus/is_rack_pull_focus
+  # - cam_setup/focus/is_shallow_focus
+  # - cam_setup/focus/is_ultra_shallow_focus
   # - cam_setup/focus/start_with/focus_start_with_background
   # - cam_setup/focus/start_with/focus_start_with_foreground
   # - cam_setup/focus/start_with/focus_start_with_middle_ground
+  # - cam_setup/focus/start_with/focus_start_with_out_of_focus
 
-  # # Height Relative to Ground/Subject
+  # # # Height Relative to Ground/Subject
+  # - cam_setup/height_wrt_ground/above_water_to_underwater
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
@@ -161,6 +161,16 @@ labels:
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+  # - cam_setup/height_wrt_ground/height_wrt_ground_change_from_high_to_low
+  # - cam_setup/height_wrt_ground/height_wrt_ground_change_from_low_to_high
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_aerial_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_eye_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_ground_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_hip_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_overhead_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_underwater_level
+  # - cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_water_level
+  # - cam_setup/height_wrt_ground/is_height_wrt_ground_applicable
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
@@ -168,9 +178,16 @@ labels:
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
   # - cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+  # - cam_setup/height_wrt_ground/underwater_to_above_water
   # - cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_above_subject
   # - cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_at_subject
   # - cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_below_subject
+  # - cam_setup/height_wrt_subject/height_wrt_subject_change_from_high_to_low
+  # - cam_setup/height_wrt_subject/height_wrt_subject_change_from_low_to_high
+  # - cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_above_subject
+  # - cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_at_subject
+  # - cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_below_subject
+  # - cam_setup/height_wrt_subject/is_subject_height_applicable
   # - cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_above_subject
   # - cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_at_subject
   # - cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_below_subject
@@ -195,7 +212,6 @@ labels:
   # - cam_setup/point_of_view/third_person_top_down_game_pov
 
   # # Shot Size and Type
-  # - cam_setup/shot_size/disappearing_shot
   # - cam_setup/shot_size/end_with/shot_size_end_with_close_up
   # - cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
   # - cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
@@ -204,8 +220,15 @@ labels:
   # - cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
   # - cam_setup/shot_size/end_with/shot_size_end_with_medium_full
   # - cam_setup/shot_size/end_with/shot_size_end_with_wide
+  # - cam_setup/shot_size/is_always/shot_size_is_close_up
+  # - cam_setup/shot_size/is_always/shot_size_is_extreme_close_up
+  # - cam_setup/shot_size/is_always/shot_size_is_extreme_wide
+  # - cam_setup/shot_size/is_always/shot_size_is_full
+  # - cam_setup/shot_size/is_always/shot_size_is_medium
+  # - cam_setup/shot_size/is_always/shot_size_is_medium_close_up
+  # - cam_setup/shot_size/is_always/shot_size_is_medium_full
+  # - cam_setup/shot_size/is_always/shot_size_is_wide
   # - cam_setup/shot_size/is_shot_size_applicable
-  # - cam_setup/shot_size/revealing_shot
   # - cam_setup/shot_size/shot_size_change
   # - cam_setup/shot_size/shot_size_change_from_large_to_small
   # - cam_setup/shot_size/shot_size_change_from_small_to_large
@@ -217,7 +240,9 @@ labels:
   # - cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
   # - cam_setup/shot_size/start_with/shot_size_start_with_medium_full
   # - cam_setup/shot_size/start_with/shot_size_start_with_wide
-  # - cam_setup/shot_size/subject_switch
+  # - cam_setup/shot_size/subject_disappearing
+  # - cam_setup/shot_size/subject_revealing
+  # - cam_setup/shot_size/subject_switching
 
   # # Shot Type and Subject Framing
   # - cam_setup/shot_type/is_human_shot
@@ -233,7 +258,6 @@ labels:
   # - cam_setup/shot_type/is_just_scenery_shot
   # - cam_setup/shot_type/is_just_subject_scene_mismatch_shot
   # - cam_setup/shot_type/is_non_human_shot
-  # - cam_setup/shot_type/is_scenery_shot
   # - cam_setup/subject_framing/has_many_subjects
   # - cam_setup/subject_framing/has_single_dominant_subject
   # - cam_setup/subject_framing/has_subject_change

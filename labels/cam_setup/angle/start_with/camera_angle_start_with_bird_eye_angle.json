@@ -27,8 +27,8 @@
         "A video that starts with a fully downward-facing angle.",
         "A scene that opens with a bird's eye framing of the environment."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'bird_eye_angle'",
-    "neg_rule_str": "self.camera_angle_info['start'] not in ['bird_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'bird_eye_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['bird_eye_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

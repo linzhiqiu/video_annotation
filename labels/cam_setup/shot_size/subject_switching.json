@@ -22,8 +22,8 @@
         "The shot changes its principal subject to another."
 
     ],
-    "pos_rule_str": "self.subject_switching is True",
-    "neg_rule_str": "self.subject_switching is False",
+    "pos_rule_str": "self.cam_setup.subject_switching is True",
+    "neg_rule_str": "self.cam_setup.subject_switching is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

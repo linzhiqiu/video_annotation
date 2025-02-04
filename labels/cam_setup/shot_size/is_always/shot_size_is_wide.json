@@ -27,8 +27,8 @@
         "A video where subjects and surroundings are visible throughout.",
         "A sequence maintaining wide perspective of the entire scene."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'wide' and self.shot_size_info['end'] == 'wide'",
-    "neg_rule_str": "not (self.shot_size_info['start'] in ['wide', 'unknown'] and self.shot_size_info['end'] in ['wide', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'wide' and self.cam_setup.shot_size_info['end'] == 'wide'",
+    "neg_rule_str": "not (self.cam_setup.shot_size_info['start'] in ['wide', 'unknown'] and self.cam_setup.shot_size_info['end'] in ['wide', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

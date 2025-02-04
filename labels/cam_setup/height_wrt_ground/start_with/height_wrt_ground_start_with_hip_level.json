@@ -27,8 +27,8 @@
         "A video that starts with a perspective noticeably below eye level but not at ground level.",
         "A scene that opens with a balanced framing from a mid-body height."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'hip_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'hip_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

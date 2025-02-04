@@ -27,8 +27,8 @@
         "A video showing intentional and steady framing of its subjects.",
         "A shot with controlled and purposeful subject positioning."
     ],
-    "pos_rule_str": "self.is_framing_subject is True",
-    "neg_rule_str": "self.is_framing_subject is False",
+    "pos_rule_str": "self.cam_setup.is_framing_subject is True",
+    "neg_rule_str": "self.cam_setup.is_framing_subject is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

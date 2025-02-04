@@ -27,8 +27,8 @@
         "A video that starts with the camera framing subjects from an extreme low viewpoint.",
         "A scene that opens with the camera tilted strongly upwards, emphasizing height."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'worm_eye_angle'",
-    "neg_rule_str": "self.camera_angle_info['start'] not in ['worm_eye_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'worm_eye_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['worm_eye_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

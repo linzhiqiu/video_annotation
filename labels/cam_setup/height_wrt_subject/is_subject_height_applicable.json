@@ -26,8 +26,8 @@
         "A video with assessable camera elevation.",
         "A shot with determinable vertical positioning."
     ],
-    "pos_rule_str": "self.is_height_wrt_subject_applicable is True",
-    "neg_rule_str": "self.is_height_wrt_subject_applicable is False",
+    "pos_rule_str": "self.cam_setup.is_height_wrt_subject_applicable is True",
+    "neg_rule_str": "self.cam_setup.is_height_wrt_subject_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

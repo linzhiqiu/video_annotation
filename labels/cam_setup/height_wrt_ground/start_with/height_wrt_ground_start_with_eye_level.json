@@ -27,8 +27,8 @@
         "A video that starts with a perspective slightly above waist height but below overhead.",
         "A scene that opens with a balanced, eye-level framing of the environment."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'eye_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'eye_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

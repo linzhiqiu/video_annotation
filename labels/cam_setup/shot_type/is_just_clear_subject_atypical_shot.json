@@ -27,8 +27,8 @@
         "A video displaying stylized character proportions.",
         "A shot emphasizing non-realistic anatomy."
     ],
-    "pos_rule_str": "self.is_just_clear_subject_atypical_shot is True",
-    "neg_rule_str": "self.is_just_clear_subject_atypical_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_clear_subject_atypical_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_clear_subject_atypical_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

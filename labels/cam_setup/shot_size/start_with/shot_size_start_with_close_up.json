@@ -31,8 +31,8 @@
         "A video starting with a close-up shot that enhances the subject’s presence on screen.",
         "A cinematic close-up shot that ensures the focus remains on the subject's key details."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'close_up'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['close_up', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'close_up'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['close_up', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

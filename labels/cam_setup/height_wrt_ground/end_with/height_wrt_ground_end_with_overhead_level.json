@@ -27,8 +27,8 @@
         "A video that ends with a high but not extreme aerial perspective.",
         "A scene that closes with an elevated, overhead framing."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'overhead_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'overhead_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -26,8 +26,8 @@
         "A video where the camera remains above, looking straight down.",
         "A scene consistently framed from a bird’s eye perspective."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'bird_eye_angle' and self.camera_angle_info['end'] == 'bird_eye_angle'",
-    "neg_rule_str": "not (self.camera_angle_info['start'] in ['bird_eye_angle', 'unknown'] and self.camera_angle_info['end'] in ['bird_eye_angle', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'bird_eye_angle' and self.cam_setup.camera_angle_info['end'] == 'bird_eye_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['bird_eye_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['bird_eye_angle', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

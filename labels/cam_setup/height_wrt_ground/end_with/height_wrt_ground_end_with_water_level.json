@@ -27,8 +27,8 @@
         "A video that ends with a steady, water-level viewpoint.",
         "A scene that concludes with a perspective where the water surface remains clearly visible."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['end'] == 'water_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['water_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'water_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['water_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

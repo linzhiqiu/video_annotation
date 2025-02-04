@@ -27,8 +27,8 @@
         "A shot where the camera drops closer to the ground over time.",
         "A sequence capturing the camera lowering in elevation."
     ],
-    "pos_rule_str": "self.height_wrt_ground_change_from_high_to_low is True",
-    "neg_rule_str": "self.height_wrt_ground_change_from_high_to_low is False",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_change_from_high_to_low is True",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_change_from_high_to_low is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

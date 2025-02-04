@@ -26,8 +26,8 @@
         "A shot showing pure environmental content.",
         "A video highlighting only scenery."
     ],
-    "pos_rule_str": "self.is_just_scenery_shot is True",
-    "neg_rule_str": "self.is_just_scenery_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_scenery_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_scenery_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

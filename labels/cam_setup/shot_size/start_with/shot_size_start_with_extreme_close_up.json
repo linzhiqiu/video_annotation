@@ -31,8 +31,8 @@
         "A video starting with a narrow field of view focusing intensely on a small subject detail.",
         "A cinematic extreme close-up shot that enhances the subject’s fine textures or intricate elements."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'extreme_close_up'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_close_up', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'extreme_close_up'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['extreme_close_up', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -27,8 +27,8 @@
         "A video ending with the background standing out as the main point of focus.",
         "A scene that concludes with a sharp background while foreground elements are blurred."
     ],
-    "pos_rule_str": "self.focus_info['end'] == 'background'",
-    "neg_rule_str": "self.focus_info['end'] not in ['background', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['end'] == 'background'",
+    "neg_rule_str": "self.cam_setup.focus_info['end'] not in ['background', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

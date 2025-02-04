@@ -27,8 +27,8 @@
         "A video that starts with an elevated framing, angled slightly downward.",
         "A scene that opens with the camera positioned higher than a neutral level shot, tilting downward."
     ],
-    "pos_rule_str": "self.camera_angle_info['start'] == 'high_angle'",
-    "neg_rule_str": "self.camera_angle_info['start'] not in ['high_angle', 'unknown']",
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'high_angle'",
+    "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['high_angle', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

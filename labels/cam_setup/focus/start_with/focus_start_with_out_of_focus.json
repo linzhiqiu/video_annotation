@@ -27,8 +27,8 @@
         "A video beginning with a hazy, unclear frame.",
         "A scene that opens with a completely blurred composition."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'out_of_focus'",
-    "neg_rule_str": "self.focus_info['start'] not in ['out_of_focus', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'out_of_focus'",
+    "neg_rule_str": "self.cam_setup.focus_info['start'] not in ['out_of_focus', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

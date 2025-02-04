@@ -31,8 +31,8 @@
         "A video starting with a balanced wide shot where no single element dominates.",
         "A cinematic wide shot that includes both the subject and contextual environment."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'wide'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['wide', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'wide'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['wide', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

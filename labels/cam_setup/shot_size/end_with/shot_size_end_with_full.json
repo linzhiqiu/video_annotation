@@ -31,8 +31,8 @@
         "A video ending with a full-body shot that prioritizes the subject over the background.",
         "A cinematic full shot that ensures the subject is the focal point of the composition."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'full'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['full', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'full'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['full', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

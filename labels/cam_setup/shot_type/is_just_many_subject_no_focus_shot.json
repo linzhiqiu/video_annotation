@@ -22,8 +22,8 @@
         "A shot featuring multiple subjects with no dominant focus.",
         "A video showing various subjects without a primary focus."
     ],
-    "pos_rule_str": "self.is_just_many_subject_no_focus_shot is True",
-    "neg_rule_str": "self.is_just_many_subject_no_focus_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_many_subject_no_focus_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_many_subject_no_focus_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

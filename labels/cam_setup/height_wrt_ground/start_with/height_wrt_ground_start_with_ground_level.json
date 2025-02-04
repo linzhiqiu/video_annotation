@@ -27,8 +27,8 @@
         "A video that starts with a ground-skimming camera angle.",
         "A scene that opens with a close-to-the-ground framing."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'ground_level'",
-    "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['ground_level', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'ground_level'",
+    "neg_rule_str": "self.cam_setup.height_wrt_ground_info['start'] not in ['ground_level', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

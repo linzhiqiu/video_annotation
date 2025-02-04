@@ -29,8 +29,8 @@
         "A sequence maintaining close-up focus on the subject's defining characteristics.",
         "A video shot entirely in close-up to enhance the subject's presence."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'close_up' and self.shot_size_info['end'] == 'close_up'",
-    "neg_rule_str": "not (self.shot_size_info['start'] in ['close_up', 'unknown'] and self.shot_size_info['end'] in ['close_up', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'close_up' and self.cam_setup.shot_size_info['end'] == 'close_up'",
+    "neg_rule_str": "not (self.cam_setup.shot_size_info['start'] in ['close_up', 'unknown'] and self.cam_setup.shot_size_info['end'] in ['close_up', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

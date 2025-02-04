@@ -452,19 +452,50 @@ def inspect_video(video_name: str, video_data_dict: dict):
     except Exception as e:
         print(f"Error accessing lighting setup data: {e}")
 
-def debug_video_data(video_data_dict: Dict[str, VideoData], num_samples: int = 1):
-    """Debug function to print detailed information about random video samples."""
-    import random
+def debug_video_data(video_data: VideoData, video_name: str):
+    """Print debug information for a video."""
+    print(f"\nDEBUG INFO FOR: {video_name}")
+    print("=" * 80)
     
-    if not video_data_dict:
-        logging.warning("No video data to debug!")
-        return
-        
-    video_names = list(video_data_dict.keys())
-    samples = random.sample(video_names, min(num_samples, len(video_names)))
-    
-    for video_name in samples:
-        inspect_video(video_name, video_data_dict)
+    # Debug Camera Motion
+    print("\nCamera Motion:")
+    print("-" * 40)
+    try:
+        motion = video_data.cam_motion
+        for attr in dir(motion):
+            if not attr.startswith('_') and not callable(getattr(motion, attr)):
+                value = getattr(motion, attr)
+                print(f"{attr}: {value}")
+    except AttributeError as e:
+        print(f"Camera motion not set: {e}")
+
+    # Debug Camera Setup
+    print("\nCamera Setup:")
+    print("-" * 40)
+    try:
+        setup = video_data.cam_setup
+        for attr in dir(setup):
+            if not attr.startswith('_') and not callable(getattr(setup, attr)):
+                value = getattr(setup, attr)
+                print(f"{attr}: {value}")
+    except AttributeError as e:
+        print(f"Camera setup not set: {e}")
+
+    # Debug Workflow Details
+    print("\nWorkflow Details:")
+    print("-" * 40)
+    try:
+        workflow = video_data.workflow_details
+        if workflow:
+            print(f"Video URL: {workflow.video_url}")
+            print(f"Editing URL: {workflow.editing_url}")
+            print(f"Approver: {workflow.approver}")
+            print(f"Approval Time: {workflow.approval_time}")
+            print(f"Labelers: {workflow.labelers}")
+    except AttributeError as e:
+        print(f"Workflow details not set: {e}")
+
+    print("\n" + "=" * 80) 
 
 def search_videos(partial_name: str, video_data_dict: dict):
     """Search for videos containing the given string in their name"""

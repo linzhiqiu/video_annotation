@@ -591,12 +591,12 @@
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "Bird's eye",
+        "value": "Bird’s eye",
         "data_value": "bird_eye_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "High angle (e.g., looking down at the subject)",
+        "value": "High angle (Looking down)",
         "data_value": "high_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       },
@@ -606,12 +606,12 @@
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "Low angle (e.g., looking up at the subject)",
+        "value": "Low angle (Looking up)",
         "data_value": "low_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "Worm's eye",
+        "value": "Worm’s eye",
         "data_value": "worm_eye_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       }
@@ -631,12 +631,12 @@
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "Bird's eye",
+        "value": "Bird’s eye",
         "data_value": "bird_eye_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "High angle (e.g., looking down at the subject)",
+        "value": "High angle (Looking down)",
         "data_value": "high_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       },
@@ -646,12 +646,12 @@
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "Low angle (e.g., looking up at the subject)",
+        "value": "Low angle (Looking up)",
         "data_value": "low_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "Worm's eye",
+        "value": "Worm’s eye",
         "data_value": "worm_eye_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       }
@@ -678,6 +678,11 @@
       {
         "value": "No",
         "data_value": "no",
+        "data_category": "CameraSetupData.dutch_angle"
+      },
+      {
+        "value": "Varying",
+        "data_value": "varying",
         "data_category": "CameraSetupData.dutch_angle"
       },
       {

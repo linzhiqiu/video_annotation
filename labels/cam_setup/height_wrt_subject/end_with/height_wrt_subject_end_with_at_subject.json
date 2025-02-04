@@ -27,8 +27,8 @@
         "A sequence ending with the subject viewed from an at-subject position.",
         "A video closing with a neutral-height framing of the subject."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['end'] == 'at_subject'",
-    "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['end'] == 'at_subject'",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

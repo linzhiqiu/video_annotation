@@ -27,8 +27,8 @@
         "A video that does not provide a distinct point of sharp focus.",
         "A composition that is consistently out of focus across its duration."
     ],
-    "pos_rule_str": "self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] == 'out_of_focus'",
-    "neg_rule_str": "not (self.focus_info['start'] in ['out_of_focus', 'unknown'] and self.focus_info['end'] in ['out_of_focus', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] == 'out_of_focus'",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

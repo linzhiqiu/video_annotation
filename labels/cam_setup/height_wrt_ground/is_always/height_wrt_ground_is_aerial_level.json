@@ -26,8 +26,8 @@
         "A video where the camera remains above ground at a high altitude.",
         "A scene consistently framed from an aerial viewpoint."
     ],
-    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'aerial_level' and self.height_wrt_ground_info['end'] == 'aerial_level'",
-    "neg_rule_str": "not (self.height_wrt_ground_info['start'] in ['aerial_level', 'unknown'] and self.height_wrt_ground_info['end'] in ['aerial_level', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'aerial_level' and self.cam_setup.height_wrt_ground_info['end'] == 'aerial_level'",
+    "neg_rule_str": "not (self.cam_setup.height_wrt_ground_info['start'] in ['aerial_level', 'unknown'] and self.cam_setup.height_wrt_ground_info['end'] in ['aerial_level', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

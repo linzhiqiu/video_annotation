@@ -27,8 +27,8 @@
         "A sequence beginning with the subject framed from a high perspective.",
         "A video opening with an overhead or high-angle framing of the subject."
     ],
-    "pos_rule_str": "self.height_wrt_subject_info['start'] == 'above_subject'",
-    "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']",
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['start'] == 'above_subject'",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

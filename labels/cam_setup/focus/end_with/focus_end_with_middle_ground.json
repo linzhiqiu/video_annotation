@@ -27,8 +27,8 @@
         "A video ending with the middle ground standing out as the main point of focus.",
         "A scene that concludes with a sharp middle ground while surroundings are blurred."
     ],
-    "pos_rule_str": "self.focus_info['end'] == 'middle_ground'",
-    "neg_rule_str": "self.focus_info['end'] not in ['middle_ground', 'unknown']",
+    "pos_rule_str": "self.cam_setup.focus_info['end'] == 'middle_ground'",
+    "neg_rule_str": "self.cam_setup.focus_info['end'] not in ['middle_ground', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
