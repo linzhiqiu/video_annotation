@@ -2,30 +2,24 @@
     "label": "Shot Size End With Close Up",
     "label_name": "shot_size_end_with_close_up",
     "def_question": [
-        "Does the video end with close up?"
+        "Does the video end with a up shot?"
     ],
     "alt_question": [
-        "Does the shot end with close up?",
-        "Is the ending frame showing close up?",
-        "Does the video end using close up?",
-        "Is the final shot at close up?",
-        "Does the sequence end with close up?",
-        "Is the last shot at close up?",
-        "Does the video close with close up?",
-        "Is the ending frame at close up?"
+        "Does the video close with a close-up shot?",
+        "Is the last shot of the video a close-up shot?",
+        "Does the video end with a close-up shot?",
+        "Is the closing shot of the video a close-up shot?",
+        "Does the video finish with a close-up shot?"
     ],
     "def_prompt": [
-        "A video that ends with close up."
+        "A video that ends with a close-up shot."
     ],
     "alt_prompt": [
-        "A shot ending with close up.",
-        "A video ending at close up.",
-        "A sequence concluding with close up.",
-        "A shot finally at close up.",
-        "A video closing with close up.",
-        "A shot ending at close up.",
-        "A video concluding with close up.",
-        "A sequence ending at close up."
+        "The video ends with a close-up shot.",
+        "The video closes with a close-up shot.",
+        "The last shot of the video is a close-up shot.",
+        "The closing shot is a close-up shot.",
+        "The closing shot of the video is a close-up shot."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'close_up'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['close_up', 'unknown']",

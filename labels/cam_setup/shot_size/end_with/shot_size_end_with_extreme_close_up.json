@@ -2,30 +2,24 @@
     "label": "Shot Size End With Extreme Close Up",
     "label_name": "shot_size_end_with_extreme_close_up",
     "def_question": [
-        "Does the video end with extreme close up?"
+        "Does the video end with a up shot?"
     ],
     "alt_question": [
-        "Does the shot end with extreme close up?",
-        "Is the ending frame showing extreme close up?",
-        "Does the video end using extreme close up?",
-        "Is the final shot at extreme close up?",
-        "Does the sequence end with extreme close up?",
-        "Is the last shot at extreme close up?",
-        "Does the video close with extreme close up?",
-        "Is the ending frame at extreme close up?"
+        "Does the video close with a extreme close-up shot?",
+        "Is the last shot of the video a extreme close-up shot?",
+        "Does the video end with a extreme close-up shot?",
+        "Is the closing shot of the video a extreme close-up shot?",
+        "Does the video finish with a extreme close-up shot?"
     ],
     "def_prompt": [
-        "A video that ends with extreme close up."
+        "A video that ends with a extreme close-up shot."
     ],
     "alt_prompt": [
-        "A shot ending with extreme close up.",
-        "A video ending at extreme close up.",
-        "A sequence concluding with extreme close up.",
-        "A shot finally at extreme close up.",
-        "A video closing with extreme close up.",
-        "A shot ending at extreme close up.",
-        "A video concluding with extreme close up.",
-        "A sequence ending at extreme close up."
+        "The video ends with a extreme close-up shot.",
+        "The video closes with a extreme close-up shot.",
+        "The last shot of the video is a extreme close-up shot.",
+        "The closing shot is a extreme close-up shot.",
+        "The closing shot of the video is a extreme close-up shot."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'extreme_close_up'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['extreme_close_up', 'unknown']",

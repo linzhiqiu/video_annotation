@@ -2,30 +2,24 @@
     "label": "Shot Size End With Wide",
     "label_name": "shot_size_end_with_wide",
     "def_question": [
-        "Does the video end with wide?"
+        "Does the video end with a wide shot?"
     ],
     "alt_question": [
-        "Does the shot end with wide?",
-        "Is the ending frame showing wide?",
-        "Does the video end using wide?",
-        "Is the final shot at wide?",
-        "Does the sequence end with wide?",
-        "Is the last shot at wide?",
-        "Does the video close with wide?",
-        "Is the ending frame at wide?"
+        "Does the video close with a wide shot?",
+        "Is the last shot of the video a wide shot?",
+        "Does the video end with a wide shot?",
+        "Is the closing shot of the video a wide shot?",
+        "Does the video finish with a wide shot?"
     ],
     "def_prompt": [
-        "A video that ends with wide."
+        "A video that ends with a wide shot."
     ],
     "alt_prompt": [
-        "A shot ending with wide.",
-        "A video ending at wide.",
-        "A sequence concluding with wide.",
-        "A shot finally at wide.",
-        "A video closing with wide.",
-        "A shot ending at wide.",
-        "A video concluding with wide.",
-        "A sequence ending at wide."
+        "The video ends with a wide shot.",
+        "The video closes with a wide shot.",
+        "The last shot of the video is a wide shot.",
+        "The closing shot is a wide shot.",
+        "The closing shot of the video is a wide shot."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'wide'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['wide', 'unknown']",

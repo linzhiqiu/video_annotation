@@ -2,22 +2,23 @@
     "label": "Shot Size Start With Medium",
     "label_name": "shot_size_start_with_medium",
     "def_question": [
-        "Does the video begin with a medium shot?"
+        "Does the video start with a medium shot?"
     ],
     "alt_question": [
         "Does the video open with a medium shot?",
         "Is the first shot of the video a medium shot?",
-        "Does the video start with a tightly framed medium shot?",
-        "Is the opening shot of the video a medium shot?"
+        "Does the video start with a medium shot?",
+        "Is the opening shot of the video a medium shot?",
+        "Does the video begin with a medium shot?"
     ],
     "def_prompt": [
         "A video that starts with a medium shot."
     ],
     "alt_prompt": [
-        "The video begins with a medium shot.",
+        "The video starts with a medium shot.",
         "The video opens with a medium shot.",
         "The first shot of the video is a medium shot.",
-        "The video starts with a tightly framed medium shot.",
+        "The opening shot is a medium shot.",
         "The opening shot of the video is a medium shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'medium'",
