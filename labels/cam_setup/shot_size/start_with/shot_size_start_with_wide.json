@@ -2,22 +2,23 @@
     "label": "Shot Size Start With Wide",
     "label_name": "shot_size_start_with_wide",
     "def_question": [
-        "Does the video begin with a wide shot?"
+        "Does the video start with a wide shot?"
     ],
     "alt_question": [
         "Does the video open with a wide shot?",
         "Is the first shot of the video a wide shot?",
-        "Does the video start with a tightly framed wide shot?",
-        "Is the opening shot of the video a wide shot?"
+        "Does the video start with a wide shot?",
+        "Is the opening shot of the video a wide shot?",
+        "Does the video begin with a wide shot?"
     ],
     "def_prompt": [
         "A video that starts with a wide shot."
     ],
     "alt_prompt": [
-        "The video begins with a wide shot.",
+        "The video starts with a wide shot.",
         "The video opens with a wide shot.",
         "The first shot of the video is a wide shot.",
-        "The video starts with a tightly framed wide shot.",
+        "The opening shot is a wide shot.",
         "The opening shot of the video is a wide shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'wide'",

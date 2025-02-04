@@ -2,30 +2,24 @@
     "label": "Shot Size End With Medium Full",
     "label_name": "shot_size_end_with_medium_full",
     "def_question": [
-        "Does the video end with medium full?"
+        "Does the video end with a full shot?"
     ],
     "alt_question": [
-        "Does the shot end with medium full?",
-        "Is the ending frame showing medium full?",
-        "Does the video end using medium full?",
-        "Is the final shot at medium full?",
-        "Does the sequence end with medium full?",
-        "Is the last shot at medium full?",
-        "Does the video close with medium full?",
-        "Is the ending frame at medium full?"
+        "Does the video close with a medium-full shot?",
+        "Is the last shot of the video a medium-full shot?",
+        "Does the video end with a medium-full shot?",
+        "Is the closing shot of the video a medium-full shot?",
+        "Does the video finish with a medium-full shot?"
     ],
     "def_prompt": [
-        "A video that ends with medium full."
+        "A video that ends with a medium-full shot."
     ],
     "alt_prompt": [
-        "A shot ending with medium full.",
-        "A video ending at medium full.",
-        "A sequence concluding with medium full.",
-        "A shot finally at medium full.",
-        "A video closing with medium full.",
-        "A shot ending at medium full.",
-        "A video concluding with medium full.",
-        "A sequence ending at medium full."
+        "The video ends with a medium-full shot.",
+        "The video closes with a medium-full shot.",
+        "The last shot of the video is a medium-full shot.",
+        "The closing shot is a medium-full shot.",
+        "The closing shot of the video is a medium-full shot."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'medium_full'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['medium_full', 'unknown']",

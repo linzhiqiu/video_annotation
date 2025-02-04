@@ -2,23 +2,24 @@
     "label": "Shot Size Start With Close Up",
     "label_name": "shot_size_start_with_close_up",
     "def_question": [
-        "Does the video begin with a close-up shot?"
+        "Does the video start with a up shot?"
     ],
     "alt_question": [
-        "Does the video open with a close-up?",
-        "Is the first shot of the video a close-up?",
-        "Does the video start with a tightly framed close-up?",
-        "Is the opening shot of the video a close-up?"
+        "Does the video open with a close-up shot?",
+        "Is the first shot of the video a close-up shot?",
+        "Does the video start with a close-up shot?",
+        "Is the opening shot of the video a close-up shot?",
+        "Does the video begin with a close-up shot?"
     ],
     "def_prompt": [
         "A video that starts with a close-up shot."
     ],
     "alt_prompt": [
-        "The video begins with a close-up shot.",
-        "The video opens with a close-up.",
-        "The first shot of the video is a close-up.",
-        "The video starts with a tightly framed close-up.",
-        "The opening shot of the video is a close-up."
+        "The video starts with a close-up shot.",
+        "The video opens with a close-up shot.",
+        "The first shot of the video is a close-up shot.",
+        "The opening shot is a close-up shot.",
+        "The opening shot of the video is a close-up shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'close_up'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['close_up', 'unknown']",
