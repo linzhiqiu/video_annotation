@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground End With Ground Level",
     "label_name": "height_wrt_ground_end_with_ground_level",
     "def_question": [
-        "Does the video end with ground level?"
+        "Does the video end with the camera at ground level, positioned close to the ground?"
     ],
     "alt_question": [
-        "Does the shot end with ground level?",
-        "Is the ending frame showing ground level?",
-        "Does the video end using ground level?",
-        "Is the final shot at ground level?",
-        "Does the sequence end with ground level?",
-        "Is the last shot at ground level?",
-        "Does the video close with ground level?",
-        "Is the ending frame at ground level?"
+        "Does the shot end at ground level?",
+        "Is the final frame taken from a ground-level perspective?",
+        "Does the video conclude with a camera height very close to the ground?",
+        "Is the last shot captured from a low viewpoint near the ground surface?",
+        "Does the sequence close with a ground-level perspective?",
+        "Is the final shot positioned at a ground-level height?",
+        "Does the video close with a view where the ground is prominently visible?",
+        "Is the ending frame recorded with the camera positioned right above the ground?"
     ],
     "def_prompt": [
-        "A video that ends with ground level."
+        "The video ends with the camera at ground level, positioned close to the ground."
     ],
     "alt_prompt": [
-        "A shot ending with ground level.",
-        "A video ending at ground level.",
-        "A sequence concluding with ground level.",
-        "A shot finally at ground level.",
-        "A video closing with ground level.",
-        "A shot ending at ground level.",
-        "A video concluding with ground level.",
-        "A sequence ending at ground level."
+        "A shot ending at ground level, taken from a very low height.",
+        "A video concluding with a ground-level perspective, where the surface is dominant.",
+        "A sequence that ends with a camera positioned just above the ground.",
+        "A shot showing the environment from a low, near-ground viewpoint.",
+        "A video closing with a perspective that emphasizes the ground surface.",
+        "A shot where the camera is positioned directly above the ground level.",
+        "A video that ends with a ground-skimming camera angle.",
+        "A scene that closes with a close-to-the-ground framing."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['end'] == 'ground_level'",
     "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['ground_level', 'unknown']",

@@ -2,24 +2,34 @@
     "label": "Shot Size Start With Extreme Close Up",
     "label_name": "shot_size_start_with_extreme_close_up",
     "def_question": [
-        "Does the video start with an extreme close-up shot?"
+        "Does the video start with an extreme close-up shot that isolates a very small detail of the subject or scene?"
     ],
     "alt_question": [
-        "Does the video open with a extreme close-up shot?",
-        "Is the first shot of the video a extreme close-up shot?",
-        "Does the video start with a extreme close-up shot?",
-        "Is the opening shot of the video a extreme close-up shot?",
-        "Does the video begin with a extreme close-up shot?"
+        "Does the video open with an extreme close-up shot that focuses on a tiny detail?",
+        "Is the first shot an extreme close-up shot capturing an isolated part of the subject?",
+        "Does the video begin with an extreme close-up emphasizing texture or fine details?",
+        "Is the opening shot an extreme close-up where only a small portion of the subject is visible?",
+        "Does the first shot show an extreme close-up view with minimal surrounding context?",
+        "Is the initial shot an extreme close-up that highlights intricate features?",
+        "Does the video start with a shot where the subject takes up nearly the entire frame?",
+        "Is the first frame an extreme close-up that isolates a fine detail of the subject?",
+        "Does the video begin with an extreme close-up framing a small portion of a subject?",
+        "Is the opening shot a tight and detailed view of an object or subject’s feature?"
     ],
     "def_prompt": [
-        "A video that starts with an extreme close-up shot."
+        "A video that starts with an extreme close-up shot, isolating a very small detail of the subject or scene."
     ],
     "alt_prompt": [
-        "The video starts with a extreme close-up shot.",
-        "The video opens with a extreme close-up shot.",
-        "The first shot of the video is a extreme close-up shot.",
-        "The opening shot is a extreme close-up shot.",
-        "The opening shot of the video is a extreme close-up shot."
+        "The video starts with an extreme close-up shot capturing a tiny feature of the subject.",
+        "The video opens with an extreme close-up shot emphasizing small details.",
+        "The first shot of the video is an extreme close-up focusing on intricate textures.",
+        "The opening shot is an extreme close-up, making the subject’s details highly prominent.",
+        "The opening shot of the video is an extreme close-up with minimal surrounding context.",
+        "A shot that frames only a tiny part of the subject, emphasizing detail over broader context.",
+        "A video where the subject takes up nearly 100% of the frame, isolating a fine feature.",
+        "A shot where a minuscule portion of the subject is visible, creating an extreme close-up view.",
+        "A video starting with a narrow field of view focusing intensely on a small subject detail.",
+        "A cinematic extreme close-up shot that enhances the subject’s fine textures or intricate elements."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_close_up'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_close_up', 'unknown']",

@@ -1,0 +1,33 @@
+{
+    "label": "Height Wrt Ground Is Eye Level",
+    "label_name": "height_wrt_ground_is_eye_level",
+    "def_question": [
+        "Is the camera positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level?"
+    ],
+    "alt_question": [
+        "Does the camera remain at eye level for the entire video?",
+        "Is the starting and ending frame taken from an eye-level perspective?",
+        "Does the video maintain a height typical of a standing person’s eyes?",
+        "Is the camera positioned at eye level from start to finish?",
+        "Does the sequence keep an eye-level viewpoint without transitioning?",
+        "Is the video filmed entirely at eye level?",
+        "Does the framing remain above waist height but below overhead for the whole video?",
+        "Is the entire shot positioned at a natural human viewpoint?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level."
+    ],
+    "alt_prompt": [
+        "A video maintaining an eye-level perspective from start to finish.",
+        "A shot consistently captured at a natural viewing height.",
+        "A video where the camera stays at eye level without changing.",
+        "A sequence entirely framed from an eye-level viewpoint.",
+        "A shot maintaining an eye-level perspective without shifting heights.",
+        "A video where the camera remains at a natural human viewpoint.",
+        "A scene that is consistently framed from an eye-level height."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'eye_level' and self.height_wrt_ground_info['end'] == 'eye_level'",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'eye_level' and self.height_wrt_ground_info['end'] == 'eye_level')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject Start With At Subject",
     "label_name": "height_wrt_subject_start_with_at_subject",
     "def_question": [
-        "Does the video start with at subject?"
+        "Does the video start with the camera positioned at the same height as the subject?"
     ],
     "alt_question": [
-        "Does the shot start with at subject?",
-        "Is the starting frame showing at subject?",
-        "Does the video start using at subject?",
-        "Is the initial shot at at subject?",
-        "Does the sequence start with at subject?",
-        "Is the first shot at at subject?",
-        "Does the video open with at subject?",
-        "Is the starting frame at at subject?"
+        "Does the shot start with the camera level with the subject?",
+        "Is the starting frame showing the subject at eye level?",
+        "Does the video start with the camera at the subject’s height?",
+        "Is the initial shot taken from an eye-level perspective?",
+        "Does the sequence start with the camera positioned at subject level?",
+        "Is the first shot framed at the same height as the subject?",
+        "Does the video open with the subject viewed from a neutral angle?",
+        "Is the starting frame taken with the camera at the subject’s natural perspective?"
     ],
     "def_prompt": [
-        "A video that starts with at subject."
+        "A video that starts with the camera positioned at the subject’s height."
     ],
     "alt_prompt": [
-        "A shot starting with at subject.",
-        "A video starting at at subject.",
-        "A sequence beginning with at subject.",
-        "A shot initially at at subject.",
-        "A video opening with at subject.",
-        "A shot starting at at subject.",
-        "A video beginning with at subject.",
-        "A sequence starting at at subject."
+        "A shot starting with the camera at the subject’s level.",
+        "A video that opens with an eye-level perspective on the subject.",
+        "A sequence beginning with the subject viewed from a neutral height.",
+        "A shot where the subject is framed at the same height as the camera.",
+        "A video that starts with a straight-on perspective at the subject’s eye level.",
+        "A shot where the subject appears naturally framed from the camera’s height.",
+        "A sequence beginning with the subject viewed from an at-subject position.",
+        "A video opening with a neutral-height framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['start'] == 'at_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']",

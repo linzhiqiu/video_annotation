@@ -2,24 +2,34 @@
     "label": "Shot Size End With Wide",
     "label_name": "shot_size_end_with_wide",
     "def_question": [
-        "Does the video end with a wide shot?"
+        "Does the video end with a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?"
     ],
     "alt_question": [
-        "Does the video close with a wide shot?",
-        "Is the last shot of the video a wide shot?",
-        "Does the video end with a wide shot?",
-        "Is the closing shot of the video a wide shot?",
-        "Does the video finish with a wide shot?"
+        "Does the video close with a wide shot that balances the subject and surroundings?",
+        "Is the last shot a wide shot where the subject is clearly visible but not dominant?",
+        "Does the video finish with a wide shot that includes both the subject and its environment?",
+        "Is the closing shot a wide shot where the surroundings remain a key part of the composition?",
+        "Does the last shot frame the subject fully while still showing background details?",
+        "Is the final shot a wide view where no single element dominates?",
+        "Does the video end with a shot where the subject occupies around 15-50% of the frame?",
+        "Is the final frame composed to show the subject in relation to its environment?",
+        "Does the video conclude with a shot that is not too far (extreme wide) but still provides context?",
+        "Is the last shot a wide-angle view offering more detail than an extreme wide shot?"
     ],
     "def_prompt": [
-        "A video that ends with a wide shot."
+        "The video ends with either a wide shot of scenery or a wide shot that frames the subject while keeping enough background context."
     ],
     "alt_prompt": [
-        "The video ends with a wide shot.",
-        "The video closes with a wide shot.",
-        "The last shot of the video is a wide shot.",
-        "The closing shot is a wide shot.",
-        "The closing shot of the video is a wide shot."
+        "The video ends with a wide shot where the subject is fully visible.",
+        "The video closes with a wide shot, balancing subject and environment.",
+        "The last shot of the video is a wide view that emphasizes both subject and surroundings.",
+        "The closing shot includes the entire subject but maintains scene context.",
+        "The final shot of the video is a wide shot, offering more detail than an extreme wide shot.",
+        "A shot that frames the subject while keeping the background visible.",
+        "A video where the subject occupies 15-50% of the frame while the setting remains clear.",
+        "A shot where the entire subject is visible, but surroundings are also important.",
+        "A video ending with a balanced wide shot where no single element dominates.",
+        "A cinematic wide shot that includes both the subject and contextual environment."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'wide'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['wide', 'unknown']",

@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject Start With Above Subject",
     "label_name": "height_wrt_subject_start_with_above_subject",
     "def_question": [
-        "Does the video start with above subject?"
+        "Does the video start with the camera positioned noticeably higher than the subject?"
     ],
     "alt_question": [
-        "Does the shot start with above subject?",
-        "Is the starting frame showing above subject?",
-        "Does the video start using above subject?",
-        "Is the initial shot at above subject?",
-        "Does the sequence start with above subject?",
-        "Is the first shot at above subject?",
-        "Does the video open with above subject?",
-        "Is the starting frame at above subject?"
+        "Does the shot start with the camera above the subject?",
+        "Is the starting frame showing the subject from a higher perspective?",
+        "Does the video start with a high camera position relative to the subject?",
+        "Is the initial shot taken from above the subject?",
+        "Does the sequence start with the camera looking down at the subject?",
+        "Is the first shot framed from an elevated position above the subject?",
+        "Does the video open with the subject framed from above?",
+        "Is the starting frame taken from a noticeably higher position than the subject?"
     ],
     "def_prompt": [
-        "A video that starts with above subject."
+        "A video that starts with the camera positioned above the subject."
     ],
     "alt_prompt": [
-        "A shot starting with above subject.",
-        "A video starting at above subject.",
-        "A sequence beginning with above subject.",
-        "A shot initially at above subject.",
-        "A video opening with above subject.",
-        "A shot starting at above subject.",
-        "A video beginning with above subject.",
-        "A sequence starting at above subject."
+        "A shot starting with the camera above the subject.",
+        "A video that opens with a high-angle perspective on the subject.",
+        "A sequence beginning with the camera looking down at the subject.",
+        "A shot where the subject is framed from a noticeably higher viewpoint.",
+        "A video that starts with a downward-looking camera angle on the subject.",
+        "A shot where the subject is viewed from an elevated position.",
+        "A sequence beginning with the subject framed from a high perspective.",
+        "A video opening with an overhead or high-angle framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['start'] == 'above_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']",

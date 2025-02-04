@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject Start With Below Subject",
     "label_name": "height_wrt_subject_start_with_below_subject",
     "def_question": [
-        "Does the video start with below subject?"
+        "Does the video start with the camera positioned below the subject?"
     ],
     "alt_question": [
-        "Does the shot start with below subject?",
-        "Is the starting frame showing below subject?",
-        "Does the video start using below subject?",
-        "Is the initial shot at below subject?",
-        "Does the sequence start with below subject?",
-        "Is the first shot at below subject?",
-        "Does the video open with below subject?",
-        "Is the starting frame at below subject?"
+        "Does the shot start with the camera below the subject?",
+        "Is the starting frame showing the subject from a lower perspective?",
+        "Does the video start with the camera positioned lower than the subject?",
+        "Is the initial shot taken from a low angle looking up at the subject?",
+        "Does the sequence start with the camera at a lower position than the subject?",
+        "Is the first shot framed from below the subject’s eye level?",
+        "Does the video open with the subject appearing larger due to a low camera angle?",
+        "Is the starting frame taken from a noticeably lower position than the subject?"
     ],
     "def_prompt": [
-        "A video that starts with below subject."
+        "A video that starts with the camera positioned below the subject."
     ],
     "alt_prompt": [
-        "A shot starting with below subject.",
-        "A video starting at below subject.",
-        "A sequence beginning with below subject.",
-        "A shot initially at below subject.",
-        "A video opening with below subject.",
-        "A shot starting at below subject.",
-        "A video beginning with below subject.",
-        "A sequence starting at below subject."
+        "A shot starting with the camera below the subject.",
+        "A video that opens with a low-angle perspective on the subject.",
+        "A sequence beginning with the camera looking up at the subject.",
+        "A shot where the subject is framed from a noticeably lower viewpoint.",
+        "A video that starts with an upward-looking camera angle on the subject.",
+        "A shot where the subject appears taller due to the low perspective.",
+        "A sequence beginning with the subject framed from a lower vantage point.",
+        "A video opening with an upward-framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['start'] == 'below_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['start'] not in ['below_subject', 'unknown']",

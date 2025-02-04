@@ -1,25 +1,35 @@
 {
-    "label": "Shot Size End With Medium Close Up",
+    "label": "Shot Size End With Medium Close Up (Human Only)",
     "label_name": "shot_size_end_with_medium_close_up",
     "def_question": [
-        "Does the video end with a up shot?"
+        "Does the video end with a medium close-up shot that frames the human subject from the chest upward?"
     ],
     "alt_question": [
-        "Does the video close with a medium close-up shot?",
-        "Is the last shot of the video a medium close-up shot?",
-        "Does the video end with a medium close-up shot?",
-        "Is the closing shot of the video a medium close-up shot?",
-        "Does the video finish with a medium close-up shot?"
+        "Does the video close with a medium close-up shot featuring a human subject?",
+        "Is the last shot a medium close-up shot where the subject’s face and upper body are visible?",
+        "Does the video finish with a medium close-up shot capturing the subject’s head and shoulders?",
+        "Is the closing shot a medium close-up shot where the subject’s upper arms are partially visible?",
+        "Does the final shot frame the subject closely while still including some upper body?",
+        "Is the last shot a medium close-up that avoids cutting off the head or shoulders?",
+        "Does the video end with a shot that primarily emphasizes the subject’s facial expressions?",
+        "Is the final frame a medium close-up shot that balances facial detail and upper body framing?",
+        "Does the video conclude with a shot that keeps the subject’s face centered while maintaining upper body visibility?",
+        "Is the last shot a tight but not extreme close-up of the subject’s head and chest?"
     ],
     "def_prompt": [
-        "A video that ends with a medium close-up shot."
+        "A video that ends with a medium close-up shot, framing the human subject from the chest upward."
     ],
     "alt_prompt": [
-        "The video ends with a medium close-up shot.",
-        "The video closes with a medium close-up shot.",
-        "The last shot of the video is a medium close-up shot.",
-        "The closing shot is a medium close-up shot.",
-        "The closing shot of the video is a medium close-up shot."
+        "The video ends with a medium close-up shot where the subject’s head, shoulders, and upper body are visible.",
+        "The video closes with a medium close-up shot that keeps the subject’s face and some upper body in frame.",
+        "The last shot of the video is a medium close-up that includes the head, shoulders, and part of the arms.",
+        "The closing shot is a medium close-up shot, ensuring the subject’s facial details are clearly visible.",
+        "The final shot of the video is a medium close-up, balancing facial detail with upper body framing.",
+        "A shot that focuses on the subject’s head and shoulders while maintaining a natural composition.",
+        "A video where the subject is framed from the chest upward, avoiding excessive cropping.",
+        "A shot where the subject’s face remains the focal point while still showing some body context.",
+        "A video ending with a medium close-up shot that highlights the subject’s expressions.",
+        "A cinematic medium close-up shot that ensures a clear balance between face and upper body."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'medium_close_up'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['medium_close_up', 'unknown']",

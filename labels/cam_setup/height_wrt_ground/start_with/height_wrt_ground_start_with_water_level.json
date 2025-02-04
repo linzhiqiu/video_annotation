@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground Start With Water Level",
     "label_name": "height_wrt_ground_start_with_water_level",
     "def_question": [
-        "Does the video start with water level?"
+        "Does the video start with the camera positioned at water level, where the waterline is clearly visible above the surface?"
     ],
     "alt_question": [
-        "Does the shot start with water level?",
-        "Is the starting frame showing water level?",
-        "Does the video start using water level?",
-        "Is the initial shot at water level?",
-        "Does the sequence start with water level?",
-        "Is the first shot at water level?",
-        "Does the video open with water level?",
-        "Is the starting frame at water level?"
+        "Does the shot start at water level?",
+        "Is the starting frame taken from a water-level perspective?",
+        "Does the video begin with the camera positioned just above the waterline?",
+        "Is the initial shot captured at the surface of the water?",
+        "Does the sequence open with a perspective where the waterline is visible?",
+        "Is the first shot positioned at water level, showing the surrounding water?",
+        "Does the video open with the camera floating just above water?",
+        "Is the starting frame aligned with a perspective just above the water surface?"
     ],
     "def_prompt": [
-        "A video that starts with water level."
+        "The video starts with the camera positioned at water level, clearly above the water surface."
     ],
     "alt_prompt": [
-        "A shot starting with water level.",
-        "A video starting at water level.",
-        "A sequence beginning with water level.",
-        "A shot initially at water level.",
-        "A video opening with water level.",
-        "A shot starting at water level.",
-        "A video beginning with water level.",
-        "A sequence starting at water level."
+        "A shot starting at water level, taken from just above the waterline.",
+        "A video beginning with a perspective where the water surface is prominent.",
+        "A sequence that starts with a camera positioned at the water’s edge.",
+        "A shot showing the environment from a viewpoint just above the water.",
+        "A video opening with a scene where the waterline is clearly visible.",
+        "A shot where the camera is placed at water level without submerging.",
+        "A video that starts with a floating camera angle, capturing the water surface.",
+        "A scene that opens with a near-waterline framing of the environment."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'water_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['water_level', 'unknown']",

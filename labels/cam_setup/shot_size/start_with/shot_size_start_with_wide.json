@@ -2,7 +2,7 @@
     "label": "Shot Size Start With Wide",
     "label_name": "shot_size_start_with_wide",
     "def_question": [
-        "Does the video start with a wide shot that frames the entire subject while maintaining background context?"
+        "Does the video start with a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?"
     ],
     "alt_question": [
         "Does the video open with a wide shot that balances the subject and surroundings?",
@@ -17,7 +17,7 @@
         "Is the first shot a wide-angle view offering more detail than an extreme wide shot?"
     ],
     "def_prompt": [
-        "A video that starts with a wide shot, framing the entire subject while maintaining background context."
+        "The video starts with either a wide shot of scenery or a wide shot that frames the subject while keeping enough background context."
     ],
     "alt_prompt": [
         "The video starts with a wide shot where the subject is fully visible.",

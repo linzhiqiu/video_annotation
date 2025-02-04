@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground End With Overhead Level",
     "label_name": "height_wrt_ground_end_with_overhead_level",
     "def_question": [
-        "Does the video end with overhead level?"
+        "Does the video end with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?"
     ],
     "alt_question": [
-        "Does the shot end with overhead level?",
-        "Is the ending frame showing overhead level?",
-        "Does the video end using overhead level?",
-        "Is the final shot at overhead level?",
-        "Does the sequence end with overhead level?",
-        "Is the last shot at overhead level?",
-        "Does the video close with overhead level?",
-        "Is the ending frame at overhead level?"
+        "Does the shot end at an overhead level?",
+        "Is the final frame taken from an overhead perspective?",
+        "Does the video conclude with a high vantage point but lower than aerial level?",
+        "Is the last shot captured from a second-floor height or similar?",
+        "Does the sequence close with an overhead view?",
+        "Is the final shot positioned at an overhead level?",
+        "Does the video close with a perspective from above regular human height?",
+        "Is the ending frame recorded from a height between 1.5 to 3 person-heights?"
     ],
     "def_prompt": [
-        "A video that ends with overhead level."
+        "The video ends with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level."
     ],
     "alt_prompt": [
-        "A shot ending with overhead level.",
-        "A video ending at overhead level.",
-        "A sequence concluding with overhead level.",
-        "A shot finally at overhead level.",
-        "A video closing with overhead level.",
-        "A shot ending at overhead level.",
-        "A video concluding with overhead level.",
-        "A sequence ending at overhead level."
+        "A shot ending at an overhead level, taken from a high vantage point.",
+        "A video concluding with an overhead perspective, from a second-floor height.",
+        "A sequence that ends with a view between eye level and aerial level.",
+        "A shot showing the environment from a high but not extreme aerial position.",
+        "A video closing with a balanced overhead view.",
+        "A shot where the camera is positioned at 1.5 to 3 person-heights above ground.",
+        "A video that ends with a high but not extreme aerial perspective.",
+        "A scene that closes with an elevated, overhead framing."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['end'] == 'overhead_level'",
     "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']",

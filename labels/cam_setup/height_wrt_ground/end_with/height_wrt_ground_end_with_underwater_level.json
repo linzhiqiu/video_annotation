@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground End With Underwater Level",
     "label_name": "height_wrt_ground_end_with_underwater_level",
     "def_question": [
-        "Does the video end with underwater level?"
+        "Does the video end with the camera fully submerged underwater, capturing scenes beneath the water’s surface?"
     ],
     "alt_question": [
-        "Does the shot end with underwater level?",
-        "Is the ending frame showing underwater level?",
-        "Does the video end using underwater level?",
-        "Is the final shot at underwater level?",
-        "Does the sequence end with underwater level?",
-        "Is the last shot at underwater level?",
-        "Does the video close with underwater level?",
-        "Is the ending frame at underwater level?"
+        "Does the shot end with an underwater perspective?",
+        "Is the final frame taken from below the water’s surface?",
+        "Does the video conclude with the camera positioned underwater?",
+        "Is the last shot captured entirely beneath the waterline?",
+        "Does the sequence close with an underwater viewpoint?",
+        "Is the final shot filmed below the water’s surface?",
+        "Does the video close with the camera fully submerged underwater?",
+        "Is the ending frame positioned entirely beneath the water level?"
     ],
     "def_prompt": [
-        "A video that ends with underwater level."
+        "The video ends with the camera fully submerged underwater."
     ],
     "alt_prompt": [
-        "A shot ending with underwater level.",
-        "A video ending at underwater level.",
-        "A sequence concluding with underwater level.",
-        "A shot finally at underwater level.",
-        "A video closing with underwater level.",
-        "A shot ending at underwater level.",
-        "A video concluding with underwater level.",
-        "A sequence ending at underwater level."
+        "A shot ending completely underwater, beneath the surface.",
+        "A video concluding with an underwater perspective, showing submerged scenery.",
+        "A sequence that ends with a camera fully below the waterline.",
+        "A shot showing the underwater environment, taken from beneath the surface.",
+        "A video closing with a scene where the camera is entirely underwater.",
+        "A shot where the camera is submerged and filming below water.",
+        "A video that ends with an underwater perspective without breaking the surface.",
+        "A scene that closes with the camera completely beneath the water’s surface."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['end'] == 'underwater_level'",
     "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['underwater_level', 'unknown']",

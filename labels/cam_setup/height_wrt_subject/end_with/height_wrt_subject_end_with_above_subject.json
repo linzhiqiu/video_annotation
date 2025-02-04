@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject End With Above Subject",
     "label_name": "height_wrt_subject_end_with_above_subject",
     "def_question": [
-        "Does the video end with above subject?"
+        "Does the video end with the camera positioned above the subject?"
     ],
     "alt_question": [
-        "Does the shot end with above subject?",
-        "Is the ending frame showing above subject?",
-        "Does the video end using above subject?",
-        "Is the final shot at above subject?",
-        "Does the sequence end with above subject?",
-        "Is the last shot at above subject?",
-        "Does the video close with above subject?",
-        "Is the ending frame at above subject?"
+        "Does the shot end with the camera positioned higher than the subject?",
+        "Is the ending frame showing the subject from an elevated position?",
+        "Does the video finish with a high-angle perspective of the subject?",
+        "Is the final shot framed from above the subject?",
+        "Does the sequence conclude with the camera looking down at the subject?",
+        "Is the last shot positioned at a noticeably higher level than the subject?",
+        "Does the video close with an overhead or high-angle framing of the subject?",
+        "Is the ending frame taken from a noticeably higher position than the subject?"
     ],
     "def_prompt": [
-        "A video that ends with above subject."
+        "A video that ends with the camera positioned above the subject."
     ],
     "alt_prompt": [
-        "A shot ending with above subject.",
-        "A video ending at above subject.",
-        "A sequence concluding with above subject.",
-        "A shot finally at above subject.",
-        "A video closing with above subject.",
-        "A shot ending at above subject.",
-        "A video concluding with above subject.",
-        "A sequence ending at above subject."
+        "A shot ending with the camera above the subject.",
+        "A video concluding with a high-angle perspective.",
+        "A sequence ending with the camera looking down at the subject.",
+        "A shot where the subject is framed from an elevated viewpoint.",
+        "A video finishing with a downward-looking camera angle.",
+        "A shot where the subject appears smaller due to the camera’s high position.",
+        "A sequence concluding with the subject framed from a high perspective.",
+        "A video closing with an overhead or high-angle framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['end'] == 'above_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']",

@@ -1,0 +1,33 @@
+{
+    "label": "Height Wrt Ground Is Overhead Level",
+    "label_name": "height_wrt_ground_is_overhead_level",
+    "def_question": [
+        "Is the camera positioned at an overhead level throughout the video, positioned above human height but below an aerial view, roughly at second-floor level?"
+    ],
+    "alt_question": [
+        "Does the camera remain at an overhead level for the entire video?",
+        "Is the starting and ending frame taken from an overhead perspective?",
+        "Does the video maintain a high vantage point but lower than aerial level?",
+        "Is the camera positioned at a height between 1.5 to 3 person-heights above the ground throughout?",
+        "Does the sequence keep an overhead viewpoint from start to finish?",
+        "Is the video filmed entirely at an overhead level without transitioning?",
+        "Does the framing remain above eye level but below aerial for the whole video?",
+        "Is the entire shot positioned at an overhead perspective?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at an overhead level throughout the video, positioned above human height but below an aerial view, roughly at second-floor level."
+    ],
+    "alt_prompt": [
+        "A video maintaining an overhead perspective from start to finish.",
+        "A shot consistently captured from an overhead height.",
+        "A video where the camera stays at an overhead level without changing.",
+        "A sequence entirely framed from a high vantage point but not aerial.",
+        "A shot maintaining an overhead perspective without shifting heights.",
+        "A video where the camera remains above human height but below aerial.",
+        "A scene that is consistently framed from an overhead level."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'overhead_level' and self.height_wrt_ground_info['end'] == 'overhead_level'",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'overhead_level' and self.height_wrt_ground_info['end'] == 'overhead_level')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

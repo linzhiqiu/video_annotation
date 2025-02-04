@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground Start With Underwater Level",
     "label_name": "height_wrt_ground_start_with_underwater_level",
     "def_question": [
-        "Does the video start with underwater level?"
+        "Does the video start with the camera fully submerged underwater, capturing scenes beneath the water’s surface?"
     ],
     "alt_question": [
-        "Does the shot start with underwater level?",
-        "Is the starting frame showing underwater level?",
-        "Does the video start using underwater level?",
-        "Is the initial shot at underwater level?",
-        "Does the sequence start with underwater level?",
-        "Is the first shot at underwater level?",
-        "Does the video open with underwater level?",
-        "Is the starting frame at underwater level?"
+        "Does the shot start with an underwater perspective?",
+        "Is the starting frame taken from below the water’s surface?",
+        "Does the video begin with the camera positioned underwater?",
+        "Is the initial shot captured entirely beneath the waterline?",
+        "Does the sequence open with an underwater viewpoint?",
+        "Is the first shot filmed below the water’s surface?",
+        "Does the video open with the camera fully submerged underwater?",
+        "Is the starting frame positioned entirely beneath the water level?"
     ],
     "def_prompt": [
-        "A video that starts with underwater level."
+        "The video starts with the camera fully submerged underwater."
     ],
     "alt_prompt": [
-        "A shot starting with underwater level.",
-        "A video starting at underwater level.",
-        "A sequence beginning with underwater level.",
-        "A shot initially at underwater level.",
-        "A video opening with underwater level.",
-        "A shot starting at underwater level.",
-        "A video beginning with underwater level.",
-        "A sequence starting at underwater level."
+        "A shot starting completely underwater, beneath the surface.",
+        "A video beginning with an underwater perspective, showing submerged scenery.",
+        "A sequence that starts with a camera fully below the waterline.",
+        "A shot showing the underwater environment, taken from beneath the surface.",
+        "A video opening with a scene where the camera is entirely underwater.",
+        "A shot where the camera is submerged and filming below water.",
+        "A video that starts with an underwater perspective without breaking the surface.",
+        "A scene that opens with the camera completely beneath the water’s surface."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'underwater_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['underwater_level', 'unknown']",

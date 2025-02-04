@@ -1,11 +1,10 @@
 {
-    "label": "Is Overall Height Applicable",
-    "label_name": "is_overall_height_applicable",
+    "label": "Is Height With Respect to Ground Applicable",
+    "label_name": "is_height_wrt_ground_applicable",
     "def_question": [
-        "Is overall height classification possible for this video?"
+        "Can the camera height relative to ground be classified?"
     ],
     "alt_question": [
-        "Can the camera height relative to ground be classified?",
         "Is it possible to determine the camera's elevation?",
         "Can we assess the camera's height from ground level?",
         "Is the camera's vertical position measurable?",
@@ -15,7 +14,7 @@
         "Is the camera height clear enough to classify?"
     ],
     "def_prompt": [
-        "A shot where the overall camera height can be meaningfully classified."
+        "A shot where the camera height relative to the ground plane can be meaningfully classified."
     ],
     "alt_prompt": [
         "A video with classifiable camera elevation.",
@@ -27,8 +26,8 @@
         "A video with assessable camera position.",
         "A shot with determinable height."
     ],
-    "pos_rule_str": "any(height != 'unknown' for height in self.height_wrt_ground_info.values())",
-    "neg_rule_str": "not any(height != 'unknown' for height in self.height_wrt_ground_info.values())",
+    "pos_rule_str": "self.is_height_wrt_ground_applicable is True",
+    "neg_rule_str": "self.is_height_wrt_ground_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground End With Aerial Level",
     "label_name": "height_wrt_ground_end_with_aerial_level",
     "def_question": [
-        "Does the video end with aerial level?"
+        "Does the video end with the camera positioned high at an aerial level?"
     ],
     "alt_question": [
-        "Does the shot end with aerial level?",
-        "Is the ending frame showing aerial level?",
-        "Does the video end using aerial level?",
-        "Is the final shot at aerial level?",
-        "Does the sequence end with aerial level?",
-        "Is the last shot at aerial level?",
-        "Does the video close with aerial level?",
-        "Is the ending frame at aerial level?"
+        "Does the shot end at an aerial level?",
+        "Is the final frame taken from an aerial perspective?",
+        "Does the video conclude with a high-altitude shot?",
+        "Is the last shot captured from an aerial view?",
+        "Does the sequence close with an aerial perspective?",
+        "Is the final shot positioned at an aerial level?",
+        "Does the video close with a bird’s-eye view?",
+        "Is the ending frame recorded from a high altitude?"
     ],
     "def_prompt": [
-        "A video that ends with aerial level."
+        "The video ends with the camera positioned high at an aerial level."
     ],
     "alt_prompt": [
-        "A shot ending with aerial level.",
-        "A video ending at aerial level.",
-        "A sequence concluding with aerial level.",
-        "A shot finally at aerial level.",
-        "A video closing with aerial level.",
-        "A shot ending at aerial level.",
-        "A video concluding with aerial level.",
-        "A sequence ending at aerial level."
+        "A shot ending at an aerial level, taken from a high altitude.",
+        "A video concluding with an aerial shot, capturing a wide perspective.",
+        "A sequence that ends with a high-elevation view.",
+        "A shot showing the environment from an elevated aerial position.",
+        "A video closing with a bird’s-eye perspective.",
+        "A shot where the camera is positioned high above the ground.",
+        "A video that ends with a top-down or high-altitude framing.",
+        "A scene that concludes with a drone-like aerial viewpoint."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['end'] == 'aerial_level'",
     "neg_rule_str": "self.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']",

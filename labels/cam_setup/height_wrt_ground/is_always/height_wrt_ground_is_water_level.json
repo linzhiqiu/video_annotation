@@ -1,0 +1,33 @@
+{
+    "label": "Height Wrt Ground Is Water Level",
+    "label_name": "height_wrt_ground_is_water_level",
+    "def_question": [
+        "Is the camera positioned at water level throughout the video, above the water surface with the waterline clearly visible?"
+    ],
+    "alt_question": [
+        "Does the camera remain at water level for the entire video?",
+        "Is the starting and ending frame taken from a water-level perspective?",
+        "Does the video maintain a height at the surface of the water?",
+        "Is the camera positioned at water level from start to finish?",
+        "Does the sequence keep a water-level viewpoint without transitioning?",
+        "Is the video filmed entirely at water level?",
+        "Does the framing remain just above the water surface for the whole video?",
+        "Is the entire shot positioned at a water-level height?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at water level throughout the video, above the water surface with the waterline clearly visible."
+    ],
+    "alt_prompt": [
+        "A video maintaining a water-level perspective from start to finish.",
+        "A shot consistently captured at water level.",
+        "A video where the camera stays at water level without changing.",
+        "A sequence entirely framed from a water-level viewpoint.",
+        "A shot maintaining a near-water perspective without shifting heights.",
+        "A video where the camera remains just above the water surface.",
+        "A scene that is consistently framed from a water-level height."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'water_level' and self.height_wrt_ground_info['end'] == 'water_level'",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'water_level' and self.height_wrt_ground_info['end'] == 'water_level')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

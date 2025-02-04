@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground Start With Eye Level",
     "label_name": "height_wrt_ground_start_with_eye_level",
     "def_question": [
-        "Does the video start with eye level?"
+        "Does the video start with the camera at eye level, roughly at a person's eye height, above the waist but below overhead level?"
     ],
     "alt_question": [
-        "Does the shot start with eye level?",
-        "Is the starting frame showing eye level?",
-        "Does the video start using eye level?",
-        "Is the initial shot at eye level?",
-        "Does the sequence start with eye level?",
-        "Is the first shot at eye level?",
-        "Does the video open with eye level?",
-        "Is the starting frame at eye level?"
+        "Does the shot start at eye level?",
+        "Is the starting frame taken from an eye-level perspective?",
+        "Does the video begin with a camera height typical of a standing person’s eyes?",
+        "Is the initial shot captured at a height similar to a person's eye level?",
+        "Does the sequence open with an eye-level perspective?",
+        "Is the first shot positioned at an eye-level height?",
+        "Does the video open with a camera positioned above waist level but below overhead level?",
+        "Is the starting frame aligned with a natural human viewpoint?"
     ],
     "def_prompt": [
-        "A video that starts with eye level."
+        "The video starts with the camera positioned at eye level, approximately at a person's eye height, including any height above waist but below overhead level."
     ],
     "alt_prompt": [
-        "A shot starting with eye level.",
-        "A video starting at eye level.",
-        "A sequence beginning with eye level.",
-        "A shot initially at eye level.",
-        "A video opening with eye level.",
-        "A shot starting at eye level.",
-        "A video beginning with eye level.",
-        "A sequence starting at eye level."
+        "A shot starting at eye level, captured at a natural viewing height.",
+        "A video beginning with an eye-level perspective, maintaining a familiar human viewpoint.",
+        "A sequence that starts with a camera positioned at typical standing eye height.",
+        "A shot showing the environment from a natural eye-level angle.",
+        "A video opening with a straight-on view at eye level.",
+        "A shot where the camera is positioned at a height similar to a person's eyes.",
+        "A video that starts with a perspective slightly above waist height but below overhead.",
+        "A scene that opens with a balanced, eye-level framing of the environment."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'eye_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']",

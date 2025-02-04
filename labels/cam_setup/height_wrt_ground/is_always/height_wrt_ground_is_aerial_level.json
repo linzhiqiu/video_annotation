@@ -1,0 +1,33 @@
+{
+    "label": "Height Wrt Ground Is Aerial Level",
+    "label_name": "height_wrt_ground_is_aerial_level",
+    "def_question": [
+        "Is the camera positioned at an aerial level throughout the video?"
+    ],
+    "alt_question": [
+        "Does the camera remain at an aerial perspective for the entire video?",
+        "Is the camera height consistently high, capturing scenes from above?",
+        "Does the video maintain an elevated aerial viewpoint from start to finish?",
+        "Is the camera positioned at aerial level without transitioning to a lower height?",
+        "Does the video continuously feature an aerial perspective?",
+        "Is the shot composed entirely from a high-altitude viewpoint?",
+        "Does the framing stay at an aerial level without descending?",
+        "Is the video filmed entirely from an elevated aerial position?"
+    ],
+    "def_prompt": [
+        "The camera remains at an aerial level height throughout the video."
+    ],
+    "alt_prompt": [
+        "A video maintaining an aerial perspective from start to finish.",
+        "A shot consistently captured from a high-altitude viewpoint.",
+        "A video where the camera stays at an elevated position.",
+        "A sequence entirely filmed from an aerial level.",
+        "A shot maintaining an aerial perspective without height changes.",
+        "A video where the camera remains above ground at a high altitude.",
+        "A scene consistently framed from an aerial viewpoint."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'aerial_level' and self.height_wrt_ground_info['end'] == 'aerial_level'",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'aerial_level' and self.height_wrt_ground_info['end'] == 'aerial_level')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,33 @@
+{
+    "label": "Height Wrt Ground Is Ground Level",
+    "label_name": "height_wrt_ground_is_ground_level",
+    "def_question": [
+        "Is the camera positioned at ground level throughout the video?"
+    ],
+    "alt_question": [
+        "Does the camera remain at ground level for the entire video?",
+        "Is the starting and ending frame taken from a ground-level perspective?",
+        "Does the video maintain a low viewpoint near the ground surface?",
+        "Is the camera positioned close to the ground from start to finish?",
+        "Does the sequence keep a ground-level viewpoint without transitioning?",
+        "Is the video filmed entirely at ground level?",
+        "Does the framing remain at a near-ground height for the whole video?",
+        "Is the entire shot positioned at a ground-level height?"
+    ],
+    "def_prompt": [
+        "The camera is positioned at ground level throughout the video."
+    ],
+    "alt_prompt": [
+        "A video maintaining a ground-level perspective from start to finish.",
+        "A shot consistently captured at ground level.",
+        "A video where the camera stays at ground level without changing.",
+        "A sequence entirely framed from a ground-level viewpoint.",
+        "A shot maintaining a low perspective without shifting heights.",
+        "A video where the camera remains just above the ground surface.",
+        "A scene that is consistently framed from a ground-level height."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_info['start'] == 'ground_level' and self.height_wrt_ground_info['end'] == 'ground_level'",
+    "neg_rule_str": "not (self.height_wrt_ground_info['start'] == 'ground_level' and self.height_wrt_ground_info['end'] == 'ground_level')",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject End With Below Subject",
     "label_name": "height_wrt_subject_end_with_below_subject",
     "def_question": [
-        "Does the video end with below subject?"
+        "Does the video end with the camera positioned below the subject?"
     ],
     "alt_question": [
-        "Does the shot end with below subject?",
-        "Is the ending frame showing below subject?",
-        "Does the video end using below subject?",
-        "Is the final shot at below subject?",
-        "Does the sequence end with below subject?",
-        "Is the last shot at below subject?",
-        "Does the video close with below subject?",
-        "Is the ending frame at below subject?"
+        "Does the shot end with the camera positioned lower than the subject?",
+        "Is the ending frame showing the subject from a low-angle perspective?",
+        "Does the video finish with the camera at a noticeably lower position than the subject?",
+        "Is the final shot framed from below, looking up at the subject?",
+        "Does the sequence conclude with the subject appearing larger due to the low camera angle?",
+        "Is the last shot taken from a lower elevation relative to the subject?",
+        "Does the video close with the subject viewed from a low vantage point?",
+        "Is the ending frame captured from an upward-looking perspective?"
     ],
     "def_prompt": [
-        "A video that ends with below subject."
+        "A video that ends with the camera positioned below the subject."
     ],
     "alt_prompt": [
-        "A shot ending with below subject.",
-        "A video ending at below subject.",
-        "A sequence concluding with below subject.",
-        "A shot finally at below subject.",
-        "A video closing with below subject.",
-        "A shot ending at below subject.",
-        "A video concluding with below subject.",
-        "A sequence ending at below subject."
+        "A shot ending with the camera below the subject.",
+        "A video that concludes with a low-angle perspective of the subject.",
+        "A sequence ending with the subject viewed from a lower position.",
+        "A shot where the subject appears larger due to the low perspective.",
+        "A video that finishes with an upward-looking camera angle.",
+        "A shot where the subject is framed from a noticeably lower viewpoint.",
+        "A sequence concluding with the subject framed from a low perspective.",
+        "A video closing with an upward-framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['end'] == 'below_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['below_subject', 'unknown']",

@@ -1,11 +1,10 @@
 {
-    "label": "Is Subject Height Applicable",
-    "label_name": "is_subject_height_applicable",
+    "label": "Is Height With Respect To Subject Applicable",
+    "label_name": "is_height_wrt_subject_applicable",
     "def_question": [
-        "Is subject height classification possible for this video?"
+        "Can the camera height relative to subject be classified?"
     ],
     "alt_question": [
-        "Can the camera height relative to subject be classified?",
         "Is it possible to determine the camera's position relative to the subject?",
         "Can we assess the vertical relationship between camera and subject?",
         "Is the camera's height relative to subject measurable?",
@@ -27,8 +26,8 @@
         "A video with assessable camera elevation.",
         "A shot with determinable vertical positioning."
     ],
-    "pos_rule_str": "any(height != 'unknown' for height in self.height_wrt_subject_info.values())",
-    "neg_rule_str": "not any(height != 'unknown' for height in self.height_wrt_subject_info.values())",
+    "pos_rule_str": "self.is_height_wrt_subject_applicable is True",
+    "neg_rule_str": "self.is_height_wrt_subject_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

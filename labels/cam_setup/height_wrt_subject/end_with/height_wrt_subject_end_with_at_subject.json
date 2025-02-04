@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject End With At Subject",
     "label_name": "height_wrt_subject_end_with_at_subject",
     "def_question": [
-        "Does the video end with at subject?"
+        "Does the video end with the camera positioned at the same height as the subject?"
     ],
     "alt_question": [
-        "Does the shot end with at subject?",
-        "Is the ending frame showing at subject?",
-        "Does the video end using at subject?",
-        "Is the final shot at at subject?",
-        "Does the sequence end with at subject?",
-        "Is the last shot at at subject?",
-        "Does the video close with at subject?",
-        "Is the ending frame at at subject?"
+        "Does the shot end with the camera level with the subject?",
+        "Is the ending frame showing the subject at eye level?",
+        "Does the video finish with the camera at the subject’s height?",
+        "Is the final shot taken from an eye-level perspective?",
+        "Does the sequence conclude with the camera positioned at subject level?",
+        "Is the last shot framed at the same height as the subject?",
+        "Does the video close with the subject viewed from a neutral angle?",
+        "Is the ending frame taken with the camera at the subject’s natural perspective?"
     ],
     "def_prompt": [
-        "A video that ends with at subject."
+        "A video that ends with the camera positioned at the subject’s height."
     ],
     "alt_prompt": [
-        "A shot ending with at subject.",
-        "A video ending at at subject.",
-        "A sequence concluding with at subject.",
-        "A shot finally at at subject.",
-        "A video closing with at subject.",
-        "A shot ending at at subject.",
-        "A video concluding with at subject.",
-        "A sequence ending at at subject."
+        "A shot ending with the camera at the subject’s level.",
+        "A video that concludes with an eye-level perspective on the subject.",
+        "A sequence ending with the subject viewed from a neutral height.",
+        "A shot where the subject is framed at the same height as the camera.",
+        "A video that finishes with a straight-on perspective at the subject’s eye level.",
+        "A shot where the subject appears naturally framed from the camera’s height.",
+        "A sequence ending with the subject viewed from an at-subject position.",
+        "A video closing with a neutral-height framing of the subject."
     ],
     "pos_rule_str": "self.height_wrt_subject_info['end'] == 'at_subject'",
     "neg_rule_str": "self.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']",

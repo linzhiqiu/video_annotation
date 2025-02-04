@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground Start With Hip Level",
     "label_name": "height_wrt_ground_start_with_hip_level",
     "def_question": [
-        "Does the video start with hip level?"
+        "Does the video start with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present?"
     ],
     "alt_question": [
-        "Does the shot start with hip level?",
-        "Is the starting frame showing hip level?",
-        "Does the video start using hip level?",
-        "Is the initial shot at hip level?",
-        "Does the sequence start with hip level?",
-        "Is the first shot at hip level?",
-        "Does the video open with hip level?",
-        "Is the starting frame at hip level?"
+        "Does the shot start at hip level?",
+        "Is the starting frame taken from a hip-level perspective?",
+        "Does the video begin with a camera height aligned with a subject's hips or knees?",
+        "Is the initial shot captured from a mid-body height viewpoint?",
+        "Does the sequence open with a hip-level perspective?",
+        "Is the first shot positioned at a hip-level height?",
+        "Does the video open with a perspective from around waist to knee level?",
+        "Is the starting frame recorded from a height typical of a hip-level view?"
     ],
     "def_prompt": [
-        "A video that starts with hip level."
+        "The video starts with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present."
     ],
     "alt_prompt": [
-        "A shot starting with hip level.",
-        "A video starting at hip level.",
-        "A sequence beginning with hip level.",
-        "A shot initially at hip level.",
-        "A video opening with hip level.",
-        "A shot starting at hip level.",
-        "A video beginning with hip level.",
-        "A sequence starting at hip level."
+        "A shot starting at hip level, captured from a mid-body viewpoint.",
+        "A video beginning with a hip-level perspective, aligning with a subject’s lower torso.",
+        "A sequence that starts with the camera positioned between waist and knee height.",
+        "A shot showing the environment from a hip-level camera angle.",
+        "A video opening with a viewpoint around a subject's hips or knees.",
+        "A shot where the camera is positioned lower than eye level but above ground level.",
+        "A video that starts with a perspective noticeably below eye level but not at ground level.",
+        "A scene that opens with a balanced framing from a mid-body height."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'hip_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']",

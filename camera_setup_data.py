@@ -203,10 +203,10 @@ class CameraSetupData:
     
     def _set_height_relative_to_subject_attributes(self):
         self.height_wrt_subject_info = {'start': self.subject_height_start, 'end': self.subject_height_end}
-        self.is_subject_height_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
+        self.is_height_wrt_subject_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
         self.height_wrt_subject_change_from_high_to_low = None # "Does the camera height decrease noticeably in relation to the subject?"
         self.height_wrt_subject_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the subject?"
-        if self.is_subject_height_applicable:
+        if self.is_height_wrt_subject_applicable:
             if self.shot_type == "change_of_subject":
                 # change "unknown" to "no_subject"
                 for key in self.height_wrt_subject_info:
@@ -224,12 +224,12 @@ class CameraSetupData:
         
     def _set_height_relative_to_ground_attributes(self):
         self.height_wrt_ground_info = {'start': self.overall_height_start, 'end': self.overall_height_end}
-        self.is_overall_height_applicable = any(height != "unknown" for height in self.height_wrt_ground_info.values()) # "Is overall height classification possible for this video?"
+        self.is_height_wrt_ground_applicable = any(height != "unknown" for height in self.height_wrt_ground_info.values()) # "Is overall height classification possible for this video?"
         self.height_wrt_ground_change_from_high_to_low = None # "Does the camera height decrease noticeably in relation to the ground?"
         self.height_wrt_ground_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the ground?"
         self.above_water_to_underwater = None # "Does the camera transition from above water to underwater?"
         self.underwater_to_above_water = None # "Does the camera transition from underwater to above water?"
-        if self.is_overall_height_applicable:
+        if self.is_height_wrt_ground_applicable:
             if self.height_wrt_ground_info['end'] == "unknown":
                 self.height_wrt_ground_info['end'] = self.height_wrt_ground_info['start']
                 self.above_water_to_underwater = self.underwater_to_above_water = False

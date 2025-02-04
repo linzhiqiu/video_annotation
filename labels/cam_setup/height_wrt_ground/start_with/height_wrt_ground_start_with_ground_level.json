@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground Start With Ground Level",
     "label_name": "height_wrt_ground_start_with_ground_level",
     "def_question": [
-        "Does the video start with ground level?"
+        "Does the video start with the camera at ground level, positioned close to the ground?"
     ],
     "alt_question": [
-        "Does the shot start with ground level?",
-        "Is the starting frame showing ground level?",
-        "Does the video start using ground level?",
-        "Is the initial shot at ground level?",
-        "Does the sequence start with ground level?",
-        "Is the first shot at ground level?",
-        "Does the video open with ground level?",
-        "Is the starting frame at ground level?"
+        "Does the shot start at ground level?",
+        "Is the starting frame taken from a ground-level perspective?",
+        "Does the video begin with a camera height very close to the ground?",
+        "Is the initial shot captured from a low viewpoint near the ground surface?",
+        "Does the sequence open with a ground-level perspective?",
+        "Is the first shot positioned at a ground-level height?",
+        "Does the video open with a view where the ground is prominently visible?",
+        "Is the starting frame recorded with the camera positioned right above the ground?"
     ],
     "def_prompt": [
-        "A video that starts with ground level."
+        "The video starts with the camera at ground level, positioned close to the ground."
     ],
     "alt_prompt": [
-        "A shot starting with ground level.",
-        "A video starting at ground level.",
-        "A sequence beginning with ground level.",
-        "A shot initially at ground level.",
-        "A video opening with ground level.",
-        "A shot starting at ground level.",
-        "A video beginning with ground level.",
-        "A sequence starting at ground level."
+        "A shot starting at ground level, taken from a very low height.",
+        "A video beginning with a ground-level perspective, where the surface is dominant.",
+        "A sequence that starts with a camera positioned just above the ground.",
+        "A shot showing the environment from a low, near-ground viewpoint.",
+        "A video opening with a perspective that emphasizes the ground surface.",
+        "A shot where the camera is positioned directly above the ground level.",
+        "A video that starts with a ground-skimming camera angle.",
+        "A scene that opens with a close-to-the-ground framing."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'ground_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['ground_level', 'unknown']",

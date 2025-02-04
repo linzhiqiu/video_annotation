@@ -2,30 +2,27 @@
     "label": "Height Wrt Ground Start With Overhead Level",
     "label_name": "height_wrt_ground_start_with_overhead_level",
     "def_question": [
-        "Does the video start with overhead level?"
+        "Does the video start with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?"
     ],
     "alt_question": [
-        "Does the shot start with overhead level?",
-        "Is the starting frame showing overhead level?",
-        "Does the video start using overhead level?",
-        "Is the initial shot at overhead level?",
-        "Does the sequence start with overhead level?",
-        "Is the first shot at overhead level?",
-        "Does the video open with overhead level?",
-        "Is the starting frame at overhead level?"
+        "Does the shot start at an overhead level?",
+        "Is the starting frame taken from an overhead perspective?",
+        "Does the video begin with a high vantage point but lower than aerial level?",
+        "Is the initial shot captured from a second-floor height or similar?",
+        "Does the sequence open with an overhead view?",
+        "Is the first shot positioned at an overhead level?",
+        "Does the video open with a perspective from above regular human height?",
+        "Is the starting frame recorded from a height between 1.5 to 3 person-heights?"
     ],
     "def_prompt": [
-        "A video that starts with overhead level."
+        "The video starts with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level."
     ],
     "alt_prompt": [
-        "A shot starting with overhead level.",
-        "A video starting at overhead level.",
-        "A sequence beginning with overhead level.",
-        "A shot initially at overhead level.",
-        "A video opening with overhead level.",
-        "A shot starting at overhead level.",
-        "A video beginning with overhead level.",
-        "A sequence starting at overhead level."
+        "The video starts with the camera at an overhead level.",
+        "A video beginning with an overhead perspective, from a second-floor height.",
+        "A sequence that starts with a vantage point between eye level and aerial level.",
+        "A video opening with a high view but not an extreme aerial perspective.",
+        "A shot where the camera is positioned at 1.5 to 3 person-heights above ground."
     ],
     "pos_rule_str": "self.height_wrt_ground_info['start'] == 'overhead_level'",
     "neg_rule_str": "self.height_wrt_ground_info['start'] not in ['overhead_level', 'unknown']",

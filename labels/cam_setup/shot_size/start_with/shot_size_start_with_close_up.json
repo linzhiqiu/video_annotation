@@ -2,24 +2,34 @@
     "label": "Shot Size Start With Close Up",
     "label_name": "shot_size_start_with_close_up",
     "def_question": [
-        "Does the video start with a close-up shot?"
+        "Does the video start with a close-up shot that highlights a distinct part of the subject while maintaining context?"
     ],
     "alt_question": [
-        "Does the video open with a close-up shot?",
-        "Is the first shot of the video a close-up shot?",
-        "Does the video start with a close-up shot?",
-        "Is the opening shot of the video a close-up shot?",
-        "Does the video begin with a close-up shot?"
+        "Does the video open with a close-up shot focusing on a subject’s prominent feature?",
+        "Is the first shot a close-up shot where the subject fills most of the frame?",
+        "Does the video begin with a close-up shot capturing a key detail of the subject?",
+        "Is the opening shot a close-up where a subject’s face, hands, or another defining feature is visible?",
+        "Does the first shot frame a subject closely while still providing enough surrounding context?",
+        "Is the initial shot a close-up that emphasizes a specific portion of the subject?",
+        "Does the video start with a shot that occupies 50%-100% of the frame’s height or width?",
+        "Is the first frame a close-up that keeps the subject’s defining features in focus?",
+        "Does the video begin with a shot that zooms in on an important detail while keeping the subject recognizable?",
+        "Is the opening shot taken at close range to emphasize an object or facial detail?"
     ],
     "def_prompt": [
-        "A video that starts with a close-up shot."
+        "A video that starts with a close-up shot, highlighting a distinct part of the subject while maintaining context."
     ],
     "alt_prompt": [
-        "The video starts with a close-up shot.",
-        "The video opens with a close-up shot.",
-        "The first shot of the video is a close-up shot.",
-        "The opening shot is a close-up shot.",
-        "The opening shot of the video is a close-up shot."
+        "The video starts with a close-up shot where the subject's defining features fill most of the frame.",
+        "The video opens with a close-up shot that emphasizes a specific detail of the subject.",
+        "The first shot of the video is a close-up, providing a tight yet identifiable framing.",
+        "The opening shot includes a close-up view of a subject’s face, hands, or a recognizable object.",
+        "The opening shot of the video is a close-up, ensuring key details are in focus.",
+        "A shot that captures a subject closely while maintaining enough surrounding information.",
+        "A video where the subject occupies 50%-100% of the frame while keeping identifiable context.",
+        "A shot where the subject’s defining features remain prominent within the frame.",
+        "A video starting with a close-up shot that enhances the subject’s presence on screen.",
+        "A cinematic close-up shot that ensures the focus remains on the subject's key details."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'close_up'",
     "neg_rule_str": "self.shot_size_info['start'] not in ['close_up', 'unknown']",

@@ -1,0 +1,34 @@
+{
+    "label": "Above Water To Underwater",
+    "label_name": "above_water_to_underwater",
+    "def_question": [
+        "Does the camera transition from above water to underwater?"
+    ],
+    "alt_question": [
+        "Does the shot move from the surface to an underwater view?",
+        "Is there a moment where the camera submerges into the water?",
+        "Does the perspective shift from above to below the water surface?",
+        "Is there a transition where the camera moves beneath the water?",
+        "Does the camera dive below the water level?",
+        "Is there a shift from an air perspective to an underwater view?",
+        "Does the shot depict the camera being submerged into water?",
+        "Is there a downward movement that takes the camera underwater?"
+    ],
+    "def_prompt": [
+        "The camera transitions from above water to underwater."
+    ],
+    "alt_prompt": [
+        "A video where the camera moves from above water to underwater.",
+        "A shot transitioning from surface level to below water.",
+        "A video showing the camera submerging beneath the surface.",
+        "A shot where the camera descends into an underwater environment.",
+        "A video capturing the transition from above to underwater.",
+        "A shot where the camera plunges below the water surface.",
+        "A sequence showing a smooth descent from above water to underwater.",
+        "A video depicting a downward shift from air into water."
+    ],
+    "pos_rule_str": "self.above_water_to_underwater is True",
+    "neg_rule_str": "self.above_water_to_underwater is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

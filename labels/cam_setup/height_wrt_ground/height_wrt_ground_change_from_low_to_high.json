@@ -1,0 +1,34 @@
+{
+    "label": "Height Wrt Ground Change From Low To High",
+    "label_name": "height_wrt_ground_change_from_low_to_high",
+    "def_question": [
+        "Does the camera height increase noticeably in relation to the ground?"
+    ],
+    "alt_question": [
+        "Does the camera rise from a lower position?",
+        "Is there an upward movement in camera elevation?",
+        "Does the shot show the camera moving higher?",
+        "Is there a noticeable raising of the camera position?",
+        "Does the camera transition from a low to a high elevation?",
+        "Is the camera gradually or abruptly ascending?",
+        "Does the camera’s vertical position increase relative to the ground?",
+        "Is there an upward shift in camera perspective?"
+    ],
+    "def_prompt": [
+        "A shot where the camera height increases significantly in relation to the ground."
+    ],
+    "alt_prompt": [
+        "A video showing the camera rising from a lower elevation.",
+        "A shot where the camera moves upward in relation to the ground.",
+        "A video featuring a gradual or rapid elevation of the camera position.",
+        "A sequence in which the camera transitions from a low to a high perspective.",
+        "A shot where the camera shifts from a ground-level position to a higher vantage point.",
+        "A video demonstrating an increase in camera height relative to the environment.",
+        "A shot where the camera ascends further from the ground over time.",
+        "A sequence capturing the camera rising in elevation."
+    ],
+    "pos_rule_str": "self.height_wrt_ground_change_from_low_to_high is True",
+    "neg_rule_str": "self.height_wrt_ground_change_from_low_to_high is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

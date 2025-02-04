@@ -1,25 +1,35 @@
 {
-    "label": "Shot Size End With Medium Full",
+    "label": "Shot Size End With Medium Full (Human Only)",
     "label_name": "shot_size_end_with_medium_full",
     "def_question": [
-        "Does the video end with a full shot?"
+        "Does the video end with a medium full shot that frames the human subject from the mid-thigh or knee upward?"
     ],
     "alt_question": [
-        "Does the video close with a medium-full shot?",
-        "Is the last shot of the video a medium-full shot?",
-        "Does the video end with a medium-full shot?",
-        "Is the closing shot of the video a medium-full shot?",
-        "Does the video finish with a medium-full shot?"
+        "Does the video close with a medium full shot where the subject is framed from the thighs up?",
+        "Is the last shot a medium full shot capturing most of the subject’s body?",
+        "Does the video finish with a medium full shot where the subject’s lower legs are cropped?",
+        "Is the closing shot a medium full shot where the subject is visible from the knees up?",
+        "Does the final shot frame the subject’s body from mid-thigh to head?",
+        "Is the last shot a medium full shot where the subject remains clearly framed?",
+        "Does the video end with a medium full shot that provides a balance between full-body and close-up?",
+        "Is the final frame composed to show the subject’s upper body while maintaining background context?",
+        "Does the video conclude with a medium full shot emphasizing the subject over the environment?",
+        "Is the last shot a medium full shot with a slightly cropped lower half?"
     ],
     "def_prompt": [
-        "A video that ends with a medium-full shot."
+        "A video that ends with a medium full shot, framing the human subject from mid-thigh or knee upward."
     ],
     "alt_prompt": [
-        "The video ends with a medium-full shot.",
-        "The video closes with a medium-full shot.",
-        "The last shot of the video is a medium-full shot.",
-        "The closing shot is a medium-full shot.",
-        "The closing shot of the video is a medium-full shot."
+        "The video ends with a medium full shot where the subject is visible from mid-thigh up.",
+        "The video closes with a medium full shot capturing most of the subject’s body.",
+        "The last shot of the video is a medium full shot, keeping the subject’s upper body in focus.",
+        "The closing shot frames the subject’s body from mid-thigh while maintaining background context.",
+        "The final shot of the video is a medium full shot ensuring the subject is well-framed.",
+        "A shot that captures the subject’s body while avoiding a full-body composition.",
+        "A video where the subject takes up most of the frame while keeping the scene visible.",
+        "A shot where the subject is framed from the knees up, balancing focus and context.",
+        "A video ending with a medium full shot that provides a natural subject framing.",
+        "A cinematic medium full shot that ensures the subject remains the focal point."
     ],
     "pos_rule_str": "self.shot_size_info['end'] == 'medium_full'",
     "neg_rule_str": "self.shot_size_info['end'] not in ['medium_full', 'unknown']",
