@@ -7,8 +7,9 @@
     "alt_question": [
         "Does the video open with an extreme wide shot?",
         "Is the first shot of the video an extreme wide shot?",
-        "Does the video start with a tightly framed extreme wide shot?",
-        "Is the opening shot of the video an extreme wide shot?"
+        "Does the video start with an extreme wide shot?",
+        "Is the opening shot of the video an extreme wide shot?",
+        "Does the video open with an extremely wide shot?"
     ],
     "def_prompt": [
         "A video that starts with an extreme wide shot."
@@ -17,7 +18,7 @@
         "The video begins with an extreme wide shot.",
         "The video opens with an extreme wide shot.",
         "The first shot of the video is an extreme wide shot.",
-        "The video starts with a tightly framed extreme wide shot.",
+        "The opening shot is an extreme wide shot.",
         "The opening shot of the video is an extreme wide shot."
     ],
     "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide'",
