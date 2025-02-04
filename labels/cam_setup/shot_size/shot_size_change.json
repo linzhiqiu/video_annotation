@@ -5,27 +5,22 @@
         "Does the shot size change throughout the video?"
     ],
     "alt_question": [
-        "Is there variation in the camera distance?",
-        "Does the framing distance change during the shot?",
-        "Is there a shift in how much of the subject is shown?",
-        "Does the camera move closer or farther from the subject?",
-        "Is there a change in the frame's coverage area?",
-        "Does the shot scale vary throughout?",
-        "Is there alteration in the shot's field of view?",
-        "Does the framing size change during the video?"
+        "Does the shot size vary throughout the video?",
+        "Are there changes in shot size during the video?",
+        "Does the video feature shifts in shot size?",
+        "Is the shot size inconsistent across the video?",
+        "Does the shot size change dynamically throughout the video?"
+
     ],
     "def_prompt": [
-        "A shot that changes in size or scale throughout its duration."
+        "The shot size changes throughout the video."
     ],
     "alt_prompt": [
-        "A video with varying shot sizes.",
-        "A shot showing distance changes.",
-        "A video with dynamic framing.",
-        "A shot featuring scale changes.",
-        "A video with varying camera distances.",
-        "A shot showing size transitions.",
-        "A video with changing frame coverage.",
-        "A shot featuring distance variations."
+        "The shot size varies throughout the video.",
+        "There are changes in shot size throughout the video.",
+        "The video features shifts in shot size.",
+        "The shot size is not consistent across the video.",
+        "Throughout the video, the shot size changes dynamically."
     ],
     "pos_rule_str": "self.shot_size_change is True",
     "neg_rule_str": "self.shot_size_change is False",

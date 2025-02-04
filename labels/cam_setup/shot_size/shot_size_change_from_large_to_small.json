@@ -5,27 +5,30 @@
         "Does the shot size change from large to small?"
     ],
     "alt_question": [
-        "Does the camera move from a wider to a tighter shot?",
-        "Is there a transition from a broader to a closer view?",
-        "Does the framing become more intimate over time?",
+        "Does the camera move from a wide to a tighter shot?",
+        "Does the framing become more constrained over time?",
         "Is there a progression from wide to tight framing?",
         "Does the shot narrow its field of view?",
-        "Is there a shift from expansive to confined framing?",
-        "Does the camera move in closer to the subject?",
-        "Is there a change from distant to close framing?"
+        "Does the shot size transition from large to small?",
+        "Does the shot size decrease over time?",
+        "Is there a change in shot size from a wide view to a close-up?",
+        "Does the framing shift from a larger to a smaller shot size?",
+        "Does the video tighten from a wide shot to a closer composition?"
     ],
     "def_prompt": [
-        "A shot that transitions from a larger to a smaller frame size."
+        "The shot size transitions from large to small."
     ],
     "alt_prompt": [
         "A video moving from wide to tight framing.",
-        "A shot transitioning to closer view.",
-        "A video showing increasing intimacy.",
+        "A shot transitioning to a more focused view.",
+        "A video showing a narrowing perspective.",
         "A shot with decreasing frame width.",
-        "A video moving closer to subject.",
-        "A shot narrowing its perspective.",
-        "A video with reducing frame size.",
-        "A shot closing in on subject."
+        "A video with a contracting frame size.",
+        "The shot size decreases over time.",
+        "The shot size changes from a wide view to a close-up.",
+        "The framing shifts from a larger to a smaller shot size.",
+        "The video tightens from a wide shot to a closer composition.",
+        "The shot gradually or abruptly moves from a broader to a narrower perspective."
     ],
     "pos_rule_str": "self.shot_size_change_from_large_to_small is True",
     "neg_rule_str": "self.shot_size_change_from_large_to_small is False",

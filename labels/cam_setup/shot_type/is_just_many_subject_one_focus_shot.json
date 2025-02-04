@@ -23,12 +23,10 @@
         "A video focusing on one dominant element.",
         "A shot highlighting one subject among several.",
         "A video with one standout subject.",
-        "A shot emphasizing a primary subject.",
-        "A video with clear subject hierarchy.",
-        "A shot focusing on one main element."
+        "A shot emphasizing a primary subject among many."
     ],
-    "pos_rule_str": "self.complex_shot_type == 'many_subject_one_focus'",
-    "neg_rule_str": "self.complex_shot_type != 'many_subject_one_focus'",
+    "pos_rule_str": "self.is_just_many_subject_one_focus_shot is True",
+    "neg_rule_str": "self.is_just_many_subject_one_focus_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

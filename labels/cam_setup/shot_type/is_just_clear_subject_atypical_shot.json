@@ -21,14 +21,14 @@
         "A video featuring an anatomically stylized subject.",
         "A shot showing a subject with exaggerated proportions.",
         "A video with a clear but unrealistic subject.",
-        "A shot featuring non-standard anatomy.",
+        "A shot featuring subjects with non-standard anatomy.",
         "A video showing CGI-style subject features.",
         "A shot with an anatomically unusual subject.",
         "A video displaying stylized character proportions.",
         "A shot emphasizing non-realistic anatomy."
     ],
-    "pos_rule_str": "self.complex_shot_type == 'clear_subject_atypical'",
-    "neg_rule_str": "self.complex_shot_type != 'clear_subject_atypical'",
+    "pos_rule_str": "self.is_just_clear_subject_atypical_shot is True",
+    "neg_rule_str": "self.is_just_clear_subject_atypical_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

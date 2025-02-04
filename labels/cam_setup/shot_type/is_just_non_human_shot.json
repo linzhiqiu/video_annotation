@@ -15,7 +15,7 @@
         "Does the shot emphasize one non-human subject?"
     ],
     "def_prompt": [
-        "A shot consistently featuring one dominant non-human subject or group."
+        "A shot consistently featuring either a single non-human subject or a single group of non-human subjects."
     ],
     "alt_prompt": [
         "A video focused on a single non-human subject.",
@@ -27,8 +27,8 @@
         "A video highlighting one non-human subject.",
         "A shot following a single non-human element."
     ],
-    "pos_rule_str": "self.shot_type == 'non_human'",
-    "neg_rule_str": "self.shot_type != 'non_human'",
+    "pos_rule_str": "self.is_just_non_human_shot is True",
+    "neg_rule_str": "self.is_just_non_human_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

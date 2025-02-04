@@ -6,26 +6,29 @@
     ],
     "alt_question": [
         "Does the camera move from a tight to a wider shot?",
-        "Is there a transition from close-up to broader view?",
         "Does the framing become more expansive over time?",
         "Is there a progression from tight to wide framing?",
         "Does the shot expand its field of view?",
-        "Is there a shift from confined to expansive framing?",
-        "Does the camera pull back from the subject?",
-        "Is there a change from close to distant framing?"
+        "Does the shot size transition from small to large?",
+        "Does the shot size increase over time?",
+        "Is there a change in shot size from close-up to a wider view?",
+        "Does the framing shift from a smaller to a larger shot size?",
+        "Does the video expand from a tight shot to a wider composition?"
     ],
     "def_prompt": [
-        "A shot that transitions from a smaller to a larger frame size."
+        "The shot size transitions from small to large."
     ],
     "alt_prompt": [
         "A video moving from tight to wide framing.",
         "A shot transitioning to broader view.",
         "A video showing expanding perspective.",
         "A shot with increasing frame width.",
-        "A video moving away from subject.",
-        "A shot widening its perspective.",
         "A video with expanding frame size.",
-        "A shot pulling back from subject."
+        "The shot size increases over time.",
+        "The shot size changes from a close-up to a wider view.",
+        "The framing shifts from a smaller to a larger shot size.",
+        "The video expands from a tight shot to a wider composition.",
+        "The shot gradually or abruptly moves from a narrow to a broader perspective."
     ],
     "pos_rule_str": "self.shot_size_change_from_small_to_large is True",
     "neg_rule_str": "self.shot_size_change_from_small_to_large is False",

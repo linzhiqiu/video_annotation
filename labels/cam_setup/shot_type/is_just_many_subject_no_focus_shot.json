@@ -8,7 +8,6 @@
         "Are there multiple subjects without a primary focus?",
         "Does the shot show several subjects of equal importance?",
         "Is there no dominant subject among multiple elements?",
-        "Does the video present multiple subjects without hierarchy?",
         "Are various subjects shown without emphasizing any one?",
         "Does the shot maintain equal focus on multiple subjects?",
         "Is there an even distribution of focus among subjects?",
@@ -19,16 +18,12 @@
     ],
     "alt_prompt": [
         "A video with multiple equal-emphasis subjects.",
-        "A shot showing various subjects without hierarchy.",
-        "A video featuring multiple balanced subjects.",
-        "A shot with distributed subject focus.",
         "A video presenting multiple subjects equally.",
-        "A shot without subject hierarchy.",
-        "A video showing multiple concurrent subjects.",
-        "A shot with balanced subject emphasis."
+        "A shot featuring multiple subjects with no dominant focus.",
+        "A video showing various subjects without a primary focus."
     ],
-    "pos_rule_str": "self.complex_shot_type == 'many_subject_no_focus'",
-    "neg_rule_str": "self.complex_shot_type != 'many_subject_no_focus'",
+    "pos_rule_str": "self.is_just_many_subject_no_focus_shot is True",
+    "neg_rule_str": "self.is_just_many_subject_no_focus_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

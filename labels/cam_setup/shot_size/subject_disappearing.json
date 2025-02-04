@@ -1,0 +1,30 @@
+{
+    "label": "Is Subject Disappearing",
+    "label_name": "subject_disappearing",
+    "def_question": [
+        "Does the main subject disappear from the frame?"
+    ],
+    "alt_question": [
+        "Does the primary subject leave the frame?",
+        "Is there a moment where the main subject vanishes?",
+        "Does the subject exit from view?",
+        "Is there a planned disappearance of the subject?",
+        "Does the main subject fade from view?",
+        "Is there a point where the subject leaves the shot?"
+    ],
+    "def_prompt": [
+        "A shot where the main subject disappears or exits from view."
+    ],
+    "alt_prompt": [
+        "The primary subject leaves the frame.",
+        "There is a moment where the main subject vanishes.",
+        "The subject exits from view.",
+        "The subject disappears from the frame as planned.",
+        "The main subject fades from view.",
+        "There is a point where the subject leaves the shot."
+    ],
+    "pos_rule_str": "self.subject_disappearing is True",
+    "neg_rule_str": "self.subject_disappearing is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

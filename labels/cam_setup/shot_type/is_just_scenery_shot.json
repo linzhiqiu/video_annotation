@@ -15,7 +15,7 @@
         "Does the video avoid emphasizing any specific subjects?"
     ],
     "def_prompt": [
-        "A shot focusing exclusively on scenery or environment without any subject emphasis."
+        "A shot focusing on scenery or environment without emphasis on any subjects."
     ],
     "alt_prompt": [
         "A video purely showcasing scenery.",
@@ -24,11 +24,10 @@
         "A shot emphasizing scenic composition.",
         "A video focused solely on surroundings.",
         "A shot showing pure environmental content.",
-        "A video highlighting only scenery.",
-        "A shot centered on location views."
+        "A video highlighting only scenery."
     ],
-    "pos_rule_str": "self.shot_type == 'scenery'",
-    "neg_rule_str": "self.shot_type != 'scenery'",
+    "pos_rule_str": "self.is_just_scenery_shot is True",
+    "neg_rule_str": "self.is_just_scenery_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

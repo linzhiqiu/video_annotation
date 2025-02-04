@@ -6,29 +6,20 @@
     ],
     "alt_question": [
         "Does the shot size alternate between closer and farther views?",
-        "Is there a pattern of changing distances to the subject?",
         "Does the framing repeatedly shift between different sizes?",
         "Is there an oscillating pattern in the shot size?",
-        "Does the camera distance vary back and forth?",
-        "Is there a rhythmic change in shot size?",
-        "Does the framing alternate between different scales?",
-        "Is there a pattern of size changes in the shot?"
+        "Does the framing alternate between different scales?"
     ],
     "def_prompt": [
-        "A shot featuring alternating changes in size while maintaining a clear subject."
+       "The video has a clear subject with back-and-forth changes in shot size."
     ],
     "alt_prompt": [
         "A video with oscillating shot sizes.",
-        "A shot showing rhythmic distance changes.",
         "A video featuring alternating frame scales.",
-        "A shot with patterned size variations.",
-        "A video showing regular framing changes.",
-        "A shot with systematic size alterations.",
-        "A video featuring cyclic distance changes.",
-        "A shot with regular scale variations."
+        "A shot with patterned size variations."
     ],
-    "pos_rule_str": "self.shot_size_description_type == 'back_and_forth_change'",
-    "neg_rule_str": "self.shot_size_description_type != 'back_and_forth_change'",
+    "pos_rule_str": "self.is_just_back_and_forth_change_shot is True",
+    "neg_rule_str": "self.is_just_back_and_forth_change_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

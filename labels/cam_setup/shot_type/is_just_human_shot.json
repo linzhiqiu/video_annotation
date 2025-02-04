@@ -15,7 +15,7 @@
         "Does the shot maintain emphasis on one human subject?"
     ],
     "def_prompt": [
-        "A shot consistently featuring one dominant human subject or group."
+        "A shot consistently featuring either a single human subject or a single group of humans."
     ],
     "alt_prompt": [
         "A video focused on a single human subject.",
@@ -27,8 +27,8 @@
         "A video highlighting one human subject.",
         "A shot following a single human presence."
     ],
-    "pos_rule_str": "self.shot_type == 'human'",
-    "neg_rule_str": "self.shot_type != 'human'",
+    "pos_rule_str": "self.is_just_human_shot is True",
+    "neg_rule_str": "self.is_just_human_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

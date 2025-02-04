@@ -96,7 +96,7 @@ class CameraSetupData:
         self._set_focus_attributes()
     
     def _set_framing_subject_attributes(self):
-        self.is_framing_subject = None # "Is there one or more subject that remains consistently framed in the shot?"
+        self.is_framing_subject = None # "Does the video include one or more subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
         if self.shot_type in ["human", "non_human", "change_of_subject"]:
             self.is_framing_subject = True
         elif self.shot_type in ["scenery"]:
@@ -133,6 +133,8 @@ class CameraSetupData:
                 self.has_many_subjects = True
             elif self.complex_shot_type in ["clear_subject_dynamic_size", "clear_subject_atypical"]:
                 self.has_many_subjects = False
+            elif self.shot_type == "change_of_subject" and self.shot_size_info['start'] != "unknown" and self.shot_size_info['end'] != "unknown":
+                self.has_many_subjects = True
             # elif self.complex_shot_type == "description" and self.shot_size_description_type in ['subject_scene_mismatch', 'back_and_forth_change']:
             #     self.has_many_subjects = False
     
@@ -148,8 +150,6 @@ class CameraSetupData:
             self.is_non_human_shot = True
         elif self.shot_type in ["human", "scenery"]:
             self.is_non_human_shot = False
-        
-        self.is_scenery_shot = self.shot_type in ["scenery"] # "Is the shot focused on scenery or environment without emphasis on human or non-human subjects?"
         
         self.is_just_human_shot = self.shot_type == "human" # "Does the video consistently feature one dominant human subject or a single group of human subjects in the frame?"
         self.is_just_non_human_shot = self.shot_type == "non_human" # "Does the video consistently feature one dominant non-human subject or a single group of non-human subjects in the frame?"
@@ -167,20 +167,20 @@ class CameraSetupData:
         self.shot_size_info = {'start': self.shot_size_start, 'end': self.shot_size_end}
         self.is_shot_size_applicable = self.complex_shot_type != "unknown" or (self.complex_shot_type == "description" and self.shot_size_description_type != "others") # "Is shot size classification possible for this video?"
         
-        self.revealing_shot = False # "Does the video include a revealing shot where a subject appears?"
-        self.disappearing_shot = False # "Does the main subject disappear from the shot?"
-        self.subject_switch = False # "Does the main subject change to another subject?"
+        self.subject_revealing = False # "Does the video include a revealing shot where a subject appears?"
+        self.subject_disappearing = False # "Does the main subject disappear from the shot?"
+        self.subject_switching = False # "Does the main subject change to another subject?"
         self.shot_size_change = False # "Does the shot size change throughout the video?"
         self.shot_size_change_from_large_to_small = False # "Does the shot size change from large to small?"
         self.shot_size_change_from_small_to_large = False # "Does the shot size change from small to large?"
         if self.is_shot_size_applicable:
             if self.shot_type == "change_of_subject":
                 if self.shot_size_info['start'] == "unknown":
-                    self.revealing_shot = True
+                    self.subject_revealing = True
                 elif self.shot_size_info['end'] == "unknown":
-                    self.disappearing_shot = True
+                    self.subject_disappearing = True
                 else:
-                    self.subject_switch = True
+                    self.subject_switching = True
             else:
                 if self.shot_size_description_type == "back_and_forth_change":
                     self.shot_size_change = True
@@ -197,7 +197,7 @@ class CameraSetupData:
                         else:
                             self.shot_size_change_from_small_to_large = True
         else:
-            self.revealing_shot = self.disappearing_shot = self.subject_switch = None
+            self.subject_revealing = self.subject_disappearing = self.subject_switching = None
             self.shot_size_change = self.shot_size_change_from_large_to_small = self.shot_size_change_from_small_to_large = None
             
     
@@ -282,8 +282,8 @@ class CameraSetupData:
         
         self.focus_change_from_near_to_far = None # "Does the focal plane transition from close to distant?"
         self.focus_change_from_far_to_near = None # "Does the focal plane transition from distant to close?"
-        self.is_rack_pull_focus = None # "Does the video using a rack or pull focus technique?"
-        self.is_focus_tracking = None # "Does the focus track a moving subject?"
+        self.is_rack_pull_focus = None # "Is rack focus or pull focus used in the video?"
+        self.is_focus_tracking = None # "Is there focus tracking on a moving subject in the video?"
         
         if self.is_focus_applicable:
             if self.camera_focus == "deep_focus":

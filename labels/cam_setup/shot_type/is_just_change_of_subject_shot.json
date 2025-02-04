@@ -2,20 +2,19 @@
     "label": "Is Just Change Of Subject Shot",
     "label_name": "is_just_change_of_subject_shot",
     "def_question": [
-        "Does the video include a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another?"
+        "The video includes a subject change, where a subject appears, disappears, or transitions to another."
     ],
     "alt_question": [
         "Does the shot show a transition between different subjects?",
         "Is there a clear change in the main subject during the video?",
         "Does the focus shift from one subject to another?",
-        "Is there a revealing or transitional element to the shot?",
         "Does the video show subjects appearing or disappearing?",
         "Is there a handoff between different subjects?",
         "Does the shot include subject transitions?",
         "Is there a change in what the camera focuses on?"
     ],
     "def_prompt": [
-        "A shot featuring a change in subject, including appearances, disappearances, or transitions."
+        "The video includes a subject change, where a subject appears in a revealing shot, disappears, or transitions to another."
     ],
     "alt_prompt": [
         "A video showing subject transitions.",
@@ -24,11 +23,10 @@
         "A shot demonstrating subject handoffs.",
         "A video with dynamic subject changes.",
         "A shot revealing new subjects.",
-        "A video transitioning between subjects.",
-        "A shot with evolving subject focus."
+        "A video transitioning between subjects."
     ],
-    "pos_rule_str": "self.shot_type == 'change_of_subject'",
-    "neg_rule_str": "self.shot_type != 'change_of_subject'",
+    "pos_rule_str": "self.is_just_change_of_subject_shot is True",
+    "neg_rule_str": "self.is_just_change_of_subject_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -11,11 +11,10 @@
         "Does the framing change while following a clear subject?",
         "Is there dynamic framing of an identifiable subject?",
         "Does the shot size vary while tracking a clear subject?",
-        "Is the subject consistent but shown at different sizes?",
-        "Does the frame distance to the subject change significantly?"
+        "Is the subject consistent but shown at different sizes?"
     ],
     "def_prompt": [
-        "A shot with a clear subject but variable framing that complicates shot size classification."
+        "The video features a clear subject, but changes in framing make shot size classification tricky."
     ],
     "alt_prompt": [
         "A video showing a subject at varying distances.",
@@ -24,11 +23,10 @@
         "A shot featuring variable distances to the subject.",
         "A video with changing shot sizes of a clear subject.",
         "A shot showing subject scale variations.",
-        "A video with dynamic subject sizing.",
-        "A shot featuring distance variations to a subject."
+        "A video with dynamic subject sizing."
     ],
-    "pos_rule_str": "self.complex_shot_type == 'clear_subject_dynamic_size'",
-    "neg_rule_str": "self.complex_shot_type != 'clear_subject_dynamic_size'",
+    "pos_rule_str": "self.is_just_clear_subject_dynamic_size_shot is True",
+    "neg_rule_str": "self.is_just_clear_subject_dynamic_size_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

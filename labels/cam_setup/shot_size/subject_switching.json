@@ -1,0 +1,29 @@
+{
+    "label": "Subject Switch",
+    "label_name": "subject_switching",
+    "def_question": [
+        "Does the main subject change to another subject?"
+    ],
+    "alt_question": [
+        "Is there a transition between main subjects?",
+        "Does the focus shift from one subject to another?",
+        "Does the shot switch between different subjects?",
+        "Does the primary focus change to a new subject?",
+        "Does the shot change its principal subject to another?"
+    ],
+    "def_prompt": [
+        "A shot where the main subject changes to a different subject."
+    ],
+    "alt_prompt": [
+        "There is a transition between main subjects.",
+        "The focus shifts from one subject to another.",
+        "The shot switches between different subjects.",
+        "The primary focus changes to a new subject.",
+        "The shot changes its principal subject to another."
+
+    ],
+    "pos_rule_str": "self.subject_switching is True",
+    "neg_rule_str": "self.subject_switching is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
