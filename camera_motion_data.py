@@ -296,73 +296,48 @@ class CameraMotionData:
         else:
             raise ValueError("Complex motion description must be a string")
         
-    def camera_motion_dict(self):
-        return {
-            "forward_backward": self.camera_forward_backward,
-            "zoom": self.camera_zoom,
-            "left_right": self.camera_left_right,
-            "pan": self.camera_pan,
-            "up_down": self.camera_up_down,
-            "tilt": self.camera_tilt,
-            "arc": self.camera_arc,
-            "crane": self.camera_crane,
-            "roll": self.camera_roll
+        
+    def camera_motion_dict_cam(self):
+        return{
+            'forward_cam': self.forward_cam,
+            'backward_cam': self.backward_cam,
+            'zoom_in': self.zoom_in,
+            'zoom_out': self.zoom_out,
+            'up_cam': self.up_cam,
+            'down_cam': self.down_cam,
+            'tilt_up': self.tilt_up,
+            'tilt_down': self.tilt_down,
+            'pan_right': self.pan_right,
+            'pan_left': self.pan_left,
+            'roll_cw': self.roll_cw,
+            'roll_ccw': self.roll_ccw,
+            'left': self.left,
+            'right': self.right
         }
-
-    def check_if_any_motion(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (ground based)
-        if include:
-            return any(motion in condition for motion in self.camera_motion_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_list)
-
-    def check_if_any_motion_cam(self, include: List[str] = [], condition: List[str] = [True]):
-        # Check if there is any motion that satisfy the condition (camera based)
-        if include:
-            return any(motion in condition for motion in self.camera_motion_cam_list if motion in include)
-        else:
-            return any(motion in condition for motion in self.camera_motion_cam_list)
-
-    def check_if_no_motion(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_list if motion not in exclude)
-
-    def check_if_no_motion_cam(self, exclude: List[str] = []):
-        return all(motion == False for motion in self.camera_motion_cam_list if motion not in exclude)
-
-    # def check_if_no_motion(self, exclude: List[str] = []):
-    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
-    #     return all(value == "no" for key, value in self.camera_motion_dict().items() if key not in exclude)
     
-    # def check_if_any_motion(self, include: List[str] = []):
-    #     """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
-    #     if not include:
-    #         return any(value != "no" for _, value in self.camera_motion_dict().items())
-    #     else:
-    #         return any(value != "no" for key, value in self.camera_motion_dict().items() if key in include)
-    
-    def camera_motion_dict_cam_frame(self):
-        return {
-            "forward_backward": self.camera_forward_backward_cam_frame, # Use this for camera-centric motion
-            "zoom": self.camera_zoom,
-            "left_right": self.camera_left_right,
-            "pan": self.camera_pan,
-            "up_down": self.camera_up_down_cam_frame, # Use this for camera-centric motion
-            "tilt": self.camera_tilt,
-            "arc": self.camera_arc,
-            "crane": self.camera_crane,
-            "roll": self.camera_roll
+    def camera_motion_dict(self):
+        return{
+            'forward': self.forward,
+            'backward': self.backward,
+            'zoom_in': self.zoom_in,
+            'zoom_out': self.zoom_out,
+            'up': self.up,
+            'down': self.down,
+            'tilt_up': self.tilt_up,
+            'tilt_down': self.tilt_down,
+            'roll_cw': self.roll_cw,
+            'roll_ccw': self.roll_ccw,
+            'pan_right': self.pan_right,
+            'pan_left': self.pan_left,
+            'left': self.left,
+            'right': self.right
         }
         
-    # def check_if_no_motion_cam_frame(self, exclude: List[str] = []):
-    #     """Checks if only the specified motion(s) exist and all others are 'no'."""
-    #     return all(value == "no" for key, value in self.camera_motion_dict_cam_frame().items() if key not in exclude)
-    #
-    # def check_if_any_motion_cam_frame(self, include: List[str] = []):
-    #     """Checks if any of the specified motion(s) exist. If include is empty, checks if any motion exists."""
-    #     if not include:
-    #         return any(value != "no" for _, value in self.camera_motion_dict_cam_frame().items())
-    #     else:
-    #         return any(value != "no" for key, value in self.camera_motion_dict_cam_frame().items() if key in include)
+    def check_if_no_motion(self, exclude: List[str] = []):
+        return all(value == False for motion, value in self.camera_motion_dict().items() if motion not in exclude)
+
+    def check_if_no_motion_cam(self, exclude: List[str] = []):
+        return all(value == False for motion, value in self.camera_motion_dict_cam().items() if motion not in exclude)
 
     def get_raw_camera_motion_list(self):
         return [self.camera_forward_backward, self.camera_zoom, self.camera_left_right,
