@@ -1,0 +1,25 @@
+# Caption Generation Configuration
+
+# Data source paths
+data:
+  ndjson_dir: exports/ndjson
+  issues_dir: exports/issues_ndjson
+  videos_dir: ../datasets/SelectedVideos_video_segments
+
+# Batch constraints
+constraints:
+  video_names_file: caption_generation/test/test.json
+  approver: null  # Optional: filter by approver
+  time_range: null  # Optional: filter by time range
+
+# Caption generation rules
+rules:
+  - caption_type: shot_transition
+    instruction_path: captions/shot_transition/shot_transition_tarsier7b.json
+
+# Settings
+settings:
+  parallel_processing: true
+  max_workers: 4
+  output_dir: caption_generation/results
+  log_level: INFO

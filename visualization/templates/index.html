@@ -166,8 +166,10 @@
                             <!-- Video element will be created when button is clicked -->
                         </div>
                         {% if video.categorization_reason %}
-                        <div class="mt-2">
-                            <small class="text-muted">{{ video.categorization_reason|join(', ') }}</small>
+                        <div class="debug-info mt-2">
+                            <button class="btn btn-sm btn-info mb-2" onclick="toggleDebugInfo('{{ video.name }}')">Toggle Debug Info</button>
+                            <pre id="debug-{{ video.name }}" class="debug-details" style="display: none; font-size: 0.8em; white-space: pre-wrap; background-color: #f8f9fa; padding: 10px; border-radius: 4px;">{{ video.categorization_reason|join('\n') }}
+pan_right value: {{ video.details.camera_motion.pan_right }}</pre>
                         </div>
                         {% endif %}
                     </div>
@@ -197,6 +199,15 @@
                     </video>
                 `;
                 playerDiv.classList.add('expanded');
+            }
+        }
+
+        function toggleDebugInfo(videoName) {
+            const debugDiv = document.getElementById(`debug-${videoName}`);
+            if (debugDiv.style.display === 'none') {
+                debugDiv.style.display = 'block';
+            } else {
+                debugDiv.style.display = 'none';
             }
         }
     </script>

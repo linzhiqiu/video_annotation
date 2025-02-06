@@ -1,0 +1,3011 @@
+Per-Label Analysis Results
+================================================================================
+
+Total Videos Analyzed: 3853
+
+Labels analyzed:
+- cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+- cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+- cam_motion/arc_crane_movement/crane_down/has_crane_down
+- cam_motion/arc_crane_movement/crane_up/has_crane_up
+- cam_motion/camera_centric_movement/backward/has_backward_wrt_camera
+- cam_motion/camera_centric_movement/backward/only_backward_wrt_camera
+- cam_motion/camera_centric_movement/downward/has_downward_wrt_camera
+- cam_motion/camera_centric_movement/downward/only_downward_wrt_camera
+- cam_motion/camera_centric_movement/forward/has_forward_wrt_camera
+- cam_motion/camera_centric_movement/forward/only_forward_wrt_camera
+- cam_motion/camera_centric_movement/leftward/has_leftward
+- cam_motion/camera_centric_movement/leftward/only_leftward
+- cam_motion/camera_centric_movement/rightward/has_rightward
+- cam_motion/camera_centric_movement/rightward/only_rightward
+- cam_motion/camera_centric_movement/upward/has_upward_wrt_camera
+- cam_motion/camera_centric_movement/upward/only_upward_wrt_camera
+- cam_motion/camera_centric_movement/pan_left/has_pan_left
+- cam_motion/camera_centric_movement/pan_left/only_pan_left
+- cam_motion/camera_centric_movement/pan_right/has_pan_right
+- cam_motion/camera_centric_movement/pan_right/only_pan_right
+- cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+- cam_motion/camera_centric_movement/roll_clockwise/only_roll_clockwise
+- cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+- cam_motion/camera_centric_movement/roll_counterclockwise/only_roll_counterclockwise
+- cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+- cam_motion/camera_centric_movement/tilt_down/only_tilt_down
+- cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+- cam_motion/camera_centric_movement/tilt_up/only_tilt_up
+- cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
+- cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
+- cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
+- cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
+- cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
+- cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
+- cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
+- cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
+- cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
+- cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+- cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
+- cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
+- cam_motion/object_centric_movement/aerial_tracking_shot
+- cam_motion/object_centric_movement/arc_tracking_shot
+- cam_motion/object_centric_movement/front_side_tracking_shot
+- cam_motion/object_centric_movement/lead_tracking_shot
+- cam_motion/object_centric_movement/pan_tracking_shot
+- cam_motion/object_centric_movement/rear_side_tracking_shot
+- cam_motion/object_centric_movement/side_tracking_shot
+- cam_motion/object_centric_movement/tail_tracking_shot
+- cam_motion/object_centric_movement/tilt_tracking_shot
+- cam_motion/object_centric_movement/track_shot
+- cam_motion/object_centric_movement/tracking_subject_larger_size
+- cam_motion/object_centric_movement/tracking_subject_smaller_size
+- cam_motion/has_frame_freezing
+- cam_motion/has_motion_blur
+- cam_motion/has_shot_transition_cam_motion
+- cam_motion/motion_complexity/is_complex_motion
+- cam_motion/motion_complexity/is_minor_motion
+- cam_motion/motion_complexity/is_simple_motion
+- cam_motion/scene_movement/dynamic_scene
+- cam_motion/scene_movement/mostly_static_scene
+- cam_motion/scene_movement/static_scene
+- cam_motion/steadiness_and_movement/clear_moving_camera
+- cam_motion/steadiness_and_movement/fast_moving_camera
+- cam_motion/steadiness_and_movement/fixed_camera
+- cam_motion/steadiness_and_movement/fixed_camera_with_shake
+- cam_motion/steadiness_and_movement/moving_camera
+- cam_motion/steadiness_and_movement/shaky_camera
+- cam_motion/steadiness_and_movement/slow_moving_camera
+- cam_motion/steadiness_and_movement/stable_camera
+- cam_motion/steadiness_and_movement/very_shaky_camera
+- cam_motion/steadiness_and_movement/very_stable_camera
+- cam_setup/angle/camera_angle_change_from_high_to_low
+- cam_setup/angle/camera_angle_change_from_low_to_high
+- cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+- cam_setup/angle/end_with/camera_angle_end_with_high_angle
+- cam_setup/angle/end_with/camera_angle_end_with_level_angle
+- cam_setup/angle/end_with/camera_angle_end_with_low_angle
+- cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+- cam_setup/angle/is_always/camera_angle_is_bird_eye_angle
+- cam_setup/angle/is_always/camera_angle_is_high_angle
+- cam_setup/angle/is_always/camera_angle_is_level_angle
+- cam_setup/angle/is_always/camera_angle_is_low_angle
+- cam_setup/angle/is_always/camera_angle_is_worm_eye_angle
+- cam_setup/angle/is_camera_angle_applicable
+- cam_setup/angle/is_dutch_angle
+- cam_setup/angle/is_dutch_angle_fixed
+- cam_setup/angle/is_dutch_angle_varying
+- cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+- cam_setup/angle/start_with/camera_angle_start_with_high_angle
+- cam_setup/angle/start_with/camera_angle_start_with_level_angle
+- cam_setup/angle/start_with/camera_angle_start_with_low_angle
+- cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+- cam_setup/focus/end_with/focus_end_with_background
+- cam_setup/focus/end_with/focus_end_with_foreground
+- cam_setup/focus/end_with/focus_end_with_middle_ground
+- cam_setup/focus/end_with/focus_end_with_out_of_focus
+- cam_setup/focus/focus_change_from_far_to_near
+- cam_setup/focus/focus_change_from_near_to_far
+- cam_setup/focus/is_always/focus_is_background
+- cam_setup/focus/is_always/focus_is_foreground
+- cam_setup/focus/is_always/focus_is_middle_ground
+- cam_setup/focus/is_always/focus_is_out_of_focus
+- cam_setup/focus/is_deep_focus
+- cam_setup/focus/is_focus_applicable
+- cam_setup/focus/is_focus_tracking
+- cam_setup/focus/is_rack_pull_focus
+- cam_setup/focus/is_shallow_focus
+- cam_setup/focus/is_ultra_shallow_focus
+- cam_setup/focus/start_with/focus_start_with_background
+- cam_setup/focus/start_with/focus_start_with_foreground
+- cam_setup/focus/start_with/focus_start_with_middle_ground
+- cam_setup/focus/start_with/focus_start_with_out_of_focus
+- cam_setup/height_wrt_ground/above_water_to_underwater
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+- cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+- cam_setup/height_wrt_ground/height_wrt_ground_change_from_high_to_low
+- cam_setup/height_wrt_ground/height_wrt_ground_change_from_low_to_high
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_aerial_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_eye_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_ground_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_hip_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_overhead_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_underwater_level
+- cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_water_level
+- cam_setup/height_wrt_ground/is_height_wrt_ground_applicable
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+- cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+- cam_setup/height_wrt_ground/underwater_to_above_water
+- cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_above_subject
+- cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_at_subject
+- cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_below_subject
+- cam_setup/height_wrt_subject/height_wrt_subject_change_from_high_to_low
+- cam_setup/height_wrt_subject/height_wrt_subject_change_from_low_to_high
+- cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_above_subject
+- cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_at_subject
+- cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_below_subject
+- cam_setup/height_wrt_subject/is_subject_height_applicable
+- cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_above_subject
+- cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_at_subject
+- cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_below_subject
+- cam_setup/lens_distortion/fisheye_distortion
+- cam_setup/lens_distortion/no_lens_distortion
+- cam_setup/lens_distortion/with_lens_distortion
+- cam_setup/point_of_view/broadcast_pov
+- cam_setup/point_of_view/dashcam_pov
+- cam_setup/point_of_view/drone_pov
+- cam_setup/point_of_view/first_person_pov
+- cam_setup/point_of_view/locked_on_pov
+- cam_setup/point_of_view/overhead_pov
+- cam_setup/point_of_view/screen_recording_pov
+- cam_setup/point_of_view/selfie_pov
+- cam_setup/point_of_view/third_person_full_body_game_pov
+- cam_setup/point_of_view/third_person_isometric_game_pov
+- cam_setup/point_of_view/third_person_over_hip_pov
+- cam_setup/point_of_view/third_person_over_shoulder_pov
+- cam_setup/point_of_view/third_person_side_view_game_pov
+- cam_setup/point_of_view/third_person_top_down_game_pov
+- cam_setup/shot_size/end_with/shot_size_end_with_close_up
+- cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+- cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+- cam_setup/shot_size/end_with/shot_size_end_with_full
+- cam_setup/shot_size/end_with/shot_size_end_with_medium
+- cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+- cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+- cam_setup/shot_size/end_with/shot_size_end_with_wide
+- cam_setup/shot_size/is_always/shot_size_is_close_up
+- cam_setup/shot_size/is_always/shot_size_is_extreme_close_up
+- cam_setup/shot_size/is_always/shot_size_is_extreme_wide
+- cam_setup/shot_size/is_always/shot_size_is_full
+- cam_setup/shot_size/is_always/shot_size_is_medium
+- cam_setup/shot_size/is_always/shot_size_is_medium_close_up
+- cam_setup/shot_size/is_always/shot_size_is_medium_full
+- cam_setup/shot_size/is_always/shot_size_is_wide
+- cam_setup/shot_size/is_shot_size_applicable
+- cam_setup/shot_size/shot_size_change
+- cam_setup/shot_size/shot_size_change_from_large_to_small
+- cam_setup/shot_size/shot_size_change_from_small_to_large
+- cam_setup/shot_size/start_with/shot_size_start_with_close_up
+- cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+- cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+- cam_setup/shot_size/start_with/shot_size_start_with_full
+- cam_setup/shot_size/start_with/shot_size_start_with_medium
+- cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+- cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+- cam_setup/shot_size/start_with/shot_size_start_with_wide
+- cam_setup/shot_size/subject_disappearing
+- cam_setup/shot_size/subject_revealing
+- cam_setup/shot_size/subject_switching
+- cam_setup/shot_type/is_human_shot
+- cam_setup/shot_type/is_just_back_and_forth_change_shot
+- cam_setup/shot_type/is_just_change_of_subject_shot
+- cam_setup/shot_type/is_just_clear_subject_atypical_shot
+- cam_setup/shot_type/is_just_clear_subject_dynamic_size_shot
+- cam_setup/shot_type/is_just_different_subject_in_focus_shot
+- cam_setup/shot_type/is_just_human_shot
+- cam_setup/shot_type/is_just_many_subject_no_focus_shot
+- cam_setup/shot_type/is_just_many_subject_one_focus_shot
+- cam_setup/shot_type/is_just_non_human_shot
+- cam_setup/shot_type/is_just_scenery_shot
+- cam_setup/shot_type/is_just_subject_scene_mismatch_shot
+- cam_setup/shot_type/is_non_human_shot
+- cam_setup/subject_framing/has_many_subjects
+- cam_setup/subject_framing/has_single_dominant_subject
+- cam_setup/subject_framing/has_subject_change
+- cam_setup/subject_framing/is_framing_subject
+- cam_setup/has_overlays
+- cam_setup/has_shot_transition_cam_setup
+- cam_setup/video_speed/fast_motion
+- cam_setup/video_speed/fast_motion_without_time_lapse
+- cam_setup/video_speed/regular_speed
+- cam_setup/video_speed/slow_motion
+- cam_setup/video_speed/speed_ramp
+- cam_setup/video_speed/stop_motion
+- cam_setup/video_speed/time_lapse
+- cam_setup/video_speed/time_reversed
+
+================================================================================
+
+Label: arc_clockwise
+Path: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 68 (1.8%)
+Negative: 3305 (85.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 102 (2.6%)
+  └─ Other Negative: 3203 (83.1%)
+Uncategorized: 480 (12.5%)
+================================================================================
+
+Label: arc_counterclockwise
+Path: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 102 (2.6%)
+Negative: 3271 (84.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 68 (1.8%)
+  └─ Other Negative: 3203 (83.1%)
+Uncategorized: 480 (12.5%)
+================================================================================
+
+Label: crane_down
+Path: cam_motion/arc_crane_movement/crane_down/has_crane_down
+----------------------------------------
+Total Videos: 3853
+Positive: 14 (0.4%)
+Negative: 3222 (83.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 19 (0.5%)
+  └─ Other Negative: 3203 (83.1%)
+Uncategorized: 617 (16.0%)
+================================================================================
+
+Label: crane_up
+Path: cam_motion/arc_crane_movement/crane_up/has_crane_up
+----------------------------------------
+Total Videos: 3853
+Positive: 19 (0.5%)
+Negative: 3217 (83.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 14 (0.4%)
+  └─ Other Negative: 3203 (83.1%)
+Uncategorized: 617 (16.0%)
+================================================================================
+
+Label: backward
+Path: cam_motion/camera_centric_movement/backward/has_backward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1429 (37.1%)
+  ├─ Hard Negative: 35 (0.9%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1394 (36.2%)
+Uncategorized: 2424 (62.9%)
+================================================================================
+
+Label: backward
+Path: cam_motion/camera_centric_movement/backward/only_backward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 3647 (94.7%)
+  ├─ Hard Negative: 35 (0.9%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3612 (93.7%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: downward
+Path: cam_motion/camera_centric_movement/downward/has_downward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1429 (37.1%)
+  ├─ Hard Negative: 47 (1.2%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1382 (35.9%)
+Uncategorized: 2424 (62.9%)
+================================================================================
+
+Label: downward
+Path: cam_motion/camera_centric_movement/downward/only_downward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 3647 (94.7%)
+  ├─ Hard Negative: 47 (1.2%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3600 (93.4%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: forward
+Path: cam_motion/camera_centric_movement/forward/has_forward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1429 (37.1%)
+  ├─ Hard Negative: 62 (1.6%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1367 (35.5%)
+Uncategorized: 2424 (62.9%)
+================================================================================
+
+Label: forward
+Path: cam_motion/camera_centric_movement/forward/only_forward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 3647 (94.7%)
+  ├─ Hard Negative: 62 (1.6%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3585 (93.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: leftward
+Path: cam_motion/camera_centric_movement/leftward/has_leftward
+----------------------------------------
+Total Videos: 3853
+Positive: 150 (3.9%)
+Negative: 1497 (38.9%)
+  ├─ Hard Negative: 80 (2.1%)
+  ├─ Easy Negative: 166 (4.3%)
+  └─ Other Negative: 1251 (32.5%)
+Uncategorized: 2206 (57.3%)
+================================================================================
+
+Label: leftward
+Path: cam_motion/camera_centric_movement/leftward/only_leftward
+----------------------------------------
+Total Videos: 3853
+Positive: 48 (1.2%)
+Negative: 3599 (93.4%)
+  ├─ Hard Negative: 182 (4.7%)
+  ├─ Easy Negative: 166 (4.3%)
+  └─ Other Negative: 3251 (84.4%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: rightward
+Path: cam_motion/camera_centric_movement/rightward/has_rightward
+----------------------------------------
+Total Videos: 3853
+Positive: 193 (5.0%)
+Negative: 1457 (37.8%)
+  ├─ Hard Negative: 81 (2.1%)
+  ├─ Easy Negative: 132 (3.4%)
+  └─ Other Negative: 1244 (32.3%)
+Uncategorized: 2203 (57.2%)
+================================================================================
+
+Label: rightward
+Path: cam_motion/camera_centric_movement/rightward/only_rightward
+----------------------------------------
+Total Videos: 3853
+Positive: 53 (1.4%)
+Negative: 3594 (93.3%)
+  ├─ Hard Negative: 221 (5.7%)
+  ├─ Easy Negative: 132 (3.4%)
+  └─ Other Negative: 3241 (84.1%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: upward
+Path: cam_motion/camera_centric_movement/upward/has_upward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1429 (37.1%)
+  ├─ Hard Negative: 55 (1.4%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1374 (35.7%)
+Uncategorized: 2424 (62.9%)
+================================================================================
+
+Label: upward
+Path: cam_motion/camera_centric_movement/upward/only_upward_wrt_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 3647 (94.7%)
+  ├─ Hard Negative: 55 (1.4%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3592 (93.2%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: pan_left
+Path: cam_motion/camera_centric_movement/pan_left/has_pan_left
+----------------------------------------
+Total Videos: 3853
+Positive: 233 (6.0%)
+Negative: 1553 (40.3%)
+  ├─ Hard Negative: 69 (1.8%)
+  ├─ Easy Negative: 198 (5.1%)
+  └─ Other Negative: 1286 (33.4%)
+Uncategorized: 2067 (53.6%)
+================================================================================
+
+Label: pan_left
+Path: cam_motion/camera_centric_movement/pan_left/only_pan_left
+----------------------------------------
+Total Videos: 3853
+Positive: 41 (1.1%)
+Negative: 3606 (93.6%)
+  ├─ Hard Negative: 261 (6.8%)
+  ├─ Easy Negative: 198 (5.1%)
+  └─ Other Negative: 3147 (81.7%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: pan_right
+Path: cam_motion/camera_centric_movement/pan_right/has_pan_right
+----------------------------------------
+Total Videos: 3853
+Positive: 216 (5.6%)
+Negative: 1562 (40.5%)
+  ├─ Hard Negative: 92 (2.4%)
+  ├─ Easy Negative: 206 (5.3%)
+  └─ Other Negative: 1264 (32.8%)
+Uncategorized: 2075 (53.9%)
+================================================================================
+
+Label: pan_right
+Path: cam_motion/camera_centric_movement/pan_right/only_pan_right
+----------------------------------------
+Total Videos: 3853
+Positive: 49 (1.3%)
+Negative: 3598 (93.4%)
+  ├─ Hard Negative: 259 (6.7%)
+  ├─ Easy Negative: 206 (5.3%)
+  └─ Other Negative: 3133 (81.3%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: roll_clockwise
+Path: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 39 (1.0%)
+Negative: 1455 (37.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 48 (1.2%)
+  └─ Other Negative: 1407 (36.5%)
+Uncategorized: 2359 (61.2%)
+================================================================================
+
+Label: roll_clockwise
+Path: cam_motion/camera_centric_movement/roll_clockwise/only_roll_clockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 3641 (94.5%)
+  ├─ Hard Negative: 478 (12.4%)
+  ├─ Easy Negative: 43 (1.1%)
+  └─ Other Negative: 3120 (81.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: roll_counterclockwise
+Path: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 48 (1.2%)
+Negative: 1440 (37.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 39 (1.0%)
+  └─ Other Negative: 1401 (36.4%)
+Uncategorized: 2365 (61.4%)
+================================================================================
+
+Label: roll_counterclockwise
+Path: cam_motion/camera_centric_movement/roll_counterclockwise/only_roll_counterclockwise
+----------------------------------------
+Total Videos: 3853
+Positive: 7 (0.2%)
+Negative: 3640 (94.5%)
+  ├─ Hard Negative: 485 (12.6%)
+  ├─ Easy Negative: 35 (0.9%)
+  └─ Other Negative: 3120 (81.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: tilt_down
+Path: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+----------------------------------------
+Total Videos: 3853
+Positive: 122 (3.2%)
+Negative: 1519 (39.4%)
+  ├─ Hard Negative: 59 (1.5%)
+  ├─ Easy Negative: 131 (3.4%)
+  └─ Other Negative: 1329 (34.5%)
+Uncategorized: 2212 (57.4%)
+================================================================================
+
+Label: tilt_down
+Path: cam_motion/camera_centric_movement/tilt_down/only_tilt_down
+----------------------------------------
+Total Videos: 3853
+Positive: 34 (0.9%)
+Negative: 3613 (93.8%)
+  ├─ Hard Negative: 147 (3.8%)
+  ├─ Easy Negative: 131 (3.4%)
+  └─ Other Negative: 3335 (86.6%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: tilt_up
+Path: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+----------------------------------------
+Total Videos: 3853
+Positive: 153 (4.0%)
+Negative: 1493 (38.7%)
+  ├─ Hard Negative: 81 (2.1%)
+  ├─ Easy Negative: 101 (2.6%)
+  └─ Other Negative: 1311 (34.0%)
+Uncategorized: 2207 (57.3%)
+================================================================================
+
+Label: tilt_up
+Path: cam_motion/camera_centric_movement/tilt_up/only_tilt_up
+----------------------------------------
+Total Videos: 3853
+Positive: 40 (1.0%)
+Negative: 3607 (93.6%)
+  ├─ Hard Negative: 194 (5.0%)
+  ├─ Easy Negative: 101 (2.6%)
+  └─ Other Negative: 3312 (86.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: dolly_zoom_movement
+Path: cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
+----------------------------------------
+Total Videos: 3853
+Positive: 9 (0.2%)
+Negative: 3625 (94.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3625 (94.1%)
+Uncategorized: 219 (5.7%)
+================================================================================
+
+Label: dolly_zoom_movement
+Path: cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
+----------------------------------------
+Total Videos: 3853
+Positive: 8 (0.2%)
+Negative: 3625 (94.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3625 (94.1%)
+Uncategorized: 220 (5.7%)
+================================================================================
+
+Label: backward
+Path: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 75 (1.9%)
+Negative: 609 (15.8%)
+  ├─ Hard Negative: 8 (0.2%)
+  ├─ Easy Negative: 279 (7.2%)
+  └─ Other Negative: 322 (8.4%)
+Uncategorized: 3169 (82.2%)
+================================================================================
+
+Label: backward
+Path: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 240 (6.2%)
+Negative: 1809 (47.0%)
+  ├─ Hard Negative: 41 (1.1%)
+  ├─ Easy Negative: 583 (15.1%)
+  └─ Other Negative: 1185 (30.8%)
+Uncategorized: 1804 (46.8%)
+================================================================================
+
+Label: backward
+Path: cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 19 (0.5%)
+Negative: 1165 (30.2%)
+  ├─ Hard Negative: 64 (1.7%)
+  ├─ Easy Negative: 279 (7.2%)
+  └─ Other Negative: 822 (21.3%)
+Uncategorized: 2669 (69.3%)
+================================================================================
+
+Label: backward
+Path: cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 62 (1.6%)
+Negative: 3585 (93.0%)
+  ├─ Hard Negative: 219 (5.7%)
+  ├─ Easy Negative: 583 (15.1%)
+  └─ Other Negative: 2783 (72.2%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: downward
+Path: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 46 (1.2%)
+Negative: 421 (10.9%)
+  ├─ Hard Negative: 14 (0.4%)
+  ├─ Easy Negative: 38 (1.0%)
+  └─ Other Negative: 369 (9.6%)
+Uncategorized: 3386 (87.9%)
+================================================================================
+
+Label: downward
+Path: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 129 (3.3%)
+Negative: 1467 (38.1%)
+  ├─ Hard Negative: 51 (1.3%)
+  ├─ Easy Negative: 121 (3.1%)
+  └─ Other Negative: 1295 (33.6%)
+Uncategorized: 2257 (58.6%)
+================================================================================
+
+Label: downward
+Path: cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 2 (0.1%)
+Negative: 1182 (30.7%)
+  ├─ Hard Negative: 58 (1.5%)
+  ├─ Easy Negative: 38 (1.0%)
+  └─ Other Negative: 1086 (28.2%)
+Uncategorized: 2669 (69.3%)
+================================================================================
+
+Label: downward
+Path: cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 9 (0.2%)
+Negative: 3638 (94.4%)
+  ├─ Hard Negative: 171 (4.4%)
+  ├─ Easy Negative: 121 (3.1%)
+  └─ Other Negative: 3346 (86.8%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: forward
+Path: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 281 (7.3%)
+Negative: 382 (9.9%)
+  ├─ Hard Negative: 12 (0.3%)
+  ├─ Easy Negative: 73 (1.9%)
+  └─ Other Negative: 297 (7.7%)
+Uncategorized: 3190 (82.8%)
+================================================================================
+
+Label: forward
+Path: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 594 (15.4%)
+Negative: 1386 (36.0%)
+  ├─ Hard Negative: 63 (1.6%)
+  ├─ Easy Negative: 230 (6.0%)
+  └─ Other Negative: 1093 (28.4%)
+Uncategorized: 1873 (48.6%)
+================================================================================
+
+Label: forward
+Path: cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 37 (1.0%)
+Negative: 1147 (29.8%)
+  ├─ Hard Negative: 256 (6.6%)
+  ├─ Easy Negative: 73 (1.9%)
+  └─ Other Negative: 818 (21.2%)
+Uncategorized: 2669 (69.3%)
+================================================================================
+
+Label: forward
+Path: cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 104 (2.7%)
+Negative: 3543 (92.0%)
+  ├─ Hard Negative: 553 (14.4%)
+  ├─ Easy Negative: 230 (6.0%)
+  └─ Other Negative: 2760 (71.6%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: upward
+Path: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 40 (1.0%)
+Negative: 425 (11.0%)
+  ├─ Hard Negative: 21 (0.5%)
+  ├─ Easy Negative: 36 (0.9%)
+  └─ Other Negative: 368 (9.6%)
+Uncategorized: 3388 (87.9%)
+================================================================================
+
+Label: upward
+Path: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 142 (3.7%)
+Negative: 1452 (37.7%)
+  ├─ Hard Negative: 67 (1.7%)
+  ├─ Easy Negative: 107 (2.8%)
+  └─ Other Negative: 1278 (33.2%)
+Uncategorized: 2259 (58.6%)
+================================================================================
+
+Label: upward
+Path: cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 5 (0.1%)
+Negative: 1179 (30.6%)
+  ├─ Hard Negative: 56 (1.5%)
+  ├─ Easy Negative: 36 (0.9%)
+  └─ Other Negative: 1087 (28.2%)
+Uncategorized: 2669 (69.3%)
+================================================================================
+
+Label: upward
+Path: cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
+----------------------------------------
+Total Videos: 3853
+Positive: 22 (0.6%)
+Negative: 3625 (94.1%)
+  ├─ Hard Negative: 187 (4.9%)
+  ├─ Easy Negative: 107 (2.8%)
+  └─ Other Negative: 3331 (86.5%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/aerial_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 85 (2.2%)
+Negative: 3562 (92.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 384 (10.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/arc_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 19 (0.5%)
+Negative: 3628 (94.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 450 (11.7%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/front_side_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 8 (0.2%)
+Negative: 3639 (94.4%)
+  ├─ Hard Negative: 461 (12.0%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/lead_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 58 (1.5%)
+Negative: 3572 (92.7%)
+  ├─ Hard Negative: 394 (10.2%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 223 (5.8%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/pan_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 85 (2.2%)
+Negative: 3538 (91.8%)
+  ├─ Hard Negative: 360 (9.3%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 230 (6.0%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/rear_side_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 3641 (94.5%)
+  ├─ Hard Negative: 463 (12.0%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/side_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 111 (2.9%)
+Negative: 3506 (91.0%)
+  ├─ Hard Negative: 328 (8.5%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 236 (6.1%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/tail_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 59 (1.5%)
+Negative: 3565 (92.5%)
+  ├─ Hard Negative: 387 (10.0%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 229 (5.9%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/tilt_tracking_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 20 (0.5%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3833 (99.5%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/track_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 469 (12.2%)
+Negative: 3178 (82.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3178 (82.5%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/tracking_subject_larger_size
+----------------------------------------
+Total Videos: 3853
+Positive: 73 (1.9%)
+Negative: 3574 (92.8%)
+  ├─ Hard Negative: 396 (10.3%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: object_centric_movement
+Path: cam_motion/object_centric_movement/tracking_subject_smaller_size
+----------------------------------------
+Total Videos: 3853
+Positive: 41 (1.1%)
+Negative: 3606 (93.6%)
+  ├─ Hard Negative: 428 (11.1%)
+  ├─ Easy Negative: 3178 (82.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: cam_motion
+Path: cam_motion/has_frame_freezing
+----------------------------------------
+Total Videos: 3853
+Positive: 13 (0.3%)
+Negative: 3634 (94.3%)
+  ├─ Hard Negative: 696 (18.1%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2938 (76.3%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: cam_motion
+Path: cam_motion/has_motion_blur
+----------------------------------------
+Total Videos: 3853
+Positive: 74 (1.9%)
+Negative: 3573 (92.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3573 (92.7%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: cam_motion
+Path: cam_motion/has_shot_transition_cam_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 241 (6.3%)
+Negative: 3406 (88.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3406 (88.4%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: motion_complexity
+Path: cam_motion/motion_complexity/is_complex_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 1274 (33.1%)
+Negative: 2373 (61.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2373 (61.6%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: motion_complexity
+Path: cam_motion/motion_complexity/is_minor_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 421 (10.9%)
+Negative: 2444 (63.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2444 (63.4%)
+Uncategorized: 988 (25.6%)
+================================================================================
+
+Label: motion_complexity
+Path: cam_motion/motion_complexity/is_simple_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 961 (24.9%)
+Negative: 2686 (69.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2686 (69.7%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: scene_movement
+Path: cam_motion/scene_movement/dynamic_scene
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3853 (100.0%)
+================================================================================
+
+Label: scene_movement
+Path: cam_motion/scene_movement/mostly_static_scene
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3853 (100.0%)
+================================================================================
+
+Label: scene_movement
+Path: cam_motion/scene_movement/static_scene
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 3647 (94.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 3647 (94.7%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/clear_moving_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 2216 (57.5%)
+Negative: 853 (22.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 853 (22.1%)
+Uncategorized: 784 (20.3%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/fast_moving_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 120 (3.1%)
+Negative: 2968 (77.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2968 (77.0%)
+Uncategorized: 765 (19.9%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/fixed_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 677 (17.6%)
+Negative: 2951 (76.6%)
+  ├─ Hard Negative: 276 (7.2%)
+  ├─ Easy Negative: 2637 (68.4%)
+  └─ Other Negative: 38 (1.0%)
+Uncategorized: 225 (5.8%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/fixed_camera_with_shake
+----------------------------------------
+Total Videos: 3853
+Positive: 276 (7.2%)
+Negative: 1951 (50.6%)
+  ├─ Hard Negative: 677 (17.6%)
+  ├─ Easy Negative: 1274 (33.1%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 1626 (42.2%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/moving_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 2775 (72.0%)
+Negative: 677 (17.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 677 (17.6%)
+Uncategorized: 401 (10.4%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/shaky_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 871 (22.6%)
+Negative: 2776 (72.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 1951 (50.6%)
+  └─ Other Negative: 825 (21.4%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/slow_moving_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 153 (4.0%)
+Negative: 2935 (76.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2935 (76.2%)
+Uncategorized: 765 (19.9%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/stable_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 1904 (49.4%)
+Negative: 1743 (45.2%)
+  ├─ Hard Negative: 1010 (26.2%)
+  ├─ Easy Negative: 733 (19.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 206 (5.3%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/very_shaky_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 217 (5.6%)
+Negative: 2776 (72.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 2080 (54.0%)
+  └─ Other Negative: 696 (18.1%)
+Uncategorized: 860 (22.3%)
+================================================================================
+
+Label: steadiness_and_movement
+Path: cam_motion/steadiness_and_movement/very_stable_camera
+----------------------------------------
+Total Videos: 3853
+Positive: 1255 (32.6%)
+Negative: 1743 (45.2%)
+  ├─ Hard Negative: 1010 (26.2%)
+  ├─ Easy Negative: 733 (19.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 855 (22.2%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/camera_angle_change_from_high_to_low
+----------------------------------------
+Total Videos: 3853
+Positive: 124 (3.2%)
+Negative: 100 (2.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 100 (2.6%)
+Uncategorized: 3629 (94.2%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/camera_angle_change_from_low_to_high
+----------------------------------------
+Total Videos: 3853
+Positive: 100 (2.6%)
+Negative: 124 (3.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 124 (3.2%)
+Uncategorized: 3629 (94.2%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 41 (1.1%)
+Negative: 1239 (32.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1239 (32.2%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 303 (7.9%)
+Negative: 977 (25.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 977 (25.4%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 791 (20.5%)
+Negative: 489 (12.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 489 (12.7%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 139 (3.6%)
+Negative: 1141 (29.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1141 (29.6%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 1274 (33.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1274 (33.1%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/angle/is_always/camera_angle_is_bird_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 39 (1.0%)
+Negative: 1241 (32.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1241 (32.2%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/angle/is_always/camera_angle_is_high_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 232 (6.0%)
+Negative: 1048 (27.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1048 (27.2%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/angle/is_always/camera_angle_is_level_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 695 (18.0%)
+Negative: 585 (15.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 585 (15.2%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/angle/is_always/camera_angle_is_low_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 86 (2.2%)
+Negative: 1194 (31.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1194 (31.0%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/angle/is_always/camera_angle_is_worm_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 4 (0.1%)
+Negative: 1276 (33.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1276 (33.1%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/is_camera_angle_applicable
+----------------------------------------
+Total Videos: 3853
+Positive: 1280 (33.2%)
+Negative: 2573 (66.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2573 (66.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/is_dutch_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 108 (2.8%)
+Negative: 1172 (30.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1172 (30.4%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/is_dutch_angle_fixed
+----------------------------------------
+Total Videos: 3853
+Positive: 23 (0.6%)
+Negative: 1257 (32.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1257 (32.6%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: angle
+Path: cam_setup/angle/is_dutch_angle_varying
+----------------------------------------
+Total Videos: 3853
+Positive: 85 (2.2%)
+Negative: 1195 (31.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1195 (31.0%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 47 (1.2%)
+Negative: 1233 (32.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1233 (32.0%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 301 (7.8%)
+Negative: 979 (25.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 979 (25.4%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 804 (20.9%)
+Negative: 476 (12.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 476 (12.4%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 124 (3.2%)
+Negative: 1156 (30.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1156 (30.0%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+----------------------------------------
+Total Videos: 3853
+Positive: 4 (0.1%)
+Negative: 1276 (33.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1276 (33.1%)
+Uncategorized: 2573 (66.8%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/focus/end_with/focus_end_with_background
+----------------------------------------
+Total Videos: 3853
+Positive: 9 (0.2%)
+Negative: 81 (2.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 81 (2.1%)
+Uncategorized: 3763 (97.7%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/focus/end_with/focus_end_with_foreground
+----------------------------------------
+Total Videos: 3853
+Positive: 40 (1.0%)
+Negative: 50 (1.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 50 (1.3%)
+Uncategorized: 3763 (97.7%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/focus/end_with/focus_end_with_middle_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 29 (0.8%)
+Negative: 61 (1.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 61 (1.6%)
+Uncategorized: 3763 (97.7%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/focus/end_with/focus_end_with_out_of_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 12 (0.3%)
+Negative: 78 (2.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 78 (2.0%)
+Uncategorized: 3763 (97.7%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/focus_change_from_far_to_near
+----------------------------------------
+Total Videos: 3853
+Positive: 17 (0.4%)
+Negative: 1107 (28.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1107 (28.7%)
+Uncategorized: 2729 (70.8%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/focus_change_from_near_to_far
+----------------------------------------
+Total Videos: 3853
+Positive: 23 (0.6%)
+Negative: 1101 (28.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1101 (28.6%)
+Uncategorized: 2729 (70.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/focus/is_always/focus_is_background
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 92 (2.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 92 (2.4%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/focus/is_always/focus_is_foreground
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 91 (2.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 91 (2.4%)
+Uncategorized: 3762 (97.6%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/focus/is_always/focus_is_middle_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 2 (0.1%)
+Negative: 90 (2.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 90 (2.3%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/focus/is_always/focus_is_out_of_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 91 (2.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 91 (2.4%)
+Uncategorized: 3762 (97.6%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_deep_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 1084 (28.1%)
+Negative: 90 (2.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 90 (2.3%)
+Uncategorized: 2679 (69.5%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_focus_applicable
+----------------------------------------
+Total Videos: 3853
+Positive: 1174 (30.5%)
+Negative: 2679 (69.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2679 (69.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_focus_tracking
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 1127 (29.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1127 (29.2%)
+Uncategorized: 2720 (70.6%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_rack_pull_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 43 (1.1%)
+Negative: 1090 (28.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1090 (28.3%)
+Uncategorized: 2720 (70.6%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_shallow_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 90 (2.3%)
+Negative: 1084 (28.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1084 (28.1%)
+Uncategorized: 2679 (69.5%)
+================================================================================
+
+Label: focus
+Path: cam_setup/focus/is_ultra_shallow_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 12 (0.3%)
+Negative: 1162 (30.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1162 (30.2%)
+Uncategorized: 2679 (69.5%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/focus/start_with/focus_start_with_background
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 86 (2.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 86 (2.2%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/focus/start_with/focus_start_with_foreground
+----------------------------------------
+Total Videos: 3853
+Positive: 34 (0.9%)
+Negative: 58 (1.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 58 (1.5%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/focus/start_with/focus_start_with_middle_ground
+----------------------------------------
+Total Videos: 3853
+Positive: 38 (1.0%)
+Negative: 54 (1.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 54 (1.4%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/focus/start_with/focus_start_with_out_of_focus
+----------------------------------------
+Total Videos: 3853
+Positive: 14 (0.4%)
+Negative: 78 (2.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 78 (2.0%)
+Uncategorized: 3761 (97.6%)
+================================================================================
+
+Label: height_wrt_ground
+Path: cam_setup/height_wrt_ground/above_water_to_underwater
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1068 (27.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1068 (27.7%)
+Uncategorized: 2785 (72.3%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+----------------------------------------
+Total Videos: 3853
+Positive: 158 (4.1%)
+Negative: 983 (25.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 983 (25.5%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+----------------------------------------
+Total Videos: 3853
+Positive: 689 (17.9%)
+Negative: 452 (11.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 452 (11.7%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+----------------------------------------
+Total Videos: 3853
+Positive: 64 (1.7%)
+Negative: 1077 (28.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1077 (28.0%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+----------------------------------------
+Total Videos: 3853
+Positive: 74 (1.9%)
+Negative: 1067 (27.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1067 (27.7%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+----------------------------------------
+Total Videos: 3853
+Positive: 95 (2.5%)
+Negative: 1046 (27.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1046 (27.1%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+----------------------------------------
+Total Videos: 3853
+Positive: 19 (0.5%)
+Negative: 1122 (29.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1122 (29.1%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+----------------------------------------
+Total Videos: 3853
+Positive: 42 (1.1%)
+Negative: 1099 (28.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1099 (28.5%)
+Uncategorized: 2712 (70.4%)
+================================================================================
+
+Label: height_wrt_ground
+Path: cam_setup/height_wrt_ground/height_wrt_ground_change_from_high_to_low
+----------------------------------------
+Total Videos: 3853
+Positive: 30 (0.8%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3823 (99.2%)
+================================================================================
+
+Label: height_wrt_ground
+Path: cam_setup/height_wrt_ground/height_wrt_ground_change_from_low_to_high
+----------------------------------------
+Total Videos: 3853
+Positive: 28 (0.7%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3825 (99.3%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_aerial_level
+----------------------------------------
+Total Videos: 3853
+Positive: 149 (3.9%)
+Negative: 991 (25.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 991 (25.7%)
+Uncategorized: 2713 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_eye_level
+----------------------------------------
+Total Videos: 3853
+Positive: 662 (17.2%)
+Negative: 477 (12.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 477 (12.4%)
+Uncategorized: 2714 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_ground_level
+----------------------------------------
+Total Videos: 3853
+Positive: 53 (1.4%)
+Negative: 1087 (28.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1087 (28.2%)
+Uncategorized: 2713 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_hip_level
+----------------------------------------
+Total Videos: 3853
+Positive: 65 (1.7%)
+Negative: 1075 (27.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1075 (27.9%)
+Uncategorized: 2713 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_overhead_level
+----------------------------------------
+Total Videos: 3853
+Positive: 84 (2.2%)
+Negative: 1056 (27.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1056 (27.4%)
+Uncategorized: 2713 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_underwater_level
+----------------------------------------
+Total Videos: 3853
+Positive: 18 (0.5%)
+Negative: 1122 (29.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1122 (29.1%)
+Uncategorized: 2713 (70.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_water_level
+----------------------------------------
+Total Videos: 3853
+Positive: 37 (1.0%)
+Negative: 1102 (28.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1102 (28.6%)
+Uncategorized: 2714 (70.4%)
+================================================================================
+
+Label: height_wrt_ground
+Path: cam_setup/height_wrt_ground/is_height_wrt_ground_applicable
+----------------------------------------
+Total Videos: 3853
+Positive: 1141 (29.6%)
+Negative: 2712 (70.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 2712 (70.4%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+----------------------------------------
+Total Videos: 3853
+Positive: 155 (4.0%)
+Negative: 977 (25.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 977 (25.4%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+----------------------------------------
+Total Videos: 3853
+Positive: 684 (17.8%)
+Negative: 448 (11.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 448 (11.6%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+----------------------------------------
+Total Videos: 3853
+Positive: 59 (1.5%)
+Negative: 1073 (27.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1073 (27.8%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+----------------------------------------
+Total Videos: 3853
+Positive: 82 (2.1%)
+Negative: 1050 (27.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1050 (27.3%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+----------------------------------------
+Total Videos: 3853
+Positive: 94 (2.4%)
+Negative: 1038 (26.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1038 (26.9%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+----------------------------------------
+Total Videos: 3853
+Positive: 18 (0.5%)
+Negative: 1114 (28.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1114 (28.9%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+----------------------------------------
+Total Videos: 3853
+Positive: 40 (1.0%)
+Negative: 1092 (28.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1092 (28.3%)
+Uncategorized: 2721 (70.6%)
+================================================================================
+
+Label: height_wrt_ground
+Path: cam_setup/height_wrt_ground/underwater_to_above_water
+----------------------------------------
+Total Videos: 3853
+Positive: 0 (0.0%)
+Negative: 1068 (27.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1068 (27.7%)
+Uncategorized: 2785 (72.3%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_above_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 198 (5.1%)
+Negative: 592 (15.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 592 (15.4%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_at_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 544 (14.1%)
+Negative: 246 (6.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 246 (6.4%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_below_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 32 (0.8%)
+Negative: 758 (19.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 758 (19.7%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: height_wrt_subject
+Path: cam_setup/height_wrt_subject/height_wrt_subject_change_from_high_to_low
+----------------------------------------
+Total Videos: 3853
+Positive: 34 (0.9%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3819 (99.1%)
+================================================================================
+
+Label: height_wrt_subject
+Path: cam_setup/height_wrt_subject/height_wrt_subject_change_from_low_to_high
+----------------------------------------
+Total Videos: 3853
+Positive: 23 (0.6%)
+Negative: 0 (0.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 3830 (99.4%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_above_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 161 (4.2%)
+Negative: 629 (16.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 629 (16.3%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_at_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 501 (13.0%)
+Negative: 289 (7.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 289 (7.5%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_below_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 23 (0.6%)
+Negative: 767 (19.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 767 (19.9%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: height_wrt_subject
+Path: cam_setup/height_wrt_subject/is_subject_height_applicable
+----------------------------------------
+Total Videos: 3853
+Positive: 790 (20.5%)
+Negative: 3063 (79.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3063 (79.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_above_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 188 (4.9%)
+Negative: 602 (15.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 602 (15.6%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_at_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 549 (14.2%)
+Negative: 241 (6.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 241 (6.3%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_below_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 32 (0.8%)
+Negative: 758 (19.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 758 (19.7%)
+Uncategorized: 3063 (79.5%)
+================================================================================
+
+Label: lens_distortion
+Path: cam_setup/lens_distortion/fisheye_distortion
+----------------------------------------
+Total Videos: 3853
+Positive: 37 (1.0%)
+Negative: 3816 (99.0%)
+  ├─ Hard Negative: 98 (2.5%)
+  ├─ Easy Negative: 3718 (96.5%)
+  └─ Other Negative: 0 (0.0%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: lens_distortion
+Path: cam_setup/lens_distortion/no_lens_distortion
+----------------------------------------
+Total Videos: 3853
+Positive: 3718 (96.5%)
+Negative: 135 (3.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 135 (3.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: lens_distortion
+Path: cam_setup/lens_distortion/with_lens_distortion
+----------------------------------------
+Total Videos: 3853
+Positive: 135 (3.5%)
+Negative: 3718 (96.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3718 (96.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/broadcast_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 13 (0.3%)
+Negative: 3840 (99.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3840 (99.7%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/dashcam_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 12 (0.3%)
+Negative: 3841 (99.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3841 (99.7%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/drone_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 162 (4.2%)
+Negative: 3691 (95.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3691 (95.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/first_person_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 222 (5.8%)
+Negative: 3631 (94.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3631 (94.2%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/locked_on_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 8 (0.2%)
+Negative: 3845 (99.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3845 (99.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/overhead_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 13 (0.3%)
+Negative: 3840 (99.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3840 (99.7%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/screen_recording_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 10 (0.3%)
+Negative: 3843 (99.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3843 (99.7%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/selfie_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 5 (0.1%)
+Negative: 3848 (99.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3848 (99.9%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_full_body_game_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 34 (0.9%)
+Negative: 3819 (99.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3819 (99.1%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_isometric_game_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 3 (0.1%)
+Negative: 3850 (99.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3850 (99.9%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_over_hip_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 3 (0.1%)
+Negative: 3850 (99.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3850 (99.9%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_over_shoulder_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 9 (0.2%)
+Negative: 3844 (99.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3844 (99.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_side_view_game_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 15 (0.4%)
+Negative: 3838 (99.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3838 (99.6%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: point_of_view
+Path: cam_setup/point_of_view/third_person_top_down_game_pov
+----------------------------------------
+Total Videos: 3853
+Positive: 7 (0.2%)
+Negative: 3846 (99.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3846 (99.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 84 (2.2%)
+Negative: 1031 (26.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1031 (26.8%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 8 (0.2%)
+Negative: 1107 (28.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1107 (28.7%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 141 (3.7%)
+Negative: 974 (25.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 974 (25.3%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_full
+----------------------------------------
+Total Videos: 3853
+Positive: 179 (4.6%)
+Negative: 936 (24.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 936 (24.3%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_medium
+----------------------------------------
+Total Videos: 3853
+Positive: 123 (3.2%)
+Negative: 992 (25.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 992 (25.7%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 30 (0.8%)
+Negative: 1085 (28.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1085 (28.2%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+----------------------------------------
+Total Videos: 3853
+Positive: 12 (0.3%)
+Negative: 1103 (28.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1103 (28.6%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: end_with
+Path: cam_setup/shot_size/end_with/shot_size_end_with_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 538 (14.0%)
+Negative: 577 (15.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 577 (15.0%)
+Uncategorized: 2738 (71.1%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 64 (1.7%)
+Negative: 1061 (27.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1061 (27.5%)
+Uncategorized: 2728 (70.8%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_extreme_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 3 (0.1%)
+Negative: 1128 (29.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1128 (29.3%)
+Uncategorized: 2722 (70.6%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_extreme_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 126 (3.3%)
+Negative: 1004 (26.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1004 (26.1%)
+Uncategorized: 2723 (70.7%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_full
+----------------------------------------
+Total Videos: 3853
+Positive: 125 (3.2%)
+Negative: 997 (25.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 997 (25.9%)
+Uncategorized: 2731 (70.9%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_medium
+----------------------------------------
+Total Videos: 3853
+Positive: 87 (2.3%)
+Negative: 1035 (26.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1035 (26.9%)
+Uncategorized: 2731 (70.9%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_medium_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 15 (0.4%)
+Negative: 1115 (28.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1115 (28.9%)
+Uncategorized: 2723 (70.7%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_medium_full
+----------------------------------------
+Total Videos: 3853
+Positive: 6 (0.2%)
+Negative: 1125 (29.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1125 (29.2%)
+Uncategorized: 2722 (70.6%)
+================================================================================
+
+Label: is_always
+Path: cam_setup/shot_size/is_always/shot_size_is_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 485 (12.6%)
+Negative: 635 (16.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 635 (16.5%)
+Uncategorized: 2733 (70.9%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/is_shot_size_applicable
+----------------------------------------
+Total Videos: 3853
+Positive: 3692 (95.8%)
+Negative: 161 (4.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 161 (4.2%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/shot_size_change
+----------------------------------------
+Total Videos: 3853
+Positive: 167 (4.3%)
+Negative: 3525 (91.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3525 (91.5%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/shot_size_change_from_large_to_small
+----------------------------------------
+Total Videos: 3853
+Positive: 73 (1.9%)
+Negative: 3619 (93.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3619 (93.9%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/shot_size_change_from_small_to_large
+----------------------------------------
+Total Videos: 3853
+Positive: 92 (2.4%)
+Negative: 3600 (93.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3600 (93.4%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 91 (2.4%)
+Negative: 1019 (26.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1019 (26.4%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 5 (0.1%)
+Negative: 1105 (28.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1105 (28.7%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 145 (3.8%)
+Negative: 965 (25.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 965 (25.0%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_full
+----------------------------------------
+Total Videos: 3853
+Positive: 161 (4.2%)
+Negative: 949 (24.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 949 (24.6%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_medium
+----------------------------------------
+Total Videos: 3853
+Positive: 140 (3.6%)
+Negative: 970 (25.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 970 (25.2%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+----------------------------------------
+Total Videos: 3853
+Positive: 20 (0.5%)
+Negative: 1090 (28.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1090 (28.3%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+----------------------------------------
+Total Videos: 3853
+Positive: 11 (0.3%)
+Negative: 1099 (28.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1099 (28.5%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: start_with
+Path: cam_setup/shot_size/start_with/shot_size_start_with_wide
+----------------------------------------
+Total Videos: 3853
+Positive: 537 (13.9%)
+Negative: 573 (14.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 573 (14.9%)
+Uncategorized: 2743 (71.2%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/subject_disappearing
+----------------------------------------
+Total Videos: 3853
+Positive: 16 (0.4%)
+Negative: 3676 (95.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3676 (95.4%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/subject_revealing
+----------------------------------------
+Total Videos: 3853
+Positive: 21 (0.5%)
+Negative: 3671 (95.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3671 (95.3%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: shot_size
+Path: cam_setup/shot_size/subject_switching
+----------------------------------------
+Total Videos: 3853
+Positive: 34 (0.9%)
+Negative: 3658 (94.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3658 (94.9%)
+Uncategorized: 161 (4.2%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_human_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 2678 (69.5%)
+Negative: 487 (12.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 487 (12.6%)
+Uncategorized: 688 (17.9%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_back_and_forth_change_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 2 (0.1%)
+Negative: 3851 (99.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3851 (99.9%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_change_of_subject_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 71 (1.8%)
+Negative: 3782 (98.2%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3782 (98.2%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_clear_subject_atypical_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 72 (1.9%)
+Negative: 3781 (98.1%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3781 (98.1%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_clear_subject_dynamic_size_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 22 (0.6%)
+Negative: 3831 (99.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3831 (99.4%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_different_subject_in_focus_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 140 (3.6%)
+Negative: 3713 (96.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3713 (96.4%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_human_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 2678 (69.5%)
+Negative: 1175 (30.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 1175 (30.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_many_subject_no_focus_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 65 (1.7%)
+Negative: 3788 (98.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3788 (98.3%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_many_subject_one_focus_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 57 (1.5%)
+Negative: 3796 (98.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3796 (98.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_non_human_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 120 (3.1%)
+Negative: 3733 (96.9%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3733 (96.9%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_scenery_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 367 (9.5%)
+Negative: 3486 (90.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3486 (90.5%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_just_subject_scene_mismatch_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 8 (0.2%)
+Negative: 3845 (99.8%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3845 (99.8%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: shot_type
+Path: cam_setup/shot_type/is_non_human_shot
+----------------------------------------
+Total Videos: 3853
+Positive: 120 (3.1%)
+Negative: 3045 (79.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3045 (79.0%)
+Uncategorized: 688 (17.9%)
+================================================================================
+
+Label: subject_framing
+Path: cam_setup/subject_framing/has_many_subjects
+----------------------------------------
+Total Videos: 3853
+Positive: 262 (6.8%)
+Negative: 3259 (84.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3259 (84.6%)
+Uncategorized: 332 (8.6%)
+================================================================================
+
+Label: subject_framing
+Path: cam_setup/subject_framing/has_single_dominant_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 2959 (76.8%)
+Negative: 438 (11.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 438 (11.4%)
+Uncategorized: 456 (11.8%)
+================================================================================
+
+Label: subject_framing
+Path: cam_setup/subject_framing/has_subject_change
+----------------------------------------
+Total Videos: 3853
+Positive: 71 (1.8%)
+Negative: 3521 (91.4%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3521 (91.4%)
+Uncategorized: 261 (6.8%)
+================================================================================
+
+Label: subject_framing
+Path: cam_setup/subject_framing/is_framing_subject
+----------------------------------------
+Total Videos: 3853
+Positive: 3170 (82.3%)
+Negative: 367 (9.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 367 (9.5%)
+Uncategorized: 316 (8.2%)
+================================================================================
+
+Label: cam_setup
+Path: cam_setup/has_overlays
+----------------------------------------
+Total Videos: 3853
+Positive: 258 (6.7%)
+Negative: 3595 (93.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3595 (93.3%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: cam_setup
+Path: cam_setup/has_shot_transition_cam_setup
+----------------------------------------
+Total Videos: 3853
+Positive: 241 (6.3%)
+Negative: 3612 (93.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3612 (93.7%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/fast_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 20 (0.5%)
+Negative: 3815 (99.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3815 (99.0%)
+Uncategorized: 18 (0.5%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/fast_motion_without_time_lapse
+----------------------------------------
+Total Videos: 3853
+Positive: 10 (0.3%)
+Negative: 3825 (99.3%)
+  ├─ Hard Negative: 10 (0.3%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3815 (99.0%)
+Uncategorized: 18 (0.5%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/regular_speed
+----------------------------------------
+Total Videos: 3853
+Positive: 3764 (97.7%)
+Negative: 76 (2.0%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 76 (2.0%)
+Uncategorized: 13 (0.3%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/slow_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 40 (1.0%)
+Negative: 3795 (98.5%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3795 (98.5%)
+Uncategorized: 18 (0.5%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/speed_ramp
+----------------------------------------
+Total Videos: 3853
+Positive: 16 (0.4%)
+Negative: 3837 (99.6%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3837 (99.6%)
+Uncategorized: 0 (0.0%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/stop_motion
+----------------------------------------
+Total Videos: 3853
+Positive: 11 (0.3%)
+Negative: 3840 (99.7%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3840 (99.7%)
+Uncategorized: 2 (0.1%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/time_lapse
+----------------------------------------
+Total Videos: 3853
+Positive: 10 (0.3%)
+Negative: 3825 (99.3%)
+  ├─ Hard Negative: 10 (0.3%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3815 (99.0%)
+Uncategorized: 18 (0.5%)
+================================================================================
+
+Label: video_speed
+Path: cam_setup/video_speed/time_reversed
+----------------------------------------
+Total Videos: 3853
+Positive: 2 (0.1%)
+Negative: 3825 (99.3%)
+  ├─ Hard Negative: 0 (0.0%)
+  ├─ Easy Negative: 0 (0.0%)
+  └─ Other Negative: 3825 (99.3%)
+Uncategorized: 26 (0.7%)
+================================================================================

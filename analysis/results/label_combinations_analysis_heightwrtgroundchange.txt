@@ -1,0 +1,1006 @@
+Label Combination Analysis Results
+================================================================================
+
+Total Videos Analyzed: 3853
+
+
+1. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 662 (17.2%)
+   - Only Label 1 Positive: 27 (0.7%)
+   - Only Label 2 Positive: 22 (0.6%)
+   - Both Negative: 423 (11.0%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+2. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 149 (3.9%)
+   - Only Label 1 Positive: 9 (0.2%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 969 (25.1%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+3. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 84 (2.2%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 10 (0.3%)
+   - Both Negative: 1028 (26.7%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+4. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 65 (1.7%)
+   - Only Label 1 Positive: 9 (0.2%)
+   - Only Label 2 Positive: 17 (0.4%)
+   - Both Negative: 1042 (27.0%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+5. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 53 (1.4%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 1063 (27.6%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+6. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 37 (1.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 3 (0.1%)
+   - Both Negative: 1089 (28.3%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+7. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 18 (0.5%)
+   - Only Label 1 Positive: 1 (0.0%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 1114 (28.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+8. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 9 (0.2%)
+   - Only Label 1 Positive: 680 (17.6%)
+   - Only Label 2 Positive: 73 (1.9%)
+   - Both Negative: 372 (9.7%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+9. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 87 (2.3%)
+   - Only Label 2 Positive: 676 (17.5%)
+   - Both Negative: 362 (9.4%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+10. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 57 (1.5%)
+   - Only Label 2 Positive: 75 (1.9%)
+   - Both Negative: 994 (25.8%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+11. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 683 (17.7%)
+   - Only Label 2 Positive: 88 (2.3%)
+   - Both Negative: 357 (9.3%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+12. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 678 (17.6%)
+   - Both Negative: 381 (9.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+13. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 54 (1.4%)
+   - Both Negative: 391 (10.1%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+14. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 685 (17.8%)
+   - Only Label 2 Positive: 151 (3.9%)
+   - Both Negative: 294 (7.6%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+15. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 681 (17.7%)
+   - Both Negative: 294 (7.6%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+16. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 91 (2.4%)
+   - Both Negative: 884 (22.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+17. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 61 (1.6%)
+   - Only Label 2 Positive: 681 (17.7%)
+   - Both Negative: 388 (10.1%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+18. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 156 (4.0%)
+   - Only Label 2 Positive: 38 (1.0%)
+   - Both Negative: 937 (24.3%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+19. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 682 (17.7%)
+   - Both Negative: 410 (10.6%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+20. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 688 (17.9%)
+   - Only Label 2 Positive: 39 (1.0%)
+   - Both Negative: 406 (10.5%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+21. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 73 (1.9%)
+   - Only Label 2 Positive: 58 (1.5%)
+   - Both Negative: 1001 (26.0%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+22. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 73 (1.9%)
+   - Only Label 2 Positive: 93 (2.4%)
+   - Both Negative: 966 (25.1%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+23. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 94 (2.4%)
+   - Only Label 2 Positive: 154 (4.0%)
+   - Both Negative: 884 (22.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+24. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 94 (2.4%)
+   - Only Label 2 Positive: 81 (2.1%)
+   - Both Negative: 957 (24.8%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+25. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 154 (4.0%)
+   - Both Negative: 938 (24.3%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+26. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 689 (17.9%)
+   - Both Negative: 294 (7.6%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+27. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 64 (1.7%)
+   - Both Negative: 919 (23.9%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+28. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 909 (23.6%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+29. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 95 (2.5%)
+   - Both Negative: 888 (23.0%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+30. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 964 (25.0%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+31. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 941 (24.4%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+32. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 916 (23.8%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+33. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 893 (23.2%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+34. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 158 (4.1%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 957 (24.8%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+35. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 64 (1.7%)
+   - Both Negative: 388 (10.1%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+36. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 378 (9.8%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+37. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 95 (2.5%)
+   - Both Negative: 357 (9.3%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+38. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 433 (11.2%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+39. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 410 (10.6%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+40. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 689 (17.9%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 427 (11.1%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+41. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 1003 (26.0%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+42. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 95 (2.5%)
+   - Both Negative: 982 (25.5%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+43. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 1058 (27.5%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+44. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 1035 (26.9%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+45. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 155 (4.0%)
+   - Both Negative: 914 (23.7%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+46. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 975 (25.3%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+47. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1051 (27.3%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+48. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 64 (1.7%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1029 (26.7%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+49. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 95 (2.5%)
+   - Both Negative: 972 (25.2%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+50. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 1048 (27.2%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+51. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 1025 (26.6%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+52. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 155 (4.0%)
+   - Both Negative: 904 (23.5%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+53. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1041 (27.0%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+54. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 74 (1.9%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1019 (26.4%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+55. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 1027 (26.7%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+56. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 1004 (26.1%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+57. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 979 (25.4%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+58. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1020 (26.5%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+59. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 998 (25.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+60. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 1080 (28.0%)
+   - Uncategorized: 2712 (70.4%)
+--------------------------------------------------------------------------------
+
+61. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 155 (4.0%)
+   - Both Negative: 959 (24.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+62. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 684 (17.8%)
+   - Both Negative: 430 (11.2%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+63. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 1055 (27.4%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+64. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 1032 (26.8%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+65. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 1020 (26.5%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+66. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1074 (27.9%)
+   - Uncategorized: 2720 (70.6%)
+--------------------------------------------------------------------------------
+
+67. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 42 (1.1%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 1033 (26.8%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+68. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 42 (1.1%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 1010 (26.2%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+69. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 42 (1.1%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 998 (25.9%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+70. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 42 (1.1%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1074 (27.9%)
+   - Uncategorized: 2719 (70.6%)
+--------------------------------------------------------------------------------
+
+71. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 684 (17.8%)
+   - Both Negative: 293 (7.6%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+72. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 918 (23.8%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+73. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 895 (23.2%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+74. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 883 (22.9%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+75. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 959 (24.9%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+76. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 155 (4.0%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 937 (24.3%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+77. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 59 (1.5%)
+   - Both Negative: 389 (10.1%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+78. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 366 (9.5%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+79. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 354 (9.2%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+80. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 430 (11.2%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+81. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 684 (17.8%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 408 (10.6%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+82. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 59 (1.5%)
+   - Only Label 2 Positive: 82 (2.1%)
+   - Both Negative: 991 (25.7%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+83. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 59 (1.5%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 979 (25.4%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+84. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 59 (1.5%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1055 (27.4%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+85. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 59 (1.5%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1033 (26.8%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+86. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 82 (2.1%)
+   - Only Label 2 Positive: 94 (2.4%)
+   - Both Negative: 956 (24.8%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+87. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 82 (2.1%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1032 (26.8%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+88. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 82 (2.1%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1010 (26.2%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+89. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 94 (2.4%)
+   - Only Label 2 Positive: 18 (0.5%)
+   - Both Negative: 1020 (26.5%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+90. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 94 (2.4%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 998 (25.9%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------
+
+91. Label Combination:
+   Label 1: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level
+   Label 2: cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 18 (0.5%)
+   - Only Label 2 Positive: 40 (1.0%)
+   - Both Negative: 1074 (27.9%)
+   - Uncategorized: 2721 (70.6%)
+--------------------------------------------------------------------------------

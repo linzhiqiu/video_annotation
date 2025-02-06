@@ -1,0 +1,500 @@
+Label Combination Analysis Results
+================================================================================
+
+Total Videos Analyzed: 3853
+
+
+1. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 695 (18.0%)
+   - Only Label 1 Positive: 96 (2.5%)
+   - Only Label 2 Positive: 109 (2.8%)
+   - Both Negative: 380 (9.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+2. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 232 (6.0%)
+   - Only Label 1 Positive: 71 (1.8%)
+   - Only Label 2 Positive: 69 (1.8%)
+   - Both Negative: 908 (23.6%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+3. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 86 (2.2%)
+   - Only Label 1 Positive: 53 (1.4%)
+   - Only Label 2 Positive: 38 (1.0%)
+   - Both Negative: 1103 (28.6%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+4. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 62 (1.6%)
+   - Only Label 1 Positive: 241 (6.3%)
+   - Only Label 2 Positive: 742 (19.3%)
+   - Both Negative: 235 (6.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+5. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 61 (1.6%)
+   - Only Label 1 Positive: 730 (18.9%)
+   - Only Label 2 Positive: 240 (6.2%)
+   - Both Negative: 249 (6.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+6. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 46 (1.2%)
+   - Only Label 1 Positive: 93 (2.4%)
+   - Only Label 2 Positive: 758 (19.7%)
+   - Both Negative: 383 (9.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+7. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Statistics:
+   - Both Positive: 39 (1.0%)
+   - Only Label 1 Positive: 2 (0.1%)
+   - Only Label 2 Positive: 8 (0.2%)
+   - Both Negative: 1231 (31.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+8. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 32 (0.8%)
+   - Only Label 1 Positive: 759 (19.7%)
+   - Only Label 2 Positive: 92 (2.4%)
+   - Both Negative: 397 (10.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+9. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 132 (3.4%)
+   - Only Label 2 Positive: 294 (7.6%)
+   - Both Negative: 847 (22.0%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+10. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 298 (7.7%)
+   - Only Label 2 Positive: 42 (1.1%)
+   - Both Negative: 935 (24.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+11. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 299 (7.8%)
+   - Only Label 2 Positive: 120 (3.1%)
+   - Both Negative: 857 (22.2%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+12. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 2 (0.1%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 1274 (33.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+13. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 788 (20.5%)
+   - Only Label 2 Positive: 44 (1.1%)
+   - Both Negative: 445 (11.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+14. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 4 (0.1%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1152 (29.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+15. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 300 (7.8%)
+   - Both Negative: 939 (24.4%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+16. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 803 (20.8%)
+   - Both Negative: 436 (11.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+17. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 303 (7.9%)
+   - Both Negative: 936 (24.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+18. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 791 (20.5%)
+   - Both Negative: 448 (11.6%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+19. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 139 (3.6%)
+   - Both Negative: 1100 (28.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+20. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 1233 (32.0%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+21. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 124 (3.2%)
+   - Both Negative: 1115 (28.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+22. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 1235 (32.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+23. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 303 (7.9%)
+   - Only Label 2 Positive: 791 (20.5%)
+   - Both Negative: 186 (4.8%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+24. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 303 (7.9%)
+   - Only Label 2 Positive: 139 (3.6%)
+   - Both Negative: 838 (21.7%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+25. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 303 (7.9%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 971 (25.2%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+26. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 303 (7.9%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 973 (25.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+27. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 791 (20.5%)
+   - Only Label 2 Positive: 139 (3.6%)
+   - Both Negative: 350 (9.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+28. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 791 (20.5%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 483 (12.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+29. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 791 (20.5%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 485 (12.6%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+30. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 6 (0.2%)
+   - Both Negative: 1135 (29.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+31. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 47 (1.2%)
+   - Both Negative: 1094 (28.4%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+32. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 1137 (29.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+33. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 47 (1.2%)
+   - Both Negative: 1227 (31.8%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+34. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 301 (7.8%)
+   - Both Negative: 973 (25.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+35. Label Combination:
+   Label 1: cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 804 (20.9%)
+   - Both Negative: 470 (12.2%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+36. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 47 (1.2%)
+   - Only Label 2 Positive: 301 (7.8%)
+   - Both Negative: 932 (24.2%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+37. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 47 (1.2%)
+   - Only Label 2 Positive: 804 (20.9%)
+   - Both Negative: 429 (11.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+38. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 47 (1.2%)
+   - Only Label 2 Positive: 124 (3.2%)
+   - Both Negative: 1109 (28.8%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+39. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 47 (1.2%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 1229 (31.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+40. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 301 (7.8%)
+   - Only Label 2 Positive: 804 (20.9%)
+   - Both Negative: 175 (4.5%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+41. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 301 (7.8%)
+   - Only Label 2 Positive: 124 (3.2%)
+   - Both Negative: 855 (22.2%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+42. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_high_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 301 (7.8%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 975 (25.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+43. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 804 (20.9%)
+   - Only Label 2 Positive: 124 (3.2%)
+   - Both Negative: 352 (9.1%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+44. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_level_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 804 (20.9%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 472 (12.3%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------
+
+45. Label Combination:
+   Label 1: cam_setup/angle/start_with/camera_angle_start_with_low_angle
+   Label 2: cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 124 (3.2%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 1152 (29.9%)
+   - Uncategorized: 2573 (66.8%)
+--------------------------------------------------------------------------------

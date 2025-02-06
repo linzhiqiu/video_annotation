@@ -6,7 +6,7 @@ data:
 
 # Batch constraints
 constraints:
-  video_names_file: visualization/video_lists/donesection.json
+  video_names_file: donevideos/donesection.json
   approver: null
   time_range: null
 

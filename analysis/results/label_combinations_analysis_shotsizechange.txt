@@ -1,0 +1,1325 @@
+Label Combination Analysis Results
+================================================================================
+
+Total Videos Analyzed: 3853
+
+
+1. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 485 (12.6%)
+   - Only Label 1 Positive: 53 (1.4%)
+   - Only Label 2 Positive: 52 (1.3%)
+   - Both Negative: 515 (13.4%)
+   - Uncategorized: 2748 (71.3%)
+--------------------------------------------------------------------------------
+
+2. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 126 (3.3%)
+   - Only Label 1 Positive: 15 (0.4%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 935 (24.3%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+3. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 125 (3.2%)
+   - Only Label 1 Positive: 54 (1.4%)
+   - Only Label 2 Positive: 36 (0.9%)
+   - Both Negative: 888 (23.0%)
+   - Uncategorized: 2750 (71.4%)
+--------------------------------------------------------------------------------
+
+4. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 87 (2.3%)
+   - Only Label 1 Positive: 36 (0.9%)
+   - Only Label 2 Positive: 53 (1.4%)
+   - Both Negative: 927 (24.1%)
+   - Uncategorized: 2750 (71.4%)
+--------------------------------------------------------------------------------
+
+5. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 64 (1.7%)
+   - Only Label 1 Positive: 20 (0.5%)
+   - Only Label 2 Positive: 27 (0.7%)
+   - Both Negative: 989 (25.7%)
+   - Uncategorized: 2753 (71.5%)
+--------------------------------------------------------------------------------
+
+6. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 22 (0.6%)
+   - Only Label 1 Positive: 157 (4.1%)
+   - Only Label 2 Positive: 515 (13.4%)
+   - Both Negative: 412 (10.7%)
+   - Uncategorized: 2747 (71.3%)
+--------------------------------------------------------------------------------
+
+7. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 19 (0.5%)
+   - Only Label 1 Positive: 160 (4.2%)
+   - Only Label 2 Positive: 121 (3.1%)
+   - Both Negative: 807 (20.9%)
+   - Uncategorized: 2746 (71.3%)
+--------------------------------------------------------------------------------
+
+8. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 16 (0.4%)
+   - Only Label 1 Positive: 522 (13.5%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 419 (10.9%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+9. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 15 (0.4%)
+   - Only Label 1 Positive: 15 (0.4%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1060 (27.5%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+10. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 15 (0.4%)
+   - Only Label 1 Positive: 523 (13.6%)
+   - Only Label 2 Positive: 130 (3.4%)
+   - Both Negative: 434 (11.3%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+11. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 11 (0.3%)
+   - Only Label 1 Positive: 112 (2.9%)
+   - Only Label 2 Positive: 150 (3.9%)
+   - Both Negative: 826 (21.4%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+12. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 10 (0.3%)
+   - Only Label 1 Positive: 131 (3.4%)
+   - Only Label 2 Positive: 527 (13.7%)
+   - Both Negative: 430 (11.2%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+13. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 22 (0.6%)
+   - Only Label 2 Positive: 132 (3.4%)
+   - Both Negative: 937 (24.3%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+14. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 77 (2.0%)
+   - Only Label 2 Positive: 133 (3.5%)
+   - Both Negative: 884 (22.9%)
+   - Uncategorized: 2752 (71.4%)
+--------------------------------------------------------------------------------
+
+15. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 116 (3.0%)
+   - Only Label 2 Positive: 84 (2.2%)
+   - Both Negative: 895 (23.2%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+16. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 116 (3.0%)
+   - Only Label 2 Positive: 530 (13.8%)
+   - Both Negative: 449 (11.7%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+17. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 531 (13.8%)
+   - Only Label 2 Positive: 84 (2.2%)
+   - Both Negative: 483 (12.5%)
+   - Uncategorized: 2748 (71.3%)
+--------------------------------------------------------------------------------
+
+18. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 531 (13.8%)
+   - Only Label 2 Positive: 133 (3.5%)
+   - Both Negative: 435 (11.3%)
+   - Uncategorized: 2747 (71.3%)
+--------------------------------------------------------------------------------
+
+19. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 78 (2.0%)
+   - Only Label 2 Positive: 531 (13.8%)
+   - Both Negative: 485 (12.6%)
+   - Uncategorized: 2753 (71.5%)
+--------------------------------------------------------------------------------
+
+20. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1077 (28.0%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+21. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 80 (2.1%)
+   - Only Label 2 Positive: 157 (4.1%)
+   - Both Negative: 856 (22.2%)
+   - Uncategorized: 2756 (71.5%)
+--------------------------------------------------------------------------------
+
+22. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 2 (0.1%)
+   - Both Negative: 1084 (28.1%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+23. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 138 (3.6%)
+   - Only Label 2 Positive: 137 (3.6%)
+   - Both Negative: 821 (21.3%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+24. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 120 (3.1%)
+   - Only Label 2 Positive: 17 (0.4%)
+   - Both Negative: 959 (24.9%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+25. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 120 (3.1%)
+   - Only Label 2 Positive: 8 (0.2%)
+   - Both Negative: 967 (25.1%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+26. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 27 (0.7%)
+   - Only Label 2 Positive: 158 (4.1%)
+   - Both Negative: 907 (23.5%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+27. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 138 (3.6%)
+   - Both Negative: 953 (24.7%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+28. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 535 (13.9%)
+   - Both Negative: 555 (14.4%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+29. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 868 (22.5%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+30. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 177 (4.6%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 838 (21.7%)
+   - Uncategorized: 2747 (71.3%)
+--------------------------------------------------------------------------------
+
+31. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 177 (4.6%)
+   - Only Label 2 Positive: 143 (3.7%)
+   - Both Negative: 781 (20.3%)
+   - Uncategorized: 2750 (71.4%)
+--------------------------------------------------------------------------------
+
+32. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 28 (0.7%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 979 (25.4%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+33. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 10 (0.3%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 997 (25.9%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+34. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 10 (0.3%)
+   - Only Label 2 Positive: 138 (3.6%)
+   - Both Negative: 949 (24.6%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+35. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 83 (2.2%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 994 (25.8%)
+   - Uncategorized: 2756 (71.5%)
+--------------------------------------------------------------------------------
+
+36. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 7 (0.2%)
+   - Only Label 2 Positive: 90 (2.3%)
+   - Both Negative: 1000 (26.0%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+37. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 178 (4.6%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 919 (23.9%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+38. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 122 (3.2%)
+   - Only Label 2 Positive: 4 (0.1%)
+   - Both Negative: 971 (25.2%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+39. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 29 (0.8%)
+   - Only Label 2 Positive: 144 (3.7%)
+   - Both Negative: 921 (23.9%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+40. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 29 (0.8%)
+   - Only Label 2 Positive: 10 (0.3%)
+   - Both Negative: 1054 (27.4%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+41. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 160 (4.2%)
+   - Both Negative: 923 (24.0%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+42. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 536 (13.9%)
+   - Both Negative: 550 (14.3%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+43. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 537 (13.9%)
+   - Only Label 2 Positive: 10 (0.3%)
+   - Both Negative: 553 (14.4%)
+   - Uncategorized: 2752 (71.4%)
+--------------------------------------------------------------------------------
+
+44. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 8 (0.2%)
+   - Both Negative: 1023 (26.6%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+45. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 141 (3.7%)
+   - Both Negative: 890 (23.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+46. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 179 (4.6%)
+   - Both Negative: 852 (22.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+47. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 123 (3.2%)
+   - Both Negative: 908 (23.6%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+48. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 30 (0.8%)
+   - Both Negative: 1001 (26.0%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+49. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 1019 (26.4%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+50. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 493 (12.8%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+51. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1007 (26.1%)
+   - Uncategorized: 2757 (71.6%)
+--------------------------------------------------------------------------------
+
+52. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 868 (22.5%)
+   - Uncategorized: 2756 (71.5%)
+--------------------------------------------------------------------------------
+
+53. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 84 (2.2%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1001 (26.0%)
+   - Uncategorized: 2757 (71.6%)
+--------------------------------------------------------------------------------
+
+54. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 141 (3.7%)
+   - Both Negative: 966 (25.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+55. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 179 (4.6%)
+   - Both Negative: 928 (24.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+56. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 123 (3.2%)
+   - Both Negative: 984 (25.5%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+57. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 30 (0.8%)
+   - Both Negative: 1077 (28.0%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+58. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 1095 (28.4%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+59. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 569 (14.8%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+60. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 942 (24.4%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+61. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 161 (4.2%)
+   - Both Negative: 926 (24.0%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+62. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 1067 (27.7%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+63. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 8 (0.2%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1075 (27.9%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+64. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 179 (4.6%)
+   - Both Negative: 795 (20.6%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+65. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 123 (3.2%)
+   - Both Negative: 851 (22.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+66. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 30 (0.8%)
+   - Both Negative: 944 (24.5%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+67. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 962 (25.0%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+68. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 436 (11.3%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+69. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 948 (24.6%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+70. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 161 (4.2%)
+   - Both Negative: 793 (20.6%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+71. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 934 (24.2%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+72. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 141 (3.7%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 942 (24.4%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+73. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 123 (3.2%)
+   - Both Negative: 813 (21.1%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+74. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 30 (0.8%)
+   - Both Negative: 906 (23.5%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+75. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 924 (24.0%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+76. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 398 (10.3%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+77. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 904 (23.5%)
+   - Uncategorized: 2750 (71.4%)
+--------------------------------------------------------------------------------
+
+78. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 179 (4.6%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 912 (23.7%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+79. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 123 (3.2%)
+   - Only Label 2 Positive: 30 (0.8%)
+   - Both Negative: 962 (25.0%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+80. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 123 (3.2%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 980 (25.4%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+81. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 123 (3.2%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 454 (11.8%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+82. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 123 (3.2%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 831 (21.6%)
+   - Uncategorized: 2754 (71.5%)
+--------------------------------------------------------------------------------
+
+83. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 30 (0.8%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 1073 (27.8%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+84. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 30 (0.8%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 547 (14.2%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+85. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 30 (0.8%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1059 (27.5%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+86. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 30 (0.8%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 531 (13.8%)
+   - Uncategorized: 2755 (71.5%)
+--------------------------------------------------------------------------------
+
+87. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 538 (14.0%)
+   - Both Negative: 565 (14.7%)
+   - Uncategorized: 2738 (71.1%)
+--------------------------------------------------------------------------------
+
+88. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1077 (28.0%)
+   - Uncategorized: 2759 (71.6%)
+--------------------------------------------------------------------------------
+
+89. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 938 (24.3%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+90. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 1063 (27.6%)
+   - Uncategorized: 2758 (71.6%)
+--------------------------------------------------------------------------------
+
+91. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 538 (14.0%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 558 (14.5%)
+   - Uncategorized: 2752 (71.4%)
+--------------------------------------------------------------------------------
+
+92. Label Combination:
+   Label 1: cam_setup/shot_size/end_with/shot_size_end_with_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 538 (14.0%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 544 (14.1%)
+   - Uncategorized: 2751 (71.4%)
+--------------------------------------------------------------------------------
+
+93. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 5 (0.1%)
+   - Both Negative: 1014 (26.3%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+94. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 874 (22.7%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+95. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 161 (4.2%)
+   - Both Negative: 858 (22.3%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+96. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 140 (3.6%)
+   - Both Negative: 879 (22.8%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+97. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 999 (25.9%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+98. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1008 (26.2%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+99. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 91 (2.4%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 482 (12.5%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+100. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 960 (24.9%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+101. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 161 (4.2%)
+   - Both Negative: 944 (24.5%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+102. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 140 (3.6%)
+   - Both Negative: 965 (25.0%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+103. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 1085 (28.2%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+104. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1094 (28.4%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+105. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 568 (14.7%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+106. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 145 (3.8%)
+   - Only Label 2 Positive: 161 (4.2%)
+   - Both Negative: 804 (20.9%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+107. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 145 (3.8%)
+   - Only Label 2 Positive: 140 (3.6%)
+   - Both Negative: 825 (21.4%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+108. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 145 (3.8%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 945 (24.5%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+109. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 145 (3.8%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 954 (24.8%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+110. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 145 (3.8%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 428 (11.1%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+111. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 161 (4.2%)
+   - Only Label 2 Positive: 140 (3.6%)
+   - Both Negative: 809 (21.0%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+112. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 161 (4.2%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 929 (24.1%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+113. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 161 (4.2%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 938 (24.3%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+114. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 161 (4.2%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 412 (10.7%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+115. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 140 (3.6%)
+   - Only Label 2 Positive: 20 (0.5%)
+   - Both Negative: 950 (24.7%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+116. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 140 (3.6%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 959 (24.9%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+117. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 140 (3.6%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 433 (11.2%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+118. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 20 (0.5%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1079 (28.0%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+119. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 20 (0.5%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 553 (14.4%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------
+
+120. Label Combination:
+   Label 1: cam_setup/shot_size/start_with/shot_size_start_with_medium_full
+   Label 2: cam_setup/shot_size/start_with/shot_size_start_with_wide
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 537 (13.9%)
+   - Both Negative: 562 (14.6%)
+   - Uncategorized: 2743 (71.2%)
+--------------------------------------------------------------------------------

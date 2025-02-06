@@ -22,6 +22,6 @@
     "neg_rule_str": "self.cam_setup.video_speed not in ['time_lapse', 'speed_ramp', 'time_reversed']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {
-        "fast_motion": "self.cam_motion.video_speed == 'fast_motion'"
+        "fast_motion": "self.cam_setup.video_speed == 'fast_motion'"
     }
 }

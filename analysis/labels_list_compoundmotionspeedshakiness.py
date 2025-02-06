@@ -1,0 +1,309 @@
+"""
+This file contains the list of labels to analyze for camera motion patterns.
+Labels are organized by category for better readability and maintenance.
+"""
+
+# Arc & Crane Movements
+ARC_CRANE_LABELS = [
+    'cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise',
+    'cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise',
+    'cam_motion/arc_crane_movement/crane_down/has_crane_down',
+    'cam_motion/arc_crane_movement/crane_up/has_crane_up',
+]
+
+# # Camera-Centric Movements - Translation
+# TRANSLATION_LABELS = [
+#     'cam_motion/camera_centric_movement/backward/has_backward_wrt_camera',
+#     'cam_motion/camera_centric_movement/backward/only_backward_wrt_camera',
+#     'cam_motion/camera_centric_movement/downward/has_downward_wrt_camera',
+#     'cam_motion/camera_centric_movement/downward/only_downward_wrt_camera',
+#     'cam_motion/camera_centric_movement/forward/has_forward_wrt_camera',
+#     'cam_motion/camera_centric_movement/forward/only_forward_wrt_camera',
+#     'cam_motion/camera_centric_movement/leftward/has_leftward',
+#     'cam_motion/camera_centric_movement/leftward/only_leftward',
+#     'cam_motion/camera_centric_movement/rightward/has_rightward',
+#     'cam_motion/camera_centric_movement/rightward/only_rightward',
+#     'cam_motion/camera_centric_movement/upward/has_upward_wrt_camera',
+#     'cam_motion/camera_centric_movement/upward/only_upward_wrt_camera',
+# ]
+
+# Camera-Centric Movements - Rotation
+ROTATION_LABELS = [
+    'cam_motion/camera_centric_movement/pan_left/has_pan_left',
+    # 'cam_motion/camera_centric_movement/pan_left/only_pan_left',
+    'cam_motion/camera_centric_movement/pan_right/has_pan_right',
+    # 'cam_motion/camera_centric_movement/pan_right/only_pan_right',
+    'cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise',
+    # 'cam_motion/camera_centric_movement/roll_clockwise/only_roll_clockwise',
+    'cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise',
+    # 'cam_motion/camera_centric_movement/roll_counterclockwise/only_roll_counterclockwise',
+    'cam_motion/camera_centric_movement/tilt_down/has_tilt_down',
+    # 'cam_motion/camera_centric_movement/tilt_down/only_tilt_down',
+    'cam_motion/camera_centric_movement/tilt_up/has_tilt_up',
+    # 'cam_motion/camera_centric_movement/tilt_up/only_tilt_up',
+]
+
+# # Dolly Zoom Movements
+# DOLLY_ZOOM_LABELS = [
+#     'cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out',
+#     'cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in',
+# ]
+
+# Ground-Centric Movements
+GROUND_CENTRIC_LABELS = [
+    # 'cam_motion/ground_centric_movement/backward/has_backward_wrt_ground',
+    'cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/backward/only_backward_wrt_ground',
+    # 'cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/downward/has_downward_wrt_ground',
+    'cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/downward/only_downward_wrt_ground',
+    # 'cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/forward/has_forward_wrt_ground',
+    'cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/forward/only_forward_wrt_ground',
+    # 'cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/upward/has_upward_wrt_ground',
+    'cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included',
+    # 'cam_motion/ground_centric_movement/upward/only_upward_wrt_ground',
+    # 'cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included',
+]
+
+# # Object-Centric Movements - Tracking Shots
+# TRACKING_LABELS = [
+#     'cam_motion/object_centric_movement/aerial_tracking_shot',
+#     'cam_motion/object_centric_movement/arc_tracking_shot',
+#     'cam_motion/object_centric_movement/front_side_tracking_shot',
+#     'cam_motion/object_centric_movement/lead_tracking_shot',
+#     'cam_motion/object_centric_movement/pan_tracking_shot',
+#     'cam_motion/object_centric_movement/rear_side_tracking_shot',
+#     'cam_motion/object_centric_movement/side_tracking_shot',
+#     'cam_motion/object_centric_movement/tail_tracking_shot',
+#     'cam_motion/object_centric_movement/tilt_tracking_shot',
+#     'cam_motion/object_centric_movement/track_shot',
+#     'cam_motion/object_centric_movement/tracking_subject_larger_size',
+#     'cam_motion/object_centric_movement/tracking_subject_smaller_size',
+# ]
+
+# Miscellaneous Camera Motion
+MISC_MOTION_LABELS = [
+    'cam_motion/has_frame_freezing',
+    'cam_motion/has_motion_blur',
+    # 'cam_motion/has_shot_transition_cam_motion',
+    # 'cam_motion/motion_complexity/is_complex_motion',
+    # 'cam_motion/motion_complexity/is_minor_motion',
+    # 'cam_motion/motion_complexity/is_simple_motion',
+    # 'cam_motion/scene_movement/dynamic_scene',
+    # 'cam_motion/scene_movement/mostly_static_scene',
+    # 'cam_motion/scene_movement/static_scene',
+    'cam_motion/steadiness_and_movement/clear_moving_camera',
+    'cam_motion/steadiness_and_movement/fast_moving_camera',
+    # 'cam_motion/steadiness_and_movement/fixed_camera',
+    # 'cam_motion/steadiness_and_movement/fixed_camera_with_shake',
+    # 'cam_motion/steadiness_and_movement/moving_camera',
+    'cam_motion/steadiness_and_movement/shaky_camera',
+    'cam_motion/steadiness_and_movement/slow_moving_camera',
+    'cam_motion/steadiness_and_movement/stable_camera',
+    'cam_motion/steadiness_and_movement/very_shaky_camera',
+    'cam_motion/steadiness_and_movement/very_stable_camera',
+]
+
+# # Camera Setup - Camera Angle
+# CAMERA_ANGLE_LABELS = [
+#     'cam_setup/angle/camera_angle_change_from_high_to_low',
+#     'cam_setup/angle/camera_angle_change_from_low_to_high',
+#     'cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle',
+#     'cam_setup/angle/end_with/camera_angle_end_with_high_angle',
+#     'cam_setup/angle/end_with/camera_angle_end_with_level_angle',
+#     'cam_setup/angle/end_with/camera_angle_end_with_low_angle',
+#     'cam_setup/angle/end_with/camera_angle_end_with_worm_eye_angle',
+#     'cam_setup/angle/is_always/camera_angle_is_bird_eye_angle',
+#     'cam_setup/angle/is_always/camera_angle_is_high_angle',
+#     'cam_setup/angle/is_always/camera_angle_is_level_angle',
+#     'cam_setup/angle/is_always/camera_angle_is_low_angle',
+#     'cam_setup/angle/is_always/camera_angle_is_worm_eye_angle',
+#     # 'cam_setup/angle/is_camera_angle_applicable',
+#     'cam_setup/angle/is_dutch_angle',
+#     'cam_setup/angle/is_dutch_angle_fixed',
+#     'cam_setup/angle/is_dutch_angle_varying',
+#     'cam_setup/angle/start_with/camera_angle_start_with_bird_eye_angle',
+#     'cam_setup/angle/start_with/camera_angle_start_with_high_angle',
+#     'cam_setup/angle/start_with/camera_angle_start_with_level_angle',
+#     'cam_setup/angle/start_with/camera_angle_start_with_low_angle',
+#     'cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle',
+# ]
+
+# # Camera Setup - Camera Focus
+# CAMERA_FOCUS_LABELS = [
+#     'cam_setup/focus/end_with/focus_end_with_background',
+#     'cam_setup/focus/end_with/focus_end_with_foreground',
+#     'cam_setup/focus/end_with/focus_end_with_middle_ground',
+#     'cam_setup/focus/end_with/focus_end_with_out_of_focus',
+#     'cam_setup/focus/focus_change_from_far_to_near',
+#     'cam_setup/focus/focus_change_from_near_to_far',
+#     'cam_setup/focus/is_always/focus_is_background',
+#     'cam_setup/focus/is_always/focus_is_foreground',
+#     'cam_setup/focus/is_always/focus_is_middle_ground',
+#     'cam_setup/focus/is_always/focus_is_out_of_focus',
+#     'cam_setup/focus/is_deep_focus',
+#     # 'cam_setup/focus/is_focus_applicable',
+#     'cam_setup/focus/is_focus_tracking',
+#     'cam_setup/focus/is_rack_pull_focus',
+#     'cam_setup/focus/is_shallow_focus',
+#     'cam_setup/focus/is_ultra_shallow_focus',
+#     'cam_setup/focus/start_with/focus_start_with_background',
+#     'cam_setup/focus/start_with/focus_start_with_foreground',
+#     'cam_setup/focus/start_with/focus_start_with_middle_ground',
+#     'cam_setup/focus/start_with/focus_start_with_out_of_focus',
+# ]
+
+# # Camera Setup - Height Relative to Ground/Subject
+# HEIGHT_LABELS = [
+#     'cam_setup/height_wrt_ground/above_water_to_underwater',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_ground_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_hip_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_overhead_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_underwater_level',
+#     'cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_water_level',
+#     'cam_setup/height_wrt_ground/height_wrt_ground_change_from_high_to_low',
+#     'cam_setup/height_wrt_ground/height_wrt_ground_change_from_low_to_high',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_aerial_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_eye_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_ground_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_hip_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_overhead_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_underwater_level',
+#     'cam_setup/height_wrt_ground/is_always/height_wrt_ground_is_water_level',
+#     # 'cam_setup/height_wrt_ground/is_height_wrt_ground_applicable',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_aerial_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_eye_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_ground_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_hip_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_overhead_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_underwater_level',
+#     'cam_setup/height_wrt_ground/start_with/height_wrt_ground_start_with_water_level',
+#     'cam_setup/height_wrt_ground/underwater_to_above_water',
+#     'cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_above_subject',
+#     'cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_at_subject',
+#     'cam_setup/height_wrt_subject/end_with/height_wrt_subject_end_with_below_subject',
+#     'cam_setup/height_wrt_subject/height_wrt_subject_change_from_high_to_low',
+#     'cam_setup/height_wrt_subject/height_wrt_subject_change_from_low_to_high',
+#     'cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_above_subject',
+#     'cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_at_subject',
+#     'cam_setup/height_wrt_subject/is_always/height_wrt_subject_is_below_subject',
+#     # 'cam_setup/height_wrt_subject/is_subject_height_applicable',
+#     'cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_above_subject',
+#     'cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_at_subject',
+#     'cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_below_subject',
+# ]
+
+# # Lens and Point of View
+# LENS_POV_LABELS = [
+#     'cam_setup/lens_distortion/fisheye_distortion',
+#     'cam_setup/lens_distortion/no_lens_distortion',
+#     'cam_setup/lens_distortion/with_lens_distortion',
+#     'cam_setup/point_of_view/broadcast_pov',
+#     'cam_setup/point_of_view/dashcam_pov',
+#     'cam_setup/point_of_view/drone_pov',
+#     'cam_setup/point_of_view/first_person_pov',
+#     'cam_setup/point_of_view/locked_on_pov',
+#     'cam_setup/point_of_view/overhead_pov',
+#     'cam_setup/point_of_view/screen_recording_pov',
+#     'cam_setup/point_of_view/selfie_pov',
+#     'cam_setup/point_of_view/third_person_full_body_game_pov',
+#     'cam_setup/point_of_view/third_person_isometric_game_pov',
+#     'cam_setup/point_of_view/third_person_over_hip_pov',
+#     'cam_setup/point_of_view/third_person_over_shoulder_pov',
+#     'cam_setup/point_of_view/third_person_side_view_game_pov',
+#     'cam_setup/point_of_view/third_person_top_down_game_pov',
+# ]
+
+# # Shot Size and Type
+# SHOT_SIZE_TYPE_LABELS = [
+#     'cam_setup/shot_size/end_with/shot_size_end_with_close_up',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_full',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_medium',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_medium_close_up',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_medium_full',
+#     'cam_setup/shot_size/end_with/shot_size_end_with_wide',
+#     'cam_setup/shot_size/is_always/shot_size_is_close_up',
+#     'cam_setup/shot_size/is_always/shot_size_is_extreme_close_up',
+#     'cam_setup/shot_size/is_always/shot_size_is_extreme_wide',
+#     'cam_setup/shot_size/is_always/shot_size_is_full',
+#     'cam_setup/shot_size/is_always/shot_size_is_medium',
+#     'cam_setup/shot_size/is_always/shot_size_is_medium_close_up',
+#     'cam_setup/shot_size/is_always/shot_size_is_medium_full',
+#     'cam_setup/shot_size/is_always/shot_size_is_wide',
+#     # 'cam_setup/shot_size/is_shot_size_applicable',
+#     'cam_setup/shot_size/shot_size_change',
+#     'cam_setup/shot_size/shot_size_change_from_large_to_small',
+#     'cam_setup/shot_size/shot_size_change_from_small_to_large',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_close_up',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_extreme_close_up',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_extreme_wide',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_full',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_medium',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_medium_close_up',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_medium_full',
+#     'cam_setup/shot_size/start_with/shot_size_start_with_wide',
+#     'cam_setup/shot_size/subject_disappearing',
+#     'cam_setup/shot_size/subject_revealing',
+#     'cam_setup/shot_size/subject_switching',
+# ]
+
+# # Shot Type and Subject Framing
+# SHOT_TYPE_FRAMING_LABELS = [
+#     'cam_setup/shot_type/is_human_shot',
+#     'cam_setup/shot_type/is_just_back_and_forth_change_shot',
+#     'cam_setup/shot_type/is_just_change_of_subject_shot',
+#     'cam_setup/shot_type/is_just_clear_subject_atypical_shot',
+#     'cam_setup/shot_type/is_just_clear_subject_dynamic_size_shot',
+#     'cam_setup/shot_type/is_just_different_subject_in_focus_shot',
+#     'cam_setup/shot_type/is_just_human_shot',
+#     'cam_setup/shot_type/is_just_many_subject_no_focus_shot',
+#     'cam_setup/shot_type/is_just_many_subject_one_focus_shot',
+#     'cam_setup/shot_type/is_just_non_human_shot',
+#     'cam_setup/shot_type/is_just_scenery_shot',
+#     'cam_setup/shot_type/is_just_subject_scene_mismatch_shot',
+#     'cam_setup/shot_type/is_non_human_shot',
+#     'cam_setup/subject_framing/has_many_subjects',
+#     'cam_setup/subject_framing/has_single_dominant_subject',
+#     'cam_setup/subject_framing/has_subject_change',
+#     'cam_setup/subject_framing/is_framing_subject',
+# ]
+
+# # Miscellaneous Camera Setup
+# MISC_SETUP_LABELS = [
+#     'cam_setup/has_overlays',
+#     'cam_setup/has_shot_transition_cam_setup',
+#     'cam_setup/video_speed/fast_motion',
+#     'cam_setup/video_speed/fast_motion_without_time_lapse',
+#     'cam_setup/video_speed/regular_speed',
+#     'cam_setup/video_speed/slow_motion',
+#     'cam_setup/video_speed/speed_ramp',
+#     'cam_setup/video_speed/stop_motion',
+#     'cam_setup/video_speed/time_lapse',
+#     'cam_setup/video_speed/time_reversed',
+# ]
+
+# Combine all labels into a single list for analysis
+LABELS_TO_ANALYZE = (
+    ARC_CRANE_LABELS + 
+    # TRANSLATION_LABELS +
+    ROTATION_LABELS +
+    # DOLLY_ZOOM_LABELS +
+    GROUND_CENTRIC_LABELS + 
+    # TRACKING_LABELS +
+    MISC_MOTION_LABELS
+    # CAMERA_ANGLE_LABELS +
+    # CAMERA_FOCUS_LABELS +
+    # HEIGHT_LABELS +
+    # LENS_POV_LABELS +
+    # SHOT_SIZE_TYPE_LABELS +
+    # SHOT_TYPE_FRAMING_LABELS +
+    # MISC_SETUP_LABELS
+) 

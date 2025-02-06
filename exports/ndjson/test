@@ -1,0 +1,58 @@
+
+{"data_row": 
+{"id": "cm13l3arf1grj0733gjem71pa", "external_id": "U3Hb5mUjIDI.2.0.mp4", "global_key": "fc58c0f449", "row_data": "https://storage.labelbox.com/cm07odnla0f4y07vabssh8ewd%2Fadd43ba8-b4ec-2c8e-36f4-e42ab9ab3d73-U3Hb5mUjIDI.2.0.mp4?Expires=1738677464149&KeyName=labelbox-assets-key-3&Signature=_VVZrixIkB5K-BefJ1M9e6zF5YU", "details": 
+{"dataset_id": "cm13g728n001p07277xiyqaho", "dataset_name": "youtube_batch2_videoseg", "created_at": "2024-09-15T13:00:22.761+00:00", "updated_at": "2024-10-21T06:20:42.282+00:00", "last_activity_at": "2025-01-17T03:40:54.463+00:00", "created_by": "drjiang@andrew.cmu.edu"}}, "media_attributes": 
+{"height": 822, "width": 1920, "asset_type": "video", "mime_type": "video/mp4", "frame_rate": 25, "frame_count": 88}, "projects": 
+{"cm2iljzsz00rg07117sq10jiw": 
+{"name": "Video Segment Classification (Camera Movement)", "labels": [
+{"label_kind": "Video", "version": "1.0.0", "id": "cm33beaat05wk07f4agmv4akh", "label_details": 
+{"created_at": "2024-11-04T17:49:59.000+00:00", "updated_at": "2024-11-25T20:12:18.000+00:00", "created_by": "rater.51@grandecenter.org", "content_last_updated_at": "2024-11-25T20:12:18.505+00:00", "reviews": []}, "performance_details": 
+{"seconds_to_create": 180, "seconds_to_review": 4, "skipped": false}, "annotations": 
+{"frames": 
+{}, "segments": 
+{}, "key_frame_feature_map": 
+{}, "classifications": [
+{"feature_id": "cm33beaim05bw07ea51mf6lfk", "feature_schema_id": "cm2fn5jof1e2107yj85lm61g5", "name": "Is the camera moving (trucking) to the left or right?", "value": "is_the_camera_moving_trucking_to_the_left_or_right", "radio_answer": 
+{"feature_id": "cm33beain05cd07eahjvq3b8z", "feature_schema_id": "cm2fn5jof1e2207yj7mm959pl", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05bx07ea25z3fhxg", "feature_schema_id": "cm2fn5jof1e1l07yjgmpbdc67", "name": "Is the camera moving forward or backward?", "value": "is_the_camera_moving_forward_or_backward", "radio_answer": 
+{"feature_id": "cm33beain05cf07ea8zu156b5", "feature_schema_id": "cm2fn5jof1e1m07yj71q54zo2", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05by07ea1nbpfrhk", "feature_schema_id": "cm2fn5jof1e2h07yj77jx0wi4", "name": "Is the camera moving up or down?", "value": "is_the_camera_moving_up_or_down", "radio_answer": 
+{"feature_id": "cm33beain05c707ea55w7939b", "feature_schema_id": "cm2fn5jog1e2i07yj7set6kno", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05bz07eaeziv029c", "feature_schema_id": "cm2fn5jof1e1t07yj9jxdcl8v", "name": "Is the camera zooming?", "value": "is_the_camera_zooming", "radio_answer": 
+{"feature_id": "cm33beain05cb07eagniu9io3", "feature_schema_id": "cm2fn5jof1e1u07yjcsh9emxj", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05c007eahdv5hp3y", "feature_schema_id": "cm2fn5jog1e3907yjgdamakg4", "name": "Is the camera rolling?", "value": "is_the_camera_rolling", "radio_answer": 
+{"feature_id": "cm33beain05cc07eahiqwf46d", "feature_schema_id": "cm2fn5jog1e3a07yj0ks3fp29", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05c107ea866tenl6", "feature_schema_id": "cm2fn5joe1e0r07yjh0pd2b76", "name": "Is the camera tracking (following) the moving subject(s)?", "value": "is_the_camera_tracking_following_subject", "radio_answer": 
+{"feature_id": "cm33bf34b004d3b6sp63fd5n5", "feature_schema_id": "cm2fn5joe1e0u07yj2w48f5ga", "name": "Yes", "value": "yes", "classifications": [
+{"feature_id": "cm33bf8ve004f3b6szttug0tq", "feature_schema_id": "cm2fn5joe1e0v07yj7c1k84ng", "name": "Select the type(s) of tracking shot:", "value": "select_the_type_of_tracking_shot", "checklist_answers": [
+{"feature_id": "cm33bf8ve004e3b6swgpvtq9o", "feature_schema_id": "cm2fn5joe1e1607yj0dmzap1o", "name": "Pan (panning to follow the subject)", "value": "pan_panning_to_follow_the_subject", "classifications": []}]}, 
+{"feature_id": "cm33bfp2i004h3b6sgf0cbl1d", "feature_schema_id": "cm2fn5jof1e1b07yj9fvj8miz", "name": "Does the size of the subject change?", "value": "does_the_size_of_the_subject_change", "radio_answer": 
+{"feature_id": "cm33bfp2i004g3b6s7xjmfrjh", "feature_schema_id": "cm2fn5jof1e1c07yjb2uderxg", "name": "No", "value": "no", "classifications": []}}]}}, 
+{"feature_id": "cm33beaim05c207ea0p1pfvu9", "feature_schema_id": "cm2fn5jog1e2x07yj25g7b04x", "name": "Is the camera moving in an arc?", "value": "is_the_camera_moving_in_an_arc", "radio_answer": 
+{"feature_id": "cm33beain05ca07ead80l5oy6", "feature_schema_id": "cm2fn5jog1e2y07yjggtkb6s1", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05c307eaag28byak", "feature_schema_id": "cm2fn5jog1e2p07yj9kv8g9yb", "name": "Is the camera tilting?", "value": "is_the_camera_tilting", "radio_answer": 
+{"feature_id": "cm33beain05cg07eahhwccxf1", "feature_schema_id": "cm2fn5jog1e2q07yjh6b794t6", "name": "No", "value": "no", "classifications": []}}, 
+{"feature_id": "cm33beaim05c407ea0swp3mp3", "feature_schema_id": "cm2fn5joe1e0j07yj1lwkda4n", "name": "How fast is the camera motion (e.g., crash zoom, whip pan)?", "value": "camera_motion_speed", "radio_answer": 
+{"feature_id": "cm33beain05c807ea3tqz2w8d", "feature_schema_id": "cm2fn5joe1e0m07yjaxvvg8h8", "name": "Regular", "value": "regular", "classifications": []}}, 
+{"feature_id": "cm33beaim05c507eaca4cfg7h", "feature_schema_id": "cm2fn5jof1e2907yjf3ex2ai5", "name": "Is the camera panning?", "value": "is_the_camera_panning", "radio_answer": 
+{"feature_id": "cm33bftzd004i3b6sywh014ba", "feature_schema_id": "cm2fn5jof1e2c07yjd4u3cfv2", "name": "Left-to-Right (-->)", "value": "left_to_right_panning", "classifications": []}}, 
+{"feature_id": "cm33beaim05c607ea446b0eoy", "feature_schema_id": "cm2fn5joe1e0907yjhosb7ios", "name": "Is there camera movement (other than camera shaking)?", "value": "is_there_camera_movement_other_than_shaking", "radio_answer": 
+{"feature_id": "cm33bf15f004c3b6samk1drdu", "feature_schema_id": "cm2fn5joe1e0c07yj95le0h2x", "name": "Yes with major, simple motion", "value": "yes_major_simple_motion", "classifications": []}}, 
+{"feature_id": "cm33bf0d7004b3b6s35410gvm", "feature_schema_id": "cm2fn5joe1dzx07yjedutcolm", "name": "Select the camera steadiness:", "value": "select_camera_steadiness", "radio_answer": 
+{"feature_id": "cm33bf0d7004a3b6s99tq5478", "feature_schema_id": "cm2fn5joe1e0207yj2i8948rz", "name": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)", "value": "smooth_steadicam_stabilized_handheld_shot", "classifications": []}}, 
+{"feature_id": "cm3xgsb8y00043b6src7hyvyj", "feature_schema_id": "cm2fn5jog1e3j07yj08vm9a75", "name": "Are there any of the following camera motion effects?", "value": "are_there_any_of_the_following_camera_motion_effects", "checklist_answers": [
+{"feature_id": "cm3xgsb8y00033b6suthccnqm", "feature_schema_id": "cm3s4rw6m011607x3fbl6865m", "name": "None", "value": "none", "classifications": []}]}]}}, 
+{"label_kind": "Video", "version": "1.0.0", "id": "cm30xlqaw00qb07by24mo7k20", "label_details": 
+{"created_at": "2024-11-03T01:47:14.000+00:00", "updated_at": "2024-11-03T01:47:14.000+00:00", "created_by": "siyuancen096@gmail.com", "content_last_updated_at": "2024-11-03T01:47:13.882+00:00", "reviews": []}, "performance_details": 
+{"seconds_to_create": 77, "seconds_to_review": 67, "skipped": true}, "annotations": 
+{"frames": 
+{}, "segments": 
+{}, "key_frame_feature_map": 
+{}, "classifications": []}}], "project_details": 
+{"ontology_id": "cm2iknaf601sr07zzc8b25osl", "task_name": "Done", "batch_id": "0dc07d90-8f71-11ef-a989-1d6ab1f87d82", "batch_name": "video_segment_classification_(camera_movement)_batch_2_1", "workflow_status": "DONE", "priority": 2674, "selected_label_id": "cm30xlqaw00qb07by24mo7k20", "consensus_expected_label_count": 2, "workflow_history": [
+{"action": "Approve", "created_at": "2024-12-19T02:50:12.292+00:00", "created_by": "siyuancen096@gmail.com", "previous_task_name": "Initial review task", "previous_task_id": "95563071-0021-42f4-9b81-ea16410e08de"}, 
+{"action": "Rework", "created_at": "2024-11-25T20:12:23.379+00:00", "created_by": "rater.51@grandecenter.org", "previous_task_name": "Rework (all rejected)", "previous_task_id": "4fa5011c-604d-073f-8333-5f914332ff86", "next_task_name": "Initial review task", "next_task_id": "95563071-0021-42f4-9b81-ea16410e08de"}, 
+{"action": "Move", "created_at": "2024-11-22T17:50:27.157+00:00", "created_by": "drjiang@andrew.cmu.edu", "previous_task_name": "Initial review task", "previous_task_id": "95563071-0021-42f4-9b81-ea16410e08de", "next_task_name": "Rework (all rejected)", "next_task_id": "4fa5011c-604d-073f-8333-5f914332ff86"}, 
+{"action": "Move", "created_at": "2024-11-04T17:49:59.046+00:00", "created_by": "rater.51@grandecenter.org", "previous_task_name": "Initial labeling task", "previous_task_id": "52a70f23-345f-08a8-895d-d3aa1ebab7cc", "next_task_name": "Initial review task", "next_task_id": "95563071-0021-42f4-9b81-ea16410e08de"}, 
+{"action": "Move", "created_at": "2024-11-04T17:49:59.041+00:00", "created_by": "rater.51@grandecenter.org", "next_task_name": "Initial labeling task", "next_task_id": "52a70f23-345f-08a8-895d-d3aa1ebab7cc"}]}, "project_tags": [
+{"id": "cm3s9n58c07sh07wedjv2fhs4", "organization_id": "cm07odnla0f4y07vabssh8ewd", "text": "main", "color": "FFA9D5", "created_at": "2024-11-22T04:53:26.000+00:00", "updated_at": "2024-11-22T04:53:26.464+00:00", "created_by_id": "cm07odnli0f4z07va6hig1jza", "type": "Default"}]}}}

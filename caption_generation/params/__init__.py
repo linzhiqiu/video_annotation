@@ -1,0 +1,1 @@
+"""Parameters and configuration for caption generation.""" 

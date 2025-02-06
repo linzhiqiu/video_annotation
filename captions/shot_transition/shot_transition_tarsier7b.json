@@ -1,0 +1,18 @@
+{
+    "name": "Shot Transition Description",
+    "description": "Instructions for generating shot transition descriptions",
+    "model settings": {
+        "name": "Tarsier-7b",
+        "temperature": 0.2,
+        "max_new_tokens": 512,
+        "top_p": 1.0,
+        "do_sample": true,
+        "use_cache": true,
+        "max_n_frames": 8,
+        "top_k": 1
+    },
+    "instruction_template": [
+        "Based on our analysis, there {'is a' if self.cam_setup.shot_transition else 'is no'} shot transition in this video.",
+        "If present, describe the exact type of transition you observe and specify the frames where it occurs. Limit your response to 1-2 factual sentences, focusing only on what can be directly observed in the video frames."
+    ]
+}

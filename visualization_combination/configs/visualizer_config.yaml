@@ -6,7 +6,7 @@ data:
 
 # Batch constraints
 constraints:
-  video_names_file: visualization/video_lists/donesection.json
+  video_names_file: donevideos/donesection.json
   approver: null
   time_range: null
 
@@ -14,10 +14,10 @@ constraints:
 labels:
   # # Camera Movements
   # # Arc & Crane Movements
-  # - cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
-  # - cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
-  # - cam_motion/arc_crane_movement/crane_down/has_crane_down
-  # - cam_motion/arc_crane_movement/crane_up/has_crane_up
+  - cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+  - cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+  - cam_motion/arc_crane_movement/crane_down/has_crane_down
+  - cam_motion/arc_crane_movement/crane_up/has_crane_up
 
   # # Camera-Centric Movements
   # # Translation
@@ -35,17 +35,17 @@ labels:
   # - cam_motion/camera_centric_movement/upward/only_upward_wrt_camera
 
   # # Rotation
-  # - cam_motion/camera_centric_movement/pan_left/has_pan_left
+  - cam_motion/camera_centric_movement/pan_left/has_pan_left
   # - cam_motion/camera_centric_movement/pan_left/only_pan_left
-  # - cam_motion/camera_centric_movement/pan_right/has_pan_right
+  - cam_motion/camera_centric_movement/pan_right/has_pan_right
   # - cam_motion/camera_centric_movement/pan_right/only_pan_right
-  # - cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+  - cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
   # - cam_motion/camera_centric_movement/roll_clockwise/only_roll_clockwise
-  # - cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+  - cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
   # - cam_motion/camera_centric_movement/roll_counterclockwise/only_roll_counterclockwise
-  # - cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+  - cam_motion/camera_centric_movement/tilt_down/has_tilt_down
   # - cam_motion/camera_centric_movement/tilt_down/only_tilt_down
-  # - cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+  - cam_motion/camera_centric_movement/tilt_up/has_tilt_up
   # - cam_motion/camera_centric_movement/tilt_up/only_tilt_up
 
   # # Dolly Zoom Movements
@@ -54,19 +54,19 @@ labels:
 
   # # Ground-Centric Movements
   # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
-  # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
   # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
-  # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
   # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
-  # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
   # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
-  # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
   # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
 

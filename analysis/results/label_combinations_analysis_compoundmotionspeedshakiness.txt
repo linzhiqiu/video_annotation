@@ -1,0 +1,2788 @@
+Label Combination Analysis Results
+================================================================================
+
+Total Videos Analyzed: 3853
+
+
+1. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 1572 (40.8%)
+   - Only Label 1 Positive: 644 (16.7%)
+   - Only Label 2 Positive: 332 (8.6%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 452 (11.7%)
+--------------------------------------------------------------------------------
+
+2. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/stable_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 1255 (32.6%)
+   - Only Label 1 Positive: 649 (16.8%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 1743 (45.2%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+3. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 1043 (27.1%)
+   - Only Label 1 Positive: 1173 (30.4%)
+   - Only Label 2 Positive: 212 (5.5%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 572 (14.8%)
+--------------------------------------------------------------------------------
+
+4. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 644 (16.7%)
+   - Only Label 1 Positive: 1572 (40.8%)
+   - Only Label 2 Positive: 227 (5.9%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 557 (14.5%)
+--------------------------------------------------------------------------------
+
+5. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 594 (15.4%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 1622 (42.1%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+6. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 390 (10.1%)
+   - Only Label 1 Positive: 204 (5.3%)
+   - Only Label 2 Positive: 1514 (39.3%)
+   - Both Negative: 829 (21.5%)
+   - Uncategorized: 916 (23.8%)
+--------------------------------------------------------------------------------
+
+7. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 272 (7.1%)
+   - Only Label 1 Positive: 322 (8.4%)
+   - Only Label 2 Positive: 983 (25.5%)
+   - Both Negative: 829 (21.5%)
+   - Uncategorized: 1447 (37.6%)
+--------------------------------------------------------------------------------
+
+8. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 240 (6.2%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 1976 (51.3%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+9. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 233 (6.0%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 1983 (51.5%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+10. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/shaky_camera
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 217 (5.6%)
+   - Only Label 1 Positive: 654 (17.0%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 2776 (72.0%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+11. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 216 (5.6%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2000 (51.9%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+12. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 204 (5.3%)
+   - Only Label 1 Positive: 390 (10.1%)
+   - Only Label 2 Positive: 667 (17.3%)
+   - Both Negative: 1188 (30.8%)
+   - Uncategorized: 1404 (36.4%)
+--------------------------------------------------------------------------------
+
+13. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 187 (4.9%)
+   - Only Label 1 Positive: 53 (1.4%)
+   - Only Label 2 Positive: 1717 (44.6%)
+   - Both Negative: 989 (25.7%)
+   - Uncategorized: 907 (23.5%)
+--------------------------------------------------------------------------------
+
+14. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 165 (4.3%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 1739 (45.1%)
+   - Both Negative: 852 (22.1%)
+   - Uncategorized: 1029 (26.7%)
+--------------------------------------------------------------------------------
+
+15. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 156 (4.0%)
+   - Only Label 1 Positive: 2060 (53.5%)
+   - Only Label 2 Positive: 61 (1.6%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 723 (18.8%)
+--------------------------------------------------------------------------------
+
+16. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 153 (4.0%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2063 (53.5%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+17. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 153 (4.0%)
+   - Only Label 1 Positive: 2063 (53.5%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 784 (20.3%)
+--------------------------------------------------------------------------------
+
+18. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 146 (3.8%)
+   - Only Label 1 Positive: 70 (1.8%)
+   - Only Label 2 Positive: 1758 (45.6%)
+   - Both Negative: 848 (22.0%)
+   - Uncategorized: 1031 (26.8%)
+--------------------------------------------------------------------------------
+
+19. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 142 (3.7%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2074 (53.8%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+20. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/slow_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 134 (3.5%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 1770 (45.9%)
+   - Both Negative: 1497 (38.9%)
+   - Uncategorized: 433 (11.2%)
+--------------------------------------------------------------------------------
+
+21. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 129 (3.3%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2087 (54.2%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+22. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 128 (3.3%)
+   - Only Label 1 Positive: 112 (2.9%)
+   - Only Label 2 Positive: 1127 (29.2%)
+   - Both Negative: 989 (25.7%)
+   - Uncategorized: 1497 (38.9%)
+--------------------------------------------------------------------------------
+
+23. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 126 (3.3%)
+   - Only Label 1 Positive: 16 (0.4%)
+   - Only Label 2 Positive: 1778 (46.1%)
+   - Both Negative: 795 (20.6%)
+   - Uncategorized: 1138 (29.5%)
+--------------------------------------------------------------------------------
+
+24. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 122 (3.2%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2094 (54.3%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+25. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/clear_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 120 (3.1%)
+   - Only Label 1 Positive: 2096 (54.4%)
+   - Only Label 2 Positive: 0 (0.0%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 784 (20.3%)
+--------------------------------------------------------------------------------
+
+26. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 114 (3.0%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 1790 (46.5%)
+   - Both Negative: 803 (20.8%)
+   - Uncategorized: 1107 (28.7%)
+--------------------------------------------------------------------------------
+
+27. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 105 (2.7%)
+   - Only Label 1 Positive: 24 (0.6%)
+   - Only Label 2 Positive: 1799 (46.7%)
+   - Both Negative: 788 (20.5%)
+   - Uncategorized: 1137 (29.5%)
+--------------------------------------------------------------------------------
+
+28. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 102 (2.6%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 1153 (29.9%)
+   - Both Negative: 795 (20.6%)
+   - Uncategorized: 1763 (45.8%)
+--------------------------------------------------------------------------------
+
+29. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/slow_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 99 (2.6%)
+   - Only Label 1 Positive: 54 (1.4%)
+   - Only Label 2 Positive: 1156 (30.0%)
+   - Both Negative: 1497 (38.9%)
+   - Uncategorized: 1047 (27.2%)
+--------------------------------------------------------------------------------
+
+30. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 98 (2.5%)
+   - Only Label 1 Positive: 24 (0.6%)
+   - Only Label 2 Positive: 1806 (46.9%)
+   - Both Negative: 819 (21.3%)
+   - Uncategorized: 1106 (28.7%)
+--------------------------------------------------------------------------------
+
+31. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 95 (2.5%)
+   - Only Label 1 Positive: 7 (0.2%)
+   - Only Label 2 Positive: 1809 (47.0%)
+   - Both Negative: 1491 (38.7%)
+   - Uncategorized: 451 (11.7%)
+--------------------------------------------------------------------------------
+
+32. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 94 (2.4%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 1161 (30.1%)
+   - Both Negative: 852 (22.1%)
+   - Uncategorized: 1607 (41.7%)
+--------------------------------------------------------------------------------
+
+33. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/fast_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 93 (2.4%)
+   - Only Label 1 Positive: 27 (0.7%)
+   - Only Label 2 Positive: 1811 (47.0%)
+   - Both Negative: 1489 (38.6%)
+   - Uncategorized: 433 (11.2%)
+--------------------------------------------------------------------------------
+
+34. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 89 (2.3%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 1166 (30.3%)
+   - Both Negative: 788 (20.5%)
+   - Uncategorized: 1770 (45.9%)
+--------------------------------------------------------------------------------
+
+35. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 75 (1.9%)
+   - Only Label 1 Positive: 27 (0.7%)
+   - Only Label 2 Positive: 1180 (30.6%)
+   - Both Negative: 1491 (38.7%)
+   - Uncategorized: 1080 (28.0%)
+--------------------------------------------------------------------------------
+
+36. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 75 (1.9%)
+   - Only Label 1 Positive: 78 (2.0%)
+   - Only Label 2 Positive: 1180 (30.6%)
+   - Both Negative: 803 (20.8%)
+   - Uncategorized: 1717 (44.6%)
+--------------------------------------------------------------------------------
+
+37. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 74 (1.9%)
+   - Only Label 1 Positive: 28 (0.7%)
+   - Only Label 2 Positive: 2142 (55.6%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 997 (25.9%)
+--------------------------------------------------------------------------------
+
+38. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 72 (1.9%)
+   - Only Label 1 Positive: 144 (3.7%)
+   - Only Label 2 Positive: 1183 (30.7%)
+   - Both Negative: 848 (22.0%)
+   - Uncategorized: 1606 (41.7%)
+--------------------------------------------------------------------------------
+
+39. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 72 (1.9%)
+   - Only Label 1 Positive: 2 (0.1%)
+   - Only Label 2 Positive: 2144 (55.6%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 782 (20.3%)
+--------------------------------------------------------------------------------
+
+40. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 70 (1.8%)
+   - Only Label 1 Positive: 146 (3.8%)
+   - Only Label 2 Positive: 801 (20.8%)
+   - Both Negative: 1345 (34.9%)
+   - Uncategorized: 1491 (38.7%)
+--------------------------------------------------------------------------------
+
+41. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/fast_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 70 (1.8%)
+   - Only Label 1 Positive: 50 (1.3%)
+   - Only Label 2 Positive: 1185 (30.8%)
+   - Both Negative: 1489 (38.6%)
+   - Uncategorized: 1059 (27.5%)
+--------------------------------------------------------------------------------
+
+42. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 68 (1.8%)
+   - Only Label 1 Positive: 165 (4.3%)
+   - Only Label 2 Positive: 803 (20.8%)
+   - Both Negative: 1332 (34.6%)
+   - Uncategorized: 1485 (38.5%)
+--------------------------------------------------------------------------------
+
+43. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 62 (1.6%)
+   - Only Label 1 Positive: 6 (0.2%)
+   - Only Label 2 Positive: 2154 (55.9%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1019 (26.4%)
+--------------------------------------------------------------------------------
+
+44. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 61 (1.6%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 533 (13.8%)
+   - Both Negative: 1222 (31.7%)
+   - Uncategorized: 1969 (51.1%)
+--------------------------------------------------------------------------------
+
+45. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 56 (1.5%)
+   - Only Label 1 Positive: 18 (0.5%)
+   - Only Label 2 Positive: 1848 (48.0%)
+   - Both Negative: 1725 (44.8%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+46. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 55 (1.4%)
+   - Only Label 1 Positive: 13 (0.3%)
+   - Only Label 2 Positive: 1849 (48.0%)
+   - Both Negative: 1485 (38.5%)
+   - Uncategorized: 451 (11.7%)
+--------------------------------------------------------------------------------
+
+47. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 55 (1.4%)
+   - Only Label 1 Positive: 67 (1.7%)
+   - Only Label 2 Positive: 1200 (31.1%)
+   - Both Negative: 819 (21.3%)
+   - Uncategorized: 1712 (44.4%)
+--------------------------------------------------------------------------------
+
+48. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 53 (1.4%)
+   - Only Label 1 Positive: 187 (4.9%)
+   - Only Label 2 Positive: 818 (21.2%)
+   - Both Negative: 1451 (37.7%)
+   - Uncategorized: 1344 (34.9%)
+--------------------------------------------------------------------------------
+
+49. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 48 (1.2%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2168 (56.3%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+50. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 46 (1.2%)
+   - Only Label 1 Positive: 548 (14.2%)
+   - Only Label 2 Positive: 171 (4.4%)
+   - Both Negative: 1188 (30.8%)
+   - Uncategorized: 1900 (49.3%)
+--------------------------------------------------------------------------------
+
+51. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 45 (1.2%)
+   - Only Label 1 Positive: 171 (4.4%)
+   - Only Label 2 Positive: 549 (14.2%)
+   - Both Negative: 1185 (30.8%)
+   - Uncategorized: 1903 (49.4%)
+--------------------------------------------------------------------------------
+
+52. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 44 (1.1%)
+   - Only Label 1 Positive: 24 (0.6%)
+   - Only Label 2 Positive: 1211 (31.4%)
+   - Both Negative: 1485 (38.5%)
+   - Uncategorized: 1089 (28.3%)
+--------------------------------------------------------------------------------
+
+53. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 43 (1.1%)
+   - Only Label 1 Positive: 190 (4.9%)
+   - Only Label 2 Positive: 551 (14.3%)
+   - Both Negative: 1181 (30.7%)
+   - Uncategorized: 1888 (49.0%)
+--------------------------------------------------------------------------------
+
+54. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 39 (1.0%)
+   - Only Label 1 Positive: 0 (0.0%)
+   - Only Label 2 Positive: 2177 (56.5%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1025 (26.6%)
+--------------------------------------------------------------------------------
+
+55. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 39 (1.0%)
+   - Only Label 1 Positive: 114 (3.0%)
+   - Only Label 2 Positive: 832 (21.6%)
+   - Both Negative: 1321 (34.3%)
+   - Uncategorized: 1547 (40.2%)
+--------------------------------------------------------------------------------
+
+56. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 38 (1.0%)
+   - Only Label 1 Positive: 115 (3.0%)
+   - Only Label 2 Positive: 556 (14.4%)
+   - Both Negative: 1198 (31.1%)
+   - Uncategorized: 1946 (50.5%)
+--------------------------------------------------------------------------------
+
+57. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 35 (0.9%)
+   - Only Label 1 Positive: 4 (0.1%)
+   - Only Label 2 Positive: 1869 (48.5%)
+   - Both Negative: 782 (20.3%)
+   - Uncategorized: 1163 (30.2%)
+--------------------------------------------------------------------------------
+
+58. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 35 (0.9%)
+   - Only Label 1 Positive: 4 (0.1%)
+   - Only Label 2 Positive: 1220 (31.7%)
+   - Both Negative: 782 (20.3%)
+   - Uncategorized: 1812 (47.0%)
+--------------------------------------------------------------------------------
+
+59. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 35 (0.9%)
+   - Only Label 1 Positive: 13 (0.3%)
+   - Only Label 2 Positive: 1869 (48.5%)
+   - Both Negative: 773 (20.1%)
+   - Uncategorized: 1163 (30.2%)
+--------------------------------------------------------------------------------
+
+60. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 35 (0.9%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 1220 (31.7%)
+   - Both Negative: 1725 (44.8%)
+   - Uncategorized: 834 (21.6%)
+--------------------------------------------------------------------------------
+
+61. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 34 (0.9%)
+   - Only Label 1 Positive: 560 (14.5%)
+   - Only Label 2 Positive: 119 (3.1%)
+   - Both Negative: 1147 (29.8%)
+   - Uncategorized: 1993 (51.7%)
+--------------------------------------------------------------------------------
+
+62. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 31 (0.8%)
+   - Only Label 1 Positive: 209 (5.4%)
+   - Only Label 2 Positive: 111 (2.9%)
+   - Both Negative: 1301 (33.8%)
+   - Uncategorized: 2201 (57.1%)
+--------------------------------------------------------------------------------
+
+63. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 31 (0.8%)
+   - Only Label 1 Positive: 563 (14.6%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 1194 (31.0%)
+   - Uncategorized: 1976 (51.3%)
+--------------------------------------------------------------------------------
+
+64. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 31 (0.8%)
+   - Only Label 1 Positive: 43 (1.1%)
+   - Only Label 2 Positive: 89 (2.3%)
+   - Both Negative: 2927 (76.0%)
+   - Uncategorized: 763 (19.8%)
+--------------------------------------------------------------------------------
+
+65. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 28 (0.7%)
+   - Only Label 1 Positive: 20 (0.5%)
+   - Only Label 2 Positive: 1227 (31.8%)
+   - Both Negative: 773 (20.1%)
+   - Uncategorized: 1805 (46.8%)
+--------------------------------------------------------------------------------
+
+66. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 28 (0.7%)
+   - Only Label 1 Positive: 94 (2.4%)
+   - Only Label 2 Positive: 566 (14.7%)
+   - Both Negative: 1211 (31.4%)
+   - Uncategorized: 1954 (50.7%)
+--------------------------------------------------------------------------------
+
+67. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 28 (0.7%)
+   - Only Label 1 Positive: 566 (14.7%)
+   - Only Label 2 Positive: 114 (3.0%)
+   - Both Negative: 1175 (30.5%)
+   - Uncategorized: 1970 (51.1%)
+--------------------------------------------------------------------------------
+
+68. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/fast_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 27 (0.7%)
+   - Only Label 1 Positive: 93 (2.4%)
+   - Only Label 2 Positive: 844 (21.9%)
+   - Both Negative: 2351 (61.0%)
+   - Uncategorized: 538 (14.0%)
+--------------------------------------------------------------------------------
+
+69. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 24 (0.6%)
+   - Only Label 1 Positive: 98 (2.5%)
+   - Only Label 2 Positive: 847 (22.0%)
+   - Both Negative: 1331 (34.5%)
+   - Uncategorized: 1553 (40.3%)
+--------------------------------------------------------------------------------
+
+70. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 24 (0.6%)
+   - Only Label 1 Positive: 105 (2.7%)
+   - Only Label 2 Positive: 847 (22.0%)
+   - Both Negative: 1310 (34.0%)
+   - Uncategorized: 1567 (40.7%)
+--------------------------------------------------------------------------------
+
+71. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 22 (0.6%)
+   - Only Label 1 Positive: 131 (3.4%)
+   - Only Label 2 Positive: 107 (2.8%)
+   - Both Negative: 1344 (34.9%)
+   - Uncategorized: 2249 (58.4%)
+--------------------------------------------------------------------------------
+
+72. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 21 (0.5%)
+   - Only Label 1 Positive: 212 (5.5%)
+   - Only Label 2 Positive: 219 (5.7%)
+   - Both Negative: 1295 (33.6%)
+   - Uncategorized: 2106 (54.7%)
+--------------------------------------------------------------------------------
+
+73. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 21 (0.5%)
+   - Only Label 1 Positive: 101 (2.6%)
+   - Only Label 2 Positive: 121 (3.1%)
+   - Both Negative: 1335 (34.6%)
+   - Uncategorized: 2275 (59.0%)
+--------------------------------------------------------------------------------
+
+74. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 20 (0.5%)
+   - Only Label 1 Positive: 574 (14.9%)
+   - Only Label 2 Positive: 54 (1.4%)
+   - Both Negative: 1373 (35.6%)
+   - Uncategorized: 1832 (47.5%)
+--------------------------------------------------------------------------------
+
+75. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 19 (0.5%)
+   - Only Label 1 Positive: 221 (5.7%)
+   - Only Label 2 Positive: 134 (3.5%)
+   - Both Negative: 1486 (38.6%)
+   - Uncategorized: 1993 (51.7%)
+--------------------------------------------------------------------------------
+
+76. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/shaky_camera
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 19 (0.5%)
+   - Only Label 1 Positive: 852 (22.1%)
+   - Only Label 2 Positive: 134 (3.5%)
+   - Both Negative: 2310 (60.0%)
+   - Uncategorized: 538 (14.0%)
+--------------------------------------------------------------------------------
+
+77. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 18 (0.5%)
+   - Only Label 1 Positive: 215 (5.6%)
+   - Only Label 2 Positive: 102 (2.6%)
+   - Both Negative: 1334 (34.6%)
+   - Uncategorized: 2184 (56.7%)
+--------------------------------------------------------------------------------
+
+78. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 18 (0.5%)
+   - Only Label 1 Positive: 198 (5.1%)
+   - Only Label 2 Positive: 102 (2.6%)
+   - Both Negative: 1351 (35.1%)
+   - Uncategorized: 2184 (56.7%)
+--------------------------------------------------------------------------------
+
+79. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 18 (0.5%)
+   - Only Label 1 Positive: 56 (1.5%)
+   - Only Label 2 Positive: 853 (22.1%)
+   - Both Negative: 2720 (70.6%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+80. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 17 (0.4%)
+   - Only Label 1 Positive: 2 (0.1%)
+   - Only Label 2 Positive: 1887 (49.0%)
+   - Both Negative: 1480 (38.4%)
+   - Uncategorized: 467 (12.1%)
+--------------------------------------------------------------------------------
+
+81. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 17 (0.4%)
+   - Only Label 1 Positive: 216 (5.6%)
+   - Only Label 2 Positive: 105 (2.7%)
+   - Both Negative: 1332 (34.6%)
+   - Uncategorized: 2183 (56.7%)
+--------------------------------------------------------------------------------
+
+82. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 16 (0.4%)
+   - Only Label 1 Positive: 3 (0.1%)
+   - Only Label 2 Positive: 2200 (57.1%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1022 (26.5%)
+--------------------------------------------------------------------------------
+
+83. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 16 (0.4%)
+   - Only Label 1 Positive: 200 (5.2%)
+   - Only Label 2 Positive: 137 (3.6%)
+   - Both Negative: 1327 (34.4%)
+   - Uncategorized: 2173 (56.4%)
+--------------------------------------------------------------------------------
+
+84. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 16 (0.4%)
+   - Only Label 1 Positive: 126 (3.3%)
+   - Only Label 2 Positive: 855 (22.2%)
+   - Both Negative: 1288 (33.4%)
+   - Uncategorized: 1568 (40.7%)
+--------------------------------------------------------------------------------
+
+85. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 15 (0.4%)
+   - Only Label 1 Positive: 127 (3.3%)
+   - Only Label 2 Positive: 138 (3.6%)
+   - Both Negative: 1220 (31.7%)
+   - Uncategorized: 2353 (61.1%)
+--------------------------------------------------------------------------------
+
+86. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 14 (0.4%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 1241 (32.2%)
+   - Both Negative: 1480 (38.4%)
+   - Uncategorized: 1113 (28.9%)
+--------------------------------------------------------------------------------
+
+87. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 14 (0.4%)
+   - Only Label 1 Positive: 219 (5.7%)
+   - Only Label 2 Positive: 139 (3.6%)
+   - Both Negative: 1325 (34.4%)
+   - Uncategorized: 2156 (56.0%)
+--------------------------------------------------------------------------------
+
+88. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 14 (0.4%)
+   - Only Label 1 Positive: 219 (5.7%)
+   - Only Label 2 Positive: 203 (5.3%)
+   - Both Negative: 1332 (34.6%)
+   - Uncategorized: 2085 (54.1%)
+--------------------------------------------------------------------------------
+
+89. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 14 (0.4%)
+   - Only Label 1 Positive: 108 (2.8%)
+   - Only Label 2 Positive: 226 (5.9%)
+   - Both Negative: 1306 (33.9%)
+   - Uncategorized: 2199 (57.1%)
+--------------------------------------------------------------------------------
+
+90. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 55 (1.4%)
+   - Only Label 2 Positive: 858 (22.3%)
+   - Both Negative: 2451 (63.6%)
+   - Uncategorized: 476 (12.4%)
+--------------------------------------------------------------------------------
+
+91. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 203 (5.3%)
+   - Only Label 2 Positive: 61 (1.6%)
+   - Both Negative: 1546 (40.1%)
+   - Uncategorized: 2030 (52.7%)
+--------------------------------------------------------------------------------
+
+92. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 203 (5.3%)
+   - Only Label 2 Positive: 140 (3.6%)
+   - Both Negative: 1296 (33.6%)
+   - Uncategorized: 2201 (57.1%)
+--------------------------------------------------------------------------------
+
+93. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 203 (5.3%)
+   - Only Label 2 Positive: 204 (5.3%)
+   - Both Negative: 1345 (34.9%)
+   - Uncategorized: 2088 (54.2%)
+--------------------------------------------------------------------------------
+
+94. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 35 (0.9%)
+   - Only Label 2 Positive: 858 (22.3%)
+   - Both Negative: 1298 (33.7%)
+   - Uncategorized: 1649 (42.8%)
+--------------------------------------------------------------------------------
+
+95. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 13 (0.3%)
+   - Only Label 1 Positive: 140 (3.6%)
+   - Only Label 2 Positive: 107 (2.8%)
+   - Both Negative: 1283 (33.3%)
+   - Uncategorized: 2310 (60.0%)
+--------------------------------------------------------------------------------
+
+96. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 12 (0.3%)
+   - Only Label 1 Positive: 2 (0.1%)
+   - Only Label 2 Positive: 1892 (49.1%)
+   - Both Negative: 1480 (38.4%)
+   - Uncategorized: 467 (12.1%)
+--------------------------------------------------------------------------------
+
+97. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 12 (0.3%)
+   - Only Label 1 Positive: 221 (5.7%)
+   - Only Label 2 Positive: 141 (3.7%)
+   - Both Negative: 1278 (33.2%)
+   - Uncategorized: 2201 (57.1%)
+--------------------------------------------------------------------------------
+
+98. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 12 (0.3%)
+   - Only Label 1 Positive: 204 (5.3%)
+   - Only Label 2 Positive: 110 (2.9%)
+   - Both Negative: 1328 (34.5%)
+   - Uncategorized: 2199 (57.1%)
+--------------------------------------------------------------------------------
+
+99. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 12 (0.3%)
+   - Only Label 1 Positive: 1 (0.0%)
+   - Only Label 2 Positive: 2204 (57.2%)
+   - Both Negative: 853 (22.1%)
+   - Uncategorized: 783 (20.3%)
+--------------------------------------------------------------------------------
+
+100. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/clear_moving_camera
+   Statistics:
+   - Both Positive: 11 (0.3%)
+   - Only Label 1 Positive: 3 (0.1%)
+   - Only Label 2 Positive: 2205 (57.2%)
+   - Both Negative: 612 (15.9%)
+   - Uncategorized: 1022 (26.5%)
+--------------------------------------------------------------------------------
+
+101. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 11 (0.3%)
+   - Only Label 1 Positive: 222 (5.8%)
+   - Only Label 2 Positive: 131 (3.4%)
+   - Both Negative: 1295 (33.6%)
+   - Uncategorized: 2194 (56.9%)
+--------------------------------------------------------------------------------
+
+102. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 11 (0.3%)
+   - Only Label 1 Positive: 222 (5.8%)
+   - Only Label 2 Positive: 63 (1.6%)
+   - Both Negative: 1535 (39.8%)
+   - Uncategorized: 2022 (52.5%)
+--------------------------------------------------------------------------------
+
+103. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 11 (0.3%)
+   - Only Label 1 Positive: 142 (3.7%)
+   - Only Label 2 Positive: 229 (5.9%)
+   - Both Negative: 1279 (33.2%)
+   - Uncategorized: 2192 (56.9%)
+--------------------------------------------------------------------------------
+
+104. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 10 (0.3%)
+   - Only Label 1 Positive: 230 (6.0%)
+   - Only Label 2 Positive: 119 (3.1%)
+   - Both Negative: 1288 (33.4%)
+   - Uncategorized: 2206 (57.3%)
+--------------------------------------------------------------------------------
+
+105. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 10 (0.3%)
+   - Only Label 1 Positive: 3 (0.1%)
+   - Only Label 2 Positive: 1894 (49.2%)
+   - Both Negative: 1740 (45.2%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+106. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 9 (0.2%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 1246 (32.3%)
+   - Both Negative: 1480 (38.4%)
+   - Uncategorized: 1113 (28.9%)
+--------------------------------------------------------------------------------
+
+107. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 9 (0.2%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 585 (15.2%)
+   - Both Negative: 1225 (31.8%)
+   - Uncategorized: 1995 (51.8%)
+--------------------------------------------------------------------------------
+
+108. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 225 (5.8%)
+   - Only Label 2 Positive: 121 (3.1%)
+   - Both Negative: 1323 (34.3%)
+   - Uncategorized: 2176 (56.5%)
+--------------------------------------------------------------------------------
+
+109. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 208 (5.4%)
+   - Only Label 2 Positive: 121 (3.1%)
+   - Both Negative: 1321 (34.3%)
+   - Uncategorized: 2195 (57.0%)
+--------------------------------------------------------------------------------
+
+110. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 31 (0.8%)
+   - Only Label 2 Positive: 586 (15.2%)
+   - Both Negative: 1221 (31.7%)
+   - Uncategorized: 2007 (52.1%)
+--------------------------------------------------------------------------------
+
+111. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 40 (1.0%)
+   - Only Label 2 Positive: 134 (3.5%)
+   - Both Negative: 1342 (34.8%)
+   - Uncategorized: 2329 (60.4%)
+--------------------------------------------------------------------------------
+
+112. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 232 (6.0%)
+   - Only Label 2 Positive: 209 (5.4%)
+   - Both Negative: 1451 (37.7%)
+   - Uncategorized: 1953 (50.7%)
+--------------------------------------------------------------------------------
+
+113. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 121 (3.1%)
+   - Only Label 2 Positive: 145 (3.8%)
+   - Both Negative: 1226 (31.8%)
+   - Uncategorized: 2353 (61.1%)
+--------------------------------------------------------------------------------
+
+114. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 8 (0.2%)
+   - Only Label 1 Positive: 5 (0.1%)
+   - Only Label 2 Positive: 1247 (32.4%)
+   - Both Negative: 1740 (45.2%)
+   - Uncategorized: 853 (22.1%)
+--------------------------------------------------------------------------------
+
+115. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 95 (2.5%)
+   - Only Label 2 Positive: 864 (22.4%)
+   - Both Negative: 2411 (62.6%)
+   - Uncategorized: 476 (12.4%)
+--------------------------------------------------------------------------------
+
+116. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 209 (5.4%)
+   - Only Label 2 Positive: 233 (6.0%)
+   - Both Negative: 1284 (33.3%)
+   - Uncategorized: 2120 (55.0%)
+--------------------------------------------------------------------------------
+
+117. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 41 (1.1%)
+   - Only Label 2 Positive: 113 (2.9%)
+   - Both Negative: 1273 (33.0%)
+   - Uncategorized: 2419 (62.8%)
+--------------------------------------------------------------------------------
+
+118. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 115 (3.0%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1342 (34.8%)
+   - Uncategorized: 2267 (58.8%)
+--------------------------------------------------------------------------------
+
+119. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 115 (3.0%)
+   - Only Label 2 Positive: 210 (5.5%)
+   - Both Negative: 1331 (34.5%)
+   - Uncategorized: 2190 (56.8%)
+--------------------------------------------------------------------------------
+
+120. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 146 (3.8%)
+   - Only Label 2 Positive: 135 (3.5%)
+   - Both Negative: 1305 (33.9%)
+   - Uncategorized: 2260 (58.7%)
+--------------------------------------------------------------------------------
+
+121. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 146 (3.8%)
+   - Only Label 2 Positive: 146 (3.8%)
+   - Both Negative: 1223 (31.7%)
+   - Uncategorized: 2331 (60.5%)
+--------------------------------------------------------------------------------
+
+122. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 146 (3.8%)
+   - Only Label 2 Positive: 210 (5.5%)
+   - Both Negative: 1321 (34.3%)
+   - Uncategorized: 2169 (56.3%)
+--------------------------------------------------------------------------------
+
+123. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 7 (0.2%)
+   - Only Label 1 Positive: 122 (3.2%)
+   - Only Label 2 Positive: 210 (5.5%)
+   - Both Negative: 1310 (34.0%)
+   - Uncategorized: 2204 (57.2%)
+--------------------------------------------------------------------------------
+
+124. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 62 (1.6%)
+   - Only Label 2 Positive: 147 (3.8%)
+   - Both Negative: 2612 (67.8%)
+   - Uncategorized: 1026 (26.6%)
+--------------------------------------------------------------------------------
+
+125. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 210 (5.5%)
+   - Only Label 2 Positive: 136 (3.5%)
+   - Both Negative: 1289 (33.5%)
+   - Uncategorized: 2212 (57.4%)
+--------------------------------------------------------------------------------
+
+126. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 42 (1.1%)
+   - Only Label 2 Positive: 147 (3.8%)
+   - Both Negative: 1214 (31.5%)
+   - Uncategorized: 2444 (63.4%)
+--------------------------------------------------------------------------------
+
+127. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 116 (3.0%)
+   - Only Label 2 Positive: 114 (3.0%)
+   - Both Negative: 1307 (33.9%)
+   - Uncategorized: 2310 (60.0%)
+--------------------------------------------------------------------------------
+
+128. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 147 (3.8%)
+   - Only Label 2 Positive: 68 (1.8%)
+   - Both Negative: 1478 (38.4%)
+   - Uncategorized: 2154 (55.9%)
+--------------------------------------------------------------------------------
+
+129. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 6 (0.2%)
+   - Only Label 1 Positive: 234 (6.1%)
+   - Only Label 2 Positive: 114 (3.0%)
+   - Both Negative: 1523 (39.5%)
+   - Uncategorized: 1976 (51.3%)
+--------------------------------------------------------------------------------
+
+130. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 97 (2.5%)
+   - Only Label 2 Positive: 148 (3.8%)
+   - Both Negative: 2599 (67.5%)
+   - Uncategorized: 1004 (26.1%)
+--------------------------------------------------------------------------------
+
+131. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 97 (2.5%)
+   - Only Label 2 Positive: 212 (5.5%)
+   - Both Negative: 2411 (62.6%)
+   - Uncategorized: 1128 (29.3%)
+--------------------------------------------------------------------------------
+
+132. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 228 (5.9%)
+   - Only Label 2 Positive: 43 (1.1%)
+   - Both Negative: 1350 (35.0%)
+   - Uncategorized: 2227 (57.8%)
+--------------------------------------------------------------------------------
+
+133. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 34 (0.9%)
+   - Only Label 2 Positive: 137 (3.6%)
+   - Both Negative: 1343 (34.9%)
+   - Uncategorized: 2334 (60.6%)
+--------------------------------------------------------------------------------
+
+134. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 34 (0.9%)
+   - Only Label 2 Positive: 148 (3.8%)
+   - Both Negative: 1222 (31.7%)
+   - Uncategorized: 2444 (63.4%)
+--------------------------------------------------------------------------------
+
+135. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 43 (1.1%)
+   - Only Label 2 Positive: 124 (3.2%)
+   - Both Negative: 1374 (35.7%)
+   - Uncategorized: 2307 (59.9%)
+--------------------------------------------------------------------------------
+
+136. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 117 (3.0%)
+   - Only Label 2 Positive: 69 (1.8%)
+   - Both Negative: 1504 (39.0%)
+   - Uncategorized: 2158 (56.0%)
+--------------------------------------------------------------------------------
+
+137. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 117 (3.0%)
+   - Only Label 2 Positive: 148 (3.8%)
+   - Both Negative: 1252 (32.5%)
+   - Uncategorized: 2331 (60.5%)
+--------------------------------------------------------------------------------
+
+138. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 5 (0.1%)
+   - Only Label 1 Positive: 235 (6.1%)
+   - Only Label 2 Positive: 69 (1.8%)
+   - Both Negative: 1781 (46.2%)
+   - Uncategorized: 1763 (45.8%)
+--------------------------------------------------------------------------------
+
+139. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 35 (0.9%)
+   - Only Label 2 Positive: 867 (22.5%)
+   - Both Negative: 1304 (33.8%)
+   - Uncategorized: 1643 (42.6%)
+--------------------------------------------------------------------------------
+
+140. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 44 (1.1%)
+   - Only Label 2 Positive: 236 (6.1%)
+   - Both Negative: 1309 (34.0%)
+   - Uncategorized: 2260 (58.7%)
+--------------------------------------------------------------------------------
+
+141. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 125 (3.2%)
+   - Only Label 2 Positive: 70 (1.8%)
+   - Both Negative: 1452 (37.7%)
+   - Uncategorized: 2202 (57.2%)
+--------------------------------------------------------------------------------
+
+142. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 138 (3.6%)
+   - Only Label 2 Positive: 70 (1.8%)
+   - Both Negative: 1437 (37.3%)
+   - Uncategorized: 2204 (57.2%)
+--------------------------------------------------------------------------------
+
+143. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 70 (1.8%)
+   - Only Label 2 Positive: 213 (5.5%)
+   - Both Negative: 2720 (70.6%)
+   - Uncategorized: 846 (22.0%)
+--------------------------------------------------------------------------------
+
+144. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/fast_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 4 (0.1%)
+   - Only Label 1 Positive: 116 (3.0%)
+   - Only Label 2 Positive: 213 (5.5%)
+   - Both Negative: 2351 (61.0%)
+   - Uncategorized: 1169 (30.3%)
+--------------------------------------------------------------------------------
+
+145. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 65 (1.7%)
+   - Only Label 2 Positive: 214 (5.6%)
+   - Both Negative: 2451 (63.6%)
+   - Uncategorized: 1120 (29.1%)
+--------------------------------------------------------------------------------
+
+146. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 36 (0.9%)
+   - Only Label 2 Positive: 119 (3.1%)
+   - Both Negative: 1367 (35.5%)
+   - Uncategorized: 2328 (60.4%)
+--------------------------------------------------------------------------------
+
+147. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 36 (0.9%)
+   - Only Label 2 Positive: 126 (3.3%)
+   - Both Negative: 1375 (35.7%)
+   - Uncategorized: 2313 (60.0%)
+--------------------------------------------------------------------------------
+
+148. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 45 (1.2%)
+   - Only Label 2 Positive: 71 (1.8%)
+   - Both Negative: 1429 (37.1%)
+   - Uncategorized: 2305 (59.8%)
+--------------------------------------------------------------------------------
+
+149. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 126 (3.3%)
+   - Only Label 2 Positive: 117 (3.0%)
+   - Both Negative: 1278 (33.2%)
+   - Uncategorized: 2329 (60.4%)
+--------------------------------------------------------------------------------
+
+150. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 117 (3.0%)
+   - Both Negative: 1265 (32.8%)
+   - Uncategorized: 2329 (60.4%)
+--------------------------------------------------------------------------------
+
+151. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 139 (3.6%)
+   - Only Label 2 Positive: 214 (5.6%)
+   - Both Negative: 1288 (33.4%)
+   - Uncategorized: 2209 (57.3%)
+--------------------------------------------------------------------------------
+
+152. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 10 (0.3%)
+   - Only Label 2 Positive: 868 (22.5%)
+   - Both Negative: 2766 (71.8%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+153. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/slow_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 3 (0.1%)
+   - Only Label 1 Positive: 150 (3.9%)
+   - Only Label 2 Positive: 214 (5.6%)
+   - Both Negative: 2310 (60.0%)
+   - Uncategorized: 1176 (30.5%)
+--------------------------------------------------------------------------------
+
+154. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 66 (1.7%)
+   - Only Label 2 Positive: 118 (3.1%)
+   - Both Negative: 2640 (68.5%)
+   - Uncategorized: 1027 (26.7%)
+--------------------------------------------------------------------------------
+
+155. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 100 (2.6%)
+   - Only Label 2 Positive: 72 (1.9%)
+   - Both Negative: 3200 (83.1%)
+   - Uncategorized: 479 (12.4%)
+--------------------------------------------------------------------------------
+
+156. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 869 (22.6%)
+   - Both Negative: 2373 (61.6%)
+   - Uncategorized: 597 (15.5%)
+--------------------------------------------------------------------------------
+
+157. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/shaky_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 17 (0.4%)
+   - Only Label 2 Positive: 869 (22.6%)
+   - Both Negative: 2368 (61.5%)
+   - Uncategorized: 597 (15.5%)
+--------------------------------------------------------------------------------
+
+158. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 231 (6.0%)
+   - Only Label 2 Positive: 37 (1.0%)
+   - Both Negative: 1344 (34.9%)
+   - Uncategorized: 2239 (58.1%)
+--------------------------------------------------------------------------------
+
+159. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 214 (5.6%)
+   - Only Label 2 Positive: 37 (1.0%)
+   - Both Negative: 1347 (35.0%)
+   - Uncategorized: 2253 (58.5%)
+--------------------------------------------------------------------------------
+
+160. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 37 (1.0%)
+   - Only Label 2 Positive: 151 (3.9%)
+   - Both Negative: 1360 (35.3%)
+   - Uncategorized: 2303 (59.8%)
+--------------------------------------------------------------------------------
+
+161. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 37 (1.0%)
+   - Only Label 2 Positive: 238 (6.2%)
+   - Both Negative: 1306 (33.9%)
+   - Uncategorized: 2270 (58.9%)
+--------------------------------------------------------------------------------
+
+162. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 37 (1.0%)
+   - Only Label 2 Positive: 72 (1.9%)
+   - Both Negative: 1443 (37.5%)
+   - Uncategorized: 2299 (59.7%)
+--------------------------------------------------------------------------------
+
+163. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 37 (1.0%)
+   - Only Label 2 Positive: 118 (3.1%)
+   - Both Negative: 1277 (33.1%)
+   - Uncategorized: 2419 (62.8%)
+--------------------------------------------------------------------------------
+
+164. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 46 (1.2%)
+   - Only Label 2 Positive: 120 (3.1%)
+   - Both Negative: 1371 (35.6%)
+   - Uncategorized: 2314 (60.1%)
+--------------------------------------------------------------------------------
+
+165. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 46 (1.2%)
+   - Only Label 2 Positive: 215 (5.6%)
+   - Both Negative: 1298 (33.7%)
+   - Uncategorized: 2292 (59.5%)
+--------------------------------------------------------------------------------
+
+166. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 238 (6.2%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1806 (46.9%)
+   - Uncategorized: 1796 (46.6%)
+--------------------------------------------------------------------------------
+
+167. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 140 (3.6%)
+   - Only Label 2 Positive: 11 (0.3%)
+   - Both Negative: 1450 (37.6%)
+   - Uncategorized: 2250 (58.4%)
+--------------------------------------------------------------------------------
+
+168. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 11 (0.3%)
+   - Only Label 2 Positive: 215 (5.6%)
+   - Both Negative: 2766 (71.8%)
+   - Uncategorized: 859 (22.3%)
+--------------------------------------------------------------------------------
+
+169. Label Combination:
+   Label 1: cam_motion/has_motion_blur
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 2 (0.1%)
+   - Only Label 1 Positive: 72 (1.9%)
+   - Only Label 2 Positive: 151 (3.9%)
+   - Both Negative: 2865 (74.4%)
+   - Uncategorized: 763 (19.8%)
+--------------------------------------------------------------------------------
+
+170. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 67 (1.7%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 3293 (85.5%)
+   - Uncategorized: 480 (12.5%)
+--------------------------------------------------------------------------------
+
+171. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 101 (2.6%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 3259 (84.6%)
+   - Uncategorized: 480 (12.5%)
+--------------------------------------------------------------------------------
+
+172. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 13 (0.3%)
+   - Only Label 2 Positive: 73 (1.9%)
+   - Both Negative: 3151 (81.8%)
+   - Uncategorized: 615 (16.0%)
+--------------------------------------------------------------------------------
+
+173. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 18 (0.5%)
+   - Only Label 2 Positive: 152 (3.9%)
+   - Both Negative: 2554 (66.3%)
+   - Uncategorized: 1128 (29.3%)
+--------------------------------------------------------------------------------
+
+174. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 47 (1.2%)
+   - Only Label 2 Positive: 152 (3.9%)
+   - Both Negative: 1364 (35.4%)
+   - Uncategorized: 2289 (59.4%)
+--------------------------------------------------------------------------------
+
+175. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 121 (3.1%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 1515 (39.3%)
+   - Uncategorized: 2204 (57.2%)
+--------------------------------------------------------------------------------
+
+176. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 152 (3.9%)
+   - Only Label 2 Positive: 12 (0.3%)
+   - Both Negative: 1489 (38.6%)
+   - Uncategorized: 2199 (57.1%)
+--------------------------------------------------------------------------------
+
+177. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 1 (0.0%)
+   - Only Label 1 Positive: 12 (0.3%)
+   - Only Label 2 Positive: 119 (3.1%)
+   - Both Negative: 2957 (76.7%)
+   - Uncategorized: 764 (19.8%)
+--------------------------------------------------------------------------------
+
+178. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 102 (2.6%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 480 (12.5%)
+--------------------------------------------------------------------------------
+
+179. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 14 (0.4%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 568 (14.7%)
+--------------------------------------------------------------------------------
+
+180. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 563 (14.6%)
+--------------------------------------------------------------------------------
+
+181. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 233 (6.0%)
+   - Both Negative: 1553 (40.3%)
+   - Uncategorized: 1999 (51.9%)
+--------------------------------------------------------------------------------
+
+182. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 216 (5.6%)
+   - Both Negative: 1562 (40.5%)
+   - Uncategorized: 2007 (52.1%)
+--------------------------------------------------------------------------------
+
+183. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 39 (1.0%)
+   - Both Negative: 1455 (37.8%)
+   - Uncategorized: 2291 (59.5%)
+--------------------------------------------------------------------------------
+
+184. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1440 (37.4%)
+   - Uncategorized: 2297 (59.6%)
+--------------------------------------------------------------------------------
+
+185. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1519 (39.4%)
+   - Uncategorized: 2144 (55.6%)
+--------------------------------------------------------------------------------
+
+186. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 1493 (38.7%)
+   - Uncategorized: 2139 (55.5%)
+--------------------------------------------------------------------------------
+
+187. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 240 (6.2%)
+   - Both Negative: 1809 (47.0%)
+   - Uncategorized: 1736 (45.1%)
+--------------------------------------------------------------------------------
+
+188. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 129 (3.3%)
+   - Both Negative: 1467 (38.1%)
+   - Uncategorized: 2189 (56.8%)
+--------------------------------------------------------------------------------
+
+189. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 594 (15.4%)
+   - Both Negative: 1386 (36.0%)
+   - Uncategorized: 1805 (46.8%)
+--------------------------------------------------------------------------------
+
+190. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 142 (3.7%)
+   - Both Negative: 1452 (37.7%)
+   - Uncategorized: 2191 (56.9%)
+--------------------------------------------------------------------------------
+
+191. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 68 (1.8%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 3232 (83.9%)
+   - Uncategorized: 479 (12.4%)
+--------------------------------------------------------------------------------
+
+192. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 14 (0.4%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 534 (13.9%)
+--------------------------------------------------------------------------------
+
+193. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 529 (13.7%)
+--------------------------------------------------------------------------------
+
+194. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 233 (6.0%)
+   - Both Negative: 1553 (40.3%)
+   - Uncategorized: 1965 (51.0%)
+--------------------------------------------------------------------------------
+
+195. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 216 (5.6%)
+   - Both Negative: 1562 (40.5%)
+   - Uncategorized: 1973 (51.2%)
+--------------------------------------------------------------------------------
+
+196. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 39 (1.0%)
+   - Both Negative: 1455 (37.8%)
+   - Uncategorized: 2257 (58.6%)
+--------------------------------------------------------------------------------
+
+197. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1440 (37.4%)
+   - Uncategorized: 2263 (58.7%)
+--------------------------------------------------------------------------------
+
+198. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1519 (39.4%)
+   - Uncategorized: 2110 (54.8%)
+--------------------------------------------------------------------------------
+
+199. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 1493 (38.7%)
+   - Uncategorized: 2105 (54.6%)
+--------------------------------------------------------------------------------
+
+200. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 240 (6.2%)
+   - Both Negative: 1809 (47.0%)
+   - Uncategorized: 1702 (44.2%)
+--------------------------------------------------------------------------------
+
+201. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 129 (3.3%)
+   - Both Negative: 1467 (38.1%)
+   - Uncategorized: 2155 (55.9%)
+--------------------------------------------------------------------------------
+
+202. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 594 (15.4%)
+   - Both Negative: 1386 (36.0%)
+   - Uncategorized: 1771 (46.0%)
+--------------------------------------------------------------------------------
+
+203. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 142 (3.7%)
+   - Both Negative: 1452 (37.7%)
+   - Uncategorized: 2157 (56.0%)
+--------------------------------------------------------------------------------
+
+204. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 102 (2.6%)
+   - Only Label 2 Positive: 120 (3.1%)
+   - Both Negative: 2626 (68.2%)
+   - Uncategorized: 1005 (26.1%)
+--------------------------------------------------------------------------------
+
+205. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 19 (0.5%)
+   - Both Negative: 3203 (83.1%)
+   - Uncategorized: 617 (16.0%)
+--------------------------------------------------------------------------------
+
+206. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 233 (6.0%)
+   - Both Negative: 1553 (40.3%)
+   - Uncategorized: 2053 (53.3%)
+--------------------------------------------------------------------------------
+
+207. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 216 (5.6%)
+   - Both Negative: 1562 (40.5%)
+   - Uncategorized: 2061 (53.5%)
+--------------------------------------------------------------------------------
+
+208. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 39 (1.0%)
+   - Both Negative: 1455 (37.8%)
+   - Uncategorized: 2345 (60.9%)
+--------------------------------------------------------------------------------
+
+209. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1440 (37.4%)
+   - Uncategorized: 2351 (61.0%)
+--------------------------------------------------------------------------------
+
+210. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1519 (39.4%)
+   - Uncategorized: 2198 (57.0%)
+--------------------------------------------------------------------------------
+
+211. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 1493 (38.7%)
+   - Uncategorized: 2193 (56.9%)
+--------------------------------------------------------------------------------
+
+212. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 240 (6.2%)
+   - Both Negative: 1809 (47.0%)
+   - Uncategorized: 1790 (46.5%)
+--------------------------------------------------------------------------------
+
+213. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 129 (3.3%)
+   - Both Negative: 1467 (38.1%)
+   - Uncategorized: 2243 (58.2%)
+--------------------------------------------------------------------------------
+
+214. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 594 (15.4%)
+   - Both Negative: 1386 (36.0%)
+   - Uncategorized: 1859 (48.2%)
+--------------------------------------------------------------------------------
+
+215. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 142 (3.7%)
+   - Both Negative: 1452 (37.7%)
+   - Uncategorized: 2245 (58.3%)
+--------------------------------------------------------------------------------
+
+216. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 3211 (83.3%)
+   - Uncategorized: 615 (16.0%)
+--------------------------------------------------------------------------------
+
+217. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 120 (3.1%)
+   - Both Negative: 2582 (67.0%)
+   - Uncategorized: 1137 (29.5%)
+--------------------------------------------------------------------------------
+
+218. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 2558 (66.4%)
+   - Uncategorized: 1128 (29.3%)
+--------------------------------------------------------------------------------
+
+219. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_down/has_crane_down
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 14 (0.4%)
+   - Only Label 2 Positive: 217 (5.6%)
+   - Both Negative: 2373 (61.6%)
+   - Uncategorized: 1249 (32.4%)
+--------------------------------------------------------------------------------
+
+220. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 233 (6.0%)
+   - Both Negative: 1553 (40.3%)
+   - Uncategorized: 2048 (53.2%)
+--------------------------------------------------------------------------------
+
+221. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 216 (5.6%)
+   - Both Negative: 1562 (40.5%)
+   - Uncategorized: 2056 (53.4%)
+--------------------------------------------------------------------------------
+
+222. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 39 (1.0%)
+   - Both Negative: 1455 (37.8%)
+   - Uncategorized: 2340 (60.7%)
+--------------------------------------------------------------------------------
+
+223. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1440 (37.4%)
+   - Uncategorized: 2346 (60.9%)
+--------------------------------------------------------------------------------
+
+224. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 122 (3.2%)
+   - Both Negative: 1519 (39.4%)
+   - Uncategorized: 2193 (56.9%)
+--------------------------------------------------------------------------------
+
+225. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 1493 (38.7%)
+   - Uncategorized: 2188 (56.8%)
+--------------------------------------------------------------------------------
+
+226. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 240 (6.2%)
+   - Both Negative: 1809 (47.0%)
+   - Uncategorized: 1785 (46.3%)
+--------------------------------------------------------------------------------
+
+227. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 129 (3.3%)
+   - Both Negative: 1467 (38.1%)
+   - Uncategorized: 2238 (58.1%)
+--------------------------------------------------------------------------------
+
+228. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 594 (15.4%)
+   - Both Negative: 1386 (36.0%)
+   - Uncategorized: 1854 (48.1%)
+--------------------------------------------------------------------------------
+
+229. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 142 (3.7%)
+   - Both Negative: 1452 (37.7%)
+   - Uncategorized: 2240 (58.1%)
+--------------------------------------------------------------------------------
+
+230. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 3206 (83.2%)
+   - Uncategorized: 615 (16.0%)
+--------------------------------------------------------------------------------
+
+231. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 3145 (81.6%)
+   - Uncategorized: 615 (16.0%)
+--------------------------------------------------------------------------------
+
+232. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/fast_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 120 (3.1%)
+   - Both Negative: 2577 (66.9%)
+   - Uncategorized: 1137 (29.5%)
+--------------------------------------------------------------------------------
+
+233. Label Combination:
+   Label 1: cam_motion/arc_crane_movement/crane_up/has_crane_up
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 19 (0.5%)
+   - Only Label 2 Positive: 217 (5.6%)
+   - Both Negative: 2368 (61.5%)
+   - Uncategorized: 1249 (32.4%)
+--------------------------------------------------------------------------------
+
+234. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 233 (6.0%)
+   - Only Label 2 Positive: 216 (5.6%)
+   - Both Negative: 1290 (33.5%)
+   - Uncategorized: 2114 (54.9%)
+--------------------------------------------------------------------------------
+
+235. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_left/has_pan_left
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 233 (6.0%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1549 (40.2%)
+   - Uncategorized: 2058 (53.4%)
+--------------------------------------------------------------------------------
+
+236. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 216 (5.6%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1348 (35.0%)
+   - Uncategorized: 2241 (58.2%)
+--------------------------------------------------------------------------------
+
+237. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/pan_right/has_pan_right
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 216 (5.6%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1558 (40.4%)
+   - Uncategorized: 2066 (53.6%)
+--------------------------------------------------------------------------------
+
+238. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 48 (1.2%)
+   - Both Negative: 1400 (36.3%)
+   - Uncategorized: 2366 (61.4%)
+--------------------------------------------------------------------------------
+
+239. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1451 (37.7%)
+   - Uncategorized: 2350 (61.0%)
+--------------------------------------------------------------------------------
+
+240. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_clockwise/has_roll_clockwise
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 39 (1.0%)
+   - Only Label 2 Positive: 217 (5.6%)
+   - Both Negative: 1304 (33.8%)
+   - Uncategorized: 2293 (59.5%)
+--------------------------------------------------------------------------------
+
+241. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/roll_counterclockwise/has_roll_counterclockwise
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 48 (1.2%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1436 (37.3%)
+   - Uncategorized: 2356 (61.1%)
+--------------------------------------------------------------------------------
+
+242. Label Combination:
+   Label 1: cam_motion/camera_centric_movement/tilt_down/has_tilt_down
+   Label 2: cam_motion/camera_centric_movement/tilt_up/has_tilt_up
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 122 (3.2%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 1327 (34.4%)
+   - Uncategorized: 2251 (58.4%)
+--------------------------------------------------------------------------------
+
+243. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 240 (6.2%)
+   - Only Label 2 Positive: 594 (15.4%)
+   - Both Negative: 1118 (29.0%)
+   - Uncategorized: 1901 (49.3%)
+--------------------------------------------------------------------------------
+
+244. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 129 (3.3%)
+   - Only Label 2 Positive: 142 (3.7%)
+   - Both Negative: 1305 (33.9%)
+   - Uncategorized: 2277 (59.1%)
+--------------------------------------------------------------------------------
+
+245. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 129 (3.3%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1463 (38.0%)
+   - Uncategorized: 2248 (58.3%)
+--------------------------------------------------------------------------------
+
+246. Label Combination:
+   Label 1: cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+   Label 2: cam_motion/has_frame_freezing
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 594 (15.4%)
+   - Only Label 2 Positive: 13 (0.3%)
+   - Both Negative: 1381 (35.8%)
+   - Uncategorized: 1865 (48.4%)
+--------------------------------------------------------------------------------
+
+247. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/has_motion_blur
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 13 (0.3%)
+   - Only Label 2 Positive: 74 (1.9%)
+   - Both Negative: 3560 (92.4%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+248. Label Combination:
+   Label 1: cam_motion/has_frame_freezing
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 13 (0.3%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 2923 (75.9%)
+   - Uncategorized: 764 (19.8%)
+--------------------------------------------------------------------------------
+
+249. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/fast_moving_camera
+   Label 2: cam_motion/steadiness_and_movement/slow_moving_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 120 (3.1%)
+   - Only Label 2 Positive: 153 (4.0%)
+   - Both Negative: 2815 (73.1%)
+   - Uncategorized: 765 (19.9%)
+--------------------------------------------------------------------------------
+
+250. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/shaky_camera
+   Label 2: cam_motion/steadiness_and_movement/stable_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 871 (22.6%)
+   - Only Label 2 Positive: 1904 (49.4%)
+   - Both Negative: 872 (22.6%)
+   - Uncategorized: 206 (5.3%)
+--------------------------------------------------------------------------------
+
+251. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/shaky_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 871 (22.6%)
+   - Only Label 2 Positive: 1255 (32.6%)
+   - Both Negative: 872 (22.6%)
+   - Uncategorized: 855 (22.2%)
+--------------------------------------------------------------------------------
+
+252. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/stable_camera
+   Label 2: cam_motion/steadiness_and_movement/very_shaky_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 1904 (49.4%)
+   - Only Label 2 Positive: 217 (5.6%)
+   - Both Negative: 872 (22.6%)
+   - Uncategorized: 860 (22.3%)
+--------------------------------------------------------------------------------
+
+253. Label Combination:
+   Label 1: cam_motion/steadiness_and_movement/very_shaky_camera
+   Label 2: cam_motion/steadiness_and_movement/very_stable_camera
+   Statistics:
+   - Both Positive: 0 (0.0%)
+   - Only Label 1 Positive: 217 (5.6%)
+   - Only Label 2 Positive: 1255 (32.6%)
+   - Both Negative: 872 (22.6%)
+   - Uncategorized: 1509 (39.2%)
+--------------------------------------------------------------------------------

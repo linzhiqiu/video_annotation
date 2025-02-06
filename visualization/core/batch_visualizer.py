@@ -182,10 +182,22 @@ class BatchVisualizer:
                 'major_simple': motion_data.camera_movement == 'major_simple',
                 'forward': motion_data.camera_forward_backward == 'forward',
                 'backward': motion_data.camera_forward_backward == 'backward',
-                'steadiness': motion_data.steadiness
+                'steadiness': motion_data.steadiness,
+                'pan_right': motion_data.pan_right,
+                'camera_pan': motion_data.camera_pan,
+                'complex_motion_description': motion_data.complex_motion_description
             }
         except AttributeError as e:
             logging.warning(f"Camera motion not set: {e}")
+            details['camera_motion'] = {
+                'major_simple': False,
+                'forward': False,
+                'backward': False,
+                'steadiness': 'unknown',
+                'pan_right': None,
+                'camera_pan': 'no',
+                'complex_motion_description': ''
+            }
             
         try:
             setup_data = video.cam_setup
@@ -277,28 +289,28 @@ class BatchVisualizer:
                 details = self._get_video_details(video)
                 logging.info("Got video details")
                 
-                # Debug video attributes
-                logging.info("Video attributes:")
-                try:
-                    logging.info(f"  Camera motion: {video.cam_motion.camera_movement}")
-                    logging.info(f"  Forward/Backward: {video.cam_motion.camera_forward_backward}")
-                except AttributeError:
-                    logging.info("  Camera motion: Not set")
-                    logging.info("  Forward/Backward: Not set")
+                # # Debug video attributes
+                # logging.info("Video attributes:")
+                # try:
+                #     logging.info(f"  Camera motion: {video.cam_motion.camera_movement}")
+                #     logging.info(f"  Forward/Backward: {video.cam_motion.camera_forward_backward}")
+                # except AttributeError:
+                #     logging.info("  Camera motion: Not set")
+                #     logging.info("  Forward/Backward: Not set")
 
-                try:
-                    # Print detailed camera angle info
-                    logging.info(f"  Camera angle info:")
-                    logging.info(f"    Start: {video.cam_setup.camera_angle_info['start']}")
-                    logging.info(f"    End: {video.cam_setup.camera_angle_info['end']}")
-                    logging.info(f"    Is applicable: {video.cam_setup.is_camera_angle_applicable}")
-                except AttributeError:
-                    logging.info("  Camera angle: Not set")
+                # try:
+                #     # Print detailed camera angle info
+                #     logging.info(f"  Camera angle info:")
+                #     logging.info(f"    Start: {video.cam_setup.camera_angle_info['start']}")
+                #     logging.info(f"    End: {video.cam_setup.camera_angle_info['end']}")
+                #     logging.info(f"    Is applicable: {video.cam_setup.is_camera_angle_applicable}")
+                # except AttributeError:
+                #     logging.info("  Camera angle: Not set")
 
-                try:
-                    logging.info(f"  Steadiness: {video.cam_motion.steadiness}")
-                except AttributeError:
-                    logging.info("  Steadiness: Not set")
+                # try:
+                #     logging.info(f"  Steadiness: {video.cam_motion.steadiness}")
+                # except AttributeError:
+                #     logging.info("  Steadiness: Not set")
                 
                 # Determine category using label rules
                 category = 'uncategorized'  # Default category
@@ -340,23 +352,40 @@ class BatchVisualizer:
                 # Add reason for uncategorized videos
                 if category == 'uncategorized':
                     reason = []
+                    # Add camera motion details
                     try:
-                        if video.cam_motion.camera_movement not in ['major_simple', 'major_complex']:
-                            reason.append(f"Invalid camera movement: {video.cam_motion.camera_movement}")
-                        if video.cam_motion.camera_forward_backward not in ['forward', 'backward']:
-                            reason.append(f"Invalid forward/backward motion: {video.cam_motion.camera_forward_backward}")
-                        if video.cam_motion.steadiness in ['unsteady', 'very_unsteady']:
-                            reason.append(f"Invalid steadiness: {video.cam_motion.steadiness}")
+                        motion = video.cam_motion
+                        reason.append("Camera Motion:")
+                        for attr in dir(motion):
+                            if not attr.startswith('_') and not callable(getattr(motion, attr)):
+                                value = getattr(motion, attr)
+                                reason.append(f"  {attr}: {value}")
                     except AttributeError:
                         reason.append("Camera motion data not set")
 
+                    # Add camera setup details
                     try:
-                        if video.cam_setup.camera_angle_start in ['bird_eye_angle', 'worm_eye_angle', 'unknown']:
-                            reason.append(f"Invalid camera angle: {video.cam_setup.camera_angle_start}")
+                        setup = video.cam_setup
+                        reason.append("\nCamera Setup:")
+                        for attr in dir(setup):
+                            if not attr.startswith('_') and not callable(getattr(setup, attr)):
+                                value = getattr(setup, attr)
+                                reason.append(f"  {attr}: {value}")
                     except AttributeError:
                         reason.append("Camera setup data not set")
 
-                    logging.info(f"Video uncategorized due to: {', '.join(reason)}")
+                    # Add lighting setup details
+                    try:
+                        light = video.light_setup
+                        reason.append("\nLighting Setup:")
+                        for attr in dir(light):
+                            if not attr.startswith('_') and not callable(getattr(light, attr)):
+                                value = getattr(light, attr)
+                                reason.append(f"  {attr}: {value}")
+                    except AttributeError:
+                        reason.append("Lighting setup data not set")
+
+                    logging.info(f"Video uncategorized. Debug info:\n{'\n'.join(reason)}")
                 
                 video_details[name] = {
                     'details': details,
