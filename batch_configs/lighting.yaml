@@ -1,0 +1,26 @@
+# Lighting batch configuration
+
+# Project name (required)
+project_name: "Video Segment Classification (Lighting)"
+
+# Basic video filtering
+video_names_file: null  # Optional: List of specific videos to include
+approvers:  # Optional: List of approvers to filter by
+  - "drjiang@andrew.cmu.edu"
+  - "siyuancen096@gmail.com"
+
+time_range: null  # Optional: Time range for filtering
+
+# Whether to include videos from issues directory
+issues_allowed: false
+
+project_requirements:
+  meta_reviewers:
+    - "Yuhan Huang"
+  double_check_status: "Yes"
+
+# API rate limiting settings
+api_limits:
+  min_delay: 1.0
+  max_delay: 32.0
+  max_retries: 5

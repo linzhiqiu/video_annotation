@@ -17,17 +17,25 @@ class VisualizationParams:
         with open(yaml_path, 'r') as f:
             config = yaml.safe_load(f)
             
-        # Validate required paths
+        # Get data config
         data_config = config.get('data', {})
-        ndjson_dir = data_config.get('ndjson_dir')
-        if not ndjson_dir or not os.path.isdir(ndjson_dir):
-            raise FileNotFoundError(f"NDJSON directory not found: {ndjson_dir}")
         
-        issues_dir = data_config.get('issues_dir')
-        if not issues_dir or not os.path.isdir(issues_dir):
-            raise FileNotFoundError(f"Issues directory not found: {issues_dir}")
+        # If using batch folder, don't validate ndjson/issues directories
+        if 'batch_folder' in data_config:
+            batch_folder = data_config['batch_folder']
+            if not os.path.isdir(batch_folder):
+                raise FileNotFoundError(f"Batch folder not found: {batch_folder}")
+        else:
+            # If not using batch folder, validate ndjson/issues directories
+            ndjson_dir = data_config.get('ndjson_dir')
+            if not ndjson_dir or not os.path.isdir(ndjson_dir):
+                raise FileNotFoundError(f"When not using batch_folder, NDJSON directory must be specified and exist. Not found: {ndjson_dir}")
+            
+            issues_dir = data_config.get('issues_dir')
+            if not issues_dir or not os.path.isdir(issues_dir):
+                raise FileNotFoundError(f"When not using batch_folder, Issues directory must be specified and exist. Not found: {issues_dir}")
         
-        # Videos directory is now optional
+        # Videos directory is optional
         videos_dir = data_config.get('videos_dir')
         if videos_dir:
             logging.info(f"Checking videos directory: {videos_dir}")

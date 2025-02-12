@@ -1,0 +1,53 @@
+# Test batch configuration file
+
+# Basic video filtering
+video_names_file: null  # Optional: List of specific videos to include
+approvers: null  # Optional: List of approvers to filter by
+time_range: null  # Optional: Time range for filtering
+
+# Whether to include videos from issues directory
+issues_allowed: false
+
+# Project-specific requirements for meta review and double check
+project_requirements:
+  "Video Segment Classification (Camera Movement)":
+    require_meta_review: true
+    allowed_meta_reviewers:
+      - "supervisor@grandecenter.org"
+      - "drjiang@andrew.cmu.edu"
+    double_check_status: "Yes"
+
+  "Video Segment Classification (Camera Settings and Shot compositions)":
+    require_meta_review: true
+    allowed_meta_reviewers:
+      - "supervisor@grandecenter.org"
+      - "drjiang@andrew.cmu.edu"
+    double_check_status: "Yes"
+
+  "Video Segment Classification (Lighting Setup)":
+    require_meta_review: null
+    allowed_meta_reviewers: null
+    double_check_status: null
+
+  "Video Segment Classification (Camera-centric)":
+    require_meta_review: null
+    allowed_meta_reviewers: null
+    double_check_status: null
+
+# Cache settings for sheet data
+cache:
+  enabled: true  # Whether to cache sheet data
+  cache_file: "batches/cache/sheet_data.json"  # Where to store cached data
+  max_age_hours: 24  # Maximum age of cache before refresh
+
+# Sheet query optimization
+sheet_query:
+  batch_size: 50  # Number of videos to query at once
+  max_retries: 3  # Maximum number of retries for failed queries
+  retry_delay_seconds: 1  # Initial delay between retries (uses exponential backoff)
+
+# API rate limiting settings
+api_limits:
+  min_delay: 1.0  # Minimum delay between API calls in seconds
+  max_delay: 32.0  # Maximum delay for exponential backoff
+  max_retries: 5  # Maximum number of retries for failed API calls 

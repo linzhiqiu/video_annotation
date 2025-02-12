@@ -1,18 +1,12 @@
 # Data source paths
 data:
-  ndjson_dir: exports/ndjson
-  issues_dir: exports/issues_ndjson
+  batch_folder: batches/donesection_motion_shotcomp_20250211_231503  # Path to the batch folder
   videos_dir: ../../../datasets/SelectedVideos_video_segments
-
-# Batch constraints
-constraints:
-  video_names_file: donevideos/donesection.json
-  approver: null
-  time_range: null
+  label_dir: label_dirs  # Directory where categorized video folders will be saved
 
 # Visualization settings
 visualization:
-  lazy_load_videos: true  # New flag to control lazy loading
+  lazy_load_videos: true  # Flag to control lazy loading
 
 # Server settings
 server:

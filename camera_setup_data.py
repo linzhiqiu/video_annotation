@@ -1,3 +1,5 @@
+import logging
+
 SHOT_SIZES = ["extreme_wide", "wide", "full", "medium_full", "medium", "medium_close_up", "close_up", "extreme_close_up"]
 HEIGHT_RELATIVE_TO_SUBJECT = ["above_subject", "at_subject", "below_subject"]
 HEIGHT_RELATIVE_TO_GROUND = ["aerial_level", "overhead_level", "eye_level", "hip_level", "ground_level"]
@@ -291,6 +293,7 @@ class CameraSetupData:
             self.is_dutch_angle_fixed = self.dutch_angle == "yes"
     
     def _set_focus_attributes(self):
+
         self.focus_info = {'start': self.focus_plane_start, 'end': self.focus_plane_end}
         self.is_focus_applicable = self.camera_focus != "unknown" # "Is camera focus classification possible for this video?"
         self.is_deep_focus = None # "Does the video have a deep depth of field, ensuring distant details remain sharp?"
@@ -333,6 +336,8 @@ class CameraSetupData:
                             else:
                                 self.focus_change_from_near_to_far = True
                                 self.focus_change_from_far_to_near = False
+                
+                
                     
                     
                     
@@ -647,7 +652,7 @@ class CameraSetupData:
         if self.camera_focus in ["shallow_focus", "ultra_shallow_focus"]:
             if self.focus_plane_start == "unknown":
                 raise ValueError("Focus plane start should not be 'unknown' for shallow focus")
-            if self.focus_plane_start != self.focus_plane_end:
+            if self.focus_plane_start != self.focus_plane_end and self.focus_plane_end != "unknown":
                 if self.focus_change_reason == "no_change":
                     raise ValueError("Focus change reason should not be 'no_change' for focus plane change")
             if self.focus_plane_end == "unknown":

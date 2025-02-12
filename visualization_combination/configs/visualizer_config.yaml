@@ -1,26 +1,19 @@
 # Data source paths
 data:
-  ndjson_dir: exports/ndjson
-  issues_dir: exports/issues_ndjson
+  batch_folder: batches/donesection_motion_shotcomp_20250211_231503  # Path to the batch folder
   videos_dir: ../../../datasets/SelectedVideos_video_segments
 
-# Batch constraints
-constraints:
-  video_names_file: donevideos/donesection.json
-  approver: null
-  time_range: null
-
-# Labels to analyze
+# Labels to analyze combinations of
 labels:
-  # # Camera Movements
-  # # Arc & Crane Movements
+  # Camera Movements
+  # Arc & Crane Movements
   - cam_motion/arc_crane_movement/arc_clockwise/has_arc_clockwise
   - cam_motion/arc_crane_movement/arc_counterclockwise/has_arc_counterclockwise
   - cam_motion/arc_crane_movement/crane_down/has_crane_down
   - cam_motion/arc_crane_movement/crane_up/has_crane_up
 
-  # # Camera-Centric Movements
-  # # Translation
+  # Camera-Centric Movements
+  # Translation
   # - cam_motion/camera_centric_movement/backward/has_backward_wrt_camera
   # - cam_motion/camera_centric_movement/backward/only_backward_wrt_camera
   # - cam_motion/camera_centric_movement/downward/has_downward_wrt_camera
@@ -34,7 +27,7 @@ labels:
   # - cam_motion/camera_centric_movement/upward/has_upward_wrt_camera
   # - cam_motion/camera_centric_movement/upward/only_upward_wrt_camera
 
-  # # Rotation
+  # Rotation
   - cam_motion/camera_centric_movement/pan_left/has_pan_left
   # - cam_motion/camera_centric_movement/pan_left/only_pan_left
   - cam_motion/camera_centric_movement/pan_right/has_pan_right
@@ -48,11 +41,11 @@ labels:
   - cam_motion/camera_centric_movement/tilt_up/has_tilt_up
   # - cam_motion/camera_centric_movement/tilt_up/only_tilt_up
 
-  # # Dolly Zoom Movements
+  # Dolly Zoom Movements
   # - cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
   # - cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
 
-  # # Ground-Centric Movements
+  # Ground-Centric Movements
   # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
   - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
   # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
@@ -70,8 +63,8 @@ labels:
   # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
   # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
 
-  # # Object-Centric Movements
-  # # Tracking Shots
+  # Object-Centric Movements
+  # Tracking Shots
   # - cam_motion/object_centric_movement/aerial_tracking_shot
   # - cam_motion/object_centric_movement/arc_tracking_shot
   # - cam_motion/object_centric_movement/front_side_tracking_shot
@@ -85,7 +78,7 @@ labels:
   # - cam_motion/object_centric_movement/tracking_subject_larger_size
   # - cam_motion/object_centric_movement/tracking_subject_smaller_size
 
-  # # Miscellaneous Camera Motion
+  # Miscellaneous Camera Motion
   # - cam_motion/has_frame_freezing
   # - cam_motion/has_motion_blur
   # - cam_motion/has_shot_transition_cam_motion
@@ -106,8 +99,8 @@ labels:
   # - cam_motion/steadiness_and_movement/very_shaky_camera
   # - cam_motion/steadiness_and_movement/very_stable_camera
 
-  # # Camera Setup
-  # # Camera Angle
+  # Camera Setup
+  # Camera Angle
   # - cam_setup/angle/camera_angle_change_from_high_to_low
   # - cam_setup/angle/camera_angle_change_from_low_to_high
   # - cam_setup/angle/end_with/camera_angle_end_with_bird_eye_angle
@@ -130,7 +123,7 @@ labels:
   # - cam_setup/angle/start_with/camera_angle_start_with_low_angle
   # - cam_setup/angle/start_with/camera_angle_start_with_worm_eye_angle
 
-  # # Camera Focus
+  # Camera Focus
   # - cam_setup/focus/end_with/focus_end_with_background
   # - cam_setup/focus/end_with/focus_end_with_foreground
   # - cam_setup/focus/end_with/focus_end_with_middle_ground
@@ -152,7 +145,7 @@ labels:
   # - cam_setup/focus/start_with/focus_start_with_middle_ground
   # - cam_setup/focus/start_with/focus_start_with_out_of_focus
 
-  # # # Height Relative to Ground/Subject
+  # Height Relative to Ground/Subject
   # - cam_setup/height_wrt_ground/above_water_to_underwater
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_aerial_level
   # - cam_setup/height_wrt_ground/end_with/height_wrt_ground_end_with_eye_level
@@ -192,7 +185,7 @@ labels:
   # - cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_at_subject
   # - cam_setup/height_wrt_subject/start_with/height_wrt_subject_start_with_below_subject
 
-  # # Lens and Point of View
+  # Lens and Point of View
   # - cam_setup/lens_distortion/fisheye_distortion
   # - cam_setup/lens_distortion/no_lens_distortion
   # - cam_setup/lens_distortion/with_lens_distortion
@@ -211,7 +204,7 @@ labels:
   # - cam_setup/point_of_view/third_person_side_view_game_pov
   # - cam_setup/point_of_view/third_person_top_down_game_pov
 
-  # # Shot Size and Type
+  # Shot Size and Type
   # - cam_setup/shot_size/end_with/shot_size_end_with_close_up
   # - cam_setup/shot_size/end_with/shot_size_end_with_extreme_close_up
   # - cam_setup/shot_size/end_with/shot_size_end_with_extreme_wide
@@ -244,7 +237,7 @@ labels:
   # - cam_setup/shot_size/subject_revealing
   # - cam_setup/shot_size/subject_switching
 
-  # # Shot Type and Subject Framing
+  # Shot Type and Subject Framing
   # - cam_setup/shot_type/is_human_shot
   # - cam_setup/shot_type/is_just_back_and_forth_change_shot
   # - cam_setup/shot_type/is_just_change_of_subject_shot
@@ -263,7 +256,7 @@ labels:
   # - cam_setup/subject_framing/has_subject_change
   # - cam_setup/subject_framing/is_framing_subject
 
-  # # Miscellaneous Camera Setup
+  # Miscellaneous Camera Setup
   # - cam_setup/has_overlays
   # - cam_setup/has_shot_transition_cam_setup
   # - cam_setup/video_speed/fast_motion
@@ -275,7 +268,11 @@ labels:
   # - cam_setup/video_speed/time_lapse
   # - cam_setup/video_speed/time_reversed
 
+# Visualization settings
+visualization:
+  lazy_load_videos: true  # Flag to control lazy loading
+
 # Server settings
 server:
   host: localhost
-  port: 8086
+  port: 8086  # Using a different port than the simple visualizer

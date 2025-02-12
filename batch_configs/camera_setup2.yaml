@@ -1,0 +1,25 @@
+# Camera Setup batch configuration
+
+# Project name (required)
+project_name: "Video Segment Classification (Camera Settings and Shot compositions) 2"
+
+# Basic video filtering
+video_names_file: null  # Optional: List of specific videos to include
+
+time_range: null  # Optional: Time range for filtering
+
+# List of approvers to filter by
+approvers:
+  - "rater.4@grandecenter.org"
+  - "gela.xu@outlook.com"
+  - "yangeve4967@gmail.com"
+
+project_requirements:
+  meta_reviewers: null
+  double_check_status: null
+
+# API rate limiting settings
+api_limits:
+  min_delay: 1.0
+  max_delay: 32.0
+  max_retries: 5

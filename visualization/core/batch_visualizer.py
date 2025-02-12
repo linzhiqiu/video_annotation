@@ -3,17 +3,18 @@ from typing import Dict, List, Any
 from datetime import datetime
 import json
 import logging
-from flask import Flask, render_template, jsonify, send_from_directory
+from flask import Flask, render_template, jsonify, send_from_directory, request
+import shutil
 from batch import Batch
 from video_data import VideoData
-from process_ndjson import process_ndjson_files
+from scripts.process_ndjson import process_ndjson_files
 from ..params.visualization_params import VisualizationParams
 from label import Label  # Add this import
 
 class BatchVisualizer:
     """Class for visualizing batches of videos based on labels."""
     
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, batch_folder: str = None):
         self.config = VisualizationParams.from_yaml(config_path)
         self.labels = Label.load_all_labels()  # Load all labels
         self.app = Flask(__name__, 
@@ -23,9 +24,29 @@ class BatchVisualizer:
         # Process NDJSON files during initialization
         logging.info("Processing NDJSON files...")
         data_config = self.config['data']
+        
+        # Use batch folder from constructor or config
+        batch_folder = batch_folder or data_config.get('batch_folder')
+        
+        # If batch folder is provided, use its ndjson and issues directories
+        if batch_folder:
+            ndjson_dir = os.path.join(batch_folder, 'ndjson')
+            issues_dir = os.path.join(batch_folder, 'issues_ndjson')
+            if not os.path.exists(ndjson_dir) or not os.path.exists(issues_dir):
+                raise ValueError(f"Batch folder {batch_folder} must contain 'ndjson' and 'issues_ndjson' directories")
+            logging.info(f"Using batch folder: {batch_folder}")
+            logging.info(f"NDJSON directory: {ndjson_dir}")
+            logging.info(f"Issues directory: {issues_dir}")
+        else:
+            ndjson_dir = data_config.get('ndjson_dir', 'exports/ndjson')
+            issues_dir = data_config.get('issues_dir', 'exports/issues_ndjson')
+            logging.info(f"No batch folder specified, using default directories:")
+            logging.info(f"NDJSON directory: {ndjson_dir}")
+            logging.info(f"Issues directory: {issues_dir}")
+            
         self.all_videos = process_ndjson_files(
-            data_config['ndjson_dir'], 
-            data_config['issues_dir']
+            ndjson_dir, 
+            issues_dir
         )
         logging.info(f"Loaded {len(self.all_videos)} total videos from NDJSON files")
         
@@ -58,6 +79,61 @@ class BatchVisualizer:
             
             return render_template('label_selection.html', labels=label_paths)
 
+        @self.app.route('/export_videos/<path:label_id>', methods=['POST'])
+        def export_videos(label_id):
+            """Export videos to categorized folders."""
+            try:
+                # Format label name for folder
+                label_name = label_id.replace('/', '_')
+                
+                # Get label directory from config
+                label_dir = self.config['data'].get('label_dir', 'label_dirs')
+                if not os.path.exists(label_dir):
+                    os.makedirs(label_dir)
+                
+                # Create label-specific directory
+                label_export_dir = os.path.join(label_dir, label_name)
+                if os.path.exists(label_export_dir):
+                    # If directory exists, add timestamp to make it unique
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                    label_export_dir = f"{label_export_dir}_{timestamp}"
+                os.makedirs(label_export_dir)
+                
+                # Create category subdirectories
+                categories = ['positive', 'negative', 'easy_negative', 'hard_negative', 'uncategorized']
+                for category in categories:
+                    os.makedirs(os.path.join(label_export_dir, category))
+                
+                # Copy videos to appropriate directories
+                videos_copied = 0
+                for name, details in self.video_details.items():
+                    category = details['category']
+                    if category.startswith('easy_negative_'):
+                        category = 'easy_negative'
+                    elif category.startswith('hard_negative_'):
+                        category = 'hard_negative'
+                    
+                    # Find the video file
+                    directory, filename = self.find_video_path(name)
+                    if directory and filename:
+                        src_path = os.path.join(directory, filename)
+                        dst_path = os.path.join(label_export_dir, category, filename)
+                        shutil.copy2(src_path, dst_path)
+                        videos_copied += 1
+                
+                return jsonify({
+                    'success': True,
+                    'message': f'Successfully exported {videos_copied} videos to {label_export_dir}',
+                    'export_dir': label_export_dir
+                })
+                
+            except Exception as e:
+                logging.error(f"Error exporting videos: {str(e)}")
+                return jsonify({
+                    'success': False,
+                    'message': f'Error exporting videos: {str(e)}'
+                }), 500
+
         @self.app.route('/visualize/<path:label_id>')
         def visualize(label_id):
             """Show visualization for specific label."""
@@ -74,6 +150,7 @@ class BatchVisualizer:
                 return render_template('index.html',
                                     categories=self._organize_videos(),
                                     label_info=self._get_label_info(),
+                                    label_id=label_id,
                                     lazy_load=self.config.get('visualization', {}).get('lazy_load_videos', True))
             except Exception as e:
                 logging.error(f"Error visualizing label: {str(e)}")
@@ -82,30 +159,24 @@ class BatchVisualizer:
         @self.app.route('/videos/<path:video_name>')
         def serve_video(video_name):
             """Serve video files."""
-            videos_dir = self.config['data']['videos_dir']
+            # Find the video in the directory structure
+            directory, filename = self.find_video_path(video_name)
             
-            # Get the actual path of the video from our stored paths
-            video_paths = self.config.get('_video_paths', {})
-            if video_name in video_paths:
-                # If we have a stored subdirectory path for this video
-                subdir = video_paths[video_name]
-                full_path = os.path.join(videos_dir, subdir)
-                logging.info(f"Serving video from: {full_path}, filename: {video_name}")
-                return send_from_directory(
-                    full_path,
-                    video_name,
-                    mimetype='video/mp4',
-                    as_attachment=False
-                )
-            
-            # Fallback to direct path
-            logging.info(f"Serving video directly from: {videos_dir}, filename: {video_name}")
-            return send_from_directory(
-                videos_dir,
-                video_name,
-                mimetype='video/mp4',
-                as_attachment=False
-            )
+            if directory and filename:
+                # logging.info(f"Serving video from: {directory}, filename: {filename}")
+                try:
+                    return send_from_directory(
+                        directory,
+                        filename,
+                        mimetype='video/mp4',
+                        as_attachment=False
+                    )
+                except Exception as e:
+                    logging.error(f"Error serving video {filename} from {directory}: {str(e)}")
+                    return f"Error serving video: {str(e)}", 500
+            else:
+                logging.warning(f"Video {video_name} not found")
+                return f"Video {video_name} not found", 404
 
         @self.app.route('/api/categories')
         def get_categories():
@@ -253,26 +324,10 @@ class BatchVisualizer:
         return details
 
     def create_batch(self, all_videos: Dict[str, VideoData]) -> Batch:
-        """Create a batch based on configuration."""
-        # Get video names from config
-        logging.info("Getting video names from config...")
-        video_names = VisualizationParams.get_video_names(self.config)
-        
-        if not video_names:
-            raise ValueError("No video names found in config")
-            
-        logging.info(f"Found {len(video_names)} videos in video names file: {video_names}")
-        
-        # Create batch
-        batch = Batch.create(
-            all_videos=all_videos,
-            video_names=video_names,
-            approver=self.config.get('constraints', {}).get('approver'),
-            time_range=VisualizationParams.get_time_range(self.config.get('constraints', {}))
-        )
-        
+        """Create a batch from all available videos."""
+        logging.info(f"Creating batch with all {len(all_videos)} videos")
+        batch = Batch(all_videos)
         logging.info(f"Created batch with {len(batch)} videos")
-        logging.info(f"Batch video names: {batch.get_video_names()}")
         return batch
     
     def categorize_videos(self, batch: Batch) -> Dict[str, Dict[str, Any]]:
@@ -491,4 +546,43 @@ class BatchVisualizer:
             'negative_rule': self.current_label.neg_rule.rule,
             'easy_negative_rules': {k: v.rule for k, v in self.current_label.easy_neg_rules.items()},
             'hard_negative_rules': {k: v.rule for k, v in self.current_label.hard_neg_rules.items()}
-        } 
+        }
+
+    def find_video_path(self, video_name: str) -> tuple[str, str]:
+        """Find the directory and filename for a video.
+        
+        Args:
+            video_name: Name of the video to find
+            
+        Returns:
+            Tuple of (directory, filename) if found, (None, None) if not found
+        """
+        # Get videos_dir from config
+        videos_dir = self.config['data'].get('videos_dir')
+        if not videos_dir:
+            logging.warning("Videos directory not specified in config")
+            return None, None
+            
+        # Convert to absolute path if it's relative
+        if not os.path.isabs(videos_dir):
+            # Get the directory where the config file is located
+            config_dir = os.path.dirname(os.path.abspath('visualization/configs/visualizer_config.yaml'))
+            # Resolve the relative path from the config directory
+            videos_dir = os.path.abspath(os.path.join(config_dir, videos_dir))
+        
+        # logging.info(f"Searching for {video_name} in videos directory: {videos_dir}")
+        
+        if not os.path.exists(videos_dir):
+            logging.warning(f"Videos directory does not exist: {videos_dir}")
+            return None, None
+            
+        # Walk through all subdirectories
+        for root, _, files in os.walk(videos_dir):
+            # logging.info(f"Checking directory: {root}")
+            if video_name in files:
+                full_path = os.path.join(root, video_name)
+                # logging.info(f"Found video at: {full_path}")
+                return root, video_name
+        
+        logging.warning(f"Video {video_name} not found in videos directory")
+        return None, None 
