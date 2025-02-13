@@ -1,0 +1,1575 @@
+[
+    {
+        "video_name": "1CZqpqyPbxk.1.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "This is a screen recording of the DaVinci Resolve desktop app, featuring its dark gray interface. The graded frame appears green and cool, with gamma brightness being actively adjusted. While most of the interface is desaturated, a vivid green-toned video is displayed at the top center, and four vibrant color wheels are visible in the bottom-right corner."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Complex (others)"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "N/A (abstract)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "2dacd61df3146649c49dd1f16adeb7c52d5a447127427c4948b37fc0ae306d7d.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Warm"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "This scene takes place inside an abandoned building. Although it is sunny outside, the interior has no direct sunlight and is mostly illuminated by soft, ambient, diffused sunlight with a neutral brightness. The diffused light casts a yellowish tone along the yellow corridor, creating a warm atmosphere. In contrast, the view outside is overexposed due to the harsh, direct sunlight, while the interior maintains an even and comfortable lighting level."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The video shows a corridor with a stark contrast between indoor and outdoor lighting. The outdoors is brightly lit by natural sunlight, which highlights the green vegetation visible through the windows. Inside, the scene takes place in an abandoned building softly lit by ambient light diffused from both sides. While harsh sunlight dominates the exterior, the interior retains a gentle, shadowed atmosphere."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "3pxrECZYEAA.2.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "High Saturation"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Unrealistic/Synthetic"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "N/A (abstract)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This is a 2D animation of a flying bird with no direct light source or shadows, resulting in a flat art style."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Minimal Contrast (1:1-1:2)"
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "The main subject is a 2D animation of a flying bird, featuring a flat art style with no direct light sources, shadows, or shading variations."
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Levitation / Floating"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "3pxrECZYEAA.4.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "This 2D animation begins in a dark green forest, where a highly saturated red bird flies through the trees toward a wide grassland under a blue sky. The dark green trees give the opening scene a relatively muted tone. As the camera follows the bird, the colors gradually brighten."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Unrealistic/Synthetic"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "N/A (abstract)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This 2D animation video lacks realistic lighting. It starts in a dark, shadowed forest, giving the impression of being under heavy shade. As a bird flies forward into a more open area, hand-drawn shadows on the trees create the illusion of harsh sunlight."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "This 2D animation features subtle shading details. The scene begins in a shadowed, backlit forest, where a bird appears. As the camera moves forward, the bird flies into a sunlit area, causing its shadows to fade. Sunlight spreads over open plains, eventually bathing the entire scene in even light, reducing contrast and creating a flat, planar animation effect."
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Revealing Shot"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "8SphTOiOe6k.0.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This video shows a street where shadows from the buildings cover most of the road, while harsh sunlight illuminates the left side."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.9.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Complex (others)"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "\nThis video shows a person working at a construction site, standing in shadow under soft, diffused light. In contrast, the top right corner of the frame, outside the shadow, is lit by strong, harsh sunlight, creating a very bright and slightly overexposed area."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "27c62076f8bb58d5afbe04144dc3e34742a5e4c5e0d72a385937056320b3bc9e.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Minimal Contrast (1:1-1:2)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light"
+                ]
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Splashing / Waves"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "60.0.57.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Top Light",
+                    "Side Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "676d3ce18a8d1c2ecd6a1efe377c3bb2b91f0eef8b1e2eeb47009421af2880a3.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Hard Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This video captures a church at the center of the frame. The right side is bathed in direct sunlight, casting sharp shadows, while the left side, under cloud cover, is lit with slightly softer yet still relatively hard light."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Top Light",
+                    "Side Light"
+                ]
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "At the beginning, sunlight shines from the left, casting shadows to the right. The camera slightly arcs around the church, subtly changing the perspective."
+            }
+        ]
+    },
+    {
+        "video_name": "1560.0.17.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "1934.1.18.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "2519.5.20.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Warm"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Dark"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "High Contrast (1:8-1:16)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "5679.1.18.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "High Saturation"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The scene depicts a cozy, modern cabin surrounded by lush greenery and tall trees, viewed from the outside at dusk. The warm, yellowish interior lighting contrasts with the cool, bluish natural light outside, creating a welcoming and intimate atmosphere. A person in red clothing is seen on the deck."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight",
+                    "Artificial Light (practical/visible)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The scene shows a cozy, modern cabin surrounded by greenery and tall trees at dusk. Warm, diffused yellow light from the interior contrasts with the cool, soft blue natural light outside."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "High Contrast (1:8-1:16)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Side Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "6303.0.17.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The foreground character, dressed in red, has a neutral, slightly warm color tone that contrasts sharply with the cool-toned background."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Artificial Light (practical/visible)",
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This scene features a mix of practical light sources. The person in the foreground is lit by soft front light, while the background showcases colorful neon lights and orange tube lights on the wall. A cool cyan light from outside the window dimly illuminates the room."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Front Light",
+                    "Ambient Light"
+                ]
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "\nThe person in the foreground is primarily lit by soft front white light, with cool cyan ambient light gently illuminating their left face and neck."
+            },
+            {
+                "question": "Select the type of special lighting effects on the scene:",
+                "answer": [
+                    "Colored/Neon Lighting"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "4021791.0.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "B_8bbKn3amE.0.17.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "ce8071e2668c089f109b31ffaf1ca7a29a277bb87f6b5c4770dadf6d1fd3c5e7.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Bright"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The video captures a clear, sunny day in a desert under a blue sky, with evenly distributed sunlight. The reddish tones of the sand and rocks evoke a warm temperature, complemented by moderate to high brightness. Slightly elevated saturation enhances the warm, earthy tones, adding richness to the scene."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Sunny"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Hard Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "High Contrast (1:8-1:16)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Top Light"
+                ]
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "As the camera arcs around the three men walking in the desert, they are lit by harsh sunlight from above and to their left, with shadows falling to their right."
+            }
+        ]
+    },
+    {
+        "video_name": "cf38f819cc3cee008c891a9256c3b59ef9f62b883ed02ed76427f304ffac991e.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Bright"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Sunny"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Hard Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "High Contrast (1:8-1:16)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Top Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "FqDKHWjpVVQ.12.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "\nThis video showcases a first-person shooting game set on a bright, sunny battlefield with large buildings casting sharp shadows over vast areas. The overall environment is well-lit and vibrant. When the player gets hit, a red filter briefly flashes across the screen."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Sunny"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Hard Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Explosion"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "fSWFUFdV5TU.3.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The scene starts indoors, focused on a door with daylight faintly visible around its edges. As the camera moves backward, a bright yellowish lamp on a table to the left comes into view, while the right side of the room is dark and underexposed."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Complex (changing)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "Initially, faint whitish light streams through the door's edge, accompanied by the unseen lamp light softly illuminating the scene. As the lamp becomes visible, its bright, hard light creates curved sharp shadows below, shaped by the lamp's round cover, while diffused light above softens the wall's glow."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    },
+    {
+        "video_name": "fSWFUFdV5TU.5.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The indoor scene is predominantly dark, with most details underexposed. A brief, bright flash momentarily illuminates the background wall, likely from a camera flash. Faint whitish sunlight can be seen on the right, coming from the window, and becomes more noticeable as the camera moves further into the room, slightly brightening the scene while maintaining the overall dim atmosphere."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Complex (changing)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The scene is predominantly dark, with most details underexposed. Faint whitish sunlight enters through a window on the right, becoming more noticeable as the camera moves deeper into the room, slightly brightening the dim atmosphere. A person stands with their back to the camera, and as they take a photo, the flash briefly illuminates the background wall."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Minimal Contrast (1:1-1:2)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Back Light"
+                ]
+            },
+            {
+                "question": "Select the type of special lighting effects on the subject:",
+                "answer": [
+                    "Silhouette (subject not required)"
+                ]
+            },
+            {
+                "question": "Select the lighting dynamics:",
+                "answer": [
+                    "Flashing"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "H4AZhS5WqKk.0.17.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Dark"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Artificial Light (practical/visible)",
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The video shows a worm's-eye view of a sky covered with dark black clouds, scattered with small bright white patches. Surrounding buildings have windows lit in yellow and white, while occasional lightning flashes briefly illuminate the clouds and the buildings. "
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            },
+            {
+                "question": "Select the lighting dynamics:",
+                "answer": [
+                    "Flashing"
+                ]
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Splashing / Waves"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "IWv0EhEGmNI.14.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "This video features a first-person shooting game set indoors with dim lighting, neutral color saturation, and balanced temperature. An intense explosion later occurs, shattering a window and causing a bright flash that whites out the entire screen. When the player takes damage, a red filter briefly flashes over the scene, indicating a hit."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source",
+                    "Firelight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "This video features a first-person shooting game set indoors with dim lighting. A powerful explosion shatters a window, briefly whitewashing the screen with a bright flash. When the player takes damage, a red filter flashes momentarily to indicate a hit. After the explosion, smoke and dust fill the air, and flames burn on the ground, leaving the indoor space in a smoky haze."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            },
+            {
+                "question": "Select the lighting dynamics:",
+                "answer": [
+                    "Flashing"
+                ]
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Explosion",
+                    "Shattering / Breaking"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "JpEfHcVrtXI.2.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "N/A (black-white)"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "High Saturation"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The game is a vibrant, color-saturated third-person POV adventure, with a warm red ground contrasting beautifully against a cool blue sky."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Unrealistic/Synthetic"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "The game features a synthetic design with an unrealistic lighting setup. The character appears to be lit by sunlight from above, casting shadows underneath and subtle shading between the folds of their clothing."
+            },
+            {
+                "question": "Select the type of volumetric light (if there is any):",
+                "answer": [
+                    "God Rays"
+                ]
+            },
+            {
+                "question": "Describe the volumetric light:",
+                "answer": "The game features a synthetic design with an unrealistic lighting setup, where sharp shadows contrast with an overcast sky. God rays stream through patches of blue sky above but disappear as the camera tilts downward."
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Levitation / Floating"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "KdfhMulBsyk.4.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Cool"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Describe the color grading:",
+                "answer": "The lighting in this scene is dim and atmospheric, emphasizing shadows and silhouettes. A bluish-green haze dominates the setting, creating a moody, dystopian vibe and diffusing most of the light sources. Brightness is focused in certain areas, like the glowing vehicle headlights and the illuminated windows on the left, standing out against the otherwise dark surroundings. The overall brightness is low, but at one point, a spotlight from above sweeps through the scene, temporarily increasing the brightness."
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Artificial Light (practical/visible)",
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The scene features dim, atmospheric lighting with shadows and silhouettes. A bluish-green haze creates a moody, dystopian feel, softening all light sources. Brightness is focused on glowing vehicle headlights and illuminated windows on the left. A spotlight briefly sweeps through, temporarily increasing the brightness."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Complex (changing)"
+            },
+            {
+                "question": "Select the type of special lighting effects on the subject:",
+                "answer": [
+                    "Silhouette (subject not required)"
+                ]
+            },
+            {
+                "question": "Describe the lighting on the subject:",
+                "answer": "A person walks through a snowy, dark winter night, their silhouette outlined by the headlights of a vehicle behind them. During the video, an overhead spotlight sweeps across the street, briefly illuminating the person and casting low-contrast shadows on their body."
+            },
+            {
+                "question": "Select the type of special lighting effects on the scene:",
+                "answer": [
+                    "Street Light"
+                ]
+            },
+            {
+                "question": "Select the type of volumetric light (if there is any):",
+                "answer": [
+                    "Light Through Medium"
+                ]
+            },
+            {
+                "question": "Select the lighting dynamics:",
+                "answer": [
+                    "Pulsing / Flickering",
+                    "Moving Light"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "Ni7AYED85z4.2.10.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Normal"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            },
+            {
+                "question": "Are there any clear Reflection Lights:",
+                "answer": [
+                    "From water"
+                ]
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Splashing / Waves"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "OrOYvVf6tIM.2.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Artificial Light (practical/visible)"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Side Light",
+                    "Front Light"
+                ]
+            },
+            {
+                "question": "Select the type of special lighting effects on the subject:",
+                "answer": [
+                    "Rembrandt Lighting",
+                    "Portrait Lighting"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "qMeHR2Dc4mQ.3.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Warm"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Interior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Front Light",
+                    "Top Light",
+                    "Ambient Light"
+                ]
+            },
+            {
+                "question": "Select the type of special lighting effects on the subject:",
+                "answer": [
+                    "Portrait Lighting"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "u-dEnJpCGAQ.3.6.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "High Saturation"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Non-visible Light Source"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "N/A (e.g., no sunlight)"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "Describe the scene and lighting setup (light sources and their quality):",
+                "answer": "The scene features a tiger resting among rocks and leaves, with only its rear half visible. Soft light from above gently illuminates both the tiger and the surrounding area."
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "Normal Contrast (1:4-1:8)"
+            },
+            {
+                "question": "What is the direction of the major light on the subject?",
+                "answer": [
+                    "Ambient Light",
+                    "Top Light"
+                ]
+            },
+            {
+                "question": "Are there any Dynamic Effects?",
+                "answer": [
+                    "Splashing / Waves"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "video_34608.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "What is the color temperature?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "What is the color saturation?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "How bright is the video?",
+                "answer": "Neutral"
+            },
+            {
+                "question": "Is the scene indoors or outdoors?",
+                "answer": "Exterior"
+            },
+            {
+                "question": "What is the major light source?",
+                "answer": [
+                    "Sunlight"
+                ]
+            },
+            {
+                "question": "Select the sunlight level",
+                "answer": "Overcast"
+            },
+            {
+                "question": "What is the light quality?",
+                "answer": "Soft / Diffused Light"
+            },
+            {
+                "question": "What is the contrast ratio of the light on the main subject?",
+                "answer": "N/A (no subject)"
+            }
+        ]
+    }
+]

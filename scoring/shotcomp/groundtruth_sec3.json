@@ -1,0 +1,2166 @@
+[
+    {
+        "video_name": "__F5dY2-N50.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "7O1eibuPn84.3.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear non-human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Close-up shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Low angle (Looking up)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Ultra shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Foreground"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "8SphTOiOe6k.2.8.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "9bd758538725491e5a62e01d3442363682850607b5b2064eb95028c5e293b03a.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Barrel Distortion (e.g., Wide-angle lens)"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "67bfa4eec893c10cba8c4fb180735bf8adc0c7de5a0cfe1ee9d1c1b44c2e56c8.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "If you provide a text description, select the reason:",
+                "answer": "Subject-Scene Size Mismatch"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Close-up shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Hip-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Foreground"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Describe complex camera focus in the text box below:",
+                "answer": "The video shows a person lying on a sofa, with their feet positioned closer to the camera and their head farther away. The shallow focus emphasizes the feet, adorned with shiny sprinkles, while the rest of the body is slightly blurred. The composition divides the frame, with the lower half featuring the person on the sofa and the upper half showcasing empty space, creating a cozy and inviting ambiance."
+            }
+        ]
+    },
+    {
+        "video_name": "113fbabd14f92b6324797205502d698d4f5dc7c09972a256400394e474a1e6e2.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Drone POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Extreme wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "190.2.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear non-human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "Medium shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Foreground"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "1560.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Drone POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "If you provide a text description, select the reason:",
+                "answer": "Others"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Describe complex shot size in the text box below:",
+                "answer": "The video begins with a wide shot of a neoclassical domed building with ornate columns. The camera rapidly dollies forward and tilts upward, focusing on a human statue atop the triangular pediment."
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "Low angle (Looking up)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "857268.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Drone POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Extreme wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "c41pRPO9TQk.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "d0yGdNEWdn0.0.7.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "f4ZzHtww6Tc.2.15.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Clear Subject with Dynamic Size (subject)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Extreme wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "Medium shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "fjFIWRZdUng.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Drone POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.2.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Third-person Side view POV (Gaming only)"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Clear yet Atypical Subject (subject)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.15.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Third-person Full-body POV (Gaming only)"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Many Subject(s) with No Clear Focus (scenery)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.37.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Stop-Motion"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Different Subjects in Focus (subject)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "guZ5AxQ6xb0.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear non-human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Out of focus"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "JpEfHcVrtXI.2.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Third-person Full-body POV (Gaming only)"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Clear yet Atypical Subject (subject)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "Above the subject"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "JpEfHcVrtXI.3.5.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Third-person Full-body POV (Gaming only)"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "Clear yet Atypical Subject (subject)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "K3U7Ybik1wM.0.5.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "N/A (e.g., abstract/FPS with body parts/screenshot/etc.)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Hip-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Bird\u2019s eye"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Describe complex camera focus in the text box below:",
+                "answer": "The visuals are trippy."
+            }
+        ]
+    },
+    {
+        "video_name": "K3U7Ybik1wM.1.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "N/A (e.g., abstract/FPS with body parts/screenshot/etc.)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Bird\u2019s eye"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Describe complex camera focus in the text box below:",
+                "answer": "The visuals are trippy."
+            }
+        ]
+    },
+    {
+        "video_name": "KAer-wHAd38.2.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "KF5p8VIbt0Y.7.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Change of subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Hip-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Foreground"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "Background"
+            }
+        ]
+    },
+    {
+        "video_name": "MuNyfqxAO6Y.8.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear non-human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Medium shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "Full shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Hip-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "Ni7AYED85z4.2.15.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "N/A (e.g., abstract/FPS with body parts/screenshot/etc.)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "qMeHR2Dc4mQ.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Close-up shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "RooDYxp5Fx8.3.6.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "N/A"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "Low angle (Looking up)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "RxrFsOEIRCE.1.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Drone POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Scenery shot"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Extreme wide/long shot"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "Wide/long shot"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Aerial-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "High angle (Looking down)"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "toXyCmbHl3w.0.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Regular Lens"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "Locked-on POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Clear human subject(s)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "Medium shot (Subject Shot Only)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Level Angle"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Shallow focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "Middleground"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    },
+    {
+        "video_name": "YSnzFyUeFS4.2.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select if there is obvious lens distortion (otherwise, leave as Regular):",
+                "answer": "Fisheye Distortion (e.g., Fisheye lens)"
+            },
+            {
+                "question": "Does this video include any added text or watermarks, such as titles, subtitles, captions, icons, heads-up displays (for video games), or framing elements?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the video speed:",
+                "answer": "Regular"
+            },
+            {
+                "question": "Select the camera point-of-view:",
+                "answer": "First-person POV"
+            },
+            {
+                "question": "What is the shot type?",
+                "answer": "Complex shot"
+            },
+            {
+                "question": "Select if the shot is complex:",
+                "answer": "N/A (e.g., abstract/FPS with body parts/screenshot/etc.)"
+            },
+            {
+                "question": "Select the initial shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending shot size:",
+                "answer": "N/A (e.g., no subject / too many subjects)"
+            },
+            {
+                "question": "Select the ending camera height relative to the subject(s):",
+                "answer": "N/A (e.g., no subject / subject changes)"
+            },
+            {
+                "question": "Select the initial overall camera height:",
+                "answer": "Eye-level"
+            },
+            {
+                "question": "Select the ending overall camera height:",
+                "answer": "N/A (e.g., no changes)"
+            },
+            {
+                "question": "Select the initial camera angle:",
+                "answer": "Bird\u2019s eye"
+            },
+            {
+                "question": "Select the ending camera angle:",
+                "answer": "N/A (e.g., no change)"
+            },
+            {
+                "question": "Is there an obvious Dutch (canted) angle (>15 degrees) throughout the video?",
+                "answer": "No"
+            },
+            {
+                "question": "Select the type of camera focus:",
+                "answer": "Deep focus"
+            },
+            {
+                "question": "Select the depth of camera focus (start of video):",
+                "answer": "N/A"
+            },
+            {
+                "question": "Select the depth of camera focus (end of video):",
+                "answer": "N/A"
+            }
+        ]
+    }
+]

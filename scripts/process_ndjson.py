@@ -570,6 +570,7 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
             video_data.cam_motion = {'shot_transition': True}
             video_data.cam_setup = {'shot_transition': True}
 
+
     for video_name, annotations_list in video_annotations.items():
         all_camera_motion = []
         all_camera_setup = []

@@ -1,0 +1,1883 @@
+[
+    {
+        "video_name": "-F9hoWSAX5w.0.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, simple motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "3pxrECZYEAA.0.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, simple motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Fast"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Backward (e.g., Dolly-out / Pull-out)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "3pxrECZYEAA.3.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Side (moving alongside the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "Subject gets larger"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "Zooming In"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "Left-to-Right (--->)"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera trucks right to track the pink elephant throughout the video, finishing with a quick zoom-in at the end."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "7jUW96CiEKA.0.13.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Static (Fixed Camera)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "8ouj_JN2ytI.0.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Unsteady (e.g., Somewhat shaky handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with minor motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Slow"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "60.0.10.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Unsteady (e.g., Extreme shaky shot, found footage style)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "Motion Blur"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "60.0.14.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Unsteady (e.g., Extreme shaky shot, found footage style)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with minor motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "Down"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "61.1.30.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Unsteady (e.g., Extreme shaky shot, found footage style)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera tracks the dancing person, panning right first and then left."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "1560.0.12.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Static (Fixed Camera)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "6303.0.14.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Unsteady (e.g., Somewhat shaky handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Lead (moving ahead of the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "\nThe camera initially performs a slight tilt up and then down, resembling a shaking motion, then moves forward to track the person."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "00408741bd62d54921e55d690f7d39dfa84676d140c2de4c2d77bc381095f6f3.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with minor motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Slow"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "Left-to-Right (-->)"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "c41pRPO9TQk.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Fast"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "Zooming Out"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera slightly pans right at first, then quickly zooms out."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "CBRwF0LU3Ys.0.13.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "Counter-clockwise"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The drone performs stunt like motions to approach the camels."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "dSmZIp41OCM.17.6.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Aerial (tracking from above, usually with a drone or crane)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera moves forward to track the avatar, slightly trucking left or right to keep the avatar centered."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.22.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Aerial (tracking from above, usually with a drone or crane)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Forward (e.g., Dolly-in / Push-in)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera tracks the golf ball, keeping it centered, and slightly shakes as it enters the hole."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.26.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "Left-to-Right (--->)"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "Right-to-Left (<--)"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera pans left throughout the video and slightly moves backward at first."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "Gel59Iy3YhQ.37.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Static (Fixed Camera)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "guZ5AxQ6xb0.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Static (Fixed Camera)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "H4AZhS5WqKk.2.3.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Lead (moving ahead of the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "Subject gets larger"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Backward (e.g., Dolly-out / Pull-out)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera moves backward to track the cat and slightly tilts up at the end of the video."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "IWv0EhEGmNI.15.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Unsteady (e.g., Extreme shaky shot, found footage style)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera, representing the player's perspective, continuously pans back-and-forth between left and right."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "IWv0EhEGmNI.17.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "No"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "lz5xvWTodyw.7.1.mp4",
+        "annotators": [],
+        "annotations": []
+    },
+    {
+        "video_name": "n0SQy2r9tR8.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with minor motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Slow"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "Backward (e.g., Dolly-out / Pull-out)"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "nGJMwixogyk.5.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "Left-to-Right (--->)"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera trucks right throughout the video, ending with a slight pan to the right."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "RGSN4S5jn4o.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Unsteady (e.g., Extreme shaky shot, found footage style)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera first moves forward, then pans left, and continues moving forward after the pan."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "RIz3klPET3o.1.1.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Side (moving alongside the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "complex"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "tCRbVEGHZlQ.0.4.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, simple motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Side (moving alongside the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "Left-to-Right (--->)"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "u-dEnJpCGAQ.2.5.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Unsteady (e.g., Somewhat shaky handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, complex motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Regular"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "Yes"
+            },
+            {
+                "question": "Select the type(s) of tracking shot:",
+                "answer": [
+                    "Tilt (tilting to follow the subject)"
+                ]
+            },
+            {
+                "question": "Does the size of the subject change?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "If too complex, describe the camera motion throughout the video in the text box below:",
+                "answer": "The camera remains static at first, then slightly pans left. In the end, it tilts down to track the leopard cat."
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "WHgh2ajazTw.8.2.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with minor motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Slow"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "Up"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "video_name": "Za8g7TQ5JwI.0.0.mp4",
+        "annotators": [],
+        "annotations": [
+            {
+                "question": "Select the camera steadiness:",
+                "answer": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)"
+            },
+            {
+                "question": "Is there camera movement (other than camera shaking)?",
+                "answer": "Yes with major, simple motion"
+            },
+            {
+                "question": "How fast is the camera motion (e.g., crash zoom, whip pan)?",
+                "answer": "Fast"
+            },
+            {
+                "question": "Is the camera tracking (following) the moving subject(s)?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving forward or backward?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera zooming?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving (trucking) to the left or right?",
+                "answer": "Left-to-Right (--->)"
+            },
+            {
+                "question": "Is the camera panning?",
+                "answer": "Right-to-Left (<--)"
+            },
+            {
+                "question": "Is the camera moving up or down?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera tilting?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera moving in an arc?",
+                "answer": "No"
+            },
+            {
+                "question": "Is the camera rolling?",
+                "answer": "No"
+            },
+            {
+                "question": "Are there any of the following camera motion effects?",
+                "answer": [
+                    "None"
+                ]
+            }
+        ]
+    }
+]
