@@ -266,8 +266,17 @@ def calculate_metrics(videos_data: List[dict]) -> dict:
         'questions_metrics': questions_metrics
     }
 
+def load_taxonomy() -> List[str]:
+    """Load taxonomy and return ordered list of questions."""
+    with open('taxonomy/taxonomy.json', 'r') as f:
+        taxonomy = json.load(f)
+        return [item['question'] for item in taxonomy]
+
 def prepare_visualization_data(ndjson_data: List[dict], ground_truth_path: str, target_annotator: str) -> dict:
     """Prepare data for visualization template."""
+    # Load taxonomy for question ordering
+    question_order = load_taxonomy()
+    
     # Load ground truth if available
     ground_truth_dict = {}
     if os.path.exists(ground_truth_path):
@@ -368,8 +377,11 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_path: str, 
         
         # Only create table data if either has content
         if has_ground_truth or has_labels:
+            # Sort questions according to taxonomy order
+            sorted_questions = sorted(all_questions, key=lambda q: question_order.index(q) if q in question_order else len(question_order))
+            
             # Process all collected questions
-            for question in sorted(all_questions):
+            for question in sorted_questions:
                 ground_truth = ground_truth_dict.get(video_name, {}).get(question)
                 
                 # Get annotator's answer
