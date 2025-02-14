@@ -54,6 +54,18 @@
             padding: 8px;
             border-radius: 4px;
         }
+        
+        .video-url a {
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .video-url a:hover {
+            text-decoration: underline;
+            color: #004499;
+        }
+        
         .text-answer {
             white-space: pre-wrap;
             font-family: monospace;
@@ -191,7 +203,7 @@
     {% for video in videos_data %}
     <div class="video-section">
         <div class="video-title">Video: {{ video.video_name }}</div>
-        <div class="video-url">URL: {{ video.video_url }}</div>
+        <div class="video-url">URL: <a href="{{ video.video_url }}" target="_blank">{{ video.video_url }}</a></div>
         
         <table>
             <thead>
