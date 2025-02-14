@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pretest Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            word-wrap: break-word;
+            min-width: 150px;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .video-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            break-inside: avoid;
+        }
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .correct {
+            background-color: #e6ffe6;
+        }
+        .incorrect {
+            background-color: #ffe6e6;
+        }
+        .video-url {
+            word-break: break-all;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #666;
+            background: #f8f8f8;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .video-url a {
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .video-url a:hover {
+            text-decoration: underline;
+            color: #004499;
+        }
+        
+        .text-answer {
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin: 0;
+            padding: 4px 0;
+            color: #333;
+        }
+        .empty-answer {
+            color: #999;
+            font-style: italic;
+        }
+        .question-column {
+            width: 25%;
+        }
+        .ground-truth-column {
+            width: 25%;
+            background-color: #f8fff8;
+        }
+        .answer-column {
+            width: 25%;
+        }
+        .metrics-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+            page-break-inside: avoid;
+        }
+        .metrics-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .metrics-subtitle {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            color: #444;
+        }
+        .metrics-table {
+            width: auto;
+            min-width: 300px;
+            margin-bottom: 20px;
+        }
+        .metrics-table th {
+            background-color: #e8e8e8;
+        }
+        .question-metrics {
+            margin-top: 40px;
+            page-break-before: always;
+        }
+        @media print {
+            .video-url {
+                font-size: 8pt;
+                background: none;
+            }
+            body {
+                font-size: 10pt;
+            }
+            .text-answer {
+                font-size: 8pt;
+            }
+            th {
+                background-color: #f4f4f4 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .correct {
+                background-color: #e6ffe6 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .incorrect {
+                background-color: #ffe6e6 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .ground-truth-column {
+                background-color: #f8fff8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .metrics-section {
+                background-color: #f8f8f8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .question-metrics {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% if compare_groundtruth %}
+    <div class="metrics-section">
+        <div class="metrics-title">Overall Metrics</div>
+        <table class="metrics-table">
+            <tr>
+                <th>Total Comparisons</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+            <tr>
+                <td>{{ overall_metrics.total_comparisons }}</td>
+                <td>{{ "%.3f"|format(overall_metrics.precision) }}</td>
+                <td>{{ "%.3f"|format(overall_metrics.recall) }}</td>
+                <td>{{ "%.3f"|format(overall_metrics.f1_score) }}</td>
+            </tr>
+        </table>
+
+        <div class="metrics-title">Annotator Accuracy</div>
+        <table class="metrics-table">
+            <tr>
+                <th>Annotator</th>
+                <th>Total Questions</th>
+                <th>Correct Answers</th>
+                <th>Accuracy</th>
+            </tr>
+            {% for username, stats in annotator_accuracy.items() %}
+            <tr>
+                <td>{{ username }}</td>
+                <td>{{ stats.total_questions }}</td>
+                <td>{{ stats.correct_answers }}</td>
+                <td>{{ "%.3f"|format(stats.accuracy) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    {% for video in videos_data %}
+    <div class="video-section">
+        <div class="video-title">Video: {{ video.video_name }}</div>
+        <div class="video-url">URL: <a href="{{ video.video_url }}" target="_blank">{{ video.video_url }}</a></div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="question-column">Question</th>
+                    {% if compare_groundtruth %}
+                    <th class="ground-truth-column">Ground Truth</th>
+                    {% endif %}
+                    {% for username in video.annotator_usernames %}
+                    <th class="answer-column">{{ username }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in video.table_data %}
+                <tr>
+                    <td class="question-column">{{ row.question }}</td>
+                    {% if compare_groundtruth %}
+                    <td class="ground-truth-column">
+                        {% if row.ground_truth %}
+                            {% if row.ground_truth is string %}
+                                <div class="text-answer">{{ row.ground_truth }}</div>
+                            {% else %}
+                                {{ row.ground_truth|join(', ') }}
+                            {% endif %}
+                        {% else %}
+                            <span class="empty-answer">No answer</span>
+                        {% endif %}
+                    </td>
+                    {% endif %}
+                    {% for username in video.annotator_usernames %}
+                    {% set annotator_data = row.annotators[username] %}
+                    <td class="answer-column {% if annotator_data.accuracy == 1.0 %}correct{% elif annotator_data.accuracy == 0.0 %}incorrect{% endif %}">
+                        {% if annotator_data.answer is not none %}
+                            {% if annotator_data.answer is string %}
+                                <div class="text-answer">{{ annotator_data.answer }}</div>
+                            {% else %}
+                                {{ annotator_data.answer|join(', ') }}
+                            {% endif %}
+                        {% else %}
+                            <span class="empty-answer">No answer</span>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+
+    {% if compare_groundtruth and questions_metrics %}
+    <div class="question-metrics">
+        <div class="metrics-title">Per-Question Metrics</div>
+        {% for question, metrics in questions_metrics.items() %}
+        <div class="metrics-section">
+            <div class="metrics-subtitle">{{ question }}</div>
+            
+            <!-- Overall question metrics -->
+            <table class="metrics-table">
+                <tr>
+                    <th colspan="5">Overall Performance</th>
+                </tr>
+                <tr>
+                    <th>Total Comparisons</th>
+                    <th>Correct Answers</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                </tr>
+                <tr>
+                    <td>{{ metrics.overall.total_comparisons }}</td>
+                    <td>{{ metrics.overall.correct_answers }}</td>
+                    <td>{{ "%.3f"|format(metrics.overall.precision) }}</td>
+                    <td>{{ "%.3f"|format(metrics.overall.recall) }}</td>
+                    <td>{{ "%.3f"|format(metrics.overall.f1_score) }}</td>
+                </tr>
+            </table>
+
+            <!-- Per-annotator performance for this question -->
+            <table class="metrics-table">
+                <tr>
+                    <th colspan="6">Annotator Performance</th>
+                </tr>
+                <tr>
+                    <th>Annotator</th>
+                    <th>Total Questions</th>
+                    <th>Correct Answers</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                </tr>
+                {% for username, perf in metrics.annotator_performance.items() %}
+                <tr>
+                    <td>{{ username }}</td>
+                    <td>{{ perf.total_questions }}</td>
+                    <td>{{ perf.correct_answers }}</td>
+                    <td>{{ "%.3f"|format(perf.precision) }}</td>
+                    <td>{{ "%.3f"|format(perf.recall) }}</td>
+                    <td>{{ "%.3f"|format(perf.f1_score) }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html> 

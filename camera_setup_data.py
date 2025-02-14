@@ -87,6 +87,7 @@ class CameraSetupData:
         self.camera_focus_description = ""
     
     def set_camera_setup_attributes(self):
+        self._set_point_of_view()
         self._set_framing_subject_attributes()
         self._set_shot_type_attributes()
         self._set_shot_size_attributes()
@@ -94,9 +95,47 @@ class CameraSetupData:
         self._set_height_relative_to_ground_attributes()
         self._set_camera_angle_attributes()
         self._set_focus_attributes()
+        
+    def _set_point_of_view(self):
+        self.broadcast_pov = self.camera_pov == 'broadcast_pov'
+        self.dashcam_pov = self.camera_pov == 'dashcam_pov'
+        self.drone_pov = self.camera_pov == 'drone_pov'
+        self.first_person_pov = self.camera_pov == 'first_person'
+        self.locked_on_pov = self.camera_pov == 'locked_on_pov'
+        self.overhead_pov = self.camera_pov == 'overhead_pov'
+        self.screen_recording_pov = self.camera_pov == 'screen_recording'
+        self.selfie_pov = self.camera_pov == 'selfie_pov'
+        self.third_person_full_body_game_pov = self.camera_pov == 'third_person_full_body'
+        self.third_person_isometric_game_pov = self.camera_pov == 'third_person_isometric'
+        self.third_person_over_hip_pov = self.camera_pov == 'third_person_over_hip'
+        self.third_person_over_shoulder_pov = self.camera_pov == 'third_person_over_shoulder'
+        self.third_person_side_view_game_pov = self.camera_pov == 'third_person_side_view'
+        self.third_person_top_down_game_pov = self.camera_pov == 'third_person_top_down'
+        self.objective_pov = None # None meaning not sure
+        if self.camera_pov == "unknown": # if N/A label, then objective POV
+            self.objective_pov = True
+        elif self.broadcast_pov or self.drone_pov or self.third_person_full_body_game_pov \
+            or self.third_person_isometric_game_pov or self.third_person_side_view_game_pov or self.third_person_top_down_game_pov:
+            self.objective_pov = True
+        elif self.first_person_pov or self.dashcam_pov:
+            self.objective_pov = False
+        # get a list of names for all the pov attributes, but must be in this function
+        self.pov_attributes = ["broadcast_pov", "dashcam_pov", "drone_pov", "first_person_pov", "locked_on_pov", "overhead_pov", 
+                               "screen_recording_pov", "selfie_pov", "third_person_full_body_game_pov", "third_person_isometric_game_pov", 
+                               "third_person_over_hip_pov", "third_person_over_shoulder_pov", "third_person_side_view_game_pov", 
+                               "third_person_top_down_game_pov", "objective_pov"]
+        assert all(hasattr(self, attr) for attr in self.pov_attributes)
+        
+        self.true_pov_attributes = [attr for attr in self.pov_attributes if getattr(self, attr) is True]
+        if "objective_pov" in self.true_pov_attributes and len(self.true_pov_attributes) > 1:
+            # Remove objective POV which is less specific
+            self.true_pov_attributes.remove("objective_pov")
+            
+        assert len(self.true_pov_attributes) == 1
+        self.true_pov_attribute = self.true_pov_attributes[0]
     
     def _set_framing_subject_attributes(self):
-        self.is_framing_subject = None # "Does the video include one or more subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
+        self.is_framing_subject = None # "Does the video include subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
         if self.shot_type in ["human", "non_human", "change_of_subject"]:
             self.is_framing_subject = True
         elif self.shot_type in ["scenery"]:
@@ -165,7 +204,7 @@ class CameraSetupData:
     
     def _set_shot_size_attributes(self):
         self.shot_size_info = {'start': self.shot_size_start, 'end': self.shot_size_end}
-        self.is_shot_size_applicable = self.complex_shot_type != "unknown" or (self.complex_shot_type == "description" and self.shot_size_description_type != "others") # "Is shot size classification possible for this video?"
+        self.is_shot_size_applicable = not (self.complex_shot_type == "unknown" or (self.complex_shot_type == "description" and self.shot_size_description_type == "others")) # "Is shot size classification possible for this video?"
         
         self.subject_revealing = False # "Does the video include a revealing shot where a subject appears?"
         self.subject_disappearing = False # "Does the main subject disappear from the shot?"
@@ -203,10 +242,10 @@ class CameraSetupData:
     
     def _set_height_relative_to_subject_attributes(self):
         self.height_wrt_subject_info = {'start': self.subject_height_start, 'end': self.subject_height_end}
-        self.is_subject_height_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
+        self.is_height_wrt_subject_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
         self.height_wrt_subject_change_from_high_to_low = None # "Does the camera height decrease noticeably in relation to the subject?"
         self.height_wrt_subject_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the subject?"
-        if self.is_subject_height_applicable:
+        if self.is_height_wrt_subject_applicable:
             if self.shot_type == "change_of_subject":
                 # change "unknown" to "no_subject"
                 for key in self.height_wrt_subject_info:
@@ -221,15 +260,16 @@ class CameraSetupData:
                         self.height_wrt_subject_change_from_high_to_low = True
                     else:
                         self.height_wrt_subject_change_from_low_to_high = True
+        self.height_wrt_subject_change = self.height_wrt_subject_change_from_high_to_low or self.height_wrt_subject_change_from_low_to_high
         
     def _set_height_relative_to_ground_attributes(self):
         self.height_wrt_ground_info = {'start': self.overall_height_start, 'end': self.overall_height_end}
-        self.is_overall_height_applicable = any(height != "unknown" for height in self.height_wrt_ground_info.values()) # "Is overall height classification possible for this video?"
+        self.is_height_wrt_ground_applicable = any(height != "unknown" for height in self.height_wrt_ground_info.values()) # "Is overall height classification possible for this video?"
         self.height_wrt_ground_change_from_high_to_low = None # "Does the camera height decrease noticeably in relation to the ground?"
         self.height_wrt_ground_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the ground?"
         self.above_water_to_underwater = None # "Does the camera transition from above water to underwater?"
         self.underwater_to_above_water = None # "Does the camera transition from underwater to above water?"
-        if self.is_overall_height_applicable:
+        if self.is_height_wrt_ground_applicable:
             if self.height_wrt_ground_info['end'] == "unknown":
                 self.height_wrt_ground_info['end'] = self.height_wrt_ground_info['start']
                 self.above_water_to_underwater = self.underwater_to_above_water = False
@@ -247,6 +287,7 @@ class CameraSetupData:
                         self.height_wrt_ground_change_from_high_to_low = True
                     else:
                         self.height_wrt_ground_change_from_low_to_high = True
+        self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
         
     def _set_camera_angle_attributes(self):
         self.camera_angle_info = {'start': self.camera_angle_start, 'end': self.camera_angle_end}
@@ -304,6 +345,12 @@ class CameraSetupData:
                         assert self.focus_change_reason == "no_change"
                         self.focus_change_from_near_to_far = self.focus_change_from_far_to_near = False
                         self.is_rack_pull_focus = self.is_focus_tracking = False
+                    else:
+                        if self.focus_info['start'] == "middle_ground":
+                            self.is_rack_pull_focus = self.focus_change_reason in ["rack_focus", "pull_focus"]
+                            self.is_focus_tracking = self.focus_change_reason == "focus_tracking"
+                        else:
+                            self.is_rack_pull_focus = self.is_focus_tracking = False
                 else:
                     if self.focus_change_reason not in ["no_change", "others", "camera_subject_movement"]:
                         self.is_rack_pull_focus = self.focus_change_reason in ["rack_focus", "pull_focus"]
@@ -316,7 +363,9 @@ class CameraSetupData:
                             else:
                                 self.focus_change_from_near_to_far = True
                                 self.focus_change_from_far_to_near = False
-                    
+        self.focus_change = self.focus_change_from_near_to_far or self.focus_change_from_far_to_near
+        self.is_rack_focus = self.is_rack_pull_focus and self.focus_change_reason == "rack_focus"
+        self.is_pull_focus = self.is_rack_pull_focus and self.focus_change_reason == "pull_focus"
                     
                     
         
@@ -584,8 +633,8 @@ class CameraSetupData:
                 raise ValueError("Subject height should be 'unknown' if shot size is 'unknown' for shot type 'change_of_subject'")
         elif self.shot_type in ['human', 'non_human'] or self.complex_shot_type in ["many_subject_one_focus", "clear_subject_dynamic_size", "clear_subject_atypical"]:
             # starting subject height should not be "unknown"
-            if self.subject_height_start == "unknown":
-                raise ValueError("Subject height start should not be 'unknown' for shot types 'human', 'non_human', 'many_subject_one_focus', 'clear_subject_dynamic_size', 'clear_subject_atypical'")
+            if self.subject_height_start == "unknown" and self.subject_height_description == "":
+                raise ValueError("Subject height start should not be 'unknown' without a description for shot types 'human', 'non_human', 'many_subject_one_focus', 'clear_subject_dynamic_size', 'clear_subject_atypical'")
         elif self.complex_shot_type in ["different_subject_in_focus"]:
             # if starting subject height is "unknown", must have a description
             if self.subject_height_start == "unknown" and self.subject_height_description == "":
@@ -621,7 +670,7 @@ class CameraSetupData:
         if self.camera_focus in ["shallow_focus", "ultra_shallow_focus"]:
             if self.focus_plane_start == "unknown":
                 raise ValueError("Focus plane start should not be 'unknown' for shallow focus")
-            if self.focus_plane_start != self.focus_plane_end:
+            if self.focus_plane_start != self.focus_plane_end and self.focus_plane_end != "unknown":
                 if self.focus_change_reason == "no_change":
                     raise ValueError("Focus change reason should not be 'no_change' for focus plane change")
             if self.focus_plane_end == "unknown":
@@ -664,4 +713,3 @@ def create_camera_setup_data_demo():
 
 if __name__ == "__main__":
     create_camera_setup_data_demo()
-

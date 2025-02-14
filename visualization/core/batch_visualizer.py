@@ -3,17 +3,18 @@ from typing import Dict, List, Any
 from datetime import datetime
 import json
 import logging
-from flask import Flask, render_template, jsonify, send_from_directory
+from flask import Flask, render_template, jsonify, send_from_directory, request
+import shutil
 from batch import Batch
 from video_data import VideoData
-from process_ndjson import process_ndjson_files
+from scripts.process_ndjson import process_ndjson_files
 from ..params.visualization_params import VisualizationParams
 from label import Label  # Add this import
 
 class BatchVisualizer:
     """Class for visualizing batches of videos based on labels."""
     
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, batch_folder: str = None):
         self.config = VisualizationParams.from_yaml(config_path)
         self.labels = Label.load_all_labels()  # Load all labels
         self.app = Flask(__name__, 
@@ -23,9 +24,29 @@ class BatchVisualizer:
         # Process NDJSON files during initialization
         logging.info("Processing NDJSON files...")
         data_config = self.config['data']
+        
+        # Use batch folder from constructor or config
+        batch_folder = batch_folder or data_config.get('batch_folder')
+        
+        # If batch folder is provided, use its ndjson and issues directories
+        if batch_folder:
+            ndjson_dir = os.path.join(batch_folder, 'ndjson')
+            issues_dir = os.path.join(batch_folder, 'issues_ndjson')
+            if not os.path.exists(ndjson_dir) or not os.path.exists(issues_dir):
+                raise ValueError(f"Batch folder {batch_folder} must contain 'ndjson' and 'issues_ndjson' directories")
+            logging.info(f"Using batch folder: {batch_folder}")
+            logging.info(f"NDJSON directory: {ndjson_dir}")
+            logging.info(f"Issues directory: {issues_dir}")
+        else:
+            ndjson_dir = data_config.get('ndjson_dir', 'exports/ndjson')
+            issues_dir = data_config.get('issues_dir', 'exports/issues_ndjson')
+            logging.info(f"No batch folder specified, using default directories:")
+            logging.info(f"NDJSON directory: {ndjson_dir}")
+            logging.info(f"Issues directory: {issues_dir}")
+            
         self.all_videos = process_ndjson_files(
-            data_config['ndjson_dir'], 
-            data_config['issues_dir']
+            ndjson_dir, 
+            issues_dir
         )
         logging.info(f"Loaded {len(self.all_videos)} total videos from NDJSON files")
         
@@ -58,6 +79,82 @@ class BatchVisualizer:
             
             return render_template('label_selection.html', labels=label_paths)
 
+        @self.app.route('/export_videos/<path:label_id>', methods=['POST'])
+        def export_videos(label_id):
+            """Export video names to a JSON file and copy label JSON."""
+            try:
+                # Format label name for folder
+                label_name = label_id.replace('/', '_')
+                
+                # Get label directory from config
+                label_dir = self.config['data'].get('label_dir', 'label_dirs')
+                if not os.path.exists(label_dir):
+                    os.makedirs(label_dir)
+                
+                # Create timestamp for unique folder
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                
+                # Create label-specific directory with timestamp
+                label_export_dir = os.path.join(label_dir, f"{label_name}_{timestamp}")
+                os.makedirs(label_export_dir)
+                
+                # Organize videos by category
+                video_categories = {
+                    'positive': [],
+                    'negative': [],
+                    'easy_negative': [],
+                    'hard_negative': [],
+                    'uncategorized': []
+                }
+                
+                # Sort videos into categories
+                for name, details in self.video_details.items():
+                    category = details['category']
+                    if category == 'positive':
+                        video_categories['positive'].append(name)
+                    elif category == 'negative':
+                        video_categories['negative'].append(name)
+                    elif category.startswith('easy_negative_'):
+                        video_categories['easy_negative'].append(name)
+                    elif category.startswith('hard_negative_'):
+                        video_categories['hard_negative'].append(name)
+                    else:
+                        video_categories['uncategorized'].append(name)
+                
+                # Remove empty categories
+                video_categories = {k: v for k, v in video_categories.items() if v}
+                
+                # Save video categories to JSON file
+                videos_json_path = os.path.join(label_export_dir, 'video_names.json')
+                with open(videos_json_path, 'w') as f:
+                    json.dump(video_categories, f, indent=2)
+                
+                # Copy the label's JSON file
+                label_parts = label_id.split('/')
+                label_json_path = os.path.join('labels', *label_parts) + '.json'
+                if os.path.exists(label_json_path):
+                    label_json_dest = os.path.join(label_export_dir, 'label.json')
+                    shutil.copy2(label_json_path, label_json_dest)
+                    
+                    # Also save the label info in a more readable format
+                    label_info = self._get_label_info()
+                    label_info_path = os.path.join(label_export_dir, 'label_info.json')
+                    with open(label_info_path, 'w') as f:
+                        json.dump(label_info, f, indent=2)
+                
+                return jsonify({
+                    'success': True,
+                    'message': f'Successfully exported data to {label_export_dir}',
+                    'export_dir': label_export_dir
+                })
+                
+            except Exception as e:
+                logging.error(f"Error exporting data: {str(e)}")
+                return jsonify({
+                    'success': False,
+                    'message': f'Error exporting data: {str(e)}'
+                }), 500
+
         @self.app.route('/visualize/<path:label_id>')
         def visualize(label_id):
             """Show visualization for specific label."""
@@ -74,6 +171,7 @@ class BatchVisualizer:
                 return render_template('index.html',
                                     categories=self._organize_videos(),
                                     label_info=self._get_label_info(),
+                                    label_id=label_id,
                                     lazy_load=self.config.get('visualization', {}).get('lazy_load_videos', True))
             except Exception as e:
                 logging.error(f"Error visualizing label: {str(e)}")
@@ -82,30 +180,24 @@ class BatchVisualizer:
         @self.app.route('/videos/<path:video_name>')
         def serve_video(video_name):
             """Serve video files."""
-            videos_dir = self.config['data']['videos_dir']
+            # Find the video in the directory structure
+            directory, filename = self.find_video_path(video_name)
             
-            # Get the actual path of the video from our stored paths
-            video_paths = self.config.get('_video_paths', {})
-            if video_name in video_paths:
-                # If we have a stored subdirectory path for this video
-                subdir = video_paths[video_name]
-                full_path = os.path.join(videos_dir, subdir)
-                logging.info(f"Serving video from: {full_path}, filename: {video_name}")
-                return send_from_directory(
-                    full_path,
-                    video_name,
-                    mimetype='video/mp4',
-                    as_attachment=False
-                )
-            
-            # Fallback to direct path
-            logging.info(f"Serving video directly from: {videos_dir}, filename: {video_name}")
-            return send_from_directory(
-                videos_dir,
-                video_name,
-                mimetype='video/mp4',
-                as_attachment=False
-            )
+            if directory and filename:
+                # logging.info(f"Serving video from: {directory}, filename: {filename}")
+                try:
+                    return send_from_directory(
+                        directory,
+                        filename,
+                        mimetype='video/mp4',
+                        as_attachment=False
+                    )
+                except Exception as e:
+                    logging.error(f"Error serving video {filename} from {directory}: {str(e)}")
+                    return f"Error serving video: {str(e)}", 500
+            else:
+                logging.warning(f"Video {video_name} not found")
+                return f"Video {video_name} not found", 404
 
         @self.app.route('/api/categories')
         def get_categories():
@@ -168,67 +260,95 @@ class BatchVisualizer:
                 f"Label '{label_name}' not found. Available labels:\n{self.labels}"
             )
     
-    def _get_video_details(self, video: VideoData) -> Dict[str, Any]:
-        """Extract all relevant details from a video."""
+    def _get_video_details(self, video: VideoData) -> dict:
+        """Get relevant details from a video for categorization."""
         details = {
             'camera_motion': {},
             'camera_setup': {},
-            'lighting_setup': {}  # Default empty dict if light_setup is not set
+            'lighting_setup': {}
         }
-
-        # Try to get camera motion details
+        
         try:
+            motion_data = video.cam_motion
             details['camera_motion'] = {
-                attr: getattr(video.cam_motion, attr)
-                for attr in dir(video.cam_motion)
-                if not attr.startswith('_') and not callable(getattr(video.cam_motion, attr))
+                'major_simple': motion_data.camera_movement == 'major_simple',
+                'forward': motion_data.camera_forward_backward == 'forward',
+                'backward': motion_data.camera_forward_backward == 'backward',
+                'steadiness': motion_data.steadiness,
+                'pan_right': motion_data.pan_right,
+                'camera_pan': motion_data.camera_pan,
+                'complex_motion_description': motion_data.complex_motion_description
             }
-        except AttributeError:
-            logging.warning(f"Camera motion not set for video")
-        
-        # Try to get camera setup details
+        except AttributeError as e:
+            logging.warning(f"Camera motion not set: {e}")
+            details['camera_motion'] = {
+                'major_simple': False,
+                'forward': False,
+                'backward': False,
+                'steadiness': 'unknown',
+                'pan_right': None,
+                'camera_pan': 'no',
+                'complex_motion_description': ''
+            }
+            
         try:
+            setup_data = video.cam_setup
+            # Initialize camera angle info and focus info
+            setup_data._set_camera_angle_attributes()
+            setup_data._set_height_relative_to_ground_attributes()  # Make sure height attributes are initialized
             details['camera_setup'] = {
-                attr: getattr(video.cam_setup, attr)
-                for attr in dir(video.cam_setup)
-                if not attr.startswith('_') and not callable(getattr(video.cam_setup, attr))
+                'camera_angle_info': setup_data.camera_angle_info,
+                'is_camera_angle_applicable': setup_data.is_camera_angle_applicable,
+                'camera_angle_start': setup_data.camera_angle_start,
+                'camera_angle_end': setup_data.camera_angle_end,
+                'is_dutch_angle': setup_data.is_dutch_angle,
+                'is_dutch_angle_varying': setup_data.is_dutch_angle_varying,
+                'is_dutch_angle_fixed': setup_data.is_dutch_angle_fixed,
+                'camera_angle_change_from_high_to_low': setup_data.camera_angle_change_from_high_to_low,
+                'camera_angle_change_from_low_to_high': setup_data.camera_angle_change_from_low_to_high,
+                'height_wrt_ground_info': setup_data.height_wrt_ground_info,
+                'is_height_wrt_ground_applicable': setup_data.is_height_wrt_ground_applicable,
+                'height_wrt_ground_start': setup_data.overall_height_start,
+                'height_wrt_ground_end': setup_data.overall_height_end
             }
-        except AttributeError:
-            logging.warning(f"Camera setup not set for video")
-        
-        # Try to get lighting setup details
+        except AttributeError as e:
+            logging.warning(f"Camera setup not set: {e}")
+            details['camera_setup'] = {
+                'camera_angle_info': {'start': 'unknown', 'end': 'unknown'},
+                'is_camera_angle_applicable': False,
+                'camera_angle_start': 'unknown',
+                'camera_angle_end': 'unknown',
+                'is_dutch_angle': False,
+                'is_dutch_angle_varying': False,
+                'is_dutch_angle_fixed': False,
+                'camera_angle_change_from_high_to_low': False,
+                'camera_angle_change_from_low_to_high': False,
+                'focus_info': {'start': 'unknown', 'end': 'unknown'},
+                'camera_focus': 'unknown',
+                'focus_plane_start': 'unknown',
+                'focus_plane_end': 'unknown',
+                'focus_change_reason': 'no_change',
+                'height_wrt_ground_info': 'unknown',
+                'is_height_wrt_ground_applicable': False,
+                'height_wrt_ground_start': 'unknown',
+                'height_wrt_ground_end': 'unknown'
+            }
+            
         try:
+            light_data = video.light_setup
             details['lighting_setup'] = {
-                attr: getattr(video.light_setup, attr)
-                for attr in dir(video.light_setup)
-                if not attr.startswith('_') and not callable(getattr(video.light_setup, attr))
+                # Add lighting setup details here if needed
             }
-        except AttributeError:
-            logging.warning(f"Light setup not set for video")
+        except AttributeError as e:
+            logging.warning(f"Light setup not set: {e}")
             
         return details
 
     def create_batch(self, all_videos: Dict[str, VideoData]) -> Batch:
-        """Create a batch based on configuration."""
-        # Get video names from config
-        logging.info("Getting video names from config...")
-        video_names = VisualizationParams.get_video_names(self.config)
-        
-        if not video_names:
-            raise ValueError("No video names found in config")
-            
-        logging.info(f"Found {len(video_names)} videos in video names file: {video_names}")
-        
-        # Create batch
-        batch = Batch.create(
-            all_videos=all_videos,
-            video_names=video_names,
-            approver=self.config.get('constraints', {}).get('approver'),
-            time_range=VisualizationParams.get_time_range(self.config.get('constraints', {}))
-        )
-        
+        """Create a batch from all available videos."""
+        logging.info(f"Creating batch with all {len(all_videos)} videos")
+        batch = Batch(all_videos)
         logging.info(f"Created batch with {len(batch)} videos")
-        logging.info(f"Batch video names: {batch.get_video_names()}")
         return batch
     
     def categorize_videos(self, batch: Batch) -> Dict[str, Dict[str, Any]]:
@@ -245,24 +365,28 @@ class BatchVisualizer:
                 details = self._get_video_details(video)
                 logging.info("Got video details")
                 
-                # Debug video attributes
-                logging.info("Video attributes:")
-                try:
-                    logging.info(f"  Camera motion: {video.cam_motion.camera_movement}")
-                    logging.info(f"  Forward/Backward: {video.cam_motion.camera_forward_backward}")
-                except AttributeError:
-                    logging.info("  Camera motion: Not set")
-                    logging.info("  Forward/Backward: Not set")
+                # # Debug video attributes
+                # logging.info("Video attributes:")
+                # try:
+                #     logging.info(f"  Camera motion: {video.cam_motion.camera_movement}")
+                #     logging.info(f"  Forward/Backward: {video.cam_motion.camera_forward_backward}")
+                # except AttributeError:
+                #     logging.info("  Camera motion: Not set")
+                #     logging.info("  Forward/Backward: Not set")
 
-                try:
-                    logging.info(f"  Camera angle: {video.cam_setup.camera_angle_start}")
-                except AttributeError:
-                    logging.info("  Camera angle: Not set")
+                # try:
+                #     # Print detailed camera angle info
+                #     logging.info(f"  Camera angle info:")
+                #     logging.info(f"    Start: {video.cam_setup.camera_angle_info['start']}")
+                #     logging.info(f"    End: {video.cam_setup.camera_angle_info['end']}")
+                #     logging.info(f"    Is applicable: {video.cam_setup.is_camera_angle_applicable}")
+                # except AttributeError:
+                #     logging.info("  Camera angle: Not set")
 
-                try:
-                    logging.info(f"  Steadiness: {video.cam_motion.steadiness}")
-                except AttributeError:
-                    logging.info("  Steadiness: Not set")
+                # try:
+                #     logging.info(f"  Steadiness: {video.cam_motion.steadiness}")
+                # except AttributeError:
+                #     logging.info("  Steadiness: Not set")
                 
                 # Determine category using label rules
                 category = 'uncategorized'  # Default category
@@ -304,23 +428,40 @@ class BatchVisualizer:
                 # Add reason for uncategorized videos
                 if category == 'uncategorized':
                     reason = []
+                    # Add camera motion details
                     try:
-                        if video.cam_motion.camera_movement not in ['major_simple', 'major_complex']:
-                            reason.append(f"Invalid camera movement: {video.cam_motion.camera_movement}")
-                        if video.cam_motion.camera_forward_backward not in ['forward', 'backward']:
-                            reason.append(f"Invalid forward/backward motion: {video.cam_motion.camera_forward_backward}")
-                        if video.cam_motion.steadiness in ['unsteady', 'very_unsteady']:
-                            reason.append(f"Invalid steadiness: {video.cam_motion.steadiness}")
+                        motion = video.cam_motion
+                        reason.append("Camera Motion:")
+                        for attr in dir(motion):
+                            if not attr.startswith('_') and not callable(getattr(motion, attr)):
+                                value = getattr(motion, attr)
+                                reason.append(f"  {attr}: {value}")
                     except AttributeError:
                         reason.append("Camera motion data not set")
 
+                    # Add camera setup details
                     try:
-                        if video.cam_setup.camera_angle_start in ['bird_eye_angle', 'worm_eye_angle', 'unknown']:
-                            reason.append(f"Invalid camera angle: {video.cam_setup.camera_angle_start}")
+                        setup = video.cam_setup
+                        reason.append("\nCamera Setup:")
+                        for attr in dir(setup):
+                            if not attr.startswith('_') and not callable(getattr(setup, attr)):
+                                value = getattr(setup, attr)
+                                reason.append(f"  {attr}: {value}")
                     except AttributeError:
                         reason.append("Camera setup data not set")
 
-                    logging.info(f"Video uncategorized due to: {', '.join(reason)}")
+                    # Add lighting setup details
+                    try:
+                        light = video.light_setup
+                        reason.append("\nLighting Setup:")
+                        for attr in dir(light):
+                            if not attr.startswith('_') and not callable(getattr(light, attr)):
+                                value = getattr(light, attr)
+                                reason.append(f"  {attr}: {value}")
+                    except AttributeError:
+                        reason.append("Lighting setup data not set")
+
+                    logging.info(f"Video uncategorized. Debug info:\n{'\n'.join(reason)}")
                 
                 video_details[name] = {
                     'details': details,
@@ -426,4 +567,43 @@ class BatchVisualizer:
             'negative_rule': self.current_label.neg_rule.rule,
             'easy_negative_rules': {k: v.rule for k, v in self.current_label.easy_neg_rules.items()},
             'hard_negative_rules': {k: v.rule for k, v in self.current_label.hard_neg_rules.items()}
-        } 
+        }
+
+    def find_video_path(self, video_name: str) -> tuple[str, str]:
+        """Find the directory and filename for a video.
+        
+        Args:
+            video_name: Name of the video to find
+            
+        Returns:
+            Tuple of (directory, filename) if found, (None, None) if not found
+        """
+        # Get videos_dir from config
+        videos_dir = self.config['data'].get('videos_dir')
+        if not videos_dir:
+            logging.warning("Videos directory not specified in config")
+            return None, None
+            
+        # Convert to absolute path if it's relative
+        if not os.path.isabs(videos_dir):
+            # Get the directory where the config file is located
+            config_dir = os.path.dirname(os.path.abspath('visualization/configs/visualizer_config.yaml'))
+            # Resolve the relative path from the config directory
+            videos_dir = os.path.abspath(os.path.join(config_dir, videos_dir))
+        
+        # logging.info(f"Searching for {video_name} in videos directory: {videos_dir}")
+        
+        if not os.path.exists(videos_dir):
+            logging.warning(f"Videos directory does not exist: {videos_dir}")
+            return None, None
+            
+        # Walk through all subdirectories
+        for root, _, files in os.walk(videos_dir):
+            # logging.info(f"Checking directory: {root}")
+            if video_name in files:
+                full_path = os.path.join(root, video_name)
+                # logging.info(f"Found video at: {full_path}")
+                return root, video_name
+        
+        logging.warning(f"Video {video_name} not found in videos directory")
+        return None, None 

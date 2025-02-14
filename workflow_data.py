@@ -1,5 +1,6 @@
 from typing import List, Optional
 from datetime import datetime
+import logging
 
 class WorkflowData:
     """Class for storing essential workflow-related data for a video."""
@@ -11,6 +12,7 @@ class WorkflowData:
         self._approver: Optional[str] = None
         self._approval_time: Optional[datetime] = None
         self._labelers: List[str] = []
+        self._project_name: Optional[str] = None
 
     @property
     def video_name(self) -> str:
@@ -54,14 +56,20 @@ class WorkflowData:
 
     @property
     def approval_time(self) -> datetime:
-        if self._approval_time is None:
-            raise AttributeError("approval_time has not been set")
-        return self._approval_time
+        return self._approval_time  # Allow None values
 
     @approval_time.setter
     def approval_time(self, value: str):
+        if value is None:
+            self._approval_time = None
+            return
+            
         if isinstance(value, str):
-            self._approval_time = datetime.fromisoformat(value.replace('Z', '+00:00'))
+            try:
+                self._approval_time = datetime.fromisoformat(value.replace('Z', '+00:00'))
+            except ValueError as e:
+                logging.error(f"Invalid approval_time format: {value}")
+                self._approval_time = None
         elif isinstance(value, datetime):
             self._approval_time = value
         else:
@@ -74,6 +82,16 @@ class WorkflowData:
     @labelers.setter
     def labelers(self, value: List[str]):
         self._labelers = value
+
+    @property
+    def project_name(self) -> str:
+        if self._project_name is None:
+            raise AttributeError("project_name has not been set")
+        return self._project_name
+
+    @project_name.setter
+    def project_name(self, value: str):
+        self._project_name = value
 
     @classmethod
     def create(cls, **kwargs):
@@ -98,6 +116,9 @@ class WorkflowData:
         if 'labelers' in kwargs:
             instance.labelers = kwargs['labelers']
             
+        if 'project_name' in kwargs:
+            instance.project_name = kwargs['project_name']
+            
         return instance
 
     def __repr__(self):
@@ -107,5 +128,6 @@ class WorkflowData:
             f"editing_url='{self._editing_url}', "
             f"approver='{self._approver}', "
             f"approval_time='{self._approval_time}', "
+            f"project_name='{self._project_name}', "
             f"labelers={self._labelers})"
         ) 

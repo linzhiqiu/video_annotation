@@ -1,0 +1,77 @@
+# Labelbox API configuration
+api_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbTA3b2RubGkwZjR6MDd2YTZoaWcxanphIiwib3JnYW5pemF0aW9uSWQiOiJjbTA3b2RubGEwZjR5MDd2YWJzc2g4ZXdkIiwiYXBpS2V5SWQiOiJjbTA5dGRtcXMweGE3MDdzaGU5aWVja21vIiwic2VjcmV0IjoiZWNlODE5NmY1NzgwMDI5NzgxNDVkZDRkMDM5NWRkN2IiLCJpYXQiOjE3MjQ2MDUxNTAsImV4cCI6MjM1NTc1NzE1MH0.kamkacoCi5hgeoFC6WcTIAA2AmPqrCd4auD3U3S-Jhs"
+
+# Output directory for exports
+output_dir: "exports"
+
+# Whether to overwrite existing exports (if false, creates timestamped directories)
+overwrite_exports: true
+
+# Export parameters
+export_params:
+  attachments: false
+  metadata_fields: false
+  data_row_details: true
+  project_details: true
+  label_details: true
+  performance_details: true
+  interpolated_frames: false
+  embeddings: false
+
+# List of project IDs to export
+project_ids:
+  - "cm2iljzsz00rg07117sq10jiw"
+  - "cm2iljdx52xuj07y54gwb6r7i"
+  - "cm56rp9oc0i5m071j0zy2eq8c"
+  - "cm56rjuz506zl072c1hjzhnn3"
+
+# Export filters
+filters:
+  workflow_status: "Done"  # Options: ToLabel, InReview, InRework, Done
+
+# Google Sheets configuration
+google_sheets:
+  # Whether to perform sheets export. If null, will export from latest export.
+  # If a directory path is specified, will use that directory's exports instead.
+  # Can be: null, "exports", "exports_20240225_093000", etc.
+  perform_export: exports
+  # perform_export: null
+  # Whether to include videos with issues in sheets
+  include_issues: true
+  # Default spreadsheet for unassigned approvers
+  default_spreadsheet_id: "1rDZObQdAzNMqBX2OS2w5xZLUQ0lLpcOEzJrGS5VXbGc"
+  # Mapping of approvers to their spreadsheet IDs
+  approver_spreadsheets:
+    "19852226698@139.com": "1P2b7oBqXphbm0i4mhG2Db6htBCrTS91lSBf3ES5mVIA"
+    "lucky170175@gmail.com": "1ihnjW_eBS9leqb6COoMfEhfT-uCGTJ4Ywk6E8legKZo"
+    "chwen.1@outlook.com": "1nBs_KQuavIoots5dVH2yMmJN9Tr5vMitTTlkUAd3-CM"
+    "iceym16@gmail.com": "1bMOlf0YC4ltQdogFKsK2bQa4z4ITaNAOAd_fKceXs70"
+    "yangyongbo716@outlook.com": "1cpm0d86pRa28gRpOTbHw-bt_Da8--IdNYVwkKKW79AI"
+    "huangyuhan1130@gmail.com": "13eJZwlSDTIdSwh0H7dTElrScJQAlYQwqeBsNpr4fyVQ"
+    "zixidai185@gmail.com": "1Z7rxLRn5bNFwqcFqb_smf1bffDP5oI05Ekf6nyaYUDU"
+    "yangeve4967@gmail.com": "1DZfOoyDWYxXeVDYstBk9n5wbXquQxNGlE8gJD8XM7JM"
+    "supervisor@grandecenter.org": "1uH8CYbay_yBBBkLADk504czec_y6CufDBcq_8jcz1Cg"
+    "rater.64@grandecenter.org": "16e9gL-n4MB2LKSOPgjaGhxfcTOlRl0zV1hdK1he0Rmc"
+    "wangluxuan59@gmail.com": "1sZVFW4yoac0KzVfrEWmBxPm_j4nxCBgmupB82MTEEu4"
+    "gela.xu@outlook.com": "1iBlzwjrjkkOIxRFdsFMDTBVeq-McZregsump_StGVg0"
+    "rater.4@grandecenter.org": "1V8-gWR9Adz5t7LlsLFkCnrNmOcdUliuSwHScuAVKpYU"
+    "zhiqiul@andrew.cmu.edu": "19RB-68xhhac8EGzJdgobDQEZKFAqeJGxlOwY5l2o5fQ"
+    "drjiang@andrew.cmu.edu": "1yJM-uR6odfZLudF3B6DSarR1IdDSyTGhrky3VIZcEGE"
+    "siyuancen096@gmail.com": "1TjIbdwtiEPL4bpbxq1H9RRuahHwS6o4FsssRVj7oAYA"
+    "28jackiiee@gmail.com": "1L0VGflT1D0f_yVdZVtkvX8sTiIzv-y8WBf7WYk8P32I"
+    "wukw8016@gmail.com": "1sOkLiv6kn7iwYJxCZRf5kJQLH2Y2XKaQT8k_vbfhR80"
+    "stephenw0516@gmail.com": "1EHJapty2lIA3JKLfrEKhQtfzyxEws5KA7Kw-xOFnJqg"
+    "ipi@andrew.cmu.edu": "1bIOKnZveoIFxsgE3S2OCavl-7Rq-ExTz2L84nBINVxY"
+    "eanoh4111@gmail.com": "1EDawV7d1OgORdJ10QBwN7JROmhxnTbxeyn9TxvUYyuA"
+    "aalucythejellyfish@hotmail.com": "1WHXWJXt1bIMTBef-LXn2hXwSDia9D_Q7dmbJlMhTbqU"
+    "sarahchenart@gmail.com": "1jA1oD4mdb5-KzpPcqgaJGYAdjov5gyMsUIzr8v_diSM"
+    "shi.4123123@gmail.com": "1zFmdhb0FcrbROmt2vc_DMcfvzs5oRovvX29DPBKUgWE"
+    "ttiffanyyllingg@gmail.com": "1pTjTIYKVN12VhDwtZxrg-o9pZBu20_GH0jaD1Q0-lNY"
+    "qsydfzly@outlook.com": "117xdvScdKKrcVldnNVi81nAGTeXa1tHVGtvCSjEzMrQ"
+    "sunnyg@andrew.cmu.edu": "1NiYH_yfdEiFpjPma5i7u-A_qT568MyrcaDzUKltVfaY"
+
+# Example filter options (commented out):
+# filters:
+#   batch_ids: ["batch_id_1", "batch_id_2"]
+#   data_row_ids: ["data_row_id_1", "data_row_id_2"]
+#   global_keys: ["global_key_1", "global_key_2"]

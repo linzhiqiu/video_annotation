@@ -1,12 +1,46 @@
 from camera_motion_data import CameraMotionData
 from camera_setup_data import CameraSetupData
 from lighting_setup_data import LightingSetupData
+from caption_data import CaptionData
+from workflow_data import WorkflowData
 
 class VideoData:
     def __init__(self):
+        # Data objects for each annotation type
         self._cam_motion = None  # Short for camera_motion_data
         self._cam_setup = None   # Short for camera_setup_data
         self._light_setup = None  # Short for lighting_setup_data
+        self._caption_data = None  # For storing video captions
+        
+        # Single list to store all workflow data
+        self._workflows = []
+
+    @property
+    def workflows(self):
+        return self._workflows
+
+    def add_workflow(self, workflow_data):
+        """Add a workflow to the video's workflow list."""
+        if isinstance(workflow_data, dict):
+            workflow = WorkflowData.create(**workflow_data)
+        elif isinstance(workflow_data, WorkflowData):
+            workflow = workflow_data
+        else:
+            raise TypeError("workflow_data must be a WorkflowData instance or a dictionary of parameters")
+        
+        # Check if we already have a workflow for this project
+        for existing_workflow in self._workflows:
+            if existing_workflow.project_name == workflow.project_name:
+                # If new workflow has more recent approval time, replace the old one
+                if (workflow.approval_time and 
+                    (not existing_workflow.approval_time or 
+                     workflow.approval_time > existing_workflow.approval_time)):
+                    self._workflows.remove(existing_workflow)
+                    self._workflows.append(workflow)
+                return
+        
+        # If no existing workflow for this project, add the new one
+        self._workflows.append(workflow)
 
     @property
     def cam_motion(self):
@@ -53,6 +87,41 @@ class VideoData:
         else:
             raise TypeError("light_setup must be a LightingSetupData instance or a dictionary of parameters")
 
+    @property
+    def caption_data(self):
+        if self._caption_data is None:
+            # Return a new empty CaptionData instance instead of raising an error
+            self._caption_data = CaptionData()
+        return self._caption_data
+
+    @caption_data.setter
+    def caption_data(self, value):
+        if isinstance(value, dict):
+            self._caption_data = CaptionData.create(**value)  # Auto-create instance
+        elif isinstance(value, CaptionData):
+            self._caption_data = value
+        else:
+            raise TypeError("caption_data must be a CaptionData instance or a dictionary of parameters")
+
+    def update_workflow_from_project(self, project_name: str, workflow_data: dict):
+        """
+        Update workflow data based on project name, using the mappings defined in project_mappings.yaml
+        This method should be implemented by the batch processing code that has access to the mappings
+        """
+        pass
+
+    def has_annotation_data(self) -> bool:
+        """
+        Check if the video has any annotation data besides workflows.
+        Returns True if any of cam_motion, cam_setup, or light_setup are set.
+        """
+        if self._cam_motion is not None:
+            return True
+        if self._cam_setup is not None:
+            return True
+        if self._light_setup is not None:
+            return True
+        return False
 
 def create_video_data_demo():
     video_sample = VideoData()
