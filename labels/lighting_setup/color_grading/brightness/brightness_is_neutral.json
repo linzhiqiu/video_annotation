@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Neutral",
+    "label_name": "brightness_is_neutral",
+    "def_question": [
+        "Is the video’s brightness balanced, neither too bright nor too dark?"
+    ],
+    "alt_question": [
+        "Does the scene feature an evenly lit environment?",
+        "Is the lighting neither overly bright nor too dark?",
+        "Does the video maintain a natural balance of brightness?",
+        "Is the exposure level consistent without extreme highlights or shadows?",
+        "Does the scene have a moderate brightness level, without strong contrasts?",
+        "Is the lighting in the video soft and evenly distributed?",
+        "Does the video avoid extremes of brightness or darkness?",
+        "Is the brightness well-balanced for a neutral appearance?"
+    ],
+    "def_prompt": [
+        "The video’s brightness is balanced, neither too bright nor too dark."
+    ],
+    "alt_prompt": [
+        "A video with an evenly balanced brightness level.",
+        "A shot where lighting is neutral and well-distributed.",
+        "A scene maintaining a natural and moderate brightness.",
+        "A sequence where exposure remains steady without strong highlights or shadows.",
+        "A video featuring soft, natural lighting without extremes.",
+        "A shot with moderate brightness that does not overpower the scene.",
+        "A video where light intensity is natural and unobtrusive.",
+        "A sequence maintaining a consistent, neutral brightness level."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness == 'neutral'",
+    "neg_rule_str": "self.lighting_setup.brightness != 'neutral'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

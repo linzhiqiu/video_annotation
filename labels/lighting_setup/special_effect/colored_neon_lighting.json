@@ -1,0 +1,34 @@
+{
+    "label": "Colored Neon Lighting",
+    "label_name": "colored_neon_lighting",
+    "def_question": [
+        "Does the video prominently feature artificial colored or neon lighting?"
+    ],
+    "alt_question": [
+        "Is the scene illuminated by strong neon or artificially colored lights?",
+        "Does the video emphasize vibrant, stylized colored lighting?",
+        "Are bright, colorful neon hues a major component of the scene?",
+        "Does the lighting create a strong visual atmosphere using artificial color effects?",
+        "Is neon lighting or colored artificial illumination a key part of the scene?",
+        "Are synthetic color lights enhancing the visual aesthetics of the video?",
+        "Is dramatic, non-natural lighting playing a dominant role in the shot?",
+        "Does the scene use stylized, vibrant colored lighting to shape the mood?"
+    ],
+    "def_prompt": [
+        "The video prominently features artificial colored or neon lighting."
+    ],
+    "alt_prompt": [
+        "A scene with dramatic, artificially colored lighting creating a strong visual mood.",
+        "A video where neon lighting adds stylized hues to the environment.",
+        "A shot dominated by bright, synthetic color lights for atmospheric effect.",
+        "A sequence where colored artificial lighting is used prominently.",
+        "A video emphasizing vibrant neon or colorful artificial illumination.",
+        "A scene visually defined by bold, non-natural colored lighting.",
+        "A shot where intense neon or artificially colored lighting shapes the aesthetic.",
+        "A sequence with a strong emphasis on synthetic color lighting."
+    ],
+    "pos_rule_str": "self.lighting_setup.colored_neon_lighting is True",
+    "neg_rule_str": "self.lighting_setup.colored_neon_lighting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

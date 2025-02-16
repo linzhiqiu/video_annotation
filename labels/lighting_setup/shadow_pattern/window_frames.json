@@ -1,0 +1,34 @@
+{
+    "label": "Shadow Pattern - Window Frames",
+    "label_name": "window_frames",
+    "def_question": [
+        "Does the video feature shadows cast by window frames?"
+    ],
+    "alt_question": [
+        "Are there strong shadows created by window frames in the shot?",
+        "Does the lighting pattern include distinct window frame shadows?",
+        "Is there a contrast-heavy lighting effect from a window’s shape?",
+        "Do window frame shadows define the composition of the scene?",
+        "Are shadows from window frames used for dramatic effect?",
+        "Does the scene feature structured light and shadow from windows?",
+        "Is the light shaped by a window frame, casting gridded patterns?",
+        "Are window frame shadows playing a major role in the scene’s mood?"
+    ],
+    "def_prompt": [
+        "The video features shadows cast by window frames."
+    ],
+    "alt_prompt": [
+        "A scene where window frames create structured shadow patterns.",
+        "A video showcasing high-contrast window-shaped shadows.",
+        "A shot where lighting through window frames defines the composition.",
+        "A sequence using window frame shadows for dramatic storytelling.",
+        "A setting where window-framed light creates gridded or lined shadows.",
+        "A video where window shadows influence the overall lighting scheme.",
+        "A scene where light and shadow interact through a window frame.",
+        "A shot featuring architectural window shadows shaping the mood."
+    ],
+    "pos_rule_str": "self.lighting_setup.window_frames is True",
+    "neg_rule_str": "self.lighting_setup.window_frames is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

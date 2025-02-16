@@ -1,0 +1,34 @@
+{
+    "label": "Street Light",
+    "label_name": "street_light",
+    "def_question": [
+        "Does the video feature visible light from street lamps?"
+    ],
+    "alt_question": [
+        "Does the scene include clearly visible streetlights illuminating the environment?",
+        "Are streetlights playing a key role in defining the scene’s lighting?",
+        "Does the video showcase streetlights casting illumination on roads or surroundings?",
+        "Is the setting visually shaped by artificial street lighting?",
+        "Are visible street lamps a primary source of illumination in the video?",
+        "Does the video emphasize the glow of streetlights on the scene?",
+        "Are bright, pole-mounted lamps lighting up the area in the shot?",
+        "Is the video defined by artificial outdoor lighting from streetlights?"
+    ],
+    "def_prompt": [
+        "The video features visible light from street lamps."
+    ],
+    "alt_prompt": [
+        "A scene where streetlights provide the primary source of illumination.",
+        "A video emphasizing the artificial glow of street lamps at night.",
+        "A shot showcasing streets lit by overhead artificial lighting.",
+        "A sequence where streetlights define the visibility and mood of the setting.",
+        "A setting where street lighting enhances the scene’s atmosphere.",
+        "A video highlighting the presence of bright artificial lights along a road.",
+        "A shot featuring a well-lit street illuminated by overhead street lamps.",
+        "A sequence where outdoor artificial lighting from streetlights is dominant."
+    ],
+    "pos_rule_str": "self.lighting_setup.street_light is True",
+    "neg_rule_str": "self.lighting_setup.street_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

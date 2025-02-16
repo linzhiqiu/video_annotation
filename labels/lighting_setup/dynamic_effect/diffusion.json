@@ -1,0 +1,34 @@
+{
+    "label": "Diffusion",
+    "label_name": "diffusion",
+    "def_question": [
+        "Does the video feature a visible diffusion effect, where particles, fluids, or other materials spread and disperse over time?"
+    ],
+    "alt_question": [
+        "Does the shot depict a gradual dispersal of particles or substances?",
+        "Is there a visible effect where smoke, fog, or ink spreads out?",
+        "Does the scene feature a diffusion effect, such as mist or dust spreading?",
+        "Is the lighting or material in the video softly dispersing over time?",
+        "Does the video contain an effect where substances dissolve or blend into the surroundings?",
+        "Is there a moment where a liquid, gas, or light visibly diffuses in the scene?",
+        "Does the video showcase a natural or artistic diffusion effect?",
+        "Are there elements gradually spreading or fading in the composition?"
+    ],
+    "def_prompt": [
+        "The video features a visible diffusion effect, where particles, fluids, or other materials spread and disperse over time."
+    ],
+    "alt_prompt": [
+        "A shot where mist, fog, or light diffuses softly over time.",
+        "A video highlighting the gradual dispersion of particles or light.",
+        "A sequence showcasing diffusion effects in motion.",
+        "A shot where materials such as smoke or ink spread naturally.",
+        "A video where light or color gradually disperses through the frame.",
+        "A setting where elements dissolve or fade into their surroundings.",
+        "A shot where a diffusion effect creates a soft, blended look.",
+        "A scene emphasizing the gradual spread or blending of materials."
+    ],
+    "pos_rule_str": "self.lighting_setup.diffusion is True",
+    "neg_rule_str": "self.lighting_setup.diffusion is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

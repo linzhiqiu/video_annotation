@@ -18,8 +18,8 @@
         "A screen-captured video, common in online classes or gaming streams.",
         "A digital display recording used for instructional or meeting purposes."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'screen_recording'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'screen_recording'",
+    "pos_rule_str": "self.cam_setup.screen_recording_pov is True",
+    "neg_rule_str": "self.cam_setup.screen_recording_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

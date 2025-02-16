@@ -1,0 +1,34 @@
+{
+    "label": "Color Temperature Is Changing (Complex)",
+    "label_name": "color_temperature_is_changing",
+    "def_question": [
+        "Does the video’s color temperature shift dynamically over time?"
+    ],
+    "alt_question": [
+        "Does the video’s color grading change significantly throughout?",
+        "Is there a noticeable variation in the color temperature?",
+        "Does the scene transition between warm and cool tones?",
+        "Is there an evolving or shifting color palette in the video?",
+        "Does the lighting and color temperature fluctuate over time?",
+        "Does the video show deliberate color temperature changes?",
+        "Is there a progression or transition between different color temperatures?",
+        "Does the scene undergo a noticeable color transformation?"
+    ],
+    "def_prompt": [
+        "The video’s color temperature shifts dynamically over time."
+    ],
+    "alt_prompt": [
+        "A video where the color grading changes throughout.",
+        "A sequence featuring evolving color temperature shifts.",
+        "A shot with transitions between warm and cool tones.",
+        "A video with an intentional change in color temperature.",
+        "A scene where the lighting color shifts across different moments.",
+        "A video displaying a dynamic spectrum of color temperatures.",
+        "A cinematic effect using changing color tones over time.",
+        "A sequence where the color grading is deliberately inconsistent."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_temperature == 'complex_changing'",
+    "neg_rule_str": "self.lighting_setup.color_temperature != 'complex_changing'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

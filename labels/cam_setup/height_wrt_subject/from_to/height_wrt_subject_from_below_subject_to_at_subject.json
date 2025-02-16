@@ -1,0 +1,28 @@
+{
+    "label": "Height Wrt Subject From Below Subject To At Subject",
+    "label_name": "height_wrt_subject_from_below_subject_to_at_subject",
+    "def_question": [
+        "Does the camera start below the subject and move up to their height?"
+    ],
+    "alt_question": [
+        "Does the shot transition from looking up at the subject to a straight-on view?",
+        "Does the camera rise from a low angle to the subject's height?",
+        "Does the camera move from beneath the subject to being level with them?",
+        "Does the framing change from an upward view to an eye-level perspective?",
+        "Does the camera shift from a low position to the subject's height?"
+    ],
+    "def_prompt": [
+        "The camera starts below the subject and moves up to their height."
+    ],
+    "alt_prompt": [
+        "A shot transitioning from looking up at the subject to a straight-on view.",
+        "A sequence where the camera rises from below to the subject's level.",
+        "A video showing the camera moving from a low angle to eye level.",
+        "A shot that changes from an upward view to a level perspective.",
+        "A camera movement ascending from beneath the subject to their height."
+    ],
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_info['start'] == 'below_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'at_subject'",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_info['start'] not in ['below_subject', 'unknown'] or self.cam_setup.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Revealing Shot",
+    "label_name": "revealing_shot",
+    "def_question": [
+        "Does the video contain a revealing shot that gradually uncovers the scenery or subjects?"
+    ],
+    "alt_question": [
+        "Does the shot progressively reveal the subject or scene?",
+        "Is there a camera movement that gradually exposes more of the environment?",
+        "Does the video feature a dynamic reveal of a subject or setting?",
+        "Is there a transition where the camera unveils previously hidden elements?",
+        "Does the scene open up visually through camera movement?",
+        "Is the subject revealed slowly rather than being fully visible at once?",
+        "Does the video use a tracking or sweeping motion to reveal something?",
+        "Is there a cinematic reveal effect achieved through camera movement?"
+    ],
+    "def_prompt": [
+        "The video contains a revealing shot where camera movement gradually uncovers the environment or subject."
+    ],
+    "alt_prompt": [
+        "A shot where the camera movement progressively reveals the scene.",
+        "A video where the subject is gradually uncovered through movement.",
+        "A sequence that unveils hidden parts of the setting dynamically.",
+        "A shot where the camera’s motion slowly reveals new visual elements.",
+        "A video using a tracking or panning effect to reveal the subject.",
+        "A setting where objects or people emerge into view through framing.",
+        "A shot where the environment becomes clearer through camera movement.",
+        "A scene dynamically revealing more as the camera moves."
+    ],
+    "pos_rule_str": "self.lighting_setup.revealing_shot is True",
+    "neg_rule_str": "self.lighting_setup.revealing_shot is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

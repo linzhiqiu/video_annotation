@@ -1,0 +1,34 @@
+{
+    "label": "Direction Is Side Light",
+    "label_name": "direction_is_side_light",
+    "def_question": [
+        "Is the primary light source positioned to the side of the subject?"
+    ],
+    "alt_question": [
+        "Is the subject illuminated from the side?",
+        "Does the lighting create noticeable highlights on one side of the subject?",
+        "Is the scene characterized by strong light contrast from one direction?",
+        "Does the shot feature a dominant sidelight as the main illumination?",
+        "Is the subject’s face or body partially shadowed due to side lighting?",
+        "Does the video showcase dramatic lighting contrast with sidelight emphasis?",
+        "Is the main source of illumination positioned to the side?",
+        "Is the subject’s form defined by a strong sidelight effect?"
+    ],
+    "def_prompt": [
+        "A shot where the primary light source is positioned to the side of the subject."
+    ],
+    "alt_prompt": [
+        "The subject is illuminated from the side, creating strong contrast and shadows on one side.",
+        "A video where the subject is dramatically lit from one direction.",
+        "A scene featuring noticeable side lighting contrast.",
+        "A sequence where side light creates depth and shadow on the subject.",
+        "A shot where the subject’s form is emphasized by sidelight contrast.",
+        "A video where shadows and highlights form due to side illumination.",
+        "A scene with a strong directional light source from the side.",
+        "A shot where the subject’s face or body has strong light-shadow separation."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_side_light is True",
+    "neg_rule_str": "self.lighting_setup.subject_side_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

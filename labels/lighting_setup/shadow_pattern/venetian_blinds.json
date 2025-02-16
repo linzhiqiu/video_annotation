@@ -1,0 +1,34 @@
+{
+    "label": "Shadow Pattern - Venetian Blinds",
+    "label_name": "venetian_blinds",
+    "def_question": [
+        "Does the video feature distinct shadow patterns cast by venetian blinds?"
+    ],
+    "alt_question": [
+        "Are there horizontal slatted shadows from blinds in the scene?",
+        "Does the lighting create striped patterns from venetian blinds?",
+        "Are venetian blinds casting visible light and shadow patterns?",
+        "Is there a high-contrast shadow effect created by window blinds?",
+        "Does the video prominently feature venetian blind shadows?",
+        "Are venetian blinds used to create a dramatic or noir lighting effect?",
+        "Is there a noticeable lighting pattern from slatted blinds?",
+        "Does the shot rely on shadows from venetian blinds for atmosphere?"
+    ],
+    "def_prompt": [
+        "The video features distinct shadow patterns cast by venetian blinds."
+    ],
+    "alt_prompt": [
+        "A scene where venetian blinds create strong striped shadows.",
+        "A video showcasing dramatic light patterns from window blinds.",
+        "A shot where lighting through blinds forms a defined shadow effect.",
+        "A sequence emphasizing venetian blinds as a dominant light feature.",
+        "A setting where slatted blinds create contrast-heavy shadow patterns.",
+        "A video where venetian blinds shape the atmosphere through lighting.",
+        "A scene where venetian blinds project distinct striped shadows.",
+        "A shot featuring a noir-style shadow pattern from blinds."
+    ],
+    "pos_rule_str": "self.lighting_setup.venetian_blinds is True",
+    "neg_rule_str": "self.lighting_setup.venetian_blinds is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

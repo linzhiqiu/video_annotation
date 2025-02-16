@@ -1,0 +1,34 @@
+{
+    "label": "Has Rim Light",
+    "label_name": "rim_light",
+    "def_question": [
+        "Does the video use rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect?"
+    ],
+    "alt_question": [
+        "Does the subject have a bright outline created by backlighting?",
+        "Is the subject’s silhouette outlined by a light source from behind?",
+        "Does the lighting create a glowing effect on the subject’s edges?",
+        "Is the video using strong backlighting to define the subject’s form?",
+        "Does the lighting highlight the subject’s hair, shoulders, or edges?",
+        "Is there a high-contrast glow outlining the subject due to lighting placement?",
+        "Does the video feature rim lighting that enhances the subject’s separation from the background?",
+        "Is the scene composed in a way that emphasizes the subject’s edges with lighting?"
+    ],
+    "def_prompt": [
+        "The video uses rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect."
+    ],
+    "alt_prompt": [
+        "A video where rim lighting emphasizes the subject’s edges with a backlight glow.",
+        "A scene featuring strong backlighting that highlights the subject’s form.",
+        "A shot where the subject’s silhouette is defined by rim lighting.",
+        "A sequence where a bright light source outlines the subject’s edges.",
+        "A video composition using backlighting to separate the subject from the background.",
+        "A shot with a glowing outline effect due to rim lighting.",
+        "A scene where rim lighting enhances the subject’s depth and separation.",
+        "A composition that emphasizes the subject’s hair, shoulders, or body edges."
+    ],
+    "pos_rule_str": "self.lighting_setup.rim_light is True",
+    "neg_rule_str": "self.lighting_setup.rim_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

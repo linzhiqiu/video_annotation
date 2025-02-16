@@ -27,8 +27,8 @@
         "A video capturing human-centered action.",
         "A shot predominantly featuring people."
     ],
-    "pos_rule_str": "self.is_human_shot is True",
-    "neg_rule_str": "self.is_human_shot is False",
+    "pos_rule_str": "self.cam_setup.is_human_shot is True",
+    "neg_rule_str": "self.cam_setup.is_human_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

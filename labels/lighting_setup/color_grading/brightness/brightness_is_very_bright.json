@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Very Bright",
+    "label_name": "is_very_bright",
+    "def_question": [
+        "Is the video excessively bright, with overexposure that reduces detail visibility?"
+    ],
+    "alt_question": [
+        "Is the scene overexposed and extremely bright?",
+        "Does the lighting in the video appear excessively intense?",
+        "Is most of the frame dominated by strong, overpowering brightness?",
+        "Does the scene appear washed out due to very high exposure?",
+        "Are darker areas appearing lighter due to strong illumination?",
+        "Is the majority of the video affected by extreme brightness?",
+        "Does the video have an overwhelming amount of light?",
+        "Are most areas of the video too bright to retain clear details?"
+    ],
+    "def_prompt": [
+        "The video is excessively bright, with overexposure that reduces detail visibility."
+    ],
+    "alt_prompt": [
+        "A scene with extreme brightness, causing details to be washed out.",
+        "A video where the exposure is excessively high.",
+        "A shot dominated by bright light, reducing shadows and contrast.",
+        "A scene appearing overwhelmingly bright due to intense illumination.",
+        "A video where high exposure makes most details difficult to see.",
+        "A sequence where even darker areas appear relatively bright.",
+        "A video with overexposed lighting across the frame.",
+        "A shot where excessive brightness dominates the composition."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness == 'very_bright'",
+    "neg_rule_str": "self.lighting_setup.brightness != 'very_bright'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

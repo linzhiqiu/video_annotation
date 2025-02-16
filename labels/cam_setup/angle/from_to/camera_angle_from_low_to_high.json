@@ -1,0 +1,32 @@
+{
+    "label": "Camera Angle Shifts from Low Angle to High Angle",
+    "label_name": "camera_angle_from_low_to_high",
+    "def_question": [
+        "Does the video start with the camera at a low angle and transition to a high angle?"
+    ],
+    "alt_question": [
+        "Does the shot begin at a low angle and then tilt or move into a high-angle position?",
+        "Is there a camera movement that raises the angle dramatically from low to high?",
+        "Does the video transition from an upward-facing low angle to a downward-looking high angle?",
+        "Is the initial shot framed at a low vantage point before moving above the subject?",
+        "Does the sequence start with a low angle and then adjust into a high viewpoint?",
+        "Is there a clear framing change where the low-angle shot becomes a high-angle shot?",
+        "Does the video shift from looking up to looking down?",
+        "Is the starting shot positioned low before tilting or moving to a higher perspective?"
+    ],
+    "def_prompt": [
+        "The video starts with the camera at a low angle and transitions to a high angle."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves from a low angle to a high angle.",
+        "A video where the camera smoothly tilts from an upward-facing low angle to a downward-facing high angle.",
+        "A sequence beginning with a low-angle shot that transitions to a high-angle shot.",
+        "A shot that starts with an upward tilt before shifting into a downward-facing perspective.",
+        "A video showing a dramatic transition from a low angle to a high-angle viewpoint.",
+        "A scene where the camera moves from looking up to looking down."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'low_angle' and self.cam_setup.camera_angle_info['end'] == 'high_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['high_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

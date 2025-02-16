@@ -1,0 +1,34 @@
+{
+    "label": "Color Saturation Is Changing (Complex)",
+    "label_name": "color_saturation_is_changing",
+    "def_question": [
+        "Does the video’s color saturation shift dynamically over time?"
+    ],
+    "alt_question": [
+        "Does the video’s color intensity fluctuate throughout?",
+        "Is there a noticeable variation in the color saturation?",
+        "Does the scene transition between high and low saturation?",
+        "Is there an evolving or shifting color intensity in the video?",
+        "Does the color vibrancy fluctuate across different moments?",
+        "Does the video show deliberate changes in color saturation?",
+        "Is there a progression or transition between different saturation levels?",
+        "Does the scene undergo a noticeable saturation transformation?"
+    ],
+    "def_prompt": [
+        "The video’s color saturation shifts dynamically over time."
+    ],
+    "alt_prompt": [
+        "A video where the saturation changes throughout.",
+        "A sequence featuring evolving color intensity shifts.",
+        "A shot with transitions between vivid and muted tones.",
+        "A video with an intentional change in saturation levels.",
+        "A scene where the color intensity fluctuates over time.",
+        "A video displaying a dynamic spectrum of saturation shifts.",
+        "A cinematic effect using changing saturation over time.",
+        "A sequence where the color grading is deliberately inconsistent."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_saturation == 'complex_changing'",
+    "neg_rule_str": "self.lighting_setup.color_saturation != 'complex_changing'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Has Shadow Patterns",
+    "label_name": "has_shadow_patterns",
+    "def_question": [
+        "Does the video contain noticeable shadow patterns or gobo lighting effects that shape the scene’s mood or composition?"
+    ],
+    "alt_question": [
+        "Are there distinct shadow patterns cast by objects in the scene?",
+        "Does the video feature shadow designs such as venetian blinds, window frames, or foliage?",
+        "Are structured shadows shaping the scene’s atmosphere or storytelling?",
+        "Does the lighting in the video create defined shadow effects?",
+        "Are there noticeable gobo lighting effects forming patterns on the subject or background?",
+        "Does the scene make use of shadows as a key visual element?",
+        "Are light and shadow interacting to create visible structured patterns?",
+        "Are there any intentional shadow effects framing the composition?"
+    ],
+    "def_prompt": [
+        "The video features noticeable shadow patterns or gobo lighting effects that shape the scene’s mood or composition."
+    ],
+    "alt_prompt": [
+        "A scene where structured shadows define the composition.",
+        "A video featuring distinct shadow patterns as a key visual element.",
+        "A shot where lighting creates striking shadow effects.",
+        "A sequence with intentional shadow play using venetian blinds, foliage, or window frames.",
+        "A setting where gobo lighting or other structured shadows shape the atmosphere.",
+        "A shot where projected shadows interact with the subject or environment.",
+        "A video where shadows contribute to visual storytelling.",
+        "A scene that emphasizes structured light and shadow interplay."
+    ],
+    "pos_rule_str": "self.lighting_setup.has_shadow_patterns is True",
+    "neg_rule_str": "self.lighting_setup.has_shadow_patterns is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

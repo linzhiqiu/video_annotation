@@ -1,0 +1,34 @@
+{
+    "label": "Direction Is Top-Side Light",
+    "label_name": "direction_is_top_side",
+    "def_question": [
+        "Is the subject illuminated from a combination of top and side lighting?"
+    ],
+    "alt_question": [
+        "Does the primary light source come from above and slightly to the side of the subject?",
+        "Is the subject lit from a top-side angle, creating strong directional contrast?",
+        "Does the lighting emphasize both top and side illumination on the subject?",
+        "Is there overhead lighting while also partially lighting the side of the subject?",
+        "Does the subject receive directional lighting from both above and the side?",
+        "Is the main illumination positioned between toplight and sidelight?",
+        "Does the shot feature a blend of top and side lighting on the subject?",
+        "Is the subject framed with lighting that wraps from the top and the side?"
+    ],
+    "def_prompt": [
+        "The subject is illuminated with a combination of top and side lighting."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit from both above and the side.",
+        "A shot featuring strong directional lighting from a top-side angle.",
+        "A sequence where toplight and sidelight work together to shape the subject.",
+        "A video where the lighting creates depth using overhead and side illumination.",
+        "A scene where the primary light source is positioned between top and side.",
+        "A subject illuminated with a mix of top and side lighting for a dramatic effect.",
+        "A shot emphasizing contrast with both overhead and side illumination.",
+        "A composition using a lighting blend between top and side sources."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_top_light is True and self.lighting_setup.subject_side_light is True",
+    "neg_rule_str": "not (self.lighting_setup.subject_top_light is True and self.lighting_setup.subject_side_light is True)",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

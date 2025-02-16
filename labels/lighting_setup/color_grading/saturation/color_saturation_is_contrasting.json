@@ -1,0 +1,34 @@
+{
+    "label": "Color Saturation Is Contrasting (Complex)",
+    "label_name": "color_saturation_is_contrasting",
+    "def_question": [
+        "Does the video feature a contrast between highly saturated and low-saturation hues in the frame?"
+    ],
+    "alt_question": [
+        "Does the video feature a mix of highly saturated and desaturated areas in equal prominence?",
+        "Are there both vivid and muted colors that equally shape the scene?",
+        "Does the shot balance both high-saturation and low-saturation elements?",
+        "Is there a deliberate contrast between vibrant and washed-out hues in equal measure?",
+        "Does the video maintain a dynamic equilibrium between bold and faded colors?",
+        "Are there strong color contrasts within the same frame?",
+        "Does the scene consistently juxtapose intense and pale colors?",
+        "Is the color saturation distributed in a way where neither vivid nor dull tones dominate?"
+    ],
+    "def_prompt": [
+        "The video contains highly saturated and low-saturation hues contrasting each other in the frame."
+    ],
+    "alt_prompt": [
+        "A video with an equal blend of vivid and muted colors.",
+        "A shot balancing intense and pale saturation levels.",
+        "A sequence where bold and desaturated colors coexist in equal prominence.",
+        "A video where neither highly saturated nor low-saturation hues overpower the frame.",
+        "A scene displaying strong contrast between bright and washed-out colors in equal measure.",
+        "A shot featuring a balanced contrast between color intensity variations.",
+        "A video emphasizing both vivid and faded hues as dominant elements.",
+        "A sequence where strong and soft color tones are evenly distributed."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_saturation == 'complex_contrasting'",
+    "neg_rule_str": "self.lighting_setup.color_saturation != 'complex_contrasting'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Vignette",
+    "label_name": "vignette",
+    "def_question": [
+        "Does the video feature a vignette effect, where the edges gradually darken or fade?"
+    ],
+    "alt_question": [
+        "Does the shot use a vignette effect to darken the edges of the frame?",
+        "Is there a noticeable reduction in brightness toward the image borders?",
+        "Does the video contain a vignette that focuses attention on the center?",
+        "Is the scene’s lighting shaped by gradual darkening along the edges?",
+        "Does the video visually emphasize the center by shadowing the periphery?",
+        "Is a vignette effect applied to create a dramatic or cinematic look?",
+        "Does the shot incorporate a radial fade to dark at the frame's edges?",
+        "Is the periphery of the scene darker than the central area?"
+    ],
+    "def_prompt": [
+        "The video features a vignette effect, where the edges gradually darken or fade."
+    ],
+    "alt_prompt": [
+        "A scene where gradual edge darkening enhances visual focus.",
+        "A video where the frame’s periphery fades to dark in a vignette effect.",
+        "A shot shaped by subtle darkening toward the image edges.",
+        "A sequence where vignetting directs attention toward the center.",
+        "A video using a vignette effect for cinematic or stylistic emphasis.",
+        "A scene framed by a gradual transition into shadow at the edges.",
+        "A shot featuring a noticeable vignette effect for dramatic focus.",
+        "A sequence that employs vignetting to enhance mood and framing."
+    ],
+    "pos_rule_str": "self.lighting_setup.vignette is True",
+    "neg_rule_str": "self.lighting_setup.vignette is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

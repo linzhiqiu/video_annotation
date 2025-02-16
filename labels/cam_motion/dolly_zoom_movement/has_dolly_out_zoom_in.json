@@ -35,7 +35,7 @@
         "A cinematic perspective shift caused by simultaneous dolly-out and zoom-in."
     ],
     "pos_rule_str": "self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom",
-    "neg_rule_str": "not self.cam_motion.dolly_zoom",
+    "neg_rule_str": "not self.cam_motion.dolly_zoom or self.cam_motion.backward is False or self.cam_motion.zoom_in is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {
         "dolly_in_zoom_out": "self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom"

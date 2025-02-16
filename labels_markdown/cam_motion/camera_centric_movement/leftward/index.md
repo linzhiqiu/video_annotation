@@ -257,17 +257,17 @@ Does the camera only move left in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.left is True and self.cam_motion.check_if_no_motion_cam(exclude=['left'])</code>
+<code>self.cam_motion.left is True and self.cam_motion.check_if_no_motion(exclude=['left'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['left'])</code>
+<code>self.cam_motion.left is False or not self.cam_motion.check_if_no_motion(exclude=['left'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
 - <b>moving_right</b>: <code>self.cam_motion.right is True</code>
 
-- <b>only_moving_right</b>: <code>self.cam_motion.right is True and self.cam_motion.check_if_no_motion_cam(exclude=['right'])</code>
+- <b>only_moving_right</b>: <code>self.cam_motion.right is True and self.cam_motion.check_if_no_motion(exclude=['right'])</code>
 
 </details>
 
@@ -276,7 +276,7 @@ Does the camera only move left in the scene?
 
 - <b>panning_left</b>: <code>self.cam_motion.pan_left is True and self.cam_motion.left is False</code>
 
-- <b>compound_motion_with_left</b>: <code>self.cam_motion.left is True and not self.cam_motion.check_if_no_motion_cam(exclude=['left'])</code>
+- <b>compound_motion_with_left</b>: <code>self.cam_motion.left is True and not self.cam_motion.check_if_no_motion(exclude=['left'])</code>
 
 </details>
 

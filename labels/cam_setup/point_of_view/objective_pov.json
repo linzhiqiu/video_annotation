@@ -1,0 +1,24 @@
+{
+    "label": "Objective POV",
+    "label_name": "objective_pov",
+    "def_question": [
+        "Is this a neutral, detached perspective where the camera does not represent any character's viewpoint?"
+    ],
+    "alt_question": [
+        "Is the scene presented from an external, observer-like perspective?",
+        "Does the camera provide an impartial view of the action?",
+        "Is the shot framed without simulating any subject’s perspective?"
+    ],
+    "def_prompt": [
+        "An objective POV shot where the camera captures the scene from a detached, observational perspective."
+    ],
+    "alt_prompt": [
+        "A scene filmed with a neutral camera viewpoint, not tied to any character.",
+        "A video showing events from an external, third-party perspective.",
+        "A shot that presents the action impartially, as an observer would see it."
+    ],
+    "pos_rule_str": "self.cam_setup.objective_pov is True",
+    "neg_rule_str": "self.cam_setup.objective_pov is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

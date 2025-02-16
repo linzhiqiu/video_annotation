@@ -718,6 +718,180 @@ Is it a tracking shot with the camera moving from the side to follow the subject
 </details>
 
 <details>
+<summary><h2>Side Tracking Shot (Leftward)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>side_tracking_shot_leftward</code>
+
+
+<h3>📖 Definition:</h3>
+Is it a side-tracking shot where the camera moves left to follow the subject?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera truck left while tracking the subject’s motion?
+
+- Is the subject followed with a lateral leftward movement?
+
+- Does the shot involve the camera moving left alongside the subject?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera track the subject from the side while moving left?
+
+- Is the camera positioned at the side while trucking left?
+
+- Does the tracking shot involve a consistent leftward motion?
+
+- Is the subject’s movement accompanied by a leftward side-tracking shot?
+
+- Is the camera keeping pace with the subject by moving left?
+
+- Does the video feature a tracking shot where the camera moves left along the subject’s path?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A side-tracking shot where the camera moves left to follow the subject.
+
+- A lateral tracking shot moving leftward alongside the subject.
+
+- A shot where the camera trucks left to track the subject’s movement.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A shot where the camera moves alongside the subject while tracking leftward.
+
+- A video featuring a tracking shot with lateral movement to the left.
+
+- A sequence where the camera follows the subject from the side while moving left.
+
+- A scene where the camera moves leftward in a parallel tracking motion.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True)</code>
+
+<details>
+<summary><h4>🔴 Negative (Easy)</h4></summary>
+
+- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+
+</details>
+
+<details>
+<summary><h4>🔴 Negative (Hard)</h4></summary>
+
+- <b>side_tracking_shot_rightward</b>: <code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True</code>
+
+- <b>pan_tracking_shot</b>: <code>'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_left is True</code>
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>Side Tracking Shot (Rightward)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>side_tracking_shot_rightward</code>
+
+
+<h3>📖 Definition:</h3>
+Is it a side-tracking shot where the camera moves right to follow the subject?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera truck right while tracking the subject’s motion?
+
+- Is the subject followed with a lateral rightward movement?
+
+- Does the shot involve the camera moving right alongside the subject?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera track the subject from the side while moving right?
+
+- Is the camera positioned at the side while trucking right?
+
+- Does the tracking shot involve a consistent rightward motion?
+
+- Is the subject’s movement accompanied by a rightward side-tracking shot?
+
+- Is the camera keeping pace with the subject by moving right?
+
+- Does the video feature a tracking shot where the camera moves right along the subject’s path?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A side-tracking shot where the camera moves right to follow the subject.
+
+- A lateral tracking shot moving rightward alongside the subject.
+
+- A shot where the camera trucks right to track the subject’s movement.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A shot where the camera moves alongside the subject while tracking rightward.
+
+- A video featuring a tracking shot with lateral movement to the right.
+
+- A sequence where the camera follows the subject from the side while moving right.
+
+- A scene where the camera moves rightward in a parallel tracking motion.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True)</code>
+
+<details>
+<summary><h4>🔴 Negative (Easy)</h4></summary>
+
+- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+
+</details>
+
+<details>
+<summary><h4>🔴 Negative (Hard)</h4></summary>
+
+- <b>side_tracking_shot_leftward</b>: <code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True</code>
+
+- <b>pan_tracking_shot</b>: <code>'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_right is True</code>
+
+</details>
+
+</details>
+
+<details>
 <summary><h2>Tail Tracking Shot</h2></summary>
 
 

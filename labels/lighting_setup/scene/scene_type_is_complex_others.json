@@ -1,0 +1,34 @@
+{
+    "label": "Scene Type Is Complex/Others",
+    "label_name": "scene_type_is_complex_others",
+    "def_question": [
+        "Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?"
+    ],
+    "alt_question": [
+        "Does the video contain mixed or unclear environments?",
+        "Is the scene type inconsistent, changing between different settings?",
+        "Does the video transition between interior and exterior shots?",
+        "Is it difficult to determine whether the scene is indoors or outdoors?",
+        "Does the setting lack clear spatial context?",
+        "Is the background too abstract or stylized to determine a concrete location?",
+        "Does the video feature multiple environments without a dominant one?",
+        "Is the scene composition too complex to categorize simply?"
+    ],
+    "def_prompt": [
+        "The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)."
+    ],
+    "alt_prompt": [
+        "A video where the scene type is hard to categorize.",
+        "A shot where the setting changes between indoor and outdoor.",
+        "A sequence with an unclear or shifting environment.",
+        "A video where the background lacks a clear spatial definition.",
+        "A scene where the location is ambiguous or abstract.",
+        "A shot with inconsistent or mixed spatial elements.",
+        "A video where no dominant environment is clear.",
+        "A setting that cannot be classified as purely interior, exterior, or synthetic."
+    ],
+    "pos_rule_str": "self.lighting_setup.scene_type == 'complex_others'",
+    "neg_rule_str": "self.lighting_setup.scene_type != 'complex_others'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

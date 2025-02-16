@@ -2,33 +2,37 @@
     "label": "Shot Size End With Extreme Close Up",
     "label_name": "shot_size_end_with_extreme_close_up",
     "def_question": [
-        "Does the video end with extreme close up?"
+        "Does the video end with an extreme close-up shot that isolates a very small detail of the subject or scene?"
     ],
     "alt_question": [
-        "Does the shot end with extreme close up?",
-        "Is the ending frame showing extreme close up?",
-        "Does the video end using extreme close up?",
-        "Is the final shot at extreme close up?",
-        "Does the sequence end with extreme close up?",
-        "Is the last shot at extreme close up?",
-        "Does the video close with extreme close up?",
-        "Is the ending frame at extreme close up?"
+        "Does the video close with an extreme close-up shot focusing on a tiny detail?",
+        "Is the last shot an extreme close-up shot capturing an isolated part of the subject?",
+        "Does the video finish with an extreme close-up emphasizing texture or fine details?",
+        "Is the closing shot an extreme close-up where only a small portion of the subject is visible?",
+        "Does the final shot show an extreme close-up view with minimal surrounding context?",
+        "Is the last shot an extreme close-up that highlights intricate features?",
+        "Does the video end with a shot where the subject takes up nearly the entire frame?",
+        "Is the last frame an extreme close-up that isolates a fine detail of the subject?",
+        "Does the video close with an extreme close-up framing a small portion of a subject?",
+        "Is the final shot a tight and detailed view of an object or subject’s feature?"
     ],
     "def_prompt": [
-        "A video that ends with extreme close up."
+        "A video that ends with an extreme close-up shot, isolating a very small detail of the subject or scene."
     ],
     "alt_prompt": [
-        "A shot ending with extreme close up.",
-        "A video ending at extreme close up.",
-        "A sequence concluding with extreme close up.",
-        "A shot finally at extreme close up.",
-        "A video closing with extreme close up.",
-        "A shot ending at extreme close up.",
-        "A video concluding with extreme close up.",
-        "A sequence ending at extreme close up."
+        "The video ends with an extreme close-up shot capturing a tiny feature of the subject.",
+        "The video closes with an extreme close-up shot emphasizing small details.",
+        "The last shot of the video is an extreme close-up focusing on intricate textures.",
+        "The closing shot is an extreme close-up, making the subject’s details highly prominent.",
+        "The final shot of the video is an extreme close-up with minimal surrounding context.",
+        "A shot that frames only a tiny part of the subject, emphasizing detail over broader context.",
+        "A video where the subject takes up nearly 100% of the frame, isolating a fine feature.",
+        "A shot where a minuscule portion of the subject is visible, creating an extreme close-up view.",
+        "A video ending with a narrow field of view focusing intensely on a small subject detail.",
+        "A cinematic extreme close-up shot that enhances the subject’s fine textures or intricate elements."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'extreme_close_up'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['extreme_close_up', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'extreme_close_up'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['extreme_close_up', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

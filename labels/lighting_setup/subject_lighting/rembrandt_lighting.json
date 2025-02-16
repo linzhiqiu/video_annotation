@@ -1,0 +1,34 @@
+{
+    "label": "Rembrandt Lighting",
+    "label_name": "rembrandt_lighting",
+    "def_question": [
+        "Does the video use Rembrandt lighting, where one side of the subject’s face is illuminated, creating a distinct triangle of light on the opposite cheek?"
+    ],
+    "alt_question": [
+        "Is the subject lit with a classic Rembrandt lighting technique?",
+        "Does the lighting create a triangle of light on the subject’s shaded cheek?",
+        "Is the video using a lighting style that combines side and front illumination?",
+        "Does the subject’s lighting emphasize dramatic contrast with controlled highlights?",
+        "Is the lighting setup focused on one side while allowing some light to spill onto the other?",
+        "Does the scene feature traditional portrait lighting with strong directional contrast?",
+        "Is the video using a cinematic lighting setup inspired by Rembrandt’s style?",
+        "Does the lighting create a balanced but moody effect on the subject’s face?"
+    ],
+    "def_prompt": [
+        "The video uses Rembrandt lighting, where one side of the subject’s face is illuminated, creating a distinct triangle of light on the opposite cheek."
+    ],
+    "alt_prompt": [
+        "A video featuring classic Rembrandt lighting with side and front illumination.",
+        "A shot where a triangle of light appears on the subject’s shaded cheek.",
+        "A sequence using a lighting setup that creates dramatic contrast on the subject’s face.",
+        "A scene where the subject’s lighting follows a traditional portrait photography style.",
+        "A shot applying controlled directional lighting for a cinematic look.",
+        "A video where the lighting creates a moody yet balanced effect.",
+        "A composition emphasizing shadows and highlights in a portrait setup.",
+        "A video utilizing a professional portrait lighting technique."
+    ],
+    "pos_rule_str": "self.lighting_setup.rembrandt_lighting is True",
+    "neg_rule_str": "self.lighting_setup.rembrandt_lighting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

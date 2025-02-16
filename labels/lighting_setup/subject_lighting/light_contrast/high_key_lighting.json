@@ -1,0 +1,35 @@
+{
+    "label": "High-Key Lighting",
+    "label_name": "high_key_lighting",
+    "def_question": [
+        "Is the lighting on the subject high-key, featuring minimal contrast where lit and shadowed areas appear nearly the same (1:1 to 1:2)?",
+        "Does the subject’s lighting create a bright, evenly illuminated appearance with little to no shadow?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting feature soft, minimal shadows?",
+        "Is the subject evenly illuminated with a bright, balanced light?",
+        "Does the lighting on the subject create a soft, diffused look with little contrast?",
+        "Is the separation between lit and shadowed areas barely noticeable?",
+        "Does the lighting minimize harsh shadows, creating a bright and airy appearance?",
+        "Is the subject shaped by smooth, even lighting with minimal contrast?",
+        "Does the video feature high-key lighting, reducing shadow depth?",
+        "Is the subject’s visibility defined by soft, evenly distributed illumination?"
+    ],
+    "def_prompt": [
+        "The video features high-key lighting, where the subject is brightly lit with minimal contrast (1:1 to 1:2), reducing shadows and creating a soft, even illumination."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with high-key lighting, appearing bright and evenly illuminated.",
+        "A scene where the subject’s lighting lacks strong shadows, creating a soft effect.",
+        "A shot where the lighting on the subject results in an even, well-distributed brightness.",
+        "A video using high-key lighting to minimize contrast and shadow depth.",
+        "A sequence where the subject appears clearly defined with smooth, diffused lighting.",
+        "A shot featuring a subject with little to no noticeable shadowing.",
+        "A video where even lighting ensures a bright and soft visual tone.",
+        "A scene emphasizing a bright, clear aesthetic with minimal contrast."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'minimal_contrast'",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['minimal_contrast', 'unknown', 'complex_changing']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

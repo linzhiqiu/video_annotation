@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Darker Than Normal",
+    "label_name": "brightness_is_darker_than_normal",
+    "def_question": [
+        "Is the video noticeably darker than a standard neutral lighting setup?"
+    ],
+    "alt_question": [
+        "Does the video have a dark or very dark appearance?",
+        "Is the scene dimly lit, with prominent shadows?",
+        "Does the exposure make the video appear noticeably low-light?",
+        "Is the lighting level below normal brightness?",
+        "Does the scene look significantly darker than a balanced lighting setup?",
+        "Is the video characterized by low visibility and deep shadows?",
+        "Does the lighting style create a moody, dramatic effect?",
+        "Is the overall brightness of the video lower than average?"
+    ],
+    "def_prompt": [
+        "The video is noticeably darker than a standard neutral lighting setup."
+    ],
+    "alt_prompt": [
+        "A scene with low or very low brightness levels.",
+        "A video featuring lighting that is dimmer than neutral.",
+        "A shot where most areas are in shadow or barely visible.",
+        "A video that appears noticeably dark due to limited lighting.",
+        "A scene where reduced exposure creates a moody atmosphere.",
+        "A video where low brightness makes details harder to see.",
+        "A shot where shadows dominate the frame, reducing clarity.",
+        "A video with a lighting setup that is significantly darker than normal."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness in ['dark', 'very_dark']",
+    "neg_rule_str": "self.lighting_setup.brightness not in ['dark', 'very_dark']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

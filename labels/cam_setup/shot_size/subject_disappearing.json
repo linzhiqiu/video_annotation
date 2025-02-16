@@ -23,8 +23,8 @@
         "The main subject fades from view.",
         "There is a point where the subject leaves the shot."
     ],
-    "pos_rule_str": "self.subject_disappearing is True",
-    "neg_rule_str": "self.subject_disappearing is False",
+    "pos_rule_str": "self.cam_setup.subject_disappearing is True",
+    "neg_rule_str": "self.cam_setup.subject_disappearing is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

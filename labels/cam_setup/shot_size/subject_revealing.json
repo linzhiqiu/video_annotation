@@ -21,8 +21,8 @@
         "The video shows a subject coming into view.",
         "The shot gradually reveals a subject."
     ],
-    "pos_rule_str": "self.subject_revealing is True",
-    "neg_rule_str": "self.subject_revealing is False",
+    "pos_rule_str": "self.cam_setup.subject_revealing is True",
+    "neg_rule_str": "self.cam_setup.subject_revealing is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

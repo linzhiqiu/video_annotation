@@ -27,8 +27,8 @@
         "A video presenting various subject groups.",
         "A shot featuring multiple distinct subjects."
     ],
-    "pos_rule_str": "self.has_many_subjects is True",
-    "neg_rule_str": "self.has_many_subjects is False",
+    "pos_rule_str": "self.cam_setup.has_many_subjects is True",
+    "neg_rule_str": "self.cam_setup.has_many_subjects is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -1,0 +1,34 @@
+{
+    "label": "Is Abstract Light Source",
+    "label_name": "is_abstract",
+    "def_question": [
+        "Does the video lacks a realistic light source, with lighting that does not follow natural physics?"
+    ],
+    "alt_question": [
+        "Does the scene have no identifiable physical light source?",
+        "Is the lighting in the video artificial or detached from real-world illumination?",
+        "Does the video appear to have lighting that is independent of any real-world sources?",
+        "Is the scene artificially lit with no clear or natural light source?",
+        "Does the video feature synthetic or digital lighting without a physical origin?",
+        "Is the illumination stylized or abstract rather than derived from real-world lighting?",
+        "Does the video rely on a simulated or non-realistic light source?",
+        "Is the lighting setup in the video disconnected from real-world physics?"
+    ],
+    "def_prompt": [
+        "The video lacks a realistic light source, with lighting that does not follow natural physics."
+    ],
+    "alt_prompt": [
+        "A video where the lighting is artificial and detached from real-world sources.",
+        "A shot where the illumination is abstract and does not follow physical lighting behavior.",
+        "A scene featuring non-realistic, digitally rendered lighting.",
+        "A video using synthetic lighting without any identifiable physical source.",
+        "A sequence where the light is generated artificially, without sun, fire, or lamps.",
+        "A shot with stylized lighting that does not mimic real-world conditions.",
+        "A video where the lighting does not originate from a realistic source.",
+        "A scene where illumination appears purely digital or graphical."
+    ],
+    "pos_rule_str": "self.lighting_setup.abstract_light_source is True",
+    "neg_rule_str": "self.lighting_setup.abstract_light_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

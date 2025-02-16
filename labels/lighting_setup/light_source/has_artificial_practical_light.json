@@ -1,0 +1,34 @@
+{
+    "label": "Has Artificial Light",
+    "label_name": "has_artificial_practical_light",
+    "def_question": [
+        "Are practical artificial light sources visible in the video?"
+    ],
+    "alt_question": [
+        "Does the scene contain clearly visible artificial light sources?",
+        "Are artificial lights physically present and visible in the video?",
+        "Is artificial lighting visibly included in the composition?",
+        "Does the video feature practical artificial light sources?",
+        "Are artificial lights seen in the frame?",
+        "Is the environment illuminated by visible artificial lighting?",
+        "Does the video include artificial lighting that is clearly present?",
+        "Are artificial light sources included as part of the scene?"
+    ],
+    "def_prompt": [
+        "The video contains practical artificial light sources that are clearly visible."
+    ],
+    "alt_prompt": [
+        "A video where artificial lights are visible in the frame.",
+        "A scene illuminated by artificial light sources that can be seen.",
+        "A shot where practical artificial lighting is present and visible.",
+        "A sequence where artificial lights are included in the composition.",
+        "A video featuring clearly visible artificial lighting fixtures.",
+        "A setting where artificial light sources are physically present.",
+        "A shot where artificial lights are included as part of the scene.",
+        "A scene where visible artificial lighting contributes to the atmosphere."
+    ],
+    "pos_rule_str": "self.lighting_setup.artificial_light_source is True",
+    "neg_rule_str": "self.lighting_setup.artificial_light_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

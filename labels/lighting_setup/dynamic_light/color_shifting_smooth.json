@@ -1,0 +1,34 @@
+{
+    "label": "Color Shifting (Smooth)",
+    "label_name": "color_shifting_smooth",
+    "def_question": [
+        "Does the lighting in the video undergo a gradual and smooth color shift over time?"
+    ],
+    "alt_question": [
+        "Does the lighting in the scene transition smoothly between different hues?",
+        "Is there a continuous, non-abrupt change in the color of the light?",
+        "Does the video display a slow and evolving light color shift?",
+        "Are there dynamic but seamless hue variations in the scene’s lighting?",
+        "Does the illumination in the video transition smoothly between colors?",
+        "Is there a gradual, soft shift in the color of the dominant light source?",
+        "Does the lighting in the scene create a flowing, evolving color effect?",
+        "Are the lighting hues changing in a smooth and continuous manner?"
+    ],
+    "def_prompt": [
+        "The lighting in the video undergoes a gradual and smooth color shift over time."
+    ],
+    "alt_prompt": [
+        "A video where the light color transitions smoothly.",
+        "A scene with soft and continuous lighting hue shifts.",
+        "A shot where the illumination gradually changes color.",
+        "A sequence featuring smooth transitions in light color.",
+        "A video where lighting hues evolve gently over time.",
+        "A setting where the light source gradually shifts in color.",
+        "A video showcasing a slow and evolving lighting change.",
+        "A shot where lighting colors transition fluidly without abrupt shifts."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_shifting_smooth is True",
+    "neg_rule_str": "self.lighting_setup.color_shifting_smooth is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Normal",
+    "label_name": "contrast_is_normal",
+    "def_question": [
+        "Does the lighting on the subject have a normal contrast ratio, where lit and shadowed areas differ slightly (1:2 to 1:8)?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting feature soft and natural contrast?",
+        "Is the subject illuminated with a moderate difference between highlights and shadows?",
+        "Does the lighting on the subject create subtle but visible shadowing?",
+        "Is the separation between lit and shadowed areas on the subject balanced?",
+        "Does the lighting create a natural, gentle contrast on the subject?",
+        "Is the subject shaped by lighting that is neither too harsh nor too flat?",
+        "Does the video feature well-balanced lighting on the subject?",
+        "Is the subject’s visibility defined by moderate lighting differences?"
+    ],
+    "def_prompt": [
+        "The lighting on the subject has a normal contrast ratio (1:2 to 1:8), creating a balanced separation between highlights and shadows."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with normal contrast, featuring soft and balanced highlights and shadows.",
+        "A scene where the subject’s lighting appears natural and evenly distributed.",
+        "A shot where the lighting on the subject results in gentle, moderate shadows.",
+        "A video where the subject is illuminated with soft, natural contrast.",
+        "A sequence where the subject appears well-defined without extreme contrast.",
+        "A shot featuring a subject with visible but subtle shadowing.",
+        "A video where balanced lighting enhances the subject’s form without harshness.",
+        "A scene that maintains a natural, moderate contrast on the subject."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'normal_contrast'",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['normal_contrast', 'unknown', 'complex_changing']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

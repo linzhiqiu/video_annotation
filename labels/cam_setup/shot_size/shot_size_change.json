@@ -22,8 +22,8 @@
         "The shot size is not consistent across the video.",
         "Throughout the video, the shot size changes dynamically."
     ],
-    "pos_rule_str": "self.shot_size_change is True",
-    "neg_rule_str": "self.shot_size_change is False",
+    "pos_rule_str": "self.cam_setup.shot_size_change is True",
+    "neg_rule_str": "self.cam_setup.shot_size_change is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

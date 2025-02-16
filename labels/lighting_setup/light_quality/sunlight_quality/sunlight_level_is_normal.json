@@ -1,0 +1,34 @@
+{
+    "label": "Sunlight Level Is Normal",
+    "label_name": "sunlight_level_is_normal",
+    "def_question": [
+        "Does the video feature regular daylight with balanced brightness?"
+    ],
+    "alt_question": [
+        "Is the scene illuminated by natural daylight that is neither too intense nor too diffused?",
+        "Does the shot depict normal outdoor lighting conditions?",
+        "Is the sunlight soft and natural without being overly bright or cloudy?",
+        "Is the lighting in the video evenly balanced with no strong highlights or shadows?",
+        "Does the scene feature natural daylight without extreme contrast?",
+        "Is the daylight in the video neutral and well-balanced?",
+        "Is the outdoor lighting in the scene clear and natural?",
+        "Does the video have natural daylight that does not appear too strong or weak?"
+    ],
+    "def_prompt": [
+        "The video features regular daylight with balanced brightness."
+    ],
+    "alt_prompt": [
+        "A video with natural, well-balanced daylight.",
+        "A scene illuminated by neutral, evenly distributed daylight.",
+        "A shot featuring clear daylight without extreme contrasts.",
+        "A video where outdoor lighting appears natural and neutral.",
+        "A sequence showing daylight that is neither too harsh nor too soft.",
+        "A video with natural light that is clear and evenly lit.",
+        "A shot where the outdoor lighting feels natural and normal.",
+        "A scene where daylight is present without noticeable extremes."
+    ],
+    "pos_rule_str": "self.lighting_setup.sunlight_level == 'normal'",
+    "neg_rule_str": "self.lighting_setup.sunlight_level != 'normal'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

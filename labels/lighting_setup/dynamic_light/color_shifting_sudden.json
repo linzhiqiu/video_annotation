@@ -1,0 +1,34 @@
+{
+    "label": "Color Shifting (Sudden)",
+    "label_name": "color_shifting_sudden",
+    "def_question": [
+        "Does the lighting in the video undergo abrupt and rapid color changes?"
+    ],
+    "alt_question": [
+        "Does the lighting in the scene suddenly switch between different hues?",
+        "Is there a rapid and noticeable shift in the color of the light source?",
+        "Does the illumination change instantly from one color to another?",
+        "Are there moments where the scene’s lighting rapidly shifts to a different hue?",
+        "Does the video contain hard cuts between different lighting colors?",
+        "Is there a flashing or instant transition of light color?",
+        "Does the lighting in the video switch sharply between different colors?",
+        "Are there abrupt and noticeable lighting color shifts in the scene?"
+    ],
+    "def_prompt": [
+        "The lighting in the video undergoes abrupt and rapid color changes."
+    ],
+    "alt_prompt": [
+        "A video where the light color shifts suddenly.",
+        "A scene with stark, abrupt transitions between different light hues.",
+        "A shot where the illumination changes rapidly.",
+        "A sequence featuring rapid and noticeable shifts in lighting color.",
+        "A video with an intense and sudden change in light color.",
+        "A setting where the lighting shifts sharply in hue.",
+        "A video showcasing quick, high-contrast color transitions in lighting.",
+        "A shot where the dominant light changes color in an instant."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_shifting_sudden is True",
+    "neg_rule_str": "self.lighting_setup.color_shifting_sudden is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

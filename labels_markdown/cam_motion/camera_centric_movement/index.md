@@ -15,3 +15,5 @@
 - [Tilt_down](./tilt_down/index.md)
 - [Tilt_up](./tilt_up/index.md)
 - [Upward](./upward/index.md)
+- [Zoom_in](./zoom_in/index.md)
+- [Zoom_out](./zoom_out/index.md)

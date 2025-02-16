@@ -1,0 +1,34 @@
+{
+    "label": "Color Temperature Is Neutral",
+    "label_name": "color_temperature_is_neutral",
+    "def_question": [
+        "Does the video have a neutral color balance, without a strong warm or cool tint?"
+    ],
+    "alt_question": [
+        "Is the video’s color temperature balanced and natural?",
+        "Does the video lack a noticeable warm or cool shift?",
+        "Is the overall color grading neutral and evenly toned?",
+        "Does the sequence avoid heavy color grading shifts?",
+        "Is the lighting in the video neither warm nor cool?",
+        "Are the colors in the video presented in a natural balance?",
+        "Does the color scheme avoid an artificial tint?",
+        "Is the scene visually neutral without a strong color cast?"
+    ],
+    "def_prompt": [
+        "The video has a neutral color balance, without a strong warm or cool tint."
+    ],
+    "alt_prompt": [
+        "A video with evenly balanced color grading.",
+        "A sequence with a neutral and natural color palette.",
+        "A shot where no strong warm or cool tint is applied.",
+        "A video where colors appear as naturally as possible.",
+        "A cinematic look with minimal color grading interference.",
+        "A scene presented in a neutral, unaltered color tone.",
+        "A video that avoids overly warm or cool color biases.",
+        "A shot with realistic and balanced color reproduction."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_temperature == 'neutral'",
+    "neg_rule_str": "self.lighting_setup.color_temperature != 'neutral'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

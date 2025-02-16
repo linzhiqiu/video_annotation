@@ -1,0 +1,34 @@
+{
+    "label": "Lens Flares Natural",
+    "label_name": "lens_flares_natural",
+    "def_question": [
+        "Does the video contain natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens?"
+    ],
+    "alt_question": [
+        "Are there noticeable bright streaks, rings, or orbs of light in the shot?",
+        "Does the video feature regular lens flares as a visual effect?",
+        "Is there a visible optical artifact caused by strong light hitting the lens?",
+        "Do bright light sources create visible lens flare effects in the scene?",
+        "Are there multiple circular or scattered light reflections in the shot?",
+        "Does the video contain lens flares that appear as round or dispersed artifacts?",
+        "Are regular lens flares present due to hard light sources affecting the camera?",
+        "Does the video exhibit the characteristic glow of regular lens flares?"
+    ],
+    "def_prompt": [
+        "The video contains natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens."
+    ],
+    "alt_prompt": [
+        "A video featuring bright streaks, rings, or scattered regular lens flares.",
+        "A scene where hard light sources create circular lens flare effects.",
+        "A shot containing strong regular lens flares due to bright illumination.",
+        "A sequence where lens flares appear as round or dispersed artifacts.",
+        "A video with visible optical reflections from intense light sources.",
+        "A composition where bright lights cause regular lens flare effects.",
+        "A shot featuring prominent regular lens flares interacting with the camera lens.",
+        "A video where strong light produces natural or intentional lens flares."
+    ],
+    "pos_rule_str": "self.lighting_setup.lens_flares_regular is True",
+    "neg_rule_str": "self.lighting_setup.lens_flares_regular is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

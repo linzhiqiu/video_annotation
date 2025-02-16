@@ -1,0 +1,34 @@
+{
+    "label": "Has Silhouette Lighting",
+    "label_name": "silhouette",
+    "def_question": [
+        "Does the video use silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background?"
+    ],
+    "alt_question": [
+        "Is the subject or an object shown in silhouette against a bright background?",
+        "Does the scene feature strong backlighting that hides subject details?",
+        "Is the main subject visible only as a dark shape due to lighting contrast?",
+        "Does the lighting create a high-contrast effect, obscuring subject details?",
+        "Is the scene composed in a way that makes the subject appear as a shadow?",
+        "Does the video emphasize shapes and outlines rather than subject details?",
+        "Is the main figure in the video darkened by strong background illumination?",
+        "Does the shot use extreme backlighting to create a silhouette effect?"
+    ],
+    "def_prompt": [
+        "The video uses silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background."
+    ],
+    "alt_prompt": [
+        "A video where the subject appears as a silhouette due to strong backlighting.",
+        "A scene emphasizing dark figures against a bright background.",
+        "A shot where the lighting creates a strong silhouette effect.",
+        "A sequence where the subject is barely visible due to extreme contrast.",
+        "A composition using strong backlighting to obscure the subject’s details.",
+        "A shot that relies on shadows to define the main subject.",
+        "A video featuring silhouettes as the primary visual effect.",
+        "A scene where lighting emphasizes outlines over surface details."
+    ],
+    "pos_rule_str": "self.lighting_setup.silhouette is True",
+    "neg_rule_str": "self.lighting_setup.silhouette is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

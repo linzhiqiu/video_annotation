@@ -1,0 +1,34 @@
+{
+    "label": "Direction Is Ambient Light",
+    "label_name": "direction_is_ambient_light",
+    "def_question": [
+        "Is the subject illuminated with soft, ambient light?"
+    ],
+    "alt_question": [
+        "Is the lighting on the subject evenly distributed without a clear direction?",
+        "Does the video feature illumination without a strong directional source?",
+        "Is the subject lit primarily by soft, non-directional ambient light?",
+        "Does the shot lack a dominant light source coming from one direction?",
+        "Is the lighting in the scene diffuse, without strong highlights or shadows?",
+        "Does the subject appear illuminated by scattered or indirect lighting?",
+        "Is the main illumination provided by ambient, environmental light?",
+        "Does the video rely on a soft, uniform light source rather than directional lighting?"
+    ],
+    "def_prompt": [
+        "The subject is illuminated with soft, ambient light."
+    ],
+    "alt_prompt": [
+        "A shot where the subject is lit with soft, ambient lighting.",
+        "A video where the illumination is diffuse without strong highlights.",
+        "A scene featuring non-directional light with an even glow.",
+        "A sequence where scattered or indirect light provides illumination.",
+        "A shot with balanced lighting, lacking a dominant light source.",
+        "A video where no single light direction defines the subject’s appearance.",
+        "A scene relying on ambient illumination rather than focused light.",
+        "A shot where the subject appears naturally lit with no strong shadows."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_ambient_light is True",
+    "neg_rule_str": "self.lighting_setup.subject_ambient_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Sunlight Level Is Sunny",
+    "label_name": "sunlight_level_is_sunny",
+    "def_question": [
+        "Does the video feature bright, direct sunlight with strong intensity?"
+    ],
+    "alt_question": [
+        "Is the scene characterized by strong sunlight and high contrast?",
+        "Does the video show harsh, bright outdoor lighting?",
+        "Is the lighting intense with strong shadows and highlights?",
+        "Does the shot contain direct sunlight with clear, sharp lighting?",
+        "Is the outdoor brightness notably strong and high in contrast?",
+        "Does the sunlight create sharp shadows and bright highlights?",
+        "Is the lighting in the video strong and direct, typical of sunny weather?",
+        "Does the scene have a high-exposure look due to strong sunlight?"
+    ],
+    "def_prompt": [
+        "The video features bright, direct sunlight with strong intensity."
+    ],
+    "alt_prompt": [
+        "A video characterized by strong sunlight and deep shadows.",
+        "A shot featuring direct sunlight with high brightness.",
+        "A scene illuminated by intense, high-contrast sunlight.",
+        "A video with harsh outdoor lighting conditions.",
+        "A sequence where bright sunlight defines the lighting style.",
+        "A shot where natural lighting is powerful and direct.",
+        "A video where high exposure and bright highlights dominate.",
+        "A scene showing a strong, sunlit environment with clear contrast."
+    ],
+    "pos_rule_str": "self.lighting_setup.sunlight_level == 'sunny'",
+    "neg_rule_str": "self.lighting_setup.sunlight_level != 'sunny'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

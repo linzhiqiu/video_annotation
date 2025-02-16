@@ -1,0 +1,34 @@
+{
+    "label": "Scene Type Is Interior",
+    "label_name": "scene_type_is_interior",
+    "def_question": [
+        "Is the video set in an indoor environment?"
+    ],
+    "alt_question": [
+        "Is the scene taking place inside a building or enclosed space?",
+        "Does the video primarily feature an indoor setting?",
+        "Is the background environment confined to an enclosed structure?",
+        "Does the video take place in a room, hallway, or other indoor space?",
+        "Is the scene surrounded by walls, ceilings, or other enclosed elements?",
+        "Does the video clearly depict an indoor environment?",
+        "Is the location of the scene indoors rather than outdoors?",
+        "Does the shot emphasize an enclosed, interior setting?"
+    ],
+    "def_prompt": [
+        "The video is set in an indoor environment."
+    ],
+    "alt_prompt": [
+        "A video primarily taking place in an enclosed space.",
+        "A sequence where the setting is clearly indoors.",
+        "A shot showing an environment surrounded by walls and ceilings.",
+        "A scene depicting an indoor location such as a room or corridor.",
+        "A video where the primary setting is inside a building.",
+        "A sequence with all frames captured in an interior space.",
+        "A shot emphasizing an enclosed indoor environment.",
+        "A video filmed within an interior location."
+    ],
+    "pos_rule_str": "self.lighting_setup.scene_type == 'interior'",
+    "neg_rule_str": "self.lighting_setup.scene_type != 'interior'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

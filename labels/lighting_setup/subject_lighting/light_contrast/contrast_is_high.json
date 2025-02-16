@@ -1,0 +1,35 @@
+{
+    "label": "Light Contrast Ratio on Subject Is High",
+    "label_name": "contrast_is_high",
+    "def_question": [
+        "Does the lighting on the subject have a high contrast ratio, where lit areas are significantly brighter than shadowed areas (1:8 or above)?",
+        "Is it a low-key lighting on the subject with a high contrast ratio?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting feature a strong difference between highlights and shadows?",
+        "Is the subject illuminated in a way that creates dramatic contrast?",
+        "Does the subject’s lighting result in deep shadows and bright highlights?",
+        "Is there strong separation between lit and shadowed areas on the subject?",
+        "Does the lighting create bold, well-defined shadows on the subject?",
+        "Is the subject shaped by high-contrast lighting effects?",
+        "Does the video feature high contrast lighting on the subject?",
+        "Is the subject’s visibility defined by stark lighting differences?"
+    ],
+    "def_prompt": [
+        "The lighting on the subject has a high contrast ratio (1:8 or above), creating strong separation between highlights and shadows."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with high contrast, featuring strong highlights and deep shadows.",
+        "A scene where the subject’s lighting produces dramatic visual contrast.",
+        "A shot where the lighting on the subject results in sharply defined shadows.",
+        "A video where the subject is illuminated with bold, high-contrast lighting.",
+        "A sequence where the subject appears well-defined due to intense lighting contrast.",
+        "A shot featuring a subject with bright highlights and deep, crisp shadows.",
+        "A video where high contrast lighting enhances the subject’s form.",
+        "A scene that emphasizes the subject through strong lighting contrast."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'high_contrast'",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['high_contrast', 'unknown', 'complex_changing']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

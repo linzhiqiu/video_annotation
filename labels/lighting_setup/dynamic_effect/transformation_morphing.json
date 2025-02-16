@@ -1,0 +1,34 @@
+{
+    "label": "Transformation / Morphing",
+    "label_name": "transformation_morphing",
+    "def_question": [
+        "Does the video feature a transformation or morphing effect where one object smoothly changes into another?"
+    ],
+    "alt_question": [
+        "Does the scene depict an object or shape transitioning into something else?",
+        "Is there a seamless morphing effect where one form changes into another?",
+        "Does the shot contain a visual effect where elements transform smoothly?",
+        "Is there a gradual change of one object into a different form?",
+        "Does the video showcase an animated or CGI morphing transition?",
+        "Are there special effects where a subject alters its shape or appearance?",
+        "Does the video present fluid shape-shifting visuals?",
+        "Is there a gradual or seamless transformation effect in the scene?"
+    ],
+    "def_prompt": [
+        "The video features a transformation or morphing effect where one object smoothly changes into another."
+    ],
+    "alt_prompt": [
+        "A video containing a seamless morphing effect.",
+        "A shot where an object transitions smoothly into another.",
+        "A sequence featuring fluid transformations between shapes or forms.",
+        "A shot where a visual effect alters the structure of a subject.",
+        "A video where elements seamlessly shift between different states.",
+        "A setting showcasing gradual and animated transformations.",
+        "A video depicting CGI or animated morphing effects.",
+        "A shot where one form transitions into another in a visually smooth way."
+    ],
+    "pos_rule_str": "self.lighting_setup.transformation_morphing is True",
+    "neg_rule_str": "self.lighting_setup.transformation_morphing is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

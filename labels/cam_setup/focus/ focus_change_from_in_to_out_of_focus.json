@@ -1,0 +1,34 @@
+{
+    "label": "Focus Changes from In Focus to Out of Focus",
+    "label_name": "focus_change_from_in_to_out_of_focus",
+    "def_question": [
+        "Does the video start with a sharp focus on a subject or area and then become out of focus?"
+    ],
+    "alt_question": [
+        "Does the shot begin with a clear, in-focus subject and then become blurry?",
+        "Is there a focus shift where a sharp subject gradually turns out of focus?",
+        "Does the video transition from a well-defined focal point to a blurred frame?",
+        "Is the initial shot crisp but then loses focus over time?",
+        "Does the sequence start with a clear subject before it becomes blurred?",
+        "Is the focus deliberately pulled away, making the subject indistinct?",
+        "Does the shot start sharp but gradually lose focus?",
+        "Is there a gradual shift where the scene moves from clarity to a soft blur?"
+    ],
+    "def_prompt": [
+        "The video starts with a sharp focus and then becomes out of focus."
+    ],
+    "alt_prompt": [
+        "A video where the subject starts in focus but fades into a blur.",
+        "A scene that begins with a well-defined focal point and then loses clarity.",
+        "A shot where a crisp subject gradually becomes out of focus.",
+        "A video where the depth of field softens as the focal area becomes blurry.",
+        "A sequence where the focus moves away, making the subject indistinct.",
+        "A shot where an initially sharp subject transitions into a blurred frame.",
+        "A video where a clear scene progressively becomes unfocused.",
+        "A scene where the focus starts sharp but gradually blurs over time."
+    ],
+    "pos_rule_str": "self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.focus_info['end'] == 'out_of_focus' and self.cam_setup.is_rack_pull_focus",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

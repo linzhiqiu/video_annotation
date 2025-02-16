@@ -1,0 +1,34 @@
+{
+    "label": "Scene Type Is Exterior",
+    "label_name": "scene_type_is_exterior",
+    "def_question": [
+        "Is the video set in an outdoor environment?"
+    ],
+    "alt_question": [
+        "Is the scene taking place outside in an open environment?",
+        "Does the video primarily feature an outdoor setting?",
+        "Is the background environment located in a natural or urban open space?",
+        "Does the video take place in a landscape, street, or other outdoor area?",
+        "Is the scene exposed to natural elements like the sky or open air?",
+        "Does the video clearly depict an exterior environment?",
+        "Is the location of the scene outdoors rather than indoors?",
+        "Does the shot emphasize an outdoor setting?"
+    ],
+    "def_prompt": [
+        "The video is set in an outdoor environment."
+    ],
+    "alt_prompt": [
+        "A video primarily taking place in an open outdoor space.",
+        "A sequence where the setting is clearly outside.",
+        "A shot showing an environment exposed to open air.",
+        "A scene depicting an exterior location such as a park or street.",
+        "A video where the primary setting is outside in nature or urban areas.",
+        "A sequence with all frames captured in an exterior space.",
+        "A shot emphasizing an open outdoor environment.",
+        "A video filmed within an exterior location."
+    ],
+    "pos_rule_str": "self.lighting_setup.scene_type == 'exterior'",
+    "neg_rule_str": "self.lighting_setup.scene_type != 'exterior'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

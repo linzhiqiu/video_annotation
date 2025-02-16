@@ -2,33 +2,37 @@
     "label": "Shot Size End With Close Up",
     "label_name": "shot_size_end_with_close_up",
     "def_question": [
-        "Does the video end with close up?"
+        "Does the video end with a close-up shot that highlights a distinct part of the subject while maintaining context?"
     ],
     "alt_question": [
-        "Does the shot end with close up?",
-        "Is the ending frame showing close up?",
-        "Does the video end using close up?",
-        "Is the final shot at close up?",
-        "Does the sequence end with close up?",
-        "Is the last shot at close up?",
-        "Does the video close with close up?",
-        "Is the ending frame at close up?"
+        "Does the video close with a close-up shot focusing on a subject’s prominent feature?",
+        "Is the last shot a close-up shot where the subject fills most of the frame?",
+        "Does the video finish with a close-up shot capturing a key detail of the subject?",
+        "Is the closing shot a close-up where a subject’s face, hands, or another defining feature is visible?",
+        "Does the final shot show a close-up view with minimal surrounding context?",
+        "Is the last shot a close-up that highlights intricate features?",
+        "Does the video end with a shot where the subject takes up nearly the entire frame?",
+        "Is the last frame a close-up that isolates a fine detail of the subject?",
+        "Does the video conclude with a close-up framing a small portion of a subject?",
+        "Is the final shot a tight and detailed view of an object or subject’s feature?"
     ],
     "def_prompt": [
-        "A video that ends with close up."
+        "A video that ends with a close-up shot, highlighting a distinct part of the subject while maintaining context."
     ],
     "alt_prompt": [
-        "A shot ending with close up.",
-        "A video ending at close up.",
-        "A sequence concluding with close up.",
-        "A shot finally at close up.",
-        "A video closing with close up.",
-        "A shot ending at close up.",
-        "A video concluding with close up.",
-        "A sequence ending at close up."
+        "The video ends with a close-up shot where the subject's defining features fill most of the frame.",
+        "The video closes with a close-up shot emphasizing a specific detail of the subject.",
+        "The last shot of the video is a close-up, providing a tight yet identifiable framing.",
+        "The closing shot includes a close-up view of a subject’s face, hands, or a recognizable object.",
+        "The final shot of the video is a close-up, ensuring key details are in focus.",
+        "A shot that captures a subject closely while maintaining enough surrounding information.",
+        "A video where the subject occupies 50%-100% of the frame while keeping identifiable context.",
+        "A shot where the subject’s defining features remain prominent within the frame.",
+        "A video ending with a close-up shot that enhances the subject’s presence on screen.",
+        "A cinematic close-up shot that ensures the focus remains on the subject's key details."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'close_up'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['close_up', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'close_up'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['close_up', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -1,0 +1,34 @@
+{
+    "label": "Color Saturation Is Low",
+    "label_name": "color_saturation_is_low",
+    "def_question": [
+        "Does the video feature desaturated colors, making hues appear muted or grayish?"
+    ],
+    "alt_question": [
+        "Is the video characterized by a washed-out or faded look?",
+        "Does the video’s color palette emphasize muted tones?",
+        "Are the colors in the video pale or lacking vibrancy?",
+        "Does the video have a low-intensity, desaturated appearance?",
+        "Are the colors in the video dull or grayish?",
+        "Does the video lack strong, vivid colors?",
+        "Are the colors toned down and less striking?",
+        "Does the video use a subdued, low-saturation color grading?"
+    ],
+    "def_prompt": [
+        "The video features desaturated colors, making hues appear muted or grayish."
+    ],
+    "alt_prompt": [
+        "A video with washed-out and faded colors.",
+        "A sequence featuring low-saturation, pale hues.",
+        "A shot with a muted and desaturated color palette.",
+        "A video with subdued tones and a soft appearance.",
+        "A scene where colors appear dull and lacking intensity.",
+        "A video featuring a grayish or toned-down look.",
+        "A shot where the color grading removes vividness.",
+        "A sequence dominated by a low-saturation aesthetic."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_saturation == 'low_saturation'",
+    "neg_rule_str": "self.lighting_setup.color_saturation != 'low_saturation'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

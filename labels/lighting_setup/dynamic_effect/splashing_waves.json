@@ -1,0 +1,34 @@
+{
+    "label": "Splashing / Waves",
+    "label_name": "splashing_waves",
+    "def_question": [
+        "Does the video feature visible splashing or wave-like motion in water or other liquids?"
+    ],
+    "alt_question": [
+        "Does the shot contain waves or splashes in water or other liquids?",
+        "Is there a visible effect of liquid movement creating waves or ripples?",
+        "Does the scene prominently feature dynamic water motion?",
+        "Are there noticeable splashes or waves forming in the shot?",
+        "Does the video showcase a moment where water or another liquid is disturbed?",
+        "Is there a strong visual emphasis on liquid motion, such as crashing waves?",
+        "Does the scene contain a liquid that moves dynamically through splashing or flowing?",
+        "Are there waves, ripples, or bursts of liquid movement in the video?"
+    ],
+    "def_prompt": [
+        "The video features visible splashing or wave-like motion in water or other liquids."
+    ],
+    "alt_prompt": [
+        "A shot depicting water or liquid splashing dynamically.",
+        "A video showcasing waves or rippling motion in a liquid medium.",
+        "A sequence highlighting the movement of water through waves or splashes.",
+        "A shot featuring water disturbances creating splashing effects.",
+        "A video emphasizing the visual impact of liquid motion.",
+        "A setting where waves or liquid splashes are a key part of the scene.",
+        "A shot where water is seen crashing, flowing, or creating ripples.",
+        "A video that captures the natural or dramatic movement of liquid."
+    ],
+    "pos_rule_str": "self.lighting_setup.splashing_waves is True",
+    "neg_rule_str": "self.lighting_setup.splashing_waves is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

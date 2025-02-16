@@ -1,0 +1,34 @@
+{
+    "label": "City Light",
+    "label_name": "city_light",
+    "def_question": [
+        "Does the video feature bright and colorful city lighting?"
+    ],
+    "alt_question": [
+        "Does the scene contain a well-lit urban environment with city lights?",
+        "Is artificial lighting from a cityscape a major part of the video?",
+        "Does the video highlight the glow of neon signs and urban lights?",
+        "Is the scene visually defined by dense artificial lighting from a city?",
+        "Does the shot emphasize nighttime city illumination?",
+        "Are city lights playing a dominant role in shaping the scene’s atmosphere?",
+        "Does the video showcase a bright and vibrant metropolitan setting?",
+        "Is urban lighting creating a visually distinct environment?"
+    ],
+    "def_prompt": [
+        "The video features bright and colorful city lighting."
+    ],
+    "alt_prompt": [
+        "A scene where urban lights define the nighttime atmosphere.",
+        "A video emphasizing the bright glow of cityscape illumination.",
+        "A shot showcasing neon-lit streets and city lights.",
+        "A sequence visually shaped by artificial lights from a city.",
+        "A setting where the urban landscape glows with vibrant lighting.",
+        "A video where high-rise buildings and streetlights define the scene.",
+        "A shot dominated by city lights in a bustling metropolitan setting.",
+        "A sequence emphasizing the urban environment through artificial lighting."
+    ],
+    "pos_rule_str": "self.lighting_setup.city_light is True",
+    "neg_rule_str": "self.lighting_setup.city_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

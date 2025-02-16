@@ -1,0 +1,34 @@
+{
+    "label": "Portrait Lighting",
+    "label_name": "portrait_lighting",
+    "def_question": [
+        "Is the lighting setup designed to create a polished, professional appearance, commonly used in portrait photography or videography?"
+    ],
+    "alt_question": [
+        "Does the video use controlled lighting to enhance the subject’s appearance?",
+        "Is the lighting arranged to create a professional studio look?",
+        "Does the scene feature portrait-style lighting with soft, flattering illumination?",
+        "Is the subject lit in a way that is typical for professional photography?",
+        "Does the shot use specialized portrait lighting techniques?",
+        "Is the lighting setup aimed at achieving a professional or cinematic appearance?",
+        "Does the subject benefit from a carefully arranged lighting setup?",
+        "Is the lighting used to highlight the subject’s features in a controlled manner?"
+    ],
+    "def_prompt": [
+        "The lighting setup is designed to create a polished, professional appearance, commonly used in portrait photography or videography."
+    ],
+    "alt_prompt": [
+        "A video featuring controlled lighting that enhances the subject’s appearance.",
+        "A scene where the subject is illuminated with professional studio lighting.",
+        "A shot using carefully arranged portrait lighting techniques.",
+        "A video where the lighting is designed for a professional, polished look.",
+        "A sequence with a cinematic and controlled lighting setup.",
+        "A scene where portrait lighting enhances the subject’s facial details.",
+        "A shot that applies high-quality lighting for a refined visual effect.",
+        "A composition that follows standard portrait lighting practices."
+    ],
+    "pos_rule_str": "self.lighting_setup.portrait_lighting is True",
+    "neg_rule_str": "self.lighting_setup.portrait_lighting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

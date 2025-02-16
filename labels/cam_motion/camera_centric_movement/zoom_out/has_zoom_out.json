@@ -1,0 +1,44 @@
+{
+    "label": "Has Zoom Out (Relative to Camera)",
+    "label_name": "has_zoom_out",
+    "def_question": [
+        "Does the camera zoom out rather than physically moving backward?",
+        "Is the field of view widening without the camera physically retreating?",
+        "Does the shot feature zooming out instead of a dolly or tracking movement?",
+        "Is the camera decreasing magnification rather than changing position?",
+        "Does the video include a zoom-out effect where the frame expands?",
+        "Is there a noticeable zoom-out effect rather than actual camera movement?",
+        "Does the framing pull away from the subject without spatial camera movement?",
+        "Is the shot zooming out optically instead of moving physically?"
+    ],
+    "alt_question": [
+        "Does the video include a zoom-out effect?",
+        "Is the camera zooming out rather than physically retreating?",
+        "Is there a noticeable widening of the field of view?",
+        "Is the shot pulling away from the subject through zoom?",
+        "Is the camera reducing magnification without moving?",
+        "Does the framing expand to show more of the scene using zoom?",
+        "Is the subject shrinking in frame due to zoom-out rather than a dolly?",
+        "Does the video feature an optical zoom-out rather than a tracking shot?"
+    ],
+    "def_prompt": [
+        "A video where the camera zooms out rather than physically moving backward."
+    ],
+    "alt_prompt": [
+        "A shot featuring a zoom-out effect where the frame expands.",
+        "A scene where the camera optically widens the field of view.",
+        "A video where the camera zooms out to reveal more of the scene.",
+        "A shot where the field of view increases as the camera zooms out.",
+        "A video where the framing loosens using zoom rather than movement.",
+        "A shot that decreases magnification without moving backward.",
+        "A scene where the image becomes smaller due to zoom-out rather than dolly movement."
+    ],
+    "pos_rule_str": "self.cam_motion.zoom_out is True",
+    "neg_rule_str": "self.cam_motion.zoom_out is False",
+    "easy_neg_rule_str": {
+        "zooming_in": "self.cam_motion.zoom_in is True"
+    },
+    "hard_neg_rule_str": {
+        "backward_movement_not_zoom": "self.cam_motion.backward is True and self.cam_motion.zoom_out is False"
+    }
+}

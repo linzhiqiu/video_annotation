@@ -1,0 +1,34 @@
+{
+    "label": "Headlight Flashlight",
+    "label_name": "headlight_flashlight",
+    "def_question": [
+        "Does the video feature a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings?"
+    ],
+    "alt_question": [
+        "Is the scene illuminated by strong, focused light from a headlight or flashlight?",
+        "Does the video prominently showcase a directional beam of light?",
+        "Is a concentrated flashlight or vehicle headlight defining the scene’s lighting?",
+        "Does the scene use a flashlight or headlight as the key light source?",
+        "Is the lighting effect created by a strong, directional artificial beam?",
+        "Does the shot emphasize a high-contrast illumination from a flashlight or vehicle light?",
+        "Are sharp shadows and focused beams from a headlight or flashlight central to the scene?",
+        "Does the video rely on a single, intense beam of artificial light?"
+    ],
+    "def_prompt": [
+        "The video features a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings."
+    ],
+    "alt_prompt": [
+        "A scene where a headlight or flashlight provides the primary illumination.",
+        "A video where a concentrated beam of artificial light shapes the atmosphere.",
+        "A shot dominated by a strong, directional flashlight or vehicle light.",
+        "A sequence where intense artificial lighting creates high contrast.",
+        "A scene where a focused light beam highlights specific areas in darkness.",
+        "A video that relies on a narrow beam of light for its main lighting effect.",
+        "A shot where a flashlight or headlight plays a major role in visibility.",
+        "A sequence emphasizing a high-contrast artificial light source."
+    ],
+    "pos_rule_str": "self.lighting_setup.headlight_flashlight is True",
+    "neg_rule_str": "self.lighting_setup.headlight_flashlight is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

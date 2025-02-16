@@ -1,0 +1,34 @@
+{
+    "label": "Has Non-Visible Light Source",
+    "label_name": "has_non_visible_light_source",
+    "def_question": [
+       "Is the video lit by a light source that is neither visible in the frame nor recognizable as sunlight or firelight?"
+    ],
+    "alt_question": [
+        "Is the scene illuminated by a light source that is not seen in the frame?",
+        "Does the shot lack a clearly identifiable lighting source?",
+        "Is the dominant light coming from an unseen origin?",
+        "Is the lighting setup ambiguous with no apparent source?",
+        "Does the scene appear naturally lit without a direct light source?",
+        "Is the shot illuminated in a way that makes it hard to determine the source?",
+        "Does the video rely on environmental or ambient lighting?",
+        "Is the primary illumination coming from an off-screen source?"
+    ],
+    "def_prompt": [
+        "The video is lit by a light source that is neither visible in the frame nor recognizable as sunlight or firelight."
+    ],
+    "alt_prompt": [
+        "A video where the light source is not identifiable.",
+        "A scene where the illumination comes from an unseen source.",
+        "A shot where the lighting does not have a clear origin.",
+        "A video with ambient or environmental lighting without visible fixtures.",
+        "A setting where the source of brightness is not visible in the frame.",
+        "A shot where light is present but the source remains off-screen.",
+        "A video where the illumination is subtle and indirect.",
+        "A scene with a non-visible primary light source."
+    ],
+    "pos_rule_str": "self.lighting_setup.non_visible_light_source is True",
+    "neg_rule_str": "self.lighting_setup.non_visible_light_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

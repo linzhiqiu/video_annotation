@@ -15,8 +15,8 @@
         "A scene where the camera follows behind a character, focusing on their perspective.",
         "A video framing the character from the back while capturing their surroundings."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_over_shoulder'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_over_shoulder'",
+    "pos_rule_str": "self.cam_setup.third_person_over_shoulder_pov is True",
+    "neg_rule_str": "self.cam_setup.third_person_over_shoulder_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

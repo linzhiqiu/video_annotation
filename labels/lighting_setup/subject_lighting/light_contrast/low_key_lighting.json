@@ -1,0 +1,35 @@
+{
+    "label": "Low-Key Lighting",
+    "label_name": "low_key_lighting",
+    "def_question": [
+        "Is the lighting on the subject low-key, featuring a high contrast ratio where lit areas are significantly brighter than shadowed areas (1:8 or above)?",
+        "Does the subject’s lighting create a dramatic, high-contrast effect with deep shadows?"
+    ],
+    "alt_question": [
+        "Is the subject illuminated in a way that produces a strong contrast between highlights and shadows?",
+        "Does the lighting create deep shadows and strong highlights on the subject?",
+        "Is the separation between lit and shadowed areas very pronounced?",
+        "Does the subject appear shaped by intense, directional lighting with stark contrasts?",
+        "Is the scene visually defined by dramatic lighting with bold shadows?",
+        "Does the video feature low-key lighting, emphasizing shadow and depth?",
+        "Does the subject’s visibility depend on strong contrast lighting effects?",
+        "Does the scene use strong directional lighting that enhances the subject’s form with shadows?"
+    ],
+    "def_prompt": [
+        "The video features low-key lighting, creating a high contrast ratio (1:8 or above) with deep shadows and dramatic separation between highlights and dark areas."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with low-key lighting, featuring dramatic shadows and strong highlights.",
+        "A scene where the subject’s lighting creates high contrast with bold, directional light.",
+        "A shot where the lighting produces deep, well-defined shadows on the subject.",
+        "A video emphasizing the subject’s form through strong contrast lighting.",
+        "A sequence that enhances the subject’s depth with intense shadows and directional light.",
+        "A shot where bright highlights and dark shadows define the subject’s visual impact.",
+        "A video utilizing low-key lighting to create a moody, dramatic effect.",
+        "A scene that relies on stark lighting contrast for strong visual storytelling."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'high_contrast'",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['high_contrast', 'unknown', 'complex_changing']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

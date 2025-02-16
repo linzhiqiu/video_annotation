@@ -2,7 +2,7 @@
     "label": "Overhead POV",
     "label_name": "overhead_pov",
     "def_question": [
-        "Is the camera positioned directly above the subject for a hands-on demonstration?"
+        "Is the camera positioned directly above the subject for a top-down perspective?"
     ],
     "alt_question": [
         "Is this shot an overhead perspective used for tutorials or demonstrations?",
@@ -10,15 +10,15 @@
         "Is the camera capturing the subject from a high overhead angle?"
     ],
     "def_prompt": [
-        "An overhead POV shot where the camera is positioned directly above the subjects for a hands-on demonstration."
+        "An overhead POV shot where the camera is positioned directly above the subjects for a top-down perspective."
     ],
     "alt_prompt": [
-        "A scene used in instructional or hands-on demonstration videos.",
+        "A scene used in instructional or top-down perspective videos.",
         "A shot with a high-angle perspective to showcase details clearly.",
         "A top-down recording used for explaining or demonstrating a process."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'overhead_pov'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'overhead_pov'",
+    "pos_rule_str": "self.cam_setup.overhead_pov is True",
+    "neg_rule_str": "self.cam_setup.overhead_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

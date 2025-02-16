@@ -11,7 +11,7 @@
         "Is the camera positioned high above the scene, offering a bird’s-eye view?"
     ],
     "def_prompt": [
-        "A third-person top-down or oblique gaming video with the camera directly above the character."
+        "A third-person top-down or top-down oblique gaming video with the camera above the character, offering a top-down perspective."
     ],
     "alt_prompt": [
         "A third-person gaming video with a top-down or oblique perspective, where the camera is positioned directly overhead.",
@@ -20,8 +20,8 @@
         "A video showcasing a game with a bird’s-eye view of the environment.",
         "A gaming shot where the camera is placed at a high top-down angle."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_top_down'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_top_down'",
+    "pos_rule_str": "self.cam_setup.third_person_top_down_game_pov is True",
+    "neg_rule_str": "self.cam_setup.third_person_top_down_game_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

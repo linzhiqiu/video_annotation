@@ -18,8 +18,8 @@
         "A scene where the subject captures their own face or upper body.",
         "A selfie-style shot, common in vlogs or personal recordings."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'selfie_pov'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'selfie_pov'",
+    "pos_rule_str": "self.cam_setup.selfie_pov is True",
+    "neg_rule_str": "self.cam_setup.selfie_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

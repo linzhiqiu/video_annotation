@@ -1,0 +1,47 @@
+{
+    "label": "Only Zoom In (Relative to Camera)",
+    "label_name": "only_zoom_in",
+    "def_question": [
+        "Is zooming in the only motion in this shot, without other camera movement?",
+        "Does the camera zoom in without any dolly, pan, or tilt movement?",
+        "Is zooming the sole method of changing the frame composition?",
+        "Does the shot only use zoom in without additional spatial movement?",
+        "Is zooming in the exclusive way the shot alters framing?",
+        "Does the video contain only a zoom-in effect without physical movement?",
+        "Is the framing tightening only due to zoom, with no tracking or panning?",
+        "Does the shot feature only a zoom-in adjustment without other motions?"
+    ],
+    "alt_question": [
+        "Is the shot only zooming in without additional movement?",
+        "Does the shot focus on zooming in and nothing else?",
+        "Is zooming in the only framing change in this scene?",
+        "Is there no other camera motion besides zooming in?",
+        "Does the video use zoom in as the only method of focus adjustment?",
+        "Is the camera magnifying the image without any tracking motion?",
+        "Is zoom in the only framing adjustment in the scene?",
+        "Does the camera adjust focus using only zoom rather than movement?"
+    ],
+    "def_prompt": [
+        "A video where zooming in is the only motion, with no additional camera movement."
+    ],
+    "alt_prompt": [
+        "A shot featuring only a zoom-in effect with no dolly or tracking.",
+        "A scene where zoom-in is the only framing adjustment.",
+        "A video where the camera uses only zoom to tighten the framing.",
+        "A shot where no other camera motion is present except zoom-in.",
+        "A scene where zoom-in is the exclusive framing change.",
+        "A video featuring zoom-in as the only adjustment, without panning or tilting.",
+        "A shot where magnification increases solely due to zoom without movement.",
+        "A scene where the only framing adjustment is a zoom-in."
+    ],
+    "pos_rule_str": "self.cam_motion.zoom_in is True and self.cam_motion.check_if_no_motion(exclude=['zoom_in'])",
+    "neg_rule_str": "self.cam_motion.zoom_in is False or not self.cam_motion.check_if_no_motion(exclude=['zoom_in'])",
+    "easy_neg_rule_str": {
+        "zooming_out": "self.cam_motion.zoom_out is True",
+        "only_zooming_out": "self.cam_motion.zoom_out is True and self.cam_motion.check_if_no_motion(exclude=['zoom_out'])"
+    },
+    "hard_neg_rule_str": {
+        "forward_movement_with_zoom": "self.cam_motion.forward is True and self.cam_motion.zoom_in is True",
+        "compound_motion_with_zoom": "self.cam_motion.zoom_in is True and not self.cam_motion.check_if_no_motion(exclude=['zoom_in'])"
+    }
+}

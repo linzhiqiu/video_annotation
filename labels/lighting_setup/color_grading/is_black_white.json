@@ -1,0 +1,34 @@
+{
+    "label": "Is Black & White",
+    "label_name": "is_black_white",
+    "def_question": [
+        "Is the video entirely in black and white, with no color present?"
+    ],
+    "alt_question": [
+        "Does the video remain in black and white throughout?",
+        "Is there an absence of color in the entire video?",
+        "Does the video only contain shades of gray?",
+        "Is the video devoid of any color from start to finish?",
+        "Does the sequence exclusively use black-and-white tones?",
+        "Is there no color grading applied beyond monochrome?",
+        "Does the video avoid any colored elements entirely?",
+        "Is the video visually limited to grayscale shades?"
+    ],
+    "def_prompt": [
+        "The video is entirely in black and white, with no color present."
+    ],
+    "alt_prompt": [
+        "A black-and-white video without any color.",
+        "A sequence composed entirely in grayscale tones.",
+        "A monochrome video with no colored elements.",
+        "A film that remains in black and white throughout.",
+        "A shot where all visual elements are presented in shades of gray.",
+        "A video that avoids any use of color grading beyond grayscale.",
+        "A cinematic sequence where no color appears at any moment.",
+        "A video that exclusively relies on black, white, and gray tones."
+    ],
+    "pos_rule_str": "self.lighting_setup.is_black_white is True",
+    "neg_rule_str": "self.lighting_setup.is_black_white is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

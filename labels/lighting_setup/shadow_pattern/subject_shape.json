@@ -1,0 +1,34 @@
+{
+    "label": "Shadow Pattern - Subject Shape",
+    "label_name": "subject_shape",
+    "def_question": [
+        "Does the video feature shadows shaped by the subject, emphasizing its form or movement?"
+    ],
+    "alt_question": [
+        "Are the shadows in the scene shaped by the subject itself?",
+        "Does the lighting emphasize the subject’s silhouette through shadows?",
+        "Is there a strong contrast between the subject and its shadow?",
+        "Does the video use shadowed forms to enhance composition?",
+        "Are the shadows cast by the subject used for dramatic effect?",
+        "Does the scene rely on subject shadows to shape the visual storytelling?",
+        "Is the subject’s movement highlighted through its shadow?",
+        "Are the shadows a crucial visual element of the scene?"
+    ],
+    "def_prompt": [
+        "The video features shadows shaped by the subject, emphasizing form or movement."
+    ],
+    "alt_prompt": [
+        "A scene where subject shadows play a crucial compositional role.",
+        "A video showcasing strong, defined shadows from the subject itself.",
+        "A shot where subject movement is emphasized through shadow patterns.",
+        "A sequence using subject silhouettes to enhance dramatic impact.",
+        "A setting where shadows define the subject’s form and motion.",
+        "A video where lighting emphasizes the subject’s shape through shadows.",
+        "A scene where the subject’s shadow is as visually important as the subject.",
+        "A shot featuring a subject's distinct shadow as part of the composition."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_shape is True",
+    "neg_rule_str": "self.lighting_setup.subject_shape is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

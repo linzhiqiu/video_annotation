@@ -1,34 +1,38 @@
 {
-    "label": "Shot Size End With Full",
+    "label": "Shot Size End With Full (Subject Only)",
     "label_name": "shot_size_end_with_full",
     "def_question": [
-        "Does the video end with full?"
+        "Does the video end with a full shot that frames the entire body of the subject?"
     ],
     "alt_question": [
-        "Does the shot end with full?",
-        "Is the ending frame showing full?",
-        "Does the video end using full?",
-        "Is the final shot at full?",
-        "Does the sequence end with full?",
-        "Is the last shot at full?",
-        "Does the video close with full?",
-        "Is the ending frame at full?"
+        "Does the video close with a full shot where the subject is clearly framed?",
+        "Is the last shot a full shot capturing the entire body of the subject?",
+        "Does the video finish with a full shot focusing primarily on the subject?",
+        "Is the closing shot a full shot where the subject is the main focus?",
+        "Does the final shot provide a full-body view of the subject?",
+        "Is the last shot a full shot with the subject occupying most of the frame?",
+        "Does the video end with a shot where the subject takes up more than 50% of the frame?",
+        "Is the final frame composed to fully capture the subject while maintaining a clear focus?",
+        "Does the video conclude with a shot that ensures the entire subject is visible?",
+        "Is the last shot taken at a distance that fully includes the subject in the frame?"
     ],
     "def_prompt": [
-        "A video that ends with full."
+        "A video that ends with a full shot, framing the entire subject while maintaining focus on it."
     ],
     "alt_prompt": [
-        "A shot ending with full.",
-        "A video ending at full.",
-        "A sequence concluding with full.",
-        "A shot finally at full.",
-        "A video closing with full.",
-        "A shot ending at full.",
-        "A video concluding with full.",
-        "A sequence ending at full."
+        "The video ends with a full shot where the subject is fully visible.",
+        "The video closes with a full shot, focusing on the entire body of the subject.",
+        "The last shot of the video is a full-body view of the subject.",
+        "The closing shot includes the subject’s entire form with minimal background emphasis.",
+        "The final shot of the video is a full shot, ensuring the whole subject is captured.",
+        "A shot that fully frames the subject while keeping the focus primarily on them.",
+        "A video where the subject takes up most of the frame, emphasizing their full form.",
+        "A shot where the entire subject is visible, but some minor parts (e.g., foot, tail) may be cropped.",
+        "A video ending with a full-body shot that prioritizes the subject over the background.",
+        "A cinematic full shot that ensures the subject is the focal point of the composition."
     ],
-    "pos_rule_str": "self.shot_size_info['end'] == 'full'",
-    "neg_rule_str": "self.shot_size_info['end'] not in ['full', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['end'] == 'full'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['end'] not in ['full', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

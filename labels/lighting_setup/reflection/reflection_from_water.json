@@ -1,0 +1,34 @@
+{
+    "label": "Reflection from Water",
+    "label_name": "reflection_from_water",
+    "def_question": [
+        "Does the video show a noticable visual effect caused by light reflecting off water?"
+    ],
+    "alt_question": [
+        "Does the scene prominently use water reflections as a visual effect?",
+        "Are shimmering or mirror-like reflections on water a significant part of the composition?",
+        "Does the shot showcase a clear water reflection that enhances the scene?",
+        "Are reflections on lakes, rivers, pools, or other water bodies visually distinct?",
+        "Does the water's surface play an active role in reflecting light or objects?",
+        "Is the interaction of light with the water surface visually emphasized?",
+        "Does the video use water reflections as a key lighting or compositional element?",
+        "Are reflections from water intentionally stylized or visually striking?"
+    ],
+    "def_prompt": [
+        "The video shows a noticable visual effect caused by light reflecting off water."
+    ],
+    "alt_prompt": [
+        "A video where reflections on water create a strong visual effect.",
+        "A scene where shimmering water reflections enhance the atmosphere.",
+        "A shot where water acts as a reflective medium with striking visual impact.",
+        "A composition featuring strong or dynamic light reflections on water.",
+        "A sequence where water reflections play a major role in the lighting setup.",
+        "A video where reflections from water surfaces create a distinctive mood.",
+        "A shot using light bouncing off water to emphasize depth and movement.",
+        "A scene where reflective water surfaces add cinematic appeal."
+    ],
+    "pos_rule_str": "self.lighting_setup.reflection_from_water is True",
+    "neg_rule_str": "self.lighting_setup.reflection_from_water is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

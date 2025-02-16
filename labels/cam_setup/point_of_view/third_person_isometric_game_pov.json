@@ -21,8 +21,8 @@
         "A video showing a three-quarters view of a game world.",
         "A gaming shot with an isometric layout, commonly seen in strategy and RPG games."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_isometric'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_isometric'",
+    "pos_rule_str": "self.cam_setup.third_person_isometric_game_pov is True",
+    "neg_rule_str": "self.cam_setup.third_person_isometric_game_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

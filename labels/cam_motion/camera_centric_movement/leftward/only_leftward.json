@@ -50,14 +50,14 @@
         "A shot where the camera only slides left.",
         "A video featuring only left trucking movement."
     ],
-    "pos_rule_str": "self.cam_motion.left is True and self.cam_motion.check_if_no_motion_cam(exclude=['left'])",
-    "neg_rule_str": "self.cam_motion.left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['left'])",
+    "pos_rule_str": "self.cam_motion.left is True and self.cam_motion.check_if_no_motion(exclude=['left'])",
+    "neg_rule_str": "self.cam_motion.left is False or not self.cam_motion.check_if_no_motion(exclude=['left'])",
     "easy_neg_rule_str": {
         "moving_right": "self.cam_motion.right is True",
-        "only_moving_right": "self.cam_motion.right is True and self.cam_motion.check_if_no_motion_cam(exclude=['right'])"
+        "only_moving_right": "self.cam_motion.right is True and self.cam_motion.check_if_no_motion(exclude=['right'])"
     },
     "hard_neg_rule_str": {
         "panning_left": "self.cam_motion.pan_left is True and self.cam_motion.left is False",
-        "compound_motion_with_left": "self.cam_motion.left is True and not self.cam_motion.check_if_no_motion_cam(exclude=['left'])"
+        "compound_motion_with_left": "self.cam_motion.left is True and not self.cam_motion.check_if_no_motion(exclude=['left'])"
     }
 }

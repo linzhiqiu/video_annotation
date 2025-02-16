@@ -1,0 +1,34 @@
+{
+    "label": "Shadow Pattern - Foliage",
+    "label_name": "foliage",
+    "def_question": [
+        "Does the video feature shadows created by foliage, such as leaves or branches?"
+    ],
+    "alt_question": [
+        "Are the shadows in the scene cast by natural foliage?",
+        "Does the lighting create patterns from tree leaves or branches?",
+        "Is there a dappled lighting effect from overhead foliage?",
+        "Does the shot include intricate leaf or branch shadows?",
+        "Are tree shadows creating a distinct visual effect in the scene?",
+        "Is the scene influenced by natural light filtering through foliage?",
+        "Do leaf shadows play a dominant role in the scene’s composition?",
+        "Are dappled sunlight and foliage shadows a key feature of the lighting?"
+    ],
+    "def_prompt": [
+        "The video features shadows created by foliage, such as leaves or branches."
+    ],
+    "alt_prompt": [
+        "A scene where foliage casts intricate shadow patterns.",
+        "A video showcasing dappled light through tree leaves.",
+        "A shot where natural light creates a leaf-patterned effect.",
+        "A sequence using branch shadows for a soft, organic look.",
+        "A setting where leaf or tree shadows shape the mood.",
+        "A video where natural foliage influences the lighting setup.",
+        "A scene where sunlight filtering through leaves creates movement.",
+        "A shot featuring an interplay of foliage and light for texture."
+    ],
+    "pos_rule_str": "self.lighting_setup.foliage is True",
+    "neg_rule_str": "self.lighting_setup.foliage is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

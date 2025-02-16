@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Brighter Than Normal",
+    "label_name": "brightness_is_brighter_than_normal",
+    "def_question": [
+        "Is the video noticeably brighter than a standard neutral lighting setup?"
+    ],
+    "alt_question": [
+        "Does the video have a bright or very bright appearance?",
+        "Is the scene well-lit with strong or intense lighting?",
+        "Does the exposure make the video appear noticeably luminous?",
+        "Is the lighting level above normal brightness?",
+        "Does the scene look significantly brighter than a balanced lighting setup?",
+        "Is the video characterized by an abundance of light?",
+        "Does the lighting style make the visuals pop with strong brightness?",
+        "Is the overall brightness of the video higher than average?"
+    ],
+    "def_prompt": [
+        "The video is noticeably brighter than a standard neutral lighting setup."
+    ],
+    "alt_prompt": [
+        "A scene with high or very high brightness levels.",
+        "A video featuring lighting that is more intense than neutral.",
+        "A shot where most areas are well-lit or even overexposed.",
+        "A video that appears noticeably bright due to strong lighting.",
+        "A scene where bright exposure makes details highly visible.",
+        "A video where strong lighting emphasizes a luminous atmosphere.",
+        "A shot where brightness enhances clarity and vibrancy.",
+        "A video with a lighting setup that is significantly brighter than normal."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness in ['very_bright', 'bright']",
+    "neg_rule_str": "self.lighting_setup.brightness not in ['very_bright', 'bright']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

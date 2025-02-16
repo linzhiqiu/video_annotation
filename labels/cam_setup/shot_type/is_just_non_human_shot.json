@@ -27,8 +27,8 @@
         "A video highlighting one non-human subject.",
         "A shot following a single non-human element."
     ],
-    "pos_rule_str": "self.is_just_non_human_shot is True",
-    "neg_rule_str": "self.is_just_non_human_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_non_human_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_non_human_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

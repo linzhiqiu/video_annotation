@@ -1,0 +1,38 @@
+{
+    "label": "Side Tracking Shot (Leftward)",
+    "label_name": "side_tracking_shot_leftward",
+    "def_question": [
+        "Is it a side-tracking shot where the camera moves left to follow the subject?",
+        "Does the camera truck left while tracking the subject’s motion?",
+        "Is the subject followed with a lateral leftward movement?",
+        "Does the shot involve the camera moving left alongside the subject?"
+    ],
+    "alt_question": [
+        "Does the camera track the subject from the side while moving left?",
+        "Is the camera positioned at the side while trucking left?",
+        "Does the tracking shot involve a consistent leftward motion?",
+        "Is the subject’s movement accompanied by a leftward side-tracking shot?",
+        "Is the camera keeping pace with the subject by moving left?",
+        "Does the video feature a tracking shot where the camera moves left along the subject’s path?"
+    ],
+    "def_prompt": [
+        "A side-tracking shot where the camera moves left to follow the subject.",
+        "A lateral tracking shot moving leftward alongside the subject.",
+        "A shot where the camera trucks left to track the subject’s movement."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves alongside the subject while tracking leftward.",
+        "A video featuring a tracking shot with lateral movement to the left.",
+        "A sequence where the camera follows the subject from the side while moving left.",
+        "A scene where the camera moves leftward in a parallel tracking motion."
+    ],
+    "pos_rule_str": "self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True",
+    "neg_rule_str": "not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True)",
+    "easy_neg_rule_str": {
+        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    },
+    "hard_neg_rule_str": {
+        "side_tracking_shot_rightward": "self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True",
+        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_left is True"
+    }
+}

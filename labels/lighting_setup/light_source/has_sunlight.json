@@ -1,0 +1,34 @@
+{
+    "label": "Has Sunlight",
+    "label_name": "has_sunlight",
+    "def_question": [
+        "Is sunlight the primary light source in the video, even if the sun itself is not visible?"
+    ],
+    "alt_question": [
+        "Does the scene appear to be naturally illuminated by sunlight?",
+        "Is the dominant lighting in the video coming from the sun?",
+        "Does the video primarily rely on daylight as the main light source?",
+        "Is the environment bright due to sunlight, even if the sun is not visible?",
+        "Does natural outdoor lighting suggest a sunlight source?",
+        "Is the scene illuminated in a way that strongly indicates sunlight?",
+        "Is sunlight the key source shaping the scene’s lighting conditions?",
+        "Does the video’s lighting behave like outdoor sunlight exposure?"
+    ],
+    "def_prompt": [
+        "The primary light source in the video is sunlight, whether or not the sun is visible."
+    ],
+    "alt_prompt": [
+        "A video where daylight is the dominant light source.",
+        "A shot primarily illuminated by natural sunlight.",
+        "A scene where outdoor sunlight shapes the lighting conditions.",
+        "A sequence where daylight provides the main illumination.",
+        "A video with strong natural light, consistent with sunlight.",
+        "A shot where the lighting suggests exposure to direct or indirect sunlight.",
+        "A scene where sunlight is the defining source of illumination.",
+        "A setting that appears naturally lit by the sun."
+    ],
+    "pos_rule_str": "self.lighting_setup.sunlight_source is True",
+    "neg_rule_str": "self.lighting_setup.sunlight_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

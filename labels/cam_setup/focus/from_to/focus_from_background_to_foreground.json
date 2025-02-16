@@ -1,0 +1,34 @@
+{
+    "label": "Focus Shifts from Background to Foreground",
+    "label_name": "focus_from_background_to_foreground",
+    "def_question": [
+        "Does the video start with the background in focus and then shift to the foreground?"
+    ],
+    "alt_question": [
+        "Does the focus transition from the background to the foreground?",
+        "Is there a focus shift where the background starts sharp and then the foreground becomes clear?",
+        "Does the video begin with a sharp background before adjusting to the foreground?",
+        "Is the initial shot focused on the background before refocusing on the foreground?",
+        "Does the sequence open with a clear background but then shift focus to the foreground?",
+        "Is the focus deliberately moved from the background to the foreground?",
+        "Does the shot gradually shift from the background to bring the foreground into focus?",
+        "Is there a clear transition where the background blurs while the foreground sharpens?"
+    ],
+    "def_prompt": [
+        "The video starts with the background in focus and then shifts to the foreground."
+    ],
+    "alt_prompt": [
+        "A video where the focus moves from the background to the foreground.",
+        "A scene that begins with a sharp background and then transitions to the foreground.",
+        "A shot where the background is in focus first, but the foreground becomes clearer.",
+        "A video where the depth of field shifts from the background to the foreground.",
+        "A sequence where the focus transitions from a distant subject to the foreground.",
+        "A shot where the background starts in focus but gradually fades out while the foreground sharpens.",
+        "A video showing a deliberate shift in focus from background to foreground.",
+        "A scene where the focus transitions smoothly from background to foreground."
+    ],
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['background', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -237,17 +237,17 @@ Does the camera only tilt down in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tilt_down is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])</code>
+<code>self.cam_motion.tilt_down is True and self.cam_motion.check_if_no_motion(exclude=['tilt_down'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.tilt_down is False or not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])</code>
+<code>self.cam_motion.tilt_down is False or not self.cam_motion.check_if_no_motion(exclude=['tilt_down'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
 - <b>tilting_up</b>: <code>self.cam_motion.tilt_up is True</code>
 
-- <b>only_tilting_up</b>: <code>self.cam_motion.tilt_up is True and self.cam_motion.check_if_no_motion_cam(exclude=['tilt_up'])</code>
+- <b>only_tilting_up</b>: <code>self.cam_motion.tilt_up is True and self.cam_motion.check_if_no_motion(exclude=['tilt_up'])</code>
 
 </details>
 
@@ -256,7 +256,7 @@ Does the camera only tilt down in the scene?
 
 - <b>moving_down</b>: <code>self.cam_motion.down is True and self.cam_motion.tilt_down is False</code>
 
-- <b>compound_motion_with_tilt_down</b>: <code>self.cam_motion.tilt_down is True and not self.cam_motion.check_if_no_motion_cam(exclude=['tilt_down'])</code>
+- <b>compound_motion_with_tilt_down</b>: <code>self.cam_motion.tilt_down is True and not self.cam_motion.check_if_no_motion(exclude=['tilt_down'])</code>
 
 </details>
 

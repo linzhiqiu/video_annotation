@@ -1,0 +1,34 @@
+{
+    "label": "Lightning",
+    "label_name": "lightning",
+    "def_question": [
+        "Does the video show a visible lightning effect with sudden, intense flashes and jagged branching streaks?"
+    ],
+    "alt_question": [
+        "Does the scene prominently feature a lightning bolt with a branching shape?",
+        "Is a sudden, bright electrical discharge visible, such as a lightning strike or Tesla coil arcs?",
+        "Does the shot showcase a thunderstorm with distinct, jagged lightning flashes?",
+        "Is the lightning effect a major visual component, with branching streaks or plasma arcs?",
+        "Does the video capture or simulate a dramatic, forked lightning strike?",
+        "Is lightning used to create an intense burst of illumination with a sharp, jagged form?",
+        "Are Tesla coil discharges or electrical arcs prominently displayed?",
+        "Does the scene feature natural or artificial lightning effects with clear, visible structure?"
+    ],
+    "def_prompt": [
+        "The video shows a visible lightning effect with sudden, intense flashes and jagged branching streaks."
+    ],
+    "alt_prompt": [
+        "A video showcasing dramatic lightning bolts with sharp, branching patterns.",
+        "A scene where sudden electrical discharges create bright flashes and jagged streaks.",
+        "A shot where a thunderstorm produces multiple well-defined lightning strikes.",
+        "A video capturing the raw energy of lightning bolts or Tesla coil arcs.",
+        "A sequence featuring natural or artificial lightning effects with visible branching structures.",
+        "A shot emphasizing intense, jagged bursts of light in the sky.",
+        "A video where lightning or plasma arcs play a major role in the visual composition.",
+        "A scene using lightning to enhance dramatic, action, or horror aesthetics."
+    ],
+    "pos_rule_str": "self.lighting_setup.lightning is True",
+    "neg_rule_str": "self.lighting_setup.lightning is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

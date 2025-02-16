@@ -17,8 +17,8 @@
         "A video with a waist-level perspective showing character movement.",
         "A shot where the camera is positioned at mid-body height while framing the scene."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_over_hip'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_over_hip'",
+    "pos_rule_str": "self.cam_setup.third_person_over_hip_pov is True",
+    "neg_rule_str": "self.cam_setup.third_person_over_hip_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -10,15 +10,15 @@
         "Is the camera positioned far enough to show the entire character in the environment?"
     ],
     "def_prompt": [
-        "A third-person 3D game video with the entire character visible."
+        "A third-person 3D game video where the entire character is visible on screen."
     ],
     "alt_prompt": [
         "A scene showing a character’s full-body from a third-person perspective.",
         "A video where the character is fully framed within their surroundings.",
         "A gaming-style shot where the entire character is visible."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'third_person_full_body'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'third_person_full_body'",
+    "pos_rule_str": "self.cam_setup.third_person_full_body_game_pov is True",
+    "neg_rule_str": "self.cam_setup.third_person_full_body_game_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

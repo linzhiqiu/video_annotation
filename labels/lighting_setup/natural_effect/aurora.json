@@ -1,0 +1,34 @@
+{
+    "label": "Aurora",
+    "label_name": "aurora",
+    "def_question": [
+        "Does the video feature an aurora, displaying colorful light patterns in the sky?"
+    ],
+    "alt_question": [
+        "Is an aurora borealis or aurora australis present in the scene?",
+        "Does the shot prominently feature natural light waves in the sky?",
+        "Is there a visible atmospheric glow with shifting colors?",
+        "Does the video capture the northern or southern lights?",
+        "Is the aurora a key visual component in the composition?",
+        "Does the scene emphasize the movement of colorful light in the sky?",
+        "Is there a dynamic play of colors resembling an aurora effect?",
+        "Does the video showcase a vibrant aurora phenomenon?"
+    ],
+    "def_prompt": [
+        "The video features an aurora, displaying colorful light patterns in the sky."
+    ],
+    "alt_prompt": [
+        "A video highlighting a striking aurora borealis or australis display.",
+        "A scene where shifting atmospheric light patterns create an aurora effect.",
+        "A shot capturing colorful, glowing waves in the night sky.",
+        "A video where an aurora serves as a significant visual element.",
+        "A sequence featuring natural sky illumination in green, red, or blue hues.",
+        "A shot where auroras enhance the cinematic atmosphere.",
+        "A video depicting the movement of aurora lights in the sky.",
+        "A scene using aurora visuals to create a mystical or scenic effect."
+    ],
+    "pos_rule_str": "self.lighting_setup.aurora is True",
+    "neg_rule_str": "self.lighting_setup.aurora is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

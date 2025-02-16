@@ -10,15 +10,15 @@
         "Is the camera’s viewpoint rigidly following an attached object?"
     ],
     "def_prompt": [
-        "A locked-on POV shot where the camera is mounted onto an object, keeping its perspective locked to that object."
+        "A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed to that object."
     ],
     "alt_prompt": [
         "A video where the camera is attached to a moving object, maintaining a consistent viewpoint.",
         "A shot showing a perspective locked onto an object, moving as the object moves.",
         "A dynamic perspective where the camera remains fixed to a moving platform or subject."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'locked_on_pov'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'locked_on_pov'",
+    "pos_rule_str": "self.cam_setup.locked_on_pov is True",
+    "neg_rule_str": "self.cam_setup.locked_on_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -180,10 +180,12 @@ Does the video contain noticeable motion blur?
 
 
 <h3>📖 Definition:</h3>
-Does the video include one or more shot transitions?
+Does the video include shot transitions?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the video include one or more shot transitions?
 
 - Does the video contain hard cuts or soft transitions, or a combination of both?
 
@@ -214,6 +216,8 @@ Does the video include one or more shot transitions?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- A video that includes shot transitions.
 
 - A video showing one or more shot transitions.
 

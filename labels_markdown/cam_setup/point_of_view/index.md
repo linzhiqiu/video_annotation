@@ -46,10 +46,10 @@ Is this a professional viewpoint used in television broadcasts?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'broadcast_pov'</code>
+<code>self.cam_setup.boardcast_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'broadcast_pov'</code>
+<code>self.cam_setup.boardcast_pov is False</code>
 
 </details>
 
@@ -62,7 +62,7 @@ Is this a professional viewpoint used in television broadcasts?
 
 
 <h3>📖 Definition:</h3>
-Is this a forward-facing view from a dashboard-mounted camera, capturing the road or surroundings?
+Is this a forward-facing view from a dash cam, capturing the road or surroundings?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -83,7 +83,7 @@ Is this a forward-facing view from a dashboard-mounted camera, capturing the roa
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A dashcam POV shot where the camera is mounted on a vehicle's dashboard, capturing the road ahead.
+- A dashcam POV shot where the dash cam is mounted on a vehicle, capturing the road ahead.
 
 </details>
 
@@ -99,10 +99,10 @@ Is this a forward-facing view from a dashboard-mounted camera, capturing the roa
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'dashcam_pov'</code>
+<code>self.cam_setup.dashcam_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'dashcam_pov'</code>
+<code>self.cam_setup.dashcam_pov is False</code>
 
 </details>
 
@@ -138,9 +138,9 @@ Is this video captured by a drone?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video filmed by a drone.
-
 - A drone POV shot.
+
+- A video filmed by a drone.
 
 </details>
 
@@ -156,10 +156,10 @@ Is this video captured by a drone?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'drone_pov'</code>
+<code>self.cam_setup.drone_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'drone_pov'</code>
+<code>self.cam_setup.drone_pov is False</code>
 
 </details>
 
@@ -172,7 +172,7 @@ Is this video captured by a drone?
 
 
 <h3>📖 Definition:</h3>
-Is the scene shown from the character’s perspective, as if through their eyes?
+Is the scene shown from the first-person perspective, as if through the character’s eyes?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -191,6 +191,8 @@ Is the scene shown from the character’s perspective, as if through their eyes?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- A first-person POV shot.
+
 - A first-person POV shot where the scene is viewed from the character’s perspective.
 
 </details>
@@ -205,10 +207,10 @@ Is the scene shown from the character’s perspective, as if through their eyes?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'first_person'</code>
+<code>self.cam_setup.first_person_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'first_person'</code>
+<code>self.cam_setup.first_person_pov is False</code>
 
 </details>
 
@@ -242,7 +244,7 @@ Is the camera physically mounted on an object, keeping its perspective locked to
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A locked-on POV shot where the camera is mounted onto an object, keeping its perspective locked to that object.
+- A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed to that object.
 
 </details>
 
@@ -258,10 +260,63 @@ Is the camera physically mounted on an object, keeping its perspective locked to
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'locked_on_pov'</code>
+<code>self.cam_setup.locked_on_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'locked_on_pov'</code>
+<code>self.cam_setup.locked_on_pov is False</code>
+
+</details>
+
+<details>
+<summary><h2>Objective POV</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>objective_pov</code>
+
+
+<h3>📖 Definition:</h3>
+Is this a neutral, detached perspective where the camera does not represent any character's viewpoint?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the scene presented from an external, observer-like perspective?
+
+- Does the camera provide an impartial view of the action?
+
+- Is the shot framed without simulating any subject’s perspective?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- An objective POV shot where the camera captures the scene from a detached, observational perspective.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A scene filmed with a neutral camera viewpoint, not tied to any character.
+
+- A video showing events from an external, third-party perspective.
+
+- A shot that presents the action impartially, as an observer would see it.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.objective_pov is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_setup.objective_pov is False</code>
 
 </details>
 
@@ -274,7 +329,7 @@ Is the camera physically mounted on an object, keeping its perspective locked to
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned directly above the subject for a hands-on demonstration?
+Is the camera positioned directly above the subject for a top-down perspective?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -295,14 +350,14 @@ Is the camera positioned directly above the subject for a hands-on demonstration
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- An overhead POV shot where the camera is positioned directly above the subjects for a hands-on demonstration.
+- An overhead POV shot where the camera is positioned directly above the subjects for a top-down perspective.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A scene used in instructional or hands-on demonstration videos.
+- A scene used in instructional or top-down perspective videos.
 
 - A shot with a high-angle perspective to showcase details clearly.
 
@@ -311,10 +366,10 @@ Is the camera positioned directly above the subject for a hands-on demonstration
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'overhead_pov'</code>
+<code>self.cam_setup.overhead_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'overhead_pov'</code>
+<code>self.cam_setup.overhead_pov is False</code>
 
 </details>
 
@@ -366,10 +421,10 @@ Does this video capture a screen recording with visible UI elements?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'screen_recording'</code>
+<code>self.cam_setup.screen_recording_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'screen_recording'</code>
+<code>self.cam_setup.screen_recording_pov is False</code>
 
 </details>
 
@@ -421,10 +476,10 @@ Is the camera facing the person holding it?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'selfie_pov'</code>
+<code>self.cam_setup.selfie_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'selfie_pov'</code>
+<code>self.cam_setup.selfie_pov is False</code>
 
 </details>
 
@@ -458,7 +513,7 @@ Is this a 3D gaming video featuring a third-person perspective with the characte
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person 3D game video with the entire character visible.
+- A third-person 3D game video where the entire character is visible on screen.
 
 </details>
 
@@ -474,10 +529,10 @@ Is this a 3D gaming video featuring a third-person perspective with the characte
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_full_body'</code>
+<code>self.cam_setup.third_person_full_body_game_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_full_body'</code>
+<code>self.cam_setup.third_person_full_body_game_pov is False</code>
 
 </details>
 
@@ -535,10 +590,10 @@ Is this a third-person isometric (2.5D) gaming video with a tilted overhead angl
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_isometric'</code>
+<code>self.cam_setup.third_person_isometric_game_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_isometric'</code>
+<code>self.cam_setup.third_person_isometric_game_pov is False</code>
 
 </details>
 
@@ -588,10 +643,10 @@ Is the camera framing the character from the hip up?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_over_hip'</code>
+<code>self.cam_setup.third_person_over_hip_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_over_hip'</code>
+<code>self.cam_setup.third_person_over_hip_pov is False</code>
 
 </details>
 
@@ -637,10 +692,10 @@ Is the camera positioned behind the character, showing their upper body and the 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_over_shoulder'</code>
+<code>self.cam_setup.third_person_over_shoulder_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_over_shoulder'</code>
+<code>self.cam_setup.third_person_over_shoulder_pov is False</code>
 
 </details>
 
@@ -674,7 +729,7 @@ Is this a 2D or 3D gaming video where the camera is positioned at the side of th
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person side-view gaming video where the camera follows the character from a lateral perspective.
+- A third-person 2D side-view gaming video where the camera follows the character from a lateral perspective.
 
 </details>
 
@@ -690,10 +745,10 @@ Is this a 2D or 3D gaming video where the camera is positioned at the side of th
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_side_view'</code>
+<code>self.cam_setup.third_person_side_view_game_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_side_view'</code>
+<code>self.cam_setup.third_person_side_view_game_pov is False</code>
 
 </details>
 
@@ -729,7 +784,7 @@ Is this a gaming video with a camera positioned directly above the character, sh
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person top-down or oblique gaming video with the camera directly above the character.
+- A third-person top-down or top-down oblique gaming video with the camera above the character, offering a top-down perspective.
 
 </details>
 
@@ -749,9 +804,9 @@ Is this a gaming video with a camera positioned directly above the character, sh
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.camera_pov == 'third_person_top_down'</code>
+<code>self.cam_setup.third_person_top_down_game_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.camera_pov != 'third_person_top_down'</code>
+<code>self.cam_setup.third_person_top_down_game_pov is False</code>
 
 </details>

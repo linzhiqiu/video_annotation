@@ -18,8 +18,8 @@
         "A video featuring alternating frame scales.",
         "A shot with patterned size variations."
     ],
-    "pos_rule_str": "self.is_just_back_and_forth_change_shot is True",
-    "neg_rule_str": "self.is_just_back_and_forth_change_shot is False",
+    "pos_rule_str": "self.cam_setup.is_just_back_and_forth_change_shot is True",
+    "neg_rule_str": "self.cam_setup.is_just_back_and_forth_change_shot is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

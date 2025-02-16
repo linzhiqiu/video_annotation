@@ -1,0 +1,34 @@
+{
+    "label": "Color Temperature Is Cool",
+    "label_name": "color_temperature_is_cool",
+    "def_question": [
+        "Is the video dominated by cool tones, such as blues, greens, or cyan?"
+    ],
+    "alt_question": [
+        "Does the video have a noticeable cool color balance?",
+        "Is the color grading primarily in cool hues?",
+        "Does the video emphasize blues, greens, or teal tones?",
+        "Is the overall scene bathed in cool lighting?",
+        "Does the sequence consistently feature cool color grading?",
+        "Are the dominant colors in the video within the cool spectrum?",
+        "Does the video’s color scheme lean towards cool tones?",
+        "Is the lighting styled to create a cool, crisp atmosphere?"
+    ],
+    "def_prompt": [
+        "The video is dominated by cool tones, such as blues, greens, or cyan."
+    ],
+    "alt_prompt": [
+        "A video graded with cool, blue hues.",
+        "A sequence primarily featuring teal and cyan tones.",
+        "A shot where cool colors like blue and green are dominant.",
+        "A cinematic look with strong cool color grading.",
+        "A video that maintains a consistent cool color balance.",
+        "A scene lit in soft, blue-tinted tones.",
+        "A color scheme emphasizing coolness throughout the video.",
+        "A video visually defined by cold, crisp color tones."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_temperature == 'cool'",
+    "neg_rule_str": "self.lighting_setup.color_temperature != 'cool'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

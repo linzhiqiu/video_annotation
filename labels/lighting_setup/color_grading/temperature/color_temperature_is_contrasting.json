@@ -1,0 +1,34 @@
+{
+    "label": "Color Temperature Is Contrasting (Complex)",
+    "label_name": "color_temperature_is_contrasting",
+    "def_question": [
+        "Does the video feature strongly contrasting warm and cool color temperatures within the same scene or sequence?"
+    ],
+    "alt_question": [
+        "Does the video exhibit a striking contrast between warm and cool tones?",
+        "Is there a mix of warm and cool colors within the same shot or sequence?",
+        "Does the scene use opposing color temperatures to create visual contrast?",
+        "Is there a noticeable juxtaposition of warm and cool lighting?",
+        "Does the color grading include a strong contrast between warm and cool hues?",
+        "Is the video designed to emphasize the interplay of warm and cool tones?",
+        "Does the sequence include deliberate color temperature opposition?",
+        "Is there an intentional balance of warm and cool lighting styles?"
+    ],
+    "def_prompt": [
+        "The video features strongly contrasting warm and cool color temperatures within the same scene or sequence."
+    ],
+    "alt_prompt": [
+        "A video with a strong contrast between warm and cool tones.",
+        "A sequence where warm and cool hues are deliberately juxtaposed.",
+        "A shot highlighting opposing color temperatures in the same frame.",
+        "A video with intentional warm-cool lighting contrast.",
+        "A scene designed to emphasize a balance between warm and cool hues.",
+        "A shot where warm and cool lights create a visually striking effect.",
+        "A sequence where the interplay of warm and cool color grading is evident.",
+        "A video using complementary warm and cool tones for artistic contrast."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_temperature == 'complex_contrasting'",
+    "neg_rule_str": "self.lighting_setup.color_temperature != 'complex_contrasting'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Bokeh",
+    "label_name": "bokeh",
+    "def_question": [
+        "Does the video feature soft, out-of-focus light orbs in the background, created by distant light sources and a shallow depth of field?"
+    ],
+    "alt_question": [
+        "Are there visible out-of-focus light orbs in the background?",
+        "Does the video contain a strong bokeh effect from distant lights?",
+        "Are the background highlights blurred into soft circles?",
+        "Is there a noticeable background blur with stylized bokeh?",
+        "Does the scene feature dreamy or aesthetic light blurs?",
+        "Are there distinct rounded bokeh lights in the composition?",
+        "Is the shallow depth of field producing blurred circular highlights?",
+        "Does the video emphasize soft, glowing light spots in the distance?"
+    ],
+    "def_prompt": [
+        "The video features soft, out-of-focus light orbs in the background, created by distant light sources and a shallow depth of field."
+    ],
+    "alt_prompt": [
+        "A video showcasing beautiful bokeh effects with blurred light sources.",
+        "A shot featuring soft, circular highlights due to shallow depth of field.",
+        "A scene with dreamy, out-of-focus light spots.",
+        "A sequence where background lights create a strong bokeh effect.",
+        "A shot with blurred, glowing orbs from distant highlights.",
+        "A composition emphasizing smooth, defocused lighting details.",
+        "A video where background lights form aesthetic bokeh patterns.",
+        "A shot where depth of field enhances the blurring of background lights."
+    ],
+    "pos_rule_str": "self.lighting_setup.bokeh is True",
+    "neg_rule_str": "self.lighting_setup.bokeh is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

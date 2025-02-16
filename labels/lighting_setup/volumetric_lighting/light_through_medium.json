@@ -1,0 +1,34 @@
+{
+    "label": "Volumetric Light Through Medium",
+    "label_name": "light_through_medium",
+    "def_question": [
+        "Does the video feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?"
+    ],
+    "alt_question": [
+        "Is light visibly interacting with atmospheric particles such as smoke or mist?",
+        "Does the video showcase volumetric lighting effects in fog, dust, or vapor?",
+        "Are visible light volumes forming due to interaction with a medium?",
+        "Does the scene contain strong light breaking through a semi-transparent material?",
+        "Is lighting creating a volumetric glow through an environmental medium?",
+        "Are there defined beams of light shaped by interaction with smoke or haze?",
+        "Does the video highlight light scattering within an atmospheric medium?",
+        "Is the lighting visibly altered by the presence of fog or liquid in the scene?"
+    ],
+    "def_prompt": [
+        "The video features intense light passing through smoke, fog, or liquid, shaping visible light volumes."
+    ],
+    "alt_prompt": [
+        "A scene where bright light interacts with atmospheric particles.",
+        "A video showcasing volumetric lighting in fog, mist, or vapor.",
+        "A shot featuring light scattering through smoke or haze.",
+        "A sequence emphasizing the glow of light through an environmental medium.",
+        "A setting where light beams are visible due to dust or moisture.",
+        "A video highlighting volumetric light in a semi-transparent medium.",
+        "A scene where light becomes distinct due to interaction with fog.",
+        "A shot where a thick medium enhances the visibility of light beams."
+    ],
+    "pos_rule_str": "self.lighting_setup.light_through_medium is True",
+    "neg_rule_str": "self.lighting_setup.light_through_medium is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

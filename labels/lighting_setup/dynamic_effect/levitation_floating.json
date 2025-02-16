@@ -1,0 +1,34 @@
+{
+    "label": "Levitation / Floating",
+    "label_name": "levitation_floating",
+    "def_question": [
+        "Does the video show objects or characters floating or levitating as if unaffected by gravity?"
+    ],
+    "alt_question": [
+        "Does the shot depict a subject hovering in mid-air without visible support?",
+        "Is there an object or character appearing to float weightlessly?",
+        "Does the scene feature elements that seem suspended in the air unnaturally?",
+        "Are there people or objects levitating as if gravity is not affecting them?",
+        "Does the video contain an anti-gravity effect?",
+        "Is there a supernatural or sci-fi floating effect in the scene?",
+        "Does the video present subjects that appear weightless and drifting?",
+        "Are there objects or characters visibly levitating without wings, propulsion, or natural flight ability?"
+    ],
+    "def_prompt": [
+        "The video shows objects or characters floating or levitating as if unaffected by gravity."
+    ],
+    "alt_prompt": [
+        "A shot where a subject hovers or floats in mid-air weightlessly.",
+        "A video featuring levitation effects that create the illusion of zero gravity.",
+        "A sequence depicting characters or objects floating as if no gravitational force is acting on them.",
+        "A shot where something remains suspended in the air without visible support.",
+        "A video showcasing an anti-gravity or supernatural floating effect.",
+        "A setting where objects appear to drift or hover as if weightless.",
+        "A shot where a subject appears to float without any clear means of staying aloft.",
+        "A scene emphasizing levitation or floating as a key visual effect."
+    ],
+    "pos_rule_str": "self.lighting_setup.levitation_floating is True",
+    "neg_rule_str": "self.lighting_setup.levitation_floating is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

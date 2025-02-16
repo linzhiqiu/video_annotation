@@ -1,0 +1,34 @@
+{
+    "label": "God Rays",
+    "label_name": "god_rays",
+    "def_question": [
+        "Does the video feature striking, separated rays of light (or god rays) streaming through gaps in the environment?"
+    ],
+    "alt_question": [
+        "Are visible rays of light streaming through objects like trees, clouds, or windows?",
+        "Does the video prominently feature dramatic shafts of light in the scene?",
+        "Are sunlight beams distinctly separated and visible in the atmosphere?",
+        "Does the lighting create radiating, divine-like rays in the frame?",
+        "Is there a strong contrast between light beams and shadows?",
+        "Are shafts of light breaking through structures or natural elements?",
+        "Do streaks of sunlight enhance the visual depth of the scene?",
+        "Is volumetric lighting creating a strong god-ray effect?"
+    ],
+    "def_prompt": [
+        "The video features striking, separated rays of light (or god rays) streaming through gaps in the environment."
+    ],
+    "alt_prompt": [
+        "A scene showcasing god rays breaking through clouds or trees.",
+        "A video where strong light beams radiate through atmospheric gaps.",
+        "A setting featuring dramatic shafts of sunlight piercing the frame.",
+        "A sequence where volumetric lighting enhances depth with god rays.",
+        "A shot emphasizing powerful, radiant streaks of light.",
+        "A scene where sunlight appears as separated, divine-like beams.",
+        "A video using volumetric lighting to create a visually stunning effect.",
+        "A setting where shafts of light contrast sharply against shadows."
+    ],
+    "pos_rule_str": "self.lighting_setup.god_rays is True",
+    "neg_rule_str": "self.lighting_setup.god_rays is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

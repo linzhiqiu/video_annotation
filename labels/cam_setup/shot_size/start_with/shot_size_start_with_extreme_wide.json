@@ -2,33 +2,38 @@
     "label": "Shot Size Start With Extreme Wide",
     "label_name": "shot_size_start_with_extreme_wide",
     "def_question": [
-        "Does the video start with extreme wide?"
+        "Does the video start with an extreme wide shot that emphasizes the setting over any subjects?"
     ],
     "alt_question": [
-        "Does the shot start with extreme wide?",
-        "Is the starting frame showing extreme wide?",
-        "Does the video start using extreme wide?",
-        "Is the initial shot at extreme wide?",
-        "Does the sequence start with extreme wide?",
-        "Is the first shot at extreme wide?",
-        "Does the video open with extreme wide?",
-        "Is the starting frame at extreme wide?"
+        "Does the video open with an extreme wide shot that emphasizes the setting?",
+        "Is the first shot a wide establishing shot where the subject is small or distant?",
+        "Does the opening shot prioritize the environment over the subject?",
+        "Is the first frame composed to capture a vast area rather than a close-up of a subject?",
+        "Does the video begin with a shot where the main subject occupies less than 10-15% of the frame?",
+        "Is the initial shot focused on showcasing a large space rather than a character?",
+        "Does the first shot present an expansive location, with any subject appearing small?",
+        "Is the first shot meant to introduce the setting rather than a specific subject?",
+        "Does the video start with a landscape-dominant view?",
+        "Does the video establish a vast scene before focusing on any subject?",
+        "Is the opening shot taken from a distance, capturing a large area?"
     ],
     "def_prompt": [
-        "A video that starts with extreme wide."
+        "A video that starts with an extreme wide shot, emphasizing the setting over any subjects."
     ],
     "alt_prompt": [
-        "A shot starting with extreme wide.",
-        "A video starting at extreme wide.",
-        "A sequence beginning with extreme wide.",
-        "A shot initially at extreme wide.",
-        "A video opening with extreme wide.",
-        "A shot starting at extreme wide.",
-        "A video beginning with extreme wide.",
-        "A sequence starting at extreme wide."
+        "The video begins with an extreme wide shot where the subject is very small or distant.",
+        "The first shot of the video is an extreme wide view of a large environment.",
+        "The video opens with a landscape-oriented extreme wide shot.",
+        "The opening shot captures an expansive scene, with minimal focus on any subject.",
+        "A video that starts with a setting-focused extreme wide shot, making subjects appear tiny.",
+        "The video starts with a shot that provides significant context to the surroundings.",
+        "A shot that prioritizes environment and location, with the subject occupying little space.",
+        "A cinematic opening featuring a large, distant perspective with no clear subject focus.",
+        "The first frame of the video establishes the surroundings rather than a character.",
+        "A video that opens with a wide-angle scene where the environment is more prominent than the subject."
     ],
-    "pos_rule_str": "self.shot_size_info['start'] == 'extreme_wide'",
-    "neg_rule_str": "self.shot_size_info['start'] not in ['extreme_wide', 'unknown']",
+    "pos_rule_str": "self.cam_setup.shot_size_info['start'] == 'extreme_wide'",
+    "neg_rule_str": "self.cam_setup.shot_size_info['start'] not in ['extreme_wide', 'unknown']",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -1,0 +1,35 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Minimal",
+    "label_name": "contrast_is_minimal",
+    "def_question": [
+        "Is there a flat lighting on the subject with minimal contrast, where lit and shadowed areas appear nearly the same (1:1 to 1:2)?",
+        "Is it a high-key lighting on the subject with minimal contrast?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting feature little to no visible shadowing?",
+        "Is the subject illuminated with very even lighting and no strong highlights?",
+        "Does the lighting on the subject create a flat, uniform appearance?",
+        "Is the separation between lit and shadowed areas on the subject barely noticeable?",
+        "Does the lighting create a soft, nearly shadowless effect on the subject?",
+        "Is the subject shaped by very low contrast lighting?",
+        "Does the video feature lighting where the subject has no strong shadows?",
+        "Is the subject’s visibility defined by flat, even lighting?"
+    ],
+    "def_prompt": [
+        "The lighting on the subject has minimal contrast (1:1 to 1:2), creating a flat lighting effect."
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with minimal contrast, appearing evenly illuminated.",
+        "A scene where the subject’s lighting lacks strong highlights or shadows.",
+        "A shot where the lighting on the subject results in a flat, even look.",
+        "A video where the subject is illuminated with almost no shadowing.",
+        "A sequence where the subject appears with a soft, uniform brightness.",
+        "A shot featuring a subject with little to no visible shading.",
+        "A video where even lighting minimizes shadow depth.",
+        "A scene that reduces contrast for a smooth, flat-lit appearance."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'minimal_contrast'",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['minimal_contrast', 'unknown', 'complex_changing']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

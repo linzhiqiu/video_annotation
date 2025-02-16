@@ -83,7 +83,7 @@ Does the shot feature a dolly zoom effect with the camera moving forward and zoo
 <code>self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.dolly_zoom</code>
+<code>not self.cam_motion.dolly_zoom or self.cam_motion.forward is False or self.cam_motion.zoom_out is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
@@ -177,7 +177,7 @@ Does the shot feature a dolly zoom effect with the camera moving backward and zo
 <code>self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.dolly_zoom</code>
+<code>not self.cam_motion.dolly_zoom or self.cam_motion.backward is False or self.cam_motion.zoom_in is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>

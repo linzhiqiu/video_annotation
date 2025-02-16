@@ -1,0 +1,34 @@
+{
+    "label": "Light Quality Is Changing (Complex)",
+    "label_name": "light_quality_is_changing",
+    "def_question": [
+        "Does the video feature dynamically shifting light quality over time?"
+    ],
+    "alt_question": [
+        "Does the scene transition between hard and soft lighting?",
+        "Is there a noticeable variation in light sharpness throughout the video?",
+        "Does the video include fluctuating shadow intensity and contrast?",
+        "Is the lighting in the video inconsistent or evolving?",
+        "Does the scene experience shifting illumination patterns?",
+        "Is there a progression in light quality from diffused to hard or vice versa?",
+        "Does the lighting transition multiple times in the video?",
+        "Is the light source condition constantly changing?"
+    ],
+    "def_prompt": [
+        "The video features dynamically shifting light quality over time."
+    ],
+    "alt_prompt": [
+        "A video where lighting conditions evolve throughout.",
+        "A shot featuring transitions between soft and hard lighting.",
+        "A scene where illumination continuously changes in intensity and texture.",
+        "A video with a non-static lighting environment.",
+        "A sequence where shifting light quality alters the visual effect.",
+        "A video where lighting does not remain consistent over time.",
+        "A shot where fluctuating brightness and contrast define the scene.",
+        "A scene featuring multiple lighting shifts creating dynamic variation."
+    ],
+    "pos_rule_str": "self.lighting_setup.light_quality == 'complex_changing'",
+    "neg_rule_str": "self.lighting_setup.light_quality != 'complex_changing'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

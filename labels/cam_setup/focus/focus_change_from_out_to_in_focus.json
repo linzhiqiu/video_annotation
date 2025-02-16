@@ -1,0 +1,34 @@
+{
+    "label": "Focus Changes from Out of Focus to In Focus",
+    "label_name": "focus_change_from_out_to_in_focus",
+    "def_question": [
+        "Does the video start out of focus and then become in focus?"
+    ],
+    "alt_question": [
+        "Does the shot begin blurry and then become in focus?",
+        "Is there a focus shift where an unfocused scene becomes in focus?",
+        "Does the video transition from an indistinct blur to being in focus?",
+        "Is the initial shot lacking clarity but then becomes in focus?",
+        "Does the sequence open with a blurred frame that gradually comes into focus?",
+        "Is the focus deliberately adjusted to bring a subject into focus?",
+        "Does the shot start out of focus but then become in focus?",
+        "Is there a gradual shift where the scene moves from a soft blur to being in focus?"
+    ],
+    "def_prompt": [
+        "The video starts out of focus and then becomes in focus."
+    ],
+    "alt_prompt": [
+        "A video where the scene begins blurry but gradually becomes in focus.",
+        "A sequence that starts out of focus and transitions into in focus.",
+        "A shot where an indistinct, blurred frame sharpens into in focus.",
+        "A video where the depth of field shifts, making the subject in focus over time.",
+        "A sequence where the focus moves from an out-of-focus blur into in focus.",
+        "A shot where the scene starts unfocused and becomes in focus.",
+        "A video where an initially unclear scene gradually resolves into in focus.",
+        "A scene where the focus shifts from an out-of-focus blur to a subject in focus."
+    ],
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.is_rack_pull_focus",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

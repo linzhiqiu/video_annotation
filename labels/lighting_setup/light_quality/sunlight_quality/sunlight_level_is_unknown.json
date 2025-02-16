@@ -1,0 +1,34 @@
+{
+    "label": "Sunlight Level Is Unknown",
+    "label_name": "sunlight_level_is_unknown",
+    "def_question": [
+        "Is the sunlight condition in the video unclear or not applicable?"
+    ],
+    "alt_question": [
+        "Is it difficult to determine the sunlight level in this scene?",
+        "Does the video take place in an environment where sunlight is irrelevant?",
+        "Is the setting indoors or in a space where sunlight is not a factor?",
+        "Is there no discernible sunlight influencing the scene?",
+        "Does the lighting in the shot not match common outdoor conditions?",
+        "Is the video’s lighting ambiguous in terms of natural sunlight?",
+        "Does the scene lack enough visual cues to assess sunlight levels?",
+        "Is the sunlight condition indeterminate due to the environment?"
+    ],
+    "def_prompt": [
+        "The sunlight condition in the video is unclear or not applicable."
+    ],
+    "alt_prompt": [
+        "A video where sunlight presence cannot be determined.",
+        "A shot where natural lighting conditions are ambiguous.",
+        "A scene that does not rely on direct or indirect sunlight.",
+        "A video where sunlight exposure is not a defining factor.",
+        "A sequence where the lighting does not indicate an outdoor setting.",
+        "A shot where the natural light condition remains uncertain.",
+        "A video where the sunlight level is unknown or irrelevant.",
+        "A scene where sunlight does not visibly affect the lighting."
+    ],
+    "pos_rule_str": "self.lighting_setup.sunlight_level == 'unknown'",
+    "neg_rule_str": "self.lighting_setup.sunlight_level != 'unknown'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

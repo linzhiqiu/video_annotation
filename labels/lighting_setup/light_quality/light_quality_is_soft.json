@@ -1,0 +1,34 @@
+{
+    "label": "Light Quality Is Soft (Diffused)",
+    "label_name": "is_soft_light",
+    "def_question": [
+        "Does the video feature soft, diffused lighting with gentle illumination and minimal harsh shadows?"
+    ],
+    "alt_question": [
+        "Is the scene lit with soft, evenly scattered light?",
+        "Does the shot contain minimal shadows with smooth, blurred edges?",
+        "Is the lighting low in contrast, making the scene appear evenly lit?",
+        "Does the video feature diffused lighting with gradual shadow transitions?",
+        "Is the illumination gentle with no strong highlights or hard shadows?",
+        "Does the scene appear softly lit with reduced texture visibility?",
+        "Is the lighting effect consistent with overcast skies or shaded areas?",
+        "Does the video use soft, ambient lighting with no sharp shadow lines?"
+    ],
+    "def_prompt": [
+        "The video features soft, diffused lighting with gentle illumination and minimal harsh shadows."
+    ],
+    "alt_prompt": [
+        "A video with evenly scattered, soft lighting.",
+        "A shot featuring smooth illumination with minimal contrast.",
+        "A scene where lighting is diffused, reducing harsh shadows.",
+        "A video with gentle, ambient light creating a soft glow.",
+        "A sequence where light softly wraps around objects.",
+        "A video showing gradual, blurred shadow transitions.",
+        "A shot with smooth lighting that minimizes texture visibility.",
+        "A scene where lighting is even and lacks sharp contrasts."
+    ],
+    "pos_rule_str": "self.lighting_setup.light_quality == 'soft_diffused_light'",
+    "neg_rule_str": "self.lighting_setup.light_quality != 'soft_diffused_light'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

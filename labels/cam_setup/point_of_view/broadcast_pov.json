@@ -17,8 +17,8 @@
         "A video resembling a sports, news, or television studio broadcast.",
         "A shot that is professionally framed for wide distribution."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'broadcast_pov'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'broadcast_pov'",
+    "pos_rule_str": "self.cam_setup.boardcast_pov is True",
+    "neg_rule_str": "self.cam_setup.boardcast_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

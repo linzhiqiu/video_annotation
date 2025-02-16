@@ -1,0 +1,34 @@
+{
+    "label": "Sunlight Level Is Overcast",
+    "label_name": "sunlight_level_is_overcast",
+    "def_question": [
+        "Does the video feature diffused light from cloudy skies without direct sunlight?"
+    ],
+    "alt_question": [
+        "Is the scene lit by soft, diffused light from overcast skies?",
+        "Does the video show an absence of strong sunlight due to clouds?",
+        "Is the lighting evenly distributed with minimal shadows and highlights?",
+        "Does the shot appear to be taken on a cloudy or overcast day?",
+        "Is the outdoor brightness low and lacking strong contrasts?",
+        "Does the video have a soft, natural lighting due to an overcast sky?",
+        "Is the scene characterized by muted, even lighting without harsh shadows?",
+        "Does the shot have a neutral, diffused lighting due to cloud cover?"
+    ],
+    "def_prompt": [
+        "The video features diffused light from cloudy skies without direct sunlight."
+    ],
+    "alt_prompt": [
+        "A video illuminated by soft, overcast lighting.",
+        "A shot where cloud cover diffuses the natural light.",
+        "A scene featuring gentle, even lighting without harsh shadows.",
+        "A video where the lighting is consistent due to an overcast sky.",
+        "A sequence where the absence of strong sunlight creates a muted look.",
+        "A shot where outdoor lighting is natural but subdued.",
+        "A video where the sky is overcast, resulting in soft lighting.",
+        "A scene lit by cloudy, diffused light that lacks harsh brightness."
+    ],
+    "pos_rule_str": "self.lighting_setup.sunlight_level == 'overcast'",
+    "neg_rule_str": "self.lighting_setup.sunlight_level != 'overcast'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

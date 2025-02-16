@@ -1,0 +1,33 @@
+{
+    "label": "Is Height With Respect to Ground Applicable",
+    "label_name": "is_height_wrt_ground_applicable",
+    "def_question": [
+        "Can the camera height relative to ground be classified?"
+    ],
+    "alt_question": [
+        "Is it possible to determine the camera's elevation?",
+        "Can we assess the camera's height from ground level?",
+        "Is the camera's vertical position measurable?",
+        "Can we classify the height of the camera view?",
+        "Is it feasible to determine camera elevation?",
+        "Can the camera's ground-relative height be assessed?",
+        "Is the camera height clear enough to classify?"
+    ],
+    "def_prompt": [
+        "A shot where the camera height relative to the ground plane can be meaningfully classified."
+    ],
+    "alt_prompt": [
+        "A video with classifiable camera elevation.",
+        "A shot with clear vertical positioning.",
+        "A video where camera height is apparent.",
+        "A shot showing definable camera elevation.",
+        "A video with measurable camera height.",
+        "A shot displaying clear elevation.",
+        "A video with assessable camera position.",
+        "A shot with determinable height."
+    ],
+    "pos_rule_str": "self.cam_setup.is_height_wrt_ground_applicable is True",
+    "neg_rule_str": "self.cam_setup.is_height_wrt_ground_applicable is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

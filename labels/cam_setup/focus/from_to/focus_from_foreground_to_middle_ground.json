@@ -1,0 +1,34 @@
+{
+    "label": "Focus Shifts from Foreground to Middle Ground",
+    "label_name": "focus_from_foreground_to_middle_ground",
+    "def_question": [
+        "Does the video start with the foreground in focus and then transition to focusing on the middle ground?"
+    ],
+    "alt_question": [
+        "Does the focus transition from a sharp foreground to a sharp middle ground?",
+        "Is there a shift in focus from the foreground to the middle ground over time?",
+        "Does the video begin with the foreground in focus before changing to the middle ground?",
+        "Is the initial shot focusing on the foreground before transitioning to the middle ground?",
+        "Does the sequence open with a foreground subject in focus before shifting to the middle ground?",
+        "Is the focus deliberately moved from the foreground to the middle ground?",
+        "Does the shot gradually refocus from a nearby subject to a middle ground position?",
+        "Is there a clear depth transition where the foreground blurs while the middle ground sharpens?"
+    ],
+    "def_prompt": [
+        "The video starts with the foreground in focus and then transitions to focusing on the middle ground."
+    ],
+    "alt_prompt": [
+        "A video where the focus moves from the foreground to the middle ground.",
+        "A scene that begins with the foreground in sharp focus and transitions to the middle ground.",
+        "A shot that starts with a foreground subject in focus before shifting to the middle ground.",
+        "A video where the depth of field gradually changes from the foreground to the middle ground.",
+        "A sequence where the focus transitions from a near subject to a middle ground.",
+        "A shot where the foreground starts in focus and later becomes blurred while the middle ground sharpens.",
+        "A video demonstrating a clear shift in focus from foreground to middle ground.",
+        "A scene where the depth transitions as the focus moves from foreground to middle ground."
+    ],
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus",
+    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

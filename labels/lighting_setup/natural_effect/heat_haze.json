@@ -1,0 +1,34 @@
+{
+    "label": "Heat Haze",
+    "label_name": "heat_haze",
+    "def_question": [
+        "Does the video feature a noticeable heat haze effect, creating air distortions caused by rising heat?"
+    ],
+    "alt_question": [
+        "Is there a visible shimmering or distortion effect in the scene due to heat?",
+        "Does the video showcase atmospheric distortions caused by high temperatures?",
+        "Is the shot affected by heat waves making objects appear wavy?",
+        "Does rising heat cause a noticeable blurring effect?",
+        "Is heat haze creating movement-like distortions in the air?",
+        "Does the scene emphasize visible refraction due to rising hot air?",
+        "Are objects in the distance appearing distorted due to temperature effects?",
+        "Does the video simulate or capture a mirage-like heat distortion?"
+    ],
+    "def_prompt": [
+        "The video features a noticeable heat haze effect, creating air distortions caused by rising heat."
+    ],
+    "alt_prompt": [
+        "A video where heat waves create visible air distortions.",
+        "A scene where atmospheric heat causes objects to appear wavy.",
+        "A shot capturing shimmering air effects caused by rising temperatures.",
+        "A video where heat haze distorts background elements.",
+        "A sequence featuring visual distortions due to temperature variations.",
+        "A shot where heat waves create movement-like patterns in the air.",
+        "A video where the mirage effect is caused by heat-induced refraction.",
+        "A scene emphasizing the blurry, distorted look caused by heat haze."
+    ],
+    "pos_rule_str": "self.lighting_setup.heat_haze is True",
+    "neg_rule_str": "self.lighting_setup.heat_haze is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Direction Is Top Light",
+    "label_name": "direction_is_top_light",
+    "def_question": [
+        "Is the primary light source positioned above the subject?"
+    ],
+    "alt_question": [
+        "Is the subject illuminated from above, casting shadows downward?",
+        "Does the lighting create downward-facing shadows on the subject?",
+        "Is the scene characterized by highlights on top and shadows below?",
+        "Does the shot feature top lighting as the main illumination?",
+        "Is the subject’s face or body partially obscured due to overhead light?",
+        "Does the video emphasize shadows under the subject’s eyes or chin?",
+        "Is the main source of illumination positioned directly above?",
+        "Is the subject’s form shaped by a strong overhead lighting effect?"
+    ],
+    "def_prompt": [
+        "A shot where the primary light source is positioned overhead."
+    ],
+    "alt_prompt": [
+        "The subject is illuminated from above, casting shadows downward.",
+        "A video where the subject is dramatically lit from above.",
+        "A scene featuring strong top lighting contrast.",
+        "A sequence where top light creates directional depth on the subject.",
+        "A shot where the subject’s features are shaped by overhead light.",
+        "A video where shadows form beneath the subject due to top lighting.",
+        "A scene with strong highlights on the subject’s head and shoulders.",
+        "A shot where the subject appears sculpted due to strong top-down light."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_top_light is True",
+    "neg_rule_str": "self.lighting_setup.subject_top_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

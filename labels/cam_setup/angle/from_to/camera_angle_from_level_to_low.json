@@ -1,0 +1,32 @@
+{
+    "label": "Camera Angle Shifts from Level Angle to Low Angle",
+    "label_name": "camera_angle_from_level_to_low",
+    "def_question": [
+        "Does the video start with the camera at a level angle and transition to a low angle?"
+    ],
+    "alt_question": [
+        "Does the shot begin at a neutral level angle before tilting upward?",
+        "Is there a camera movement that shifts from a straight-on angle to a low-angle perspective?",
+        "Does the video transition from a balanced level angle to an upward-facing low angle?",
+        "Is the initial shot framed at eye level before moving lower and tilting up?",
+        "Does the sequence start at a neutral angle and then adjust to a low vantage point?",
+        "Is there a gradual framing change where the level angle becomes low?",
+        "Does the video shift from a straight-on viewpoint to an upward-looking low angle?",
+        "Is the starting shot neutral before transitioning to a low, upward-facing position?"
+    ],
+    "def_prompt": [
+        "The video starts with the camera at a level angle and transitions to a low angle."
+    ],
+    "alt_prompt": [
+        "A shot where the camera moves from a level angle to a low angle.",
+        "A video where the camera gradually tilts from a straight-on perspective to an upward-looking low angle.",
+        "A sequence beginning with a level shot that transitions to a low vantage point.",
+        "A shot that starts with a neutral angle before lowering and looking up.",
+        "A video showing a smooth transition from a level angle to a low-angle perspective.",
+        "A scene where the camera shifts from a straight-on view to an upward-tilted framing."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'level_angle' and self.cam_setup.camera_angle_info['end'] == 'low_angle'",
+    "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['low_angle', 'unknown'])",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Moving Light",
+    "label_name": "moving_light",
+    "def_question": [
+        "Does the video feature moving lights that shift direction or position across the scene?"
+    ],
+    "alt_question": [
+        "Is there a visible movement of a light source across the frame?",
+        "Does the illumination shift positions dynamically throughout the video?",
+        "Is there a spotlight or beam that moves across the scene?",
+        "Does the video include a light source that travels through different areas?",
+        "Are there dynamic changes in lighting direction due to moving lights?",
+        "Does the video contain mobile or shifting illumination sources?",
+        "Are there visible lighting movements that alter the scene’s brightness?",
+        "Does the lighting direction change dynamically as the light source moves?"
+    ],
+    "def_prompt": [
+        "The video features moving lights that shift direction or position across the scene."
+    ],
+    "alt_prompt": [
+        "A video where a light source shifts position dynamically.",
+        "A scene with a moving beam of light or sweeping illumination.",
+        "A shot where a spotlight or directional light source moves across the frame.",
+        "A sequence where the lighting actively travels through different areas.",
+        "A video with dynamic shifts in lighting positions.",
+        "A setting where light sources are visibly moving or repositioning.",
+        "A video showcasing lighting effects with mobile, changing sources.",
+        "A shot where the illumination adjusts its direction dynamically."
+    ],
+    "pos_rule_str": "self.lighting_setup.moving_light is True",
+    "neg_rule_str": "self.lighting_setup.moving_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

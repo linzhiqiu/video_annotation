@@ -1,0 +1,34 @@
+{
+    "label": "Mist Diffusion",
+    "label_name": "mist_diffusion",
+    "def_question": [
+        "Does the video use a mist diffusion filter to soften the image, reducing contrast and sharpness while creating a gentle, glowing effect?"
+    ],
+    "alt_question": [
+        "Is there a soft, hazy glow over the entire scene?",
+        "Does the video feature reduced sharpness and softened details?",
+        "Is the lighting diffused to create a dreamy or ethereal effect?",
+        "Does the scene appear as if it was shot through a mist filter?",
+        "Are the contrast and edges subtly blurred throughout the shot?",
+        "Does the video have a cinematic soft-glow effect applied?",
+        "Is the lighting rendered with reduced clarity due to diffusion?",
+        "Does the shot feature softened highlights and a glowing atmosphere?"
+    ],
+    "def_prompt": [
+        "The video uses a mist diffusion filter to soften the image, reducing contrast and sharpness while creating a gentle, glowing effect."
+    ],
+    "alt_prompt": [
+        "A video with softened lighting and a glowing mist diffusion effect.",
+        "A scene featuring reduced contrast and diffused edges.",
+        "A shot with a cinematic soft-glow effect applied.",
+        "A composition where lighting is hazy and atmospheric.",
+        "A sequence that appears diffused and softly lit.",
+        "A video where bright areas appear misty due to diffusion.",
+        "A scene where a mist filter reduces image clarity for a dreamy effect.",
+        "A shot where the lighting appears subtly blurred due to optical diffusion."
+    ],
+    "pos_rule_str": "self.lighting_setup.mist_diffusion is True",
+    "neg_rule_str": "self.lighting_setup.mist_diffusion is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

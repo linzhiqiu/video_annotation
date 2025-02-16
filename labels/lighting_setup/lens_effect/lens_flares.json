@@ -1,0 +1,34 @@
+{
+    "label": "Lens Flares",
+    "label_name": "lens_flares",
+    "def_question": [
+        "Does the video contain lens flares?"
+    ],
+    "alt_question": [
+        "Does the shot feature visible lens flares from bright light sources?",
+        "Are there noticeable optical artifacts in the form of lens flares?",
+        "Is the video affected by lens flares due to hard or directional lighting?",
+        "Do strong light sources create circular or streak-like flare effects?",
+        "Does the video contain anamorphic or regular lens flares?",
+        "Are bright highlights producing lens flares in the shot?",
+        "Does the scene showcase optical reflections or flare artifacts?",
+        "Are lens flares present as bright or elongated streaks of light?"
+    ],
+    "def_prompt": [
+        "The video contains lens flares."
+    ],
+    "alt_prompt": [
+        "A video featuring prominent lens flare effects.",
+        "A shot where bright light sources create visible lens flares.",
+        "A sequence containing strong light reflections resulting in lens flares.",
+        "A video with bright or streaked optical lens flare artifacts.",
+        "A shot where lens flares appear as scattered or elongated light effects.",
+        "A scene showcasing dramatic lens flares from strong directional lighting.",
+        "A composition where highlights interact with the lens to create optical flares.",
+        "A video featuring both regular circular and anamorphic horizontal lens flares."
+    ],
+    "pos_rule_str": "self.lens_flares is True",
+    "neg_rule_str": "self.lens_flares is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

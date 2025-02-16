@@ -53,14 +53,14 @@
         "A video where the camera only pivots left.",
         "A scene with just horizontal camera movement from right to left."
     ],
-    "pos_rule_str": "self.cam_motion.pan_left is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])",
-    "neg_rule_str": "self.cam_motion.pan_left is False or not self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])",
+    "pos_rule_str": "self.cam_motion.pan_left is True and self.cam_motion.check_if_no_motion(exclude=['pan_left'])",
+    "neg_rule_str": "self.cam_motion.pan_left is False or not self.cam_motion.check_if_no_motion(exclude=['pan_left'])",
     "easy_neg_rule_str": {
         "panning_right": "self.cam_motion.pan_right is True",
-        "only_panning_right": "self.cam_motion.pan_right is True and self.cam_motion.check_if_no_motion_cam(exclude=['pan_right'])"
+        "only_panning_right": "self.cam_motion.pan_right is True and self.cam_motion.check_if_no_motion(exclude=['pan_right'])"
     },
     "hard_neg_rule_str": {
         "moving_left": "self.cam_motion.left is True and self.cam_motion.pan_left is False",
-        "compound_motion_with_pan_left": "self.cam_motion.pan_left is True and not self.cam_motion.check_if_no_motion_cam(exclude=['pan_left'])"
+        "compound_motion_with_pan_left": "self.cam_motion.pan_left is True and not self.cam_motion.check_if_no_motion(exclude=['pan_left'])"
     }
 }

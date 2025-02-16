@@ -1,0 +1,34 @@
+{
+    "label": "Is Subject Lighting Applicable",
+    "label_name": "is_subject_lighting_applicable",
+    "def_question": [
+        "Does the video have a clearly defined subject suitable for lighting analysis?"
+    ],
+    "alt_question": [
+        "Is the contrast ratio on the subject applicable in this video?",
+        "Does the video feature a subject where lighting contrast can be determined?",
+        "Is there a distinguishable subject with visible lighting contrast?",
+        "Can the contrast ratio of the subject be meaningfully classified?",
+        "Does the video include a well-defined subject for contrast evaluation?",
+        "Is the subject lighting clear enough to assess contrast levels?",
+        "Does the scene provide sufficient detail to classify lighting contrast on the subject?",
+        "Can the contrast ratio on the subject be confidently labeled?"
+    ],
+    "def_prompt": [
+        "The video has a clearly defined subject suitable for lighting analysis."
+    ],
+    "alt_prompt": [
+        "A video where the contrast ratio on the subject is applicable and classifiable.",
+        "A scene featuring a well-lit subject with distinguishable contrast levels.",
+        "A shot where the lighting contrast on the subject can be meaningfully categorized.",
+        "A video where the subject’s visibility allows for contrast ratio evaluation.",
+        "A sequence where the subject’s lighting provides enough clarity for contrast classification.",
+        "A scene in which the contrast ratio on the subject is clearly identifiable.",
+        "A shot where subject contrast is distinct and measurable.",
+        "A video where lighting on the subject is applicable for contrast assessment."
+    ],
+    "pos_rule_str": "self.is_subject_lighting_applicable is True",
+    "neg_rule_str": "self.is_subject_lighting_applicable is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

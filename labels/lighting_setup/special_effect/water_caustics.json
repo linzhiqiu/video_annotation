@@ -1,0 +1,34 @@
+{
+    "label": "Water Caustics",
+    "label_name": "water_caustics",
+    "def_question": [
+        "Does the video feature water caustics, where light creates dynamic rippling patterns?"
+    ],
+    "alt_question": [
+        "Does the scene contain bright, shifting wave light reflections on a surface?",
+        "Are water caustics a dominant visual effect in the video?",
+        "Does the video feature refraction-based light patterns on water or nearby objects?",
+        "Are moving, dynamic light patterns cast by water a key feature in the scene?",
+        "Is the scene visually defined by shimmering water reflections?",
+        "Does the shot emphasize flickering light distortions caused by water movement?",
+        "Are underwater or surface reflections creating a noticeable lighting effect?",
+        "Does the video highlight wave-like light distortions on the scene’s surfaces?"
+    ],
+    "def_prompt": [
+        "The video features water caustics, where light creates dynamic rippling patterns."
+    ],
+    "alt_prompt": [
+        "A scene where water-generated light ripples dominate the visual composition.",
+        "A video where light refracts through water, creating moving patterns.",
+        "A shot featuring shimmering wave reflections on surfaces.",
+        "A sequence where water distortion produces dramatic caustic lighting.",
+        "A scene where the interplay of water and light enhances the atmosphere.",
+        "A video highlighting flickering water reflections as a major effect.",
+        "A shot that relies on shifting caustic patterns to define its lighting.",
+        "A sequence emphasizing the dynamic interaction between light and water."
+    ],
+    "pos_rule_str": "self.lighting_setup.water_caustics is True",
+    "neg_rule_str": "self.lighting_setup.water_caustics is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

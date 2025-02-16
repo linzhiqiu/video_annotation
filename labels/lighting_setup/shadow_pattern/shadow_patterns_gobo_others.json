@@ -1,0 +1,34 @@
+{
+    "label": "Shadow Pattern - Gobo Lighting (Others)",
+    "label_name": "shadow_patterns_gobo_others",
+    "def_question": [
+        "Does the video feature distinct shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape?"
+    ],
+    "alt_question": [
+        "Are there noticeable patterned shadows from an artificial or non-standard light modifier?",
+        "Does the video feature a projected light pattern distinct from natural elements or window frames?",
+        "Is there a specific structured shadow effect enhancing the scene’s composition?",
+        "Does the scene utilize custom lighting projections or templates for visual storytelling?",
+        "Are there artificial lighting templates creating recognizable shadows?",
+        "Is the lighting shaped by an object casting intricate or symbolic patterns?",
+        "Does the shot showcase a shadow design from a unique object or stencil?",
+        "Is there a light effect forming artistic or geometric patterns?"
+    ],
+    "def_prompt": [
+        "The video features distinct shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape."
+    ],
+    "alt_prompt": [
+        "A scene where unconventional shadow patterns shape the lighting.",
+        "A video featuring a projected gobo lighting effect not caused by common elements.",
+        "A shot where structured shadows from a custom object define the composition.",
+        "A sequence using a stencil or shaped light for dramatic impact.",
+        "A setting with projected light patterns forming geometric or abstract shadows.",
+        "A video where a non-natural light modifier creates distinct shadow shapes.",
+        "A scene where an artificial lighting template defines the mood through shadows.",
+        "A shot featuring an intricate or symbolic gobo light projection."
+    ],
+    "pos_rule_str": "self.lighting_setup.shadow_patterns_gobo_others is True",
+    "neg_rule_str": "self.lighting_setup.shadow_patterns_gobo_others is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

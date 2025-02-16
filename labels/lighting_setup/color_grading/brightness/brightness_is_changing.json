@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Changing (Complex)",
+    "label_name": "brightness_is_changing",
+    "def_question": [
+        "Does the video’s brightness shift dynamically over time?"
+    ],
+    "alt_question": [
+        "Does the lighting intensity change noticeably throughout the video?",
+        "Is there a fluctuation in brightness levels across different scenes?",
+        "Does the video feature transitions between bright and dark areas?",
+        "Is the exposure level dynamically adjusted over time?",
+        "Does the lighting environment shift continuously throughout the sequence?",
+        "Is the brightness level inconsistent across the video?",
+        "Does the scene transition between well-lit and low-lit moments?",
+        "Is the video’s brightness level actively changing?"
+    ],
+    "def_prompt": [
+        "The video’s brightness shifts dynamically over time."
+    ],
+    "alt_prompt": [
+        "A video where brightness fluctuates across scenes.",
+        "A sequence featuring dynamic changes in light intensity.",
+        "A shot where lighting levels transition between bright and dark.",
+        "A video that features varying exposure levels over time.",
+        "A scene where brightness shifts in response to different moments.",
+        "A video with intentional, fluctuating brightness adjustments.",
+        "A cinematic effect using evolving light intensity.",
+        "A sequence where brightness levels are deliberately inconsistent."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness == 'complex_changing'",
+    "neg_rule_str": "self.lighting_setup.brightness != 'complex_changing'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

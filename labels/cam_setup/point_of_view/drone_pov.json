@@ -11,16 +11,16 @@
         "Is the shot taken from an airborne device looking down?"
     ],
     "def_prompt": [
-        "A video filmed by a drone.",
-        "A drone POV shot."
+        "A drone POV shot.",
+        "A video filmed by a drone."
     ],
     "alt_prompt": [
         "A drone POV shot where the camera captures an aerial view.",
         "A video filmed from a drone, showing a high-altitude perspective.",
         "A scene with a bird’s-eye view captured by an unmanned aerial device."
     ],
-    "pos_rule_str": "self.cam_setup.camera_pov == 'drone_pov'",
-    "neg_rule_str": "self.cam_setup.camera_pov != 'drone_pov'",
+    "pos_rule_str": "self.cam_setup.drone_pov is True",
+    "neg_rule_str": "self.cam_setup.drone_pov is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

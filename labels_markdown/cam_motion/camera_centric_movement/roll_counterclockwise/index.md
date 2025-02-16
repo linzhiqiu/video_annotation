@@ -252,17 +252,17 @@ Does the camera only roll counterclockwise in the scene?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])</code>
+<code>self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.roll_ccw is False or not self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])</code>
+<code>self.cam_motion.roll_ccw is False or not self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
 - <b>rolling_clockwise</b>: <code>self.cam_motion.roll_cw is True</code>
 
-- <b>only_rolling_clockwise</b>: <code>self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])</code>
+- <b>only_rolling_clockwise</b>: <code>self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion(exclude=['roll_cw'])</code>
 
 </details>
 
@@ -271,7 +271,7 @@ Does the camera only roll counterclockwise in the scene?
 
 - <b>panning_rotation</b>: <code>self.cam_motion.pan_right is True or self.cam_motion.pan_left is True</code>
 
-- <b>compound_motion_with_roll_ccw</b>: <code>self.cam_motion.roll_ccw is True and not self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])</code>
+- <b>compound_motion_with_roll_ccw</b>: <code>self.cam_motion.roll_ccw is True and not self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])</code>
 
 </details>
 

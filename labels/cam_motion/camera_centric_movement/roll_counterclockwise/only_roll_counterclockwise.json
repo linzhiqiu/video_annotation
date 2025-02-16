@@ -47,14 +47,14 @@
         "A shot with purely counterclockwise spinning motion of the frame.",
         "A video featuring exclusively counterclockwise roll movement."
     ],
-    "pos_rule_str": "self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])",
-    "neg_rule_str": "self.cam_motion.roll_ccw is False or not self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])",
+    "pos_rule_str": "self.cam_motion.roll_ccw is True and self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])",
+    "neg_rule_str": "self.cam_motion.roll_ccw is False or not self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])",
     "easy_neg_rule_str": {
         "rolling_clockwise": "self.cam_motion.roll_cw is True",
-        "only_rolling_clockwise": "self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion_cam(exclude=['roll_cw'])"
+        "only_rolling_clockwise": "self.cam_motion.roll_cw is True and self.cam_motion.check_if_no_motion(exclude=['roll_cw'])"
     },
     "hard_neg_rule_str": {
         "panning_rotation": "self.cam_motion.pan_right is True or self.cam_motion.pan_left is True",
-        "compound_motion_with_roll_ccw": "self.cam_motion.roll_ccw is True and not self.cam_motion.check_if_no_motion_cam(exclude=['roll_ccw'])"
+        "compound_motion_with_roll_ccw": "self.cam_motion.roll_ccw is True and not self.cam_motion.check_if_no_motion(exclude=['roll_ccw'])"
     }
 }

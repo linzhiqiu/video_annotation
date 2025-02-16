@@ -1,0 +1,34 @@
+{
+    "label": "Is Volumetric Lighting Present",
+    "label_name": "has_volumetric_lighting",
+    "def_question": [
+        "Does the video prominently feature any form of volumetric lighting, where light appears as a visible volume in the scene?"
+    ],
+    "alt_question": [
+        "Is there a noticeable volumetric lighting effect in the video?",
+        "Does the video contain visible light beams, god rays, or volumetric glow?",
+        "Are there strong light shafts or atmospheric light scattering effects?",
+        "Does the lighting create a sense of depth through volumetric effects?",
+        "Is volumetric lighting used to enhance the atmosphere or composition?",
+        "Does the scene feature directional light volumes cutting through the environment?",
+        "Are there visible cones, beams, or soft volumetric light in the shot?",
+        "Is volumetric lighting present as a dominant visual effect in the video?"
+    ],
+    "def_prompt": [
+        "The video prominently features volumetric lighting, where light appears as a visible volume in the scene."
+    ],
+    "alt_prompt": [
+        "A scene where volumetric lighting enhances depth and atmosphere.",
+        "A video showcasing visible beams, god rays, or diffused volumetric light.",
+        "A shot featuring strong light shafts or glowing volumetric effects.",
+        "A sequence emphasizing volumetric lighting for cinematic impact.",
+        "A setting where light visibly interacts with atmospheric elements.",
+        "A video where volumetric lighting plays a key role in composition.",
+        "A scene where volumetric lighting adds depth through atmospheric scattering.",
+        "A shot where volumetric lighting enhances the overall mood and visual clarity."
+    ],
+    "pos_rule_str": "self.lighting_setup.has_volumetric_lighting is True",
+    "neg_rule_str": "self.lighting_setup.has_volumetric_lighting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

@@ -1,0 +1,34 @@
+{
+    "label": "Color Saturation Is High",
+    "label_name": "color_saturation_is_high",
+    "def_question": [
+        "Does the video feature highly saturated colors, making hues appear vivid and intense?"
+    ],
+    "alt_question": [
+        "Is the video characterized by strong, vibrant colors?",
+        "Does the video’s color palette emphasize intense, saturated hues?",
+        "Are the colors in the video bright and fully saturated?",
+        "Does the video lack muted or desaturated tones?",
+        "Are the colors in the video bold and rich rather than faded?",
+        "Does the video showcase highly saturated primary and secondary colors?",
+        "Are the colors in the video exaggerated and visually striking?",
+        "Does the video use an intense, high-saturation color grading?"
+    ],
+    "def_prompt": [
+        "The video features highly saturated colors, making hues appear vivid and intense."
+    ],
+    "alt_prompt": [
+        "A video with bright, vibrant, and fully saturated colors.",
+        "A shot featuring highly intense and vivid hues.",
+        "A sequence where colors appear bold and rich.",
+        "A video showcasing bright and highly saturated tones.",
+        "A scene where the colors are enhanced and strongly pronounced.",
+        "A shot where the colors are exaggerated and striking.",
+        "A video with an intense, vivid color grading.",
+        "A sequence that avoids muted or washed-out colors."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_saturation == 'high_saturation'",
+    "neg_rule_str": "self.lighting_setup.color_saturation != 'high_saturation'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

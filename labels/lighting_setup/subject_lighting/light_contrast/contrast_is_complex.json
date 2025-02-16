@@ -1,0 +1,34 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Complex",
+    "label_name": "contrast_is_complex",
+    "def_question": [
+        "Is the light contrast ratio on the subject complex, due to significant lighting changes, camera movement, or subject changes?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting contrast vary significantly due to lighting shifts or movement?",
+        "Is the contrast ratio inconsistent because of dynamic lighting conditions?",
+        "Does the lighting on the subject change as the scene progresses?",
+        "Is the contrast affected by camera motion or subject movement?",
+        "Does the subject transition between different lighting conditions?",
+        "Does the video feature lighting where contrast is not stable due to subject or scene changes?",
+        "Is the subject’s visibility affected by fluctuating lighting contrast?",
+        "Does the shot include multiple contrast conditions across different frames?"
+    ],
+    "def_prompt": [
+        "The light contrast ratio on the subject is complex, varying due to lighting changes, camera motion, or subject changes."
+    ],
+    "alt_prompt": [
+        "A video where the subject’s contrast changes because of lighting adjustments or scene shifts.",
+        "A scene where contrast fluctuates due to varying illumination conditions.",
+        "A shot where the subject’s contrast level is affected by camera movement.",
+        "A video where lighting contrast alters due to subject transitions.",
+        "A sequence where different lighting setups impact the contrast ratio.",
+        "A shot featuring changing contrast on the subject due to environmental or compositional shifts.",
+        "A video where the contrast on the subject is inconsistent over time.",
+        "A scene where contrast conditions change dynamically throughout the video."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio in ['complex_changing']",
+    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['complex_changing', 'unknown']",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

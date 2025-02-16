@@ -2,6 +2,7 @@
     "label": "Shot transition",
     "label_name": "has_shot_transition_cam_motion",
     "def_question": [
+      "Does the video include shot transitions?",
       "Does the video include one or more shot transitions?",
       "Does the video contain hard cuts or soft transitions, or a combination of both?",
       "Are there any shot transitions in the video?",
@@ -17,6 +18,7 @@
       "Does the video include a hard cut or a soft transition?"
     ],
     "def_prompt": [
+      "A video that includes shot transitions.",
       "A video showing one or more shot transitions.",
       "The video features hard cuts, soft transitions, or a combination of both.",
       "The video contains one or more cuts or soft transitions between shots.",

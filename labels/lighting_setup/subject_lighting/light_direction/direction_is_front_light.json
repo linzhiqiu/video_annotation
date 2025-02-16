@@ -1,0 +1,34 @@
+{
+    "label": "Direction Is Front Light",
+    "label_name": "direction_is_front_light",
+    "def_question": [
+        "Is the primary light source positioned in front of the subject?"
+    ],
+    "alt_question": [
+        "Is the subject illuminated from the front?",
+        "Does the lighting create an evenly lit appearance on the subject?",
+        "Is the subject's face or body fully illuminated with minimal shadows?",
+        "Does the shot feature front lighting as the dominant illumination?",
+        "Is the scene characterized by a lack of strong shadows on the subject?",
+        "Is the main source of illumination coming from the front?",
+        "Is the subject’s visibility defined by direct front lighting?",
+        "Does the video showcase the subject clearly due to front lighting?"
+    ],
+    "def_prompt": [
+        "A shot where the primary light source is in front of the subject."
+    ],
+    "alt_prompt": [
+        "The subject is illuminated from the front.",
+        "A video where the subject is evenly lit from the front.",
+        "A scene featuring clear front lighting without harsh shadows.",
+        "A sequence where front light highlights the subject evenly.",
+        "A shot where the subject is fully visible due to front lighting.",
+        "A video where front light minimizes dramatic contrasts.",
+        "A scene where front light provides an evenly distributed glow.",
+        "A shot with balanced illumination from a front-facing light source."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_front_light is True",
+    "neg_rule_str": "self.lighting_setup.subject_front_light is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

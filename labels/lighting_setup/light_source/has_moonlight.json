@@ -1,0 +1,34 @@
+{
+    "label": "Has Moonlight",
+    "label_name": "has_moonlight",
+    "def_question": [
+        "Is moonlight the primary light source in the video, with the moon visibly present?"
+    ],
+    "alt_question": [
+        "Is the scene primarily illuminated by moonlight?",
+        "Does the lighting suggest nighttime with the moon as the main source?",
+        "Is the moon itself visible and providing the dominant illumination?",
+        "Does the video rely on natural moonlight for lighting?",
+        "Is the environment bathed in a soft, cool-toned light consistent with moonlight?",
+        "Does the scene depict a night setting where the moon acts as the main light source?",
+        "Is the primary source of illumination a visible moon?",
+        "Is the video characterized by the cool, ambient glow of moonlight?"
+    ],
+    "def_prompt": [
+        "The primary light source in the video is moonlight, and the moon is visible in the frame."
+    ],
+    "alt_prompt": [
+        "A video where moonlight serves as the dominant illumination.",
+        "A scene where the moon visibly lights up the environment.",
+        "A sequence where moonlight creates the primary lighting effect.",
+        "A shot where the moon acts as the key light source.",
+        "A night scene illuminated by visible moonlight.",
+        "A setting where the ambient glow of the moon defines the lighting.",
+        "A shot where the moon is prominently casting light on the environment.",
+        "A video where moonlight provides soft, cool-toned illumination."
+    ],
+    "pos_rule_str": "self.lighting_setup.moonlight_source is True",
+    "neg_rule_str": "self.lighting_setup.moonlight_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

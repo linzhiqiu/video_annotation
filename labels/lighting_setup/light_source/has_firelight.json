@@ -1,0 +1,34 @@
+{
+    "label": "Has Firelight",
+    "label_name": "has_firelight",
+    "def_question": [
+        "Is firelight the primary light source in the video, even if the fire itself is not visible?"
+    ],
+    "alt_question": [
+        "Is the scene primarily lit by a fire, such as a candle, torch, or campfire?",
+        "Does the lighting suggest a warm glow from a fire source?",
+        "Is firelight providing the dominant illumination in the video?",
+        "Is the environment visibly affected by flickering firelight?",
+        "Does the shot contain lighting that suggests flames as the main source?",
+        "Is the video illuminated by a warm, fluctuating fire-based light?",
+        "Does the lighting have an orange-red hue characteristic of fire?",
+        "Is the scene’s lighting dynamically shifting in a way that suggests fire?"
+    ],
+    "def_prompt": [
+        "The primary light source in the video is firelight, whether or not the fire itself is visible."
+    ],
+    "alt_prompt": [
+        "A video where firelight serves as the main source of illumination.",
+        "A scene where the environment is lit by flames.",
+        "A sequence where firelight provides the dominant glow.",
+        "A shot characterized by warm, flickering fire-based lighting.",
+        "A video where torches, candles, or campfires illuminate the scene.",
+        "A setting bathed in a reddish-orange glow from fire.",
+        "A shot where the light shifts dynamically, indicating a fire source.",
+        "A video with lighting that resembles fire’s natural movement."
+    ],
+    "pos_rule_str": "self.lighting_setup.firelight_source is True",
+    "neg_rule_str": "self.lighting_setup.firelight_source is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

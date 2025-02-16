@@ -1,0 +1,34 @@
+{
+    "label": "Brightness Is Contrasting (Complex)",
+    "label_name": "brightness_is_contrasting",
+    "def_question": [
+        "Does the video have strong contrast between bright, dark, and neutral areas?"
+    ],
+    "alt_question": [
+        "Does the scene mix bright highlights with deep shadows?",
+        "Is there a stark contrast between illuminated and dark areas?",
+        "Does the video feature both intense brightness and deep darkness?",
+        "Are light and shadow strongly contrasted within the frame?",
+        "Does the shot balance extreme brightness with intense darkness?",
+        "Is there high-key and low-key lighting present simultaneously?",
+        "Does the video emphasize strong brightness contrast?",
+        "Are bright and dark regions equally prominent in the composition?"
+    ],
+    "def_prompt": [
+        "The video has strong contrast between bright, dark, and neutral areas."
+    ],
+    "alt_prompt": [
+        "A video with extreme light and dark contrasts in the same frame.",
+        "A shot featuring bright highlights alongside deep shadows.",
+        "A sequence where brightness levels are dramatically different.",
+        "A video with simultaneous high exposure and low-lit areas.",
+        "A scene emphasizing extreme contrast between light and shadow.",
+        "A shot where both very bright and very dark areas coexist.",
+        "A video with stark, dramatic lighting differences.",
+        "A sequence designed with a strong balance of illumination and darkness."
+    ],
+    "pos_rule_str": "self.lighting_setup.brightness == 'complex_contrasting'",
+    "neg_rule_str": "self.lighting_setup.brightness != 'complex_contrasting'",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}
