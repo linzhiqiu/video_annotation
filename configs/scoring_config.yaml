@@ -61,6 +61,12 @@ projects:
         email: "zhiqiulin98@gmail.com"
       ids:
         - "cm3s8b04v0e1f07xx8pzr18l2"
+    test2-0:
+      ground_truth_annotator:
+        project_id: "cm6yg6tbr0kiu07ynegyxa1mu"
+        email: "ttiffanyyllingg@gmail.com"
+      ids:
+        - "cm6yg6tbr0kiu07ynegyxa1mu"
 
   motion:
     test0:
