@@ -1,0 +1,4 @@
+In addition, the human-written captions below already describe the subjects (if any) and the scenery in this video but do not comprehensively capture their spatial composition and movements. Use these captions as a reference or starting point to draft the description, but do not rely on it completely. Expand or refine it to fully capture the spatial framing and movements in this video.
+
+Human-Written Description for Subjects: **{subject_description}**
+Human-Written Description for Scenery: **{scene_description}**

@@ -54,6 +54,7 @@ class LightingSetupData:
         # Special lighting effects on subject
         self.portrait_lighting = False
         self.rembrandt_lighting = False
+        # below two are actually not dependent on whether the subject is present or not
         self.silhouette = False
         self.rim_light = False
         
@@ -127,6 +128,39 @@ class LightingSetupData:
         self.shattering_breaking = False
         self.diffusion = False
         self.splashing_waves = False
+    
+    def set_lighting_setup_attributes(self):
+        self._set_color_grading_attributes()
+        self._set_lighting_setup_attributes()
+        self._set_subject_lighting_attributes()
+        self._set_special_lighting_attributes()
+        self._set_volumetric_lighting_attributes()
+        self._set_shadow_pattern_attributes()
+    
+    def _set_color_grading_attributes(self):
+        self.is_color_grading_complex = any([
+            self.color_temperature in ["complex_changing", "complex_contrasting", "complex_others"], \
+            self.color_saturation in ["complex_changing", "complex_contrasting", "complex_others"], \
+            self.brightness in ["complex_changing", "complex_contrasting", "complex_others"]])
+
+        self.is_black_white = self.color_saturation == "black_white" and self.color_temperature == "black_white"
+        self.is_brighter_than_normal = self.brightness in ["very_bright", "bright"]
+        self.is_darker_than_normal = self.brightness in ["dark", "very_dark"]
+    
+    def _set_lighting_setup_attributes(self):
+        self.is_lighting_quality_complex = self.light_quality in ["complex_changing", "complex_contrasting", "complex_others"]
+    
+    def _set_subject_lighting_attributes(self):
+        self.is_subject_lighting_applicable = self.subject_contrast_ratio == "unknown"
+    
+    def _set_special_lighting_attributes(self):
+        self.lens_flares = self.lens_flares_regular or self.lens_flares_anamorphic
+        
+    def _set_volumetric_lighting_attributes(self):
+        self.has_volumetric_lighting = self.volumetric_beam_light or self.volumetric_spot_light or self.god_rays or self.light_through_medium or self.volumetric_light_others
+    
+    def _set_shadow_pattern_attributes(self):
+        self.has_shadow_patterns = self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
         
     def set_shot_transition(self, shot_transition):
         if isinstance(shot_transition, bool):
@@ -571,7 +605,19 @@ class LightingSetupData:
             else:
                 raise AttributeError(f"Invalid attribute: {key} or setter method not found")
         instance.verify()
+        instance.set_lighting_setup_attributes()
         return instance
+    
+    def update(self, **kwargs):
+        """Update the attributes of the LightingSetupData instance."""
+        for key, value in kwargs.items():
+            setter_method = getattr(self, f"set_{key}", None)
+            if setter_method and callable(setter_method):
+                setter_method(value)
+            else:
+                raise AttributeError(f"Invalid attribute: {key} or setter method not found")
+        self.verify()
+        self.set_lighting_setup_attributes()
     
     def verify(self):
         # Verify that the data is consistent
@@ -582,6 +628,9 @@ class LightingSetupData:
         # if any([self.color_temperature in complex_reasons, self.color_saturation in complex_reasons, self.brightness in complex_reasons]):
         #     if not self.color_grading_description:
         #         raise ValueError("color_grading_description must be provided for complex color grading")
+        if self.color_temperature == "black_white":
+            if not self.color_saturation == "black_white":
+                raise ValueError("color_saturation must be 'black_white' if color_temperature is 'black_white'")
         
         if self.abstract_light_source:
             if any([self.sunlight_source, self.moonlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source]):

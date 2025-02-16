@@ -1,0 +1,50 @@
+Provide a concise yet informative description of the subjects in this video.
+- Subject Type:
+  - Specify the subject's type precisely (e.g., "man," "woman," "dog," "car," "tree"). Avoid vague terms like "thing" or "item."
+  - If the subject type is ambiguous, provide your best judgment and explain your reasoning.
+- Visual Attributes:
+  - Describe the subject's key visual characteristics using specific and descriptive language. Consider the following aspects where relevant:
+  - Appearance:
+    - People: Include details like clothing (including colors and style), hairstyle, facial hair, age (if discernible), gender, ethnicity (if relevant and clear), facial expression, and so on.
+    - Objects: Describe their color, material, shape, and any distinguishing marks (e.g., "smooth," "rough," "furry," "metallic", "black", "red", etc.)
+  - Pose/Orientation:
+    - Describe the subject's posture and orientation within the frame (e.g., "standing," "sitting," "lying down," "walking," "facing left," "arms raised," "facing the camera").
+    - Pay particular attention to objects not in their usual state (e.g., a tilted lamp, a book lying open face down).
+- How to Refer to Multiple Subjects:
+  - Sometimes there's more than one important person or thing in a picture. When that happens, make sure it's clear which one you're talking about. Here are some ways to do that:
+  - Type: The simplest way to refer to a subject is by its category, e.g., “the man,” “the dog,” or “the tree.”
+  - Attributes: If multiple subjects belong to the same category, use distinguishing features:
+    - Unique Appearance: Highlight distinct traits, such as "the woman in the red dress," "the man with the beard," "the blue car," or "the largest tree."
+    - Location: Specify position within the scene, e.g., "the man on the left," "the dog in the background," "the car in the midground," or "the building in the middle." 
+    - Action: Describe their activity, e.g., "the person walking," "the child playing with a ball," "the bird flying," or "the cat sitting on the windowsill." 
+    - Relationship to Each Other: For example, "the man next to the woman," (spatial relationship), “the first man that enters the frame” (temporal relationship), or "the two cars parked side by side."
+  - Combining Descriptions: For maximum clarity, combine multiple attributes. Example:
+    - "The woman in the red dress on the left, talking on her phone."
+    - "The dog in the background, running toward the ball."
+  - The key is to give enough information so that anyone reading your description can easily tell which person or object you are referring to. Don't assume we know! The more detail you give, the better.
+- Order Matters When Describing Multiple Subjects:
+  - When describing multiple subjects, the order in which you mention them matters. Prioritize elements based on their importance in the video, ensuring a natural and logical flow.
+  - Temporal Order: If the scene unfolds over time, describe subjects in the order they appear. For example, "First, the car speeds past, then the cyclist enters the frame."
+  - Prominence-Based Order: If temporal order isn’t relevant, start with the most visually striking or important subject before moving on to less prominent ones. For example, "The video shows a bright red sports car in the foreground. In the midground, a blue sedan is right behind it."
+
+
+If the video contains multiple subjects or complex subject transitions, follow these steps:
+
+- Determine the Primary Focus:
+  - If there is a single clear main subject:
+    - Describe the main subject in detail, explaining why this subject is the focus while others are not. Include relevant details such as appearance, actions, and positioning that make the subject stand out.
+    - Provide a less detailed overview of secondary subjects, mentioning only their general presence or relationship to the main subject.
+  - If the main subject is unclear:
+    - Describe subjects in prominence-based order (e.g., humans before objects).
+  - If there is no clear main subject:
+    - Give a brief overview of all subjects without excessive detail.
+
+- Identify Subject Transitions:
+  - If the focus shifts between subjects, specify the type of transition:
+    - Subject Revealing: For example, a new subject enters the frame.
+    - Subject Disappearing: For example, a subject exits or is no longer visible.
+    - Subject Switching: For example, the focus shifts from one subject to another through rack focus or other camera movements.
+    - Other Complex Changes: For example, subjects alternate focus multiple times.
+  - Explain how the transition occurs (through subject movement or camera movement).
+
+Identifying these scenarios ensures a more fluent and coherent description. For instance, in cases of subject switching, describe subjects in temporal order.

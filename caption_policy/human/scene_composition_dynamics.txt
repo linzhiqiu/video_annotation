@@ -1,0 +1,35 @@
+Provide a concise yet informative description of the overall scene, including the point-of-view, environment, setting, time of day, and notable visual elements. If there are subjects in the video, the scene description should complement the subject descriptions by establishing their location and possible context. The goal is to provide enough detail to understand the setting while avoiding excessive information.
+
+- Point of View (if relevant)  
+  - Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view. Focus on how the perspective influences the viewer’s perception of the scene.
+
+- Setting (Where does it happen?)  
+  - Scene Type: Specify whether the setting is indoors or outdoors using precise and descriptive terms. Avoid vague descriptions.  
+    - Good: "A sunlit café with large windows and wooden tables."  
+    - Avoid: "An indoor place."  
+  - Visual Attributes: Provide relevant details about the scene.  
+    - Location: If the setting is a well-known place, state it explicitly (e.g., "Times Square," "Grand Canyon," "Tokyo subway station"). If the exact location is unclear, describe its defining visual elements, such as "a narrow alley with graffiti-covered walls," "a vast desert with rolling dunes," or "a dimly lit space with metal walls."  
+    - Time of Day: Indicate whether the scene occurs during the day, night, or a transitional period like sunset or dawn.  
+    - Architectural and Natural Features: Mention buildings, roads, vegetation, water bodies, or other landscape elements that structure the scene. Examples: "A winding mountain path surrounded by tall pines," "A bustling marketplace with food stalls and colorful banners."  
+    - Weather Conditions: If outdoors, describe weather effects such as "A rainy street with wet pavement reflecting city lights," or "A snowy mountain pass covered in thick fog."  
+    - Furniture and Props (for indoor scenes): Identify relevant furnishings that establish the setting, such as "A wooden desk cluttered with books and a vintage lamp," or "A hospital room with a bed, medical monitors, and IV stands."  
+    - Style: If notable, describe color schemes or stylistic choices, such as "A monochromatic, grayscale environment," or "A vibrant and colorful carnival scene with neon lights."  
+
+- Movement and Changes in the Environment  
+  - Describe any natural or human-made motion within the scene.  
+  - Natural Motion: "Leaves sway in the wind," "Waves crash against the shore," "As the sun sets, it casts long shadows on the trees."  
+  - Man-Made Motion: "Traffic moves steadily on the highway," "A train passes in the distance," "Factory workers operate machinery in the background."  
+  - Crowd & Background Activity: "Pedestrians walk along a busy street," "A crowd cheers and waves hands," "The office starts empty, but employees gradually arrive and take their seats."  
+
+- Scene Transitions  
+  - If the scene changes, describe how it happens in the order it appears.  
+  - Time-Based Transitions: "The shot begins during the day but transitions to nighttime."  
+  - Movement-Based Transitions: "The shot begins with a view of a quiet street. Then, the camera pans to reveal a hidden alley behind the main street."  
+
+- How to Refer to Multiple Scene Elements  
+  - Use precise and concise language when referring to different elements within the scene. Examples:
+  - "In the background, a mountain range is visible."  
+  - "On the left side of the frame, there is a large tree."  
+  - "A wide river runs through the center, with a bridge arching over it."  
+
+Prioritize the most prominent and important aspects of the scene. Start with the overall setting, then move on to more specific details.

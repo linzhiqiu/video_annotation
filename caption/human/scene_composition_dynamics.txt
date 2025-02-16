@@ -1,0 +1,80 @@
+Provide a concise yet informative description of the overall scene, including the point-of-view, environment, setting, time of day, and notable visual elements. If there are subjects in the video, the scene description should complement the subject descriptions by establishing their location and possible context. The goal is to provide enough detail to understand the setting while avoiding excessive information.
+
+#### 1. Point of View (if relevant)  
+1. Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view.  
+2. Focus on how the perspective influences the viewer’s perception of the scene.  
+
+#### 2. Setting (Where does it happen?)  
+1. **Scene Type:** Specify whether the setting is indoors or outdoors using precise and descriptive terms. Avoid vague descriptions.  
+   - **Good:** "A sunlit café with large windows and wooden tables."  
+   - **Avoid:** "An indoor place."  
+
+2. **Visual Attributes:** Provide relevant details about the scene.  
+   - **Location:**  
+     1. If the setting is a well-known place, state it explicitly (e.g., "Times Square," "Grand Canyon," "Tokyo subway station").  
+     2. If the exact location is unclear, describe its defining visual elements, such as:  
+        - "A narrow alley with graffiti-covered walls."  
+        - "A vast desert with rolling dunes."  
+        - "A dimly lit space with metal walls."  
+   
+   - **Time of Day:** Indicate whether the scene occurs during the day, night, or a transitional period like sunset or dawn.  
+   
+   - **Architectural and Natural Features:** Mention buildings, roads, vegetation, water bodies, or other landscape elements that structure the scene.  
+     - **Examples:**  
+       1. "A winding mountain path surrounded by tall pines."  
+       2. "A bustling marketplace with food stalls and colorful banners."  
+   
+   - **Weather Conditions:** If outdoors, describe weather effects.  
+     - **Examples:**  
+       1. "A rainy street with wet pavement reflecting city lights."  
+       2. "A snowy mountain pass covered in thick fog."  
+   
+   - **Furniture and Props (for indoor scenes):** Identify relevant furnishings that establish the setting.  
+     - **Examples:**  
+       1. "A wooden desk cluttered with books and a vintage lamp."  
+       2. "A hospital room with a bed, medical monitors, and IV stands."  
+   
+   - **Style:** If notable, describe color schemes or stylistic choices.  
+     - **Examples:**  
+       1. "A monochromatic, grayscale environment."  
+       2. "A vibrant and colorful carnival scene with neon lights."  
+
+#### 3. Movement and Changes in the Environment  
+1. Describe any natural or human-made motion within the scene.  
+
+2. **Natural Motion:**  
+   - **Examples:**  
+     1. "Leaves sway in the wind."  
+     2. "Waves crash against the shore."  
+     3. "As the sun sets, it casts long shadows on the trees."  
+
+3. **Man-Made Motion:**  
+   - **Examples:**  
+     1. "Traffic moves steadily on the highway."  
+     2. "A train passes in the distance."  
+     3. "Factory workers operate machinery in the background."  
+
+4. **Crowd & Background Activity:**  
+   - **Examples:**  
+     1. "Pedestrians walk along a busy street."  
+     2. "A crowd cheers and waves hands."  
+     3. "The office starts empty, but employees gradually arrive and take their seats."  
+
+#### 4. Scene Transitions  
+1. If the scene changes, describe how it happens in the order it appears.  
+
+2. **Time-Based Transitions:**  
+   - **Example:** "The shot begins during the day but transitions to nighttime."  
+
+3. **Movement-Based Transitions:**  
+   - **Example:** "The shot begins with a view of a quiet street. Then, the camera pans to reveal a hidden alley behind the main street."  
+
+#### 5. How to Refer to Multiple Scene Elements  
+1. Use precise and concise language when referring to different elements within the scene.  
+   - **Examples:**  
+     1. "In the background, a mountain range is visible."  
+     2. "On the left side of the frame, there is a large tree."  
+     3. "A wide river runs through the center, with a bridge arching over it."  
+
+2. Prioritize the most prominent and important aspects of the scene.  
+3. Start with the overall setting, then move on to more specific details.  

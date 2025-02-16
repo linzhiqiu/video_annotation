@@ -1,0 +1,5 @@
+If **shot size or spatial position** changes within the frame, describe how these transitions occur clearly, specifying both the **initial and final states**.  
+
+For **subjects**, indicate how their position and framing evolve. For example, *"A medium shot of a man’s upper body near a doorway transitions into a close-up of his face as he walks toward the camera."* Similarly, describe movement across the frame, such as *"A cyclist moves from the left to the right side of the frame, maintaining a full shot throughout."* If the camera’s perspective changes, specify the shift, like *"A full-body shot of a child at eye level shifts as the camera tilts upward, reframing them from a low angle looking up."*  
+
+For **scenery shots**, describe how the framing adjusts to reveal different aspects of the environment. For instance, *"The shot begins with an aerial view of a city skyline, then tilts downward to focus on a busy intersection."* If the camera moves through space, specify the transition, such as *"The camera moves forward, transitioning from a wide view of a dense forest to a close-up of a single tree trunk covered in moss."*  

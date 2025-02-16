@@ -1,0 +1,5 @@
+For **scenery-focused shots without a primary subject**, describe how the scene is framed by detailing its **shot size** and **spatial composition**.  
+
+First, specify the **shot size** used to capture the environment, such as *a wide shot of a vast mountain range stretching across the horizon* or *a close-up of raindrops hitting a window*.  
+
+Next, describe the **spatial composition**, including the positioning of key elements within the frame. Indicate where objects appear, such as *a symmetrical shot of a hallway positioned at the center, leading toward a vanishing point* or *a large tree stands in the left-bottom corner*. Incorporate depth by mentioning **foreground, midground, and background** elements when relevant. For instance, *in the foreground, a bicycle is parked against a fence, while in the background, skyscrapers rise against the sky* or *the midground features a river cutting through the landscape*.  

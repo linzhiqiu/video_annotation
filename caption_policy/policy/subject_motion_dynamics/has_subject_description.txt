@@ -1,0 +1,3 @@
+In addition, the human-written caption below already describes the subjects (if any) in this video but does not comprehensively capture their motion. Use this caption as a reference or starting point to draft the description, but do not rely on it completely. Expand or refine it to fully capture the subjects' motion and dynamics. However, if the caption does not mention any subjects, do not add any description—simply note this briefly in the description.
+
+Human-Written Caption: **{subject_description}**

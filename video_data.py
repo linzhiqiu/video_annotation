@@ -1,7 +1,6 @@
 from camera_motion_data import CameraMotionData
 from camera_setup_data import CameraSetupData
 from lighting_setup_data import LightingSetupData
-from caption_data import CaptionData
 from workflow_data import WorkflowData
 
 class VideoData:
@@ -10,7 +9,6 @@ class VideoData:
         self._cam_motion = None  # Short for camera_motion_data
         self._cam_setup = None   # Short for camera_setup_data
         self._light_setup = None  # Short for lighting_setup_data
-        self._caption_data = None  # For storing video captions
         
         # Single list to store all workflow data
         self._workflows = []
@@ -86,22 +84,6 @@ class VideoData:
             self._light_setup = value
         else:
             raise TypeError("light_setup must be a LightingSetupData instance or a dictionary of parameters")
-
-    @property
-    def caption_data(self):
-        if self._caption_data is None:
-            # Return a new empty CaptionData instance instead of raising an error
-            self._caption_data = CaptionData()
-        return self._caption_data
-
-    @caption_data.setter
-    def caption_data(self, value):
-        if isinstance(value, dict):
-            self._caption_data = CaptionData.create(**value)  # Auto-create instance
-        elif isinstance(value, CaptionData):
-            self._caption_data = value
-        else:
-            raise TypeError("caption_data must be a CaptionData instance or a dictionary of parameters")
 
     def update_workflow_from_project(self, project_name: str, workflow_data: dict):
         """

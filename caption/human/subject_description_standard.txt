@@ -1,0 +1,3 @@
+Who or what is in the video? What do they look like? Where are they?
+
+Identify subjects precisely (e.g., man, dog, car) and describe key visual attributes like clothing, color, or texture. Specify posture and orientation (e.g., sitting, walking, facing left). For multiple subjects, clarify distinctions using appearance, location, or actions. List subjects in order of prominence or as they appear in time. If focus shifts, describe how and why.

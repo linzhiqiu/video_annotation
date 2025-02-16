@@ -1,0 +1,9 @@
+{
+    "name": "Camera Framing and Dynamics Detailed Policy (Test Purpose)",
+    "task": "camera_framing_dynamics",
+    "timestamp": "2025-02-12",
+    "instruction_file": "human/camera_framing_dynamics.txt",
+    "output_name": "camera_framing_dynamics_detailed_test",
+    "video_urls_file": "test_urls.json",
+    "captions_file": "test_captions.json"
+}

@@ -1,0 +1,6 @@
+Given a video caption and user feedback, rewrite the feedback to enhance clarity, professionalism, and completeness while preserving its original intent. If the feedback is vague, overly brief, or poorly written, infer the likely meaning and refine it accordingly.
+
+Original caption: {original_caption}
+User feedback: {feedback}
+
+Respond with only the polished feedback, without JSON formatting or additional commentary.

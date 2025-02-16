@@ -1,0 +1,51 @@
+Provide a concise yet informative description of the subject motion in this video. Please note that order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
+
+#### 1. Individual Subject Actions  
+1. Describe the actions and dynamic changes of individual subjects, ensuring clarity on the manner of movement.
+2. **Examples:**  
+   - **Good:** "A runner sprints across the finish line."  
+     - **Instead of:** "A person is running."  
+   - **Good:** "A hummingbird hovers delicately, wings beating rapidly as it sips nectar from a flower."  
+     - **Instead of:** "A bird is flying."  
+   - **Good:** "A caterpillar slowly inches its way along a leaf."  
+     - **Instead of:** "An insect is moving."  
+   - **Good:** "A time-lapse shows a sunflower turning its head to follow the sun across the sky."  
+     - **Instead of:** "A plant is rotating."  
+   - **Good:** "A seed sprouts, sending a root down and a sprout up."  
+     - **Instead of:** "A seed is growing."  
+
+#### 2. Subject-Object Interactions
+1. Describe the interactions between subjects and objects in the video. Specify the type of interaction and the object involved. If relevant, detail the effect of the interaction.  
+2. **Examples:**  
+   - **Good:** "A chef flips an omelet in a pan."  
+     - **Instead of:** "A person is using a pan."  
+   - **Good:** "A dog fetches a tennis ball thrown by its owner."  
+     - **Instead of:** "A dog is playing."  
+   - **Good:** "A construction worker operates a jackhammer, breaking up the pavement."  
+     - **Instead of:** "A person is working."  
+   - **Good:** "A car collides with a traffic sign, bending it at a sharp angle."  
+     - **Instead of:** "A car crashed."  
+
+#### 3. Subject-Subject Interactions
+1. Describe the interactions between different subjects in this video. Describe the nature of the interaction and the relative movements of the subjects.  
+2. **Examples:**  
+   - **Good:** "Two boxers exchange blows in the ring, circling each other cautiously."  
+     - **Instead of:** "People are fighting."  
+   - **Good:** "A mother bird feeds worms to her chicks in the nest."  
+     - **Instead of:** "Birds are together."  
+   - **Good:** "Dancers perform a complex tango, their movements synchronized and graceful."  
+     - **Instead of:** "People are dancing."  
+   - **Good:** "A pride of lions hunts a zebra, surrounding it and closing in for the kill."  
+     - **Instead of:** "Animals are interacting."  
+
+#### 4. Group Activities
+1. **Summarize collective behaviors or actions of a group**, describing the overall movement and any coordinated actions. If relevant, specify the type of group.  
+2. **Examples:**  
+   - **Good:** "A flock of geese flies in a V-formation across the horizon."  
+     - **Instead of:** "Birds are flying."  
+   - **Good:** "A crowd of protesters marches down the street, carrying signs and banners."  
+     - **Instead of:** "People are walking."  
+   - **Good:** "A swarm of bees buzzes around a hive."  
+     - **Instead of:** "Insects are moving."  
+   - **Good:** "A school of fish swims in unison, changing direction as one unit."  
+     - **Instead of:** "Fish are swimming."  

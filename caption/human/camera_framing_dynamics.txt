@@ -1,0 +1,69 @@
+Provide a concise yet informative description of the video’s and camera's configuration, including video speed, lens distortion, camera angle, camera height, movements (translation, rotation, steadiness, intensity, complexity), and focus (depth, focus plane, focus changes).
+
+#### 1. Video Speed  
+1. If the video speed is altered, specify the type of speed change.  
+   - **Examples:**  
+     1. **Time-lapse**: Events unfold significantly faster. "Clouds move rapidly across the sky."  
+     2. **Fast-Motion**: Slightly faster than real-time (1x-3x speed).  
+     3. **Slow-Motion**: Slower playback than real-time.  
+     4. **Stop-Motion**: Frame-by-frame animation with discrete movements.  
+     5. **Speed-Ramp**: A mix of fast and slow speeds within the same video.  
+     6. **Time-Reversed**: The video plays in reverse.  
+
+#### 2. Lens Distortion  
+1. If lens distortion is present, describe the type and degree.  
+   - **Examples:**  
+     1. **Fisheye**: Extreme distortion with strong curvature, making the edges appear bent outward.  
+     2. **Barrel**: Mild distortion causing straight lines near the edges to bow outward.  
+
+#### 3. Camera Height (Relative to the Ground)  
+1. If the camera height is discernible, specify one of the following:  
+   - Aerial-level, Overhead-level, Eye-level, Hip-level, Ground-level, Water-level, Underwater.  
+2. Mention any camera movement that causes height changes.  
+
+#### 4. Camera Angle (Relative to the Ground)  
+1. If the camera angle is discernible, specify one of the following:  
+   - Bird’s Eye, High Angle, Level Angle, Low Angle, Worm’s Eye.  
+2. Mention any camera movement that changes the camera angle.  
+
+#### 5. Dutch/Canted Angle  
+1. If a Dutch angle is present, describe its behavior.  
+   - **Examples:**  
+     1. "The Dutch angle remains fixed throughout the shot."  
+     2. "The Dutch angle varies, changing due to camera rolling."  
+
+#### 6. Camera Focus and Depth of Field  
+1. If the type of camera focus is indeterminable, explain whether the video lacks a realistic depth of field effect, is too blurry, or does not appear to be filmed with a real camera.  
+2. If discernible, specify whether the camera has a shallow depth of field.  
+   - If the depth of field is deep, state **"Deep Focus."**  
+   - If the depth of field is shallow, describe it as **shallow** or **extremely shallow**.  
+   - Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
+   - If the focus changes, describe the transition (**Rack/Pull Focus, Focus Tracking**).  
+
+#### 7. Camera Movement  
+1. If the camera is completely static, no further description is required.  
+2. If the camera is shaking or wobbling, describe the degree.  
+   - **Examples:** minimal, moderate, or severe shaking.  
+3. If the camera follows or moves with an object, describe how it moves with the subject.  
+   - **Examples:** Tracking Shot, Arcing, Craning.  
+4. Describe why the camera is moving (e.g., tracking a subject, revealing a scene, creating emphasis).  
+5. Use precise movement terms to describe the motion.  
+   - **Examples:**  
+     1. **Dolly In/Out**: Moving forward or backward toward or away from the subject.  
+     2. **Zoom In/Out**: Changing focal length to create the illusion of moving closer or farther.  
+     3. **Pan Left/Right**: Rotating the camera horizontally.  
+     4. **Truck Left/Right**: Moving the camera laterally left or right.  
+     5. **Tilt Up/Down**: Angling the camera up or down.  
+     6. **Pedestal Up/Down**: Lifting or lowering the camera while keeping it level.  
+     7. **Rolling Clockwise/Counterclockwise**: Rotating the camera around its lens axis.  
+6. Mention the speed of movement if noticeably slow or fast. If different movements occur at different speeds, clearly distinguish them.  
+   - **Example:**  
+     - "The camera slowly dollies forward while trucking quickly to the right."  
+7. Describe motion in temporal order if multiple movements occur.  
+   - **Example:**  
+     - "The camera first pans right, then tilts upward to follow the subject."  
+8. If the movement appears too fragmented or random, avoid excessive detail.  
+   - **Excessive Detail (Too much description):**  
+     - "As the player explores, the camera moves left, then quickly tilts up, followed by a rapid pan right. The player hesitates, looking down, then abruptly swings the camera left again before slightly tilting upward and making another quick turn to the right."  
+   - **Better Description (Concise & clear):**  
+     - "The first-person camera moves randomly as the player looks around, frequently changing direction without a clear pattern."

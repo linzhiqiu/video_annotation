@@ -1,0 +1,8 @@
+Describe the actions and dynamic changes of individual subjects with specificity, ensuring clarity on the manner of movement.
+- Order matters—if multiple such actions occur, present them in chronological order.
+- Examples:
+    - "A runner sprints across the finish line." (Instead of: "A person is running.")
+    - "A hummingbird hovers delicately, wings beating rapidly as it sips nectar from a flower." (Instead of: "A bird is flying.")
+    - "A caterpillar slowly inches its way along a leaf." (Instead of: "An insect is moving.")
+    - "A time-lapse shows a sunflower turning its head to follow the sun across the sky." (Instead of: "A plant is rotating.")
+    - "A seed sprouts, sending a root down and a sprout up." (Instead of: "A seed is growing.")

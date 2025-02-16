@@ -1,0 +1,3 @@
+In addition, the human-written caption below already describes the subjects (if any) in this video, including framing information like shot size. Use this caption as a reference to draft the subject description, but do not rely on it completely. Expand or refine it to fully capture the subject’s type, attributes, appearance, unique features, pose, orientation, relationships between subjects, or any changes in the main focused subject, such as revealing, disappearing, or shifting focus. However, if the description below does not mention any subjects, please do not describe subjects and only specify the type of shot (e.g., a landscape or cityscape scenery shot or a FPV shot) and explain why there is no main subject.
+
+Human-Written Caption: **{shot_size_description}**

@@ -1,0 +1,9 @@
+Provide a concise yet informative description of the subject’s motion in this video, ensuring actions are presented in **chronological order** if multiple movements occur (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").  
+
+Describe **individual subject actions** with clarity, specifying how they move rather than using generic descriptions. For example, instead of “a person is running,” say “a runner sprints across the finish line.”
+
+If the subject interacts with an **object**, specify the type of interaction and its effect. Instead of “a person is working,” say “a construction worker operates a jackhammer, breaking up the pavement.”
+
+If there are **interactions between subjects**, describe the nature of their relationship and movements relative to each other. Instead of “people are fighting,” say “two boxers exchange blows in the ring, circling each other cautiously.”
+
+If there are collective behaviors for a group of subjects, describe **group activities** with specificity. Instead of “birds are flying,” say “a flock of geese flies in a V-formation across the horizon.” Instead of “people are walking,” say “a crowd of protesters marches down the street, carrying signs and banners.” Clearly convey the type of group, their coordinated actions, and any notable patterns in their movement.

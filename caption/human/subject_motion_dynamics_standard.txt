@@ -1,0 +1,3 @@
+What is moving? How does it move? What does it interact with?
+
+Describe actions in chronological order with precise verbs (e.g., "sprints," "hovers," "collides"). Specify subject-object interactions (e.g., "flips an omelet," "fetches a ball") and subject-subject interactions (e.g., "dancers move in sync," "lions surround prey"). For groups, summarize collective motion. Keep it clear and sequential.

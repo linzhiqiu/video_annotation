@@ -1,0 +1,9 @@
+{
+    "name": "Subject Description Detailed Policy (Test Purpose)",
+    "task": "subject_description",
+    "timestamp": "2025-02-12",
+    "instruction_file": "human/subject_description.txt",
+    "output_name": "subject_description_detailed_test",
+    "video_urls_file": "test_urls.json",
+    "captions_file": "test_captions.json"
+}

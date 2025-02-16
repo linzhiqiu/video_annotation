@@ -1,0 +1,3 @@
+In addition, you do not need to infer the camera's point of view, as this information is already provided. Please integrate the following point of view information into your caption:
+
+Point of View Information: "**{pov_description}**"

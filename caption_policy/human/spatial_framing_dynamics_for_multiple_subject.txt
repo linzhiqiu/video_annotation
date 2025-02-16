@@ -1,0 +1,73 @@
+Provide a concise yet informative description of how subjects and elements are framed within the scene, including their shot size, position, and movement within the scene or frame. The goal is to describe the spatial composition and motion within the shot.
+
+- Framing of Subjects (How Are They Positioned in the Shot?)  
+  - Shot Size: Indicate how much of the subject is visible, such as close-up, medium shot, wide shot, or a varying shot that does not follow a fixed framing. Focus on how framing affects the perception of the subject rather than forcing a specific shot type.  
+    - Examples:  
+      - "A close-up captures the subject’s face."  
+      - "A medium shot frames the person from the waist up."  
+      - "A wide shot shows a person standing in an open field."  
+      - "The camera tracks a skateboarder in an unsteady manner, mostly capturing the skateboarder’s lower body."  
+  - Position within the Frame: Describe the subject’s approximate location within the frame.  
+    - Examples:  
+      - "The person is in the bottom-left corner of the frame."  
+      - "The person is on the right of the frame."  
+  - Depth within the Scene: Describe the subject’s placement in relation to the foreground, midground, or background.  
+    - Examples:  
+      - "In the foreground, a person is sitting in front of a computer."  
+  - Position within the Scene: Describe the subject’s physical placement in the scene.  
+    - Examples:  
+      - "The woman in the midground stands near a window, looking outside."  
+  - Height Relative to the Camera: Describe the subject’s vertical positioning relative to the camera.  
+    - Examples:  
+      - "The man is framed at eye level."  
+      - "A low-angle shot captures the person from below."  
+
+- Framing of Scenery (How Is the Environment Captured?)  
+  - Shot Size: Indicate how the environment is framed, such as a wide shot, close-up, or a dynamic framing that shifts within the scene.  
+    - Examples:  
+      - "A wide shot of a mountain range stretching across the horizon."  
+      - "A close-up of raindrops hitting a window."  
+  - Spatial Composition: Describe how elements appear within the frame.  
+    - Spatial Positioning: Specify where key elements appear within the frame.  
+      - Examples:  
+        - "A symmetrical shot of a hallway positioned at the center of the frame, leading toward a vanishing point."  
+        - "A large tree stands in the bottom-left corner of the frame."  
+        - "A streetlamp is visible on the right side of the frame."  
+    - Depth (Foreground, Midground, and Background Elements): Describe relationships between elements at different depths.  
+      - Examples:  
+        - "In the foreground, a bicycle is parked to the right against a fence, while in the background, skyscrapers rise against the sky."  
+        - "The midground features a river cutting through the landscape."  
+
+- Spatial Motion Within the Frame (How Do Subjects or Scene Elements Move?)  
+  - If shot size or spatial position changes within the frame, describe how these transitions happen clearly, specifying both the initial and final state.  
+  - Changes in Shot Size and Spatial Position for Subjects:  
+    - Examples:  
+      - "A medium shot of a man’s upper body near a doorway transitions into a close-up of his face as he walks toward the camera."  
+      - "A woman walking from the background to the foreground transitions from a wide shot capturing both her and the street scenery to a medium shot focusing on her lower body."  
+      - "A cyclist moves from the left to the right side of the frame, maintaining a full shot throughout."  
+      - "A full-body shot of a child at eye level shifts as the camera tilts upward, reframing them from a low angle looking up."  
+      - "A wide shot captures a person near a park bench, who then walks diagonally from the bottom-left to the top-right corner of the frame."  
+  - Changes in Shot Size and Spatial Composition for Scenery Shots:  
+    - Examples:  
+      - "The shot begins with an aerial view of a city skyline, then tilts downward to focus on a busy intersection."  
+      - "The camera moves forward, transitioning from a wide view of a dense forest to a close-up of a single tree trunk covered in moss."  
+
+If the video contains multiple subjects or complex subject transitions, follow these steps:
+
+- Determine the Primary Focus  
+  - If there is a single clear main subject:  
+    - Follow the “Framing of Subjects” section to describe this subject in detail, including shot size and spatial position.  
+    - Follow "Spatial Motion Within the Frame" to describe any spatial motion and changes.  
+    - Provide a less detailed overview of secondary subjects.  
+  - If the main subject is unclear:  
+    - Describe subjects’ spatial position and movement in prominence-based order (e.g., humans before objects).  
+    - Instead of determining the shot size based on a random subject, specify it based on the most prominent subject (e.g., a human) if one is clearly dominant.  
+    - Otherwise, if the subjects are relatively similar in size, use the average shot size.  
+    - If the shot is even more complex, directly state which (part of) subjects are visible and which are not.  
+  - If there is no clear main subject:  
+    - Provide a general overview of subjects' spatial positions without excessive detail.  
+    - Do not specify shot size, as it is not meaningful in this case. You may optionally describe the shot size following "Framing of Scenery" instead.  
+
+- Identify Subject Transitions  
+  - If subjects reveal, disappear, switch focus, or undergo other complex changes, describe their shot size (if relevant), spatial position, and movement accordingly.  
+  - Ensure that the description follows the temporal order in which subjects appear.  

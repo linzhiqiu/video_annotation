@@ -1,0 +1,6 @@
+Given a video caption and user feedback, please provide an improved version of the caption that addresses the feedback. Note that the user feedback could be poorly written, so please try your best to guess what it means.
+
+Original caption: {original_caption}
+Feedback: {feedback}
+
+Respond with the improved caption only, without quotation marks or JSON formatting.

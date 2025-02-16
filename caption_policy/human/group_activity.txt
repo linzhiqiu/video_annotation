@@ -1,0 +1,7 @@
+Summarize collective behaviors or actions of a group, describing the overall movement and any coordinated actions. If relevant, specify the type of group. 
+- Order matters—if multiple such actions occur, present them in chronological order.
+- Examples:
+  - "A flock of geese flies in a V-formation across the horizon." (Instead of: "Birds are flying.")
+  - "A crowd of protesters marches down the street, carrying signs and banners." (Instead of: "People are walking.")
+  - "A swarm of bees buzzes around a hive." (Instead of: "Insects are moving.")
+  - "A school of fish swims in unison, changing direction as one unit." (Instead of: "Fish are swimming.")

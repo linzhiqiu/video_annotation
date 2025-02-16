@@ -1,0 +1,7 @@
+Provide a concise yet informative description about the interactions between different subjects in this video. Please describe the nature of the interaction and the relative movements of the subjects.
+- Order matters—if multiple such actions occur, present them in chronological order.
+- Examples:
+  - "Two boxers exchange blows in the ring, circling each other cautiously." (Instead of: "People are fighting.")
+  - "A mother bird feeds worms to her chicks in the nest." (Instead of: "Birds are together.")
+  - "Dancers perform a complex tango, their movements synchronized and graceful." (Instead of: "People are dancing.")
+  - "A pride of lions hunts a zebra, surrounding it and closing in for the kill." (Instead of: "Animals are interacting.")

@@ -1,0 +1,7 @@
+Provide a concise yet informative description of how subjects and elements are framed within the scene, including their **shot size, position, and movement** within the frame. Your goal is to describe the **spatial composition and motion** within the shot.  
+
+First, specify the **shot size** based on how much of the subject is visible. For example, *a close-up shot of a human face*, *a medium shot of a man’s lower body*, or *a wide shot of a man standing near the ocean*. If the shot size does not follow a typical framing pattern or changes erratically, describe the overall framing instead, such as *"The camera tracks a skateboarder in an unsteady manner, mostly capturing the skateboarder’s lower body."*  
+
+Next, describe the **subject’s position in the scene**. Indicate their approximate location within the frame, such as *"The person is in the bottom-left corner of the frame"* or *"The person is on the right of the frame."* Describe their depth in the scene relative to the **foreground, midground, or background**, such as *"In the foreground, a person is sitting in front of a computer."* Additionally, specify their physical placement within the environment, such as *"The woman in the midground stands near a window, looking outside."*  
+
+Finally, describe the **subject’s height relative to the camera**, if relevant. Indicate whether they are framed at eye level, above, or below the camera’s perspective, such as *"The man is framed at eye level."* or *"A low-angle shot captures the person from below."*

@@ -1,0 +1,7 @@
+Provide a concise yet informative description about interactions between subjects and objects in this video. Please specify the type of interaction and the object involved. If relevant, detail the effect of the interaction.
+- Order matters—if multiple such actions occur, present them in chronological order.
+- Examples:
+  - "A chef flips an omelet in a pan." (Instead of: "A person is using a pan.")
+  - "A dog fetches a tennis ball thrown by its owner." (Instead of: "A dog is playing.")
+  - "A construction worker operates a jackhammer, breaking up the pavement." (Instead of: "A person is working.")
+  - "A car collides with a traffic sign, bending it at a sharp angle." (Instead of: "A car crashed.")

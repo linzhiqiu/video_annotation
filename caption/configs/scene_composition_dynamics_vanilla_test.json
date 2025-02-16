@@ -1,0 +1,9 @@
+{
+    "name": "Scene Composition and Dynamics Vanilla Policy (Test Purpose)",
+    "task": "scene_composition_dynamics",
+    "timestamp": "2025-02-12",
+    "instruction_file": "human/scene_composition_dynamics_vanilla.txt",
+    "output_name": "scene_composition_dynamics_vanilla_test",
+    "video_urls_file": "test_urls.json",
+    "captions_file": "test_captions.json"
+}

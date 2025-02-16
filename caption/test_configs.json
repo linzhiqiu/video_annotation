@@ -1,0 +1,7 @@
+[
+    "configs/subject_description_detailed_test.json",
+    "configs/subject_motion_dynamics_detailed_test.json",
+    "configs/scene_composition_dynamics_detailed_test.json",
+    "configs/spatial_framing_dynamics_detailed_test.json",
+    "configs/camera_framing_dynamics_detailed_test.json"
+]

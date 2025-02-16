@@ -1,0 +1,3 @@
+How is the video captured? How does the camera move?
+
+Describe video speed (normal, slow-motion, time-lapse, etc.), lens distortion (fisheye, barrel), and camera height (eye-level, overhead, ground-level). Note the camera angle (high, low, level) and if a Dutch tilt is present. If focus is relevant, state whether it’s deep or shallow and if it shifts (rack focus). For movement, specify translation (dolly, truck, crane) or rotation (pan, tilt, roll), including intensity and steadiness. Keep descriptions sequential and clear.
