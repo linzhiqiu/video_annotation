@@ -20,10 +20,10 @@ export_params:
 
 # List of project IDs to export
 project_ids:
-  - "cm2iljzsz00rg07117sq10jiw" # Video Segment Classification (Camera Movement)
-  - "cm2iljdx52xuj07y54gwb6r7i" # Video Segment Classification (Camera Settings and Shot compositions)
-  - "cm56rp9oc0i5m071j0zy2eq8c" # Video Segment Classification (Camera Settings and Shot compositions) 2
-  - "cm56rjuz506zl072c1hjzhnn3" # Video Segment Classification (Camera-centric Movement)
+  - "cm2iljzsz00rg07117sq10jiw"
+  - "cm2iljdx52xuj07y54gwb6r7i"
+  - "cm56rp9oc0i5m071j0zy2eq8c"
+  - "cm56rjuz506zl072c1hjzhnn3"
 
 # Export filters
 filters:
@@ -31,12 +31,11 @@ filters:
 
 # Google Sheets configuration
 google_sheets:
-  # Path to the sheets URL configuration file
-  sheets_url_config: "configs/sheets_url_config.json"
   # Whether to perform sheets export. If null, will export from latest export.
   # If a directory path is specified, will use that directory's exports instead.
   # Can be: null, "exports", "exports_20240225_093000", etc.
   perform_export: exports
+  # perform_export: null
   # Whether to include videos with issues in sheets
   include_issues: true
   # Default spreadsheet for unassigned approvers

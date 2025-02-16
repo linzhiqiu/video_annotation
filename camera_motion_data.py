@@ -46,19 +46,19 @@ class CameraMotionData:
         # Text box for complex descriptions
         self.complex_motion_description = ""
 
-        # Camera Motion List (ground_based)
-        self.camera_motion_list = [
-            "forward", "backward", "zoom_in", "zoom_out", "up", "down",
-            "tilt_up", "tilt_down","roll_cw", "roll_ccw",
-            "pan_right", "pan_left", "left", "right"
-        ]
-
-        # Camera motion List (camera_based)
-        self.camera_motion_cam_list = [
-            "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
-            "up_cam", "down_cam", "forward_cam", "backward_cam",
-            "roll_cw", "roll_ccw", "pan_right", "pan_left"
-        ]
+        # # Camera Motion List (ground_based)
+        # self.camera_motion_list = [
+        #     "forward", "backward", "zoom_in", "zoom_out", "up", "down",
+        #     "tilt_up", "tilt_down","roll_cw", "roll_ccw",
+        #     "pan_right", "pan_left", "left", "right"
+        # ]
+        #
+        # # Camera motion List (camera_based)
+        # self.camera_motion_cam_list = [
+        #     "zoom_in", "zoom_out", "tilt_up", "tilt_down", "left", "right",
+        #     "up_cam", "down_cam", "forward_cam", "backward_cam",
+        #     "roll_cw", "roll_ccw", "pan_right", "pan_left"
+        # ]
     
     def set_camera_motion_attributes(self):
         # Initialize all attributes to False

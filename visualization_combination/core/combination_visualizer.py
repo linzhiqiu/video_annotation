@@ -4,7 +4,7 @@ import logging
 from flask import Flask, render_template, send_from_directory
 from batch import Batch
 from video_data import VideoData
-from scripts.process_ndjson import process_ndjson_files
+from process_ndjson import process_ndjson_files
 from ..params.visualization_params import VisualizationParams
 from label import Label
 import base64
@@ -12,41 +12,33 @@ import base64
 class CombinationVisualizer:
     """Class for visualizing label combinations as a correlation matrix."""
     
-    def __init__(self, config_path: str, batch_folder: str = None):
+    def __init__(self, config_path: str):
         self.config_path = config_path  # Store the config path
         self.config = VisualizationParams.from_yaml(config_path)
         
-        # Process NDJSON files during initialization
-        logging.info("Processing NDJSON files...")
+        # Create required directories
         data_config = self.config['data']
+        for dir_path in [data_config['ndjson_dir'], 
+                        data_config['issues_dir'], 
+                        data_config['videos_dir']]:
+            os.makedirs(dir_path, exist_ok=True)
         
-        # Use batch folder from constructor or config
-        batch_folder = batch_folder or data_config.get('batch_folder')
-        
-        # If batch folder is provided, use its ndjson and issues directories
-        if batch_folder:
-            ndjson_dir = os.path.join(batch_folder, 'ndjson')
-            issues_dir = os.path.join(batch_folder, 'issues_ndjson')
-            if not os.path.exists(ndjson_dir) or not os.path.exists(issues_dir):
-                raise ValueError(f"Batch folder {batch_folder} must contain 'ndjson' and 'issues_ndjson' directories")
-            logging.info(f"Using batch folder: {batch_folder}")
-            logging.info(f"NDJSON directory: {ndjson_dir}")
-            logging.info(f"Issues directory: {issues_dir}")
-        else:
-            ndjson_dir = data_config.get('ndjson_dir', 'exports/ndjson')
-            issues_dir = data_config.get('issues_dir', 'exports/issues_ndjson')
-            logging.info(f"No batch folder specified, using default directories:")
-            logging.info(f"NDJSON directory: {ndjson_dir}")
-            logging.info(f"Issues directory: {issues_dir}")
-            
-        self.all_videos = process_ndjson_files(
-            ndjson_dir, 
-            issues_dir
-        )
-        logging.info(f"Loaded {len(self.all_videos)} total videos from NDJSON files")
+        # Create video_lists directory if video_names_file is specified
+        if 'video_names_file' in self.config.get('constraints', {}):
+            video_lists_dir = os.path.dirname(self.config['constraints']['video_names_file'])
+            os.makedirs(video_lists_dir, exist_ok=True)
         
         self.labels = Label.load_all_labels()
         self.app = Flask(__name__, template_folder='../templates')
+        
+        # Process NDJSON files during initialization
+        logging.info("Processing NDJSON files...")
+        self.all_videos = process_ndjson_files(
+            data_config['ndjson_dir'], 
+            data_config['issues_dir']
+        )
+        logging.info(f"Loaded {len(self.all_videos)} total videos from NDJSON files")
+        
         self.setup_routes()
         
     def setup_routes(self):
@@ -222,26 +214,27 @@ class CombinationVisualizer:
         return matrix
 
     def create_batch(self, all_videos: Dict[str, VideoData]) -> Batch:
-        """Create a batch from all available videos."""
-        logging.info(f"Creating batch with all {len(all_videos)} videos")
-        batch = Batch(all_videos)
+        """Create a batch based on configuration."""
+        try:
+            # Try to get video names from config
+            logging.info("Getting video names from config...")
+            video_names = VisualizationParams.get_video_names(self.config)
+            logging.info(f"Found {len(video_names)} videos in video names file")
+        except (ValueError, FileNotFoundError) as e:
+            # If no video names file specified, use all videos
+            logging.info("No video names file specified, using all videos")
+            video_names = list(all_videos.keys())
+        
+        # Create batch
+        batch = Batch.create(
+            all_videos=all_videos,
+            video_names=video_names,
+            approver=self.config.get('constraints', {}).get('approver'),
+            time_range=VisualizationParams.get_time_range(self.config.get('constraints', {}))
+        )
+        
         logging.info(f"Created batch with {len(batch)} videos")
         return batch
-
-    def find_video_path(self, video_name: str) -> tuple:
-        """Find a video file by searching through subdirectories.
-        Returns a tuple of (directory_path, filename) if found, (None, None) if not found."""
-        videos_dir = self.config['data']['videos_dir']
-        logging.info(f"Searching for video {video_name} in {videos_dir}")
-        
-        # Walk through all subdirectories
-        for root, _, files in os.walk(videos_dir):
-            if video_name in files:
-                logging.info(f"Found video {video_name} in directory {root}")
-                return root, video_name
-                
-        logging.warning(f"Video {video_name} not found in {videos_dir} or its subdirectories")
-        return None, None
 
     def _get_video_details(self, video: VideoData) -> Dict[str, Any]:
         """Extract all relevant details from a video."""

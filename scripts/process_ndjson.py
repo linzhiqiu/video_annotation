@@ -13,7 +13,7 @@ import pickle
 import yaml
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from video_data import VideoData, CameraMotionData, CameraSetupData, LightingSetupData
-from scripts.sheet_utils import SheetService, load_all_sheet_data, load_config, load_sheets_config
+from scripts.sheet_utils import SheetService, load_all_sheet_data, load_config
 import traceback
 
 # Set up basic logging configuration
@@ -42,7 +42,7 @@ def load_taxonomy() -> Dict[str, Dict[str, Any]]:
         data = {
             "type": item["type"],
             "options": item.get("options", []),
-            "data_category": item.get("data_category", "")
+            "data_category": item.get("data_category")
         }
         
         lookup[item["question"]] = data
@@ -50,28 +50,29 @@ def load_taxonomy() -> Dict[str, Dict[str, Any]]:
         lookup[item["name"]] = data
         lookup[normalize_question_name(item["name"])] = data
         
-        if item["type"] == "text" and "data_category" in item and item["data_category"]:
-            # Skip empty data categories
-            if not item["data_category"].strip():
-                continue
+        if item["type"] == "text" and "data_category" in item:
             category_parts = item["data_category"].split('.')
-            if len(category_parts) != 2:
-                continue
             data_class = category_parts[0]
             field = category_parts[1]
             required_fields[data_class][field] = ""
             
         elif "options" in item:
             for option in item["options"]:
-                if not option.get("data_category"):
-                    continue
-                    
-                if "," in option["data_category"]:
-                    categories = [cat.strip() for cat in option["data_category"].split(",") if cat.strip()]
-                    for category in categories:
-                        category_parts = category.split('.')
-                        if len(category_parts) != 2:
-                            continue
+                if "data_category" in option:
+                    if "," in option["data_category"]:
+                        categories = option["data_category"].split(",")
+                        for category in categories:
+                            category_parts = category.strip().split('.')
+                            data_class = category_parts[0]
+                            field = category_parts[1]
+                            if option.get("data_value") in [True, False]:
+                                required_fields[data_class][field] = False
+                            elif isinstance(option.get("data_value"), list):
+                                required_fields[data_class][field] = []
+                            else:
+                                required_fields[data_class][field] = "no"
+                    else:
+                        category_parts = option["data_category"].split('.')
                         data_class = category_parts[0]
                         field = category_parts[1]
                         if option.get("data_value") in [True, False]:
@@ -80,21 +81,6 @@ def load_taxonomy() -> Dict[str, Dict[str, Any]]:
                             required_fields[data_class][field] = []
                         else:
                             required_fields[data_class][field] = "no"
-                else:
-                    category = option["data_category"].strip()
-                    if not category:
-                        continue
-                    category_parts = category.split('.')
-                    if len(category_parts) != 2:
-                        continue
-                    data_class = category_parts[0]
-                    field = category_parts[1]
-                    if option.get("data_value") in [True, False]:
-                        required_fields[data_class][field] = False
-                    elif isinstance(option.get("data_value"), list):
-                        required_fields[data_class][field] = []
-                    else:
-                        required_fields[data_class][field] = "no"
     
     lookup["__required_fields__"] = required_fields
     return lookup
@@ -201,15 +187,18 @@ def convert_to_data_format(annotations_dict: Dict[str, Any], taxonomy_lookup: Di
         
         if not lookup_data:
             continue
+
+        # logging.info(f"lookup_data: {lookup_data}")
+        # logging.info(f"answer: {answer}")
+        # logging.info(f"name: {name}")
+        # logging.info(f"normalized_name: {normalized_name}")
             
         if lookup_data["type"] == "text":
-            # Skip if data_category is empty
-            if not lookup_data.get("data_category"):
-                continue
-            category_parts = lookup_data["data_category"].split('.')
-            data_class = category_parts[0]
-            field = category_parts[1]
-            result[data_class][field] = answer
+            if "data_category" in lookup_data:
+                category_parts = lookup_data["data_category"].split('.')
+                data_class = category_parts[0]
+                field = category_parts[1]
+                result[data_class][field] = answer
                 
         elif lookup_data["type"] == "radio":
             if "options" in lookup_data:
@@ -218,16 +207,10 @@ def convert_to_data_format(annotations_dict: Dict[str, Any], taxonomy_lookup: Di
                 if not option:
                     option = next((opt for opt in lookup_data["options"] if opt.get("data_value", "") == answer), None)
                 
-                # Skip if option has no data_category or if data_category is empty
-                if not option or not option.get("data_category"):
-                    continue
-                    
-                if "data_value" in option:
+                if option and "data_category" in option and "data_value" in option:
                     if "," in option["data_category"]:
                         categories = option["data_category"].split(",")
                         for category in categories:
-                            if not category.strip():  # Skip empty categories
-                                continue
                             category_parts = category.strip().split('.')
                             data_class = category_parts[0]
                             field = category_parts[1]
@@ -246,16 +229,10 @@ def convert_to_data_format(annotations_dict: Dict[str, Any], taxonomy_lookup: Di
                     if not option:
                         option = next((opt for opt in lookup_data["options"] if opt.get("data_value", "") == ans), None)
                         
-                    # Skip if option has no data_category or if data_category is empty
-                    if not option or not option.get("data_category"):
-                        continue
-                        
-                    if "data_value" in option:
+                    if option and "data_category" in option and "data_value" in option:
                         if "," in option["data_category"]:
                             categories = option["data_category"].split(",")
                             for category in categories:
-                                if not category.strip():  # Skip empty categories
-                                    continue
                                 category_parts = category.strip().split('.')
                                 data_class = category_parts[0]
                                 field = category_parts[1]
@@ -458,10 +435,12 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
         preloaded_sheet_path: Optional path to JSON file containing preloaded sheet data
         save_sheet_data: Whether to save loaded sheet data to a JSON file
     """
-    # Load sheet configuration from JSON
-    sheets_config = load_sheets_config()
+    # Load sheet configuration
+    config = load_config()
+    sheets_config = config.get('google_sheets', {})
     
-    # Load sheet data if needed
+    # Load YAML configs if provided
+    yaml_configs = {}
     sheet_data = None
     
     # Try loading sheet data from file if path provided
@@ -477,7 +456,6 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
     if yaml_paths:
         logging.info(f"Loading YAML configs from: {yaml_paths}")
         needs_sheet_data = False
-        yaml_configs = {}
         for yaml_path in yaml_paths:
             try:
                 with open(yaml_path, 'r') as f:
@@ -575,7 +553,6 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
                             extract_answers(classification, annotations_dict)
 
                         if annotations_dict:
-                            # logging.info(video_annotations[video_name])
                             video_annotations[video_name].append(annotations_dict)
                             
                 except Exception as e:
@@ -612,22 +589,22 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
         
         video_data = video_data_dict[video_name]
 
-        # logging.info(f"\nVideo: {video_name}")
-        # logging.info("Annotations:")
-        # for i, annotations in enumerate(annotations_list, 1):
-        #     logging.info(f"  Annotation set {i}:")
-        #     logging.info(f"    {json.dumps(annotations, indent=4)}")
+        logging.info(f"\nVideo: {video_name}")
+        logging.info("Annotations:")
+        for i, annotations in enumerate(annotations_list, 1):
+            logging.info(f"  Annotation set {i}:")
+            logging.info(f"    {json.dumps(annotations, indent=4)}")
         
-        # logging.info("Processed Data:")
-        # if all_camera_motion:
-        #     logging.info("  Camera Motion:")
-        #     logging.info(f"    {json.dumps(all_camera_motion, indent=4)}")
-        # if all_camera_setup:
-        #     logging.info("  Camera Setup:")
-        #     logging.info(f"    {json.dumps(all_camera_setup, indent=4)}")
-        # if all_lighting_setup:
-        #     logging.info("  Lighting Setup:")
-        #     logging.info(f"    {json.dumps(all_lighting_setup, indent=4)}")
+        logging.info("Processed Data:")
+        if all_camera_motion:
+            logging.info("  Camera Motion:")
+            logging.info(f"    {json.dumps(all_camera_motion, indent=4)}")
+        if all_camera_setup:
+            logging.info("  Camera Setup:")
+            logging.info(f"    {json.dumps(all_camera_setup, indent=4)}")
+        if all_lighting_setup:
+            logging.info("  Lighting Setup:")
+            logging.info(f"    {json.dumps(all_lighting_setup, indent=4)}")
 
         try:
             # Only set data from annotations if this is not an issue video
@@ -670,22 +647,22 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
                 
         except Exception as e:
             logging.error(f"\nError processing video {video_name}:")
-            # logging.error("-" * 50)
+            logging.error("-" * 50)
             logging.error(f"Error message: {str(e)}")
-            # logging.error("\nTraceback:")
-            # logging.error(traceback.format_exc())
+            logging.error("\nTraceback:")
+            logging.error(traceback.format_exc())
             
-            # if all_camera_setup:
-            #     logging.error("\nCamera Setup Data:")
-            #     logging.error(json.dumps(all_camera_setup[-1], indent=2))
-            # if all_camera_motion:
-            #     logging.error("\nCamera Motion Data:")
-            #     logging.error(json.dumps(all_camera_motion[-1], indent=2))
-            # if all_lighting_setup:
-            #     logging.error("\nLighting Setup Data:")
-            #     logging.error(json.dumps(all_lighting_setup[-1], indent=2))
+            if all_camera_setup:
+                logging.error("\nCamera Setup Data:")
+                logging.error(json.dumps(all_camera_setup[-1], indent=2))
+            if all_camera_motion:
+                logging.error("\nCamera Motion Data:")
+                logging.error(json.dumps(all_camera_motion[-1], indent=2))
+            if all_lighting_setup:
+                logging.error("\nLighting Setup Data:")
+                logging.error(json.dumps(all_lighting_setup[-1], indent=2))
             
-            # logging.error("-" * 50)
+            logging.error("-" * 50)
             continue
     
     # Filter and print statistics

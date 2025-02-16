@@ -30,13 +30,9 @@ from export_labelbox_data import (
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scripts.process_ndjson import extract_workflow_details, extract_answers
-from scripts.sheet_utils import load_sheets_config
 
 # Google Sheets API scope
-SCOPES = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive.file'
-]
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # Rate limiting constants
 MIN_DELAY = 1.0  # Minimum delay between API calls in seconds
@@ -73,6 +69,334 @@ def execute_with_retry(api_call: Callable, *args, **kwargs) -> Any:
             
         except Exception as e:
             raise
+
+def get_google_sheets_service():
+    """Sets up and returns Google Sheets service."""
+    creds = None
+    token_path = 'configs/token.json'
+    credentials_path = 'configs/credentials.json'
+    
+    # Delete token.json if it exists to force new authentication
+    if os.path.exists(token_path):
+        os.remove(token_path)
+    
+    flow = InstalledAppFlow.from_client_secrets_file(
+        credentials_path, 
+        SCOPES,
+        redirect_uri='http://localhost:8080/'
+    )
+    creds = flow.run_local_server(
+        port=8080,
+        access_type='offline',
+        include_granted_scopes='true'
+    )
+    
+    # Save the credentials for the next run
+    with open(token_path, 'w') as token:
+        token.write(creds.to_json())
+
+    return build('sheets', 'v4', credentials=creds)
+
+def get_sheet_id_by_title(service, spreadsheet_id: str, sheet_title: str) -> int:
+    """Gets the sheet ID for a sheet with the given title."""
+    try:
+        spreadsheet = execute_with_retry(
+            service.spreadsheets().get,
+            spreadsheetId=spreadsheet_id
+        )
+        for sheet in spreadsheet['sheets']:
+            if sheet['properties']['title'] == sheet_title:
+                return sheet['properties']['sheetId']
+        return None
+    except Exception as e:
+        logging.error(f'Error getting sheet ID for "{sheet_title}": {str(e)}')
+        raise
+
+def convert_iso_to_google_sheets_friendly(timestamp: str) -> str:
+    """Convert a single ISO timestamp to Google Sheets friendly format."""
+    if not timestamp:
+        return ''
+    try:
+        return datetime.fromisoformat(timestamp.replace("Z", "+00:00")).strftime("%Y-%m-%d %H:%M:%S")
+    except (ValueError, AttributeError):
+        return timestamp
+
+def get_text_box_questions_from_taxonomy(taxonomy_path: str, project_name: str) -> Dict[str, str]:
+    """Extract text box questions from the taxonomy file for a specific project."""
+    with open(taxonomy_path, 'r') as f:
+        taxonomy = json.load(f)
+    
+    text_box_questions = []
+    
+    def extract_text_box_questions(node):
+        if isinstance(node, dict):
+            if (node.get('type') == 'text' and 
+                node.get('group', '') == project_name):
+                name = node.get('name')
+                question = node.get('question', name)
+                if name and question:
+                    text_box_questions.append((name, question))
+            
+            for value in node.values():
+                extract_text_box_questions(value)
+        elif isinstance(node, list):
+            for item in node:
+                extract_text_box_questions(item)
+    
+    extract_text_box_questions(taxonomy)
+    return dict(text_box_questions)
+
+def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
+    """Create or update a sheet in the spreadsheet."""
+    try:
+        # Get existing sheets
+        spreadsheet = execute_with_retry(
+            service.spreadsheets().get,
+            spreadsheetId=spreadsheet_id
+        )
+        sheets = spreadsheet.get('sheets', [])
+        
+        # Format sheet name for API calls
+        api_sheet_name = display_name.replace("'", "\\'")
+        range_name = f"'{api_sheet_name}'!A1:Z"
+        
+        # Find if sheet already exists
+        sheet_id = None
+        for sheet in sheets:
+            if sheet['properties']['title'] == display_name:
+                sheet_id = sheet['properties']['sheetId']
+                break
+        
+        # If sheet doesn't exist, create it and add all data
+        if sheet_id is None:
+            request = {
+                'addSheet': {
+                    'properties': {
+                        'title': display_name
+                    }
+                }
+            }
+            execute_with_retry(
+                service.spreadsheets().batchUpdate,
+                spreadsheetId=spreadsheet_id,
+                body={'requests': [request]}
+            )
+            
+            # Get the new sheet's ID
+            sheet_id = None
+            for sheet in execute_with_retry(
+                service.spreadsheets().get,
+                spreadsheetId=spreadsheet_id
+            ).get('sheets', []):
+                if sheet['properties']['title'] == display_name:
+                    sheet_id = sheet['properties']['sheetId']
+                    break
+            
+            # For new sheets, just add all the data
+            values = [new_df.columns.tolist()]  # Header row
+            for _, row in new_df.iterrows():
+                values.append([str(val) if pd.notnull(val) else '' for val in row])
+            
+            execute_with_retry(
+                service.spreadsheets().values().update,
+                spreadsheetId=spreadsheet_id,
+                range=range_name,
+                valueInputOption='RAW',
+                body={'values': values}
+            )
+            
+            logging.info(f'Sheet "{display_name}": Created new sheet with {len(new_df)} rows')
+            
+        else:
+            # For existing sheets, get current data
+            result = execute_with_retry(
+                service.spreadsheets().values().get,
+                spreadsheetId=spreadsheet_id,
+                range=range_name
+            )
+            
+            if 'values' in result:
+                current_values = result['values']
+                headers = current_values[0]
+                
+                # Pad each row to match the number of columns
+                padded_values = []
+                for row in current_values[1:]:  # Skip header
+                    padded_row = row + [''] * (len(headers) - len(row))
+                    padded_values.append(padded_row)
+                
+                # Convert current sheet data to DataFrame
+                current_df = pd.DataFrame(padded_values, columns=headers)
+                existing_rows = len(current_df)
+                
+                # Get video names from current data
+                current_videos = set(current_df['Video Name'].values)
+                
+                # Filter new_df to only include videos not in current data
+                new_videos_df = new_df[~new_df['Video Name'].isin(current_videos)].copy()
+                new_rows = len(new_videos_df)
+                
+                if not new_videos_df.empty:
+                    # Make sure new_df has all columns from current sheet
+                    for col in headers:
+                        if col not in new_videos_df.columns:
+                            new_videos_df[col] = ''
+                    
+                    # Reorder columns to match current sheet
+                    new_videos_df = new_videos_df[headers]
+                    
+                    # Create requests to insert rows and update their values
+                    requests = []
+                    
+                    # First, insert the new rows after the header
+                    requests.append({
+                        'insertDimension': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'dimension': 'ROWS',
+                                'startIndex': 1,  # After header
+                                'endIndex': 1 + new_rows  # Number of new rows
+                            },
+                            'inheritFromBefore': False
+                        }
+                    })
+                    
+                    # Clear the newly inserted rows to ensure no data inheritance
+                    requests.append({
+                        'updateCells': {
+                            'range': {
+                                'sheetId': sheet_id,
+                                'startRowIndex': 1,
+                                'endRowIndex': 1 + new_rows,
+                                'startColumnIndex': 0,
+                                'endColumnIndex': len(headers)
+                            },
+                            'fields': 'userEnteredValue'
+                        }
+                    })
+                    
+                    # Execute the insert and clear requests first
+                    execute_with_retry(
+                        service.spreadsheets().batchUpdate,
+                        spreadsheetId=spreadsheet_id,
+                        body={'requests': requests}
+                    )
+                    
+                    # Now update the values in the newly inserted rows
+                    new_values = []
+                    for _, row in new_videos_df.iterrows():
+                        row_values = [str(val) if pd.notnull(val) else '' for val in row]
+                        row_values.extend([''] * (len(headers) - len(row_values)))
+                        new_values.append(row_values)
+                    
+                    update_range = f"'{api_sheet_name}'!A2:{chr(65 + len(headers))}{1 + new_rows}"
+                    execute_with_retry(
+                        service.spreadsheets().values().update,
+                        spreadsheetId=spreadsheet_id,
+                        range=update_range,
+                        valueInputOption='RAW',
+                        body={'values': new_values}
+                    )
+                    
+                    logging.info(f'Sheet "{display_name}": Added {new_rows} new rows at the top, {existing_rows} existing rows unchanged')
+                else:
+                    logging.info(f'Sheet "{display_name}": No new rows to add, {existing_rows} existing rows unchanged')
+            else:
+                # If sheet is empty, treat it like a new sheet
+                values = [new_df.columns.tolist()]  # Header row
+                for _, row in new_df.iterrows():
+                    values.append([str(val) if pd.notnull(val) else '' for val in row])
+                
+                execute_with_retry(
+                    service.spreadsheets().values().update,
+                    spreadsheetId=spreadsheet_id,
+                    range=range_name,
+                    valueInputOption='RAW',
+                    body={'values': values}
+                )
+                
+                logging.info(f'Sheet "{display_name}": Created new sheet with {len(new_df)} rows')
+        
+        # Apply formatting
+        if sheet_id:
+            apply_sheet_formatting(service, spreadsheet_id, sheet_id, headers)
+            
+        return True
+        
+    except Exception as e:
+        logging.error(f'Error updating sheet "{display_name}": {str(e)}')
+        return False
+
+def apply_sheet_formatting(service, spreadsheet_id: str, sheet_id: int, headers: List[str]):
+    """Apply formatting to the sheet."""
+    requests = []
+    
+    # Set column widths
+    video_name_index = headers.index('Video Name')
+    editing_url_index = headers.index('Editing URL')
+    
+    for col_index in [video_name_index, editing_url_index]:
+        requests.extend([
+            {
+                "updateDimensionProperties": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "dimension": "COLUMNS",
+                        "startIndex": col_index,
+                        "endIndex": col_index + 1
+                    },
+                    "properties": {
+                        "pixelSize": 150
+                    },
+                    "fields": "pixelSize"
+                }
+            },
+            {
+                "repeatCell": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startColumnIndex": col_index,
+                        "endColumnIndex": col_index + 1
+                    },
+                    "cell": {
+                        "userEnteredFormat": {
+                            "wrapStrategy": "CLIP"
+                        }
+                    },
+                    "fields": "userEnteredFormat.wrapStrategy"
+                }
+            }
+        ])
+    
+    # Format headers
+    requests.append({
+        "repeatCell": {
+            "range": {
+                "sheetId": sheet_id,
+                "startRowIndex": 0,
+                "endRowIndex": 1
+            },
+            "cell": {
+                "userEnteredFormat": {
+                    "backgroundColor": {
+                        "red": 0.8,
+                        "green": 0.8,
+                        "blue": 0.8
+                    },
+                    "textFormat": {
+                        "bold": True
+                    }
+                }
+            },
+            "fields": "userEnteredFormat(backgroundColor,textFormat)"
+        }
+    })
+    
+    execute_with_retry(
+        service.spreadsheets().batchUpdate,
+        spreadsheetId=spreadsheet_id,
+        body={"requests": requests}
+    )
 
 def process_ndjson_export(ndjson_path: str, issues_dir: str, taxonomy_path: str, include_issues: bool = True) -> List[Dict[str, Any]]:
     """Process NDJSON export file and extract relevant data."""
@@ -192,488 +516,10 @@ def process_ndjson_export(ndjson_path: str, issues_dir: str, taxonomy_path: str,
     logging.info(f"  - Unique videos extracted: {len(result)}")
     return result
 
-def get_google_sheets_service():
-    """Sets up and returns Google Sheets service and credentials."""
-    creds = None
-    token_path = 'configs/token.json'
-    credentials_path = 'configs/credentials.json'
-    
-    # Try to load existing credentials
-    if os.path.exists(token_path):
-        try:
-            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
-        except Exception as e:
-            logging.warning(f"Error loading token file: {str(e)}")
-            logging.info("Removing corrupted token file...")
-            os.remove(token_path)
-            creds = None
-    
-    # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            try:
-                creds.refresh(Request())
-            except Exception as e:
-                logging.warning(f"Error refreshing token: {str(e)}")
-                creds = None
-        
-        if not creds:
-            if not os.path.exists(credentials_path):
-                raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
-            
-            flow = InstalledAppFlow.from_client_secrets_file(
-                credentials_path, 
-                SCOPES,
-                redirect_uri='http://localhost:8080/'
-            )
-            creds = flow.run_local_server(
-                port=8080,
-                access_type='offline',
-                include_granted_scopes='true'
-            )
-        
-        # Save the credentials for the next run
-        os.makedirs(os.path.dirname(token_path), exist_ok=True)
-        with open(token_path, 'w') as token:
-            token.write(creds.to_json())
-
-    service = build('sheets', 'v4', credentials=creds)
-    return service, creds
-
-def get_sheet_id_by_title(service, spreadsheet_id: str, sheet_title: str) -> int:
-    """Gets the sheet ID for a sheet with the given title."""
-    try:
-        spreadsheet = execute_with_retry(
-            service.spreadsheets().get,
-            spreadsheetId=spreadsheet_id
-        )
-        for sheet in spreadsheet['sheets']:
-            if sheet['properties']['title'] == sheet_title:
-                return sheet['properties']['sheetId']
-        return None
-    except Exception as e:
-        logging.error(f'Error getting sheet ID for "{sheet_title}": {str(e)}')
-        raise
-
-def convert_iso_to_google_sheets_friendly(timestamp: str) -> str:
-    """Convert a single ISO timestamp to Google Sheets friendly format."""
-    if not timestamp:
-        return ''
-    try:
-        return datetime.fromisoformat(timestamp.replace("Z", "+00:00")).strftime("%Y-%m-%d %H:%M:%S")
-    except (ValueError, AttributeError):
-        return timestamp
-
-def get_text_box_questions_from_taxonomy(taxonomy_path: str, project_name: str) -> Dict[str, str]:
-    """Extract text box questions from the taxonomy file for a specific project."""
-    with open(taxonomy_path, 'r') as f:
-        taxonomy = json.load(f)
-    
-    text_box_questions = []
-    
-    def extract_text_box_questions(node):
-        if isinstance(node, dict):
-            if (node.get('type') == 'text' and 
-                node.get('group', '') == project_name):
-                name = node.get('name')
-                question = node.get('question', name)
-                if name and question:
-                    text_box_questions.append((name, question))
-            
-            for value in node.values():
-                extract_text_box_questions(value)
-        elif isinstance(node, list):
-            for item in node:
-                extract_text_box_questions(item)
-    
-    extract_text_box_questions(taxonomy)
-    return dict(text_box_questions)
-
-def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
-    """Create or update a sheet in the spreadsheet."""
-    try:
-        # Get existing sheets
-        spreadsheet = execute_with_retry(
-            service.spreadsheets().get,
-            spreadsheetId=spreadsheet_id
-        )
-        sheets = spreadsheet.get('sheets', [])
-        
-        # Format sheet name for API calls
-        api_sheet_name = display_name.replace("'", "\\'")
-        range_name = f"'{api_sheet_name}'!A1:Z"
-        
-        # Get headers from the DataFrame
-        headers = new_df.columns.tolist()
-        
-        # Find if sheet already exists
-        sheet_id = None
-        for sheet in sheets:
-            if sheet['properties']['title'] == display_name:
-                sheet_id = sheet['properties']['sheetId']
-                break
-        
-        # If sheet doesn't exist, create it and add all data
-        if sheet_id is None:
-            request = {
-                'addSheet': {
-                    'properties': {
-                        'title': display_name
-                    }
-                }
-            }
-            execute_with_retry(
-                service.spreadsheets().batchUpdate,
-                spreadsheetId=spreadsheet_id,
-                body={'requests': [request]}
-            )
-            
-            # Get the new sheet's ID
-            sheet_id = None
-            for sheet in execute_with_retry(
-                service.spreadsheets().get,
-                spreadsheetId=spreadsheet_id
-            ).get('sheets', []):
-                if sheet['properties']['title'] == display_name:
-                    sheet_id = sheet['properties']['sheetId']
-                    break
-            
-            # For new sheets, just add all the data
-            values = [headers]  # Header row
-            for _, row in new_df.iterrows():
-                values.append([str(val) if pd.notnull(val) else '' for val in row])
-            
-            execute_with_retry(
-                service.spreadsheets().values().update,
-                spreadsheetId=spreadsheet_id,
-                range=range_name,
-                valueInputOption='RAW',
-                body={'values': values}
-            )
-            
-            logging.info(f'Sheet "{display_name}": Created new sheet with {len(new_df)} rows')
-            
-        else:
-            # For existing sheets, get current data
-            result = execute_with_retry(
-                service.spreadsheets().values().get,
-                spreadsheetId=spreadsheet_id,
-                range=range_name
-            )
-            
-            if 'values' in result:
-                current_values = result['values']
-                current_headers = current_values[0]
-                
-                # Pad each row to match the number of columns
-                padded_values = []
-                for row in current_values[1:]:  # Skip header
-                    padded_row = row + [''] * (len(current_headers) - len(row))
-                    padded_values.append(padded_row)
-                
-                # Convert current sheet data to DataFrame
-                current_df = pd.DataFrame(padded_values, columns=current_headers)
-                existing_rows = len(current_df)
-                
-                # Get video names from current data
-                current_videos = set(current_df['Video Name'].values)
-                
-                # Filter new_df to only include videos not in current data
-                new_videos_df = new_df[~new_df['Video Name'].isin(current_videos)].copy()
-                new_rows = len(new_videos_df)
-                
-                if not new_videos_df.empty:
-                    # Make sure new_df has all columns from current sheet
-                    for col in current_headers:
-                        if col not in new_videos_df.columns:
-                            new_videos_df[col] = ''
-                    
-                    # Reorder columns to match current sheet
-                    new_videos_df = new_videos_df[current_headers]
-                    
-                    # Create requests to insert rows and update their values
-                    requests = []
-                    
-                    # First, insert the new rows after the header
-                    requests.append({
-                        'insertDimension': {
-                            'range': {
-                                'sheetId': sheet_id,
-                                'dimension': 'ROWS',
-                                'startIndex': 1,  # After header
-                                'endIndex': 1 + new_rows  # Number of new rows
-                            },
-                            'inheritFromBefore': False
-                        }
-                    })
-                    
-                    # Clear the newly inserted rows to ensure no data inheritance
-                    requests.append({
-                        'updateCells': {
-                            'range': {
-                                'sheetId': sheet_id,
-                                'startRowIndex': 1,
-                                'endRowIndex': 1 + new_rows,
-                                'startColumnIndex': 0,
-                                'endColumnIndex': len(current_headers)
-                            },
-                            'fields': 'userEnteredValue'
-                        }
-                    })
-                    
-                    # Execute the insert and clear requests first
-                    execute_with_retry(
-                        service.spreadsheets().batchUpdate,
-                        spreadsheetId=spreadsheet_id,
-                        body={'requests': requests}
-                    )
-                    
-                    # Now update the values in the newly inserted rows
-                    new_values = []
-                    for _, row in new_videos_df.iterrows():
-                        row_values = [str(val) if pd.notnull(val) else '' for val in row]
-                        row_values.extend([''] * (len(current_headers) - len(row_values)))
-                        new_values.append(row_values)
-                    
-                    update_range = f"'{api_sheet_name}'!A2:{chr(65 + len(current_headers))}{1 + new_rows}"
-                    execute_with_retry(
-                        service.spreadsheets().values().update,
-                        spreadsheetId=spreadsheet_id,
-                        range=update_range,
-                        valueInputOption='RAW',
-                        body={'values': new_values}
-                    )
-                    
-                    logging.info(f'Sheet "{display_name}": Added {new_rows} new rows at the top, {existing_rows} existing rows unchanged')
-                else:
-                    logging.info(f'Sheet "{display_name}": No new rows to add, {existing_rows} existing rows unchanged')
-            else:
-                # If sheet is empty, treat it like a new sheet
-                values = [headers]  # Header row
-                for _, row in new_df.iterrows():
-                    values.append([str(val) if pd.notnull(val) else '' for val in row])
-                
-                execute_with_retry(
-                    service.spreadsheets().values().update,
-                    spreadsheetId=spreadsheet_id,
-                    range=range_name,
-                    valueInputOption='RAW',
-                    body={'values': values}
-                )
-                
-                logging.info(f'Sheet "{display_name}": Created new sheet with {len(new_df)} rows')
-        
-        # Apply formatting
-        if sheet_id:
-            apply_sheet_formatting(service, spreadsheet_id, sheet_id, headers)
-            
-        return sheet_id
-        
-    except Exception as e:
-        logging.error(f'Error updating sheet "{display_name}": {str(e)}')
-        return None
-
-def apply_sheet_formatting(service, spreadsheet_id: str, sheet_id: int, headers: List[str]):
-    """Apply formatting to the sheet."""
-    requests = []
-    
-    # Set column widths
-    video_name_index = headers.index('Video Name')
-    editing_url_index = headers.index('Editing URL')
-    
-    for col_index in [video_name_index, editing_url_index]:
-        requests.extend([
-            {
-                "updateDimensionProperties": {
-                    "range": {
-                        "sheetId": sheet_id,
-                        "dimension": "COLUMNS",
-                        "startIndex": col_index,
-                        "endIndex": col_index + 1
-                    },
-                    "properties": {
-                        "pixelSize": 150
-                    },
-                    "fields": "pixelSize"
-                }
-            },
-            {
-                "repeatCell": {
-                    "range": {
-                        "sheetId": sheet_id,
-                        "startColumnIndex": col_index,
-                        "endColumnIndex": col_index + 1
-                    },
-                    "cell": {
-                        "userEnteredFormat": {
-                            "wrapStrategy": "CLIP"
-                        }
-                    },
-                    "fields": "userEnteredFormat.wrapStrategy"
-                }
-            }
-        ])
-    
-    # Format headers
-    requests.append({
-        "repeatCell": {
-            "range": {
-                "sheetId": sheet_id,
-                "startRowIndex": 0,
-                "endRowIndex": 1
-            },
-            "cell": {
-                "userEnteredFormat": {
-                    "backgroundColor": {
-                        "red": 0.8,
-                        "green": 0.8,
-                        "blue": 0.8
-                    },
-                    "textFormat": {
-                        "bold": True
-                    }
-                }
-            },
-            "fields": "userEnteredFormat(backgroundColor,textFormat)"
-        }
-    })
-    
-    execute_with_retry(
-        service.spreadsheets().batchUpdate,
-        spreadsheetId=spreadsheet_id,
-        body={"requests": requests}
-    )
-
-def update_sheets_config(new_approver: str, spreadsheet_id: str):
-    """Update the sheets_url_config.json file with new approver information."""
-    config_path = 'configs/sheets_url_config.json'
-    try:
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-        
-        # Add new approver to the mapping
-        config['approver_spreadsheets'][new_approver] = spreadsheet_id
-        
-        # Write updated config back to file
-        with open(config_path, 'w') as f:
-            json.dump(config, f, indent=2)
-            
-        logging.info(f"Updated sheets config with new approver: {new_approver}")
-    except Exception as e:
-        logging.error(f"Error updating sheets config: {str(e)}")
-        raise
-
-def add_sheet_to_master_data(service, spreadsheet_id: str, sheet_url: str, approver_email: str, sheet_gid: str):
-    """Add a new row to the data tab in the master sheet."""
-    try:
-        # Get the data tab
-        range_name = 'data!A2:E2'  # Get the header row to determine column order
-        result = execute_with_retry(
-            service.spreadsheets().values().get,
-            spreadsheetId=spreadsheet_id,
-            range=range_name
-        )
-        
-        # Extract spreadsheet ID from the URL
-        sheet_id = sheet_url.split('/d/')[1].split('/')[0]
-        
-        # Prepare the new row data
-        new_row = ['', '', sheet_url, approver_email, sheet_id]
-        
-        # Insert the new row at position 2 (right after headers)
-        body = {
-            'requests': [{
-                'insertDimension': {
-                    'range': {
-                        'sheetId': get_sheet_id_by_title(service, spreadsheet_id, 'data'),
-                        'dimension': 'ROWS',
-                        'startIndex': 1,
-                        'endIndex': 2
-                    }
-                }
-            }]
-        }
-        
-        execute_with_retry(
-            service.spreadsheets().batchUpdate,
-            spreadsheetId=spreadsheet_id,
-            body=body
-        )
-        
-        # Update the cell values
-        body = {
-            'values': [new_row]
-        }
-        execute_with_retry(
-            service.spreadsheets().values().update,
-            spreadsheetId=spreadsheet_id,
-            range='data!A2:E2',
-            valueInputOption='RAW',
-            body=body
-        )
-        
-        logging.info(f"Added new sheet info to master data tab for approver: {approver_email}")
-    except Exception as e:
-        logging.error(f"Error adding sheet to master data: {str(e)}")
-        raise
-
-def set_sharing_permissions(service, creds, file_id: str):
-    """Set sharing permissions for a spreadsheet to 'anyone with link can edit'."""
-    try:
-        drive_service = build('drive', 'v3', credentials=creds)
-        
-        # Create the permission
-        permission = {
-            'type': 'anyone',
-            'role': 'writer',
-            'allowFileDiscovery': False
-        }
-        
-        # Execute the permissions update
-        execute_with_retry(
-            drive_service.permissions().create,
-            fileId=file_id,
-            body=permission,
-            fields='id'
-        )
-        
-        logging.info(f"Successfully set sharing permissions for spreadsheet {file_id}")
-    except Exception as e:
-        logging.error(f"Error setting sharing permissions: {str(e)}")
-        raise
-
-def create_new_spreadsheet(service, creds, title: str) -> str:
-    """Create a new spreadsheet and return its ID."""
-    try:
-        spreadsheet = {
-            'properties': {
-                'title': title
-            }
-        }
-        
-        result = execute_with_retry(
-            service.spreadsheets().create,
-            body=spreadsheet
-        )
-        
-        spreadsheet_id = result['spreadsheetId']
-        
-        # Set sharing permissions
-        set_sharing_permissions(service, creds, spreadsheet_id)
-        
-        return spreadsheet_id
-    except Exception as e:
-        logging.error(f"Error creating new spreadsheet: {str(e)}")
-        raise
-
 def export_to_sheets(processed_data: List[Dict[str, Any]], config: Dict[str, Any], taxonomy_path: str):
     """Export processed data to Google Sheets based on approvers."""
     try:
-        service, creds = get_google_sheets_service()
-        
-        # Load spreadsheet mappings from JSON
-        with open('configs/sheets_url_config.json', 'r') as f:
-            spreadsheet_mappings = json.load(f)
+        service = get_google_sheets_service()
         
         # Group data by project first
         project_data = defaultdict(list)
@@ -722,8 +568,13 @@ def export_to_sheets(processed_data: List[Dict[str, Any]], config: Dict[str, Any
                 df = df.drop(columns=['_sort_time'])
                 project_dfs[project_name] = df
         
+        # Get sheets configuration
+        sheets_config = config.get('google_sheets', {})
+        approver_spreadsheets = sheets_config.get('approver_spreadsheets', {})
+        default_spreadsheet_id = sheets_config.get('default_spreadsheet_id')
+        
         # Update sheets for each approver
-        for approver, spreadsheet_id in spreadsheet_mappings['approver_spreadsheets'].items():
+        for approver, spreadsheet_id in approver_spreadsheets.items():
             logging.info(f"Processing spreadsheet for approver: {approver}")
             
             # Filter DataFrames for this approver
@@ -739,50 +590,25 @@ def export_to_sheets(processed_data: List[Dict[str, Any]], config: Dict[str, Any
                 sheet_name = ''.join(c for c in sheet_name if c.isalnum() or c in ' _-()') # Keep parentheses
                 sheet_name = sheet_name.strip()
                 
-                sheet_id = create_or_update_sheet(service, spreadsheet_id, sheet_name, df)
+                create_or_update_sheet(service, spreadsheet_id, sheet_name, df)
         
         # Handle videos for approvers not in the mapping
-        if True:  # Always process unrecognized approvers
-            # Group videos by unrecognized approvers
-            unrecognized_approvers = {}
+        if default_spreadsheet_id:
+            default_dfs = {}
             for project_name, df in project_dfs.items():
-                # Get videos for approvers not in the mapping
-                unrecognized_df = df[~df['Approver'].isin(spreadsheet_mappings['approver_spreadsheets'].keys())]
-                if not unrecognized_df.empty:
-                    # Group by approver
-                    for approver in unrecognized_df['Approver'].unique():
-                        if approver and str(approver).strip():  # Skip empty/null approvers
-                            if approver not in unrecognized_approvers:
-                                unrecognized_approvers[approver] = {}
-                            approver_df = unrecognized_df[unrecognized_df['Approver'] == approver]
-                            if not approver_df.empty:
-                                unrecognized_approvers[approver][project_name] = approver_df
+                default_df = df[~df['Approver'].isin(approver_spreadsheets.keys())]
+                if not default_df.empty:
+                    default_dfs[project_name] = default_df
             
-            # Create sheets for each unrecognized approver
-            for approver, project_dfs in unrecognized_approvers.items():
-                logging.info(f"Creating review spreadsheet for unrecognized approver: {approver}")
-                
-                # Create a new spreadsheet for this approver
-                spreadsheet_title = f"Labelbox Review - {approver}"
-                new_spreadsheet_id = create_new_spreadsheet(service, creds, spreadsheet_title)
-                
-                # Create sheets for each project
-                first_sheet_id = None  # Store the first sheet's ID
-                for project_name, df in project_dfs.items():
-                    sheet_name = project_name[:100]  # Sheets names limited to 100 chars
+            # Update default spreadsheet
+            if default_dfs:
+                logging.info("Processing videos for approvers not in mapping")
+                for project_name, df in default_dfs.items():
+                    sheet_name = project_name[:100]
                     sheet_name = ''.join(c for c in sheet_name if c.isalnum() or c in ' _-()') # Keep parentheses
                     sheet_name = sheet_name.strip()
                     
-                    sheet_id = create_or_update_sheet(service, new_spreadsheet_id, sheet_name, df)
-                    if first_sheet_id is None and sheet_id is not None:
-                        first_sheet_id = sheet_id
-                
-                # Update the sheets config with the new approver
-                update_sheets_config(approver, new_spreadsheet_id)
-                
-                # Add the new sheet to the master data tab
-                sheet_url = f"https://docs.google.com/spreadsheets/d/{new_spreadsheet_id}/edit"
-                add_sheet_to_master_data(service, spreadsheet_mappings['default_spreadsheet_id'], sheet_url, approver, str(first_sheet_id))
+                    create_or_update_sheet(service, default_spreadsheet_id, sheet_name, df)
         
     except Exception as e:
         logging.error(f'Error exporting to Google Sheets: {str(e)}')
@@ -795,25 +621,25 @@ def main():
         setup_logging()
         logging.info("Starting export process...")
         
-        # Load configurations
-        labelbox_config = load_config('configs/labelbox_export.yaml')
-        sheets_config = labelbox_config.get('google_sheets', {})  # Get sheets config directly from YAML
-        logging.info("Loaded configurations")
+        # Load configuration
+        config = load_config('configs/labelbox_export.yaml')
+        logging.info("Loaded configuration")
         
         # Get export configuration
+        sheets_config = config.get('google_sheets', {})
         export_dir = sheets_config.get('perform_export')
         logging.info(f"Using export directory: {export_dir}")
         
         if not export_dir:
             # Only export from Labelbox if perform_export is null
-            client = Client(api_key=labelbox_config['api_key'])
-            for project_id in labelbox_config['project_ids']:
+            client = Client(api_key=config['api_key'])
+            for project_id in config['project_ids']:
                 try:
-                    export_project_data(client, project_id, labelbox_config['output_dir'], labelbox_config)
+                    export_project_data(client, project_id, config['output_dir'], config)
                 except Exception as e:
                     logging.error(f"Error exporting project {project_id}: {str(e)}")
                     continue
-            export_dir = labelbox_config['output_dir']
+            export_dir = config['output_dir']
         
         if not os.path.exists(export_dir):
             raise FileNotFoundError(f"Export directory not found: {export_dir}")
@@ -847,7 +673,7 @@ def main():
         
         # Export directly to Google Sheets
         if all_processed_data:
-            export_to_sheets(all_processed_data, sheets_config, 'taxonomy/taxonomy.json')
+            export_to_sheets(all_processed_data, config, 'taxonomy/taxonomy.json')
             logging.info(f"Successfully processed and exported {len(all_processed_data)} videos to Google Sheets")
         else:
             logging.warning("No data to export")
