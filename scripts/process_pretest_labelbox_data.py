@@ -20,6 +20,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import base64
 import tempfile
 import uuid
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseUpload
+import io
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -27,6 +34,233 @@ logger = logging.getLogger(__name__)
 
 # Initialize Flask app
 app = Flask(__name__)
+
+# Google Drive API scope
+SCOPES = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'  # Full Drive scope instead of drive.file
+]
+
+def get_google_drive_service():
+    """Sets up and returns Google Drive service."""
+    creds = None
+    token_path = 'configs/token.json'
+    credentials_path = 'configs/credentials.json'
+    
+    # Try to load existing credentials
+    if os.path.exists(token_path):
+        try:
+            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        except Exception as e:
+            logging.warning(f"Error loading token file: {str(e)}")
+            logging.info("Removing corrupted token file...")
+            os.remove(token_path)
+            creds = None
+    
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                logging.warning(f"Error refreshing token: {str(e)}")
+                creds = None
+        
+        if not creds:
+            if not os.path.exists(credentials_path):
+                raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
+            
+            flow = InstalledAppFlow.from_client_secrets_file(
+                credentials_path,
+                SCOPES,
+                redirect_uri='http://localhost:8080/'
+            )
+            creds = flow.run_local_server(
+                port=8080,
+                access_type='offline',
+                include_granted_scopes='true'
+            )
+        
+        # Save the credentials for the next run
+        os.makedirs(os.path.dirname(token_path), exist_ok=True)
+        with open(token_path, 'w') as token:
+            token.write(creds.to_json())
+    
+    return build('drive', 'v3', credentials=creds)
+
+def create_drive_folder_structure(drive_service, parent_folder_id: str, test_type: str, test_number: str) -> str:
+    """Create folder structure in Google Drive and return the final folder ID."""
+    # Create test type folder if it doesn't exist
+    test_type_folder = None
+    query = f"name = '{test_type}' and mimeType = 'application/vnd.google-apps.folder' and '{parent_folder_id}' in parents and trashed = false"
+    
+    try:
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            orderBy='createdTime'
+        ).execute()
+        
+        if results['files']:
+            # Use the first (oldest) folder found
+            test_type_folder = results['files'][0]['id']
+            logging.info(f"Found existing folder for {test_type}")
+        else:
+            folder_metadata = {
+                'name': test_type,
+                'mimeType': 'application/vnd.google-apps.folder',
+                'parents': [parent_folder_id]
+            }
+            file = drive_service.files().create(
+                body=folder_metadata,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            test_type_folder = file['id']
+            logging.info(f"Created new folder for {test_type}")
+    except Exception as e:
+        logging.error(f"Error handling test type folder {test_type}: {str(e)}")
+        raise
+    
+    # Create test number folder if it doesn't exist
+    test_folder = None
+    test_folder_name = f'test{test_number}'
+    query = f"name = '{test_folder_name}' and mimeType = 'application/vnd.google-apps.folder' and '{test_type_folder}' in parents and trashed = false"
+    
+    try:
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            orderBy='createdTime'
+        ).execute()
+        
+        if results['files']:
+            # Use the first (oldest) folder found
+            test_folder = results['files'][0]['id']
+            logging.info(f"Found existing folder for {test_folder_name}")
+        else:
+            folder_metadata = {
+                'name': test_folder_name,
+                'mimeType': 'application/vnd.google-apps.folder',
+                'parents': [test_type_folder]
+            }
+            file = drive_service.files().create(
+                body=folder_metadata,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            test_folder = file['id']
+            logging.info(f"Created new folder for {test_folder_name}")
+    except Exception as e:
+        logging.error(f"Error handling test folder {test_folder_name}: {str(e)}")
+        raise
+    
+    return test_folder
+
+def upload_pdf_to_drive(drive_service, folder_id: str, pdf_data: bytes, filename: str, test_type: str = None, test_number: str = None) -> str:
+    """Upload PDF to Google Drive and return the file ID."""
+    try:
+        # If test_type and test_number are provided, create/get folder structure
+        target_folder_id = folder_id
+        if test_type and test_number:
+            # Create test type folder if needed
+            query = f"name = '{test_type}' and mimeType = 'application/vnd.google-apps.folder' and '{folder_id}' in parents and trashed = false"
+            results = drive_service.files().list(
+                q=query,
+                spaces='drive',
+                fields='files(id, name)',
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True
+            ).execute()
+            
+            if results['files']:
+                test_type_folder = results['files'][0]['id']
+                logging.info(f"Found existing folder for {test_type}")
+            else:
+                folder_metadata = {
+                    'name': test_type,
+                    'mimeType': 'application/vnd.google-apps.folder',
+                    'parents': [folder_id]
+                }
+                test_type_folder = drive_service.files().create(
+                    body=folder_metadata,
+                    fields='id',
+                    supportsAllDrives=True
+                ).execute()['id']
+                logging.info(f"Created new folder for {test_type}")
+            
+            # Create test number folder if needed
+            test_folder_name = f'test{test_number}'
+            query = f"name = '{test_folder_name}' and mimeType = 'application/vnd.google-apps.folder' and '{test_type_folder}' in parents and trashed = false"
+            results = drive_service.files().list(
+                q=query,
+                spaces='drive',
+                fields='files(id, name)',
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True
+            ).execute()
+            
+            if results['files']:
+                target_folder_id = results['files'][0]['id']
+                logging.info(f"Found existing folder for {test_folder_name}")
+            else:
+                folder_metadata = {
+                    'name': test_folder_name,
+                    'mimeType': 'application/vnd.google-apps.folder',
+                    'parents': [test_type_folder]
+                }
+                target_folder_id = drive_service.files().create(
+                    body=folder_metadata,
+                    fields='id',
+                    supportsAllDrives=True
+                ).execute()['id']
+                logging.info(f"Created new folder for {test_folder_name}")
+        
+        # Check if file already exists in the target folder
+        query = f"name = '{filename}' and '{target_folder_id}' in parents and trashed = false"
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            supportsAllDrives=True,
+            includeItemsFromAllDrives=True
+        ).execute()
+        
+        # Create media
+        fh = io.BytesIO(pdf_data)
+        media = MediaIoBaseUpload(fh, mimetype='application/pdf', resumable=True)
+        
+        if results['files']:
+            # Update existing file
+            existing_file = results['files'][0]
+            file = drive_service.files().update(
+                fileId=existing_file['id'],
+                media_body=media,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            logging.info(f"Updated existing file: {filename}")
+            return file['id']
+        else:
+            # Create new file
+            file_metadata = {
+                'name': filename,
+                'parents': [target_folder_id]
+            }
+            file = drive_service.files().create(
+                body=file_metadata,
+                media_body=media,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            logging.info(f"Created new file: {filename}")
+            return file['id']
+            
+    except Exception as e:
+        logging.error(f"Error uploading file {filename} to Drive: {str(e)}")
+        raise
 
 def load_config() -> dict:
     """Load the scoring configuration file."""
@@ -485,6 +719,72 @@ def should_generate_pdf(pdf_path: str, config: dict) -> bool:
         return False
     return True
 
+def print_drive_folder_structure(drive_service, folder_id: str, indent: str = "") -> None:
+    """
+    Recursively prints the folder structure in Google Drive, showing both folders and files.
+    
+    Args:
+        drive_service: Authorized Google Drive API service instance
+        folder_id: ID of the Google Drive folder to list
+        indent: Current indentation string for pretty printing
+    """
+    try:
+        # Get folder metadata to check if it's in a Shared Drive
+        folder_metadata = drive_service.files().get(
+            fileId=folder_id,
+            fields="driveId,name",
+            supportsAllDrives=True
+        ).execute()
+        
+        drive_id = folder_metadata.get("driveId")
+        folder_name = folder_metadata.get("name", "Root Folder")
+        
+        print(f"{indent}📁 {folder_name} (ID: {folder_id})")
+        
+        # List files and subfolders
+        query = f"'{folder_id}' in parents and trashed=false"
+        page_token = None
+        
+        while True:
+            params = {
+                'q': query,
+                'fields': "nextPageToken, files(id, name, mimeType)",
+                'pageSize': 100,
+                'pageToken': page_token,
+                'orderBy': 'name',  # Sort items alphabetically
+                'includeItemsFromAllDrives': True,
+                'supportsAllDrives': True
+            }
+            
+            if drive_id:
+                params['corpora'] = 'drive'
+                params['driveId'] = drive_id
+            else:
+                params['corpora'] = 'user'
+            
+            response = drive_service.files().list(**params).execute()
+            items = response.get('files', [])
+            
+            # Sort items: folders first, then files, both alphabetically
+            folders = [item for item in items if item['mimeType'] == 'application/vnd.google-apps.folder']
+            files = [item for item in items if item['mimeType'] != 'application/vnd.google-apps.folder']
+            
+            # Process folders first
+            for folder in sorted(folders, key=lambda x: x['name'].lower()):
+                print_drive_folder_structure(drive_service, folder['id'], indent + "  ")
+            
+            # Then process files
+            for file in sorted(files, key=lambda x: x['name'].lower()):
+                print(f"{indent}  📄 {file['name']} (ID: {file['id']})")
+            
+            page_token = response.get('nextPageToken')
+            if not page_token:
+                break
+                
+    except Exception as e:
+        logging.error(f"Error listing folder contents: {str(e)}")
+        print(f"{indent}❌ Error accessing folder: {str(e)}")
+
 def main():
     """Main entry point for the script."""
     # Setup Flask templates
@@ -493,21 +793,32 @@ def main():
     config = load_config()
     project_ground_truth = get_project_id_to_ground_truth(config)
     
+    # Get Google Drive folder ID from config
+    drive_folder_id = config.get('pdf_generation', {}).get('drive_folder_id')
+    if not drive_folder_id:
+        raise ValueError("Google Drive folder ID not specified in config")
+    
+    # Initialize Google Drive service
+    drive_service = get_google_drive_service()
+    
+    # # Print current Drive folder structure for debugging
+    # logger.info("\nCurrent Google Drive folder structure:")
+    # logger.info("-" * 50)
+    # print_drive_folder_structure(drive_service, drive_folder_id)
+    # logger.info("-" * 50 + "\n")
+    
     # Process each test type directory
     base_dir = config['output_dir']
     pdfs_dir = config['pdfs_dir']
     
-    # Track new PDFs for the "new" folder
-    new_pdfs = []  # List to track all new PDFs generated
+    # Check if we should create a "new" folder
+    create_new_folder = config.get('pdf_generation', {}).get('create_new_folder', True)
+    new_pdfs_dir = os.path.join(pdfs_dir, 'new') if create_new_folder else None
+    if create_new_folder:
+        os.makedirs(new_pdfs_dir, exist_ok=True)
     
     # Cache for ground truth data
     ground_truth_cache = {}
-    
-    # If skip_existing is true, clean up old "new" folder
-    if config.get('pdf_generation', {}).get('skip_existing', False):
-        new_pdfs_dir = os.path.join(pdfs_dir, 'new')
-        if os.path.exists(new_pdfs_dir):
-            shutil.rmtree(new_pdfs_dir)
     
     # Create Flask application context
     with app.app_context():
@@ -601,13 +912,12 @@ def main():
                         
                     logger.info(f"Processing labeler: {labeler}")
                     
-                    # Create PDF directory structure
-                    test_pdf_dir = os.path.join(pdfs_dir, test_type, f"test{test_number}")
-                    os.makedirs(test_pdf_dir, exist_ok=True)
-                    
-                    # Generate PDF filename
+                    # Generate PDF filename and paths
                     pdf_filename = f"{labeler.replace('@', '_at_')}_{project_id}.pdf"
-                    pdf_path = os.path.join(test_pdf_dir, pdf_filename)
+                    pdf_path = os.path.join(pdfs_dir, test_type, f"test{test_number}", pdf_filename)
+                    
+                    # Create local directory structure
+                    os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
                     
                     # Check if we should generate this PDF
                     if not should_generate_pdf(pdf_path, config):
@@ -618,57 +928,79 @@ def main():
                         ground_truth_source['cached_ground_truth'] = ground_truth_cache[project_id]
                         labeler_data = prepare_visualization_data(ndjson_data, ground_truth_source, labeler)
                         
-                        logger.info(f"Generating PDF at {pdf_path}")
+                        logger.info(f"Generating PDF for {labeler}")
                         
                         # Generate HTML content
                         html_content = render_template('pretest_report.html', **labeler_data)
                         
-                        # Generate PDF directly from HTML content
-                        generate_pdf(html_content, pdf_path)
-                        logger.info(f"PDF generated at {pdf_path}")
+                        # Generate PDF and save locally
+                        pdf_data = generate_pdf_in_memory(html_content)
+                        with open(pdf_path, 'wb') as f:
+                            f.write(pdf_data)
+                        logger.info(f"PDF saved locally: {pdf_path}")
                         
-                        # Only track as new if generation was successful
-                        if config.get('pdf_generation', {}).get('skip_existing', False):
-                            new_pdfs.append({
-                                'test_type': test_type,
-                                'test_number': test_number,
-                                'project_id': project_id,
-                                'labeler': labeler,
-                                'pdf_path': pdf_path
-                            })
-                            logger.info(f"New PDF generated - Project: {project_id}, Test: {test_number}, Email: {labeler}")
+                        # Copy to new folder if enabled
+                        if create_new_folder:
+                            new_pdf_path = os.path.join(new_pdfs_dir, pdf_filename)
+                            with open(new_pdf_path, 'wb') as f:
+                                f.write(pdf_data)
+                            logger.info(f"PDF copied to new folder: {new_pdf_path}")
+                        
+                        # Upload to Google Drive with folder creation
+                        file_id = upload_pdf_to_drive(drive_service, drive_folder_id, pdf_data, pdf_filename, test_type, test_number)
+                        logger.info(f"PDF uploaded to Google Drive with ID: {file_id}")
+                        
                     except Exception as e:
-                        logger.error(f"Error generating PDF for {labeler} in project {project_id}: {str(e)}")
+                        logger.error(f"Error generating/uploading PDF for {labeler} in project {project_id}: {str(e)}")
                         logger.error(f"Full error: {str(e.__class__.__name__)}: {str(e)}")
-                        # If PDF generation fails, remove the file if it was partially created
-                        if os.path.exists(pdf_path):
-                            try:
-                                os.remove(pdf_path)
-                            except Exception as remove_error:
-                                logger.error(f"Error removing failed PDF {pdf_path}: {str(remove_error)}")
                         continue
         
-        # After all PDFs are generated, create the "new" folder structure if needed
-        if new_pdfs and config.get('pdf_generation', {}).get('skip_existing', False):
-            new_pdfs_dir = os.path.join(pdfs_dir, 'new')
-            os.makedirs(new_pdfs_dir, exist_ok=True)
+        logger.info("\nPDF generation and upload complete")
+
+def generate_pdf_in_memory(html_content: str) -> bytes:
+    """Generate PDF from HTML content and return it as bytes."""
+    driver = None
+    temp_dir = None
+    try:
+        driver, temp_dir = setup_chrome_driver()
+        
+        # Convert HTML content to a data URL
+        html_base64 = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
+        data_url = f'data:text/html;base64,{html_base64}'
+        
+        # Load the HTML content directly using the data URL
+        driver.get(data_url)
+        
+        # Wait for page to load completely
+        WebDriverWait(driver, 10).until(
+            lambda driver: driver.execute_script('return document.readyState') == 'complete'
+        )
+        
+        # Additional wait for any dynamic content
+        time.sleep(2)
+        
+        # Print to PDF
+        pdf = driver.execute_cdp_cmd("Page.printToPDF", {
+            "printBackground": True,
+            "marginTop": 0.4,
+            "marginBottom": 0.4,
+            "marginLeft": 0.4,
+            "marginRight": 0.4,
+            "paperWidth": 8.27,  # A4 width in inches
+            "paperHeight": 11.7,  # A4 height in inches
+        })
+        
+        # Return PDF data as bytes
+        return base64.b64decode(pdf['data'])
             
-            # Copy new PDFs to mirrored structure
-            for pdf_info in new_pdfs:
-                # Create the same folder structure in "new" directory
-                new_test_pdf_dir = os.path.join(new_pdfs_dir, pdf_info['test_type'], f"test{pdf_info['test_number']}")
-                os.makedirs(new_test_pdf_dir, exist_ok=True)
-                
-                # Copy the PDF
-                pdf_filename = os.path.basename(pdf_info['pdf_path'])
-                new_pdf_path = os.path.join(new_test_pdf_dir, pdf_filename)
-                shutil.copy2(pdf_info['pdf_path'], new_pdf_path)
-            
-            # Log summary of new PDFs
-            logger.info("\nSummary of new PDFs generated:")
-            for pdf_info in new_pdfs:
-                logger.info(f"Test Type: {pdf_info['test_type']}, Test Number: {pdf_info['test_number']}, "
-                          f"Project: {pdf_info['project_id']}, Email: {pdf_info['labeler']}")
+    except Exception as e:
+        logger.error(f"Error generating PDF: {e}")
+        raise
+    finally:
+        if driver:
+            driver.quit()
+        if temp_dir:
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 if __name__ == "__main__":
     main() 

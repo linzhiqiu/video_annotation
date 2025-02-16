@@ -17,6 +17,8 @@ pdf_generation:
   skip_existing: true  # Skip generating PDFs that already exist
   target_annotator: null  # When set, only generate PDFs for this annotator
   target_ground_truth: null  # When set, only generate PDFs for this ground truth file
+  drive_folder_id: "14c6SNLIbRCgq6uOyUBuT2u5RxKlEUooc"  # Google Drive folder ID for PDF uploads
+  create_new_folder: false  # Whether to create a "new" folder for PDFs locally
 
 # Project IDs grouped by test type and ground truth path
 projects:

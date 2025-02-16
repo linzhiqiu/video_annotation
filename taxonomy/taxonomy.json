@@ -2003,27 +2003,27 @@
       {
         "value": "Static (Fixed Camera)",
         "data_value": "static",
-        "data_category": "CameraMotionData.steadiness"
+        "data_category": null
       },
       {
         "value": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)",
         "data_value": "very_smooth",
-        "data_category": "CameraMotionData.steadiness"
+        "data_category": null
       },
       {
         "value": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)",
         "data_value": "smooth",
-        "data_category": "CameraMotionData.steadiness"
+        "data_category": null
       },
       {
         "value": "Unsteady (e.g., Somewhat shaky handheld shot)",
         "data_value": "unsteady",
-        "data_category": "CameraMotionData.steadiness"
+        "data_category": null
       },
       {
         "value": "Very Unsteady (e.g., Extreme shaky shot, found footage style)",
         "data_value": "very_unsteady",
-        "data_category": "CameraMotionData.steadiness"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2043,17 +2043,17 @@
       {
         "value": "Yes with major, simple motion",
         "data_value": "major_simple",
-        "data_category": "CameraMotionData.camera_movement"
+        "data_category": null
       },
       {
         "value": "Yes with minor motion",
         "data_value": "minor",
-        "data_category": "CameraMotionData.camera_movement"
+        "data_category": null
       },
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_movement"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2068,17 +2068,17 @@
       {
         "value": "Dynamic",
         "data_value": "dynamic",
-        "data_category": "CameraMotionData.scene_movement"
+        "data_category": null
       },
       {
         "value": "Mostly Static (i.e., background is static, but there are moving objects)",
         "data_value": "mostly_static",
-        "data_category": "CameraMotionData.scene_movement"
+        "data_category": null
       },
       {
         "value": "Static",
         "data_value": "static",
-        "data_category": "CameraMotionData.scene_movement"
+        "data_category": null
       }
     ],
     "default": "Dynamic",
@@ -2143,17 +2143,17 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_zoom"
+        "data_category": null
       },
       {
         "value": "Zooming In",
         "data_value": "in",
-        "data_category": "CameraMotionData.camera_zoom"
+        "data_category": null
       },
       {
         "value": "Zooming Out",
         "data_value": "out",
-        "data_category": "CameraMotionData.camera_zoom"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2168,27 +2168,27 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_arc"
+        "data_category": null
       },
       {
         "value": "Clockwise (e.g., Arc clockwise)",
         "data_value": "clockwise",
-        "data_category": "CameraMotionData.camera_arc"
+        "data_category": null
       },
       {
         "value": "Counter-clockwise (e.g., Arc counter-clockwise)",
         "data_value": "counter_clockwise",
-        "data_category": "CameraMotionData.camera_arc"
+        "data_category": null
       },
       {
         "value": "Crane Up",
         "data_value": "crane_up",
-        "data_category": "CameraMotionData.camera_crane"
+        "data_category": null
       },
       {
         "value": "Crane Down",
         "data_value": "crane_down",
-        "data_category": "CameraMotionData.camera_crane"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2203,17 +2203,17 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_left_right"
+        "data_category": null
       },
       {
         "value": "Left-to-Right (--->)",
         "data_value": "left_to_right",
-        "data_category": "CameraMotionData.camera_left_right"
+        "data_category": null
       },
       {
         "value": "Right-to-Left (<---)",
         "data_value": "right_to_left",
-        "data_category": "CameraMotionData.camera_left_right"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2228,17 +2228,17 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_pan"
+        "data_category": null
       },
       {
         "value": "Left-to-Right (-->)",
         "data_value": "left_to_right",
-        "data_category": "CameraMotionData.camera_pan"
+        "data_category": null
       },
       {
         "value": "Right-to-Left (<--)",
         "data_value": "right_to_left",
-        "data_category": "CameraMotionData.camera_pan"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2253,17 +2253,17 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_tilt"
+        "data_category": null
       },
       {
         "value": "Up",
         "data_value": "up",
-        "data_category": "CameraMotionData.camera_tilt"
+        "data_category": null
       },
       {
         "value": "Down",
         "data_value": "down",
-        "data_category": "CameraMotionData.camera_tilt"
+        "data_category": null
       }
     ],
     "default": "inherited",
@@ -2278,17 +2278,17 @@
       {
         "value": "No",
         "data_value": "no",
-        "data_category": "CameraMotionData.camera_roll"
+        "data_category": null
       },
       {
         "value": "Clockwise",
         "data_value": "clockwise",
-        "data_category": "CameraMotionData.camera_roll"
+        "data_category": null
       },
       {
         "value": "Counter-clockwise",
         "data_value": "counter_clockwise",
-        "data_category": "CameraMotionData.camera_roll"
+        "data_category": null
       }
     ],
     "default": "inherited",

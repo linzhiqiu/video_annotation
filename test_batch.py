@@ -109,34 +109,42 @@ def main():
     setup_logging()
     
     # Configuration
-    yaml_paths = ["batch_configs/camera_setup.yaml", "batch_configs/camera_movement.yaml", "batch_configs/camera_setup2.yaml"]  # Can be a list of multiple YAML files
+    # yaml_paths = ["batch_configs/camera_setup.yaml", "batch_configs/camera_movement.yaml", "batch_configs/camera_setup2.yaml"]  # Can be a list of multiple YAML files
+    
+    
+    yaml_paths = ["batch_configs/30videos/camera_setup.yaml", "batch_configs/30videos/camera_movement.yaml", "batch_configs/30videos/camera_setup2.yaml"]
     ndjson_dir = "exports/ndjson"
     issues_dir = "exports/issues_ndjson"
+
+
+    # ndjson_dir = "batches/30videos_20250215_155544/ndjson"
+    # issues_dir = "batches/30videos_20250215_155544/issues_ndjson"
     
-    preloaded_sheet_path = 'exports/sheets/sheet_data_20250214_122156.json'
+    preloaded_sheet_path = 'exports/sheets/sheet_data_20250215_153003.json'
     # preloaded_sheet_path = None
     
     # Create batch from YAML configs
     logging.info(f"Creating batch from {yaml_paths}")
     batch = Batch.from_configs(
-        yaml_paths, 
-        ndjson_dir, 
+        yaml_paths,
+        ndjson_dir,
         issues_dir,
         preloaded_sheet_path=preloaded_sheet_path,
         save_sheet_data=True,
         save_batch=True,
-        batch_name="donesection"
+        batch_name="30videos"
     )
+
     
-    # Print statistics
-    logging.info(f"\nBatch Statistics:")
-    logging.info(f"Total videos in batch: {len(batch)}")
+    # # Print statistics
+    # logging.info(f"\nBatch Statistics:")
+    # logging.info(f"Total videos in batch: {len(batch)}")
     
     # # Print details for random videos from batch
     # logging.info("\nPrinting details for random videos from final batch:")
     # batch_video_names = batch.get_video_names()
     # if batch_video_names:
-    #     sample_size = min(10, len(batch_video_names))
+    #     sample_size = min(30, len(batch_video_names))
     #     random_batch_videos = random.sample(batch_video_names, sample_size)
     #     for video_name in random_batch_videos:
     #         print_video_details(video_name, batch[video_name])
@@ -166,4 +174,4 @@ def main():
     #             logging.warning(f"Video {video_name} not found in batch (tried exact match and prefix match)")
 
 if __name__ == "__main__":
-    main() 
+    main()
