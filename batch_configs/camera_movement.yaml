@@ -1,0 +1,22 @@
+# Camera Movement batch configuration
+
+# Project name (required)
+project_name: "Video Segment Classification (Camera Movement)"
+
+# Basic video filtering
+video_names_file: null  # Optional: List of specific videos to include
+
+time_range: null  # Optional: Time range for filtering
+
+# List of approvers to filter by
+approvers: null
+
+project_requirements:
+  meta_reviewers: null
+  double_check_status: "Yes"
+
+# API rate limiting settings
+api_limits:
+  min_delay: 1.0
+  max_delay: 32.0
+  max_retries: 5
