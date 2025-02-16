@@ -591,7 +591,7 @@
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "Bird’s eye",
+        "value": "Bird's eye",
         "data_value": "bird_eye_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       },
@@ -611,7 +611,7 @@
         "data_category": "CameraSetupData.camera_angle_start"
       },
       {
-        "value": "Worm’s eye",
+        "value": "Worm's eye",
         "data_value": "worm_eye_angle",
         "data_category": "CameraSetupData.camera_angle_start"
       }
@@ -631,7 +631,7 @@
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "Bird’s eye",
+        "value": "Bird's eye",
         "data_value": "bird_eye_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       },
@@ -651,7 +651,7 @@
         "data_category": "CameraSetupData.camera_angle_end"
       },
       {
-        "value": "Worm’s eye",
+        "value": "Worm's eye",
         "data_value": "worm_eye_angle",
         "data_category": "CameraSetupData.camera_angle_end"
       }
@@ -1001,7 +1001,7 @@
   },
   {
     "question": "Does the size of the subject change?",
-    "name": "does_the_size_of_subject_change",
+    "name": "does_the_size_of_the_subject_change",
     "type": "radio",
     "required": false,
     "options": [
@@ -1993,5 +1993,305 @@
     ],
     "default": null,
     "group": "Video Segment Classification (Lighting)"
+  },
+  {
+    "question": "Select the camera steadiness (camera-centric):",
+    "name": "select_the_camera_steadiness", 
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "Static (Fixed Camera)",
+        "data_value": "static",
+        "data_category": null
+      },
+      {
+        "value": "Very Smooth / No Shaking (e.g., Drone shot with no shaking at all)",
+        "data_value": "very_smooth",
+        "data_category": null
+      },
+      {
+        "value": "Smooth / Minimal Shaking (e.g., Steadicam shot or stabilized handheld shot)",
+        "data_value": "smooth",
+        "data_category": null
+      },
+      {
+        "value": "Unsteady (e.g., Somewhat shaky handheld shot)",
+        "data_value": "unsteady",
+        "data_category": null
+      },
+      {
+        "value": "Very Unsteady (e.g., Extreme shaky shot, found footage style)",
+        "data_value": "very_unsteady",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is there camera movement (other than camera shaking) (camera-centric)?",
+    "name": "is_there_camera_movement",
+    "type": "radio", 
+    "required": true,
+    "options": [
+      {
+        "value": "Yes with major, complex motion",
+        "data_value": "major_complex",
+        "data_category": "CameraMotionData.camera_movement"
+      },
+      {
+        "value": "Yes with major, simple motion",
+        "data_value": "major_simple",
+        "data_category": null
+      },
+      {
+        "value": "Yes with minor motion",
+        "data_value": "minor",
+        "data_category": null
+      },
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the scene (not camera) mostly static or dynamic (camera-centric)?",
+    "name": "is_the_scene_mostly_static_or_dynamic",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "Dynamic",
+        "data_value": "dynamic",
+        "data_category": null
+      },
+      {
+        "value": "Mostly Static (i.e., background is static, but there are moving objects)",
+        "data_value": "mostly_static",
+        "data_category": null
+      },
+      {
+        "value": "Static",
+        "data_value": "static",
+        "data_category": null
+      }
+    ],
+    "default": "Dynamic",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera moving forward or backward (camera-centric)?",
+    "name": "is_the_camera_moving_forward_or_backward",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": "CameraMotionData.camera_forward_backward_cam_frame"
+      },
+      {
+        "value": "Forward (e.g., Dolly-in / Push-in)",
+        "data_value": "forward",
+        "data_category": "CameraMotionData.camera_forward_backward_cam_frame"
+      },
+      {
+        "value": "Backward (e.g., Dolly-out / Pull-out)",
+        "data_value": "backward",
+        "data_category": "CameraMotionData.camera_forward_backward_cam_frame"
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera moving up or down (camera-centric)?",
+    "name": "is_the_camera_moving_up_or_down",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": "CameraMotionData.camera_up_down_cam_frame"
+      },
+      {
+        "value": "Up (e.g., Pedestal up)",
+        "data_value": "up",
+        "data_category": "CameraMotionData.camera_up_down_cam_frame"
+      },
+      {
+        "value": "Down (e.g., Pedestal down)",
+        "data_value": "down",
+        "data_category": "CameraMotionData.camera_up_down_cam_frame"
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera zooming (camera-centric)?",
+    "name": "is_the_camera_zooming",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Zooming In",
+        "data_value": "in",
+        "data_category": null
+      },
+      {
+        "value": "Zooming Out",
+        "data_value": "out",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera moving in an arc (camera-centric)?",
+    "name": "is_the_camera_moving_in_an_arc",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Clockwise (e.g., Arc clockwise)",
+        "data_value": "clockwise",
+        "data_category": null
+      },
+      {
+        "value": "Counter-clockwise (e.g., Arc counter-clockwise)",
+        "data_value": "counter_clockwise",
+        "data_category": null
+      },
+      {
+        "value": "Crane Up",
+        "data_value": "crane_up",
+        "data_category": null
+      },
+      {
+        "value": "Crane Down",
+        "data_value": "crane_down",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera moving (trucking) to the left or right (camera-centric)?",
+    "name": "is_the_camera_moving_left_or_right",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Left-to-Right (--->)",
+        "data_value": "left_to_right",
+        "data_category": null
+      },
+      {
+        "value": "Right-to-Left (<---)",
+        "data_value": "right_to_left",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera panning (camera-centric)?",
+    "name": "is_the_camera_panning",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Left-to-Right (-->)",
+        "data_value": "left_to_right",
+        "data_category": null
+      },
+      {
+        "value": "Right-to-Left (<--)",
+        "data_value": "right_to_left",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera tilting (camera-centric)?",
+    "name": "is_the_camera_tilting",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Up",
+        "data_value": "up",
+        "data_category": null
+      },
+      {
+        "value": "Down",
+        "data_value": "down",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
+  },
+  {
+    "question": "Is the camera rolling (camera-centric)?",
+    "name": "is_the_camera_rolling",
+    "type": "radio",
+    "required": true,
+    "options": [
+      {
+        "value": "No",
+        "data_value": "no",
+        "data_category": null
+      },
+      {
+        "value": "Clockwise",
+        "data_value": "clockwise",
+        "data_category": null
+      },
+      {
+        "value": "Counter-clockwise",
+        "data_value": "counter_clockwise",
+        "data_category": null
+      }
+    ],
+    "default": "inherited",
+    "group": "Video Segment Classification (Camera-centric)"
   }
 ]

@@ -1,0 +1,4 @@
+{
+    "labelbox_config_path": "configs/labelbox_export.yaml",
+    "sheets_config_path": "configs/sheets_url_config.json"
+} 

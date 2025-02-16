@@ -18,15 +18,50 @@ from googleapiclient.errors import HttpError
 # Constants for sheet data storage
 SHEET_DATA_DIR = "exports/sheet_data"
 LATEST_SHEET_DATA_FILE = os.path.join(SHEET_DATA_DIR, "latest.json")
-CONFIG_PATH = 'configs/labelbox_export.yaml'
+PATHS_CONFIG = 'configs/paths_config.json'
 
-def load_config(config_path: str = CONFIG_PATH) -> Dict[str, Any]:
-    """Load configuration from YAML file."""
+def load_paths_config() -> Dict[str, str]:
+    """Load paths configuration from JSON file."""
+    if not os.path.exists(PATHS_CONFIG):
+        raise FileNotFoundError(f"Paths config file not found: {PATHS_CONFIG}")
+        
+    with open(PATHS_CONFIG, 'r') as f:
+        return json.load(f)
+
+def load_config() -> Dict[str, Any]:
+    """Load labelbox configuration from YAML file."""
+    paths = load_paths_config()
+    config_path = paths['labelbox_config_path']
+    
     if not os.path.exists(config_path):
         raise FileNotFoundError(f"Config file not found: {config_path}")
         
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
+
+def load_sheets_config() -> Dict[str, Any]:
+    """Load sheets configuration by first reading the path from YAML config."""
+    # First load the main config to get the sheets URL config path
+    config = load_config()
+    sheets_url_config_path = config.get('google_sheets', {}).get('sheets_url_config')
+    
+    if not sheets_url_config_path:
+        # If not specified in YAML, try from paths config
+        paths = load_paths_config()
+        sheets_url_config_path = paths['sheets_config_path']
+        
+    if not os.path.exists(sheets_url_config_path):
+        raise FileNotFoundError(f"Sheets URL config file not found: {sheets_url_config_path}")
+        
+    # Load the sheets URL mappings
+    with open(sheets_url_config_path, 'r') as f:
+        url_config = json.load(f)
+        
+    # Combine with other sheets settings from YAML
+    sheets_config = config.get('google_sheets', {})
+    sheets_config.update(url_config)
+    
+    return sheets_config
 
 def save_sheet_data(sheet_data: Dict[str, Any], create_timestamped: bool = True) -> str:
     """Save sheet data to the standard location.
@@ -97,7 +132,7 @@ class SheetService:
         # Try to load existing credentials
         if os.path.exists(token_path):
             try:
-                creds = Credentials.from_authorized_user_file(token_path, ['https://www.googleapis.com/auth/spreadsheets.readonly'])
+                creds = Credentials.from_authorized_user_file(token_path, ['https://www.googleapis.com/auth/spreadsheets'])
             except Exception as e:
                 logging.warning(f"Error loading token file: {str(e)}")
                 logging.info("Removing corrupted token file...")
@@ -107,16 +142,25 @@ class SheetService:
         # If there are no (valid) credentials available, let the user log in.
         if not creds or not creds.valid:
             if creds and creds.expired and creds.refresh_token:
-                creds.refresh(Request())
-            else:
+                try:
+                    creds.refresh(Request())
+                except Exception as e:
+                    logging.warning(f"Error refreshing token: {str(e)}")
+                    creds = None
+            
+            if not creds:
                 if not os.path.exists(credentials_path):
                     raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
                     
                 flow = InstalledAppFlow.from_client_secrets_file(
                     credentials_path,
-                    ['https://www.googleapis.com/auth/spreadsheets.readonly']
+                    ['https://www.googleapis.com/auth/spreadsheets']
                 )
-                creds = flow.run_local_server(port=0)
+                creds = flow.run_local_server(
+                    port=0,
+                    access_type='offline',
+                    include_granted_scopes='true'
+                )
                 
             # Save the credentials for the next run
             os.makedirs(os.path.dirname(token_path), exist_ok=True)
@@ -282,7 +326,7 @@ def load_all_sheet_data(sheets_config: Dict[str, Any], yaml_configs: Optional[Di
     """Load all sheet data at once to minimize API calls.
     
     Args:
-        sheets_config: Configuration for Google Sheets
+        sheets_config: Configuration for Google Sheets (from sheets_url_config.json)
         yaml_configs: Optional YAML configurations for filtering data
         save_data: Whether to save the loaded data to a JSON file
         

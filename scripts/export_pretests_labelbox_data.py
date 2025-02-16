@@ -103,6 +103,15 @@ def export_project_data(client: lb.Client, project_id: str, test_type: str, outp
         import traceback
         logging.error(traceback.format_exc())
 
+def get_all_project_ids(config: Dict[str, Any]) -> Dict[str, list]:
+    """Extract all project IDs grouped by test type from the new config structure."""
+    project_ids = {}
+    for test_type, tests in config['projects'].items():
+        project_ids[test_type] = []
+        for test_data in tests.values():
+            project_ids[test_type].extend(test_data['ids'])
+    return project_ids
+
 def main():
     """Main entry point for the script."""
     setup_logging()
@@ -118,6 +127,9 @@ def main():
     base_export_dir = config['output_dir']
     logging.info(f"Using export directory: {base_export_dir}")
     
+    # Get project IDs grouped by test type
+    project_ids_by_type = get_all_project_ids(config)
+    
     # Create directories for each test type
     test_types = config['projects'].keys()
     setup_export_directories(base_export_dir, test_types)
@@ -132,16 +144,10 @@ def main():
                 os.makedirs(ndjson_dir)
     
     # Export data for each test type and project
-    for test_type, projects in config['projects'].items():
+    for test_type, project_ids in project_ids_by_type.items():
         logging.info(f"\nProcessing {test_type} projects...")
         
-        for project in projects:
-            project_id = project['id']
-            # Ground truth path is optional for export
-            ground_truth_path = project.get('ground_truth_path')
-            # if ground_truth_path:
-            #     logging.info(f"Ground truth path for project {project_id}: {ground_truth_path}")
-            
+        for project_id in project_ids:
             export_project_data(
                 client=client,
                 project_id=project_id,

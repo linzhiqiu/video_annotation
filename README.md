@@ -51,7 +51,7 @@ except AttributeError as e:
 │   ├── cam_motion/       # Camera motion-related labels
 │   │   ├── steadiness/   # Steadiness-related labels
 │   │   │   ├── fixed_camera.json  # Example label file
-│   ├── cam_setup/        # Camera setup-related labels
+│   │   ├── cam_setup/        # Camera setup-related labels
 │   ├── lighting_setup/   # Lighting-related labels
 └── README.md             # This file
 ```
@@ -88,23 +88,174 @@ To add a new label, create a JSON file in the appropriate subdirectory under `la
 - Ensure the file follows the **same structure** as the example.
 
 ---
+### Download real-time data from labelbox
 
-### **📖 How to Visualize Labels in Markdown**
-Use `visualize_labels.py` to convert all JSON label definitions into a Markdown visualization.
+#### Pre-requisite:
 
-#### **🔹 Running the Script**
-```bash
-python visualize_labels.py
+##### Under the video_annotation folder:
 ```
-- This will process all JSON files under `labels/` and generate a **structured Markdown output** in `labels_markdown/`.
-- Each folder will have an `index.md` containing **collapsible sections** for easy browsing.
+Video_annotation
+├── scripts
+│   ├── export_labelbox_data.py
+├── configs
+│   ├── label_box_export.yaml
+```
 
-#### **🔗 View the Generated Labels**
-After running the script, open:
-- **[`labels.md`](./labels.md)** for a structured overview.
-- **Individual category pages** in `labels_markdown/` for specific topics.
+#### Run
 
----
+`python scripts/export_labelbox_data.py`
 
-### **📜 License**
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+#### Output
+
+The output contains 2 folder `ndjson`  and `issues_ndjson`. They are stored at the param `output_folder` in the file `label_box_export.yaml`.
+
+
+
+### Filter out ndjson file
+
+#### Pre-requisite
+
+##### Under the video_annotation folder:
+
+```
+Video_annotation
+├── scripts
+│   ├── export_labelbox_data.py
+├── configs
+│   ├── label_box_export.yaml
+├── exports
+│   ├── ndjson
+│   │   ├── project1.ndjson (contains video_names and labels from that project)
+│   │   ├── project2.ndjson
+│   │   ├── ...
+│   ├── issues_ndjson 
+│   │   ├── project1_issues.ndjson (contains video_names that have issue)
+│   │   ├── project2_issues.ndjson
+│   │   ├── ...
+│   ├── sheets (contains info like approver and double_check status)
+```
+
+The number of projects is defined in your `label_box_export.yaml`.
+
+#### Run
+
+`python test_batch.py`
+
+##### Important params:
+
+1. `yaml_paths:`  List, specify the yaml files that used for filtering.
+
+2. ` ndjson_dir:`  str, dir of the ndjson, here it should be ` exports/ndjson` 
+
+3. ` issues_dir:` str, dir of the ndjson, here it should be ` exports/issues_ndjson` 
+
+4. `preloaded_sheet_path`: str, path to provide double check status and approver's name.
+
+   ```
+   batch = Batch.from_configs(
+       yaml_paths, 
+       ndjson_dir, 
+       issues_dir,
+       preloaded_sheet_path=preloaded_sheet_path,
+       save_sheet_data=True,
+       save_batch=True,
+       batch_name="enter_the_output_folder_name_here"
+   )
+   ```
+
+
+
+### Trans ndjson file to VideoData List
+
+ #### Run
+
+`python scripts/process_ndjson.py`
+
+The output will be a list, each item in it is a VideoData object.
+
+
+
+### Pretest Scoring and PDF Generation
+
+This section explains how to export Labelbox data, score pretests, and generate PDF reports.
+
+#### 1. Export Labelbox Data for Scoring
+
+First, you need to export the data from Labelbox using `export_pretests_labelbox_data.py`:
+
+```bash
+python scripts/export_pretests_labelbox_data.py
+```
+
+Configuration is controlled through `configs/scoring_config.yaml`:
+
+```yaml
+# Key configuration options:
+api_key: "your_labelbox_api_key"
+output_dir: "exports_pretests"  # Directory for NDJSON exports
+pdfs_dir: "pretest_pdfs"       # Directory for generated PDFs
+overwrite_exports: true        # Whether to overwrite existing exports
+
+# Export parameters (all optional):
+export_params:
+  attachments: false
+  metadata_fields: false
+  data_row_details: true
+  project_details: true
+  label_details: true
+  performance_details: true
+  interpolated_frames: false
+  embeddings: false
+```
+
+#### 2. Generate PDF Reports
+
+After exporting the data, use `process_pretest_labelbox_data.py` to generate PDF reports:
+
+```bash
+python scripts/process_pretest_labelbox_data.py
+```
+
+##### PDF Generation Options
+
+The `scoring_config.yaml` supports several PDF generation options under the `pdf_generation` section:
+
+```yaml
+pdf_generation:
+  skip_existing: true           # Skip PDFs that already exist
+  target_annotator: null        # Generate PDFs for specific annotator only
+  target_ground_truth: null     # Use specific ground truth file only
+```
+
+##### Project Configuration
+
+Projects are configured in `scoring_config.yaml` under the `projects` section:
+
+```yaml
+projects:
+  test_type:                    # e.g., shotcomp, motion, lighting
+    test0:                      # Test number
+      ground_truth_annotator:   # Ground truth configuration
+        project_id: "project_id"
+        email: "annotator@email.com"
+      ids:                      # Project IDs to process
+        - "project_id1"
+        - "project_id2"
+```
+
+#### 3. Output Structure
+
+The script creates the following directory structure:
+
+```
+workspace/
+├── exports_pretests/          # Raw exports from Labelbox
+│   ├── test_type/
+│   │   └── ndjson/           # NDJSON files from each project
+├── pretest_pdfs/             # Generated PDF reports
+│   ├── test_type/
+│   │   ├── test0/           # PDFs organized by test number
+│   │   └── test1/
+│   └── new/                  # Only contains newly generated PDFs
+```
+

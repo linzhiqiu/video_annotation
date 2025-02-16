@@ -8,7 +8,7 @@ import logging
 import re
 from pathlib import Path
 from collections import defaultdict
-from typing import Dict, Set, List, Tuple
+from typing import Dict, Set, List, Tuple, Any
 from flask import Flask, render_template
 import threading
 import time
@@ -20,6 +20,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import base64
 import tempfile
 import uuid
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseUpload
+import io
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -28,25 +35,257 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 
+# Google Drive API scope
+SCOPES = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'  # Full Drive scope instead of drive.file
+]
+
+def get_google_drive_service():
+    """Sets up and returns Google Drive service."""
+    creds = None
+    token_path = 'configs/token.json'
+    credentials_path = 'configs/credentials.json'
+    
+    # Try to load existing credentials
+    if os.path.exists(token_path):
+        try:
+            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        except Exception as e:
+            logging.warning(f"Error loading token file: {str(e)}")
+            logging.info("Removing corrupted token file...")
+            os.remove(token_path)
+            creds = None
+    
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                logging.warning(f"Error refreshing token: {str(e)}")
+                creds = None
+        
+        if not creds:
+            if not os.path.exists(credentials_path):
+                raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
+            
+            flow = InstalledAppFlow.from_client_secrets_file(
+                credentials_path,
+                SCOPES,
+                redirect_uri='http://localhost:8080/'
+            )
+            creds = flow.run_local_server(
+                port=8080,
+                access_type='offline',
+                include_granted_scopes='true'
+            )
+        
+        # Save the credentials for the next run
+        os.makedirs(os.path.dirname(token_path), exist_ok=True)
+        with open(token_path, 'w') as token:
+            token.write(creds.to_json())
+    
+    return build('drive', 'v3', credentials=creds)
+
+def create_drive_folder_structure(drive_service, parent_folder_id: str, test_type: str, test_number: str) -> str:
+    """Create folder structure in Google Drive and return the final folder ID."""
+    # Create test type folder if it doesn't exist
+    test_type_folder = None
+    query = f"name = '{test_type}' and mimeType = 'application/vnd.google-apps.folder' and '{parent_folder_id}' in parents and trashed = false"
+    
+    try:
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            orderBy='createdTime'
+        ).execute()
+        
+        if results['files']:
+            # Use the first (oldest) folder found
+            test_type_folder = results['files'][0]['id']
+            logging.info(f"Found existing folder for {test_type}")
+        else:
+            folder_metadata = {
+                'name': test_type,
+                'mimeType': 'application/vnd.google-apps.folder',
+                'parents': [parent_folder_id]
+            }
+            file = drive_service.files().create(
+                body=folder_metadata,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            test_type_folder = file['id']
+            logging.info(f"Created new folder for {test_type}")
+    except Exception as e:
+        logging.error(f"Error handling test type folder {test_type}: {str(e)}")
+        raise
+    
+    # Create test number folder if it doesn't exist
+    test_folder = None
+    test_folder_name = f'test{test_number}'
+    query = f"name = '{test_folder_name}' and mimeType = 'application/vnd.google-apps.folder' and '{test_type_folder}' in parents and trashed = false"
+    
+    try:
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            orderBy='createdTime'
+        ).execute()
+        
+        if results['files']:
+            # Use the first (oldest) folder found
+            test_folder = results['files'][0]['id']
+            logging.info(f"Found existing folder for {test_folder_name}")
+        else:
+            folder_metadata = {
+                'name': test_folder_name,
+                'mimeType': 'application/vnd.google-apps.folder',
+                'parents': [test_type_folder]
+            }
+            file = drive_service.files().create(
+                body=folder_metadata,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            test_folder = file['id']
+            logging.info(f"Created new folder for {test_folder_name}")
+    except Exception as e:
+        logging.error(f"Error handling test folder {test_folder_name}: {str(e)}")
+        raise
+    
+    return test_folder
+
+def upload_pdf_to_drive(drive_service, folder_id: str, pdf_data: bytes, filename: str, test_type: str = None, test_number: str = None) -> str:
+    """Upload PDF to Google Drive and return the file ID."""
+    try:
+        # If test_type and test_number are provided, create/get folder structure
+        target_folder_id = folder_id
+        if test_type and test_number:
+            # Create test type folder if needed
+            query = f"name = '{test_type}' and mimeType = 'application/vnd.google-apps.folder' and '{folder_id}' in parents and trashed = false"
+            results = drive_service.files().list(
+                q=query,
+                spaces='drive',
+                fields='files(id, name)',
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True
+            ).execute()
+            
+            if results['files']:
+                test_type_folder = results['files'][0]['id']
+                logging.info(f"Found existing folder for {test_type}")
+            else:
+                folder_metadata = {
+                    'name': test_type,
+                    'mimeType': 'application/vnd.google-apps.folder',
+                    'parents': [folder_id]
+                }
+                test_type_folder = drive_service.files().create(
+                    body=folder_metadata,
+                    fields='id',
+                    supportsAllDrives=True
+                ).execute()['id']
+                logging.info(f"Created new folder for {test_type}")
+            
+            # Create test number folder if needed
+            test_folder_name = f'test{test_number}'
+            query = f"name = '{test_folder_name}' and mimeType = 'application/vnd.google-apps.folder' and '{test_type_folder}' in parents and trashed = false"
+            results = drive_service.files().list(
+                q=query,
+                spaces='drive',
+                fields='files(id, name)',
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True
+            ).execute()
+            
+            if results['files']:
+                target_folder_id = results['files'][0]['id']
+                logging.info(f"Found existing folder for {test_folder_name}")
+            else:
+                folder_metadata = {
+                    'name': test_folder_name,
+                    'mimeType': 'application/vnd.google-apps.folder',
+                    'parents': [test_type_folder]
+                }
+                target_folder_id = drive_service.files().create(
+                    body=folder_metadata,
+                    fields='id',
+                    supportsAllDrives=True
+                ).execute()['id']
+                logging.info(f"Created new folder for {test_folder_name}")
+        
+        # Check if file already exists in the target folder
+        query = f"name = '{filename}' and '{target_folder_id}' in parents and trashed = false"
+        results = drive_service.files().list(
+            q=query,
+            spaces='drive',
+            fields='files(id, name)',
+            supportsAllDrives=True,
+            includeItemsFromAllDrives=True
+        ).execute()
+        
+        # Create media
+        fh = io.BytesIO(pdf_data)
+        media = MediaIoBaseUpload(fh, mimetype='application/pdf', resumable=True)
+        
+        if results['files']:
+            # Update existing file
+            existing_file = results['files'][0]
+            file = drive_service.files().update(
+                fileId=existing_file['id'],
+                media_body=media,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            logging.info(f"Updated existing file: {filename}")
+            return file['id']
+        else:
+            # Create new file
+            file_metadata = {
+                'name': filename,
+                'parents': [target_folder_id]
+            }
+            file = drive_service.files().create(
+                body=file_metadata,
+                media_body=media,
+                fields='id',
+                supportsAllDrives=True
+            ).execute()
+            logging.info(f"Created new file: {filename}")
+            return file['id']
+            
+    except Exception as e:
+        logging.error(f"Error uploading file {filename} to Drive: {str(e)}")
+        raise
+
 def load_config() -> dict:
     """Load the scoring configuration file."""
     config_path = 'configs/scoring_config.yaml'
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
 
-def get_project_id_to_ground_truth(config: dict) -> Dict[str, str]:
-    """Create mapping of project IDs to their ground truth paths."""
+def get_project_id_to_ground_truth(config: dict) -> Dict[str, dict]:
+    """Create mapping of project IDs to their ground truth annotator info."""
     project_mapping = {}
-    for test_type, projects in config['projects'].items():
-        for project in projects:
-            project_mapping[project['id']] = project['ground_truth_path']
+    for test_type, tests in config['projects'].items():
+        for test_num, test_data in tests.items():
+            for project_id in test_data['ids']:
+                project_mapping[project_id] = {
+                    'ground_truth_annotator': test_data.get('ground_truth_annotator')
+                }
     return project_mapping
 
-def get_test_number(ground_truth_path: str) -> str:
-    """Extract test number from ground truth path."""
-    match = re.search(r'groundtruth_sec(\d+)\.json', ground_truth_path)
-    if match:
-        return match.group(1)
+def get_test_number_from_config(config: dict, project_id: str) -> str:
+    """Get test number from config structure based on project ID."""
+    for test_type, tests in config['projects'].items():
+        for test_num, test_data in tests.items():
+            if project_id in test_data['ids']:
+                # Extract number from test key (e.g., 'test0' -> '0')
+                return test_num.replace('test', '')
     return "unknown"
 
 def process_ndjson_file(file_path: str) -> Tuple[Dict[str, Set[str]], Set[str], int, str]:
@@ -272,40 +511,67 @@ def load_taxonomy() -> List[str]:
         taxonomy = json.load(f)
         return [item['question'] for item in taxonomy]
 
-def prepare_visualization_data(ndjson_data: List[dict], ground_truth_path: str, target_annotator: str) -> dict:
+def process_classification_recursively(classification: dict, annotations: dict):
+    """Recursively process a classification and its nested classifications."""
+    question = classification['name']
+    if "(old)" in question:
+        return
+        
+    # Get answer based on the type of classification
+    answer = None
+    if 'radio_answer' in classification:
+        answer = classification['radio_answer']['name']
+        # Process nested classifications in radio answer
+        for nested in classification['radio_answer'].get('classifications', []):
+            process_classification_recursively(nested, annotations)
+    elif 'checklist_answers' in classification:
+        answer = [item['name'] for item in classification['checklist_answers']]
+        # Process nested classifications in each checklist answer
+        for checklist_item in classification['checklist_answers']:
+            for nested in checklist_item.get('classifications', []):
+                process_classification_recursively(nested, annotations)
+    elif 'text_answer' in classification:
+        answer = classification['text_answer']['content']
+    
+    if answer is not None:
+        annotations[question] = answer
+
+def extract_ground_truth_from_annotator(ndjson_data: List[dict], annotator_email: str) -> Dict[str, Dict[str, Any]]:
+    """Extract ground truth from a specific annotator's annotations."""
+    ground_truth_dict = {}
+    
+    for data in ndjson_data:
+        video_name = data['data_row']['external_id']
+        annotations = {}
+        
+        # Process each project's labels
+        for project_data in data['projects'].values():
+            for label in project_data['labels']:
+                if label['label_details']['created_by'] != annotator_email:
+                    continue
+                
+                # Process classifications
+                for classification in label['annotations'].get('classifications', []):
+                    process_classification_recursively(classification, annotations)
+        
+        if annotations:  # Only add if there are annotations
+            ground_truth_dict[video_name] = annotations
+    
+    return ground_truth_dict
+
+def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dict, target_annotator: str) -> dict:
     """Prepare data for visualization template."""
     # Load taxonomy for question ordering
     question_order = load_taxonomy()
     
-    # Load ground truth if available
-    ground_truth_dict = {}
-    if os.path.exists(ground_truth_path):
-        with open(ground_truth_path, 'r') as f:
-            ground_truth = json.load(f)
-            
-            # Convert ground truth to dictionary for easier lookup
-            ground_truth_dict = {}
-            for item in ground_truth:
-                video_name = item['video_name']
-                annotations = {}
-                # Handle empty annotations list in ground truth
-                if not item.get('annotations', []):
-                    ground_truth_dict[video_name] = {}
-                    continue
-                    
-                for ann in item['annotations']:
-                    question = ann['question']
-                    if "(old)" in question:
-                        continue
-                    answer = ann['answer']
-                    if isinstance(answer, dict) and 'content' in answer:
-                        answer = answer['content']
-                    elif isinstance(answer, list):
-                        answer = answer
-                    elif answer == "N/A":
-                        answer = "N/A"
-                    annotations[question] = answer
-                ground_truth_dict[video_name] = annotations
+    # Use cached ground truth if available, otherwise load it
+    ground_truth_dict = ground_truth_source.get('cached_ground_truth', {})
+    if not ground_truth_dict:
+        # Get ground truth from annotator
+        if ground_truth_source.get('ground_truth_annotator'):
+            annotator_email = ground_truth_source['ground_truth_annotator']['email']
+            ground_truth_dict = extract_ground_truth_from_annotator(ndjson_data, annotator_email)
+            logger.info(f"Using ground truth from annotator: {annotator_email}")
     
     # Process videos data
     videos_data = []
@@ -324,15 +590,21 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_path: str, 
             for label in project_data['labels']:
                 if label['label_details']['created_by'] != target_annotator:
                     continue
+                    
+                # Process all classifications recursively to collect questions
+                temp_annotations = {}
                 for classification in label['annotations'].get('classifications', []):
-                    question = classification['name']
-                    if "(old)" not in question:
-                        all_questions.add(question)
+                    process_classification_recursively(classification, temp_annotations)
+                all_questions.update(temp_annotations.keys())
     
     # Second pass: process each video
     for data in ndjson_data:
         video_name = data['data_row']['external_id']
-        video_url = data['data_row']['row_data']
+        video_id = data['data_row']['id']
+        project_id = next(iter(data['projects'].keys()))  # Get the first project ID
+        
+        # Create Labelbox editing URL
+        video_url = f"https://app.labelbox.com/projects/{project_id}/data-rows/{video_id}"
         
         # Collect questions and annotations for target annotator
         annotator_data = defaultdict(list)
@@ -345,29 +617,18 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_path: str, 
                 if username != target_annotator:
                     continue
                     
-                # Get all annotations for this label
-                classifications = label['annotations'].get('classifications', [])
-                has_labels = has_labels or bool(classifications)
+                # Get all annotations recursively
+                temp_annotations = {}
+                for classification in label['annotations'].get('classifications', []):
+                    process_classification_recursively(classification, temp_annotations)
                 
-                for classification in classifications:
-                    question = classification['name']
-                    if "(old)" in question:
-                        continue
-                    
-                    # Get answer based on the type of classification
-                    answer = None
-                    if 'radio_answer' in classification:
-                        answer = classification['radio_answer']['name']
-                    elif 'checklist_answers' in classification:
-                        answer = [item['name'] for item in classification['checklist_answers']]
-                    elif 'text_answer' in classification:
-                        answer = classification['text_answer']['content']
-                    
-                    if answer is not None:
-                        annotator_data[username].append({
-                            'question': question,
-                            'answer': answer
-                        })
+                has_labels = has_labels or bool(temp_annotations)
+                
+                if temp_annotations:
+                    annotator_data[username].extend([
+                        {'question': q, 'answer': a} 
+                        for q, a in temp_annotations.items()
+                    ])
         
         # Prepare table data if either ground truth exists or annotator has labels
         has_ground_truth = video_name in ground_truth_dict
@@ -458,6 +719,72 @@ def should_generate_pdf(pdf_path: str, config: dict) -> bool:
         return False
     return True
 
+def print_drive_folder_structure(drive_service, folder_id: str, indent: str = "") -> None:
+    """
+    Recursively prints the folder structure in Google Drive, showing both folders and files.
+    
+    Args:
+        drive_service: Authorized Google Drive API service instance
+        folder_id: ID of the Google Drive folder to list
+        indent: Current indentation string for pretty printing
+    """
+    try:
+        # Get folder metadata to check if it's in a Shared Drive
+        folder_metadata = drive_service.files().get(
+            fileId=folder_id,
+            fields="driveId,name",
+            supportsAllDrives=True
+        ).execute()
+        
+        drive_id = folder_metadata.get("driveId")
+        folder_name = folder_metadata.get("name", "Root Folder")
+        
+        print(f"{indent}📁 {folder_name} (ID: {folder_id})")
+        
+        # List files and subfolders
+        query = f"'{folder_id}' in parents and trashed=false"
+        page_token = None
+        
+        while True:
+            params = {
+                'q': query,
+                'fields': "nextPageToken, files(id, name, mimeType)",
+                'pageSize': 100,
+                'pageToken': page_token,
+                'orderBy': 'name',  # Sort items alphabetically
+                'includeItemsFromAllDrives': True,
+                'supportsAllDrives': True
+            }
+            
+            if drive_id:
+                params['corpora'] = 'drive'
+                params['driveId'] = drive_id
+            else:
+                params['corpora'] = 'user'
+            
+            response = drive_service.files().list(**params).execute()
+            items = response.get('files', [])
+            
+            # Sort items: folders first, then files, both alphabetically
+            folders = [item for item in items if item['mimeType'] == 'application/vnd.google-apps.folder']
+            files = [item for item in items if item['mimeType'] != 'application/vnd.google-apps.folder']
+            
+            # Process folders first
+            for folder in sorted(folders, key=lambda x: x['name'].lower()):
+                print_drive_folder_structure(drive_service, folder['id'], indent + "  ")
+            
+            # Then process files
+            for file in sorted(files, key=lambda x: x['name'].lower()):
+                print(f"{indent}  📄 {file['name']} (ID: {file['id']})")
+            
+            page_token = response.get('nextPageToken')
+            if not page_token:
+                break
+                
+    except Exception as e:
+        logging.error(f"Error listing folder contents: {str(e)}")
+        print(f"{indent}❌ Error accessing folder: {str(e)}")
+
 def main():
     """Main entry point for the script."""
     # Setup Flask templates
@@ -466,9 +793,32 @@ def main():
     config = load_config()
     project_ground_truth = get_project_id_to_ground_truth(config)
     
+    # Get Google Drive folder ID from config
+    drive_folder_id = config.get('pdf_generation', {}).get('drive_folder_id')
+    if not drive_folder_id:
+        raise ValueError("Google Drive folder ID not specified in config")
+    
+    # Initialize Google Drive service
+    drive_service = get_google_drive_service()
+    
+    # # Print current Drive folder structure for debugging
+    # logger.info("\nCurrent Google Drive folder structure:")
+    # logger.info("-" * 50)
+    # print_drive_folder_structure(drive_service, drive_folder_id)
+    # logger.info("-" * 50 + "\n")
+    
     # Process each test type directory
     base_dir = config['output_dir']
     pdfs_dir = config['pdfs_dir']
+    
+    # Check if we should create a "new" folder
+    create_new_folder = config.get('pdf_generation', {}).get('create_new_folder', True)
+    new_pdfs_dir = os.path.join(pdfs_dir, 'new') if create_new_folder else None
+    if create_new_folder:
+        os.makedirs(new_pdfs_dir, exist_ok=True)
+    
+    # Cache for ground truth data
+    ground_truth_cache = {}
     
     # Create Flask application context
     with app.app_context():
@@ -481,28 +831,77 @@ def main():
                 
             logger.info(f"Processing {test_type} files")
             
+            # First, load and cache ground truth data for all projects in each test
+            test_ground_truth_cache = {}
+            for test_num, test_data in config['projects'][test_type].items():
+                if not test_data.get('ground_truth_annotator'):
+                    continue
+                    
+                ground_truth_annotator = test_data['ground_truth_annotator']
+                ground_truth_project_id = ground_truth_annotator['project_id']
+                ground_truth_email = ground_truth_annotator['email']
+                
+                # Load ground truth data from the ground truth project
+                ground_truth_files = [f for f in os.listdir(ndjson_dir) 
+                                    if ground_truth_project_id in f and f.endswith('.ndjson')]
+                
+                if ground_truth_files:
+                    ground_truth_path = os.path.join(ndjson_dir, ground_truth_files[0])
+                    try:
+                        with open(ground_truth_path, 'r') as f:
+                            ground_truth_ndjson = [json.loads(line) for line in f]
+                        ground_truth_dict = extract_ground_truth_from_annotator(ground_truth_ndjson, ground_truth_email)
+                        test_ground_truth_cache[test_num] = ground_truth_dict
+                        
+                        # Also cache for each project ID in this test
+                        for project_id in test_data['ids']:
+                            ground_truth_cache[project_id] = ground_truth_dict
+                            
+                        logger.info(f"Loaded ground truth from {ground_truth_email} for {test_type} {test_num}")
+                    except Exception as e:
+                        logger.error(f"Error loading ground truth for {test_type} {test_num}: {str(e)}")
+                        continue
+            
+            # Now process each NDJSON file
             for file_name in filter(lambda x: x.endswith('.ndjson'), os.listdir(ndjson_dir)):
                 file_path = os.path.join(ndjson_dir, file_name)
-                labeler_videos, all_videos, total_entries, project_id = process_ndjson_file(file_path)
-                ground_truth_path = project_ground_truth.get(project_id, "Unknown")
-                
-                # Check if we should process this ground truth file
-                if not should_process_ground_truth(ground_truth_path, config):
-                    logger.info(f"Skipping ground truth file: {ground_truth_path}")
+                try:
+                    labeler_videos, all_videos, total_entries, project_id = process_ndjson_file(file_path)
+                except Exception as e:
+                    logger.error(f"Error processing file {file_name}: {str(e)}")
                     continue
                 
-                # Get test number from ground truth path
-                test_number = get_test_number(ground_truth_path)
+                ground_truth_source = project_ground_truth.get(project_id, {})
+                
+                # Skip if no ground truth annotator is configured
+                if not ground_truth_source.get('ground_truth_annotator'):
+                    logger.info(f"Skipping project {project_id}: No ground truth annotator configured")
+                    continue
+                
+                # Get test number from config structure
+                test_number = get_test_number_from_config(config, project_id)
+                if test_number == "unknown":
+                    logger.error(f"Could not find test number for project {project_id}")
+                    continue
+                
+                # Load NDJSON data once for the project
+                try:
+                    with open(file_path, 'r') as f:
+                        ndjson_data = [json.loads(line) for line in f]
+                except Exception as e:
+                    logger.error(f"Error reading NDJSON data from {file_name}: {str(e)}")
+                    continue
+                
+                # Verify we have ground truth data for this project
+                if project_id not in ground_truth_cache:
+                    logger.error(f"No ground truth data found for project {project_id}")
+                    continue
                 
                 # Get consistent labelers
                 consistent_labelers = {
                     labeler for labeler, videos in labeler_videos.items()
                     if len(videos) == total_entries
                 }
-                
-                # Load NDJSON data
-                with open(file_path, 'r') as f:
-                    ndjson_data = [json.loads(line) for line in f]
                 
                 # Process each consistent labeler
                 for labeler in consistent_labelers:
@@ -513,29 +912,95 @@ def main():
                         
                     logger.info(f"Processing labeler: {labeler}")
                     
-                    # Create PDF directory structure
-                    test_pdf_dir = os.path.join(pdfs_dir, test_type, f"test{test_number}")
-                    os.makedirs(test_pdf_dir, exist_ok=True)
-                    
-                    # Generate PDF filename
+                    # Generate PDF filename and paths
                     pdf_filename = f"{labeler.replace('@', '_at_')}_{project_id}.pdf"
-                    pdf_path = os.path.join(test_pdf_dir, pdf_filename)
+                    pdf_path = os.path.join(pdfs_dir, test_type, f"test{test_number}", pdf_filename)
+                    
+                    # Create local directory structure
+                    os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
                     
                     # Check if we should generate this PDF
                     if not should_generate_pdf(pdf_path, config):
                         continue
                     
-                    # Prepare data for this labeler
-                    labeler_data = prepare_visualization_data(ndjson_data, ground_truth_path, labeler)
-                    
-                    logger.info(f"Generating PDF at {pdf_path}")
-                    
-                    # Generate HTML content
-                    html_content = render_template('pretest_report.html', **labeler_data)
-                    
-                    # Generate PDF directly from HTML content
-                    generate_pdf(html_content, pdf_path)
-                    logger.info(f"PDF generated at {pdf_path}")
+                    try:
+                        # Prepare data for this labeler using cached ground truth
+                        ground_truth_source['cached_ground_truth'] = ground_truth_cache[project_id]
+                        labeler_data = prepare_visualization_data(ndjson_data, ground_truth_source, labeler)
+                        
+                        logger.info(f"Generating PDF for {labeler}")
+                        
+                        # Generate HTML content
+                        html_content = render_template('pretest_report.html', **labeler_data)
+                        
+                        # Generate PDF and save locally
+                        pdf_data = generate_pdf_in_memory(html_content)
+                        with open(pdf_path, 'wb') as f:
+                            f.write(pdf_data)
+                        logger.info(f"PDF saved locally: {pdf_path}")
+                        
+                        # Copy to new folder if enabled
+                        if create_new_folder:
+                            new_pdf_path = os.path.join(new_pdfs_dir, pdf_filename)
+                            with open(new_pdf_path, 'wb') as f:
+                                f.write(pdf_data)
+                            logger.info(f"PDF copied to new folder: {new_pdf_path}")
+                        
+                        # Upload to Google Drive with folder creation
+                        file_id = upload_pdf_to_drive(drive_service, drive_folder_id, pdf_data, pdf_filename, test_type, test_number)
+                        logger.info(f"PDF uploaded to Google Drive with ID: {file_id}")
+                        
+                    except Exception as e:
+                        logger.error(f"Error generating/uploading PDF for {labeler} in project {project_id}: {str(e)}")
+                        logger.error(f"Full error: {str(e.__class__.__name__)}: {str(e)}")
+                        continue
+        
+        logger.info("\nPDF generation and upload complete")
+
+def generate_pdf_in_memory(html_content: str) -> bytes:
+    """Generate PDF from HTML content and return it as bytes."""
+    driver = None
+    temp_dir = None
+    try:
+        driver, temp_dir = setup_chrome_driver()
+        
+        # Convert HTML content to a data URL
+        html_base64 = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
+        data_url = f'data:text/html;base64,{html_base64}'
+        
+        # Load the HTML content directly using the data URL
+        driver.get(data_url)
+        
+        # Wait for page to load completely
+        WebDriverWait(driver, 10).until(
+            lambda driver: driver.execute_script('return document.readyState') == 'complete'
+        )
+        
+        # Additional wait for any dynamic content
+        time.sleep(2)
+        
+        # Print to PDF
+        pdf = driver.execute_cdp_cmd("Page.printToPDF", {
+            "printBackground": True,
+            "marginTop": 0.4,
+            "marginBottom": 0.4,
+            "marginLeft": 0.4,
+            "marginRight": 0.4,
+            "paperWidth": 8.27,  # A4 width in inches
+            "paperHeight": 11.7,  # A4 height in inches
+        })
+        
+        # Return PDF data as bytes
+        return base64.b64decode(pdf['data'])
+            
+    except Exception as e:
+        logger.error(f"Error generating PDF: {e}")
+        raise
+    finally:
+        if driver:
+            driver.quit()
+        if temp_dir:
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 if __name__ == "__main__":
     main() 
