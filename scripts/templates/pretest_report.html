@@ -159,6 +159,62 @@
                 page-break-before: always;
             }
         }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f5f5f5;
+        }
+        
+        .correct {
+            color: green;
+        }
+        
+        .incorrect {
+            color: red;
+        }
+        
+        .video-preview {
+            max-width: 1200px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 1200px;
+        }
+        
+        .video-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
@@ -202,8 +258,16 @@
 
     {% for video in videos_data %}
     <div class="video-section">
-        <div class="video-title">Video: {{ video.video_name }}</div>
-        <div class="video-url">URL: <a href="{{ video.video_url }}" target="_blank">{{ video.video_url }}</a></div>
+        <div class="video-header">
+            <div class="video-title">Video: {{ video.video_name }}</div>
+            <a href="{{ video.video_url }}" target="_blank">View in Labelbox</a>
+        </div>
+        
+        {% if video_preview_enabled and video.video_preview %}
+        <div class="video-preview">
+            <img src="data:image/png;base64,{{ video.video_preview }}" alt="Video preview frames">
+        </div>
+        {% endif %}
         
         <table>
             <thead>

@@ -22,38 +22,88 @@ def setup_logging():
     )
 
 def get_google_sheets_service():
-    """Get an authorized Google Sheets service instance."""
-    SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+    """Gets an authorized Google Sheets service instance."""
+    # Try service account authentication first
+    service_account_path = 'configs/service-account.json'
+    if os.path.exists(service_account_path):
+        try:
+            from google.oauth2 import service_account
+            credentials = service_account.Credentials.from_service_account_file(
+                service_account_path,
+                scopes=['https://www.googleapis.com/auth/spreadsheets']
+            )
+            logging.info("Successfully authenticated using service account")
+            return build('sheets', 'v4', credentials=credentials)
+        except Exception as e:
+            logging.warning(f"Service account authentication failed: {str(e)}")
+            logging.info("Falling back to OAuth authentication")
+
+    # Fall back to OAuth if service account fails or isn't configured
     creds = None
     token_path = 'configs/token.json'
     credentials_path = 'configs/credentials.json'
-
-    # Try to load token, remove if corrupted
+    
+    # Try to load existing credentials
     if os.path.exists(token_path):
         try:
-            with open(token_path, 'rb') as token:
-                creds = pickle.load(token)
+            creds = Credentials.from_authorized_user_file(token_path, ['https://www.googleapis.com/auth/spreadsheets'])
+            logging.info("Successfully loaded existing credentials")
         except Exception as e:
             logging.warning(f"Error loading token file: {str(e)}")
             logging.info("Removing corrupted token file...")
             os.remove(token_path)
             creds = None
-
-    # Get new credentials if needed
+    
+    # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
+            try:
+                logging.info("Attempting to refresh expired token...")
+                creds.refresh(Request())
+                logging.info("Successfully refreshed token")
+                
+                # Save the refreshed credentials
+                os.makedirs(os.path.dirname(token_path), exist_ok=True)
+                with open(token_path, 'w') as token:
+                    token.write(creds.to_json())
+                logging.info("Saved refreshed token")
+            except Exception as e:
+                logging.error(f"Error refreshing token: {str(e)}")
+                logging.info("Token refresh failed, removing token file...")
+                if os.path.exists(token_path):
+                    os.remove(token_path)
+                creds = None
+        
+        if not creds:
             if not os.path.exists(credentials_path):
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
-                
-            flow = InstalledAppFlow.from_client_secrets_file(credentials_path, SCOPES)
-            creds = flow.run_local_server(port=0)
             
-            # Save new token
-            with open(token_path, 'wb') as token:
-                pickle.dump(creds, token)
-
+            # Check if we're in a headless environment
+            if 'DISPLAY' not in os.environ:
+                raise EnvironmentError(
+                    "No display available. Please generate token.json on a machine with a browser first. "
+                    "Copy the generated token.json to this machine's configs directory. "
+                    "If you already have a token.json and are seeing this error, the token may have expired "
+                    "and failed to refresh. Please generate a new token on a machine with a browser."
+                )
+            
+            flow = InstalledAppFlow.from_client_secrets_file(
+                credentials_path,
+                ['https://www.googleapis.com/auth/spreadsheets']
+            )
+            creds = flow.run_local_server(
+                port=0,
+                access_type='offline',
+                prompt='consent',  # Force prompt to ensure refresh token
+                include_granted_scopes='true'
+            )
+            
+            # Save the credentials for the next run
+            os.makedirs(os.path.dirname(token_path), exist_ok=True)
+            with open(token_path, 'w') as token:
+                token.write(creds.to_json())
+            logging.info("Saved new token")
+    
     return build('sheets', 'v4', credentials=creds)
 
 def load_config(config_path: str = 'configs/labelbox_export.yaml') -> Dict[str, Any]:

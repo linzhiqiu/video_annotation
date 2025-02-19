@@ -193,7 +193,23 @@ def process_ndjson_export(ndjson_path: str, issues_dir: str, taxonomy_path: str,
     return result
 
 def get_google_sheets_service():
-    """Sets up and returns Google Sheets service and credentials."""
+    """Gets an authorized Google Sheets service instance."""
+    # Try service account authentication first
+    service_account_path = 'configs/service-account.json'
+    if os.path.exists(service_account_path):
+        try:
+            from google.oauth2 import service_account
+            credentials = service_account.Credentials.from_service_account_file(
+                service_account_path,
+                scopes=['https://www.googleapis.com/auth/spreadsheets']
+            )
+            logging.info("Successfully authenticated using service account")
+            return build('sheets', 'v4', credentials=credentials)
+        except Exception as e:
+            logging.warning(f"Service account authentication failed: {str(e)}")
+            logging.info("Falling back to OAuth authentication")
+
+    # Fall back to OAuth if service account fails or isn't configured
     creds = None
     token_path = 'configs/token.json'
     credentials_path = 'configs/credentials.json'
@@ -202,6 +218,7 @@ def get_google_sheets_service():
     if os.path.exists(token_path):
         try:
             creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+            logging.info("Successfully loaded existing credentials")
         except Exception as e:
             logging.warning(f"Error loading token file: {str(e)}")
             logging.info("Removing corrupted token file...")
@@ -212,33 +229,53 @@ def get_google_sheets_service():
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             try:
+                logging.info("Attempting to refresh expired token...")
                 creds.refresh(Request())
+                logging.info("Successfully refreshed token")
+                
+                # Save the refreshed credentials
+                os.makedirs(os.path.dirname(token_path), exist_ok=True)
+                with open(token_path, 'w') as token:
+                    token.write(creds.to_json())
+                logging.info("Saved refreshed token")
             except Exception as e:
-                logging.warning(f"Error refreshing token: {str(e)}")
+                logging.error(f"Error refreshing token: {str(e)}")
+                logging.info("Token refresh failed, removing token file...")
+                if os.path.exists(token_path):
+                    os.remove(token_path)
                 creds = None
         
         if not creds:
             if not os.path.exists(credentials_path):
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
             
+            # Check if we're in a headless environment
+            if 'DISPLAY' not in os.environ:
+                raise EnvironmentError(
+                    "No display available. Please generate token.json on a machine with a browser first. "
+                    "Copy the generated token.json to this machine's configs directory. "
+                    "If you already have a token.json and are seeing this error, the token may have expired "
+                    "and failed to refresh. Please generate a new token on a machine with a browser."
+                )
+            
             flow = InstalledAppFlow.from_client_secrets_file(
-                credentials_path, 
-                SCOPES,
-                redirect_uri='http://localhost:8080/'
+                credentials_path,
+                SCOPES
             )
             creds = flow.run_local_server(
-                port=8080,
+                port=0,
                 access_type='offline',
+                prompt='consent',  # Force prompt to ensure refresh token
                 include_granted_scopes='true'
             )
-        
-        # Save the credentials for the next run
-        os.makedirs(os.path.dirname(token_path), exist_ok=True)
-        with open(token_path, 'w') as token:
-            token.write(creds.to_json())
-
-    service = build('sheets', 'v4', credentials=creds)
-    return service, creds
+            
+            # Save the credentials for the next run
+            os.makedirs(os.path.dirname(token_path), exist_ok=True)
+            with open(token_path, 'w') as token:
+                token.write(creds.to_json())
+                logging.info("Saved new token")
+    
+    return build('sheets', 'v4', credentials=creds), creds
 
 def get_sheet_id_by_title(service, spreadsheet_id: str, sheet_title: str) -> int:
     """Gets the sheet ID for a sheet with the given title."""

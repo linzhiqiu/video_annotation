@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        
+        .video-preview {
+            max-width: 800px;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Preview Images</h1>
+    <p>This document contains only the video preview images for testing purposes.</p>
+    
+    {% for video in videos_data %}
+    <div class="video-section">
+        <div class="video-title">Video: {{ video.video_name }}</div>
+        
+        {% if video.video_preview %}
+        <div class="video-preview">
+            <img src="data:image/png;base64,{{ video.video_preview }}" alt="Video preview frames">
+        </div>
+        {% else %}
+        <p style="color: red;">No preview available for this video</p>
+        {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html> 

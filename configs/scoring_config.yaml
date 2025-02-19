@@ -19,6 +19,11 @@ pdf_generation:
   target_ground_truth: null  # When set, only generate PDFs for this ground truth file
   drive_folder_id: "14c6SNLIbRCgq6uOyUBuT2u5RxKlEUooc"  # Google Drive folder ID for PDF uploads
   create_new_folder: false  # Whether to create a "new" folder for PDFs locally
+  video_preview:
+    enabled: true  # Whether to include video previews in PDFs
+    # videos_dir: "/Users/djiang/Documents/Research/datasets/SelectedVideos_video_segments"  # Base directory containing all videos
+    videos_dir: "/data3/drjiang/datasets/SelectedVideos_video_segments"
+    frames_per_video: 5  # Number of frames to extract per video
 
 # Project IDs grouped by test type and ground truth path
 projects:

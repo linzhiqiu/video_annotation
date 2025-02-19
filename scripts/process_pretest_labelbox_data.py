@@ -27,6 +27,11 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
 import io
 from datetime import datetime
+from google.oauth2 import service_account
+import cv2
+import numpy as np
+from PIL import Image
+import glob
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -36,13 +41,232 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 # Google Drive API scope
-SCOPES = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive'  # Full Drive scope instead of drive.file
-]
+SCOPES = ['https://www.googleapis.com/auth/drive']  # Simplified to just Drive scope
+
+def find_video_file(videos_dir: str, video_name: str) -> str:
+    """
+    Search for a video file recursively in the videos directory.
+    Returns the path to the video file if found, None otherwise.
+    
+    The function tries multiple search patterns:
+    1. Exact match with extension
+    2. Case-insensitive match
+    3. Match with different path separators
+    4. Match ignoring some special characters
+    5. Match with or without file extension
+    """
+    if not os.path.exists(videos_dir):
+        logger.error(f"Videos directory not found: {videos_dir}")
+        return None
+    
+    # Common video extensions
+    video_extensions = ('.mp4', '.avi', '.mov', '.mkv', '.MP4', '.AVI', '.MOV', '.MKV')
+    
+    # Clean up video name for searching
+    base_name = os.path.splitext(video_name)[0]  # Remove extension if present
+    
+    # Different search patterns to try
+    patterns = [
+        f"**/{video_name}",  # Exact match with extension
+        f"**/{base_name}.*",  # Exact match without extension
+        f"**/*{video_name}*",  # Contains full name with extension
+        f"**/*{base_name}*.*",  # Contains base name
+    ]
+    
+    # Additional patterns with cleaned up name
+    cleaned_name = re.sub(r'[_\-.]', '', base_name)  # Remove common separators
+    if cleaned_name != base_name:
+        patterns.append(f"**/*{cleaned_name}*.*")
+    
+    # Try each pattern
+    for pattern in patterns:
+        for ext in video_extensions:
+            if not pattern.endswith('.*'):
+                if not pattern.endswith(ext):
+                    search_pattern = pattern + ext
+                else:
+                    search_pattern = pattern
+            else:
+                search_pattern = pattern
+                
+            try:
+                matches = list(Path(videos_dir).glob(search_pattern))
+                if matches:
+                    # If multiple matches found, try to find the best match
+                    if len(matches) > 1:
+                        # First try exact name match
+                        exact_matches = [m for m in matches if m.stem == base_name]
+                        if exact_matches:
+                            return str(exact_matches[0])
+                        
+                        # Then try closest match by length
+                        matches.sort(key=lambda x: abs(len(x.stem) - len(base_name)))
+                        logger.info(f"Multiple matches found for {video_name}, using closest match: {matches[0]}")
+                    
+                    return str(matches[0])
+            except Exception as e:
+                logger.warning(f"Error searching with pattern {search_pattern}: {str(e)}")
+                continue
+    
+    # Try one final search with very loose matching
+    try:
+        # Get all video files recursively
+        all_videos = []
+        for ext in video_extensions:
+            all_videos.extend(Path(videos_dir).rglob(f"*{ext}"))
+        
+        # Try to find the best match
+        if all_videos:
+            # Create a simplified version of the search name
+            simple_search = re.sub(r'[^a-zA-Z0-9]', '', base_name.lower())
+            
+            # Find potential matches
+            potential_matches = []
+            for video_path in all_videos:
+                simple_name = re.sub(r'[^a-zA-Z0-9]', '', video_path.stem.lower())
+                if simple_search in simple_name or simple_name in simple_search:
+                    potential_matches.append(video_path)
+            
+            if potential_matches:
+                # Sort by similarity to original name
+                potential_matches.sort(key=lambda x: abs(len(x.stem) - len(base_name)))
+                logger.info(f"Found potential match for {video_name}: {potential_matches[0]}")
+                return str(potential_matches[0])
+    except Exception as e:
+        logger.warning(f"Error in final search attempt for {video_name}: {str(e)}")
+    
+    return None
+
+def extract_video_frames(video_path: str, num_frames: int) -> List[np.ndarray]:
+    """
+    Extract evenly spaced frames from a video.
+    Returns a list of numpy arrays containing the frames.
+    """
+    if not os.path.exists(video_path):
+        logger.error(f"Video file not found: {video_path}")
+        return []
+    
+    try:
+        cap = cv2.VideoCapture(video_path)
+        if not cap.isOpened():
+            logger.error(f"Could not open video file: {video_path}")
+            return []
+            
+        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        duration = total_frames / fps if fps > 0 else 0
+        
+        # logger.info(f"Video info - Total frames: {total_frames}, FPS: {fps}, Duration: {duration:.2f}s")
+        
+        if total_frames <= 0:
+            logger.error(f"Could not read frames from video: {video_path}")
+            return []
+        
+        # Calculate frame indices to extract
+        indices = np.linspace(0, total_frames - 1, num_frames, dtype=int)
+        frames = []
+        
+        for idx in indices:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
+            ret, frame = cap.read()
+            if ret:
+                # Convert BGR to RGB
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frames.append(frame)
+                # logger.debug(f"Successfully extracted frame {idx} ({len(frames)}/{num_frames})")
+            else:
+                logger.warning(f"Failed to read frame at index {idx}")
+        
+        cap.release()
+        # logger.info(f"Successfully extracted {len(frames)}/{num_frames} frames")
+        return frames
+    
+    except Exception as e:
+        logger.error(f"Error extracting frames from video {video_path}: {str(e)}")
+        return []
+
+def create_frame_preview(frames: List[np.ndarray], max_width: int = 800) -> Image.Image:
+    """
+    Create a horizontal preview image from the extracted frames.
+    Resizes frames to maintain aspect ratio while fitting within max_width.
+    Returns a PIL Image object.
+    """
+    if not frames:
+        return None
+    
+    # Get dimensions of first frame
+    height, width = frames[0].shape[:2]
+    num_frames = len(frames)
+    
+    # Calculate new dimensions to fit within max_width
+    new_width = max_width // num_frames
+    scale = new_width / width
+    new_height = int(height * scale)
+    
+    # Resize frames
+    resized_frames = [cv2.resize(frame, (new_width, new_height)) for frame in frames]
+    
+    # Concatenate horizontally
+    preview = np.concatenate(resized_frames, axis=1)
+    
+    # Convert to PIL Image
+    return Image.fromarray(preview)
+
+def get_video_preview_base64(videos_dir: str, video_name: str, num_frames: int) -> str:
+    """
+    Generate a base64-encoded preview image for a video.
+    Returns the base64 string or None if the video cannot be processed.
+    """
+    # logger.info(f"Attempting to generate preview for video: {video_name}")
+    
+    video_path = find_video_file(videos_dir, video_name)
+    if not video_path:
+        logger.warning(f"Could not find video file for: {video_name}")
+        logger.warning(f"Searched in directory: {videos_dir}")
+        return None
+    
+    # logger.info(f"Found video file at: {video_path}")
+    frames = extract_video_frames(video_path, num_frames)
+    if not frames:
+        logger.warning(f"Could not extract frames from video: {video_name}")
+        return None
+    
+    # logger.info(f"Successfully extracted {len(frames)} frames from video")
+    preview_image = create_frame_preview(frames)
+    if not preview_image:
+        logger.warning(f"Could not create preview image for video: {video_name}")
+        return None
+    
+    # logger.info(f"Successfully created preview image for video: {video_name}")
+    
+    # Convert to base64
+    try:
+        buffer = io.BytesIO()
+        preview_image.save(buffer, format='PNG')
+        base64_string = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        # logger.info(f"Successfully encoded preview image to base64")
+        return base64_string
+    except Exception as e:
+        logger.error(f"Error encoding preview image to base64: {str(e)}")
+        return None
 
 def get_google_drive_service():
     """Sets up and returns Google Drive service."""
+    # Try service account authentication first
+    service_account_path = 'configs/service-account.json'
+    if os.path.exists(service_account_path):
+        try:
+            credentials = service_account.Credentials.from_service_account_file(
+                service_account_path,
+                scopes=SCOPES
+            )
+            logging.info("Successfully authenticated using service account")
+            return build('drive', 'v3', credentials=credentials)
+        except Exception as e:
+            logging.warning(f"Service account authentication failed: {str(e)}")
+            logging.info("Falling back to OAuth authentication")
+    
+    # Fall back to OAuth if service account fails or isn't configured
     creds = None
     token_path = 'configs/token.json'
     credentials_path = 'configs/credentials.json'
@@ -51,6 +275,7 @@ def get_google_drive_service():
     if os.path.exists(token_path):
         try:
             creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+            logging.info("Successfully loaded existing credentials")
         except Exception as e:
             logging.warning(f"Error loading token file: {str(e)}")
             logging.info("Removing corrupted token file...")
@@ -61,30 +286,51 @@ def get_google_drive_service():
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             try:
+                logging.info("Attempting to refresh expired token...")
                 creds.refresh(Request())
+                logging.info("Successfully refreshed token")
+                
+                # Save the refreshed credentials
+                os.makedirs(os.path.dirname(token_path), exist_ok=True)
+                with open(token_path, 'w') as token:
+                    token.write(creds.to_json())
+                logging.info("Saved refreshed token")
             except Exception as e:
-                logging.warning(f"Error refreshing token: {str(e)}")
+                logging.error(f"Error refreshing token: {str(e)}")
+                logging.info("Token refresh failed, removing token file...")
+                if os.path.exists(token_path):
+                    os.remove(token_path)
                 creds = None
         
         if not creds:
             if not os.path.exists(credentials_path):
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
             
+            # Check if we're in a headless environment
+            if 'DISPLAY' not in os.environ:
+                raise EnvironmentError(
+                    "No display available. Please generate token.json on a machine with a browser first. "
+                    "Copy the generated token.json to this machine's configs directory. "
+                    "If you already have a token.json and are seeing this error, the token may have expired "
+                    "and failed to refresh. Please generate a new token on a machine with a browser."
+                )
+            
             flow = InstalledAppFlow.from_client_secrets_file(
                 credentials_path,
-                SCOPES,
-                redirect_uri='http://localhost:8080/'
+                SCOPES
             )
             creds = flow.run_local_server(
-                port=8080,
+                port=0,
                 access_type='offline',
+                prompt='consent',  # Force prompt to ensure refresh token
                 include_granted_scopes='true'
             )
-        
-        # Save the credentials for the next run
-        os.makedirs(os.path.dirname(token_path), exist_ok=True)
-        with open(token_path, 'w') as token:
-            token.write(creds.to_json())
+            
+            # Save the credentials for the next run
+            os.makedirs(os.path.dirname(token_path), exist_ok=True)
+            with open(token_path, 'w') as token:
+                token.write(creds.to_json())
+            logging.info("Saved new token")
     
     return build('drive', 'v3', credentials=creds)
 
@@ -355,53 +601,112 @@ def setup_chrome_driver():
         shutil.rmtree(temp_dir, ignore_errors=True)
         raise
 
-def generate_pdf(html_content: str, output_path: str):
-    """Generate PDF from HTML content using Selenium and Chrome."""
+def generate_pdf_in_memory(html_content: str) -> bytes:
+    """Generate PDF from HTML content and return it as bytes."""
     driver = None
     temp_dir = None
+    temp_html_path = None
     try:
-        driver, temp_dir = setup_chrome_driver()
+        # logger.info("Setting up Chrome options for PDF generation")
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--window-size=1920,1080')
+        chrome_options.add_argument('--print-to-pdf-no-header')
+        chrome_options.add_argument('--run-all-compositor-stages-before-draw')
+        chrome_options.add_argument('--disable-web-security')
         
-        # Convert HTML content to a data URL
-        html_base64 = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
-        data_url = f'data:text/html;base64,{html_base64}'
+        # Create a unique temporary directory for user data
+        temp_dir = tempfile.mkdtemp()
+        chrome_options.add_argument(f'--user-data-dir={temp_dir}')
+        chrome_options.add_argument(f'--profile-directory=Profile{uuid.uuid4().hex[:8]}')
         
-        # Load the HTML content directly using the data URL
-        driver.get(data_url)
+        # logger.info("Initializing Chrome driver")
+        driver = webdriver.Chrome(options=chrome_options)
         
-        # Wait for page to load completely
-        WebDriverWait(driver, 10).until(
-            lambda driver: driver.execute_script('return document.readyState') == 'complete'
-        )
+        # Save HTML content to a temporary file
+        # logger.info("Saving HTML content to temporary file")
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as f:
+            f.write(html_content)
+            temp_html_path = f.name
+            # logger.info(f"Temporary HTML file created at: {temp_html_path}")
         
-        # Additional wait for any dynamic content
-        time.sleep(2)
-        
-        # Print to PDF
-        pdf = driver.execute_cdp_cmd("Page.printToPDF", {
-            "printBackground": True,
-            "marginTop": 0.4,
-            "marginBottom": 0.4,
-            "marginLeft": 0.4,
-            "marginRight": 0.4,
-            "paperWidth": 8.27,  # A4 width in inches
-            "paperHeight": 11.7,  # A4 height in inches
-        })
-        
-        # Save the PDF using proper base64 decoding
-        pdf_data = base64.b64decode(pdf['data'])
-        with open(output_path, 'wb') as f:
-            f.write(pdf_data)
+        try:
+            # Load the HTML file using file:// protocol
+            file_url = f'file://{temp_html_path}'
+            # logger.info(f"Loading HTML file from: {file_url}")
+            driver.get(file_url)
             
+            # Wait for page to load completely
+            # logger.info("Waiting for page to load completely")
+            WebDriverWait(driver, 10).until(
+                lambda driver: driver.execute_script('return document.readyState') == 'complete'
+            )
+            
+            # Additional wait for images to load
+            # logger.info("Waiting for images to load")
+            time.sleep(2)
+            
+            # Wait for all images to load
+            # logger.info("Verifying all images are loaded")
+            driver.execute_script("""
+                return Promise.all(Array.from(document.images).map(img => {
+                    if (img.complete) return Promise.resolve();
+                    return new Promise(resolve => {
+                        img.onload = img.onerror = resolve;
+                    });
+                }));
+            """)
+            
+            # Print to PDF with images enabled
+            # logger.info("Generating PDF")
+            pdf = driver.execute_cdp_cmd("Page.printToPDF", {
+                "printBackground": True,
+                "marginTop": 0.4,
+                "marginBottom": 0.4,
+                "marginLeft": 0.4,
+                "marginRight": 0.4,
+                "paperWidth": 8.27,  # A4 width in inches
+                "paperHeight": 11.7,  # A4 height in inches
+            })
+            
+            # Verify PDF data
+            if not pdf.get('data'):
+                raise Exception("No PDF data received from Chrome")
+            
+            # logger.info("Successfully generated PDF data")
+            pdf_bytes = base64.b64decode(pdf['data'])
+            # logger.info(f"PDF size: {len(pdf_bytes)} bytes")
+            
+            return pdf_bytes
+            
+        finally:
+            # Clean up temporary HTML file
+            if temp_html_path:
+                try:
+                    os.unlink(temp_html_path)
+                    # logger.info("Cleaned up temporary HTML file")
+                except Exception as e:
+                    logger.warning(f"Failed to clean up temporary HTML file: {e}")
+                
     except Exception as e:
         logger.error(f"Error generating PDF: {e}")
         raise
     finally:
         if driver:
-            driver.quit()
-        # Clean up the temporary directory
+            try:
+                driver.quit()
+                # logger.info("Chrome driver closed")
+            except Exception as e:
+                logger.warning(f"Failed to close Chrome driver: {e}")
         if temp_dir:
-            shutil.rmtree(temp_dir, ignore_errors=True)
+            try:
+                shutil.rmtree(temp_dir, ignore_errors=True)
+                # logger.info("Cleaned up temporary directory")
+            except Exception as e:
+                logger.warning(f"Failed to clean up temporary directory: {e}")
 
 def calculate_metrics(videos_data: List[dict]) -> dict:
     """Calculate overall metrics from the videos data."""
@@ -559,7 +864,7 @@ def extract_ground_truth_from_annotator(ndjson_data: List[dict], annotator_email
     
     return ground_truth_dict
 
-def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dict, target_annotator: str) -> dict:
+def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dict, target_annotator: str, config: dict = None) -> dict:
     """Prepare data for visualization template."""
     # Load taxonomy for question ordering
     question_order = load_taxonomy()
@@ -572,6 +877,17 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dic
             annotator_email = ground_truth_source['ground_truth_annotator']['email']
             ground_truth_dict = extract_ground_truth_from_annotator(ndjson_data, annotator_email)
             logger.info(f"Using ground truth from annotator: {annotator_email}")
+    
+    # Get video preview configuration from pdf_generation section
+    video_preview_enabled = False
+    videos_dir = None
+    frames_per_video = 5
+    if config and 'pdf_generation' in config:
+        pdf_config = config['pdf_generation']
+        if 'video_preview' in pdf_config:
+            video_preview_enabled = pdf_config['video_preview'].get('enabled', False)
+            videos_dir = pdf_config['video_preview'].get('videos_dir')
+            frames_per_video = pdf_config['video_preview'].get('frames_per_video', 5)
     
     # Process videos data
     videos_data = []
@@ -605,6 +921,16 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dic
         
         # Create Labelbox editing URL
         video_url = f"https://app.labelbox.com/projects/{project_id}/data-rows/{video_id}"
+        
+        # Get video preview if enabled
+        video_preview = None
+        if video_preview_enabled and videos_dir:
+            video_preview = get_video_preview_base64(videos_dir, video_name, frames_per_video)
+            if video_preview:
+                # logger.info(f"Successfully generated preview for video: {video_name}")
+                pass
+            else:
+                logger.warning(f"Could not generate preview for video: {video_name}")
         
         # Collect questions and annotations for target annotator
         annotator_data = defaultdict(list)
@@ -680,6 +1006,7 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dic
         videos_data.append({
             'video_name': video_name,
             'video_url': video_url,
+            'video_preview': video_preview,
             'table_data': table_data,
             'annotator_usernames': [target_annotator]
         })
@@ -694,7 +1021,8 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dic
         'annotator': target_annotator,
         'overall_metrics': metrics['overall_metrics'],
         'annotator_accuracy': metrics['annotator_accuracy'],
-        'questions_metrics': metrics['questions_metrics']
+        'questions_metrics': metrics['questions_metrics'],
+        'video_preview_enabled': video_preview_enabled
     }
 
 def should_process_ground_truth(ground_truth_path: str, config: dict) -> bool:
@@ -926,15 +1254,15 @@ def main():
                     try:
                         # Prepare data for this labeler using cached ground truth
                         ground_truth_source['cached_ground_truth'] = ground_truth_cache[project_id]
-                        labeler_data = prepare_visualization_data(ndjson_data, ground_truth_source, labeler)
+                        labeler_data = prepare_visualization_data(ndjson_data, ground_truth_source, labeler, config)
                         
                         logger.info(f"Generating PDF for {labeler}")
                         
-                        # Generate HTML content
+                        # Generate PDF
                         html_content = render_template('pretest_report.html', **labeler_data)
-                        
-                        # Generate PDF and save locally
                         pdf_data = generate_pdf_in_memory(html_content)
+                        
+                        # Save PDF
                         with open(pdf_path, 'wb') as f:
                             f.write(pdf_data)
                         logger.info(f"PDF saved locally: {pdf_path}")
@@ -946,7 +1274,7 @@ def main():
                                 f.write(pdf_data)
                             logger.info(f"PDF copied to new folder: {new_pdf_path}")
                         
-                        # Upload to Google Drive with folder creation
+                        # Upload to Google Drive
                         file_id = upload_pdf_to_drive(drive_service, drive_folder_id, pdf_data, pdf_filename, test_type, test_number)
                         logger.info(f"PDF uploaded to Google Drive with ID: {file_id}")
                         
@@ -956,51 +1284,6 @@ def main():
                         continue
         
         logger.info("\nPDF generation and upload complete")
-
-def generate_pdf_in_memory(html_content: str) -> bytes:
-    """Generate PDF from HTML content and return it as bytes."""
-    driver = None
-    temp_dir = None
-    try:
-        driver, temp_dir = setup_chrome_driver()
-        
-        # Convert HTML content to a data URL
-        html_base64 = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
-        data_url = f'data:text/html;base64,{html_base64}'
-        
-        # Load the HTML content directly using the data URL
-        driver.get(data_url)
-        
-        # Wait for page to load completely
-        WebDriverWait(driver, 10).until(
-            lambda driver: driver.execute_script('return document.readyState') == 'complete'
-        )
-        
-        # Additional wait for any dynamic content
-        time.sleep(2)
-        
-        # Print to PDF
-        pdf = driver.execute_cdp_cmd("Page.printToPDF", {
-            "printBackground": True,
-            "marginTop": 0.4,
-            "marginBottom": 0.4,
-            "marginLeft": 0.4,
-            "marginRight": 0.4,
-            "paperWidth": 8.27,  # A4 width in inches
-            "paperHeight": 11.7,  # A4 height in inches
-        })
-        
-        # Return PDF data as bytes
-        return base64.b64decode(pdf['data'])
-            
-    except Exception as e:
-        logger.error(f"Error generating PDF: {e}")
-        raise
-    finally:
-        if driver:
-            driver.quit()
-        if temp_dir:
-            shutil.rmtree(temp_dir, ignore_errors=True)
 
 if __name__ == "__main__":
     main() 
