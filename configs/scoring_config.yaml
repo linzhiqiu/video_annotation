@@ -16,12 +16,12 @@ export_params:
 pdf_generation:
   skip_existing: true  # Skip generating PDFs that already exist
   target_annotator: null  # When set, only generate PDFs for this annotator
-  target_ground_truth: null  # When set, only generate PDFs for this ground truth file
+  target_project: null  # When set, only generate PDFs for this project ID
+  target_test: null  # When set, only generate PDFs for this test (e.g., "test0", "test1")
   drive_folder_id: "14c6SNLIbRCgq6uOyUBuT2u5RxKlEUooc"  # Google Drive folder ID for PDF uploads
   create_new_folder: false  # Whether to create a "new" folder for PDFs locally
   video_preview:
     enabled: true  # Whether to include video previews in PDFs
-    # videos_dir: "/Users/djiang/Documents/Research/datasets/SelectedVideos_video_segments"  # Base directory containing all videos
     videos_dir: "/data3/drjiang/datasets/SelectedVideos_video_segments"
     frames_per_video: 5  # Number of frames to extract per video
 

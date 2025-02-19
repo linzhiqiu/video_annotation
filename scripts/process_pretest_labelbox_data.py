@@ -1025,12 +1025,24 @@ def prepare_visualization_data(ndjson_data: List[dict], ground_truth_source: dic
         'video_preview_enabled': video_preview_enabled
     }
 
-def should_process_ground_truth(ground_truth_path: str, config: dict) -> bool:
-    """Check if we should process this ground truth file based on config."""
-    target_ground_truth = config.get('pdf_generation', {}).get('target_ground_truth')
-    if target_ground_truth is None:
+def should_process_project(project_id: str, test_num: str, config: dict) -> bool:
+    """Check if we should process this project based on config."""
+    target_project = config.get('pdf_generation', {}).get('target_project')
+    target_test = config.get('pdf_generation', {}).get('target_test')
+    
+    # If neither target is set, process all projects
+    if target_project is None and target_test is None:
         return True
-    return os.path.basename(ground_truth_path) == os.path.basename(target_ground_truth)
+    
+    # Check project ID match if target_project is set
+    if target_project is not None and project_id != target_project:
+        return False
+    
+    # Check test number match if target_test is set
+    if target_test is not None and f"test{test_num}" != target_test:
+        return False
+    
+    return True
 
 def should_process_annotator(annotator: str, config: dict) -> bool:
     """Check if we should process this annotator based on config."""
@@ -1162,6 +1174,13 @@ def main():
             # First, load and cache ground truth data for all projects in each test
             test_ground_truth_cache = {}
             for test_num, test_data in config['projects'][test_type].items():
+                # Skip if we shouldn't process this test/project
+                should_process = any(should_process_project(project_id, test_num.replace('test', ''), config)
+                                   for project_id in test_data['ids'])
+                if not should_process:
+                    logger.info(f"Skipping {test_type} {test_num}: Not targeted for processing")
+                    continue
+                
                 if not test_data.get('ground_truth_annotator'):
                     continue
                     
@@ -1210,6 +1229,11 @@ def main():
                 test_number = get_test_number_from_config(config, project_id)
                 if test_number == "unknown":
                     logger.error(f"Could not find test number for project {project_id}")
+                    continue
+                
+                # Check if we should process this project/test
+                if not should_process_project(project_id, test_number, config):
+                    logger.info(f"Skipping project {project_id} test{test_number}: Not targeted for processing")
                     continue
                 
                 # Load NDJSON data once for the project
