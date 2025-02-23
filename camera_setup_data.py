@@ -343,8 +343,10 @@ class CameraSetupData:
                 elif all(height in HEIGHT_RELATIVE_TO_GROUND for height in self.height_wrt_ground_info.values()):
                     if HEIGHT_RELATIVE_TO_GROUND.index(self.height_wrt_ground_info['end']) < HEIGHT_RELATIVE_TO_GROUND.index(self.height_wrt_ground_info['start']):
                         self.height_wrt_ground_change_from_high_to_low = True
+                        self.height_wrt_ground_change_from_low_to_high = False
                     else:
                         self.height_wrt_ground_change_from_low_to_high = True
+                        self.height_wrt_ground_change_from_high_to_low = False
         self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
         
     def _set_camera_angle_attributes(self):
