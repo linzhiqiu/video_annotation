@@ -448,8 +448,8 @@ def should_process_workflow(workflow_details: Dict[str, Any], yaml_configs: Dict
     return True
 
 def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[List[str]] = None, 
-                     preloaded_sheet_path: Optional[str] = None, save_sheet_data: bool = False) -> Dict[str, VideoData]:
-    """Process NDJSON files and return dictionary of VideoData objects.
+                     preloaded_sheet_path: Optional[str] = None, save_sheet_data: bool = False) -> Tuple[Dict[str, VideoData], Dict[str, Set[str]]]:
+    """Process NDJSON files and return dictionary of VideoData objects and valid videos per file.
     
     Args:
         ndjson_dir: Directory containing NDJSON files
@@ -457,12 +457,18 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
         yaml_paths: Optional list of paths to YAML configuration files
         preloaded_sheet_path: Optional path to JSON file containing preloaded sheet data
         save_sheet_data: Whether to save loaded sheet data to a JSON file
+        
+    Returns:
+        Tuple containing:
+        - Dictionary mapping video names to VideoData objects
+        - Dictionary mapping NDJSON filenames to sets of valid video names
     """
     # Load sheet configuration from JSON
     sheets_config = load_sheets_config()
     
     # Load sheet data if needed
     sheet_data = None
+    yaml_configs = {}  # Initialize yaml_configs here
     
     # Try loading sheet data from file if path provided
     if preloaded_sheet_path:
@@ -477,7 +483,6 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
     if yaml_paths:
         logging.info(f"Loading YAML configs from: {yaml_paths}")
         needs_sheet_data = False
-        yaml_configs = {}
         for yaml_path in yaml_paths:
             try:
                 with open(yaml_path, 'r') as f:
@@ -506,6 +511,7 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
     video_annotations = defaultdict(list)
     videos_by_project = defaultdict(set)
     filtered_videos_by_project = defaultdict(set)
+    valid_videos_by_file = defaultdict(set)  # Track valid videos for each NDJSON file
     
     # Process NDJSON files
     for filename in os.listdir(ndjson_dir):
@@ -521,7 +527,6 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
                     record = json.loads(line.strip())
                     video_id = record.get('data_row', {}).get('id')
                     video_name = record.get('data_row', {}).get('external_id', video_id)
-
                     
                     if video_name not in all_videos:
                         continue
@@ -554,6 +559,7 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
                             
                         filtered_videos_by_project[project_name].add(video_name)
                         video_data.add_workflow(workflow_details)
+                        valid_videos_by_file[filename].add(video_name)  # Track valid video for this file
                         
                         labels = project_info.get('labels', [])
                         
@@ -573,9 +579,8 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
                         classifications = selected_label.get('annotations', {}).get('classifications', [])
                         for classification in classifications:
                             extract_answers(classification, annotations_dict)
-
+                            
                         if annotations_dict:
-                            # logging.info(video_annotations[video_name])
                             video_annotations[video_name].append(annotations_dict)
                             
                 except Exception as e:
@@ -601,7 +606,6 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
         
         for annotations in annotations_list:
             data_dict = convert_to_data_format(annotations, taxonomy_lookup)
-            
             
             if 'CameraMotionData' in data_dict:
                 all_camera_motion.append(data_dict['CameraMotionData'])
@@ -703,7 +707,13 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
     logging.info(f"\nFinal Statistics:")
     logging.info(f"Total videos with data: {len(video_data_dict)}")
     
-    return video_data_dict
+    # Print per-file statistics
+    logging.info("\nPer-File Statistics:")
+    for filename, valid_videos in valid_videos_by_file.items():
+        logging.info(f"File: {filename}")
+        logging.info(f"  - Valid videos: {len(valid_videos)}")
+    
+    return video_data_dict, valid_videos_by_file
 
 def inspect_video(video_name: str, video_data_dict: dict):
     """Inspect a specific video by name."""

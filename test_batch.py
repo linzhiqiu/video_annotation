@@ -109,10 +109,10 @@ def main():
     setup_logging()
     
     # Configuration
-    # yaml_paths = ["batch_configs/camera_setup.yaml", "batch_configs/camera_movement.yaml", "batch_configs/camera_setup2.yaml"]  # Can be a list of multiple YAML files
+    yaml_paths = ["batch_configs/camera_setup.yaml", "batch_configs/camera_movement.yaml", "batch_configs/camera_setup2.yaml"]  # Can be a list of multiple YAML files
     
     
-    yaml_paths = ["batch_configs/30videos/camera_setup.yaml", "batch_configs/30videos/camera_movement.yaml", "batch_configs/30videos/camera_setup2.yaml"]
+    # yaml_paths = ["batch_configs/30videos/camera_setup.yaml", "batch_configs/30videos/camera_movement.yaml", "batch_configs/30videos/camera_setup2.yaml"]
     ndjson_dir = "exports/ndjson"
     issues_dir = "exports/issues_ndjson"
 
@@ -120,8 +120,8 @@ def main():
     # ndjson_dir = "batches/30videos_20250215_155544/ndjson"
     # issues_dir = "batches/30videos_20250215_155544/issues_ndjson"
     
-    preloaded_sheet_path = 'exports/sheets/sheet_data_20250215_153003.json'
-    # preloaded_sheet_path = None
+    # preloaded_sheet_path = 'exports/sheets/sheet_data_20250222_000059.json'
+    preloaded_sheet_path = None
     
     # Create batch from YAML configs
     logging.info(f"Creating batch from {yaml_paths}")
@@ -132,7 +132,7 @@ def main():
         preloaded_sheet_path=preloaded_sheet_path,
         save_sheet_data=True,
         save_batch=True,
-        batch_name="30videos"
+        batch_name="donesection"
     )
 
     

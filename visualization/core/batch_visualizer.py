@@ -32,23 +32,54 @@ class BatchVisualizer:
         if batch_folder:
             ndjson_dir = os.path.join(batch_folder, 'ndjson')
             issues_dir = os.path.join(batch_folder, 'issues_ndjson')
+            batch_configs_dir = os.path.join(batch_folder, 'batch_configs')
+            
+            # Check required directories exist
             if not os.path.exists(ndjson_dir) or not os.path.exists(issues_dir):
                 raise ValueError(f"Batch folder {batch_folder} must contain 'ndjson' and 'issues_ndjson' directories")
+            if not os.path.exists(batch_configs_dir):
+                raise ValueError(f"Batch folder {batch_folder} must contain 'batch_configs' directory")
+                
             logging.info(f"Using batch folder: {batch_folder}")
             logging.info(f"NDJSON directory: {ndjson_dir}")
             logging.info(f"Issues directory: {issues_dir}")
+            logging.info(f"Batch configs directory: {batch_configs_dir}")
+            
+            # Get YAML configs from batch_configs directory
+            yaml_configs = []
+            # for file in os.listdir(batch_configs_dir):
+            #     if file.endswith('.yaml'):
+            #         yaml_configs.append(os.path.join(batch_configs_dir, file))
+            # logging.info(f"Found {len(yaml_configs)} YAML configs in batch_configs directory")
+            
         else:
             ndjson_dir = data_config.get('ndjson_dir', 'exports/ndjson')
             issues_dir = data_config.get('issues_dir', 'exports/issues_ndjson')
+            yaml_configs = []
             logging.info(f"No batch folder specified, using default directories:")
             logging.info(f"NDJSON directory: {ndjson_dir}")
             logging.info(f"Issues directory: {issues_dir}")
             
-        self.all_videos = process_ndjson_files(
-            ndjson_dir, 
-            issues_dir
-        )
+        # Create batch and get video data
+        batch = Batch.from_configs(yaml_configs, ndjson_dir, issues_dir)
+        self.all_videos = batch.get_all_videos()
         logging.info(f"Loaded {len(self.all_videos)} total videos from NDJSON files")
+        
+        # Try to load state file if available
+        self.state = None
+        state_path = self.config.get('saved_states', {}).get('load_path')
+        if state_path:
+            # Make path absolute relative to config file directory
+            config_dir = os.path.dirname(os.path.abspath(config_path))
+            state_path = os.path.join(config_dir, state_path)
+            
+            if os.path.exists(state_path):
+                logging.info(f"Loading state from {state_path}")
+                with open(state_path, 'r') as f:
+                    self.state = json.load(f)
+                logging.info(f"Loaded state with {len(self.state)} labels")
+            else:
+                logging.info(f"State file not found at {state_path}")
         
         self.video_details = None
         self.current_label = None
@@ -83,20 +114,27 @@ class BatchVisualizer:
         def export_videos(label_id):
             """Export video names to a JSON file and copy label JSON."""
             try:
+                # Get export configuration
+                export_config = self.config.get('visualization', {}).get('export', {})
+                local_save = export_config.get('local_save', False)
+                allow_download = export_config.get('allow_download', True)
+                
+                if not local_save and not allow_download:
+                    return jsonify({
+                        'success': False,
+                        'message': 'No export method enabled in configuration'
+                    }), 400
+
                 # Format label name for folder
                 label_name = label_id.replace('/', '_')
                 
-                # Get label directory from config
-                label_dir = self.config['data'].get('label_dir', 'label_dirs')
-                if not os.path.exists(label_dir):
-                    os.makedirs(label_dir)
-                
-                # Create timestamp for unique folder
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-                
-                # Create label-specific directory with timestamp
-                label_export_dir = os.path.join(label_dir, f"{label_name}_{timestamp}")
-                os.makedirs(label_export_dir)
+                # Load the full label JSON file
+                label_parts = label_id.split('/')
+                label_json_path = os.path.join('labels', *label_parts) + '.json'
+                label_data = {}
+                if os.path.exists(label_json_path):
+                    with open(label_json_path, 'r') as f:
+                        label_data = json.load(f)
                 
                 # Organize videos by category
                 video_categories = {
@@ -124,30 +162,54 @@ class BatchVisualizer:
                 # Remove empty categories
                 video_categories = {k: v for k, v in video_categories.items() if v}
                 
-                # Save video categories to JSON file
-                videos_json_path = os.path.join(label_export_dir, 'video_names.json')
-                with open(videos_json_path, 'w') as f:
-                    json.dump(video_categories, f, indent=2)
-                
-                # Copy the label's JSON file
-                label_parts = label_id.split('/')
-                label_json_path = os.path.join('labels', *label_parts) + '.json'
-                if os.path.exists(label_json_path):
-                    label_json_dest = os.path.join(label_export_dir, 'label.json')
-                    shutil.copy2(label_json_path, label_json_dest)
+                # Create export data
+                export_data = {
+                    'label_info': {
+                        'name': label_data.get('label_name', ''),
+                        'label': label_data.get('label', ''),
+                        'definition_questions': label_data.get('def_question', []),
+                        'alternative_questions': label_data.get('alt_question', []),
+                        'definition_prompts': label_data.get('def_prompt', []),
+                        'alternative_prompts': label_data.get('alt_prompt', []),
+                        'positive_rule': label_data.get('pos_rule_str', ''),
+                        'negative_rule': label_data.get('neg_rule_str', ''),
+                        'easy_negative_rules': label_data.get('easy_neg_rule_str', {}),
+                        'hard_negative_rules': label_data.get('hard_neg_rule_str', {})
+                    },
+                    'video_categories': video_categories,
+                    'export_timestamp': datetime.now().strftime('%Y%m%d_%H%M%S')
+                }
+
+                if local_save:
+                    # Get label directory from config
+                    label_dir = self.config['data'].get('label_dir', 'label_dirs')
+                    if not os.path.exists(label_dir):
+                        os.makedirs(label_dir)
                     
-                    # Also save the label info in a more readable format
-                    label_info = self._get_label_info()
-                    label_info_path = os.path.join(label_export_dir, 'label_info.json')
-                    with open(label_info_path, 'w') as f:
-                        json.dump(label_info, f, indent=2)
+                    # Create timestamp for unique folder
+                    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                    
+                    # Create label-specific directory with timestamp
+                    label_export_dir = os.path.join(label_dir, f"{label_name}_{timestamp}")
+                    os.makedirs(label_export_dir)
+                    
+                    # Save export data to JSON file
+                    export_path = os.path.join(label_export_dir, 'export_data.json')
+                    with open(export_path, 'w') as f:
+                        json.dump(export_data, f, indent=2)
+                    
+                    return jsonify({
+                        'success': True,
+                        'message': f'Successfully exported data to {label_export_dir}',
+                        'export_dir': label_export_dir
+                    })
                 
-                return jsonify({
-                    'success': True,
-                    'message': f'Successfully exported data to {label_export_dir}',
-                    'export_dir': label_export_dir
-                })
-                
+                if allow_download:
+                    # Return the export data directly for download
+                    response = jsonify(export_data)
+                    response.headers['Content-Disposition'] = f'attachment; filename={label_name}_export.json'
+                    return response
+                    
             except Exception as e:
                 logging.error(f"Error exporting data: {str(e)}")
                 return jsonify({
@@ -160,7 +222,7 @@ class BatchVisualizer:
             """Show visualization for specific label."""
             try:
                 # Set current label
-                self.current_label = self._get_label(label_id.replace('/', '.'))
+                self.current_label = self._get_label(label_id)
                 
                 # Generate visualization for this label
                 self.generate_visualization()
@@ -172,6 +234,7 @@ class BatchVisualizer:
                                     categories=self._organize_videos(),
                                     label_info=self._get_label_info(),
                                     label_id=label_id,
+                                    show_debug=self.config.get('visualization', {}).get('show_debug_info', False),
                                     lazy_load=self.config.get('visualization', {}).get('lazy_load_videos', True))
             except Exception as e:
                 logging.error(f"Error visualizing label: {str(e)}")
@@ -238,6 +301,59 @@ class BatchVisualizer:
                 return jsonify({'error': 'Video not found'})
             return jsonify(self.video_details[video_name])
 
+        @self.app.route('/api/debug_info/<path:label_id>')
+        def get_debug_info(label_id):
+            """Generate and return debug information for all videos."""
+            try:
+                # Process videos without using state file
+                self.state = None  # Clear state to force processing
+                self.current_label = self._get_label(label_id)
+                self.generate_visualization()
+                
+                debug_info = {}
+                for name, video in self.all_videos.items():
+                    try:
+                        debug_data = {
+                            'camera_motion': {},
+                            'camera_setup': {},
+                            'lighting_setup': {}
+                        }
+                        
+                        # Get camera motion data
+                        try:
+                            motion = video.cam_motion
+                            for attr in dir(motion):
+                                if not attr.startswith('_') and not callable(getattr(motion, attr)):
+                                    debug_data['camera_motion'][attr] = str(getattr(motion, attr))
+                        except Exception as e:
+                            debug_data['camera_motion']['error'] = str(e)
+                        
+                        # Get camera setup data
+                        try:
+                            setup = video.cam_setup
+                            for attr in dir(setup):
+                                if not attr.startswith('_') and not callable(getattr(setup, attr)):
+                                    debug_data['camera_setup'][attr] = str(getattr(setup, attr))
+                        except Exception as e:
+                            debug_data['camera_setup']['error'] = str(e)
+                        
+                        # Get lighting setup data
+                        try:
+                            light = video.light_setup
+                            for attr in dir(light):
+                                if not attr.startswith('_') and not callable(getattr(light, attr)):
+                                    debug_data['lighting_setup'][attr] = str(getattr(light, attr))
+                        except Exception as e:
+                            debug_data['lighting_setup']['error'] = str(e)
+                        
+                        debug_info[name] = debug_data
+                    except Exception as e:
+                        debug_info[name] = {'error': str(e)}
+                
+                return jsonify(debug_info)
+            except Exception as e:
+                return jsonify({'error': str(e)}), 500
+
     def run_server(self):
         """Run the Flask server."""
         logging.info("\nStarting server...")
@@ -250,10 +366,18 @@ class BatchVisualizer:
     def _get_label(self, label_name: str):
         """Get the label class by name."""
         try:
+            # Convert URL path format (/) to state file format (.)
+            label_name = label_name.replace('/', '.')
+            
             # Navigate through the label hierarchy using dots
             current = self.labels
+            path_parts = []
             for part in label_name.split('.'):
                 current = getattr(current, part)
+                path_parts.append(part)
+            
+            # Store the full path in the label object
+            current.label_name = '.'.join(path_parts)  # Override label_name with full path
             return current
         except AttributeError:
             raise ValueError(
@@ -271,16 +395,16 @@ class BatchVisualizer:
         try:
             motion_data = video.cam_motion
             details['camera_motion'] = {
-                'major_simple': motion_data.camera_movement == 'major_simple',
-                'forward': motion_data.camera_forward_backward == 'forward',
-                'backward': motion_data.camera_forward_backward == 'backward',
+                'major_simple': motion_data.camera_movement,
+                'forward': motion_data.camera_forward_backward,
+                'backward': motion_data.camera_forward_backward,
                 'steadiness': motion_data.steadiness,
                 'pan_right': motion_data.pan_right,
                 'camera_pan': motion_data.camera_pan,
                 'complex_motion_description': motion_data.complex_motion_description
             }
         except AttributeError as e:
-            logging.warning(f"Camera motion not set: {e}")
+            # logging.warning(f"Camera motion not set: {e}")
             details['camera_motion'] = {
                 'major_simple': False,
                 'forward': False,
@@ -312,7 +436,7 @@ class BatchVisualizer:
                 'height_wrt_ground_end': setup_data.overall_height_end
             }
         except AttributeError as e:
-            logging.warning(f"Camera setup not set: {e}")
+            # logging.warning(f"Camera setup not set: {e}")
             details['camera_setup'] = {
                 'camera_angle_info': {'start': 'unknown', 'end': 'unknown'},
                 'is_camera_angle_applicable': False,
@@ -340,30 +464,31 @@ class BatchVisualizer:
                 # Add lighting setup details here if needed
             }
         except AttributeError as e:
-            logging.warning(f"Light setup not set: {e}")
+            # logging.warning(f"Light setup not set: {e}")
+            pass
             
         return details
 
     def create_batch(self, all_videos: Dict[str, VideoData]) -> Batch:
         """Create a batch from all available videos."""
-        logging.info(f"Creating batch with all {len(all_videos)} videos")
+        # logging.info(f"Creating batch with all {len(all_videos)} videos")
         batch = Batch(all_videos)
-        logging.info(f"Created batch with {len(batch)} videos")
+        # logging.info(f"Created batch with {len(batch)} videos")
         return batch
     
     def categorize_videos(self, batch: Batch) -> Dict[str, Dict[str, Any]]:
         """Categorize videos and collect their details."""
         video_details = {}
         
-        logging.info("\nStarting video categorization:")
-        logging.info(f"Batch size: {len(batch)}")
+        # logging.info("\nStarting video categorization:")
+        # logging.info(f"Batch size: {len(batch)}")
         
         for name, video in batch:
-            logging.info(f"\nProcessing video: {name}")
+            # logging.info(f"\nProcessing video: {name}")
             try:
                 # Get all video details
                 details = self._get_video_details(video)
-                logging.info("Got video details")
+                # logging.info("Got video details")
                 
                 # # Debug video attributes
                 # logging.info("Video attributes:")
@@ -390,22 +515,22 @@ class BatchVisualizer:
                 
                 # Determine category using label rules
                 category = 'uncategorized'  # Default category
-                logging.info("Checking label rules:")
+                # logging.info("Checking label rules:")
                 
                 # Debug positive rule evaluation
                 pos_result = self.current_label.pos_rule(video)
-                logging.info(f"Positive rule result: {pos_result}")
+                # logging.info(f"Positive rule result: {pos_result}")
                 
                 # Debug negative rule evaluation
                 neg_result = self.current_label.neg_rule(video)
-                logging.info(f"Negative rule result: {neg_result}")
+                # logging.info(f"Negative rule result: {neg_result}")
                 
                 if pos_result:
                     category = 'positive'
-                    logging.info("Categorized as positive")
+                    # logging.info("Categorized as positive")
                 elif neg_result:
                     category = 'negative'
-                    logging.info("Categorized as negative")
+                    # logging.info("Categorized as negative")
                     
                     # Check for easy negative subcategories
                     for rule_name, rule in self.current_label.easy_neg_rules.items():
@@ -413,7 +538,7 @@ class BatchVisualizer:
                         logging.info(f"Easy negative rule '{rule_name}' result: {rule_result}")
                         if rule_result:
                             category = f'easy_negative_{rule_name}'
-                            logging.info(f"Categorized as easy negative: {rule_name}")
+                            # logging.info(f"Categorized as easy negative: {rule_name}")
                             break
                             
                     # Check for hard negative subcategories
@@ -422,7 +547,7 @@ class BatchVisualizer:
                         logging.info(f"Hard negative rule '{rule_name}' result: {rule_result}")
                         if rule_result:
                             category = f'hard_negative_{rule_name}'
-                            logging.info(f"Categorized as hard negative: {rule_name}")
+                            # logging.info(f"Categorized as hard negative: {rule_name}")
                             break
                 
                 # Add reason for uncategorized videos
@@ -461,7 +586,7 @@ class BatchVisualizer:
                     except AttributeError:
                         reason.append("Lighting setup data not set")
 
-                    logging.info(f"Video uncategorized. Debug info:\n{'\n'.join(reason)}")
+                    # logging.info(f"Video uncategorized. Debug info:\n{'\n'.join(reason)}")
                 
                 video_details[name] = {
                     'details': details,
@@ -469,15 +594,16 @@ class BatchVisualizer:
                     'video_path': self.get_video_path(name),
                     'categorization_reason': reason if category == 'uncategorized' else None
                 }
-                logging.info(f"Added video to details with category: {category}")
+                # logging.info(f"Added video to details with category: {category}")
                 
             except Exception as e:
-                logging.error(f"Error processing video {name}: {str(e)}")
-                logging.error(f"Error type: {type(e)}")
-                import traceback
-                logging.error(f"Traceback: {traceback.format_exc()}")
+                # logging.error(f"Error processing video {name}: {str(e)}")
+                # logging.error(f"Error type: {type(e)}")
+                # import traceback
+                # logging.error(f"Traceback: {traceback.format_exc()}")
+                pass
                 
-        logging.info(f"\nFinished categorization. Processed {len(video_details)} videos")
+        # logging.info(f"\nFinished categorization. Processed {len(video_details)} videos")
         return video_details
     
     def get_video_path(self, video_name: str) -> str:
@@ -490,12 +616,12 @@ class BatchVisualizer:
         video_paths = self.config.get('_video_paths', {})
         if video_name in video_paths:
             full_path = os.path.join(videos_dir, video_paths[video_name], video_name)
-            logging.info(f"Found video in path: {full_path}")
+            # logging.info(f"Found video in path: {full_path}")
             return full_path
             
         # Fallback to direct path
         full_path = os.path.join(videos_dir, video_name)
-        logging.info(f"Using direct video path: {full_path}")
+        # logging.info(f"Using direct video path: {full_path}")
         return full_path
     
     def generate_visualization(self):
@@ -504,6 +630,44 @@ class BatchVisualizer:
         batch = self.create_batch(self.all_videos)
         
         # Get detailed categorization
+        if self.state and self.current_label:
+            # Get the label name directly from the label object
+            label_path = self.current_label.label_name
+            
+            if label_path in self.state:
+                logging.info(f"Using pre-categorized videos from state file for {label_path}")
+                state_categories = self.state[label_path]
+                
+                # Initialize video details with categories from state
+                self.video_details = {}
+                
+                # Handle all categories directly from state
+                for category in ['positive', 'negative', 'easy_negative', 'hard_negative', 'uncategorized']:
+                    if category in state_categories:
+                        for name in state_categories[category]:
+                            if name in self.all_videos:
+                                self.video_details[name] = {
+                                    'details': self._get_video_details(self.all_videos[name]),
+                                    'category': category,
+                                    'video_path': self.get_video_path(name)
+                                }
+                
+                # Log summary statistics
+                category_counts = {}
+                for details in self.video_details.values():
+                    category = details['category']
+                    category_counts[category] = category_counts.get(category, 0) + 1
+                    
+                logging.info("\nVisualization data loaded from state:")
+                logging.info(f"Total videos in batch: {len(batch)}")
+                logging.info("Categories:")
+                for category, count in category_counts.items():
+                    logging.info(f"  {category}: {count} videos")
+                return
+            else:
+                logging.info(f"Label {label_path} not found in state file, falling back to processing")
+        
+        # Fall back to processing videos if no state or label not found
         self.video_details = self.categorize_videos(batch)
         
         # Log summary statistics
@@ -512,27 +676,39 @@ class BatchVisualizer:
             category = details['category']
             category_counts[category] = category_counts.get(category, 0) + 1
             
-        logging.info("\nVisualization data generated:")
-        logging.info(f"Total videos in batch: {len(batch)}")
-        logging.info("Categories:")
-        for category, count in category_counts.items():
-            logging.info(f"  {category}: {count} videos")
+        # logging.info("\nVisualization data generated:")
+        # logging.info(f"Total videos in batch: {len(batch)}")
+        # logging.info("Categories:")
+        # for category, count in category_counts.items():
+        #     logging.info(f"  {category}: {count} videos")
             
-        # Verify self.video_details is not None
-        if self.video_details is None:
-            logging.error("self.video_details is None after generation!")
-        else:
-            logging.info(f"\nNumber of videos in self.video_details: {len(self.video_details)}")
+        # # Verify self.video_details is not None
+        # if self.video_details is None:
+        #     logging.error("self.video_details is None after generation!")
+        # else:
+        #     logging.info(f"\nNumber of videos in self.video_details: {len(self.video_details)}")
 
     def _organize_videos(self):
         """Organize videos by category."""
+        preview_mode = self.config.get('visualization', {}).get('preview_mode', False)
+        preview_count = self.config.get('visualization', {}).get('preview_count', 5)
+        
         categories = {
+            'positive': [],
+            'negative': [],
+            'easy_negative': [],  # Changed to list since we're not using rule-specific lists
+            'hard_negative': [],  # Changed to list since we're not using rule-specific lists
+            'uncategorized': []
+        }
+        
+        # Also create preview categories if in preview mode
+        preview_categories = {
             'positive': [],
             'negative': [],
             'easy_negative': [],
             'hard_negative': [],
             'uncategorized': []
-        }
+        } if preview_mode else None
         
         for name, details in self.video_details.items():
             category = details['category']
@@ -542,26 +718,40 @@ class BatchVisualizer:
                 'categorization_reason': details.get('categorization_reason')
             }
             
-            if category == 'positive':
-                categories['positive'].append(video_info)
-            elif category == 'negative':
-                categories['negative'].append(video_info)
-            elif category.startswith('easy_negative_'):
-                categories['easy_negative'].append(video_info)
+            # Map the category to one of our main categories
+            target_category = category
+            if category.startswith('easy_negative_'):
+                target_category = 'easy_negative'
             elif category.startswith('hard_negative_'):
-                categories['hard_negative'].append(video_info)
-            else:
-                categories['uncategorized'].append(video_info)
+                target_category = 'hard_negative'
+            elif category not in categories:
+                target_category = 'uncategorized'
+            
+            categories[target_category].append(video_info)
+            # Add to preview if we haven't reached preview_count
+            if preview_mode and len(preview_categories[target_category]) < preview_count:
+                preview_categories[target_category].append(video_info)
         
         # Remove empty categories
         categories = {k: v for k, v in categories.items() if v}
+        if preview_mode:
+            preview_categories = {k: v for k, v in preview_categories.items() if v}
+            
+            # Calculate total remaining videos
+            total_remaining = sum(len(categories[k]) - len(v) for k, v in preview_categories.items() if k in categories)
+            
+            return {
+                'preview': preview_categories,
+                'full': categories,
+                'total_remaining': total_remaining
+            }
         
         return categories
 
     def _get_label_info(self):
         """Get label information."""
         return {
-            'name': self.current_label.label_name,
+            'name': self.current_label.label_name,  # Use label_name directly
             'description': self.current_label.label,
             'positive_rule': self.current_label.pos_rule.rule,
             'negative_rule': self.current_label.neg_rule.rule,

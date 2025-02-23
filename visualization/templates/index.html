@@ -3,6 +3,8 @@
 <head>
     <title>Video Batch Visualization</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             padding: 20px;
@@ -144,10 +146,32 @@
             color: #a94442;
             border: 1px solid #ebccd1;
         }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Back Button and Debug Button -->
+        <div class="mb-4 d-flex justify-content-between align-items-center">
+            <a href="/" class="btn btn-primary back-button">
+                <i class="bi bi-arrow-left"></i> Back to Labels
+            </a>
+            {% if show_debug %}
+            <button id="debug-button" class="btn btn-info" onclick="toggleDebugMode()">
+                <i class="bi bi-bug"></i> Show Debug Info
+            </button>
+            {% endif %}
+        </div>
+        
         <!-- Rule Information -->
         <div class="rule-box">
             <h2 class="mb-4">{{ label_info.name }}</h2>
@@ -180,7 +204,104 @@
             </div>
         </div>
 
-        <!-- Video Categories -->
+        <!-- Preview/Full Mode Toggle -->
+        {% if categories.preview %}
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-0" id="mode-title">Preview Mode</h4>
+                <small class="text-muted">Showing up to 5 videos per category</small>
+            </div>
+            <button id="toggle-mode" class="btn btn-primary" onclick="toggleViewMode()">
+                View All Videos ({{ categories.total_remaining }} more)
+            </button>
+        </div>
+
+        <!-- Preview Categories -->
+        <div id="preview-mode">
+            {% for category, videos in categories.preview.items() %}
+            <div class="category-section">
+                <h3 class="category-title" data-bs-toggle="collapse" data-bs-target="#preview-{{ category }}">
+                    {{ category|title|replace('_', ' ') }}
+                    <span class="badge bg-primary">{{ videos|length }}</span>
+                </h3>
+                <div class="collapse show" id="preview-{{ category }}">
+                    <div class="videos-grid">
+                        {% for video in videos %}
+                        <div class="video-container">
+                            <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
+                            <div class="camera-info">
+                                <!-- Camera info can stay empty for now -->
+                            </div>
+                            <div class="d-flex gap-2 mb-2">
+                                <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}', true, 'preview')">Show/Hide Video</button>
+                                {% if show_debug %}
+                                <button class="btn btn-sm btn-info" onclick="toggleVideoDebug('{{ video.name }}', 'preview')">
+                                    <i class="bi bi-bug"></i> Debug Info
+                                </button>
+                                {% endif %}
+                            </div>
+                            <div id="player-preview-{{ video.name }}" class="video-player expanded">
+                                <video controls autoplay loop muted preload="metadata" style="max-width: 320px; width: 100%;">
+                                    <source src="/videos/{{ video.name }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div id="debug-preview-{{ video.name }}" class="debug-box mt-2" style="display: none;">
+                                <div class="spinner-border spinner-border-sm" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                Loading debug information...
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Full Categories -->
+        <div id="full-mode" style="display: none;">
+            {% for category, videos in categories.full.items() %}
+            <div class="category-section">
+                <h3 class="category-title" data-bs-toggle="collapse" data-bs-target="#full-{{ category }}">
+                    {{ category|title|replace('_', ' ') }}
+                    <span class="badge bg-primary">{{ videos|length }}</span>
+                </h3>
+                <div class="collapse show" id="full-{{ category }}">
+                    <div class="videos-grid">
+                        {% for video in videos %}
+                        <div class="video-container">
+                            <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
+                            <div class="camera-info">
+                                <!-- Camera info can stay empty for now -->
+                            </div>
+                            <div class="d-flex gap-2 mb-2">
+                                <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}', false, 'full')">Show/Hide Video</button>
+                                {% if show_debug %}
+                                <button class="btn btn-sm btn-info" onclick="toggleVideoDebug('{{ video.name }}', 'full')">
+                                    <i class="bi bi-bug"></i> Debug Info
+                                </button>
+                                {% endif %}
+                            </div>
+                            <div id="player-full-{{ video.name }}" class="video-player">
+                                <!-- Video element will be created when button is clicked -->
+                            </div>
+                            <div id="debug-full-{{ video.name }}" class="debug-box mt-2" style="display: none;">
+                                <div class="spinner-border spinner-border-sm" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                Loading debug information...
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Regular Categories (no preview mode) -->
         {% for category, videos in categories.items() %}
         <div class="category-section">
             <h3 class="category-title" data-bs-toggle="collapse" data-bs-target="#{{ category }}">
@@ -193,61 +314,144 @@
                     <div class="video-container">
                         <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
                         <div class="camera-info">
-                            <!-- <small class="text-muted">
-                                Height wrt Ground: 
-                                {% if video.details.camera_setup.height_wrt_ground_info %}
-                                    Start: {{ video.details.camera_setup.height_wrt_ground_start }},
-                                    End: {{ video.details.camera_setup.height_wrt_ground_end }},
-                                    total: {{ video.details.camera_setup.height_wrt_ground_info }}
-                                    {% if video.details.camera_setup.is_height_wrt_ground_applicable %}
-                                    (Applicable)
-                                    {% else %}
-                                    (Not Applicable)
-                                    {% endif %}
-                                {% else %}
-                                    No height information available
-                                {% endif %}
-                            </small> -->
+                            <!-- Camera info can stay empty for now -->
                         </div>
-                        <button class="expand-button" onclick="toggleVideo('{{ video.name }}')">Show/Hide Video</button>
+                        <div class="d-flex gap-2 mb-2">
+                            <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}')">Show/Hide Video</button>
+                            {% if show_debug %}
+                            <button class="btn btn-sm btn-info" onclick="toggleVideoDebug('{{ video.name }}')">
+                                <i class="bi bi-bug"></i> Debug Info
+                            </button>
+                            {% endif %}
+                        </div>
                         <div id="player-{{ video.name }}" class="video-player">
                             <!-- Video element will be created when button is clicked -->
                         </div>
-                        {% if video.categorization_reason %}
-                        <div class="debug-info mt-2">
-                            <button class="btn btn-sm btn-info mb-2" onclick="toggleDebugInfo('{{ video.name }}')">Toggle Debug Info</button>
-                            <pre id="debug-{{ video.name }}" class="debug-details" style="display: none; font-size: 0.8em; white-space: pre-wrap; background-color: #f8f9fa; padding: 10px; border-radius: 4px;">{{ video.categorization_reason|join('\n') }}
-pan_right value: {{ video.details.camera_motion.pan_right }}</pre>
+                        <div id="debug-{{ video.name }}" class="debug-box mt-2" style="display: none;">
+                            <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            Loading debug information...
                         </div>
-                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% endif %}
     </div>
 
-    <!-- Export button and status - moved outside container for fixed positioning -->
-    <button id="export-button" class="export-button" onclick="exportVideos('{{ label_id }}')">
-        Export Video Names to JSON
+    <!-- Export button and status -->
+    <button id="export-button" class="export-button" data-label-id="{{ label_id }}">
+        Save Label Data in JSON
     </button>
     <div id="export-status"></div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function toggleVideo(videoName) {
-            const playerDiv = document.getElementById(`player-${videoName}`);
+        let debugMode = false;
+        let debugData = null;
+        let isPreviewMode = true;
+
+        function toggleViewMode() {
+            const previewMode = document.getElementById('preview-mode');
+            const fullMode = document.getElementById('full-mode');
+            const toggleButton = document.getElementById('toggle-mode');
+            const modeTitle = document.getElementById('mode-title');
+            
+            if (isPreviewMode) {
+                previewMode.style.display = 'none';
+                fullMode.style.display = 'block';
+                toggleButton.textContent = 'Show Preview';
+                modeTitle.textContent = 'Full View';
+                isPreviewMode = false;
+            } else {
+                previewMode.style.display = 'block';
+                fullMode.style.display = 'none';
+                toggleButton.textContent = 'View All Videos ({{ categories.total_remaining }} more)';
+                modeTitle.textContent = 'Preview Mode';
+                isPreviewMode = true;
+            }
+        }
+
+        function toggleDebugMode() {
+            const button = document.getElementById('debug-button');
+            if (!debugData) {
+                // First time enabling debug mode - fetch data
+                button.disabled = true;
+                button.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Loading Debug Data...';
+                
+                fetch(`/api/debug_info/{{ label_id }}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        debugData = data;
+                        debugMode = true;
+                        button.innerHTML = '<i class="bi bi-bug"></i> Debug Data Loaded';
+                        button.disabled = false;
+                        button.classList.remove('btn-info');
+                        button.classList.add('btn-success');
+                    })
+                    .catch(error => {
+                        showAlert('danger', 'Error loading debug data: ' + error.message);
+                        button.innerHTML = '<i class="bi bi-bug"></i> Load Debug Data';
+                        button.disabled = false;
+                    });
+            }
+        }
+
+        function toggleVideoDebug(videoName, mode = 'preview') {
+            if (!debugData) {
+                alert('Please load debug data first by clicking the "Load Debug Data" button');
+                return;
+            }
+
+            const debugBox = document.getElementById(`debug-${mode}-${videoName}`);
+            if (debugBox.style.display === 'none') {
+                if (debugData[videoName]) {
+                    const data = debugData[videoName];
+                    let debugText = '';
+                    
+                    // Format camera motion data with better spacing
+                    debugText += '=== Camera Motion ===\n\n';
+                    for (const [key, value] of Object.entries(data.camera_motion)) {
+                        debugText += `${key}: ${value}\n`;
+                    }
+                    
+                    // Format camera setup data with better spacing
+                    debugText += '\n=== Camera Setup ===\n\n';
+                    for (const [key, value] of Object.entries(data.camera_setup)) {
+                        debugText += `${key}: ${value}\n`;
+                    }
+                    
+                    // Format lighting setup data with better spacing
+                    debugText += '\n=== Lighting Setup ===\n\n';
+                    for (const [key, value] of Object.entries(data.lighting_setup)) {
+                        debugText += `${key}: ${value}\n`;
+                    }
+                    
+                    // Create a pre element for better formatting
+                    debugBox.innerHTML = `<pre style="white-space: pre-wrap; font-family: monospace; font-size: 0.9em;">${debugText}</pre>`;
+                    debugBox.style.display = 'block';
+                }
+            } else {
+                debugBox.style.display = 'none';
+            }
+        }
+
+        function toggleVideo(videoName, isPreview = true, mode = 'preview') {
+            const playerDiv = document.getElementById(`player-${mode}-${videoName}`);
             
             if (playerDiv.classList.contains('expanded')) {
                 // If already expanded, just hide it
                 playerDiv.classList.remove('expanded');
-                // Optionally remove the video to free up memory
+                // Remove the video to free up memory
                 playerDiv.innerHTML = '';
             } else {
                 // If not expanded, create and add the video element
+                const autoplayAttr = isPreview ? 'autoplay loop muted' : '';
                 playerDiv.innerHTML = `
-                    <video controls preload="metadata" style="max-width: 320px; width: 100%;">
+                    <video controls ${autoplayAttr} preload="metadata" style="max-width: 320px; width: 100%;">
                         <source src="/videos/${videoName}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -256,58 +460,9 @@ pan_right value: {{ video.details.camera_motion.pan_right }}</pre>
             }
         }
 
-        function toggleDebugInfo(videoName) {
-            const debugDiv = document.getElementById(`debug-${videoName}`);
-            if (debugDiv.style.display === 'none') {
-                debugDiv.style.display = 'block';
-            } else {
-                debugDiv.style.display = 'none';
-            }
-        }
-
-        function exportVideos(labelId) {
-            const button = document.getElementById('export-button');
-            const status = document.getElementById('export-status');
-            
-            // Disable button during export
-            button.disabled = true;
-            button.textContent = 'Exporting...';
-            
-            // Hide any previous status
-            status.style.display = 'none';
-            
-            // Make API call to export videos
-            fetch('/export_videos/' + labelId, {
-                method: 'POST',
-            })
-            .then(response => response.json())
-            .then(data => {
-                button.disabled = false;
-                button.textContent = 'Export Video Names to JSON';
-                
-                status.textContent = data.message;
-                status.className = data.success ? 'status-success' : 'status-error';
-                status.style.display = 'block';
-                
-                // Hide status after 5 seconds
-                setTimeout(() => {
-                    status.style.display = 'none';
-                }, 5000);
-            })
-            .catch(error => {
-                button.disabled = false;
-                button.textContent = 'Export Video Names to JSON';
-                
-                status.textContent = 'Error exporting video names: ' + error.message;
-                status.className = 'status-error';
-                status.style.display = 'block';
-                
-                // Hide status after 5 seconds
-                setTimeout(() => {
-                    status.style.display = 'none';
-                }, 5000);
-            });
+        function updateDebugDisplay() {
+            // This function is no longer needed since we don't auto-show debug boxes
         }
     </script>
 </body>
-</html> 
+</html>

@@ -48,7 +48,7 @@ class Batch:
         """
         # Process NDJSON files with YAML configs
         logging.info("Processing NDJSON files...")
-        all_videos = process_ndjson_files(
+        all_videos, valid_videos_by_file = process_ndjson_files(
             ndjson_dir, 
             issues_dir, 
             yaml_paths=config_paths, 
@@ -76,11 +76,12 @@ class Batch:
         if save_batch:
             if not batch_name:
                 raise ValueError("batch_name must be provided when save_batch is True")
-            batch.save_batch(batch_name, config_paths, ndjson_dir, issues_dir)
+            batch.save_batch(batch_name, config_paths, ndjson_dir, issues_dir, valid_videos_by_file)
             
         return batch
 
-    def save_batch(self, batch_name: str, config_paths: List[str], ndjson_dir: str, issues_dir: str) -> None:
+    def save_batch(self, batch_name: str, config_paths: List[str], ndjson_dir: str, issues_dir: str, 
+                  valid_videos_by_file: Dict[str, Set[str]]) -> None:
         """Save the batch to disk.
         
         This creates a new directory under 'batches/' with the batch name and timestamp.
@@ -94,6 +95,7 @@ class Batch:
             config_paths: List of paths to YAML config files used to create this batch
             ndjson_dir: Directory containing source NDJSON files
             issues_dir: Directory containing source issues JSON files
+            valid_videos_by_file: Dictionary mapping NDJSON filenames to sets of valid video names
         """
         # Create timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -112,13 +114,16 @@ class Batch:
         # Get set of video names in this batch
         batch_video_names = set(self.videos.keys())
         
-        # Process NDJSON files
+        # Process NDJSON files using valid_videos_by_file
         for filename in os.listdir(ndjson_dir):
             if not filename.endswith('.ndjson'):
                 continue
                 
             input_path = os.path.join(ndjson_dir, filename)
             output_path = os.path.join(batch_dir, "ndjson", filename)
+            
+            # Get valid videos for this file
+            valid_videos = valid_videos_by_file.get(filename, set())
             
             with open(input_path, 'r', encoding='utf-8') as infile, \
                  open(output_path, 'w', encoding='utf-8') as outfile:
@@ -127,7 +132,8 @@ class Batch:
                         record = json.loads(line.strip())
                         video_id = record.get('data_row', {}).get('id')
                         video_name = record.get('data_row', {}).get('external_id', video_id)
-                        if video_name in batch_video_names:
+                        # Only write if video is both in batch and valid for this file
+                        if video_name in batch_video_names and video_name in valid_videos:
                             outfile.write(line)
                     except Exception as e:
                         logging.error(f"Error processing line in {filename}: {e}")
