@@ -1,12 +1,23 @@
 # Data source paths
 data:
-  batch_folder: batches/donesection_20250214_122200  # Path to the batch folder
+  batch_folder: batches/donesection_20250223_030702  # Path to the batch folder
   videos_dir: ../../../datasets/SelectedVideos_video_segments
   label_dir: label_dirs  # Directory where categorized video folders will be saved
+
+# Saved states configuration
+saved_states:
+  save_path: states/label_state.json  # Path where state files will be saved
+  load_path: states/label_state.json  # Path from where state files will be loaded
 
 # Visualization settings
 visualization:
   lazy_load_videos: true  # Flag to control lazy loading
+  show_debug_info: true  # Flag to control debug information display
+  preview_mode: true  # Flag to enable preview mode showing first 5 videos per category
+  preview_count: 5  # Number of videos to show in preview mode
+  export:
+    local_save: false  # Whether to save exports locally to label_dir
+    allow_download: true  # Whether to allow downloading exports directly in browser
 
 # Server settings
 server:

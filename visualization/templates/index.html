@@ -23,44 +23,42 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            overflow: hidden;  /* Contain floating elements */
         }
         .video-container {
-            margin: 10px;
-            padding: 10px;
+            margin: 4px;  /* Even smaller margin */
+            padding: 6px;  /* Smaller padding */
             border: 1px solid #dee2e6;
             border-radius: 8px;
-            width: 45%;  /* Make videos take up roughly half the width */
+            width: calc(19.5% - 8px);  /* Adjusted width to fit 5 per row */
             display: inline-block;
             vertical-align: top;
+            box-sizing: border-box;
         }
         .video-title {
-            font-size: 1em;
+            font-size: 0.9em;
             font-weight: bold;
             margin-bottom: 8px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            line-height: 1.2;
         }
         .camera-info {
-            background-color: #f8f9fa;
-            padding: 8px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-        }
-        .camera-info .text-muted {
-            color: #6c757d;
+            display: none;  /* Hide the camera info box */
         }
         video {
             width: 100%;
-            max-width: 320px;  /* Reduce max width of videos */
             border-radius: 4px;
+            aspect-ratio: 16/9;  /* Maintain video aspect ratio */
+            object-fit: cover;  /* Ensure video fills container */
         }
         .category-title {
             cursor: pointer;
-            padding: 10px;
+            padding: 8px;  /* Reduced padding */
             background-color: #f8f9fa;
             border-radius: 4px;
+            font-size: 1.5rem;  /* Smaller header size */
         }
         .category-title:hover {
             background-color: #e9ecef;
@@ -72,11 +70,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-            gap: 10px;
+            gap: 4px;  /* Reduced gap */
+            margin: -2px;  /* Half of the gap */
+            padding: 2px;  /* Added small padding */
         }
         .video-player {
             display: none;
             margin-top: 10px;
+            width: 100%;  /* Make player fill container */
         }
         .video-player.expanded {
             display: block;
@@ -156,6 +157,39 @@
         .back-button:hover {
             transform: translateX(-5px);
         }
+        .debug-box {
+            font-size: 0.8em;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            padding: 8px;
+        }
+        .btn-sm {
+            padding: 0.25rem 0.5rem;  /* Smaller padding for buttons */
+            font-size: 0.75rem;  /* Smaller font size for buttons */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 1400px) {  /* Increased breakpoint */
+            .video-container {
+                width: calc(25% - 8px);  /* 4 per row */
+            }
+        }
+        @media (max-width: 992px) {
+            .video-container {
+                width: calc(33.333% - 8px);  /* 3 per row */
+            }
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                width: calc(50% - 8px);  /* 2 per row */
+            }
+        }
+        @media (max-width: 576px) {
+            .video-container {
+                width: calc(100% - 8px);  /* 1 per row */
+            }
+        }
     </style>
 </head>
 <body>
@@ -176,6 +210,49 @@
         <div class="rule-box">
             <h2 class="mb-4">{{ label_info.name }}</h2>
             <p class="lead">{{ label_info.description }}</p>
+            
+            <!-- Definition Questions and Prompts -->
+            <div class="mb-4">
+                <div class="mb-3">
+                    <h5>Primary Definition Question:</h5>
+                    <p class="bg-light p-3 rounded">{{ label_info.definition_questions[0] }}</p>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleQuestions('definition')">
+                        Show More Questions <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div id="more-definition-questions" class="mt-2" style="display: none;">
+                        {% for question in label_info.definition_questions[1:] %}
+                        <p class="bg-light p-2 rounded">{{ question }}</p>
+                        {% endfor %}
+                        <h6 class="mt-3">Alternative Questions:</h6>
+                        {% for question in label_info.alternative_questions %}
+                        <p class="bg-light p-2 rounded">{{ question }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <h5>Primary Definition Prompt:</h5>
+                    <p class="bg-light p-3 rounded">{{ label_info.definition_prompts[0] }}</p>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="togglePrompts('definition')">
+                        Show More Prompts <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div id="more-definition-prompts" class="mt-2" style="display: none;">
+                        {% for prompt in label_info.definition_prompts[1:] %}
+                        <p class="bg-light p-2 rounded">{{ prompt }}</p>
+                        {% endfor %}
+                        <h6 class="mt-3">Alternative Prompts:</h6>
+                        {% for prompt in label_info.alternative_prompts %}
+                        <p class="bg-light p-2 rounded">{{ prompt }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rules Section -->
+            <button class="btn btn-sm btn-outline-secondary mb-3" onclick="toggleRules()">
+                Show Rules <i class="bi bi-chevron-down"></i>
+            </button>
+            <div id="rules-section" style="display: none;">
             <div class="mb-3">
                 <h5>Positive Rule:</h5>
                 <pre class="bg-light p-3 rounded">{{ label_info.positive_rule }}</pre>
@@ -202,6 +279,7 @@
                 </div>
                 {% endfor %}
             </div>
+            </div>
         </div>
 
         <!-- Preview/Full Mode Toggle -->
@@ -222,16 +300,13 @@
             <div class="category-section">
                 <h3 class="category-title" data-bs-toggle="collapse" data-bs-target="#preview-{{ category }}">
                     {{ category|title|replace('_', ' ') }}
-                    <span class="badge bg-primary">{{ videos|length }}</span>
+                    <span class="badge bg-primary">{{ videos|length }}/{{ categories.full[category]|length }}</span>
                 </h3>
                 <div class="collapse show" id="preview-{{ category }}">
-                    <div class="videos-grid">
+                    <div class="videos-grid" id="preview-grid-{{ category }}" data-category="{{ category }}">
                         {% for video in videos %}
                         <div class="video-container">
                             <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
-                            <div class="camera-info">
-                                <!-- Camera info can stay empty for now -->
-                            </div>
                             <div class="d-flex gap-2 mb-2">
                                 <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}', true, 'preview')">Show/Hide Video</button>
                                 {% if show_debug %}
@@ -255,6 +330,19 @@
                         </div>
                         {% endfor %}
                     </div>
+                    {% if categories.full[category]|length > videos|length %}
+                    <div class="d-flex justify-content-center gap-2 mt-3">
+                        <button class="btn btn-secondary" onclick="loadPreviousVideos('{{ category }}')">
+                            Previous 5
+                        </button>
+                        <span class="align-self-center" id="page-info-{{ category }}">
+                            Showing 1-5
+                        </span>
+                        <button class="btn btn-secondary" onclick="loadNextVideos('{{ category }}')">
+                            Next 5
+                        </button>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -273,9 +361,6 @@
                         {% for video in videos %}
                         <div class="video-container">
                             <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
-                            <div class="camera-info">
-                                <!-- Camera info can stay empty for now -->
-                            </div>
                             <div class="d-flex gap-2 mb-2">
                                 <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}', false, 'full')">Show/Hide Video</button>
                                 {% if show_debug %}
@@ -313,16 +398,13 @@
                     {% for video in videos %}
                     <div class="video-container">
                         <div class="video-title" title="{{ video.name }}">{{ video.name }}</div>
-                        <div class="camera-info">
-                            <!-- Camera info can stay empty for now -->
-                        </div>
                         <div class="d-flex gap-2 mb-2">
                             <button class="btn btn-sm btn-primary" onclick="toggleVideo('{{ video.name }}')">Show/Hide Video</button>
                             {% if show_debug %}
                             <button class="btn btn-sm btn-info" onclick="toggleVideoDebug('{{ video.name }}')">
                                 <i class="bi bi-bug"></i> Debug Info
                             </button>
-                            {% endif %}
+                                {% endif %}
                         </div>
                         <div id="player-{{ video.name }}" class="video-player">
                             <!-- Video element will be created when button is clicked -->
@@ -353,6 +435,15 @@
         let debugMode = false;
         let debugData = null;
         let isPreviewMode = true;
+        let currentOffsets = {};
+        const VIDEOS_PER_PAGE = 5;
+
+        // Store video data for each category
+        const categoryVideos = {
+            {% for category, videos in categories.full.items() %}
+            '{{ category }}': {{ videos|tojson|safe }},
+            {% endfor %}
+        };
 
         function toggleViewMode() {
             const previewMode = document.getElementById('preview-mode');
@@ -450,12 +541,29 @@
             } else {
                 // If not expanded, create and add the video element
                 const autoplayAttr = isPreview ? 'autoplay loop muted' : '';
-                playerDiv.innerHTML = `
-                    <video controls ${autoplayAttr} preload="metadata" style="max-width: 320px; width: 100%;">
-                        <source src="/videos/${videoName}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                `;
+                const videoElement = document.createElement('video');
+                videoElement.controls = true;
+                if (isPreview) {
+                    videoElement.autoplay = true;
+                    videoElement.loop = true;
+                    videoElement.muted = true;
+                }
+                videoElement.preload = 'metadata';
+                videoElement.style.maxWidth = '320px';
+                videoElement.style.width = '100%';
+                
+                const sourceElement = document.createElement('source');
+                sourceElement.src = `/videos/${videoName}`;
+                sourceElement.type = 'video/mp4';
+                
+                videoElement.appendChild(sourceElement);
+                videoElement.addEventListener('error', function(e) {
+                    console.error('Error loading video:', e);
+                    playerDiv.innerHTML = 'Error loading video';
+                });
+                
+                playerDiv.innerHTML = '';
+                playerDiv.appendChild(videoElement);
                 playerDiv.classList.add('expanded');
             }
         }
@@ -463,6 +571,149 @@
         function updateDebugDisplay() {
             // This function is no longer needed since we don't auto-show debug boxes
         }
+
+        function createVideoElement(video, showDebug) {
+            const container = document.createElement('div');
+            container.className = 'video-container';
+            
+            const debugButton = showDebug ? `
+                <button class="btn btn-sm btn-info" onclick="toggleVideoDebug('${video.name}', 'preview')">
+                    <i class="bi bi-bug"></i> Debug Info
+                </button>
+            ` : '';
+
+            container.innerHTML = `
+                <div class="video-title" title="${video.name}">${video.name}</div>
+                <div class="d-flex gap-2 mb-2">
+                    <button class="btn btn-sm btn-primary" onclick="toggleVideo('${video.name}', true, 'preview')">
+                        Show/Hide Video
+                    </button>
+                    ${debugButton}
+                </div>
+                <div id="player-preview-${video.name}" class="video-player expanded">
+                    <video controls autoplay loop muted preload="metadata" style="max-width: 320px; width: 100%;">
+                        <source src="/videos/${video.name}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="debug-preview-${video.name}" class="debug-box mt-2" style="display: none;">
+                    <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Loading debug information...
+                </div>
+            `;
+            return container;
+        }
+
+        function updatePageInfo(category, offset, totalVideos) {
+            const start = offset + 1;
+            const end = Math.min(offset + VIDEOS_PER_PAGE, totalVideos);
+            const pageInfo = document.getElementById(`page-info-${category}`);
+            if (pageInfo) {
+                pageInfo.textContent = `Showing ${start}-${end} of ${totalVideos}`;
+            }
+        }
+
+        function loadPreviousVideos(category) {
+            const videos = categoryVideos[category];
+            if (!videos) return;
+
+            if (!(category in currentOffsets)) {
+                currentOffsets[category] = 0;
+            }
+
+            // Update offset for previous page
+            currentOffsets[category] = Math.max(0, currentOffsets[category] - VIDEOS_PER_PAGE);
+            loadVideosAtOffset(category, videos);
+        }
+
+        function loadNextVideos(category) {
+            const videos = categoryVideos[category];
+            if (!videos) return;
+
+            if (!(category in currentOffsets)) {
+                currentOffsets[category] = 0;
+            }
+
+            // Update offset for next page, loop back to start if at end
+            const nextOffset = currentOffsets[category] + VIDEOS_PER_PAGE;
+            currentOffsets[category] = nextOffset >= videos.length ? 0 : nextOffset;
+            loadVideosAtOffset(category, videos);
+        }
+
+        function loadVideosAtOffset(category, allVideos) {
+            const offset = currentOffsets[category];
+            const nextVideos = allVideos.slice(offset, offset + VIDEOS_PER_PAGE);
+            const gridElement = document.getElementById(`preview-grid-${category}`);
+            const showDebug = document.getElementById('debug-button') !== null;
+
+            // First, cleanup existing videos and debug info
+            const existingPlayers = gridElement.querySelectorAll('.video-player');
+            existingPlayers.forEach(player => {
+                player.innerHTML = ''; // Remove video elements
+                player.classList.remove('expanded');
+            });
+
+            const existingDebugBoxes = gridElement.querySelectorAll('.debug-box');
+            existingDebugBoxes.forEach(box => {
+                box.style.display = 'none';
+                box.innerHTML = `
+                    <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Loading debug information...
+                `;
+            });
+
+            // Remove all current videos
+            gridElement.innerHTML = '';
+
+            // Add new videos
+            nextVideos.forEach(video => {
+                const videoElement = createVideoElement(video, showDebug);
+                gridElement.appendChild(videoElement);
+            });
+
+            // Update page info
+            updatePageInfo(category, offset, allVideos.length);
+        }
+
+        function toggleQuestions(type) {
+            const element = document.getElementById(`more-${type}-questions`);
+            const button = element.previousElementSibling;
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+                button.innerHTML = `Hide Questions <i class="bi bi-chevron-up"></i>`;
+            } else {
+                element.style.display = 'none';
+                button.innerHTML = `Show More Questions <i class="bi bi-chevron-down"></i>`;
+            }
+        }
+
+        function togglePrompts(type) {
+            const element = document.getElementById(`more-${type}-prompts`);
+            const button = element.previousElementSibling;
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+                button.innerHTML = `Hide Prompts <i class="bi bi-chevron-up"></i>`;
+            } else {
+                element.style.display = 'none';
+                button.innerHTML = `Show More Prompts <i class="bi bi-chevron-down"></i>`;
+            }
+        }
+
+        function toggleRules() {
+            const element = document.getElementById('rules-section');
+            const button = element.previousElementSibling;
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+                button.innerHTML = `Hide Rules <i class="bi bi-chevron-up"></i>`;
+            } else {
+                element.style.display = 'none';
+                button.innerHTML = `Show Rules <i class="bi bi-chevron-down"></i>`;
+            }
+        }
     </script>
 </body>
-</html>
+</html> 

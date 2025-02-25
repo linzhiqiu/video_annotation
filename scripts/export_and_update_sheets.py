@@ -193,7 +193,7 @@ def process_ndjson_export(ndjson_path: str, issues_dir: str, taxonomy_path: str,
     return result
 
 def get_google_sheets_service():
-    """Gets an authorized Google Sheets service instance."""
+    """Sets up and returns Google Sheets service."""
     # Try service account authentication first
     service_account_path = 'configs/service-account.json'
     if os.path.exists(service_account_path):
@@ -201,14 +201,14 @@ def get_google_sheets_service():
             from google.oauth2 import service_account
             credentials = service_account.Credentials.from_service_account_file(
                 service_account_path,
-                scopes=['https://www.googleapis.com/auth/spreadsheets']
+                scopes=SCOPES
             )
             logging.info("Successfully authenticated using service account")
             return build('sheets', 'v4', credentials=credentials)
         except Exception as e:
             logging.warning(f"Service account authentication failed: {str(e)}")
             logging.info("Falling back to OAuth authentication")
-
+    
     # Fall back to OAuth if service account fails or isn't configured
     creds = None
     token_path = 'configs/token.json'
@@ -273,9 +273,9 @@ def get_google_sheets_service():
             os.makedirs(os.path.dirname(token_path), exist_ok=True)
             with open(token_path, 'w') as token:
                 token.write(creds.to_json())
-                logging.info("Saved new token")
+            logging.info("Saved new token")
     
-    return build('sheets', 'v4', credentials=creds), creds
+    return build('sheets', 'v4', credentials=creds)
 
 def get_sheet_id_by_title(service, spreadsheet_id: str, sheet_title: str) -> int:
     """Gets the sheet ID for a sheet with the given title."""
@@ -402,14 +402,25 @@ def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
                 current_values = result['values']
                 current_headers = current_values[0]
                 
-                # Pad each row to match the number of columns
+                # Find common columns between current sheet and new data
+                common_headers = [h for h in headers if h in current_headers]
+                if not common_headers:
+                    raise ValueError("No matching columns found between existing sheet and new data")
+                
+                # Get indices of common columns in both current and new data
+                current_indices = [current_headers.index(h) for h in common_headers]
+                new_indices = [headers.index(h) for h in common_headers]
+                
+                # Extract current data for common columns only
                 padded_values = []
                 for row in current_values[1:]:  # Skip header
-                    padded_row = row + [''] * (len(current_headers) - len(row))
+                    padded_row = []
+                    for idx in current_indices:
+                        padded_row.append(row[idx] if idx < len(row) else '')
                     padded_values.append(padded_row)
                 
-                # Convert current sheet data to DataFrame
-                current_df = pd.DataFrame(padded_values, columns=current_headers)
+                # Convert current sheet data to DataFrame with common columns
+                current_df = pd.DataFrame(padded_values, columns=common_headers)
                 existing_rows = len(current_df)
                 
                 # Get video names from current data
@@ -420,13 +431,8 @@ def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
                 new_rows = len(new_videos_df)
                 
                 if not new_videos_df.empty:
-                    # Make sure new_df has all columns from current sheet
-                    for col in current_headers:
-                        if col not in new_videos_df.columns:
-                            new_videos_df[col] = ''
-                    
-                    # Reorder columns to match current sheet
-                    new_videos_df = new_videos_df[current_headers]
+                    # Select only common columns from new data
+                    new_videos_df = new_videos_df[common_headers]
                     
                     # Create requests to insert rows and update their values
                     requests = []
@@ -452,7 +458,7 @@ def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
                                 'startRowIndex': 1,
                                 'endRowIndex': 1 + new_rows,
                                 'startColumnIndex': 0,
-                                'endColumnIndex': len(current_headers)
+                                'endColumnIndex': len(common_headers)
                             },
                             'fields': 'userEnteredValue'
                         }
@@ -469,10 +475,12 @@ def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
                     new_values = []
                     for _, row in new_videos_df.iterrows():
                         row_values = [str(val) if pd.notnull(val) else '' for val in row]
-                        row_values.extend([''] * (len(current_headers) - len(row_values)))
                         new_values.append(row_values)
                     
-                    update_range = f"'{api_sheet_name}'!A2:{chr(65 + len(current_headers))}{1 + new_rows}"
+                    # Calculate the range for the update based on common columns
+                    last_col = chr(65 + len(common_headers) - 1)
+                    update_range = f"'{api_sheet_name}'!A2:{last_col}{1 + new_rows}"
+                    
                     execute_with_retry(
                         service.spreadsheets().values().update,
                         spreadsheetId=spreadsheet_id,
@@ -481,7 +489,7 @@ def create_or_update_sheet(service, spreadsheet_id, display_name, new_df):
                         body={'values': new_values}
                     )
                     
-                    logging.info(f'Sheet "{display_name}": Added {new_rows} new rows at the top, {existing_rows} existing rows unchanged')
+                    logging.info(f'Sheet "{display_name}": Added {new_rows} new rows at the top using {len(common_headers)} common columns, {existing_rows} existing rows unchanged')
                 else:
                     logging.info(f'Sheet "{display_name}": No new rows to add, {existing_rows} existing rows unchanged')
             else:
@@ -654,32 +662,58 @@ def add_sheet_to_master_data(service, spreadsheet_id: str, sheet_url: str, appro
         logging.error(f"Error adding sheet to master data: {str(e)}")
         raise
 
-def set_sharing_permissions(service, creds, file_id: str):
-    """Set sharing permissions for a spreadsheet to 'anyone with link can edit'."""
+def set_sharing_permissions(service, file_id: str, creds=None):
+    """Set sharing permissions for a spreadsheet to 'anyone with link can edit' and add specific editors."""
     try:
-        drive_service = build('drive', 'v3', credentials=creds)
+        # Use credentials from service if not provided explicitly
+        credentials = creds if creds is not None else service._http.credentials
+        drive_service = build('drive', 'v3', credentials=credentials)
         
-        # Create the permission
-        permission = {
+        # Load editor emails from config
+        with open('configs/sheets_url_config.json', 'r') as f:
+            config = json.load(f)
+            editor_emails = config.get('editor_emails', [])
+        
+        # Create 'anyone with link can edit' permission
+        anyone_permission = {
             'type': 'anyone',
             'role': 'writer',
             'allowFileDiscovery': False
         }
         
-        # Execute the permissions update
+        # Execute the anyone permissions update
         execute_with_retry(
             drive_service.permissions().create,
             fileId=file_id,
-            body=permission,
+            body=anyone_permission,
             fields='id'
         )
+        
+        # Add specific editors
+        for email in editor_emails:
+            editor_permission = {
+                'type': 'user',
+                'role': 'writer',
+                'emailAddress': email
+            }
+            try:
+                execute_with_retry(
+                    drive_service.permissions().create,
+                    fileId=file_id,
+                    body=editor_permission,
+                    fields='id',
+                    sendNotificationEmail=False
+                )
+            except Exception as e:
+                logging.warning(f"Failed to add editor permission for {email}: {str(e)}")
+                continue
         
         logging.info(f"Successfully set sharing permissions for spreadsheet {file_id}")
     except Exception as e:
         logging.error(f"Error setting sharing permissions: {str(e)}")
         raise
 
-def create_new_spreadsheet(service, creds, title: str) -> str:
+def create_new_spreadsheet(service, title: str) -> str:
     """Create a new spreadsheet and return its ID."""
     try:
         spreadsheet = {
@@ -696,7 +730,7 @@ def create_new_spreadsheet(service, creds, title: str) -> str:
         spreadsheet_id = result['spreadsheetId']
         
         # Set sharing permissions
-        set_sharing_permissions(service, creds, spreadsheet_id)
+        set_sharing_permissions(service, spreadsheet_id)
         
         return spreadsheet_id
     except Exception as e:
@@ -706,7 +740,7 @@ def create_new_spreadsheet(service, creds, title: str) -> str:
 def export_to_sheets(processed_data: List[Dict[str, Any]], config: Dict[str, Any], taxonomy_path: str):
     """Export processed data to Google Sheets based on approvers."""
     try:
-        service, creds = get_google_sheets_service()
+        service = get_google_sheets_service()
         
         # Load spreadsheet mappings from JSON
         with open('configs/sheets_url_config.json', 'r') as f:
@@ -801,7 +835,7 @@ def export_to_sheets(processed_data: List[Dict[str, Any]], config: Dict[str, Any
                 
                 # Create a new spreadsheet for this approver
                 spreadsheet_title = f"Labelbox Review - {approver}"
-                new_spreadsheet_id = create_new_spreadsheet(service, creds, spreadsheet_title)
+                new_spreadsheet_id = create_new_spreadsheet(service, spreadsheet_title)
                 
                 # Create sheets for each project
                 first_sheet_id = None  # Store the first sheet's ID

@@ -7,27 +7,51 @@
         body {
             padding: 20px;
             background-color: #f8f9fa;
+            max-width: 600px;  /* Reduced from default container width */
+            margin: 0 auto;  /* Center the content */
+        }
+        .container {
+            padding: 0;  /* Remove container padding */
         }
         .label-container {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            padding: 15px;  /* Reduced padding */
+            border-radius: 6px;  /* Slightly smaller radius */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);  /* Lighter shadow */
+            margin-bottom: 15px;  /* Reduced margin */
         }
         .label-item {
-            padding: 10px;
-            margin: 5px 0;
+            padding: 6px;  /* Even smaller padding */
+            margin: 2px 0;  /* Smaller margin */
             border: 1px solid #dee2e6;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.2s;
+            font-size: 0.8rem;  /* Even smaller font size */
+            line-height: 1.2;  /* Tighter line height */
         }
         .label-item:hover {
             background-color: #f8f9fa;
         }
+        .label-item h5 {
+            font-size: 0.85rem;  /* Smaller heading size */
+            margin-bottom: 0.1rem;  /* Smaller margin */
+            font-weight: 600;  /* Make it slightly bold to stand out */
+        }
         .search-box {
-            margin-bottom: 20px;
+            margin-bottom: 15px;  /* Reduced margin */
+        }
+        .search-box input {
+            font-size: 0.9rem;  /* Smaller font size */
+            padding: 0.375rem 0.75rem;  /* Smaller padding */
+        }
+        h1 {
+            font-size: 1.5rem;  /* Smaller title size */
+            margin-bottom: 1rem;  /* Reduced margin */
+        }
+        .text-muted {
+            font-size: 0.7rem;  /* Even smaller text size */
+            opacity: 0.8;  /* Slightly more muted */
         }
     </style>
 </head>

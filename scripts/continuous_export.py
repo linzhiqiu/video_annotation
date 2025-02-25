@@ -153,7 +153,7 @@ def main():
     logging.info("Starting continuous export process")
     
     cycle_count = 0
-    delay_minutes = 360
+    delay_minutes = 30
     
     try:
         while True:

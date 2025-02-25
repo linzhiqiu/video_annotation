@@ -753,6 +753,10 @@ class BatchVisualizer:
         return {
             'name': self.current_label.label_name,  # Use label_name directly
             'description': self.current_label.label,
+            'definition_questions': self.current_label.def_question,
+            'alternative_questions': self.current_label.alt_question,
+            'definition_prompts': self.current_label.def_prompt,
+            'alternative_prompts': self.current_label.alt_prompt,
             'positive_rule': self.current_label.pos_rule.rule,
             'negative_rule': self.current_label.neg_rule.rule,
             'easy_negative_rules': {k: v.rule for k, v in self.current_label.easy_neg_rules.items()},

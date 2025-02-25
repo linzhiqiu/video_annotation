@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f5f5f5;
+        }
+        
+        .correct {
+            color: green;
+        }
+        
+        .incorrect {
+            color: red;
+        }
+        
+        .video-preview {
+            max-width: 800px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Annotation Comparison Report</h1>
+    <p>Annotator: {{ annotator }}</p>
+    
+    <!-- Debug info -->
+    <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace;">
+        <p>Video Preview Enabled: {{ video_preview_enabled }}</p>
+    </div>
+    
+    {% if overall_metrics %}
+    <h2>Overall Metrics</h2>
+    <p>Total Comparisons: {{ overall_metrics.total_comparisons }}</p>
+    <p>Precision: {{ "%.2f"|format(overall_metrics.precision * 100) }}%</p>
+    <p>Recall: {{ "%.2f"|format(overall_metrics.recall * 100) }}%</p>
+    <p>F1 Score: {{ "%.2f"|format(overall_metrics.f1_score * 100) }}%</p>
+    {% endif %}
+    
+    {% for video in videos_data %}
+    <div class="video-section">
+        <div class="video-header">
+            <div class="video-title">Video: {{ video.video_name }}</div>
+            <a href="{{ video.video_url }}" target="_blank">View in Labelbox</a>
+        </div>
+        
+        <!-- Debug info for each video -->
+        <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace;">
+            <p>Has Preview: {{ video.video_preview is not none }}</p>
+            {% if video.video_preview %}
+            <p>Preview Length: {{ video.video_preview|length }} chars</p>
+            {% endif %}
+        </div>
+        
+        {% if video_preview_enabled and video.video_preview %}
+        <div class="video-preview">
+            <img src="data:image/png;base64,{{ video.video_preview }}" alt="Video preview frames" style="max-width: 800px; width: 100%;">
+        </div>
+        {% endif %}
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Ground Truth</th>
+                    <th>Annotator Answer</th>
+                    <th>Correct?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in video.table_data %}
+                <tr>
+                    <td>{{ row.question }}</td>
+                    <td>{{ row.ground_truth }}</td>
+                    <td>{{ row.annotators[annotator].answer }}</td>
+                    <td>
+                        {% if row.annotators[annotator].accuracy is not none %}
+                            {% if row.annotators[annotator].accuracy == 1.0 %}
+                                <span class="correct">✓</span>
+                            {% else %}
+                                <span class="incorrect">✗</span>
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html> 
