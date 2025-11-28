@@ -1,18 +1,24 @@
 {
-  "segments": [
-    {
-      "text": "The interaction between the hand and the knife",
-      "context": "Single caption",
-      "startIndex": 624,
-      "endIndex": 670
-    }
-  ],
-  "critique": "1. It is necessary to clarify the specific interaction between the hand and the knife.",
+  "segments": [],
+  "critique": "The detailed spatial information is omitted.",
   "overall": 4,
   "camera": 5,
   "subject": 5,
-  "motion": 4,
+  "motion": 5,
   "scene": 5,
-  "spatial": 4,
-  "timestamp": "2025-11-04T13:47:09.795Z"
+  "spatial": 3,
+  "timestamp": "2025-11-08T11:42:40.212Z",
+  "video_path": "UltraVideo/0fe2ae54-41e1-4ded-b468-3d1c33f10ebf.mp4",
+  "video_id": "0fe2ae54-41e1-4ded-b468-3d1c33f10ebf.mp4",
+  "captions": {
+    "single": "The video focuses on a hand meticulously showcasing a wooden-handled knife. The hand rotates the knife slowly, allowing viewers to appreciate its craftsmanship from multiple angles. The knife's handle has a rich, polished wood grain, and the blade is metallic and sharp. The background is intentionally blurred, featuring an assortment of tools that suggest a workshop setting. The lighting is soft yet sufficient to highlight the knife's details, creating a professional and aesthetically pleasing presentation. The camera remains steady, emphasizing the knife's features without any abrupt movements or scene transitions. The interaction between the hand and the knife suggests a careful and deliberate presentation, highlighting the knife's quality and design. The spatial relationship between the knife and the background tools creates a context of craftsmanship and utility. The video has a professional and highly aesthetic style, focusing on product presentation with a clean and focused composition."
+  },
+  "metadata": {
+    "duration": 7.16,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

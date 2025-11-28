@@ -14,5 +14,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T07:17:05.719Z"
+  "timestamp": "2025-11-04T07:17:05.719Z",
+  "video_path": "TUNA-Bench/DREAM-1K_314.mp4",
+  "video_id": "TUNA_0066",
+  "captions": {
+    "single": "The video begins with the camera focusing on a bed with white sheets and pillows. A blonde woman wearing a blue long-sleeved blouse lies on the bed,with her hair scattered on the bed and her arms resting naturally beside her head. A bedside table and a few items can be seen in the background. The woman then turns her head and looks up at the ceiling above her.\nThe camera then switches to another part of the room where two paintings hang on the wall and the city view can be seen from the window. Inside the room is a white chair and a small table with some books and items on it.\nThe camera shakes slightly. Then a hand holding the bottom of a pink ornament enters the frame from the bottom of it, where the ornament is lifted up. The owner of the hand also enters the frame. She looks upwards with the pink ornament in her hand as she continues to adjust its position."
+  },
+  "metadata": {
+    "duration": 9.75,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
 }

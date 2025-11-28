@@ -20,5 +20,35 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:30:22.220Z"
+  "timestamp": "2025-11-04T15:30:22.220Z",
+  "video_path": "ActivityNet-Captions/v_ol4ScGsyhbI.mp4",
+  "video_id": "v_ol4ScGsyhbI",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 67.8,
+        "caption": "An image is shown of a man posing with trophies and flexing his biceps."
+      },
+      {
+        "start_time": 75.58,
+        "end_time": 184.52,
+        "caption": "The images cut to videos, as he wins multiple arm wrestling matches and trophies."
+      },
+      {
+        "start_time": 190.07,
+        "end_time": 222.31,
+        "caption": "In the final scenes, a vast audience talks as they watch him win yet again."
+      }
+    ],
+    "full": "An image is shown of a man posing with trophies and flexing his biceps. The images cut to videos, as he wins multiple arm wrestling matches and trophies. In the final scenes, a vast audience talks as they watch him win yet again."
+  },
+  "metadata": {
+    "duration": 222.31,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

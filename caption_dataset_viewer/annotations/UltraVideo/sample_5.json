@@ -2,10 +2,23 @@
   "segments": [],
   "critique": "The spatial description is missing \u2014 the background consists of thick fog and mountains, the middle ground features a wooden cabin, and the foreground on the right side includes green trees.",
   "overall": 4,
-  "camera": 5,
-  "subject": 3,
-  "motion": 3,
+  "camera": 4,
+  "subject": 5,
+  "motion": 5,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T13:39:24.832Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T11:25:10.755Z",
+  "video_path": "UltraVideo/0f060b7d-fe16-4d4a-a0fa-400ddaa3a7e9.mp4",
+  "video_id": "0f060b7d-fe16-4d4a-a0fa-400ddaa3a7e9.mp4",
+  "captions": {
+    "single": "The video captures a serene mountain landscape featuring a quaint wooden house nestled on a hillside, surrounded by lush greenery and tall pine trees that sway gently in the breeze. The scene opens with a wide shot, showcasing the picturesque setting. As the video progresses, thick fog rolls in from the distance, enveloping the hills and valleys, creating a dynamic interplay of light and shadow. The camera remains stationary, allowing viewers to fully absorb the tranquil beauty of the scene. The lighting transitions from the soft glow of early morning to the diffused light of the foggy day, adding depth and mood. The overall effect is one of peace and tranquility, emphasizing the harmonious relationship between human habitation and nature. The house, with its rustic charm and simple design, blends seamlessly into the environment, while the pine trees provide a stark contrast to the lighter green vegetation. The ethereal fog adds a sense of movement and change, highlighting the dynamic nature of the landscape. The video's documentary style and use of time-lapse photography enhance the sense of movement and change, while the stationary camera provides a contemplative viewing experience. The natural lighting and the interplay of shadows and highlights create a soft, tranquil atmosphere, further enhancing the sense of calm and serenity."
+  },
+  "metadata": {
+    "duration": 5.07,
+    "resolution": "7680x4320",
+    "fps": 60.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

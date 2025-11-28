@@ -20,5 +20,45 @@
   "motion": 4,
   "scene": 1,
   "spatial": 2,
-  "timestamp": "2025-11-04T15:31:12.224Z"
+  "timestamp": "2025-11-04T15:31:12.224Z",
+  "video_path": "ActivityNet-Captions/v_JBTiD2-FcR0.mp4",
+  "video_id": "v_JBTiD2-FcR0",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 7.02,
+        "caption": "A closeup of a bag of cement mix is shown."
+      },
+      {
+        "start_time": 7.52,
+        "end_time": 11.78,
+        "caption": "One man adds water into a container while another watches."
+      },
+      {
+        "start_time": 12.53,
+        "end_time": 22.3,
+        "caption": "The first man pours the cement mix into the container."
+      },
+      {
+        "start_time": 12.53,
+        "end_time": 32.32,
+        "caption": "The second man uses a mixer on the container."
+      },
+      {
+        "start_time": 32.82,
+        "end_time": 50.11,
+        "caption": "one of the men applies the mixture to a wall."
+      }
+    ],
+    "full": "A closeup of a bag of cement mix is shown. One man adds water into a container while another watches. The first man pours the cement mix into the container. The second man uses a mixer on the container. one of the men applies the mixture to a wall."
+  },
+  "metadata": {
+    "duration": 50.11,
+    "resolution": "274x224",
+    "fps": 3.0,
+    "width": 274,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

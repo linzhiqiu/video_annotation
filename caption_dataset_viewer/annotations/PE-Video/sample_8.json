@@ -9,11 +9,28 @@
   ],
   "critique": "1. During phone operation, only the right hand moves while the left hand holds the phone almost still.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T11:06:31.182Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T05:07:33.351Z",
+  "overall": 3,
   "camera": 1,
   "subject": 5,
   "motion": 4,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "PE-Video/251241216.mp4",
+  "video_id": "251241216",
+  "captions": {
+    "single": "A person is holding a phone with a green screen. Their fingers swiping on the screen, and the phone is held in portrait orientation. The hands of the person are moving while using the phone. "
+  },
+  "metadata": {
+    "duration": 11.21,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 7,
+    "category_name": "Hand Actions",
+    "num_frames": 336.0,
+    "has_face": false
+  }
 }

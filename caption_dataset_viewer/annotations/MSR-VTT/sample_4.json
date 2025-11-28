@@ -7,5 +7,22 @@
   "motion": 2,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:16:44.008Z"
+  "timestamp": "2025-11-03T15:16:44.008Z",
+  "video_path": "MSR-VTT/video1167.mp4",
+  "video_id": "video1167",
+  "captions": {
+    "single": "a clip showing a woman riding a horse on a beach"
+  },
+  "metadata": {
+    "duration": 15.05,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 19,
+    "youtube_url": "https://www.youtube.com/watch?v=P7tpP5_J86I",
+    "start_time": 40.62,
+    "end_time": 55.67
+  }
 }

@@ -1,0 +1,8 @@
+{
+    "video_id": "KoJ0Pih0Ssc.5.3.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video presents a computer-generated scenery shot of a fortified border area, likely representing the Berlin Wall. The camera pans along a dirt and grass strip situated between two high concrete walls. One side features anti-tank obstacles, while the other side reveals a long, curving outer wall with city buildings in the background.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-19T00:26:54.884523"
+}

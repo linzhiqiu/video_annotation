@@ -20,5 +20,30 @@
   "motion": 4,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:32:13.789Z"
+  "timestamp": "2025-11-04T15:32:13.789Z",
+  "video_path": "ActivityNet-Captions/v_ilXO32we9uo.mp4",
+  "video_id": "v_ilXO32we9uo",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 2.61,
+        "end_time": 31.79,
+        "caption": "Two men are sailing on the blue water, with their white boat with white flags, then they avoided the buoys on the water."
+      },
+      {
+        "start_time": 30.75,
+        "end_time": 93.81,
+        "caption": "A plan written on a white paper with black pen, and then the plan is put into action, when the white boat sail on the water and turn around."
+      }
+    ],
+    "full": "Two men are sailing on the blue water, with their white boat with white flags, then they avoided the buoys on the water. A plan written on a white paper with black pen, and then the plan is put into action, when the white boat sail on the water and turn around."
+  },
+  "metadata": {
+    "duration": 104.24,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

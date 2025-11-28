@@ -15,11 +15,28 @@
   ],
   "critique": "1. It should be \"moves backward while panning left\", then \"moves to the left while panning right\" instead of \"zooms out\"\n2. Not \"waves his hands\" but places hands close together with the back of hands facing outward in front of the chest",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:36:12.869Z",
-  "overall": 4,
-  "camera": 3,
-  "subject": 5,
+  "timestamp": "2025-11-08T04:56:20.264Z",
+  "overall": 3,
+  "camera": 2,
+  "subject": 3,
   "motion": 4,
   "scene": 1,
-  "spatial": 5
+  "spatial": 2,
+  "video_path": "DREAM-1K/747.mp4",
+  "video_id": "dream1k_747",
+  "captions": {
+    "single": "The woman with blonde hair opens her mouth wide in awe as she watches the woman with black hair in front of her, who places a headpiece on the blonde-haired woman's head. The blonde woman places her hands on her cheeks, shaking her head and swaying with joy. Afterwards, the woman with black hair turns around to receive a piece of gauze handed over by another woman on the left, and then she places it on the blonde woman's head. As the camera zooms out, the woman with blonde hair waves her hands excitedly and twists her body."
+  },
+  "metadata": {
+    "duration": 18.9,
+    "resolution": "1280x720",
+    "fps": 50.0,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 9
+  }
 }

@@ -13,6 +13,19 @@
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 4,
-  "timestamp": "2025-11-04T05:30:31.854Z"
+  "spatial": 2,
+  "timestamp": "2025-11-04T19:14:06.118Z",
+  "video_path": "ShareGPT4Video/5faf4cb62e295cd78ce1a79722ee468a613f6c62bf776653ec8491201b9ae04f.mp4",
+  "video_id": "5faf4cb62e295cd78ce1a79722ee468a613f6c62bf776653ec8491201b9ae04f",
+  "captions": {
+    "single": "The video presents a sequence showcasing the steady journey of ski lift chairs across a picturesque mountainous landscape. Initially, a single empty ski lift chair is depicted moving along a cable with a montage of mountains and trees in the background, indicating the chair's departure or approach towards the viewer's point. As the video proceeds, the chair continues its course, with the landscape and weather conditions remaining serene and unchanged. The lift system is depicted as operational, with multiple chairs gradually entering the frame, illustrating the continuity and scope of the lift's path through the tranquil alpine environment.\n\nThe motion of the ski lift chairs is constant, against a backdrop of untouched nature, emphasizing a peaceful coexistence. Progressing through the video, the chair appears closer and ascends higher, becoming more central in the frame, which, along with the appearance of additional chairs, highlights the ongoing ascent of the ski lift. A change in composition occurs when two ski lift chairs align horizontally, suggesting either camera movement or a natural alignment due to the path of the chairs. This is further implied as the chairs appear closer, possibly due to a combination of their movement and a zoom by the camera, with the mountain range and trees serving as a grand yet serene backdrop. The video culminates with the chairs continuing their ascent in a horizontal alignment, maintaining the peaceful and undisturbed progression through the picturesque setting, with no significant changes in the environment or camera perspective throughout the sequence."
+  },
+  "metadata": {
+    "duration": 11.98,
+    "resolution": "1920x1080",
+    "fps": 29.97,
+    "width": 1920,
+    "height": 1080,
+    "source": "pixabay"
+  }
 }

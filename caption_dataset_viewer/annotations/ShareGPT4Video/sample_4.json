@@ -5,14 +5,33 @@
       "context": "Single caption",
       "startIndex": 195,
       "endIndex": 213
+    },
+    {
+      "text": "without any movement",
+      "context": "Single caption",
+      "startIndex": 304,
+      "endIndex": 325
     }
   ],
-  "critique": "1. The green recycling bin does not have any Apple logo; the logo on it is a circular arrow symbol representing recycling.\n\n2. There is no mention of the camera or any spatial information.",
+  "critique": "1. The green recycling bin does not have an Apple logo; the logo on it is a circular arrow symbol representing recycling.\n2. The character is walking, rather than having no movement.\n2. There is no mention of the camera or any spatial information.",
   "overall": 4,
   "camera": 1,
   "subject": 4,
-  "motion": 5,
+  "motion": 4,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T05:36:30.789Z"
+  "timestamp": "2025-11-08T06:18:24.158Z",
+  "video_path": "ShareGPT4Video/eda8b9e71a2a3e113f5cd0c8c5ddd2d1559470c3475ce8329483ef353bbc37bd.mp4",
+  "video_id": "eda8b9e71a2a3e113f5cd0c8c5ddd2d1559470c3475ce8329483ef353bbc37bd",
+  "captions": {
+    "single": "The video features a cartoonish unicorn character with a gray furry body, a purple snout, and a rainbow-colored headband with a golden horn. The unicorn is smiling, holding a green recycling bin with an apple logo, set against a plain white background. The creature maintains this joyful pose and setting without any movement or changes for the first half of the video. Midway through, the visual representation shifts dramatically to a minimalist style, where the colorful unicorn is now a white silhouette against a black background. Despite the change in color and background, the unicorn's stance, holding the recycling bin, remains the same. Throughout the latter part of the video, there is no observed motion or alteration in the unicorn's silhouette or the scene, maintaining the stark contrast and minimalist aesthetic established at this transition point."
+  },
+  "metadata": {
+    "duration": 12.32,
+    "resolution": "1920x1080",
+    "fps": 25.0,
+    "width": 1920,
+    "height": 1080,
+    "source": "pixabay"
+  }
 }

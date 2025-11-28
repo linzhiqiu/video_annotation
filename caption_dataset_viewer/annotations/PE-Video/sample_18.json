@@ -9,11 +9,28 @@
   ],
   "critique": "1. It is not \"pan over\" but \"moves forward\"\n\n2. There is no mention of the camera's deep focus, high angle, or aerial height",
   "likert_score": 4,
-  "timestamp": "2025-11-03T13:46:46.226Z",
+  "timestamp": "2025-11-08T08:00:10.381Z",
   "overall": 3,
   "camera": 3,
-  "subject": 4,
+  "subject": 3,
   "motion": 4,
   "scene": 4,
-  "spatial": 3
+  "spatial": 2,
+  "video_path": "PE-Video/174851788.mp4",
+  "video_id": "174851788",
+  "captions": {
+    "single": "The video shows a large white building with gold domes in the middle of city. It  is surrounded by trees with autumn foliage, and the camera pans over the city and shows some more buildings in background. The video is taken from a high vantage point."
+  },
+  "metadata": {
+    "duration": 28.56,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 6,
+    "category_name": "Outdoor Scenes",
+    "num_frames": 856.0,
+    "has_face": false
+  }
 }

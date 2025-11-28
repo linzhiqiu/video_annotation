@@ -22,9 +22,22 @@
   "critique": "The description of the camera movement is completely incorrect \u2014 it is not \u201cpans across.\u201d The camera actually moves forward while tilting downward. Moreover, there are no \u201ctransitions to different angles and perspectives\u201d; the entire video is shown consistently from a drone perspective with a high angle.",
   "overall": 3,
   "camera": 2,
-  "subject": 4,
-  "motion": 4,
+  "subject": 5,
+  "motion": 5,
   "scene": 5,
   "spatial": 2,
-  "timestamp": "2025-11-04T13:33:19.226Z"
+  "timestamp": "2025-11-08T11:03:38.398Z",
+  "video_path": "UltraVideo/0e3f59a3-11f3-4437-8c63-1d6748fc6734.mp4",
+  "video_id": "0e3f59a3-11f3-4437-8c63-1d6748fc6734.mp4",
+  "captions": {
+    "single": "The video presents a breathtaking aerial view of a lush, verdant valley with a majestic waterfall cascading down rocky cliffs into a serene pool below. The dense forest, covering the steep slopes, creates a vibrant and serene landscape with varying shades of green that highlight the rich biodiversity of the area. The camera begins with an expansive aerial shot, capturing the grandeur of nature, and then pans across the scene, revealing the waterfall's powerful flow and the mist it creates. The camera zooms in for a closer look, then smoothly transitions to different angles and perspectives, emphasizing the depth and scale of the landscape. The natural elements dominate the background, with no signs of human activity, suggesting a remote, untouched environment in a mountainous region. The waterfall, with its white, frothy water contrasting sharply against the deep green forest, is a central feature, symbolizing the natural beauty and power of the environment. The forest is depicted as a vast, unbroken expanse, with diverse textures and shades of green. The smooth, flowing motion of the water and the steady, unhurried pace of the camera convey a timeless quality to the scene. The video has a documentary style, enhanced by aerial shots and smooth camera movements, making it visually engaging and immersive. Natural lighting, likely captured during the golden hours, creates a play of shadows and highlights, adding depth and texture to the landscape. The atmosphere is peaceful and serene, evoking a sense of calm and connection with nature, while the expansive views inspire awe and wonder."
+  },
+  "metadata": {
+    "duration": 4.5,
+    "resolution": "3840x2160",
+    "fps": 29.97,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

@@ -13,13 +13,30 @@
       "endIndex": 61
     }
   ],
-  "critique": "1. Here, it can be specified that the character picks up a lump of mud and smears it on the fox\u2019s face, rather than simply referring to it as an \u201cobject.\u201d\n2. tilts upward rather than pans up",
+  "critique": "1. Here, it can be specified that the character picks up a lump of mud and smears it on the fox\u2019s face, rather than simply referring to it as an \u201cobject.\u201d\n2. The camera tilts upward rather than pans up.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:06:25.682Z",
+  "timestamp": "2025-11-08T03:24:17.023Z",
   "overall": 3,
   "camera": 4,
-  "subject": 4,
+  "subject": 2,
   "motion": 5,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/26.mp4",
+  "video_id": "dream1k_26",
+  "captions": {
+    "single": "A beaver is speaking and then bends down to pick up an object and pushes it towards the fox's face. The scene switches to a creature taking off its shoes, kicking them forward, standing on the ground with feet apart, and the camera pans up to show the creature opening its mouth."
+  },
+  "metadata": {
+    "duration": 9.5,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 2,
+    "n_events": 9
+  }
 }

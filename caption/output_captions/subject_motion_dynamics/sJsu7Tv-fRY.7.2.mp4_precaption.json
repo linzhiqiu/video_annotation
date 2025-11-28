@@ -1,0 +1,8 @@
+{
+    "video_id": "sJsu7Tv-fRY.7.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static shot that slowly pulls back from a close-up, low-angle view of two parallel concrete elevated tracks. The camera reveals the supporting pillars and the surrounding urban landscape, including trees, grass, and buildings in the distance. The composition is symmetrical, with the tracks creating strong leading lines against an overcast sky.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-22T00:37:16.737559"
+}

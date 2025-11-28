@@ -1,11 +1,28 @@
 {
   "segments": [],
-  "critique": "",
-  "overall": 5,
+  "critique": "The spatial information is omitted.",
+  "overall": 4,
   "camera": 5,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-03T11:27:26.784Z"
+  "timestamp": "2025-11-08T05:16:45.011Z",
+  "video_path": "PE-Video/430831558.mp4",
+  "video_id": "430831558",
+  "captions": {
+    "single": "The video is a stop motion animation with a calendar for the month of October placed on a table with a net-like tablecloth with frosted sugar cookies neatly arranged around it. The cookies are Halloween-themed shaped like ghosts, bats, spiders and even a Jack-o-lantern shaped cookie. There is a mug of hot chocolate with mini marshmallows and a plate. The video is a still shot from the top-down angle. All the items on the surface slowly move out of the frame except for the calendar. "
+  },
+  "metadata": {
+    "duration": 6.87,
+    "resolution": "608x320",
+    "fps": 30.0,
+    "width": 608,
+    "height": 320,
+    "source": "pe-video",
+    "category": 3,
+    "category_name": "Close-up Shots",
+    "num_frames": 206.0,
+    "has_face": false
+  }
 }

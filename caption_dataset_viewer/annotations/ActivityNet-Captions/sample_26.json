@@ -1,0 +1,60 @@
+{
+  "segments": [
+    {
+      "text": "A woman",
+      "context": "Temporal segment 1",
+      "startIndex": 0,
+      "endIndex": 7
+    },
+    {
+      "text": "She",
+      "context": "Temporal segment 2",
+      "startIndex": 0,
+      "endIndex": 3
+    },
+    {
+      "text": "She",
+      "context": "Temporal segment 3",
+      "startIndex": 0,
+      "endIndex": 3
+    }
+  ],
+  "critique": "It\u2019s hard to determine whether it is a woman or a man, since their face is not visible.",
+  "overall": 5,
+  "camera": 1,
+  "subject": 1,
+  "motion": 5,
+  "scene": 4,
+  "spatial": 2,
+  "timestamp": "2025-11-05T04:24:10.497Z",
+  "video_path": "ActivityNet-Captions/v_a370DDsJtBA.mp4",
+  "video_id": "v_a370DDsJtBA",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 10.61,
+        "caption": "A woman is seated behind a wooden table."
+      },
+      {
+        "start_time": 14.95,
+        "end_time": 83.45,
+        "caption": "She quickly moves color blocks on a puzzle, trying to solve it."
+      },
+      {
+        "start_time": 84.9,
+        "end_time": 96.48,
+        "caption": "She solves the puzzle and shows it to the camera."
+      }
+    ],
+    "full": "A woman is seated behind a wooden table. She quickly moves color blocks on a puzzle, trying to solve it. She solves the puzzle and shows it to the camera."
+  },
+  "metadata": {
+    "duration": 96.48,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
+}

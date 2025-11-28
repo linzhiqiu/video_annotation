@@ -29,14 +29,33 @@
       "context": "Single caption",
       "startIndex": 876,
       "endIndex": 923
+    },
+    {
+      "text": "a dreamlike sky that shifts in color and intensity between shades of green, blue, and white.",
+      "context": "Single caption",
+      "startIndex": 437,
+      "endIndex": 530
     }
   ],
-  "critique": "1. The camera does not zoom out but tilts upward.\n2. The full figure of the creature is not visible \u2014 only the upper half of its body can be seen at the end.\n3. There is no panning around the creature.\n4. There is minimal camera movement, limited to an upward tilt.\n5. There does not appear to be a wide shot.",
+  "critique": "1. The camera does not zoom out but tilts upward.\n2. The full figure of the creature is not visible \u2014 only the upper half of its body can be seen at the end.\n3. There is no panning around the creature.\n4. There is minimal camera movement, limited to an upward tilt.\n5. There does not appear to be a wide shot.\n6. The color of the sky doesn't shift.",
   "overall": 2,
   "camera": 1,
   "subject": 5,
   "motion": 4,
-  "scene": 3,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:45:59.248Z"
+  "scene": 4,
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:14:38.867Z",
+  "video_path": "UltraVideo/974987cd-cd2b-4840-9c21-eab86bd9d0b6.mp4",
+  "video_id": "974987cd-cd2b-4840-9c21-eab86bd9d0b6.mp4",
+  "captions": {
+    "single": "The video opens with a close-up shot of a fantastical creature initially obscured by a shimmering, translucent barrier. As the camera slowly zooms out, the full figure of the creature becomes visible, revealing its intricate details and menacing presence. The creature has sharp claws, glowing eyes, and a glowing aura, suggesting it possesses magical or supernatural powers. It stands amidst a surreal landscape with floating rocks and a dreamlike sky that shifts in color and intensity between shades of green, blue, and white. The ground is covered in a soft, glowing substance, enhancing the fantastical setting. The camera then pans around the creature, capturing its slow and deliberate movements and the energy emanating from its body. The lighting is dynamic and dramatic, casting shadows and highlights that add depth and dimension to the scene. The video features a combination of close-up, medium, and wide shots, with fluid and smooth camera movements including dolly out, tracking shots, and crane shots. The transitions between shots are seamless, maintaining the continuity of the scene. The overall atmosphere is mysterious and suspenseful, with a low illumination and a high proportion of shadows, creating a sense of tension and anticipation. The video has a fantasy and science fiction style, enhanced by CGI and animation, contributing to its highly aesthetic and professional look."
+  },
+  "metadata": {
+    "duration": 3.0,
+    "resolution": "3840x2160",
+    "fps": 24.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

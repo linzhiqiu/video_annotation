@@ -15,5 +15,21 @@
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 4
+  "spatial": 4,
+  "video_path": "TUNA-Bench/DREAM-1K_269.mp4",
+  "video_id": "TUNA_0045",
+  "captions": {
+    "single": "The video begins with a close-up of a man's front face. He is a black man wearing black rimmed glasses and holding a black telephone receiver in his left hand. He looks down in a very focused expression. The background is blurred and some of the people behind the man are also holding phones in their hands.\nNext, the camera switches to a piece of paper with lines of words and red circles and slashes drawn on the words at the bottom of the paper. A hand is holding a red pen and moving to the upper of the paper. The camera follows the hand as it moves upwards. The hand then stops at the top of the paper and swings the pen to the right.\nThe camera switches back to the man again. He looks up to his left and then continues to gaze down. The camera switches back to the paper again. The hand raises upwards a little. The camera switches closer to the paper and shows that the hand circles the words \"PENSION FUND CEO Walter Ribbon\" in red pen.\nThe camera switches to just below the man's face and then follows the man's hand movements quickly to the right. The man wears a white clothes with a tie on his chest. He quickly extends his right hand out forward and places it on a black telephone to dial a number.\nFinally, the camera shifts and moves to the upper left. The frame is blurred. Someone walks past the man's front right side towards the right side of the frame. The man continues to hold the phone in his left hand."
+  },
+  "metadata": {
+    "duration": 12.62,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
 }

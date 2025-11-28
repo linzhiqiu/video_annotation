@@ -564,26 +564,26 @@ class OnboardingApp:
             
             # 1. Pre-caption (always visible)
             st.write("##### Pre-caption")
-            st.write(new_annotator_data.get("pre_caption", "No pre-caption available"))
+            st.text(new_annotator_data.get("pre_caption", "No pre-caption available"))
             
             # 2. Your feedback and final caption (expandable)
             your_score = new_annotator_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"##### 👤 Your Feedback and Caption", expanded=True):
                 st.write(f"**Final Feedback ({your_score}/5):**")
-                st.write(new_annotator_data.get("final_feedback", "No final feedback available"))
+                st.text(new_annotator_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
-                st.write(new_annotator_data.get("final_caption", "No caption available"))
+                st.text(new_annotator_data.get("final_caption", "No caption available"))
             
             # 3. Ground truth feedback and final caption (expandable) - highlighted
             expert_score = current_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"🔍 {current_user}'s Feedback and Caption (Expert)", expanded=True):
                 st.markdown(f"<span style='color: #51cf66; font-weight: bold;'>Expert's Work</span>", unsafe_allow_html=True)
                 st.write(f"**Final Feedback ({expert_score}/5):**")
-                st.write(current_data.get("final_feedback", "No final feedback available"))
+                st.text(current_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
-                st.write(current_data.get("final_caption", "No caption available"))
+                st.text(current_data.get("final_caption", "No caption available"))
         
         with tab2:
             st.subheader("📚 Ground Truth Version")

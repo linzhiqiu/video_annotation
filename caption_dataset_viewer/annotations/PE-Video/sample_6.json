@@ -9,11 +9,28 @@
   ],
   "critique": "The pigeon pecks at the piece of bread a few times initially, then walks counterclockwise around the bread in a full circle before returning to its original position to continue pecking.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T13:40:15.035Z",
+  "timestamp": "2025-11-08T05:04:26.294Z",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 4,
   "scene": 1,
-  "spatial": 4
+  "spatial": 3,
+  "video_path": "PE-Video/256683672.mp4",
+  "video_id": "256683672",
+  "captions": {
+    "single": "The video shows a pigeon eating a piece of bread on the ground. The pigeon is black with a white patch near its beak and a white tail. There is one more pigeon in the background walking here and there."
+  },
+  "metadata": {
+    "duration": 12.84,
+    "resolution": "608x342",
+    "fps": 25.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 8,
+    "category_name": "Animals",
+    "num_frames": 321.0,
+    "has_face": false
+  }
 }

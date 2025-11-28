@@ -4,8 +4,25 @@
   "overall": 5,
   "camera": 1,
   "subject": 5,
-  "motion": 1,
+  "motion": 5,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T17:36:35.576Z"
+  "timestamp": "2025-11-08T02:47:24.010Z",
+  "video_path": "MSR-VTT/video1822.mp4",
+  "video_id": "video1822",
+  "captions": {
+    "single": "small amounts of spices including cinnamon cardamom pods peppercorns and cayenne pepper are displayed on a white plate"
+  },
+  "metadata": {
+    "duration": 22.35,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 16,
+    "youtube_url": "https://www.youtube.com/watch?v=UUmg2nRkyig",
+    "start_time": 44.16,
+    "end_time": 66.51
+  }
 }

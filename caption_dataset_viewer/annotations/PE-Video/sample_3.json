@@ -9,10 +9,27 @@
   ],
   "critique": "1. It\u2019s not a pan across, but rather an arc slightly counterclockwise around the bee, accompanied by noticeable shaking.",
   "overall": 4,
-  "camera": 3,
+  "camera": 2,
   "subject": 5,
-  "motion": 4,
-  "scene": 5,
+  "motion": 5,
+  "scene": 3,
   "spatial": 1,
-  "timestamp": "2025-11-03T13:35:41.795Z"
+  "timestamp": "2025-11-08T05:01:17.184Z",
+  "video_path": "PE-Video/426766700.mp4",
+  "video_id": "426766700",
+  "captions": {
+    "single": "The camera pans across a bee on a yellow plant with small purple flowers. It is moving on the flowers and flying around them. The leaves are bright yellow in color. "
+  },
+  "metadata": {
+    "duration": 24.02,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 5,
+    "category_name": "Nature Scenes",
+    "num_frames": 720.0,
+    "has_face": false
+  }
 }

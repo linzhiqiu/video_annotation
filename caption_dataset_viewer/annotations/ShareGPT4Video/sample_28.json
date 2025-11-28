@@ -15,10 +15,23 @@
   ],
   "critique": "1. At the beginning, the camera zooms in on the speaker from an overhead point of view, then the video cuts to a frontal shot that zooms out on the speaker. You didn\u2019t clarify the specific camera movements, nor did you mention the cuts between different shots.\n\n2. Due to the cuts and transitions between shots, the camera perspective is not consistently static or unchanging.",
   "overall": 3,
-  "camera": 1,
+  "camera": 2,
   "subject": 5,
   "motion": 5,
   "scene": 4,
   "spatial": 1,
-  "timestamp": "2025-11-04T05:56:00.164Z"
+  "timestamp": "2025-11-04T19:17:16.280Z",
+  "video_path": "ShareGPT4Video/7N4r-Es8XAk.mp4",
+  "video_id": "7N4r-Es8XAk",
+  "captions": {
+    "single": "The video presents a modern, well-lit room minimally decorated to highlight a sleek, black elliptical speaker located on a light grey shelf. An iPod, suggesting the source of music, is connected to the speaker. The room includes personal touches like a framed sketch and a group of contemporary white vases, alongside a partially visible white device. The wooden flooring adds to the room's clean design. A text overlay indicates that the speaker is equipped with AirPlay\u00ae wireless streaming technology, and the brand 'CRUTCHFIELD' is seen, suggesting an association with the product.\n\nAs the video progresses, the camera zooms or moves to focus tightly on the speaker, blurring the background and isolating it from the room, emphasizing the speaker's design and suggesting its importance in the entertainment setup. It appears to be part of a promotion, as indicated by the consistent 'CRUTCHFIELD' branding.\n\nFurther into the video, an individual in a white shirt and dark trousers appears behind the speaker, now on the right side of the frame. The person is seen making gestures, possibly delivering an explanation or presentation, perhaps about the speaker system, which is integrated within a broader audio setup including amplifiers and other components. The presence of 'CRUTCHFIELD' branding suggests company affiliation.\n\nThe final scene displays the same individual with both hands rested on the speaker, possibly signaling a pause or transition during the presentation. The audio equipment is still in view, and the camera perspective has remained static, focusing on the speaker and the presenter. The persistent visibility of the 'CRUTCHFIELD' branding implies a consistent promotional element across the video, which seems to aim at informing or promoting the speaker's features within an audio system demonstration."
+  },
+  "metadata": {
+    "duration": 14.38,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

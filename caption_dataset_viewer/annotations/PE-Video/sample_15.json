@@ -3,9 +3,26 @@
   "critique": "1. The camera is tilting upward, but the description of its movement is missing.",
   "overall": 4,
   "camera": 1,
-  "subject": 5,
+  "subject": 4,
   "motion": 5,
-  "scene": 1,
-  "spatial": 5,
-  "timestamp": "2025-11-03T13:45:39.980Z"
+  "scene": 3,
+  "spatial": 2,
+  "timestamp": "2025-11-08T05:17:57.811Z",
+  "video_path": "PE-Video/339600256.mp4",
+  "video_id": "339600256",
+  "captions": {
+    "single": "The video shows a person wearing yellow gloves and a light tone t-shirt, who is using a vacuum cleaner to clean a sofa. The person is kneeling on the floor, and the bed has a sofa patterned. The background is blur."
+  },
+  "metadata": {
+    "duration": 10.41,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 0,
+    "category_name": "Work Activities",
+    "num_frames": 312.0,
+    "has_face": false
+  }
 }

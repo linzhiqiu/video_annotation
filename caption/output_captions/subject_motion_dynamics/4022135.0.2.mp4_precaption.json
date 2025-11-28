@@ -1,0 +1,8 @@
+{
+    "video_id": "4022135.0.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a wide, scenic shot of a college football game at Northwestern University's Ryan Field. The stands are filled with a large crowd, many wearing purple, watching the players on the green field below. In the background, beyond the stadium, a line of trees and some buildings are visible under a cloudy, overcast sky. The camera slowly pans from right to left, offering a broader view of the stadium and the game day atmosphere.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-19T03:40:23.402664"
+}

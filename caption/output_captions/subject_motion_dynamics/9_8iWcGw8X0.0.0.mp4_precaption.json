@@ -1,0 +1,8 @@
+{
+    "video_id": "9_8iWcGw8X0.0.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video features a scenic shot that begins with a close-up of a rainbow against a cloudy sky. The camera then pans down to reveal a lush, green landscape of rolling hills and trees below the arching rainbow. The overall effect is a beautiful and serene nature view.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-13T22:33:54.445008"
+}

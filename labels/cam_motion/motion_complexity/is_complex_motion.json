@@ -2,7 +2,7 @@
     "label": "Is Complex Motion",
     "label_name": "is_complex_motion",
     "def_question": [
-        "Does the camera show complex motion, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear?",
+        "Does the camera execute a complex movement that is hard to classify, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear?",
         "Does the camera show complex motion that is hard to classify?"
     ],
     "alt_question": [
@@ -17,7 +17,7 @@
         "Does the camera perform a complex maneuver with multiple changes?"
     ],
     "def_prompt": [
-        "The camera executes a complex movement that is hard to classify.",
+        "The camera executes a complex movement that is hard to classify, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear.",
         "The camera moves in a complex way that doesn't fit standard motion categories."
     ],
     "alt_prompt": [

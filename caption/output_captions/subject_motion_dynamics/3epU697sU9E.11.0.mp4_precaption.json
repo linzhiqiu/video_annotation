@@ -1,0 +1,8 @@
+{
+    "video_id": "3epU697sU9E.11.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, ground-level shot focused on the \"FOX\" logo on a large stone wall in a city. People can be seen in the background, with one man walking up stairs and another sitting at a table. The camera remains completely still throughout the brief clip.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-07T04:28:24.477789"
+}

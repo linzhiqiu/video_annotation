@@ -1,0 +1,8 @@
+{
+    "video_id": "upC8hjr2b4g.6.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot of a dimly lit, narrow hallway. A single closed door stands at the end, bathed in the eerie glow of a red light fixture mounted above it. A sign on the wall, also under the red light, displays the text \"13 \u53f7\u623f\u95f4\".",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-08T00:39:56.643260"
+}

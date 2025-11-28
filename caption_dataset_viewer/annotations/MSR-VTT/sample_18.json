@@ -7,5 +7,22 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T17:39:24.902Z"
+  "timestamp": "2025-11-03T17:39:24.902Z",
+  "video_path": "MSR-VTT/video1852.mp4",
+  "video_id": "video1852",
+  "captions": {
+    "single": "a carpenter making interior design"
+  },
+  "metadata": {
+    "duration": 13.31,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 10,
+    "youtube_url": "https://www.youtube.com/watch?v=IRUjnZhiNrQ",
+    "start_time": 60.69,
+    "end_time": 74.0
+  }
 }

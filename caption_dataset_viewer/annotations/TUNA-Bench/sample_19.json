@@ -7,13 +7,29 @@
       "endIndex": 554
     }
   ],
-  "critique": "\u201cthe box a metal bucket\u201d should be corrected to \u201ca metal box\u201d due to a grammatical error.\nThe camera is static, which should be ,mentioned.",
+  "critique": "\u201cthe box a metal bucket\u201d should be corrected to \u201ca metal box\u201d due to a grammatical error.\nThe camera is static, which should be mentioned.",
   "likert_score": 5,
-  "timestamp": "2025-11-04T09:25:10.189Z",
+  "timestamp": "2025-11-05T05:25:02.582Z",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 3
+  "spatial": 3,
+  "video_path": "TUNA-Bench/DREAM-1K_343.mp4",
+  "video_id": "TUNA_0095",
+  "captions": {
+    "single": "The video begins with the camera focusing on a kitchen, which is dim with several fluorescent lights in the ceiling. The kitchen is flanked by metal shelves and workbenches with a variety of cookware and ingredients on them. In the middle of the frame is a man wearing a light-coloured short-sleeved shirt and dark sweatpants. The man stands in front of a refrigerator whose door is open.\nThe man holds several items in his left hand, and takes out a rectangular box inside the refrigerator with his right hand. The man then places the box a metal bucket on his left hand and holds the box with his chin. The man then closes the refrigerator with his right hand and turns around to walk towards the table behind him. Next, the man takes a bottle of milk on the table with his right hand and turns around to walk towards the left side of the frame."
+  },
+  "metadata": {
+    "duration": 7.88,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic"
+  }
 }

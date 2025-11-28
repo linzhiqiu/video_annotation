@@ -45,6 +45,16 @@ import tempfile
 import os
 import json
 from pathlib import Path
+import re  # Make sure this is in your imports
+
+def clean_text(text: str) -> str:
+    """Remove newlines and clean up spacing using smart replace strategy"""
+    if not text:
+        return text
+    cleaned = text.replace('\n', ' ')
+    cleaned = re.sub(r' +', ' ', cleaned)
+    cleaned = cleaned.strip()
+    return cleaned
 
 def validate_and_repair_video(video_path: str, verbose: bool = False) -> str:
     """
@@ -1789,7 +1799,30 @@ class CritiqueGenerator:
         except Exception as e:
             print(f"Error loading original export data: {e}")
             return {}
-        
+
+        # Clean final_caption and final_feedback in original data
+        for video_id, video_data in original_export_data.items():
+            captions = video_data.get("captions", {})
+            
+            for caption_type, caption_data_wrapper in captions.items():
+                # Only process approved/rejected (same as critique generation)
+                status = caption_data_wrapper.get("status")
+                if status not in ["approved", "rejected"]:
+                    continue
+                
+                # Safety check (should always pass for approved/rejected)
+                if "caption_data" not in caption_data_wrapper:
+                    print(f"Warning: {video_id}/{caption_type} missing caption_data despite status={status}")
+                    continue
+                
+                caption_data = caption_data_wrapper["caption_data"]
+                
+                if "final_caption" in caption_data:
+                    caption_data["final_caption"] = clean_text(caption_data["final_caption"])
+                
+                if "final_feedback" in caption_data:
+                    caption_data["final_feedback"] = clean_text(caption_data["final_feedback"])
+                    
         # Now traverse critique files and merge with original data
         critique_count = 0
         for critique_type_dir in self.output_dir.iterdir():
@@ -1852,7 +1885,7 @@ class CritiqueGenerator:
                                 "model": critique_data["model"],
                                 "prompt_name": critique_data["prompt_name"],
                                 "mode": critique_data["mode"],
-                                "bad_caption": critique_data["bad_caption"],
+                                "bad_caption": clean_text(critique_data["bad_caption"]),
                                 "timestamp": critique_data["generation_timestamp"]
                             }
                         else:
@@ -1861,8 +1894,8 @@ class CritiqueGenerator:
                                 "model": critique_data["model"],
                                 "prompt_name": critique_data["prompt_name"],
                                 "mode": critique_data["mode"],
-                                "generated_critique": critique_data["generated_critique"],
-                                "revised_caption_by_generated_critique": critique_data["revised_caption_by_generated_critique"],
+                                "generated_critique": clean_text(critique_data["generated_critique"]),
+                                "revised_caption_by_generated_critique": clean_text(critique_data["revised_caption_by_generated_critique"]),
                                 "timestamp": critique_data["generation_timestamp"]
                             }
                             # Add fallback note if present

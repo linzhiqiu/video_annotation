@@ -15,10 +15,23 @@
   ],
   "critique": "1. The camera keeps zooming out, but the caption states that \u201cthere is no significant camera movement.\u201d\n\n2. The cover remains centered at the end, rather than positioned on the left.",
   "overall": 4,
-  "camera": 3,
+  "camera": 2,
   "subject": 5,
   "motion": 3,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T07:05:04.752Z"
+  "timestamp": "2025-11-04T19:17:58.387Z",
+  "video_path": "ShareGPT4Video/lL4wz3deYLc.mp4",
+  "video_id": "lL4wz3deYLc",
+  "captions": {
+    "single": "The video features a sequence showcasing a Blu-ray cover for the film \"Drag Me to Hell\". The cover is presented in close-up, highlighting a woman's distressed face with her head thrown back, mouth widened as if screaming, partially obscured by flames, set against a darker background. The movie's title is prominent, along with a red label stating \"Unrated Director's Cut\". Resting upon a patterned fabric, details such as \"2 VERSIONS UNRATED & THEATRICAL\" and \"SPIDER FROM SAM RAIMI\" become visible on the cover.\n\nMidway through the sequence, the scene experiences heavy overexposure, resulting in a washed-out effect that obscures the details of the Blu-ray cover and the patterned fabric, reducing them to faint outlines and indiscernible shapes.\n\nSubsequently, the video corrects for overexposure to clearly display the Blu-ray cover once again, this time positioned diagonally on the left side of the frame, with the patterned fabric filling the right side. Ghostly figures and ethereal colors augment the cover's artwork, alongside readable text citing Sam Raimi and confirming the availability of both \"Unrated\" and \"Theatrical\" versions of the movie. The intricate, dark floral designs of the fabric are set against a lighter surface, and throughout, there is no significant camera movement, maintaining a static focus on the cover and its patterned backdrop."
+  },
+  "metadata": {
+    "duration": 18.02,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

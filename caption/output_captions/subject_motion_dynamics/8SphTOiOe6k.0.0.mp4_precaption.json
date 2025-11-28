@@ -1,0 +1,8 @@
+{
+    "video_id": "8SphTOiOe6k.0.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static shot of a bustling street corner in a Japanese tourist district, likely Arashiyama in Kyoto. The scene captures traditional-style buildings, various food stalls, and pedestrians, including two women in kimonos. The video is a still image, showing a frozen moment in time with no movement.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-07T23:22:28.454520"
+}

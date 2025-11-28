@@ -1,0 +1,8 @@
+{
+    "video_id": "0nTO4zSEpOs.5.6.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot of a modern building's interior at night. The camera begins by looking into a bar through a window, then pans right and moves down a hallway. The shot features smooth camera movement through the contemporary space.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-13T22:31:09.131562"
+}

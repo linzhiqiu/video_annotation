@@ -1,0 +1,8 @@
+{
+    "video_id": "qs8LQLmJ6_g_0002_0015.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, scenic aerial shot of a city nestled in a valley at sunset. A long, straight road runs through the center of the city, leading toward a range of mountains in the distance. The setting sun peeks over the mountains, casting a warm, hazy, orange glow over the entire landscape.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-21T23:56:03.773632"
+}

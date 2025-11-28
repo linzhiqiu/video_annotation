@@ -1,11 +1,35 @@
 {
-  "segments": [],
-  "critique": "A Barbie doll model holds a baby doll, stands up from a chair, and then the scene cuts to a table where the two baby dolls are placed, with two adult models beside them.",
+  "segments": [
+    {
+      "text": "a cartoon pictures talking",
+      "context": "Single caption",
+      "startIndex": 0,
+      "endIndex": 26
+    }
+  ],
+  "critique": "It\u2019s not a cartoon picture; it is shot in real life, showing a Barbie doll model holding a baby doll, standing up from a chair, and then cutting to a table where two baby dolls are placed with two adult models beside them.",
   "overall": 1,
   "camera": 1,
   "subject": 1,
   "motion": 1,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:27:20.790Z"
+  "timestamp": "2025-11-09T08:50:28.725Z",
+  "video_path": "MSR-VTT/video1307.mp4",
+  "video_id": "video1307",
+  "captions": {
+    "single": "a cartoon pictures talking"
+  },
+  "metadata": {
+    "duration": 10.71,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 14,
+    "youtube_url": "https://www.youtube.com/watch?v=4dweYSEeGbQ",
+    "start_time": 328.41,
+    "end_time": 339.12
+  }
 }

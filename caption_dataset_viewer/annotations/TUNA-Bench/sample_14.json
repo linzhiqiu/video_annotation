@@ -32,5 +32,21 @@
   "motion": 4,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T08:32:32.051Z"
+  "timestamp": "2025-11-04T08:32:32.051Z",
+  "video_path": "TUNA-Bench/DREAM-1K_322.mp4",
+  "video_id": "TUNA_0074",
+  "captions": {
+    "single": "The video begins with the camera focusing on an indoor scene.  The background is a simply decorated room and a painting of a voyage hanging on the wall to the right of the frame.  At the back of the room is a large cylindrical metal device. On the left side of the room is a bar behind which stands a man wearing a red hat and a black suit with his head bowed. Next to the bar sits a man wearing a red hat and a black suit. The man sitting by the bar holds a glass of wine in both hands. He then puts down the glass with his left hand and puts his left hand on his hip. A table lamp on the bar shines soft lights.\nOn a sofa in the middle of the room sits a white-haired man in a black suit. The white-haired man puts his hands on his knees and leans forward to look at the camera as he speaks. Behind the white-haired man stands a long table, lying across the room. On the right side of the long table sits a woman with long hair. The long-haired woman faces the camera with a cigarette in her right hand as she looks down at something on the tabletop. A young man half crouches in front of the cylindrical device which is behind the woman. The young man has curly hair and wears white clothes. The left side of the young man's body faces the camera.  A bearded man in uniform stands front right of the young man. The young man and the long bearded man are communicating and passing tools. The long bearded man is repairing a light on the wall.\nSuddenly, the lights in the room go out and the entire scene plunges into darkness. A few seconds later, the light on the left side of the screen flickers. The two men at the bar look up."
+  },
+  "metadata": {
+    "duration": 4.5,
+    "resolution": "1920x832",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 832,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Subject"
+  }
 }

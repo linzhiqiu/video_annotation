@@ -1,0 +1,86 @@
+{
+  "segments": [
+    {
+      "text": "natural light streams in through a large window",
+      "context": "Single caption",
+      "startIndex": 258,
+      "endIndex": 305
+    },
+    {
+      "text": "Initially, they are seen lying",
+      "context": "Single caption",
+      "startIndex": 650,
+      "endIndex": 682
+    },
+    {
+      "text": "a white and a blue rectangular object",
+      "context": "Single caption",
+      "startIndex": 730,
+      "endIndex": 767
+    },
+    {
+      "text": "blue container filled with yellow liquid",
+      "context": "Single caption",
+      "startIndex": 1126,
+      "endIndex": 1166
+    },
+    {
+      "text": "golden upholstery",
+      "context": "Single caption",
+      "startIndex": 1449,
+      "endIndex": 1466
+    },
+    {
+      "text": "mix of close-up and wide-angle shots",
+      "context": "Single caption",
+      "startIndex": 2004,
+      "endIndex": 2040
+    },
+    {
+      "text": "quick transitions",
+      "context": "Single caption",
+      "startIndex": 2241,
+      "endIndex": 2258
+    },
+    {
+      "text": "The individual is seen resting on a cozy sofa",
+      "context": "Single caption",
+      "startIndex": 2456,
+      "endIndex": 2501
+    },
+    {
+      "text": "a stuffed animal or toy that adds a whimsical element",
+      "context": "Single caption",
+      "startIndex": 2903,
+      "endIndex": 2956
+    },
+    {
+      "text": "a small air conditioning",
+      "context": "Single caption",
+      "startIndex": 2806,
+      "endIndex": 2830
+    }
+  ],
+  "critique": "Not able to see a large window.\nThey are not lying down; they are standing and walking.\nWhite and blue cloths, rather than a rectangular object.\nThe blue container is not filled with yellow liquid, but with some yellow objects.\nYellow upholstery, rather than golden upholstery.\nThe shot size remains unchanged, not a mix of close-up and wide-angle shots.\nNo transitions.\nNo individual is seen resting on a cozy sofa.\nNo stuffed animal or air conditioner is visible.",
+  "overall": 3,
+  "camera": 1,
+  "subject": 3,
+  "motion": 3,
+  "scene": 4,
+  "spatial": 1,
+  "timestamp": "2025-11-04T18:49:39.167Z",
+  "video_path": "VDC/02e33b0d-ef73-449b-b7de-48bf04c0f76c.mp4",
+  "video_id": "02e33b0d-ef73-449b-b7de-48bf04c0f76c",
+  "captions": {
+    "single": "The video unfolds within a spacious and elegantly furnished living room, characterized by a richly patterned carpet adorned with intricate designs in gold and deep purple hues. The walls are painted in a soft, neutral color that complements the decor, while natural light streams in through a large window, casting a warm glow across the room. This inviting atmosphere is punctuated by the faint sounds of movement and the gentle rustle of fabric, creating a serene backdrop for the unfolding narrative.\n\nAt the center of this domestic scene is a person dressed in a crisp white shirt and beige pants, who is actively engaged in preparing for a task. Initially, they are seen lying on the ornately patterned carpet, surrounded by a white and a blue rectangular object. As the video progresses, the camera shifts to reveal a broader array of elements within the room, including a vibrant yellow upholstered chair that adds a pop of color to the space. The individual\u2019s legs come into view, accompanied by various items scattered around them, such as a small electronic device, a cloth with another electronic device, papers, a blue container filled with yellow liquid, and an assortment of medical supplies. These details hint at the person's subtle interactions with their surroundings, suggesting a blend of creativity and practicality.\n\nThe narrative continues to evolve, showcasing more of the living space, which features a luxurious couch with golden upholstery and a partially open wooden door that invites curiosity about what lies beyond. The presence of the individual becomes increasingly pronounced as an arm and hands emerge, focusing on the manipulation of a white object, further emphasizing their engagement with the environment. The camera captures intimate close-ups of the person\u2019s hands as they deftly navigate the various tools and materials scattered around, showcasing a sense of determination and focus.\n\nAs the video transitions to a more detailed view, the camera work employs a mix of close-up and wide-angle shots, effectively capturing both the intricate details of the subject's actions and the broader context of the room. The angles are dynamic, often tilting slightly to convey movement and engagement, while quick transitions follow the subject\u2019s movements, creating a sense of fluidity. The use of a fisheye lens adds a unique perspective, emphasizing the depth of the room and the spatial relationships between objects.\n\nThe individual is seen resting on a cozy sofa, surrounded by a technology-equipped area that includes a detailed carpet, a shoulder and head indicating their presence. New elements are introduced, such as mirrored reflections that add depth to the scene, a large white board adorned with sketches, an ornate chair that enhances the room's aesthetic, a small air conditioning unit for comfort, a potted plant that brings a touch of nature indoors, a stuffed animal or toy that adds a whimsical element, and a stack of documents that signify ongoing projects or interests. \n\nThroughout the video, the warm color palette enhances the inviting atmosphere, while the continuous narrative of a lived-in space is characterized by creative, technological, and personal elements. The individual\u2019s interactions with various objects, including moving from what appears to be a framed mirror or painting to a mobile device, highlight a nuanced engagement with their surroundings. This rich tapestry of activity and decor paints a vivid picture of a dynamic domestic setting, where creativity and technology intertwine seamlessly, inviting viewers to immerse themselves in the experience of this thoughtfully curated living space."
+  },
+  "metadata": {
+    "duration": 60.0,
+    "resolution": "2560x1920",
+    "fps": 30.0,
+    "width": 2560,
+    "height": 1920,
+    "source": "vdc",
+    "original_source": "ego4d"
+  }
+}

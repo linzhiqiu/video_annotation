@@ -14,5 +14,22 @@
   "motion": 1,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-02T20:34:20.781Z"
+  "timestamp": "2025-11-02T20:34:20.781Z",
+  "video_path": "MSR-VTT/video1045.mp4",
+  "video_id": "video1045",
+  "captions": {
+    "single": "a 1980 s music video"
+  },
+  "metadata": {
+    "duration": 12.16,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 0,
+    "youtube_url": "https://www.youtube.com/watch?v=pIgZ7gMze7A",
+    "start_time": 73.2,
+    "end_time": 85.36
+  }
 }

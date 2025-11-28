@@ -20,5 +20,65 @@
   "motion": 4,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:34:21.178Z"
+  "timestamp": "2025-11-04T15:34:21.178Z",
+  "video_path": "ActivityNet-Captions/v_Y2gFwWnli4g.mp4",
+  "video_id": "v_Y2gFwWnli4g",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 6.43,
+        "end_time": 24.56,
+        "caption": "A chef speaks as she stands by a table full of cooking ingredients."
+      },
+      {
+        "start_time": 25.14,
+        "end_time": 35.08,
+        "caption": "She grabs oil and salt and pours it into a mixing bowl."
+      },
+      {
+        "start_time": 35.67,
+        "end_time": 40.93,
+        "caption": "She stirs the ingredients with some tongs."
+      },
+      {
+        "start_time": 41.51,
+        "end_time": 54.38,
+        "caption": "She pours some tomatoes, zucchini and red onions into the mixing bowl."
+      },
+      {
+        "start_time": 54.96,
+        "end_time": 60.81,
+        "caption": "She cuts up some cilantro."
+      },
+      {
+        "start_time": 61.39,
+        "end_time": 64.31,
+        "caption": "She throws the cilantro into the mixing bowl."
+      },
+      {
+        "start_time": 64.9,
+        "end_time": 85.36,
+        "caption": "She mixes the vegetables in the mixing bowl with the tongs."
+      },
+      {
+        "start_time": 85.95,
+        "end_time": 95.3,
+        "caption": "She places the vegetable on top of some arugula on a plate."
+      },
+      {
+        "start_time": 95.89,
+        "end_time": 104.66,
+        "caption": "She shows off the salad."
+      }
+    ],
+    "full": "A chef speaks as she stands by a table full of cooking ingredients. She grabs oil and salt and pours it into a mixing bowl. She stirs the ingredients with some tongs. She pours some tomatoes, zucchini and red onions into the mixing bowl. She cuts up some cilantro. She throws the cilantro into the mixing bowl. She mixes the vegetables in the mixing bowl with the tongs. She places the vegetable on top of some arugula on a plate. She shows off the salad."
+  },
+  "metadata": {
+    "duration": 116.94,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

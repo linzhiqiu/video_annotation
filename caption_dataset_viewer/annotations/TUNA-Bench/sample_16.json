@@ -14,5 +14,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T08:52:10.995Z"
+  "timestamp": "2025-11-04T08:52:10.995Z",
+  "video_path": "TUNA-Bench/DREAM-1K_330.mp4",
+  "video_id": "TUNA_0082",
+  "captions": {
+    "single": "The video begins with the camera focusing on a blue and grey Automatic Teller Machine (ATM). The ATM is spitting out a large lot of money, which are rapidly pouring out of the cash outlet. The camera sways and then moves backwards.\nNext, the camera switches to a man who stands outdoors with city streets and buildings in the background. The man wears a light-coloured, long-sleeved shirt and has short hair. He looks surprised. He turns his head left and looks down. A red and grey bus can be seen in the background, along with some pedestrians and buildings.\nThe camera switches back to the ATM. A sentence appears slowly on the ATM's screen which reads \"Honestly I thought you would have more money than this\"."
+  },
+  "metadata": {
+    "duration": 4.5,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
 }

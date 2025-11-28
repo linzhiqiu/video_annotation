@@ -1,11 +1,28 @@
 {
   "segments": [],
-  "critique": "",
-  "overall": 5,
+  "critique": "The camera information is omitted.",
+  "overall": 4,
   "camera": 1,
-  "subject": 4,
+  "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 5,
-  "timestamp": "2025-11-03T13:45:57.043Z"
+  "spatial": 3,
+  "timestamp": "2025-11-08T05:18:53.127Z",
+  "video_path": "PE-Video/637176164.mp4",
+  "video_id": "637176164",
+  "captions": {
+    "single": "The video is a close-up shot which shows a small waterfall with water flowing down from a rocky surface. As the water hits down it creates a white foamy effect."
+  },
+  "metadata": {
+    "duration": 10.21,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 1,
+    "category_name": "Water Scenes",
+    "num_frames": 306.0,
+    "has_face": false
+  }
 }

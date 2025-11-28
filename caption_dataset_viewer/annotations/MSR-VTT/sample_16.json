@@ -4,8 +4,25 @@
   "overall": 5,
   "camera": 1,
   "subject": 3,
-  "motion": 1,
+  "motion": 5,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T17:01:07.910Z"
+  "timestamp": "2025-11-08T02:43:23.738Z",
+  "video_path": "MSR-VTT/video1797.mp4",
+  "video_id": "video1797",
+  "captions": {
+    "single": "a car review of a gmc truck"
+  },
+  "metadata": {
+    "duration": 17.08,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 9,
+    "youtube_url": "https://www.youtube.com/watch?v=2cK_bIvQEMo",
+    "start_time": 8.66,
+    "end_time": 25.74
+  }
 }

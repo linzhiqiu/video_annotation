@@ -44,5 +44,18 @@
   "motion": 2,
   "scene": 4,
   "spatial": 2,
-  "timestamp": "2025-11-04T06:16:10.239Z"
+  "timestamp": "2025-11-04T06:16:10.239Z",
+  "video_path": "ShareGPT4Video/367b49a65d42fcd3e0828d4c66d2c13c485271bccd4b3d12fb2f03c58181ccdf.mp4",
+  "video_id": "367b49a65d42fcd3e0828d4c66d2c13c485271bccd4b3d12fb2f03c58181ccdf",
+  "captions": {
+    "single": "The video presents a series of abstract images featuring a ribbon-like structure with a gradient from white to violet at its core, surrounded by parallel light streams against a gradient blue background. Initially, the structure is centralized with a balanced composition that exudes fluidity and dynamism, possibly conveying themes of speed, data transfer, or connectivity. \n\nAs the video progresses, the ribbon becomes more defined and appears closer to the viewer, indicating a zoom-in effect. The image grows brighter, with a continuous focus on the central part of the image. The structure moves slightly to the right, maintaining the abstract motif while suggesting transformation or progression.\n\nThe ribbon-like figure then curves more notably, bending towards the left side of the frame, and occupies a larger area of the frame due to a continued zoom-in. The violet hue deepens and the light streams become brighter, adding depth to the image and conveying an evolving visual narrative.\n\nIn the subsequent scene, the ribbon highlights a graceful arc towards the right side, with the light source creating a soft glow that accentuates its texture and implies a reflective material. The camera maintains a tight zoom on the curvature, inviting the viewer to focus on the interplay between light and shadow while the blue backdrop remains calm and uniform.\n\nFinally, the ribbon turns sharply towards the left, indicating either rotation or a change in the light source's position. This creates a more pronounced curve with increased contrast between light and shadow on the striped texture. The camera holds its zoom level but shifts slightly to track the ribbon's motion, set against the consistent, serene blue background."
+  },
+  "metadata": {
+    "duration": 35.0,
+    "resolution": "1920x1080",
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080,
+    "source": "pixabay"
+  }
 }

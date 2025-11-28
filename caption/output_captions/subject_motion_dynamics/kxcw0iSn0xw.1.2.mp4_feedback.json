@@ -9,18 +9,18 @@
     "initial_caption_rating_score": 4,
     "feedback_is_needed": true,
     "user": "Yuhan Huang",
-    "initial_feedback": "He threw a bell pepper with his left hand, which is an important motion that you omit,  then swung the tennis racket with his right hand and hit the bell pepper.",
+    "timestamp": "2025-11-19T08:04:09.301101",
+    "initial_feedback": "The caption omits an important detail: the person initially throws the bell pepper with their left hand before swinging the tennis racket with their right hand to hit it.",
     "gpt_feedback_llm": "gpt-4o-2024-08-06",
     "gpt_feedback_prompt": "Given a video caption and user feedback, rewrite the feedback to enhance clarity, professionalism, and completeness while preserving its original intent. If the feedback is vague, overly brief, or poorly written, infer the likely meaning and refine it accordingly.\n\nOriginal caption: {pre_caption}\nUser feedback: {feedback}\n\nRespond with only the polished feedback, without JSON formatting or additional commentary.",
-    "gpt_feedback": "The video omits an important detail: the person initially throws the bell pepper with their left hand before swinging the tennis racket with their right hand to hit it.",
+    "gpt_feedback": "The caption is missing a crucial detail: before swinging the tennis racket with their right hand, the person first throws the bell pepper into the air with their left hand.",
     "feedback_rating": "\ud83d\ude00",
     "feedback_rating_score": 5,
-    "final_feedback": "The video omits an important detail: the person initially throws the bell pepper with their left hand before swinging the tennis racket with their right hand to hit it.",
+    "final_feedback": "The caption is missing a crucial detail: before swinging the tennis racket with their right hand, the person first throws the bell pepper into the air with their left hand.",
     "gpt_caption_llm": "gpt-4o-2024-08-06",
     "gpt_caption_prompt": "Given a video caption and user feedback, please provide an improved version of the caption that addresses the feedback. Note that the user feedback could be poorly written, so please try your best to guess what it means.\n\nOriginal caption: {pre_caption}\nUser feedback: {feedback}\n\nRespond with the improved caption only, without quotation marks or JSON formatting.",
     "gpt_caption": "A person throws a red bell pepper into the air with their left hand before swinging a tennis racket forward in a forehand motion with their right hand, striking the pepper. Upon impact, the pepper explodes, sending a cloud of small red fragments and seeds flying forward and outward. The person completes the swing as the pieces of the pepper scatter through the air.",
     "caption_rating": "\ud83d\ude00",
     "caption_rating_score": 5,
-    "final_caption": "A person throws a red bell pepper into the air with their left hand before swinging a tennis racket forward in a forehand motion with their right hand, striking the pepper. Upon impact, the pepper explodes, sending a cloud of small red fragments and seeds flying forward and outward. The person completes the swing as the pieces of the pepper scatter through the air.",
-    "timestamp": "2025-06-26T03:23:53.978853"
+    "final_caption": "A person throws a red bell pepper into the air with their left hand before swinging a tennis racket forward in a forehand motion with their right hand, striking the pepper. Upon impact, the pepper explodes, sending a cloud of small red fragments and seeds flying forward and outward. The person completes the swing as the pieces of the pepper scatter through the air."
 }

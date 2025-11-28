@@ -1,11 +1,28 @@
 {
   "segments": [],
-  "critique": "",
-  "overall": 5,
+  "critique": "The camera information and spatial information are omitted.",
+  "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
-  "scene": 4,
-  "spatial": 5,
-  "timestamp": "2025-11-03T11:18:54.881Z"
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-08T06:29:27.403Z",
+  "video_path": "PE-Video/401951212.mp4",
+  "video_id": "401951212",
+  "captions": {
+    "single": "The video shows a 3D rendering of a coronavirus. The virus is red and grey in color and spinning around in the middle of the screen. The background is plain white."
+  },
+  "metadata": {
+    "duration": 5.03,
+    "resolution": "608x342",
+    "fps": 30.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 4,
+    "category_name": "Object Interactions",
+    "num_frames": 151.0,
+    "has_face": false
+  }
 }

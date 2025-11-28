@@ -1,19 +1,29 @@
 {
-  "segments": [
-    {
-      "text": "The camera remains fixed.",
-      "context": "Single caption",
-      "startIndex": 439,
-      "endIndex": 464
-    }
-  ],
-  "critique": "1. The camera is not fixed but has some shaking",
+  "segments": [],
+  "critique": "",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:25:50.520Z",
+  "timestamp": "2025-11-08T04:40:11.657Z",
   "overall": 4,
-  "camera": 4,
-  "subject": 5,
+  "camera": 5,
+  "subject": 3,
   "motion": 5,
-  "scene": 1,
-  "spatial": 5
+  "scene": 2,
+  "spatial": 1,
+  "video_path": "DREAM-1K/598.mp4",
+  "video_id": "dream1k_598",
+  "captions": {
+    "single": "The background is the interior of a taekwondo dojo. A woman in a blue short-sleeved shirt stretches her hands forward, shouts loudly, and kicks out with her right leg towards the balloons in front of her. The balloons are kicked and burst one by one. After retracting her leg, the woman stands up and repeats the previous action, kicking towards higher balloons. As the balloons burst, the woman stands again after lowering her right leg. The camera remains fixed."
+  },
+  "metadata": {
+    "duration": 6.32,
+    "resolution": "720x1280",
+    "fps": 60.0,
+    "width": 720,
+    "height": 1280,
+    "source": "dream-1k",
+    "video_source": "DREAM/shorts",
+    "n_subjects": 1,
+    "n_shots": 1,
+    "n_events": 10
+  }
 }

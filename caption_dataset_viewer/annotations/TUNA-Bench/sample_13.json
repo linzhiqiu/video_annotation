@@ -7,5 +7,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 2,
-  "timestamp": "2025-11-04T08:17:20.662Z"
+  "timestamp": "2025-11-04T08:17:20.662Z",
+  "video_path": "TUNA-Bench/DREAM-1K_320.mp4",
+  "video_id": "TUNA_0072",
+  "captions": {
+    "single": "The video begins with the camera focusing on a man wearing a black suit and a red woolen hat. He stands on an iron bridge over a pond, holding a fish in his left hand. The man walks forward facing the camera and occasionally holds onto the guardrail on his right. He steps off the iron bridge and turns left. The background is an open sky and some buildings with white fabrics hanging from them. Some antennas and satellite receivers are  alongside the buildings.\nThe camera switches to the man standing on a ladder. He is still carrying the fish in his hand. The background is an open ocean with a lighthouse in the distance, whose structures are clearly visible. The man stands at the top of the ladder and holds the fish up in the air with his left hand.\nSuddenly, a huge black killer whale leaps out of the water and opens its mouth wide. The killer whale bites away the fish. The man puts his left hand down.\nFinally, the camera switches to an indoor scene with an old-fashioned alarm clock showing the time being 2:03. The window blinds are open, through which you can see trees and some faint lights outside. The camera shakes slightly."
+  },
+  "metadata": {
+    "duration": 10.25,
+    "resolution": "1920x832",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 832,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
 }

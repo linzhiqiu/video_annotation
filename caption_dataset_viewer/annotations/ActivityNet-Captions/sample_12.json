@@ -14,5 +14,35 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T08:38:04.663Z"
+  "timestamp": "2025-11-03T08:38:04.663Z",
+  "video_path": "ActivityNet-Captions/v_7pcnWE7jpQY.mp4",
+  "video_id": "v_7pcnWE7jpQY",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 85.87,
+        "caption": "A person is attempting high jumps."
+      },
+      {
+        "start_time": 6.87,
+        "end_time": 58.39,
+        "caption": "The first few attempts are good."
+      },
+      {
+        "start_time": 64.83,
+        "end_time": 85.87,
+        "caption": "The final attempt is not ever achieved."
+      }
+    ],
+    "full": "A person is attempting high jumps. The first few attempts are good. The final attempt is not ever achieved."
+  },
+  "metadata": {
+    "duration": 85.87,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

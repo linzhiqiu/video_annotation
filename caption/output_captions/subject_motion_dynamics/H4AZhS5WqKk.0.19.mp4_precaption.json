@@ -1,0 +1,8 @@
+{
+    "video_id": "H4AZhS5WqKk.0.19.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, high-angle scenery shot looking down into a dark, rainy city alley at night. The camera remains completely still throughout the clip. There is no movement from any subjects within the frame.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-06T01:50:13.677671"
+}

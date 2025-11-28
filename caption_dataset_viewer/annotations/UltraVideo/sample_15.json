@@ -14,11 +14,24 @@
     }
   ],
   "critique": "1. The camera does not pan to the right; it remains stationary with slight shaking.\n\n2. There is no \u201cfilled with water that reflects the sky above\u201d \u2014 no water is visible in the scene.",
-  "overall": 3,
+  "overall": 4,
   "camera": 3,
   "subject": 5,
   "motion": 5,
   "scene": 4,
   "spatial": 5,
-  "timestamp": "2025-11-04T13:56:40.868Z"
+  "timestamp": "2025-11-08T11:44:44.689Z",
+  "video_path": "UltraVideo/2a3b38bd-cb85-48f4-b4e7-6282b9c3d98e.mp4",
+  "video_id": "2a3b38bd-cb85-48f4-b4e7-6282b9c3d98e.mp4",
+  "captions": {
+    "single": "The video opens with a man standing with his back to the camera in the foreground, dressed in a light-colored shirt. His posture suggests a moment of reflection or admiration for the view before him. As the video progresses, the camera slowly pans to the right, revealing more of the expansive rice terraces that stretch into the distance. The terraces are meticulously arranged in a series of steps, filled with water that reflects the sky above. The surrounding area is dotted with palm trees and other vegetation, adding to the lushness of the scene. In the background, a few scattered buildings and distant hills can be seen, providing a sense of depth and scale. The overall atmosphere is tranquil, with the gentle rustling of leaves and the occasional sound of water creating a soothing soundtrack. The camera movement is smooth and deliberate, enhancing the viewer's immersion in the picturesque setting. The natural lighting, bright but diffused, highlights the greenery and the reflective surfaces of the rice terraces, contributing to the warm and clear visual effect. The man's minimal movement, primarily a slight turn of his head, emphasizes his deep engagement with the natural world around him, creating a sense of calm and contemplation."
+  },
+  "metadata": {
+    "duration": 3.42,
+    "resolution": "3840x2160",
+    "fps": 23.98,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

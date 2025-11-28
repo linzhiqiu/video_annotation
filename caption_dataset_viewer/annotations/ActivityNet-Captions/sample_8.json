@@ -7,5 +7,50 @@
   "motion": 4,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:31:43.401Z"
+  "timestamp": "2025-11-04T15:31:43.401Z",
+  "video_path": "ActivityNet-Captions/v_kWPvAxLzGw8.mp4",
+  "video_id": "v_kWPvAxLzGw8",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 23.79,
+        "caption": "A woman is sitting down wearing green sunglasses."
+      },
+      {
+        "start_time": 23.79,
+        "end_time": 34.14,
+        "caption": "She is talking on the cell phone."
+      },
+      {
+        "start_time": 38.27,
+        "end_time": 41.38,
+        "caption": "She is riding in a car."
+      },
+      {
+        "start_time": 46.55,
+        "end_time": 72.41,
+        "caption": "She is laying on a chair getting her foot tattooed."
+      },
+      {
+        "start_time": 72.41,
+        "end_time": 84.82,
+        "caption": "She is showing her foot tattoo."
+      },
+      {
+        "start_time": 85.86,
+        "end_time": 187.24,
+        "caption": "She is sitting outside talking again."
+      }
+    ],
+    "full": "A woman is sitting down wearing green sunglasses. She is talking on the cell phone. She is riding in a car. She is laying on a chair getting her foot tattooed. She is showing her foot tattoo. She is sitting outside talking again."
+  },
+  "metadata": {
+    "duration": 206.89,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

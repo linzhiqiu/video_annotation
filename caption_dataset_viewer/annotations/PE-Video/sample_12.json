@@ -13,13 +13,30 @@
       "endIndex": 33
     }
   ],
-  "critique": "1. Need to mention this is a close-up shot of the person's hand\n\n2. Initially, the person plugs in the wire twice\n\n3. After securing it, both hands leave the frame\u2014the right hand exits from the bottom, the left hand from the lower left corner\n\n4. Grammar issues.",
+  "critique": "1. Need to mention this is a close-up shot of the person's hand\n\n2. Initially, the person plugs in the wire twice\n\n3. After securing it, both hands leave the frame\u2014the right hand exits from the bottom, the left hand from the lower left corner\n\n4. Grammar issues. It should be changed as: \"The video shows a person plugs in a wire\"",
   "likert_score": 3,
-  "timestamp": "2025-11-03T11:10:20.420Z",
-  "overall": 2,
+  "timestamp": "2025-11-08T05:12:01.686Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 4,
+  "subject": 2,
   "motion": 4,
   "scene": 1,
-  "spatial": 3
+  "spatial": 2,
+  "video_path": "PE-Video/28388633.mp4",
+  "video_id": "28388633",
+  "captions": {
+    "single": "The video shows a person plugging in a wire and then connects two wires with each other , after that holds it behind the bar then ties the wire around the bar using black color plastic strap. The left hand is get exit from bottom frame."
+  },
+  "metadata": {
+    "duration": 21.72,
+    "resolution": "608x342",
+    "fps": 25.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 0,
+    "category_name": "Work Activities",
+    "num_frames": 543.0,
+    "has_face": false
+  }
 }

@@ -1,12 +1,6 @@
 {
   "segments": [
     {
-      "text": "The car moves slowly along the small road.",
-      "context": "Single caption",
-      "startIndex": 1012,
-      "endIndex": 1056
-    },
-    {
       "text": "background",
       "context": "Single caption",
       "startIndex": 243,
@@ -21,11 +15,27 @@
   ],
   "critique": "The camera tracks the silver car from the front, following its movement, which should be mentioned.\nThe camera pans and tilts rather than moves.\nThere is a red double-decker bus in the midground, not in the background.\nMore vehicles and pedestrians wearing heavy clothing appear in the midground and background.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T18:14:02.846Z",
+  "timestamp": "2025-11-05T09:08:56.812Z",
   "overall": 4,
   "camera": 2,
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 3
+  "spatial": 3,
+  "video_path": "TUNA-Bench/DREAM-1K_204.mp4",
+  "video_id": "TUNA_0004",
+  "captions": {
+    "single": "The camera is focused on a busy city street. It is dark and there is a silver car in the picture. The license plate number is \"USA 1\". The silver car is driving on the street. The silver car turns left. There is a red double-decker bus in the background. There are advertisements on the body of the red double-decker bus. The front of the red double-decker bus shows the route \"159\". There are several black taxis and some pedestrians on both sides of the street.\nThe camera moves to the right and rear. The silver car continues to drive. More vehicles and pedestrians wearing heavy clothes appear in the background.\nNext, the camera retreats and the silver car continues to drive. Big Ben and the Houses of Parliament appear in the picture. There is a constant flow of cars on the street and the traffic light is green.\nThe camera switches to a residential area. The silver car appears from the left side of the picture and turns left into a small road. The small road is lined with dense trees and green belts. The car moves slowly along the small road. The camera shoots through the gap in the iron railing. The red brick exterior wall and white window frames of the mansion can be seen in the gap.\nFinally, the camera moves to the upper right, and the front of the red brick building gradually emerges. In front of the camera is a stone bridge. The building has three floors, tall windows and a green door."
+  },
+  "metadata": {
+    "duration": 19.68,
+    "resolution": "1920x816",
+    "fps": 23.98,
+    "width": 1920,
+    "height": 816,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
 }

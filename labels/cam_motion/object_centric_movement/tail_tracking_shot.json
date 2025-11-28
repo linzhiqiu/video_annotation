@@ -1,5 +1,5 @@
 {
-  "label": "Tail Tracking Shot",
+  "label": "Follow Tracking Shot",
   "label_name": "tail_tracking_shot",
   "def_question": [
     "Is it a follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera?",

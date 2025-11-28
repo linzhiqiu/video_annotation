@@ -1,0 +1,8 @@
+{
+    "video_id": "QYAWxJ8a7RA.7.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, low-angle shot of a massive pile of dark, glittering mining tailings. The pile is situated within a sun-drenched canyon, with large rock formations visible in the background. There is no discernible movement in the scene; the shot remains still throughout the clip.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-17T03:07:28.911581"
+}

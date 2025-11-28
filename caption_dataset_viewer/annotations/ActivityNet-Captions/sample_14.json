@@ -7,5 +7,30 @@
   "motion": 3,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-03T13:27:52.634Z"
+  "timestamp": "2025-11-03T13:27:52.634Z",
+  "video_path": "ActivityNet-Captions/v_rVcgTALWCRA.mp4",
+  "video_id": "v_rVcgTALWCRA",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 25.75,
+        "caption": "A girl is playing with sand on a beach."
+      },
+      {
+        "start_time": 12.1,
+        "end_time": 25.49,
+        "caption": "She then stands up and looks at other people."
+      }
+    ],
+    "full": "A girl is playing with sand on a beach. She then stands up and looks at other people."
+  },
+  "metadata": {
+    "duration": 25.75,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

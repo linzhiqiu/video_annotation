@@ -1,0 +1,62 @@
+{
+  "segments": [
+    {
+      "text": "a bright yellow bowl brimming with citrus fruits",
+      "context": "Single caption",
+      "startIndex": 261,
+      "endIndex": 310
+    },
+    {
+      "text": "a blue and white checkered sleeve",
+      "context": "Single caption",
+      "startIndex": 352,
+      "endIndex": 385
+    },
+    {
+      "text": "various bottles and containers",
+      "context": "Single caption",
+      "startIndex": 592,
+      "endIndex": 622
+    },
+    {
+      "text": "white vehicle",
+      "context": "Single caption",
+      "startIndex": 867,
+      "endIndex": 880
+    },
+    {
+      "text": "The expression on their face reflects a blend of concentration and satisfaction, embodying the joy of gathering fresh produce",
+      "context": "Single caption",
+      "startIndex": 1995,
+      "endIndex": 2120
+    },
+    {
+      "text": "the camera zooms in",
+      "context": "Single caption",
+      "startIndex": 2172,
+      "endIndex": 2192
+    }
+  ],
+  "critique": "Two bright yellow bowls brimming with citrus fruits, not just one.\nA navy-and-grey checkered sleeve.\nThere are no various bottles or containers.\nA silver vehicle, not white.\nTheir face is not visible.\nThe camera doesn\u2019t zoom in.",
+  "overall": 3,
+  "camera": 1,
+  "subject": 3,
+  "motion": 4,
+  "scene": 4,
+  "spatial": 2,
+  "timestamp": "2025-11-04T18:37:07.591Z",
+  "video_path": "VDC/02d1f024-1470-4ce6-acde-b938f7847eb6.mp4",
+  "video_id": "02d1f024-1470-4ce6-acde-b938f7847eb6",
+  "captions": {
+    "single": "The video unfolds in a vibrant outdoor setting, where the air is infused with the fresh scent of citrus, and the atmosphere is alive with the sounds of nature. The scene is initially cluttered with an array of objects, including a striking red plastic crate and a bright yellow bowl brimming with citrus fruits, particularly lemons. A hand, adorned in a blue and white checkered sleeve, becomes the focal point as it engages with these items, meticulously sorting and organizing the lemons between the bowl and the crate. This task-oriented activity is punctuated by the sporadic presence of various bottles and containers, hinting at a larger project at hand.\n\nAs the video progresses, the focus shifts from the concentrated area of lemon sorting to a broader residential landscape. The transition reveals a dirt or gravel path leading to a driveway, where a parked white vehicle adds a touch of domesticity to the scene. The camera captures the essence of this environment, showcasing the interplay of light and shadow as sunlight filters through the leaves, creating a dappled effect on the ground.\n\nContinuing into the domestic setting, the video highlights a rich tapestry of elements, including a cluttered area adorned with mulch, colorful containers, and a stone structure that resembles a garden bed. This area is enveloped by a dense growth of vegetation, prominently featuring a lemon tree heavy with ripe fruits. The human presence is palpable, as the individual transitions from passive observation to active engagement in gardening and landscaping tasks. The camera captures the vibrant colors of the scene, from the lush greens of the foliage to the bright yellows of the lemons, creating a visually stimulating experience.\n\nThe hand in the checkered sleeve reappears, this time actively harvesting lemons from the tree. The movements are deliberate and purposeful, showcasing a delicate touch as the individual reaches for the ripe fruit, carefully selecting the best specimens. The expression on their face reflects a blend of concentration and satisfaction, embodying the joy of gathering fresh produce. As they utilize pruning shears to snip the stems, the camera zooms in on the intricate details of the lemons and the surrounding foliage, emphasizing the connection between the person and the task at hand.\n\nThe cinematography employs a harmonious blend of close-up shots and wider angles, allowing viewers to appreciate both the intricate details of the lemons and the expansive beauty of the orchard. The steady camera work enhances the immersive experience, drawing the audience into the act of lemon picking. Smooth transitions between shots maintain a fluid narrative, capturing the essence of outdoor household management, from the initial organization of lemons to the active care and harvesting within the lush garden setting. The natural lighting further enriches the scene, making the colors pop and inviting viewers to revel in the beauty of this vibrant, productive environment."
+  },
+  "metadata": {
+    "duration": 60.0,
+    "resolution": "1920x1080",
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080,
+    "source": "vdc",
+    "original_source": "ego4d"
+  }
+}

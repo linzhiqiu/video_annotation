@@ -14,5 +14,18 @@
   "motion": 5,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T05:19:06.526Z"
+  "timestamp": "2025-11-04T05:19:06.526Z",
+  "video_path": "ShareGPT4Video/0012b250c6baec07cbdf35de91ae51695c42d5c5d80366728a955a68de664859.mp4",
+  "video_id": "0012b250c6baec07cbdf35de91ae51695c42d5c5d80366728a955a68de664859",
+  "captions": {
+    "single": "In an office workspace, a woman stands presenting a paper, likely a business document such as a schedule or chart, to a person seated at the desk. The paper being discussed seems to evoke a focused interaction between the two, with the woman explaining or discussing points indicated by her firm hold and later slight animation of her hands, possibly highlighting key points. The seated individual, whose attention is observed to shift more towards the documents on the desk, maintains a consistent posture of engagement without changing the hand placement significantly throughout the interaction. The office environment remains stable and orderly, with an open laptop, a ceramic cup, neatly arranged documents, and vibrant indoor plants contributing to the modern and possibly creative atmosphere. The camera captures this professional setting from a consistent angle and distance, without any change in the scene's composition or the background\u2019s tranquil ambiance, emphasizing the ongoing dialogue and presentations dynamics."
+  },
+  "metadata": {
+    "duration": 8.0,
+    "resolution": "2160x3840",
+    "fps": 25.0,
+    "width": 2160,
+    "height": 3840,
+    "source": "pexels"
+  }
 }

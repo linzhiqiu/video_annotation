@@ -7,13 +7,30 @@
       "endIndex": 77
     }
   ],
-  "critique": "The young boy talks to the purple girl in blue clothes and extends his right hand to hold the girl's hand, then walks forward. The camera remains static and reveals the girl with red and yellow hair behind them.",
+  "critique": "1. The young boy talks to the purple girl in blue clothes and extends his right hand to hold the girl's hand, then walks forward. The camera remains static and reveals the girl with red and yellow hair behind them.\n2. An important camera movement is missing: after the cut, the camera simulates moving to the right along with the two characters.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:04:17.988Z",
+  "timestamp": "2025-11-08T03:37:23.632Z",
   "overall": 4,
-  "camera": 3,
-  "subject": 5,
+  "camera": 2,
+  "subject": 4,
   "motion": 4,
   "scene": 1,
-  "spatial": 5
+  "spatial": 2,
+  "video_path": "DREAM-1K/72.mp4",
+  "video_id": "dream1k_72",
+  "captions": {
+    "single": "A young boy is walking forward, holding the hand of a girl in blue clothing. Behind them, a girl with red and yellow hair stands with her arms crossed, looking at them angrily. Where they have just left, colorful specks of light are scattered. The girl with red and yellow hair's expression turns to astonishment. The camera then switches to show the back of the young boy and the girl in blue. The colorful specks of light fall from the pockets of the boy's shorts. The girl with yellow and red hair, along with a small dog, watches them as they continue to walk ahead."
+  },
+  "metadata": {
+    "duration": 7.38,
+    "resolution": "1824x1024",
+    "fps": 8.0,
+    "width": 1824,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 2,
+    "n_events": 9
+  }
 }

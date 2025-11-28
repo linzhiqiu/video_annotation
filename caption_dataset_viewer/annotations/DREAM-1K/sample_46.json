@@ -13,13 +13,30 @@
       "endIndex": 113
     }
   ],
-  "critique": "1. There are five people initially.\n2. The man is to her left, on the right side of the frame, rather than to her right.",
+  "critique": "1. There are five people initially.\n2. The man is to her left, on the right side of the frame, rather than to her right.\n3. The caption rarely mentions the spatial description information.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:16:36.847Z",
+  "timestamp": "2025-11-08T04:29:41.952Z",
   "overall": 4,
   "camera": 1,
-  "subject": 4,
+  "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 4
+  "scene": 2,
+  "spatial": 3,
+  "video_path": "DREAM-1K/226.mp4",
+  "video_id": "dream1k_226",
+  "captions": {
+    "single": "Four people look ahead and clap, among them the woman at the front turns her head to look at the man to her right, after making eye contact the two shake hands and slightly nod, then look forward again. The man wearing glasses walks over to them and shakes hands with each in turn, below the scene text appears as an introduction."
+  },
+  "metadata": {
+    "duration": 9.0,
+    "resolution": "1280x544",
+    "fps": 8.0,
+    "width": 1280,
+    "height": 544,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 3,
+    "n_shots": 2,
+    "n_events": 10
+  }
 }

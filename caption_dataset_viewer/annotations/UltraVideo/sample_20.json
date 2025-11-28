@@ -8,11 +8,24 @@
     }
   ],
   "critique": "1. The camera remains largely stationary but is slightly unsteady.\n\n2. It should mention that the focus is on the middle ground, where the bird is located.\n",
-  "overall": 3,
+  "overall": 4,
   "camera": 4,
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 2,
-  "timestamp": "2025-11-04T14:18:45.841Z"
+  "spatial": 3,
+  "timestamp": "2025-11-09T02:34:47.091Z",
+  "video_path": "UltraVideo/3518167d-0050-4bed-9d62-edfa27372bbe.mp4",
+  "video_id": "3518167d-0050-4bed-9d62-edfa27372bbe.mp4",
+  "captions": {
+    "single": "The video captures a tranquil scene featuring a solitary bird standing in a vast field covered with dry leaves. The bird, with its dark plumage and slender legs, appears to be foraging or observing its surroundings. The camera remains steady, focusing on the bird as it moves slightly, perhaps pecking at the ground or adjusting its stance. The background is softly blurred, creating a bokeh effect that enhances the depth of the scene and draws attention to the bird. The environment is a natural setting, likely a forest floor or a clearing, covered with a thick layer of dry leaves. Hints of trees and possibly some mist or fog contribute to a serene and somewhat ethereal atmosphere. The lighting, suggesting either early morning or late afternoon, casts warm, golden hues and gentle shadows, enhancing the peaceful ambiance. The video maintains a consistent perspective with no abrupt scene transitions or changes in shot sizes, using a medium shot to keep the bird in clear view while providing context of the surrounding environment. The camera remains stationary throughout, allowing the viewer to fully absorb the details of the scene. The natural lighting and shallow depth of field contribute to a cinematic quality, evoking a sense of peace and contemplation. The atmosphere is peaceful and contemplative, with a sense of solitude and connection to nature, making the viewer feel as though they are quietly observing a moment in the life of the bird."
+  },
+  "metadata": {
+    "duration": 4.1,
+    "resolution": "7680x4320",
+    "fps": 60.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

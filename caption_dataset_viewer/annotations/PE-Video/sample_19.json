@@ -3,9 +3,26 @@
   "critique": "1. The description is missing that the subject moves from the top right background to the left middle ground.",
   "overall": 4,
   "camera": 1,
-  "subject": 4,
+  "subject": 3,
   "motion": 5,
   "scene": 5,
-  "spatial": 3,
-  "timestamp": "2025-11-03T13:48:43.162Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T08:00:37.959Z",
+  "video_path": "PE-Video/158873272.mp4",
+  "video_id": "158873272",
+  "captions": {
+    "single": "In the video, a person enters from the top right corner of the frame, paddles in the water ten times and moves towards the left side of the frame. The person stands on a paddleboard and paddles to their right side. The water is calm, with a golden hue. "
+  },
+  "metadata": {
+    "duration": 27.26,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 1,
+    "category_name": "Water Scenes",
+    "num_frames": 817.0,
+    "has_face": false
+  }
 }

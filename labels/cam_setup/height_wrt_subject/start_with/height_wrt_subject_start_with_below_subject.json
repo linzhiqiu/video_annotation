@@ -1,5 +1,5 @@
 {
-    "label": "Height Wrt Subject Start With Below Subject",
+    "label": "Height Starts With Below Subject",
     "label_name": "height_wrt_subject_start_with_below_subject",
     "def_question": [
         "Does the video start with the camera positioned below the subject?"

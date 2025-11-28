@@ -1,0 +1,8 @@
+{
+    "video_id": "G2EAFkURl0U.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video features a slow, scenic pan across a well-wooded RV park. The camera moves from left to right, revealing numerous recreational vehicles and motorhomes of various sizes parked in their designated spots. The campground has paved roads and is filled with lush green trees, creating a peaceful, natural setting.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-13T22:55:39.912704"
+}

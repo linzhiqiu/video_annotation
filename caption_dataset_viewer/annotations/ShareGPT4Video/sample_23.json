@@ -13,12 +13,25 @@
       "endIndex": 676
     }
   ],
-  "critique": "1. You need to mention that this is a slow-motion video.\n\n2. The fork does not return to the plate \u2014 it leaves the frame and is not seen again.\n\n3. In the latter part of the video, the subject\u2019s right hand is not visible.\n\n4. The description lacks information about the camera and spatial context.\n",
+  "critique": "1. You need to mention that this is a slow-motion video.\n\n2. The fork does not return to the plate \u2014 it leaves the frame and is not seen again.\n\n3. In the latter part of the video, the subject\u2019s right hand is not visible.\n\n4. The description lacks information about the camera and spatial context.",
   "overall": 4,
   "camera": 1,
   "subject": 3,
   "motion": 4,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:36:43.481Z"
+  "timestamp": "2025-11-08T06:26:25.017Z",
+  "video_path": "ShareGPT4Video/00dde30aaecd7807abaacbfeb6a5f082af109e7656c77bf2430c69e2fbfbf2e1.mp4",
+  "video_id": "00dde30aaecd7807abaacbfeb6a5f082af109e7656c77bf2430c69e2fbfbf2e1",
+  "captions": {
+    "single": "The video depicts a scene of an individual engaged in the act of eating a plate of spaghetti in a setting with a warm ambiance featuring a red and white checkered tablecloth, likely in a cozy dining establishment. The sequence starts with the person skillfully twirling spaghetti around a fork with the aid of a spoon, and then gradually lifting the fork upwards, indicating the gathering of pasta. As the frames progress, the fork is raised higher with spaghetti coiled around it, capturing the anticipation of the impending bite. Following this, a frame implies consumption has occurred, the fork is returned to the plate, and there is a pause with the diner's hands resting, one hand holding a spoon against the dish's edge. The scenario remains static for a while, with no further eating action noted, suggesting a possible pause in dining as the diner may be preparing for the next bite or simply resting between tastes. Throughout this process, the environment remains unchanged, maintaining the focus solely on the individual's interaction with their meal."
+  },
+  "metadata": {
+    "duration": 21.28,
+    "resolution": "4096x2160",
+    "fps": 25.0,
+    "width": 4096,
+    "height": 2160,
+    "source": "pexels"
+  }
 }

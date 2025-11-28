@@ -7,12 +7,6 @@
       "endIndex": 448
     },
     {
-      "text": "close-up shot",
-      "context": "Single caption",
-      "startIndex": 635,
-      "endIndex": 648
-    },
-    {
       "text": "The man is on the left side",
       "context": "Single caption",
       "startIndex": 685,
@@ -25,12 +19,28 @@
       "endIndex": 1242
     }
   ],
-  "critique": "The camera initially zooms in slightly and tilts down rather than moving.\nIt\u2019s a medium shot of the man and woman rather than a close-up.\nThe man is in the center rather than on the left.\nThe camera gradually tilts down rather than moves down.",
-  "overall": 3,
+  "critique": "The camera initially zooms in slightly and tilts down rather than moving.\nThe man is in the center rather than on the left.\nThe camera gradually tilts down rather than moves down.",
+  "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-03T20:10:22.314Z"
+  "timestamp": "2025-11-05T08:53:37.473Z",
+  "video_path": "TUNA-Bench/DREAM-1K_243.mp4",
+  "video_id": "TUNA_0033",
+  "captions": {
+    "single": "At the beginning of the video, the camera shows a vast meadow with tall grass and some colorful flowers. There are some white clouds in the sky and some tall trees in the distance. There is a group of people on the left side of the screen, mainly some children and adults. They are wearing colorful clothes.\nOn the left side of the picture, there is a little girl with long hair wearing a purple dress. The camera gradually moves to the lower right, and the little girl runs towards the camera on the grass with brisk movements. In the crowd behind her, some children are chasing each other and playing.\nThen, the camera switches to a close-up shot of an adult man and an adult woman. The man is on the left side of the screen, wearing a blue shirt and a white inner layer. The woman is on the right side of the screen, wearing a white dress and a transparent shawl. The man puts his hands on his chest, with his left hand on top of his right hand, looks straight ahead, and then smiles. The woman tilts her head to her right, looks at the man, and takes a step forward.\nThe camera switches to a closer view of the little girl on the grass. The little girl continues to run towards the camera on the grass, and the camera gradually moves down following her movements. She runs a few steps and then stops, standing on the grass. The little girl leans forward, with her arms bent, looking forward and grinning."
+  },
+  "metadata": {
+    "duration": 9.75,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

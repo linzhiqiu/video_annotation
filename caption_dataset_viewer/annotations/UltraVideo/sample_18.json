@@ -13,6 +13,19 @@
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:05:29.807Z"
+  "spatial": 3,
+  "timestamp": "2025-11-08T11:56:39.222Z",
+  "video_path": "UltraVideo/3299cffa-ac0d-4b11-9a15-c1a277fcce38.mp4",
+  "video_id": "3299cffa-ac0d-4b11-9a15-c1a277fcce38.mp4",
+  "captions": {
+    "single": "The video captures a close-up view of a person's fair-skinned hands interacting with a glass jar filled with vibrant green powder. The individual uses a small, clear plastic spoon to stir the contents, creating gentle ripples and swirls within the jar. The hands are steady and deliberate, suggesting a careful and controlled action. The camera remains stationary and focused on the jar and the stirring process, with minimal background distractions. The background is minimalistic, featuring a plain wooden surface that serves as the base for the glass jar, ensuring the viewer's attention remains on the main action. The lighting is bright and even, likely from an overhead source, highlighting the vivid green color of the powder and the transparency of the glass jar. The scene transitions smoothly, maintaining a consistent shot size and angle throughout the sequence. The atmosphere is calm and focused, with a sense of precision and care, creating a serene and almost meditative quality. The video has a clean and straightforward style, employing a documentary-like approach to capture the process in a clear and unembellished manner, emphasizing the texture and color of the powder and the dynamic interplay of light and shadow within the jar."
+  },
+  "metadata": {
+    "duration": 4.56,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

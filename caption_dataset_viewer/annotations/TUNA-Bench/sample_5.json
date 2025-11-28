@@ -7,5 +7,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 5,
-  "timestamp": "2025-11-03T19:41:36.100Z"
+  "timestamp": "2025-11-03T19:41:36.100Z",
+  "video_path": "TUNA-Bench/DREAM-1K_240.mp4",
+  "video_id": "TUNA_0031",
+  "captions": {
+    "single": "At the beginning of the video, the camera is focused on a red SUV. The SUV is driving on a road with a dense forest on the left side of the road. The SUV hits a roadside sign post and barbed wire, and then backs up. The front of the SUV is severely damaged and smoke is coming out. A middle-aged man in light-colored clothes is sitting in the passenger seat.\nThe camera switches to the rear window of the SUV. Six male soldiers in camouflage uniforms, armed with weapons, stand in a defensive posture on the road. Behind them are two green military vehicles. Then they quickly turn around and run towards the vehicles.\nThe camera switches again, returning to the right view closer to the SUV. The SUV bypasses the wire fence and drives quickly to the left front of the road. Smoke continues to come out of the front of the car.\nThen, the camera switches to a closer view of the six soldiers. Three of them board the military vehicle on the left side of the screen, and three board the military vehicle on the right side of the screen, preparing to chase the SUV. In the distance, the sky is covered with gray clouds, and there are many trees on both sides of the road.\nFinally, the camera switches to show a section of the highway in the direction of the SUV. There is a sign on the right side of the highway that says turn left, and the road ahead turns left. There are still many trees on both sides of the highway. The tops of the trees are shaking."
+  },
+  "metadata": {
+    "duration": 9.62,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

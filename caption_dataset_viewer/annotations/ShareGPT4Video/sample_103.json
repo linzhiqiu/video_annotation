@@ -20,5 +20,18 @@
   "motion": 3,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T07:16:22.000Z"
+  "timestamp": "2025-11-04T07:16:22.000Z",
+  "video_path": "ShareGPT4Video/022fcb71ddfe2e1d92413c0bb72d4a75663186ef88712f215aa62a9ae82bf909.mp4",
+  "video_id": "022fcb71ddfe2e1d92413c0bb72d4a75663186ef88712f215aa62a9ae82bf909",
+  "captions": {
+    "single": "In the video, two individuals are involved in a home painting project. Initially, a woman is seen bending over a paint can, seemingly opening it or preparing the paint, dressed in casual attire and with her hair down. Beside her, a man is seated on the floor, dressed in a short-sleeve shirt and shorts, appearing to be taking a break or contemplating the task ahead. They are surrounded by painting supplies, such as a paint tray with a roller brush and a roll of blue painter's tape, all set on a protective drop cloth on a wooden floor. The walls are light-colored with a strip of blue painter's tape, indicating a boundary for painting, and the room is devoid of furniture, suggesting it has been cleared for this purpose.\n\nShortly after, the dynamics between the two change as the woman stands more upright, observing the man who has now taken a more active role. The man is focused on pouring paint from the can into the tray, his posture indicating concentration and care to avoid spillage. The setting around them remains consistent, including the blue painter's tape and the protected floor, signifying the ongoing work in the same domestic environment.\n\nContinuing from this scene, the man's activity of pouring the paint and the woman's observant stance are maintained without significant change. The man's focused posture as he manages the flow of paint and the woman's engaged but inactive presence suggest a collaborative effort in their task. The background remains the same, with painting supplies scattered around and no discernible shift in the environment or time, indicating a seamless continuation of their painting project."
+  },
+  "metadata": {
+    "duration": 10.01,
+    "resolution": "2160x3840",
+    "fps": 23.98,
+    "width": 2160,
+    "height": 3840,
+    "source": "pexels"
+  }
 }

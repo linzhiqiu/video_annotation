@@ -9,11 +9,28 @@
   ],
   "critique": "1. Here, instead of \u201cA knight on horseback engages in a sword fight with a soldier,\u201d it should be described as \u201ca soldier swings an axe and leaps toward the mounted knight, knocking him off his horse.\u201d",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:06:05.214Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T03:17:19.486Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 5,
+  "subject": 2,
   "motion": 4,
   "scene": 1,
-  "spatial": 5
+  "spatial": 2,
+  "video_path": "DREAM-1K/12.mp4",
+  "video_id": "dream1k_12",
+  "captions": {
+    "single": "A knight on horseback engages in a sword fight with a soldier, falls off the horse, and other knights and soldiers fight in the background."
+  },
+  "metadata": {
+    "duration": 2.17,
+    "resolution": "1920x800",
+    "fps": 23.98,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 1,
+    "n_events": 3
+  }
 }

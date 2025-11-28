@@ -1,0 +1,38 @@
+{
+  "segments": [
+    {
+      "text": "each displaying the year \"2022\"",
+      "context": "Single caption",
+      "startIndex": 478,
+      "endIndex": 509
+    },
+    {
+      "text": "at the center of the frame.",
+      "context": "Single caption",
+      "startIndex": 2109,
+      "endIndex": 2136
+    }
+  ],
+  "critique": "Each displays separate numbers of 2022, not the full year \u201c2022.\u201d\nThe champagne glasses are at the bottom left, not in the center.\nThe white block displaying the numbers is hit by the champagne cork and shatters.",
+  "overall": 4,
+  "camera": 5,
+  "subject": 4,
+  "motion": 4,
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-05T07:11:25.998Z",
+  "video_path": "VDC/10f32b5a331222ff3050709ec228a12a1d4fe518c761548f64bba1d36a579420.mp4",
+  "video_id": "10f32b5a331222ff3050709ec228a12a1d4fe518c761548f64bba1d36a579420",
+  "captions": {
+    "single": "The video opens with a striking solid red background that envelops the entire scene, creating an inviting and warm atmosphere that resonates with the spirit of celebration. This deep red hue is emblematic of joy and festivity, setting the perfect tone for a New Year's celebration. Initially, the screen is devoid of any activity or objects, establishing a moment of anticipation as viewers await the unfolding events.\n\nAs the scene progresses, four white square panels emerge, each displaying the year \"2022\" in bold red numbers. The vibrant red of the numbers contrasts beautifully against the white panels, drawing the viewer's attention. Accompanying this display is a green champagne bottle, elegantly positioned on its side, adorned with a shimmering gold foil at the neck. The cork lies detached nearby, hinting at the celebratory nature of the scene and suggesting that a toast has already been made, evoking feelings of festivity and joy.\n\nIn a dramatic turn, the last \"2\" from the \"2022\" display suddenly explodes or disintegrates, scattering white fragments across the screen. This dynamic moment adds an element of surprise and excitement, while the champagne bottle remains untouched, symbolizing the continuity of celebration. Almost immediately, the scattered fragments are replaced by a vibrant red \"3,\" transforming the display to read \"2023.\" Beneath this new year display, the phrase \"Bonne Ann\u00e9e\" gracefully appears, further emphasizing the theme of New Year's celebration and extending warm wishes to viewers.\n\nThe festive sentiment is amplified as additional greetings in English and Spanish\u2014\"Happy New Year\" and \"Feliz A\u00f1o Nuevo\"\u2014are introduced below the year display. These multilingual messages serve to broaden the celebratory spirit, inviting a diverse audience to partake in the joyous occasion. The inclusion of these greetings reflects a universal theme of hope and renewal that accompanies the arrival of a new year.\n\nAs the video transitions, the green champagne bottle is elegantly removed from the scene, making way for two beautifully designed champagne glasses that appear at the center of the frame. These glasses, filled with golden bubbly liquid, are poised in a toast, their rims gently touching in a gesture of celebration. The number display remains prominent, but the textual greetings fade away, simplifying the scene to focus on the intimate moment of the toast. This shift emphasizes the joy of shared experiences and the warmth of companionship that often accompanies New Year celebrations.\n\nThe camera work throughout the video is static, maintaining a clear focus on the central elements without any movement or transitions. The composition is thoughtfully framed to highlight the year \"2023\" alongside the celebratory items, ensuring that they remain the focal point of the visual narrative. The simplicity of the presentation allows viewers to absorb the festive message without distraction, creating a serene yet joyful ambiance.\n\nAs the video draws to a close, the scene holds steady, with the two champagne glasses clinking against the rich red backdrop beneath the \"2023\" sign. This moment encapsulates the essence of celebration, reflecting the joy and hope that the new year brings. The overall arrangement of elements, combined with the vibrant colors and static composition, creates a vivid portrayal of a New Year's celebration, inviting viewers to share in the excitement and anticipation of what the year ahead may hold."
+  },
+  "metadata": {
+    "duration": 25.0,
+    "resolution": "1920x1080",
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080,
+    "source": "vdc",
+    "original_source": "pixabay"
+  }
+}

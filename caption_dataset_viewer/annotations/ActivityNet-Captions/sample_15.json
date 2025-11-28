@@ -7,5 +7,35 @@
   "motion": 5,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T13:32:22.420Z"
+  "timestamp": "2025-11-03T13:32:22.420Z",
+  "video_path": "ActivityNet-Captions/v_EoQgUlLb3U4.mp4",
+  "video_id": "v_EoQgUlLb3U4",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 26.05,
+        "caption": "A man turns his body around, preparing to throw his discus."
+      },
+      {
+        "start_time": 26.31,
+        "end_time": 31.78,
+        "caption": "The man throws the discus really hard."
+      },
+      {
+        "start_time": 32.05,
+        "end_time": 52.11,
+        "caption": "The man watches ahead after his discus."
+      }
+    ],
+    "full": "A man turns his body around, preparing to throw his discus. The man throws the discus really hard. The man watches ahead after his discus."
+  },
+  "metadata": {
+    "duration": 52.11,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

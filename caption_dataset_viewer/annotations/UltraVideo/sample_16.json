@@ -9,11 +9,24 @@
   ],
   "critique": "1. The camera remains completely static throughout the video, and it should be noted that the scene is captured in a full shot from a distance, centering the speaker.\n\n2. The statement \u201cThere are subtle shifts in the camera angle to focus on different individuals, enhancing the viewer\u2019s engagement with the event\u201d is inaccurate, as no such camera movements or angle changes occur.",
   "likert_score": 4,
-  "timestamp": "2025-11-04T13:43:08.456Z",
-  "overall": 3,
+  "timestamp": "2025-11-08T11:53:49.596Z",
+  "overall": 4,
   "camera": 4,
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 1
+  "spatial": 3,
+  "video_path": "UltraVideo/2cfa8bd2-c1db-4d75-bf4e-57cf3042472d.mp4",
+  "video_id": "2cfa8bd2-c1db-4d75-bf4e-57cf3042472d.mp4",
+  "captions": {
+    "single": "The video captures a significant moment during a graduation ceremony held outdoors on a sunny day. A student dressed in a blue graduation gown and cap stands confidently at a wooden podium adorned with the institution's emblem, delivering a speech and gesturing occasionally for emphasis. Behind the speaker, a row of faculty members, dressed in traditional black academic regalia with colorful stoles, sits attentively. To the right of the podium, a distinguished figure, possibly an administrator or guest speaker, is also seated, observing the proceedings. The audience, composed of other graduates and their guests, is seated in rows of chairs, facing the stage. The graduates wear blue caps and gowns, symbolizing their achievement, and the atmosphere is one of pride and accomplishment. The background features a brick building with large windows and greenery, adding to the serene and celebratory ambiance. The camera remains mostly stationary, capturing the scene from a medium distance, allowing viewers to see both the speaker and the audience clearly. There are subtle shifts in the camera angle to focus on different individuals, enhancing the viewer's engagement with the event. The primary theme revolves around the celebration of academic achievement and the transition from education to the next phase of life, with the student at the podium embodying the spirit of accomplishment and leadership. The faculty members represent the institution's authority and support, while the audience displays a range of emotions, from pride to nostalgia. The natural lighting and minimal camera movement contribute to the documentary-style, realistic, and unobtrusive representation of the ceremony, creating a warm and inviting atmosphere."
+  },
+  "metadata": {
+    "duration": 3.96,
+    "resolution": "3840x2160",
+    "fps": 24.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

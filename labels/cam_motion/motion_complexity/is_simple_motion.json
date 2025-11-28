@@ -16,7 +16,7 @@
         "Is there a stable and natural camera motion in the shot?"
     ],
     "def_prompt": [
-        "The camera moves in a simple, straightforward way that is easy to classify.",
+        "The camera moves in a simple, straightforward way that is easy to classify, such as moving in a single direction, maintaining a consistent speed, or following a clear and predictable path.",
         "The camera follows a single, clear motion without complex changes."
     ],
     "alt_prompt": [

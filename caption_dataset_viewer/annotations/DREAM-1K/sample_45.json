@@ -7,13 +7,30 @@
       "endIndex": 64
     }
   ],
-  "critique": "1. Grammar issues, should be two separate sentences\n\n2. There is a cut in between, transitioning from a medium shot of the blue robot to a full shot of the robot and the spherical object from a distance",
+  "critique": "1. Grammar issues. It should be two separate sentences\n\n2. There is a cut in between, transitioning from a medium shot of the blue robot to a full shot of the robot and the spherical object from a distance",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:15:46.061Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T04:18:51.065Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 1,
+  "subject": 3,
   "motion": 5,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/225.mp4",
+  "video_id": "dream1k_225",
+  "captions": {
+    "single": "The blue robot turned around and looked down, a spherical object was rolling in the midst of a ruined city."
+  },
+  "metadata": {
+    "duration": 4.5,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 4
+  }
 }

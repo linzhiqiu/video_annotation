@@ -7,5 +7,30 @@
   "motion": 2,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T08:13:32.857Z"
+  "timestamp": "2025-11-03T08:13:32.857Z",
+  "video_path": "ActivityNet-Captions/v_PLgcXxX3A2A.mp4",
+  "video_id": "v_PLgcXxX3A2A",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 85.39,
+        "caption": "A boy on a team throws a basketball at other team members."
+      },
+      {
+        "start_time": 87.08,
+        "end_time": 169.09,
+        "caption": "Others join in, some falling as they are hit with the ball."
+      }
+    ],
+    "full": "A boy on a team throws a basketball at other team members. Others join in, some falling as they are hit with the ball."
+  },
+  "metadata": {
+    "duration": 169.09,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

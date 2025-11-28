@@ -5,15 +5,38 @@
       "context": "Single caption",
       "startIndex": 68,
       "endIndex": 70
+    },
+    {
+      "text": "a person",
+      "context": "Single caption",
+      "startIndex": 15,
+      "endIndex": 25
     }
   ],
-  "critique": "1. The camera is fixed but shows noticeable shaking.\n\n2. The word \u201cit\u201d should be clearly specified as referring to the grilled meat.",
+  "critique": "1. The camera is fixed but shows noticeable shaking.\n\n2. The word \u201cit\u201d should be clearly specified as referring to the grilled meat.\n\n3. The person is not visible.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T13:39:56.810Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T05:03:40.481Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 1,
-  "motion": 5,
+  "subject": 3,
+  "motion": 4,
   "scene": 1,
-  "spatial": 4
+  "spatial": 3,
+  "video_path": "PE-Video/300252658.mp4",
+  "video_id": "300252658",
+  "captions": {
+    "single": "The video shows a person cooking on a grill and using tongs to turn it for even cooking. The video provides a close-up view of the cooking process, focusing on the food and the grill."
+  },
+  "metadata": {
+    "duration": 24.24,
+    "resolution": "608x342",
+    "fps": 25.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 9,
+    "category_name": "Food Preparation",
+    "num_frames": 606.0,
+    "has_face": false
+  }
 }

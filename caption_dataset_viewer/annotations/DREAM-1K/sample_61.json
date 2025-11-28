@@ -15,11 +15,28 @@
   ],
   "critique": "1. This is a grammar issue. It should be changed as: A man bent over, pressed and pulled the drawer open using his thick fingers.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T14:50:07.467Z",
+  "timestamp": "2025-11-08T04:33:58.863Z",
   "overall": 4,
   "camera": 1,
-  "subject": 4,
-  "motion": 4,
-  "scene": 1,
-  "spatial": 1
+  "subject": 3,
+  "motion": 5,
+  "scene": 2,
+  "spatial": 1,
+  "video_path": "DREAM-1K/285.mp4",
+  "video_id": "dream1k_285",
+  "captions": {
+    "single": "A man bent over and, using his thick fingers, pressed and pulled open a drawer. A woman with long hair, holding a bottle, looked at the man, who then stood up straight and faced the woman."
+  },
+  "metadata": {
+    "duration": 4.0,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 6
+  }
 }

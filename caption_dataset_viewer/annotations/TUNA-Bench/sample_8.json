@@ -20,5 +20,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T06:19:30.865Z"
+  "timestamp": "2025-11-04T06:19:30.865Z",
+  "video_path": "TUNA-Bench/DREAM-1K_273.mp4",
+  "video_id": "TUNA_0047",
+  "captions": {
+    "single": "The video begins with the camera filming a middle-aged man from his right side as it shakes slightly. He stands in front of a middle-aged woman and looks down at her. The background is blurred and shows the interior of a dim room. A window can be seen in the distance and the light outside is bright.\nThe camera switches to the front of the woman. She looks directly at the man with a sad expression and presses her lips. She then bows her head. The man bends to the right of the frame. The camera then zooms out as the man bends down to open a patterned fridge door. The man then takes out an item from the fridge with his left hand before he turns to leave the room with his back to the camera. Inside the room is a dining table with some cups on it and two chairs on the right side.\nThe man wears a dark green top and blue jeans with a belt around his waist. The woman stands on the left of the fridge against the wall and wears a floral dress. The man stands with his back to the camera looking out of a floor-to-ceiling window in another room as the woman holds out her hands to cover her face."
+  },
+  "metadata": {
+    "duration": 14.0,
+    "resolution": "1840x1024",
+    "fps": 8.0,
+    "width": 1840,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

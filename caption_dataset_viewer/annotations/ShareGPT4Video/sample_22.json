@@ -9,10 +9,23 @@
   ],
   "critique": "1. It\u2019s not that the imagery on the scoreboard updates to include logos of various NHL teams \u2014 rather, logos of various NHL teams are overlaid across the entire frame, appearing line by line from top to bottom.",
   "overall": 4,
-  "camera": 4,
-  "subject": 1,
-  "motion": 1,
+  "camera": 3,
+  "subject": 5,
+  "motion": 5,
   "scene": 4,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:43:15.610Z"
+  "timestamp": "2025-11-08T06:23:03.856Z",
+  "video_path": "ShareGPT4Video/hOenuKU_mcA.mp4",
+  "video_id": "hOenuKU_mcA",
+  "captions": {
+    "single": "The video showcases an indoor ice hockey arena where an event is yet to commence. Initially, the arena appears static with a packed audience and the ice rink visible, illuminated by bright lights. The scoreboard, which hangs above the rink, initially displays messages related to hockey and football, featuring the emblem of the Calgary Flames. As the video progresses, the imagery on the scoreboard updates to include logos of various NHL teams. The Colorado Avalanche, Anaheim Ducks, Tampa Bay Lightning, Nashville Predators, Carolina Hurricanes, Winnipeg Jets, Ottawa Senators, Buffalo Sabres, Columbus Blue Jackets, Florida Panthers, and finally the Arizona Coyotes are individually introduced. This sequential display of team logos suggests an ongoing introduction, likely of teams participating in a tournament or a playoff series within the NHL. Throughout these transitions, the arena and crowd remain still with no visible movement, and the camera maintains a consistent, stationary shot focused on the scoreboard."
+  },
+  "metadata": {
+    "duration": 13.25,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

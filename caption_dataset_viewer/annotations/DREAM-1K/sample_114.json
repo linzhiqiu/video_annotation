@@ -1,12 +1,36 @@
 {
-  "segments": [],
-  "critique": "The video lacks a description of the camera\u2019s pan-left movement and spatial location.",
+  "segments": [
+    {
+      "text": "On a barren loess land with no grass or trees",
+      "context": "Single caption",
+      "startIndex": 0,
+      "endIndex": 45
+    }
+  ],
+  "critique": "There are trees on the land.\nThe video lacks a description of the camera\u2019s pan-left movement and spatial information.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T14:53:05.226Z",
+  "timestamp": "2025-11-08T04:53:05.203Z",
   "overall": 4,
   "camera": 1,
-  "subject": 4,
+  "subject": 3,
   "motion": 5,
-  "scene": 5,
-  "spatial": 1
+  "scene": 4,
+  "spatial": 1,
+  "video_path": "DREAM-1K/619.mp4",
+  "video_id": "dream1k_619",
+  "captions": {
+    "single": "On a barren loess land with no grass or trees, a leopard is running in pursuit of a quickly moving small object. They pass by another leopard walking in the opposite direction. Upon catching up with the small object, the chasing leopard pounces towards it, kicking up a cloud of dust, but the small object still manages to escape. The leopard watches the direction in which the small object fled and then slows to a gentle run forward."
+  },
+  "metadata": {
+    "duration": 16.92,
+    "resolution": "1280x720",
+    "fps": 59.94,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 8
+  }
 }

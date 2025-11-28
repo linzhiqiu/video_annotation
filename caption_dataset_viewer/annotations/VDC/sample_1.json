@@ -75,5 +75,19 @@
   "subject": 3,
   "motion": 4,
   "scene": 5,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "VDC/0129a0977087de3b640630dab1c9d1fed91e5aa1cd9593134619781f9f3799cf.mp4",
+  "video_id": "0129a0977087de3b640630dab1c9d1fed91e5aa1cd9593134619781f9f3799cf",
+  "captions": {
+    "single": "In a vibrant bowling alley, a group of four friends is captured enjoying a lively social outing, their camaraderie evident as they engage in animated conversation over milkshakes. The scene opens with the friends seated around a small, circular table, each with a colorful beverage in hand, creating a warm and inviting atmosphere. The individual on the left, dressed in a white jacket and maroon beanie, is seen animatedly conversing with a friend in a red jacket and glasses, their gestures lively and expressive, reflecting the enthusiasm of their discussion. Meanwhile, the other pair, one in a blue top and the other in a yellow top, initially appears engrossed in their smartphones, their faces illuminated by the screens, contrasting with the vibrant interactions happening around them.\n\nAs the video unfolds, the dynamics within the group shift, showcasing the fluidity of their interactions. The person in the white jacket turns their attention towards the friend in the blue top, sparking what seems to be a lively exchange, characterized by animated gesturing and laughter. The individual in the red jacket maintains eye contact with the person in blue, indicating a shared interest in the conversation, while the smartphones that once occupied the attention of the pair in the middle are now set aside, allowing for a more direct and engaging interaction among all four friends. This transition highlights the essence of their gathering, emphasizing connection and engagement over digital distractions.\n\nThe bowling alley itself serves as a vibrant backdrop, with polished wooden lanes stretching into the distance, illuminated by overhead lights that cast a warm glow over the scene. The walls are adorned with a mural depicting a serene landscape, providing a striking contrast to the energetic atmosphere filled with the sounds of bowling balls rolling and pins crashing. Multiple screens display scores and graphics, adding to the lively ambiance, while the warm evening lighting creates a cozy yet dynamic environment, perfect for socializing.\n\nThe camera captures this engaging scene through a series of medium shots, providing a slightly elevated perspective that allows for a clear view of the friends' interactions. The framing is tight, focusing on the table and the group, while the blurred backdrop of the bowling lanes emphasizes the social dynamic at play. Smooth transitions between shots enhance the narrative flow, occasionally panning to capture the reactions of each individual, highlighting their expressions of joy and surprise. Close-ups reveal the warmth of their smiles and the sparkle of laughter in their eyes, while wider shots contextualize their gathering within the bustling bowling alley environment.\n\nThroughout the video, the atmosphere remains one of leisure and recreation, with the friends' body language conveying a strong sense of connection. Their smiles, laughter, and animated discussions create a vivid portrayal of friendship, showcasing the joy of shared experiences in a lively setting. The combination of engaging interactions, a vibrant backdrop, and the warm lighting culminates in a rich and inviting scene, perfectly encapsulating the essence of a casual outing among friends at the bowling alley."
+  },
+  "metadata": {
+    "duration": 21.24,
+    "resolution": "1080x1920",
+    "fps": 25.0,
+    "width": 1080,
+    "height": 1920,
+    "source": "vdc",
+    "original_source": "pexels"
+  }
 }

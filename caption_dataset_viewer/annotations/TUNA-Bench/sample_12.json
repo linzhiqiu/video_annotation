@@ -20,5 +20,21 @@
   "motion": 4,
   "scene": 5,
   "spatial": 2,
-  "timestamp": "2025-11-04T07:30:45.880Z"
+  "timestamp": "2025-11-04T07:30:45.880Z",
+  "video_path": "TUNA-Bench/DREAM-1K_316.mp4",
+  "video_id": "TUNA_0068",
+  "captions": {
+    "single": "The video begins with two figures in the frame, a man and a woman. The man wears a black blouse and the woman is in a dark red blouse. The man lies face down on the bed with his left hand supporting his body and his right hand pouring wine from a wine bottle into a glass in the woman's hand. The woman sits on the floor, leaning against the bed. She puts her left hand on the bed and her right hand rests on her left hand. She smiles and looks ahead. The background is a dim room with cutains drawn and soft lights.\nThe woman then picks up the glass with her right hand to drink and puts it down after taking a sip. After pouring the wine, the man holds out the bottle with his left hand and places his right hand on the neck of the bottle. The man then withdraws his left hand and takes the bottle in his right hand to put it on the ground in front right of him. At the same time, the man rises up on his toes. Finally, the man withdraws his right hand and raises it up with his feet down. He then looks ahead."
+  },
+  "metadata": {
+    "duration": 5.0,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Subject"
+  }
 }

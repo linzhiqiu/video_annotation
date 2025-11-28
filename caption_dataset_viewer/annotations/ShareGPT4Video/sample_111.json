@@ -2,10 +2,23 @@
   "segments": [],
   "critique": "1. There is a video cut around the first 3 seconds, but it was not mentioned.",
   "overall": 4,
-  "camera": 5,
+  "camera": 4,
   "subject": 1,
   "motion": 1,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T07:27:09.122Z"
+  "timestamp": "2025-11-04T19:20:00.819Z",
+  "video_path": "ShareGPT4Video/5T9LzAHBQQM.mp4",
+  "video_id": "5T9LzAHBQQM",
+  "captions": {
+    "single": "The video starts by showcasing the engraved stone text, \"POLK COUNTY SHERIFF'S OFFICE AND JAIL,\" signaling the formality and authority of the establishment. This text is prominently displayed on a wall of the building, likely indicating its entrance or a significant portion of the facility. Below the main inscription, a smaller plaque is visible, which is attributed to an intervention by an organization related to the Grand Lodge of Texas. The scene is captured on a sunny day, evident from the shadows and brightness depicted, without any sign of movement or active presence around the area. As the video progresses, there's a slight shift in the camera's perspective, offering a marginally different angle of the same text and wall. Despite this minor change in viewpoint, the time of day appears consistent with the initial scene, indicated by similar lighting and shadow patterns. The surroundings remain static throughout, with no noticeable activity or change, aside from the subtle camera movement. The small plaque beneath the main text is still visible and remains unaltered between the two scenes."
+  },
+  "metadata": {
+    "duration": 10.31,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

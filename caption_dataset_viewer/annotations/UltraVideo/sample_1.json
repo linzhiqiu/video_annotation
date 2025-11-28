@@ -20,11 +20,24 @@
     }
   ],
   "critique": "1. There is no zoom-in motion throughout the video; moreover, instead of smooth panning movements, the camera actually moves to the right.\n\n2. There are also red chili peppers inside the small bowl, which the caption omits.",
-  "overall": 3,
+  "overall": 4,
   "camera": 3,
   "subject": 4,
-  "motion": 2,
+  "motion": 5,
   "scene": 5,
-  "spatial": 5,
-  "timestamp": "2025-11-04T13:18:55.598Z"
+  "spatial": 3,
+  "timestamp": "2025-11-08T10:57:29.365Z",
+  "video_path": "UltraVideo/03384d2b-c262-48fd-b08f-9b7c7ff61ee4.mp4",
+  "video_id": "03384d2b-c262-48fd-b08f-9b7c7ff61ee4.mp4",
+  "captions": {
+    "single": "The video opens with a close-up view of several nests of freshly made pasta placed on a wooden cutting board dusted with flour. The camera slowly pans across the board, highlighting the intricate texture and uniformity of the pasta nests. Surrounding the cutting board are various fresh ingredients, including a bunch of bright red cherry tomatoes still attached to their vine, a small bowl containing garlic cloves and red onions, and another bowl filled with green broccoli florets. The camera movement is smooth and deliberate, emphasizing the freshness and natural colors of the ingredients. The scene transitions subtly, maintaining a consistent focus on the pasta and vegetables, creating a harmonious and appetizing visual experience. The background is simple and uncluttered, featuring a wooden table that complements the rustic theme of the video. The natural wood grain adds warmth and texture to the scene, enhancing the overall aesthetic. The lighting is soft and natural, likely coming from a natural source, which casts gentle shadows and highlights the details of the pasta and vegetables. The video has a documentary-style approach, focusing on the natural beauty and freshness of the ingredients. It emphasizes realism and detail, capturing the textures and colors of the food in a way that feels authentic and inviting. The style is clean and minimalistic, allowing the viewer to appreciate the simplicity and quality of the ingredients. The video primarily uses close-up shots to capture the details of the pasta nests and the vegetables, with medium shots providing a broader view of the entire arrangement on the cutting board. The camera remains steady, with smooth panning movements to transition between different elements of the scene. The camera occasionally zooms in slightly to emphasize specific details, such as the texture of the pasta or the freshness of the tomatoes. The video exudes a comfortable and healing atmosphere, characterized by warm, peaceful, and inviting visuals. The natural colors and textures of the ingredients create a sense of tranquility and homeliness, making the viewer feel relaxed and eager to engage in the culinary process."
+  },
+  "metadata": {
+    "duration": 6.88,
+    "resolution": "7680x4320",
+    "fps": 24.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

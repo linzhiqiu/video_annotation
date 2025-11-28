@@ -26,5 +26,18 @@
   "motion": 3,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T07:09:36.226Z"
+  "timestamp": "2025-11-04T19:19:08.576Z",
+  "video_path": "ShareGPT4Video/q2lxx9l2_MA.mp4",
+  "video_id": "q2lxx9l2_MA",
+  "captions": {
+    "single": "The video presents a segment from a local news broadcast, focusing on the report of a man's arrest for allegedly killing five alligators in Volusia County. A mugshot of the man is displayed prominently on the right-hand side throughout, showcasing him with a short beard and mustache, looking slightly to his left with a neutral facial expression, although with a slight adjustment in his pose where his head is tilted further back in the second shown frame. The background of the mugshot is neutral and blurred. To the left, a blue graphic overlay with white text clearly indicates the source of the news as being \u201cLOCAL COVERAGE YOU CAN COUNT ON\u201d, accompanied by additional text in yellow detailing the nature of the arrest. The news channel logo and a time indicator displaying 5:47, along with the temperature at 72 degrees, are visible at the bottom of the screen. Across these frames, the overall setting and the information remain consistently focused on the details of the man's arrest, without any change to the camera position, the environment, or the graphical elements of the news broadcast.\n"
+  },
+  "metadata": {
+    "duration": 16.75,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

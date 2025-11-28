@@ -25,6 +25,19 @@
   "subject": 4,
   "motion": 3,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:52:21.710Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:18:06.986Z",
+  "video_path": "UltraVideo/b83c3149-035a-449e-88cb-88a9a627ca22.mp4",
+  "video_id": "b83c3149-035a-449e-88cb-88a9a627ca22.mp4",
+  "captions": {
+    "single": "In a well-lit, neutral-colored hallway with white walls and wooden doors, a man dressed in a beige jacket over a light blue shirt is engaged in a conversation with two others. He holds a piece of paper, using it as a reference while speaking, and his gestures are animated, suggesting he is explaining something important or detailed. The two listeners, a woman with blonde hair wearing a blue top and a man in a light blue shirt, face him attentively. The woman listens intently with an open and engaged posture, while the second man stands slightly behind her, nodding occasionally. The camera remains steady, focusing on the interaction and capturing the subtle shifts in body language and facial expressions that convey the dynamics of their discussion. The bright, even lighting from overhead fixtures illuminates the space without harsh shadows, contributing to a professional yet relaxed atmosphere. The video employs a documentary-style approach, with medium shots framing the participants from the waist up, and a fixed camera angle, enhancing the viewer's understanding of the interaction. The overall atmosphere is calm and professional, characterized by a sense of purpose and engagement, creating an environment conducive to effective communication and collaboration."
+  },
+  "metadata": {
+    "duration": 3.34,
+    "resolution": "3840x2160",
+    "fps": 23.98,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

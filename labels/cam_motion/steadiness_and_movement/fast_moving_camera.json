@@ -2,7 +2,7 @@
     "label": "Fast Moving Camera",
     "label_name": "fast_moving_camera",
     "def_question": [
-      "Does the camera have noticeable motion at a fast speed?",
+      "Does the camera have noticeable motion at a fast motion speed?",
       "Is the camera moving rapidly in the shot?",
       "Is the camera moving at a noticeably high speed?"
     ],

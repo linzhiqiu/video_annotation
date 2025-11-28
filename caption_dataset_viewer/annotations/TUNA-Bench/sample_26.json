@@ -1,0 +1,27 @@
+{
+  "segments": [],
+  "critique": "The camera moves forward to track the woman, with noticeable shake.",
+  "overall": 4,
+  "camera": 5,
+  "subject": 4,
+  "motion": 5,
+  "scene": 4,
+  "spatial": 3,
+  "timestamp": "2025-11-05T05:40:11.311Z",
+  "video_path": "TUNA-Bench/DREAM-1K_368.mp4",
+  "video_id": "TUNA_0118",
+  "captions": {
+    "single": "At the beginning of the video, the camera focuses on a dark street with a wet, slippery surface reflecting dim light. A building can be seen in the background, with graffiti on its walls and several people seated on chairs near the doorway. In the center of the frame, a woman walks forward with her back to the camera.\nAs the camera advances, the woman grabs both sides of her coat and takes it off. Once the coat is removed, it's clear that she is wearing a police uniform, with the word \"POLICE\" visible on the back. Her black curly hair is tied up in a ponytail, hanging down behind her."
+  },
+  "metadata": {
+    "duration": 4.0,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic"
+  }
+}

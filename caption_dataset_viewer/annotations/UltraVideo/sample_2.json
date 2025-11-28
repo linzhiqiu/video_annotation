@@ -14,5 +14,18 @@
   "motion": 5,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T13:10:07.055Z"
+  "timestamp": "2025-11-04T13:10:07.055Z",
+  "video_path": "UltraVideo/04803b42-3d87-4ec5-9cbe-e4906d8a94b0.mp4",
+  "video_id": "04803b42-3d87-4ec5-9cbe-e4906d8a94b0.mp4",
+  "captions": {
+    "single": "In a rugged, rocky desert landscape characterized by large boulders, jagged peaks, and a clear blue sky, a man dressed in traditional Middle Eastern attire, including a white robe and a red-and-white checkered keffiyeh, stands in front of a massive rock face adorned with ancient inscriptions. The man, who has a beard and is wearing sunglasses, gestures towards the carvings with his right hand, explaining their historical and cultural significance. The camera remains relatively steady, focusing on the man and the rock, occasionally panning slightly to emphasize the inscriptions. The natural lighting, bright and warm, enhances the texture of the rock face and the visibility of the inscriptions, suggesting the video was shot during the late morning or early afternoon. The overall atmosphere is one of exploration and discovery, with the man's enthusiastic demeanor and the remote, arid setting contributing to an engaging and informative tone."
+  },
+  "metadata": {
+    "duration": 5.34,
+    "resolution": "3840x2160",
+    "fps": 23.98,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

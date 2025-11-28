@@ -15,11 +15,28 @@
   ],
   "critique": "1. There is no zoom-in at the beginning; the camera only shakes.\n\n2. The camera pans with many cuts throughout the sequence.\n\n3. It should be revised to: the girl opens her eyes while lying in bed, then turns to her side, closes her eyes to sleep, and takes out a stuffed toy from under the blanket instead of a glowing object.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:09:18.438Z",
+  "timestamp": "2025-11-08T03:31:14.878Z",
   "overall": 3,
   "camera": 3,
-  "subject": 3,
+  "subject": 2,
   "motion": 4,
-  "scene": 4,
-  "spatial": 1
+  "scene": 3,
+  "spatial": 1,
+  "video_path": "DREAM-1K/45.mp4",
+  "video_id": "dream1k_45",
+  "captions": {
+    "single": "The camera zooms in on a group photo and a hand turning off a switch. The woman closes the door, and glowing stars shine through the darkness of the room. The camera pans around the room, and the girl takes out a glowing object from under the blanket."
+  },
+  "metadata": {
+    "duration": 13.25,
+    "resolution": "1920x816",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 816,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 2,
+    "n_shots": 5,
+    "n_events": 6
+  }
 }

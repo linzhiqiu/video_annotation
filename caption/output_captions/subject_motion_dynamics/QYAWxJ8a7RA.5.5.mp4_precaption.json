@@ -1,0 +1,8 @@
+{
+    "video_id": "QYAWxJ8a7RA.5.5.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, still shot of a desolate and abandoned town. The scene features a weathered single-story house in the foreground with a broken window. In the background, a clock tower and other dilapidated buildings are visible against a hazy, hilly landscape.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-06T13:23:28.356821"
+}

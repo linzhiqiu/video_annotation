@@ -1,0 +1,8 @@
+{
+    "video_id": "F7iLfuci75Y.7.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video shows a forward-moving shot through a long, dark server room hallway. The walls are lined with server racks that have blinking orange lights, contrasting with the bright white lights on the ceiling. The scene creates a futuristic and high-tech atmosphere.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-19T06:37:56.358676"
+}

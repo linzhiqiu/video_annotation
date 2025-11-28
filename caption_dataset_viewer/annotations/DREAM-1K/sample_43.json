@@ -13,13 +13,30 @@
       "endIndex": 168
     }
   ],
-  "critique": "1. There are grammatical issues, and it shouldn\u2019t be described as \u201cthe camera angle switches to inside.\u201d It should be revised as follows: The video begins with the camera positioned inside the car, remaining still in a close-up shot that focuses on the man in the driver\u2019s seat looking toward the right side of the frame. Then, the camera perspective switches to what appears to be the interior of a hospital, where a woman uses her ID card to unlock the door, pulls it open, and walks forward.",
+  "critique": "1. There are grammatical issues, and it shouldn\u2019t be described as \u201cthe camera angle switches to inside.\u201d It should be revised as follows: The video begins with the camera positioned inside the car, remaining still in a close-up shot that focuses on the man in the driver\u2019s seat looking toward the right side of the frame. Then, the camera perspective switches to what appears to be the interior of a hospital, where a woman uses her ID card to unlock the door, pulls it open, and walks forward.\n2. The caption lacks the description of the appearance of the subjects.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:14:06.731Z",
+  "timestamp": "2025-11-08T04:15:41.131Z",
   "overall": 3,
-  "camera": 4,
-  "subject": 5,
+  "camera": 2,
+  "subject": 2,
   "motion": 4,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/221.mp4",
+  "video_id": "dream1k_221",
+  "captions": {
+    "single": "The man in the driver's seat looked to the right, the camera angle switched to inside, the woman used her ID card to unlock the door, turned around and opened the door, then walked forward. The door was about to close when the man in the suit inside came over to open it. The man in the suit turned his head to look around and then walked forward with the blonde woman, as the door slowly closed."
+  },
+  "metadata": {
+    "duration": 13.75,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 4,
+    "n_shots": 2,
+    "n_events": 10
+  }
 }

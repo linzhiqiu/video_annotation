@@ -266,97 +266,218 @@ class CaptionViewerHandler(http.server.SimpleHTTPRequestHandler):
             return False
 
     def get_annotation_stats(self, dataset_name):
-        """Get annotation statistics for a dataset."""
+        """Get annotation statistics for a dataset - optimized version with video metadata stats."""
         try:
             dataset_dir = self.annotations_dir / dataset_name
+            
+            # Load dataset to get all samples
+            files = list_repo_files(repo_id=self.hf_repo, repo_type="dataset")
+            json_files = [f for f in files if f.startswith(dataset_name + '/') and f.endswith('.json')]
+            
+            if not json_files:
+                return self._empty_stats_response()
+            
+            # Download and parse the first JSON file to get all samples
+            json_file = json_files[0]
+            local_path = hf_hub_download(
+                repo_id=self.hf_repo,
+                filename=json_file,
+                repo_type="dataset",
+                cache_dir="/tmp/hf_cache"
+            )
+            
+            with open(local_path, 'r') as f:
+                dataset_data = json.load(f)
+            
+            all_samples = dataset_data.get('samples', [])
+            
             if not dataset_dir.exists():
-                return {
-                    "total": 0, 
-                    "completed": 0, 
-                    "incomplete": 0,
-                    "pending": 0,
-                    "avg_segments": None,
-                    "avg_scores": {
-                        "overall": None,
-                        "camera": None,
-                        "subject": None,
-                        "motion": None,
-                        "scene": None,
-                        "spatial": None
-                    }
-                }
+                # No annotations yet, but we can still calculate video stats
+                return self._calculate_stats_with_samples(all_samples, {})
             
-            annotation_files = list(dataset_dir.glob("sample_*.json"))
+            annotation_files = sorted(dataset_dir.glob("sample_*.json"))
             
-            # Track stats
-            total_segments = 0
-            segment_count = 0
-            scores = {
-                "overall": [],
-                "camera": [],
-                "subject": [],
-                "motion": [],
-                "scene": [],
-                "spatial": []
-            }
-            completed_count = 0
-            incomplete_count = 0
-            
+            # Load all annotations
+            annotations_by_index = {}
             for annotation_file in annotation_files:
+                sample_idx = int(annotation_file.stem.split('_')[1])
                 with open(annotation_file, 'r') as f:
-                    annotation = json.load(f)
-                    
-                    # Count segments
-                    if annotation.get('segments'):
-                        total_segments += len(annotation['segments'])
-                        segment_count += 1
-                    
-                    # Collect scores
-                    for field in scores.keys():
-                        if annotation.get(field) is not None:
-                            scores[field].append(annotation[field])
-                    
-                    # Count complete vs incomplete
-                    if is_annotation_complete(annotation):
-                        completed_count += 1
-                    else:
-                        incomplete_count += 1
+                    annotations_by_index[sample_idx] = json.load(f)
             
-            # Calculate averages
-            avg_segments = total_segments / segment_count if segment_count > 0 else None
-            avg_scores = {}
-            for field, values in scores.items():
-                if values:
-                    avg_scores[field] = round(sum(values) / len(values), 2)
-                else:
-                    avg_scores[field] = None
+            return self._calculate_stats_with_samples(all_samples, annotations_by_index)
             
-            return {
-                "total": len(annotation_files),
-                "completed": completed_count,
-                "incomplete": incomplete_count,
-                "pending": 0,  # Server doesn't track pending
-                "avg_segments": round(avg_segments, 2) if avg_segments else None,
-                "avg_scores": avg_scores
-            }
         except Exception as e:
             print(f"Error calculating stats: {e}")
             traceback.print_exc()
-            return {
-                "total": 0,
-                "completed": 0,
-                "incomplete": 0,
-                "pending": 0,
-                "avg_segments": None,
-                "avg_scores": {
-                    "overall": None,
-                    "camera": None,
-                    "subject": None,
-                    "motion": None,
-                    "scene": None,
-                    "spatial": None
+            return self._empty_stats_response()
+    
+    def _empty_stats_response(self):
+        """Return empty stats response."""
+        return {
+            "total": 0,
+            "completed": 0,
+            "incomplete": 0,
+            "pending": 0,
+            "avg_segments": None,
+            "avg_scores": {
+                "overall": None,
+                "camera": None,
+                "subject": None,
+                "motion": None,
+                "scene": None,
+                "spatial": None
+            },
+            "video_stats": {
+                "all": {
+                    "avg_duration": None,
+                    "avg_fps": None,
+                    "avg_words": None,
+                    "sample_count": 0
+                },
+                "completed": {
+                    "avg_duration": None,
+                    "avg_fps": None,
+                    "avg_words": None,
+                    "sample_count": 0
                 }
             }
+        }
+    
+    def _calculate_stats_with_samples(self, all_samples, annotations_by_index):
+        """Calculate statistics given samples and annotations."""
+        # Collect annotation stats
+        total_segments = 0
+        segment_count = 0
+        scores = {
+            "overall": [],
+            "camera": [],
+            "subject": [],
+            "motion": [],
+            "scene": [],
+            "spatial": []
+        }
+        completed_count = 0
+        incomplete_count = 0
+        completed_indices = set()
+        
+        for sample_idx, annotation in annotations_by_index.items():
+            # Count segments
+            if annotation.get('segments'):
+                total_segments += len(annotation['segments'])
+                segment_count += 1
+            
+            # Collect scores
+            for field in scores.keys():
+                if annotation.get(field) is not None:
+                    scores[field].append(annotation[field])
+            
+            # Count complete vs incomplete
+            if is_annotation_complete(annotation):
+                completed_count += 1
+                completed_indices.add(sample_idx)
+            else:
+                incomplete_count += 1
+        
+        # Calculate averages
+        avg_segments = total_segments / segment_count if segment_count > 0 else None
+        avg_scores = {}
+        for field, values in scores.items():
+            if values:
+                avg_scores[field] = round(sum(values) / len(values), 2)
+            else:
+                avg_scores[field] = None
+        
+        # Calculate video metadata stats
+        video_stats = self._calculate_video_stats(all_samples, completed_indices)
+        
+        return {
+            "total": len(annotations_by_index),
+            "completed": completed_count,
+            "incomplete": incomplete_count,
+            "pending": 0,  # Client will calculate this
+            "avg_segments": round(avg_segments, 2) if avg_segments else None,
+            "avg_scores": avg_scores,
+            "video_stats": video_stats
+        }
+    
+    def _calculate_video_stats(self, all_samples, completed_indices):
+        """Calculate video metadata statistics."""
+        def extract_word_count(sample):
+            """Extract word count from caption."""
+            word_count = 0
+            captions = sample.get('captions', {})
+            
+            for caption_type, caption_data in captions.items():
+                if caption_type == 'single':
+                    # Single string caption
+                    word_count += len(str(caption_data).split())
+                elif caption_type == 'structured':
+                    # Dictionary of captions
+                    for key, value in caption_data.items():
+                        word_count += len(str(value).split())
+                elif caption_type == 'temporal':
+                    # List of temporal segments
+                    for segment in caption_data:
+                        caption_text = segment.get('caption') or segment.get('content', '')
+                        word_count += len(str(caption_text).split())
+                elif caption_type == 'multiple_annotators':
+                    # List of annotator captions (could be nested arrays)
+                    for annotator_data in caption_data:
+                        if isinstance(annotator_data, list):
+                            for caption in annotator_data:
+                                word_count += len(str(caption).split())
+                        else:
+                            word_count += len(str(annotator_data).split())
+            
+            return word_count
+        
+        # Stats for ALL samples
+        all_durations = []
+        all_fps = []
+        all_words = []
+        
+        # Stats for COMPLETED samples only
+        completed_durations = []
+        completed_fps = []
+        completed_words = []
+        
+        for idx, sample in enumerate(all_samples):
+            metadata = sample.get('metadata', {})
+            duration = metadata.get('duration')
+            fps = metadata.get('fps')
+            word_count = extract_word_count(sample)
+            
+            # Add to ALL stats
+            if duration is not None:
+                all_durations.append(float(duration))
+            if fps is not None:
+                all_fps.append(float(fps))
+            if word_count > 0:
+                all_words.append(word_count)
+            
+            # Add to COMPLETED stats if this sample is completed
+            if idx in completed_indices:
+                if duration is not None:
+                    completed_durations.append(float(duration))
+                if fps is not None:
+                    completed_fps.append(float(fps))
+                if word_count > 0:
+                    completed_words.append(word_count)
+        
+        return {
+            "all": {
+                "avg_duration": round(sum(all_durations) / len(all_durations), 2) if all_durations else None,
+                "avg_fps": round(sum(all_fps) / len(all_fps), 2) if all_fps else None,
+                "avg_words": round(sum(all_words) / len(all_words), 2) if all_words else None,
+                "sample_count": len(all_samples)
+            },
+            "completed": {
+                "avg_duration": round(sum(completed_durations) / len(completed_durations), 2) if completed_durations else None,
+                "avg_fps": round(sum(completed_fps) / len(completed_fps), 2) if completed_fps else None,
+                "avg_words": round(sum(completed_words) / len(completed_words), 2) if completed_words else None,
+                "sample_count": len(completed_indices)
+            }
+        }
 
     def proxy_hf_video(self, video_path):
         """Proxy video requests to HuggingFace."""

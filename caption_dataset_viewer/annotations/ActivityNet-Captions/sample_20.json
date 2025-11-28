@@ -20,5 +20,30 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T14:18:18.514Z"
+  "timestamp": "2025-11-03T14:18:18.514Z",
+  "video_path": "ActivityNet-Captions/v_sTMbpIfI-6o.mp4",
+  "video_id": "v_sTMbpIfI-6o",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 37.56,
+        "caption": "A little girl is seated at a table in front of two glasses, a 7up bottle and a plate of lime slices."
+      },
+      {
+        "start_time": 39.81,
+        "end_time": 150.23,
+        "caption": "She adds the soda and lime slices to the glasses, squeezing the juice into the liquid before taking a drink."
+      }
+    ],
+    "full": "A little girl is seated at a table in front of two glasses, a 7up bottle and a plate of lime slices. She adds the soda and lime slices to the glasses, squeezing the juice into the liquid before taking a drink."
+  },
+  "metadata": {
+    "duration": 150.23,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

@@ -19,6 +19,19 @@
   "subject": 5,
   "motion": 4,
   "scene": 5,
-  "spatial": 4,
-  "timestamp": "2025-11-04T14:00:38.590Z"
+  "spatial": 3,
+  "timestamp": "2025-11-08T11:55:13.495Z",
+  "video_path": "UltraVideo/30772fbe-98e8-4449-a2ef-a2a63ae913c1.mp4",
+  "video_id": "30772fbe-98e8-4449-a2ef-a2a63ae913c1.mp4",
+  "captions": {
+    "single": "The video captures a serene and intimate moment between a man and a woman seated closely on a plush, light blue couch in a spacious, well-lit room. The woman, dressed in a vibrant blue dress with puffed sleeves, holds a piece of paper, which she and the man, wearing a casual gray t-shirt, are both intently examining. Their body language suggests a collaborative and focused interaction, with occasional gestures that indicate a discussion or explanation. The room is tastefully decorated with modern yet cozy furnishings, including patterned cushions and a wooden coffee table adorned with various items like a bowl and a bottle. Large windows reveal a lush, green garden, adding a tranquil and natural ambiance to the setting. The camera remains steady, using a medium shot to capture both individuals from the waist up, emphasizing their engagement and the calm atmosphere of the scene. The natural lighting, with ample sunlight filtering through the windows, creates a bright and airy environment, enhancing the sense of domestic comfort and human interaction. The overall atmosphere is calm and focused, with a touch of domestic warmth, making the scene feel both intimate and inviting."
+  },
+  "metadata": {
+    "duration": 5.51,
+    "resolution": "3840x2160",
+    "fps": 23.98,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

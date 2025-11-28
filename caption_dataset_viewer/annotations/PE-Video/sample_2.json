@@ -9,11 +9,28 @@
   ],
   "critique": "1. Grammar issues. Should be \"The text says\"",
   "likert_score": 5,
-  "timestamp": "2025-11-03T13:36:28.135Z",
+  "timestamp": "2025-11-08T04:59:42.857Z",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
-  "scene": 4,
-  "spatial": 1
+  "scene": 5,
+  "spatial": 2,
+  "video_path": "PE-Video/161608120.mp4",
+  "video_id": "161608120",
+  "captions": {
+    "single": "The video shows a man standing in front of a white background wearing a white shirt is writing on a glass surface with a black marker. The text say \" HOW TO REACH ENGAGEMENT?\"."
+  },
+  "metadata": {
+    "duration": 8.8,
+    "resolution": "608x342",
+    "fps": 25.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 7,
+    "category_name": "Hand Actions",
+    "num_frames": 220.0,
+    "has_face": false
+  }
 }

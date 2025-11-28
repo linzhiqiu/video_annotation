@@ -1,25 +1,36 @@
 {
   "segments": [
     {
-      "text": "threw",
-      "context": "Single caption",
-      "startIndex": 85,
-      "endIndex": 90
-    },
-    {
       "text": "a hand reached into the backpack and turned to look at the robot.",
       "context": "Single caption",
       "startIndex": 207,
       "endIndex": 272
     }
   ],
-  "critique": "1. Not \"threw\" but \"drop it\"\n\n2. Need to mention there's a cut from full shot of two subjects to medium shot of the girl and close up shot of the robot\n\n3. Grammar issues, should write: The girl put her left hand into the backpack then turned to look at the robot\n\n",
+  "critique": "1. Need to mention there's a cut.\n\n2. Grammar issues, should write: The girl put her left hand into the backpack then turned to look at the robot",
   "likert_score": 2,
-  "timestamp": "2025-11-03T10:08:51.412Z",
+  "timestamp": "2025-11-08T03:29:37.354Z",
   "overall": 3,
-  "camera": 3,
-  "subject": 3,
-  "motion": 3,
-  "scene": 3,
-  "spatial": 3
+  "camera": 1,
+  "subject": 2,
+  "motion": 5,
+  "scene": 1,
+  "spatial": 1,
+  "video_path": "DREAM-1K/33.mp4",
+  "video_id": "dream1k_33",
+  "captions": {
+    "single": "The robot took a step forward, holding out a toy in the direction of the child, then threw it to the ground. After that, it took out a backpack, and the child approached and quickly took the backpack. Then, a hand reached into the backpack and turned to look at the robot."
+  },
+  "metadata": {
+    "duration": 5.0,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 8
+  }
 }

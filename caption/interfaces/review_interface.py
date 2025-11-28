@@ -71,26 +71,26 @@ class ReviewInterface:
             
             # 1. Pre-caption (always visible)
             st.write("##### 1. Pre-caption")
-            st.write(prev_data.get("pre_caption", "No pre-caption available"))
+            st.text(prev_data.get("pre_caption", "No pre-caption available"))
             
             # 2. Annotator's feedback and final caption (expandable)
             annotator_score = prev_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"##### 2. 👤 {prev_user}'s Feedback and Caption", expanded=True):
                 st.write(f"**Final Feedback ({annotator_score}/5):**")
-                st.write(prev_data.get("final_feedback", "No final feedback available"))
+                st.text(prev_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
-                st.write(prev_data.get("final_caption", "No caption available"))
+                st.text(prev_data.get("final_caption", "No caption available"))
             
             # 3. Reviewer's feedback and final caption (expandable) - highlighted
             reviewer_score = current_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"🔍 {current_user}'s Feedback and Caption (Reviewer)", expanded=True):
                 st.markdown(f"<span style='color: #ff6b35; font-weight: bold;'>Reviewer's Work</span>", unsafe_allow_html=True)
                 st.write(f"**Final Feedback ({reviewer_score}/5):**")
-                st.write(current_data.get("final_feedback", "No final feedback available"))
+                st.text(current_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
-                st.write(current_data.get("final_caption", "No caption available"))
+                st.text(current_data.get("final_caption", "No caption available"))
             
             # 4. Regrade Request Interface (only for original annotator)
             logged_in_user = st.session_state.get('logged_in_user', '')
@@ -325,7 +325,7 @@ Best regards,
         st.write(f"**Annotator:** {user}")
         st.write(f"**Timestamp:** {self.data_manager.format_timestamp(timestamp)}")
         st.write("##### Pre-caption")
-        st.write(data.get("pre_caption", "No pre-caption available"))
+        st.text(data.get("pre_caption", "No pre-caption available"))
         
         # Use the existing display_feedback_info function
         self.ui.display_feedback_info(data, display_pre_caption_instead_of_final_caption=False)
@@ -441,10 +441,10 @@ Best regards,
         st.info(f"Displaying differences between **{annotator_name}'s** and **{reviewer_name}'s** feedback")
         
         st.write(f"##### **{annotator_name}'s** Original Feedback (GPT Polished then Finalized)")
-        st.write(prev_feedback.get("final_feedback", "No final feedback available"))
+        st.text(prev_feedback.get("final_feedback", "No final feedback available"))
         
         st.write(f"##### **{reviewer_name}'s** Feedback (GPT Polished then Finalized)")
-        st.write(feedback_data.get("final_feedback", "No final feedback available"))
+        st.text(feedback_data.get("final_feedback", "No final feedback available"))
         
         # st.write("##### Summary of Differences")
         # st.markdown(self.ui.highlight_differences(
@@ -486,10 +486,10 @@ Best regards,
         st.info(f"Displaying differences between **{annotator_name}'s** and **{reviewer_name}'s** captions")
         
         st.write(f"##### **{annotator_name}'s** Original Caption")
-        st.write(prev_feedback.get("final_caption", "No caption available"))
+        st.text(prev_feedback.get("final_caption", "No caption available"))
         
         st.write(f"##### **{reviewer_name}'s** Revised Caption")
-        st.write(feedback_data.get("final_caption", "No caption available"))
+        st.text(feedback_data.get("final_caption", "No caption available"))
         
         # st.write("##### Summary of Differences")
         # st.markdown(self.ui.highlight_differences(

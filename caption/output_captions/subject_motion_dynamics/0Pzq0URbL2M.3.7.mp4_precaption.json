@@ -1,0 +1,8 @@
+{
+    "video_id": "0Pzq0URbL2M.3.7.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, black-and-white scenery shot of a city waterway. The camera remains completely still throughout the clip. The scene itself is very calm, with little to no movement from the boats on the water.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-19T01:28:59.000216"
+}

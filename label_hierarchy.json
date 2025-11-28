@@ -1,0 +1,1692 @@
+{
+  "cam_motion": {
+    "arc_crane_movement.arc_clockwise": [
+      {
+        "def_prompt": "The camera arcs clockwise.",
+        "def_question": "Does the camera move in a clockwise arc?",
+        "full_key": "cam_motion.arc_crane_movement.arc_clockwise.has_arc_clockwise",
+        "label_name": "has_arc_clockwise"
+      }
+    ],
+    "arc_crane_movement.arc_counterclockwise": [
+      {
+        "def_prompt": "The camera arcs counterclockwise.",
+        "def_question": "Does the camera move in a counterclockwise arc?",
+        "full_key": "cam_motion.arc_crane_movement.arc_counterclockwise.has_arc_counterclockwise",
+        "label_name": "has_arc_counterclockwise"
+      }
+    ],
+    "arc_crane_movement.crane_down": [
+      {
+        "def_prompt": "The camera cranes downward in an arc relative to its own frame.",
+        "def_question": "Is the camera craning downward in an arc relative to its own frame?",
+        "full_key": "cam_motion.arc_crane_movement.crane_down.has_crane_down",
+        "label_name": "has_crane_down"
+      }
+    ],
+    "arc_crane_movement.crane_up": [
+      {
+        "def_prompt": "The camera cranes upward in an arc relative to its own frame.",
+        "def_question": "Is the camera craning upward in an arc relative to its own frame?",
+        "full_key": "cam_motion.arc_crane_movement.crane_up.has_crane_up",
+        "label_name": "has_crane_up"
+      }
+    ],
+    "camera_centric_movement.backward": [
+      {
+        "def_prompt": "The camera moves only physically backward (not zooming out) with respect to the initial frame, without any other movement.",
+        "def_question": "Does the camera move only physically backward (not zooming out) with respect to the initial frame, without any other movement?",
+        "full_key": "cam_motion.camera_centric_movement.backward.only_backward_wrt_camera",
+        "label_name": "only_backward_wrt_camera"
+      },
+      {
+        "def_prompt": "A video where the camera moves backward (not zooming out) with respect to the initial frame.",
+        "def_question": "Does the camera move backward (not zooming out) with respect to the initial frame?",
+        "full_key": "cam_motion.camera_centric_movement.backward.has_backward_wrt_camera",
+        "label_name": "has_backward_wrt_camera"
+      }
+    ],
+    "camera_centric_movement.downward": [
+      {
+        "def_prompt": "The camera only moves physically downward (or pedestals down) without any other camera movements.",
+        "def_question": "Does the camera only move physically downward (or pedestals down) without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.downward.only_downward_wrt_camera",
+        "label_name": "only_downward_wrt_camera"
+      },
+      {
+        "def_prompt": "The camera moves physically downward (or pedestals down) with respect to the initial frame.",
+        "def_question": "Does the camera move physically downward (or pedestals down) with respect to the initial frame?",
+        "full_key": "cam_motion.camera_centric_movement.downward.has_downward_wrt_camera",
+        "label_name": "has_downward_wrt_camera"
+      }
+    ],
+    "camera_centric_movement.forward": [
+      {
+        "def_prompt": "The camera moves only physically forward (not zooming in) with respect to the initial frame, without any other movement.",
+        "def_question": "Does the camera move only physically forward (not zooming in) with respect to the initial frame, without any other movement?",
+        "full_key": "cam_motion.camera_centric_movement.forward.only_forward_wrt_camera",
+        "label_name": "only_forward_wrt_camera"
+      },
+      {
+        "def_prompt": "The camera physically moves forward (not zooming in) with respect to the initial frame.",
+        "def_question": "Does the camera physically move forward (not zooming in) with respect to the initial frame?",
+        "full_key": "cam_motion.camera_centric_movement.forward.has_forward_wrt_camera",
+        "label_name": "has_forward_wrt_camera"
+      }
+    ],
+    "camera_centric_movement.leftward": [
+      {
+        "def_prompt": "The camera only moves laterally leftward without any other camera movements.",
+        "def_question": "Does the camera only move laterally leftward without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.leftward.only_leftward",
+        "label_name": "only_leftward"
+      },
+      {
+        "def_prompt": "The camera moves physically leftward (or trucks left).",
+        "def_question": "Does the camera move physically leftward (or truck left)?",
+        "full_key": "cam_motion.camera_centric_movement.leftward.has_leftward",
+        "label_name": "has_leftward"
+      }
+    ],
+    "camera_centric_movement.pan_left": [
+      {
+        "def_prompt": "The camera pans to the left.",
+        "def_question": "Does the camera pan to the left?",
+        "full_key": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
+        "label_name": "has_pan_left"
+      },
+      {
+        "def_prompt": "The camera only pans leftward without any other camera movements.",
+        "def_question": "Does the camera only pan leftward without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
+        "label_name": "only_pan_left"
+      }
+    ],
+    "camera_centric_movement.pan_right": [
+      {
+        "def_prompt": "The camera only pans rightward without any other camera movements.",
+        "def_question": "Does the camera only pan rightward without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
+        "label_name": "only_pan_right"
+      },
+      {
+        "def_prompt": "The camera pans to the right.",
+        "def_question": "Does the camera pan to the right?",
+        "full_key": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
+        "label_name": "has_pan_right"
+      }
+    ],
+    "camera_centric_movement.rightward": [
+      {
+        "def_prompt": "The camera moves physically rightward (or trucks right).",
+        "def_question": "Does the camera move physically rightward (or truck right)?",
+        "full_key": "cam_motion.camera_centric_movement.rightward.has_rightward",
+        "label_name": "has_rightward"
+      },
+      {
+        "def_prompt": "The camera only moves laterally rightward with no other movement.",
+        "def_question": "Does the camera only move laterally rightward with no other movement?",
+        "full_key": "cam_motion.camera_centric_movement.rightward.only_rightward",
+        "label_name": "only_rightward"
+      }
+    ],
+    "camera_centric_movement.roll_clockwise": [
+      {
+        "def_prompt": "The camera only rolls clockwise without any other camera movements.",
+        "def_question": "Does the camera only roll clockwise without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise",
+        "label_name": "only_roll_clockwise"
+      },
+      {
+        "def_prompt": "The camera rolls clockwise.",
+        "def_question": "Does the camera roll clockwise?",
+        "full_key": "cam_motion.camera_centric_movement.roll_clockwise.has_roll_clockwise",
+        "label_name": "has_roll_clockwise"
+      }
+    ],
+    "camera_centric_movement.roll_counterclockwise": [
+      {
+        "def_prompt": "The camera rolls counterclockwise.",
+        "def_question": "Does the camera roll counterclockwise?",
+        "full_key": "cam_motion.camera_centric_movement.roll_counterclockwise.has_roll_counterclockwise",
+        "label_name": "has_roll_counterclockwise"
+      },
+      {
+        "def_prompt": "The camera only rolls counterclockwise without any other camera movements.",
+        "def_question": "Does the camera only roll counterclockwise without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise",
+        "label_name": "only_roll_counterclockwise"
+      }
+    ],
+    "camera_centric_movement.tilt_down": [
+      {
+        "def_prompt": "The camera only tilts downward without any other camera movements.",
+        "def_question": "Does the camera only tilt downward without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
+        "label_name": "only_tilt_down"
+      },
+      {
+        "def_prompt": "The camera tilts downward.",
+        "def_question": "Does the camera tilt downward?",
+        "full_key": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
+        "label_name": "has_tilt_down"
+      }
+    ],
+    "camera_centric_movement.tilt_up": [
+      {
+        "def_prompt": "The camera only tilts upward without any other camera movements.",
+        "def_question": "Does the camera only tilt upward without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
+        "label_name": "only_tilt_up"
+      },
+      {
+        "def_prompt": "The camera tilts upward.",
+        "def_question": "Does the camera tilt upward?",
+        "full_key": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
+        "label_name": "has_tilt_up"
+      }
+    ],
+    "camera_centric_movement.upward": [
+      {
+        "def_prompt": "The camera only moves physically upward (or pedestals up) without any other camera movements.",
+        "def_question": "Does the camera only move physically upward (or pedestals up) without any other camera movements?",
+        "full_key": "cam_motion.camera_centric_movement.upward.only_upward_wrt_camera",
+        "label_name": "only_upward_wrt_camera"
+      },
+      {
+        "def_prompt": "The camera moves physically upward (or pedestals up) with respect to the initial frame.",
+        "def_question": "Does the camera move physically upward (or pedestals up) with respect to the initial frame?",
+        "full_key": "cam_motion.camera_centric_movement.upward.has_upward_wrt_camera",
+        "label_name": "has_upward_wrt_camera"
+      }
+    ],
+    "camera_centric_movement.zoom_in": [
+      {
+        "def_prompt": "The camera only zooms in without any other movement.",
+        "def_question": "Does the camera only zoom in with no other movement?",
+        "full_key": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
+        "label_name": "only_zoom_in"
+      },
+      {
+        "def_prompt": "The camera zooms in.",
+        "def_question": "Does the camera zoom in?",
+        "full_key": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
+        "label_name": "has_zoom_in"
+      }
+    ],
+    "camera_centric_movement.zoom_out": [
+      {
+        "def_prompt": "The camera only zooms out with no other movement.",
+        "def_question": "Does the camera only zoom out with no other movement?",
+        "full_key": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
+        "label_name": "only_zoom_out"
+      },
+      {
+        "def_prompt": "The camera zooms out.",
+        "def_question": "Does the camera zoom out?",
+        "full_key": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
+        "label_name": "has_zoom_out"
+      }
+    ],
+    "dolly_zoom_movement": [
+      {
+        "def_prompt": "The camera performs a dolly zoom effect with forward movement and zoom-out.",
+        "def_question": "Does the shot feature a dolly zoom effect with the camera moving forward and zooming out?",
+        "full_key": "cam_motion.dolly_zoom_movement.has_dolly_in_zoom_out",
+        "label_name": "has_dolly_in_zoom_out"
+      },
+      {
+        "def_prompt": "The camera performs a dolly zoom effect with backward movement and zoom-in.",
+        "def_question": "Does the shot feature a dolly zoom effect with the camera moving backward and zooming in?",
+        "full_key": "cam_motion.dolly_zoom_movement.has_dolly_out_zoom_in",
+        "label_name": "has_dolly_out_zoom_in"
+      }
+    ],
+    "ground_centric_movement.backward": [
+      {
+        "def_prompt": "The camera moves only backward (not zooming out) in the scene, or only south in a bird's eye view or north in a worm's eye view.",
+        "def_question": "Does the camera move only backward (not zooming out) in the scene, or only southward in a bird's eye view, or only northward in a worm's eye view?",
+        "full_key": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground_birds_worms_included",
+        "label_name": "only_backward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera only moves physically backward (not zooming out) relative to the ground.",
+        "def_question": "Does the camera only move physically backward (not zooming out) with respect to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
+        "label_name": "only_backward_wrt_ground"
+      },
+      {
+        "def_prompt": "The camera moves physically backward (or dollies out) in the scene.",
+        "def_question": "Is the camera moving physically backward (or dollies out) in the scene?",
+        "full_key": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground",
+        "label_name": "has_backward_wrt_ground"
+      },
+      {
+        "def_prompt": "The camera moves backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view).",
+        "def_question": "Does the camera move backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground_birds_worms_included",
+        "label_name": "has_backward_wrt_ground_birds_worms_included"
+      }
+    ],
+    "ground_centric_movement.downward": [
+      {
+        "def_prompt": "The camera only moves physically downward (not tilting down) relative to the ground.",
+        "def_question": "Does the camera only move physically downward (not tilting down) with respect to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
+        "label_name": "only_downward_wrt_ground"
+      },
+      {
+        "def_prompt": "The camera moves only physically downward (not tilting down) relative to the ground (even if it's a bird's or worm's eye view).",
+        "def_question": "Does the camera move only physically downward (not tilting down) relative to the ground (even if it's a bird's or worm's eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground_birds_worms_included",
+        "label_name": "only_downward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera moves physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view).",
+        "def_question": "Does the camera move physically downward relative to the ground (even if it's a bird's or worm's eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground_birds_worms_included",
+        "label_name": "has_downward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera moves physically downward (or pedestals down) relative to the ground.",
+        "def_question": "Does the camera move physically downward (or pedestals down) relative to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+        "label_name": "has_downward_wrt_ground"
+      }
+    ],
+    "ground_centric_movement.forward": [
+      {
+        "def_prompt": "The camera moves physically forward (or dollies in) in the scene.",
+        "def_question": "Is the camera moving physically forward (or dollies in) in the scene?",
+        "full_key": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
+        "label_name": "has_forward_wrt_ground"
+      },
+      {
+        "def_prompt": "The camera moves only physically forward (not zooming in) in the scene, or only north in a bird's eye view or south in a worm's eye view.",
+        "def_question": "Does the camera move only forward (not zooming in) in the scene, or only northward in a bird's eye view, or only southward in a worm's eye view?",
+        "full_key": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground_birds_worms_included",
+        "label_name": "only_forward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera moves forward relative to the scene (forward normally, north from a bird's-eye view, or south from a worm's eye view).",
+        "def_question": "Does the camera move forward relative to the scene (forward normally, north from a bird\u2019s-eye view, or south from a worm\u2019s-eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground_birds_worms_included",
+        "label_name": "has_forward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera only moves physically forward (not zooming in) relative to the ground.",
+        "def_question": "Does the camera only move physically forward (not zooming in) relative to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
+        "label_name": "only_forward_wrt_ground"
+      }
+    ],
+    "ground_centric_movement.upward": [
+      {
+        "def_prompt": "The camera moves physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view).",
+        "def_question": "Does the camera move physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground_birds_worms_included",
+        "label_name": "has_upward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera moves only physically upward (not tilting up) relative to the ground (even if it's a bird's or worm's eye view).",
+        "def_question": "Does the camera move only physically upward (not tilting up) relative to the ground (even if it's a bird's or worm's eye view)?",
+        "full_key": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground_birds_worms_included",
+        "label_name": "only_upward_wrt_ground_birds_worms_included"
+      },
+      {
+        "def_prompt": "The camera moves physically upward (or pedestals up) relative to the ground.",
+        "def_question": "Does the camera move physically upward (or pedestals up) relative to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+        "label_name": "has_upward_wrt_ground"
+      },
+      {
+        "def_prompt": "The camera only moves physically upward (not tilting up) relative to the ground.",
+        "def_question": "Does the camera only move physically upward (not tilting up) relative to the ground?",
+        "full_key": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
+        "label_name": "only_upward_wrt_ground"
+      }
+    ],
+    "motion_complexity": [
+      {
+        "def_prompt": "The camera movement is minimal, subtle, or difficult to perceive.",
+        "def_question": "Is the camera motion minimal, subtle, or difficult to perceive?",
+        "full_key": "cam_motion.motion_complexity.is_minor_motion",
+        "label_name": "is_minor_motion"
+      },
+      {
+        "def_prompt": "The camera executes a complex movement that is hard to classify, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear.",
+        "def_question": "Does the camera execute a complex movement that is hard to classify, such as moving in conflicting directions, or showing different motions at different times, or having multiple movements at different speeds, or is its motion unclear?",
+        "full_key": "cam_motion.motion_complexity.is_complex_motion",
+        "label_name": "is_complex_motion"
+      },
+      {
+        "def_prompt": "The camera moves in a simple, straightforward way that is easy to classify, such as moving in a single direction, maintaining a consistent speed, or following a clear and predictable path.",
+        "def_question": "Does the camera show simple motion, such as moving in a single direction, maintaining a consistent speed, or following a clear and predictable path?",
+        "full_key": "cam_motion.motion_complexity.is_simple_motion",
+        "label_name": "is_simple_motion"
+      }
+    ],
+    "object_centric_movement": [
+      {
+        "def_prompt": "A rear-side tracking shot where the camera follows the moving subject at a rear-side angle.",
+        "def_question": "Is it a rear-side tracking shot where the camera follows the moving subject at a rear-side angle?",
+        "full_key": "cam_motion.object_centric_movement.rear_side_tracking_shot",
+        "label_name": "rear_side_tracking_shot"
+      },
+      {
+        "def_prompt": "A side tracking shot where the camera moves right to follow the subject.",
+        "def_question": "Is it a side tracking shot where the camera moves right to follow the subject?",
+        "full_key": "cam_motion.object_centric_movement.side_tracking_shot_rightward",
+        "label_name": "side_tracking_shot_rightward"
+      },
+      {
+        "def_prompt": "The camera tracks the subject as they move.",
+        "def_question": "Does the camera track the subject as they move?",
+        "full_key": "cam_motion.object_centric_movement.track_shot",
+        "label_name": "tracking_shot"
+      },
+      {
+        "def_prompt": "The camera pans to track the moving subjects.",
+        "def_question": "Does the camera pan to track the moving subjects?",
+        "full_key": "cam_motion.object_centric_movement.pan_tracking_shot",
+        "label_name": "pan_tracking_shot"
+      },
+      {
+        "def_prompt": "An arc tracking shot where the camera follows the moving subject while arcing around them.",
+        "def_question": "Is it an arc tracking shot where the camera follows the moving subject while arcing around them?",
+        "full_key": "cam_motion.object_centric_movement.arc_tracking_shot",
+        "label_name": "arc_tracking_shot"
+      },
+      {
+        "def_prompt": "A side tracking shot where the camera moves left to follow the subject.",
+        "def_question": "Is it a side tracking shot where the camera moves left to follow the subject?",
+        "full_key": "cam_motion.object_centric_movement.side_tracking_shot_leftward",
+        "label_name": "side_tracking_shot_leftward"
+      },
+      {
+        "def_prompt": "The camera tilts to follow the moving subject.",
+        "def_question": "Does the camera tilt to track the moving subjects?",
+        "full_key": "cam_motion.object_centric_movement.tilt_tracking_shot",
+        "label_name": "tilt_tracking_shot"
+      },
+      {
+        "def_prompt": "A follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera.",
+        "def_question": "Is it a follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera?",
+        "full_key": "cam_motion.object_centric_movement.tail_tracking_shot",
+        "label_name": "tail_tracking_shot"
+      },
+      {
+        "def_prompt": "A front-side tracking shot where the camera leads the moving subject from a front-side angle.",
+        "def_question": "Is it a front-side tracking shot where the camera leads the moving subject from a front-side angle?",
+        "full_key": "cam_motion.object_centric_movement.front_side_tracking_shot",
+        "label_name": "front_side_tracking_shot"
+      },
+      {
+        "def_prompt": "A lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera.",
+        "def_question": "Is it a lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera?",
+        "full_key": "cam_motion.object_centric_movement.lead_tracking_shot",
+        "label_name": "lead_tracking_shot"
+      },
+      {
+        "def_prompt": "A side tracking shot with the camera moving from the side to follow the moving subject.",
+        "def_question": "Is it a side tracking shot with the camera moving from the side to follow the moving subject?",
+        "full_key": "cam_motion.object_centric_movement.side_tracking_shot",
+        "label_name": "side_tracking_shot"
+      },
+      {
+        "def_prompt": "The subject appears smaller during the tracking shot.",
+        "def_question": "Does the subject appear smaller during the tracking shot?",
+        "full_key": "cam_motion.object_centric_movement.tracking_subject_smaller_size",
+        "label_name": "tracking_subject_smaller_size"
+      },
+      {
+        "def_prompt": "An aerial tracking shot where the camera follows the moving subject from an aerial view.",
+        "def_question": "Is it an aerial tracking shot where the camera follows the moving subject from an aerial view?",
+        "full_key": "cam_motion.object_centric_movement.aerial_tracking_shot",
+        "label_name": "aerial_tracking_shot"
+      },
+      {
+        "def_prompt": "The subject appears larger during the tracking shot.",
+        "def_question": "Does the subject appear larger during the tracking shot?",
+        "full_key": "cam_motion.object_centric_movement.tracking_subject_larger_size",
+        "label_name": "tracking_subject_larger_size"
+      }
+    ],
+    "root": [
+      {
+        "def_prompt": "A shot where a single frame is frozen at some point.",
+        "def_question": "Does the video contain a frame freezing effect at any point?",
+        "full_key": "cam_motion.has_frame_freezing",
+        "label_name": "has_frame_freezing"
+      },
+      {
+        "def_prompt": "The video includes a shot transition.",
+        "def_question": "Does the video include a shot transition?",
+        "full_key": "cam_motion.has_shot_transition_cam_motion",
+        "label_name": "has_shot_transition_cam_motion"
+      },
+      {
+        "def_prompt": "The video shows a noticeable motion blur effect.",
+        "def_question": "Does the video show a noticeable motion blur effect?",
+        "full_key": "cam_motion.has_motion_blur",
+        "label_name": "has_motion_blur"
+      }
+    ],
+    "scene_movement": [
+      {
+        "def_prompt": "The scene in the video is dynamic and features movement.",
+        "def_question": "Is the scene in the video dynamic and features movement?",
+        "full_key": "cam_motion.scene_movement.dynamic_scene",
+        "label_name": "dynamic_scene"
+      },
+      {
+        "def_prompt": "The scene in the video is completely static.",
+        "def_question": "Is the scene in the video completely static?",
+        "full_key": "cam_motion.scene_movement.static_scene",
+        "label_name": "static_scene"
+      },
+      {
+        "def_prompt": "The scene in the video is mostly static with minimal movement.",
+        "def_question": "Is the scene in the video mostly static with minimal movement?",
+        "full_key": "cam_motion.scene_movement.mostly_static_scene",
+        "label_name": "mostly_static_scene"
+      }
+    ],
+    "steadiness_and_movement": [
+      {
+        "def_prompt": "The video has exceptionally smooth and highly stable camera movement.",
+        "def_question": "Is the camera movement exceptionally smooth and highly stable?",
+        "full_key": "cam_motion.steadiness_and_movement.very_stable_camera",
+        "label_name": "very_stable_camera_motion"
+      },
+      {
+        "def_prompt": "The video has noticeable vibrations, shaking, or wobbling of the camera.",
+        "def_question": "Does the camera show noticable vibrations, shaking, or wobbling?",
+        "full_key": "cam_motion.steadiness_and_movement.very_shaky_camera",
+        "label_name": "very_shaky_camera"
+      },
+      {
+        "def_prompt": "The video has noticeable camera motion beyond minor shake or wobble.",
+        "def_question": "Does the camera have noticeable motion beyond minor shake or wobble?",
+        "full_key": "cam_motion.steadiness_and_movement.clear_moving_camera",
+        "label_name": "clear_moving_camera"
+      },
+      {
+        "def_prompt": "The camera has noticeable motion but at a fast motion speed.",
+        "def_question": "Does the camera have noticeable motion at a fast motion speed?",
+        "full_key": "cam_motion.steadiness_and_movement.fast_moving_camera",
+        "label_name": "fast_moving_camera"
+      },
+      {
+        "def_prompt": "The video shows a completely still camera with no motion or shaking.",
+        "def_question": "Is the camera completely still without any motion or shaking?",
+        "full_key": "cam_motion.steadiness_and_movement.fixed_camera",
+        "label_name": "fixed_camera"
+      },
+      {
+        "def_prompt": "The video has a mostly stationary camera with only minor vibrations or shaking.",
+        "def_question": "Is the camera stationary with minor vibrations or shaking?",
+        "full_key": "cam_motion.steadiness_and_movement.fixed_camera_with_shake",
+        "label_name": "fixed_camera_with_shake"
+      },
+      {
+        "def_prompt": "A video where the camera movement is smooth and stable.",
+        "def_question": "Is the camera movement smooth and stable?",
+        "full_key": "cam_motion.steadiness_and_movement.stable_camera",
+        "label_name": "stable_camera_motion"
+      },
+      {
+        "def_prompt": "A video where the camera moves (including shaking or wobbling).",
+        "def_question": "Is there any camera movement (including shaking or wobbling)?",
+        "full_key": "cam_motion.steadiness_and_movement.moving_camera",
+        "label_name": "moving_camera"
+      },
+      {
+        "def_prompt": "The camera has noticeable motion but at a slow motion speed.",
+        "def_question": "Does the camera have noticeable motion but at a slow motion speed?",
+        "full_key": "cam_motion.steadiness_and_movement.slow_moving_camera",
+        "label_name": "slow_moving_camera"
+      },
+      {
+        "def_prompt": "A video where the camera shows vibrations, shaking, or wobbling.",
+        "def_question": "Does the camera show any vibrations, shaking, or wobbling?",
+        "full_key": "cam_motion.steadiness_and_movement.shaky_camera",
+        "label_name": "shaky_camera"
+      }
+    ]
+  },
+  "cam_setup": {
+    "angle": [
+      {
+        "def_prompt": "There is an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video.",
+        "def_question": "Is there an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video?",
+        "full_key": "cam_setup.angle.is_dutch_angle",
+        "label_name": "is_dutch_angle"
+      },
+      {
+        "def_prompt": "The camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+        "def_question": "Does the camera angle change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
+        "full_key": "cam_setup.angle.camera_angle_change",
+        "label_name": "camera_angle_change"
+      },
+      {
+        "def_prompt": "The camera angle increases noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.",
+        "def_question": "Does the camera angle increase noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view?",
+        "full_key": "cam_setup.angle.camera_angle_change_from_low_to_high",
+        "label_name": "camera_angle_change_from_low_to_high"
+      },
+      {
+        "def_prompt": "The degree of the Dutch (canted) angle stays the same throughout the video.",
+        "def_question": "Does the degree of the Dutch (canted) angle stay the same throughout the video?",
+        "full_key": "cam_setup.angle.is_dutch_angle_fixed",
+        "label_name": "is_dutch_angle_fixed"
+      },
+      {
+        "def_prompt": "The camera angle relative to the ground is clear enough to be classified or described.",
+        "def_question": "Is the camera angle relative to the ground clear enough to be classified or described?",
+        "full_key": "cam_setup.angle.is_camera_angle_applicable",
+        "label_name": "is_camera_angle_applicable"
+      },
+      {
+        "def_prompt": "There is a Dutch (canted) angle that changes its degree during the video, with the horizon line not level.",
+        "def_question": "Does the degree of the Dutch (canted) angle vary during the video?",
+        "full_key": "cam_setup.angle.is_dutch_angle_varying",
+        "label_name": "is_dutch_angle_varying"
+      },
+      {
+        "def_prompt": "The camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+        "def_question": "Does the camera angle decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
+        "full_key": "cam_setup.angle.camera_angle_change_from_high_to_low",
+        "label_name": "camera_angle_change_from_high_to_low"
+      }
+    ],
+    "angle.end_with": [
+      {
+        "def_prompt": "The video ends with the camera at a worm's eye angle, looking straight up from below.",
+        "def_question": "Does the video end with the camera at a worm's eye angle, looking straight up from below?",
+        "full_key": "cam_setup.angle.end_with.camera_angle_end_with_worm_eye_angle",
+        "label_name": "camera_angle_end_with_worm_eye_angle"
+      },
+      {
+        "def_prompt": "The video ends with the camera at a level angle, parallel to the ground (even if a Dutch angle is used).",
+        "def_question": "Does the video end with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)?",
+        "full_key": "cam_setup.angle.end_with.camera_angle_end_with_level_angle",
+        "label_name": "camera_angle_end_with_level_angle"
+      },
+      {
+        "def_prompt": "The video ends with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+        "def_question": "Does the video end with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
+        "full_key": "cam_setup.angle.end_with.camera_angle_end_with_high_angle",
+        "label_name": "camera_angle_end_with_high_angle"
+      },
+      {
+        "def_prompt": "The video ends with the camera at a bird's eye angle, looking straight down from above.",
+        "def_question": "Does the video end with the camera at a bird's eye angle, looking straight down from above?",
+        "full_key": "cam_setup.angle.end_with.camera_angle_end_with_bird_eye_angle",
+        "label_name": "camera_angle_end_with_bird_eye_angle"
+      },
+      {
+        "def_prompt": "The video ends with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+        "def_question": "Does the video end with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
+        "full_key": "cam_setup.angle.end_with.camera_angle_end_with_low_angle",
+        "label_name": "camera_angle_end_with_low_angle"
+      }
+    ],
+    "angle.from_to": [
+      {
+        "def_prompt": "The video starts with the camera at a level angle and transitions to a low angle.",
+        "def_question": "Does the video start with the camera at a level angle and transition to a low angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_level_to_low",
+        "label_name": "camera_angle_from_level_to_low"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a low angle and transitions to a high angle.",
+        "def_question": "Does the video start with the camera at a low angle and transition to a high angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_low_to_high",
+        "label_name": "camera_angle_from_low_to_high"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a high angle and transitions to a low angle.",
+        "def_question": "Does the video start with the camera at a high angle and transition to a low angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_high_to_low",
+        "label_name": "camera_angle_from_high_to_low"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a high angle and transitions to a level angle.",
+        "def_question": "Does the video start with the camera at a high angle and transition to a level angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_high_to_level",
+        "label_name": "camera_angle_from_high_to_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a level angle and transitions to a high angle.",
+        "def_question": "Does the video start with the camera at a level angle and transition to a high angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_level_to_high",
+        "label_name": "camera_angle_from_level_to_high"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a low angle and transitions to a level angle.",
+        "def_question": "Does the video start with the camera at a low angle and transition to a level angle?",
+        "full_key": "cam_setup.angle.from_to.camera_angle_from_low_to_level",
+        "label_name": "camera_angle_from_low_to_level"
+      }
+    ],
+    "angle.is_always": [
+      {
+        "def_prompt": "The camera maintains a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up.",
+        "def_question": "Does the camera maintain a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up?",
+        "full_key": "cam_setup.angle.is_always.camera_angle_is_low_angle",
+        "label_name": "camera_angle_is_low_angle"
+      },
+      {
+        "def_prompt": "The camera maintains a high angle throughout, consistently looking downward compared to a level angle but not directly top-down.",
+        "def_question": "Does the camera maintain a high angle throughout, consistently looking downward compared to a level angle but not directly top-down?",
+        "full_key": "cam_setup.angle.is_always.camera_angle_is_high_angle",
+        "label_name": "camera_angle_is_high_angle"
+      },
+      {
+        "def_prompt": "The camera maintains a bird's eye angle throughout, consistently looking straight down from above.",
+        "def_question": "Does the camera maintain a bird's eye angle throughout, consistently looking straight down from above?",
+        "full_key": "cam_setup.angle.is_always.camera_angle_is_bird_eye_angle",
+        "label_name": "camera_angle_is_bird_eye_angle"
+      },
+      {
+        "def_prompt": "The camera maintains a level angle parallel to the ground (even if a Dutch angle is used) throughout the video.",
+        "def_question": "Does the camera maintain a level angle parallel to the ground (even if a Dutch angle is used) throughout the video?",
+        "full_key": "cam_setup.angle.is_always.camera_angle_is_level_angle",
+        "label_name": "camera_angle_is_level_angle"
+      },
+      {
+        "def_prompt": "The camera maintains a worm's eye angle throughout, consistently looking straight up from below.",
+        "def_question": "Does the camera maintain a worm's eye angle throughout, consistently looking straight up from below?",
+        "full_key": "cam_setup.angle.is_always.camera_angle_is_worm_eye_angle",
+        "label_name": "camera_angle_is_worm_eye_angle"
+      }
+    ],
+    "angle.start_with": [
+      {
+        "def_prompt": "The video starts with the camera at a level angle, parallel to the ground (even if a Dutch angle is used).",
+        "def_question": "Does the video start with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)?",
+        "full_key": "cam_setup.angle.start_with.camera_angle_start_with_level_angle",
+        "label_name": "camera_angle_start_with_level_angle"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a worm\u2019s eye angle, looking straight up from below.",
+        "def_question": "Does the video start with the camera at a worm\u2019s eye angle, looking straight up from below?",
+        "full_key": "cam_setup.angle.start_with.camera_angle_start_with_worm_eye_angle",
+        "label_name": "camera_angle_start_with_worm_eye_angle"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+        "def_question": "Does the video start with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
+        "full_key": "cam_setup.angle.start_with.camera_angle_start_with_low_angle",
+        "label_name": "camera_angle_start_with_low_angle"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a bird's eye angle, looking straight down from above.",
+        "def_question": "Does the video start with the camera at a bird's eye angle, looking straight down from above?",
+        "full_key": "cam_setup.angle.start_with.camera_angle_start_with_bird_eye_angle",
+        "label_name": "camera_angle_start_with_bird_eye_angle"
+      },
+      {
+        "def_prompt": "The video starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+        "def_question": "Does the video start with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
+        "full_key": "cam_setup.angle.start_with.camera_angle_start_with_high_angle",
+        "label_name": "camera_angle_start_with_high_angle"
+      }
+    ],
+    "focus": [
+      {
+        "def_prompt": "The camera starts out of focus and then becomes in focus.",
+        "def_question": "Does the camera start out of focus and then become in focus?",
+        "full_key": "cam_setup.focus.focus_change_from_out_to_in_focus",
+        "label_name": "focus_change_from_out_to_in_focus"
+      },
+      {
+        "def_prompt": "The camera uses rack focus or pull focus to shift the focus plane.",
+        "def_question": "Does the camera use rack focus or pull focus to shift the focus plane?",
+        "full_key": "cam_setup.focus.is_rack_pull_focus",
+        "label_name": "is_rack_pull_focus"
+      },
+      {
+        "def_prompt": "The camera uses shallow depth of field, with a limited but noticeable range of space in focus.",
+        "def_question": "Does the camera use shallow depth of field, with a limited but noticeable range of space in focus?",
+        "full_key": "cam_setup.focus.is_shallow_focus",
+        "label_name": "is_shallow_focus"
+      },
+      {
+        "def_prompt": "The camera uses extremely shallow depth of field, with only a narrow plane in focus.",
+        "def_question": "Is the camera using extremely shallow depth of field, with only a narrow plane in focus?",
+        "full_key": "cam_setup.focus.is_ultra_shallow_focus",
+        "label_name": "is_ultra_shallow_focus"
+      },
+      {
+        "def_prompt": "The camera uses focus tracking to keep a subject in focus in the video.",
+        "def_question": "Does the camera use focus tracking to keep a subject in focus in the video?",
+        "full_key": "cam_setup.focus.is_focus_tracking",
+        "label_name": "is_focus_tracking"
+      },
+      {
+        "def_prompt": "The camera uses a deep depth of field with distant details remaining sharp.",
+        "def_question": "Does the camera use a deep depth of field with distant details remaining sharp?",
+        "full_key": "cam_setup.focus.is_deep_focus",
+        "label_name": "is_deep_focus"
+      },
+      {
+        "def_prompt": "The focal plane shifts from distant to close, moving between foreground, middleground, or background.",
+        "def_question": "Does the focal plane shift from distant to close, moving between foreground, middleground, or background?",
+        "full_key": "cam_setup.focus.focus_change_from_far_to_near",
+        "label_name": "focus_change_from_far_to_near"
+      },
+      {
+        "def_prompt": "The focal plane shifts from close to distant, moving between foreground, middleground, or background.",
+        "def_question": "Does the focal plane shift from close to distant, moving between foreground, middleground, or background?",
+        "full_key": "cam_setup.focus.focus_change_from_near_to_far",
+        "label_name": "focus_change_from_near_to_far"
+      },
+      {
+        "def_prompt": "The camera\u2019s depth of field is clear enough to be classified or described.",
+        "def_question": "Is the camera\u2019s depth of field clear enough to be classified or described?",
+        "full_key": "cam_setup.focus.is_focus_applicable",
+        "label_name": "is_focus_applicable"
+      },
+      {
+        "def_prompt": "The focal plane shifts noticeably between foreground, middleground, or background regions.",
+        "def_question": "Does the focal plane shift noticeably between foreground, middleground, or background regions?",
+        "full_key": "cam_setup.focus.focus_change",
+        "label_name": "focus_change"
+      },
+      {
+        "def_prompt": "The camera starts in sharp focus and then shifts out of focus.",
+        "def_question": "Does the camera start in sharp focus and then shift out of focus?",
+        "full_key": "cam_setup.focus.focus_change_from_in_to_out_of_focus",
+        "label_name": "focus_change_from_in_to_out_of_focus"
+      }
+    ],
+    "focus.end_with": [
+      {
+        "def_prompt": "The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
+        "def_question": "Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
+        "full_key": "cam_setup.focus.end_with.focus_end_with_middle_ground",
+        "label_name": "focus_end_with_middle_ground"
+      },
+      {
+        "def_prompt": "The video ends with the camera completely out of focus.",
+        "def_question": "Does the video end with the camera completely out of focus?",
+        "full_key": "cam_setup.focus.end_with.focus_end_with_out_of_focus",
+        "label_name": "focus_end_with_out_of_focus"
+      },
+      {
+        "def_prompt": "The video ends with the camera focusing on the foreground, using a shallow depth of field.",
+        "def_question": "Does the video end with the camera focusing on the foreground, using a shallow depth of field?",
+        "full_key": "cam_setup.focus.end_with.focus_end_with_foreground",
+        "label_name": "focus_end_with_foreground"
+      },
+      {
+        "def_prompt": "The video ends with the camera focusing on the background, using a shallow depth of field.",
+        "def_question": "Does the video end with the camera focusing on the background, using a shallow depth of field?",
+        "full_key": "cam_setup.focus.end_with.focus_end_with_background",
+        "label_name": "focus_end_with_background"
+      }
+    ],
+    "focus.from_to": [
+      {
+        "def_prompt": "The video starts with the camera focused on the background and then shifts the focus to the foreground.",
+        "def_question": "Does the video start with the camera focused on the background and then shift the focus to the foreground?",
+        "full_key": "cam_setup.focus.from_to.focus_from_background_to_foreground",
+        "label_name": "focus_from_background_to_foreground"
+      },
+      {
+        "def_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the background.",
+        "def_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the background?",
+        "full_key": "cam_setup.focus.from_to.focus_from_middle_ground_to_background",
+        "label_name": "focus_from_middle_ground_to_background"
+      },
+      {
+        "def_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middleground.",
+        "def_question": "Does the video start with the camera focused on the background and then shift the focus to the middleground?",
+        "full_key": "cam_setup.focus.from_to.focus_from_background_to_middle_ground",
+        "label_name": "focus_from_background_to_middle_ground"
+      },
+      {
+        "def_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the foreground.",
+        "def_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the foreground?",
+        "full_key": "cam_setup.focus.from_to.focus_from_middle_ground_to_foreground",
+        "label_name": "focus_from_middle_ground_to_foreground"
+      },
+      {
+        "def_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middleground.",
+        "def_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middleground?",
+        "full_key": "cam_setup.focus.from_to.focus_from_foreground_to_middle_ground",
+        "label_name": "focus_from_foreground_to_middle_ground"
+      },
+      {
+        "def_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the background.",
+        "def_question": "Does the video start with the camera focused on the foreground and then shift the focus to the background?",
+        "full_key": "cam_setup.focus.from_to.focus_from_foreground_to_background",
+        "label_name": "focus_from_foreground_to_background"
+      }
+    ],
+    "focus.is_always": [
+      {
+        "def_prompt": "The camera remains focused on the middleground, keeping the foreground and background blurred.",
+        "def_question": "Is the camera consistently focused on the middleground, keeping the foreground and background blurred?",
+        "full_key": "cam_setup.focus.is_always.focus_is_middle_ground",
+        "label_name": "focus_is_middle_ground"
+      },
+      {
+        "def_prompt": "The camera remains focused on the foreground using a shallow depth of field.",
+        "def_question": "Is the camera consistently focused on the foreground using a shallow depth of field?",
+        "full_key": "cam_setup.focus.is_always.focus_is_foreground",
+        "label_name": "focus_is_foreground"
+      },
+      {
+        "def_prompt": "The camera remains focused on the background using a shallow depth of field.",
+        "def_question": "Is the camera consistently focused on the background using a shallow depth of field?",
+        "full_key": "cam_setup.focus.is_always.focus_is_background",
+        "label_name": "focus_is_background"
+      },
+      {
+        "def_prompt": "The camera remains out of focus throughout.",
+        "def_question": "Is the camera consistently out of focus throughout?",
+        "full_key": "cam_setup.focus.is_always.focus_is_out_of_focus",
+        "label_name": "focus_is_out_of_focus"
+      }
+    ],
+    "focus.start_with": [
+      {
+        "def_prompt": "The video starts with the camera focusing on the foreground, using a shallow depth of field.",
+        "def_question": "Does the video start with the camera focusing on the foreground, using a shallow depth of field?",
+        "full_key": "cam_setup.focus.start_with.focus_start_with_foreground",
+        "label_name": "focus_start_with_foreground"
+      },
+      {
+        "def_prompt": "The video starts with the camera completely out of focus.",
+        "def_question": "Does the video start with the camera completely out of focus?",
+        "full_key": "cam_setup.focus.start_with.focus_start_with_out_of_focus",
+        "label_name": "focus_start_with_out_of_focus"
+      },
+      {
+        "def_prompt": "The video starts with the camera focusing on the background, using a shallow depth of field.",
+        "def_question": "Does the video start with the camera focusing on the background, using a shallow depth of field?",
+        "full_key": "cam_setup.focus.start_with.focus_start_with_background",
+        "label_name": "focus_start_with_background"
+      },
+      {
+        "def_prompt": "The video starts with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
+        "def_question": "Does the video start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
+        "full_key": "cam_setup.focus.start_with.focus_start_with_middle_ground",
+        "label_name": "focus_start_with_middle_ground"
+      }
+    ],
+    "height_wrt_ground": [
+      {
+        "def_prompt": "The camera transitions from above water to underwater.",
+        "def_question": "Does the camera transition from above water to underwater?",
+        "full_key": "cam_setup.height_wrt_ground.above_water_to_underwater",
+        "label_name": "above_water_to_underwater"
+      },
+      {
+        "def_prompt": "The camera transitions from underwater to above water.",
+        "def_question": "Does the camera transition from underwater to above water?",
+        "full_key": "cam_setup.height_wrt_ground.underwater_to_above_water",
+        "label_name": "underwater_to_above_water"
+      },
+      {
+        "def_prompt": "The camera height decreases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+        "def_question": "Does the camera height decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
+        "full_key": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_high_to_low",
+        "label_name": "height_wrt_ground_change_from_high_to_low"
+      },
+      {
+        "def_prompt": "The camera height relative to the ground or water level is clear enough to be classified or described.",
+        "def_question": "Is the camera height relative to the ground or water level clear enough to be classified or described?",
+        "full_key": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+        "label_name": "is_height_wrt_ground_applicable"
+      },
+      {
+        "def_prompt": "The camera height increases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+        "def_question": "Does the camera height increase noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
+        "full_key": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_low_to_high",
+        "label_name": "height_wrt_ground_change_from_low_to_high"
+      }
+    ],
+    "height_wrt_ground.end_with": [
+      {
+        "def_prompt": "The video ends with the camera positioned near water level, showing the waterline clearly and not from an aerial view.",
+        "def_question": "Does the video end with the camera near water level, showing the waterline clearly and not from an aerial view?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_water_level",
+        "label_name": "height_wrt_ground_end_with_water_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera fully submerged underwater.",
+        "def_question": "Does the video end with the camera fully submerged underwater?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_underwater_level",
+        "label_name": "height_wrt_ground_end_with_underwater_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.",
+        "def_question": "Does the video end with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_hip_level",
+        "label_name": "height_wrt_ground_end_with_hip_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera positioned at eye level (roughly at a person's eye height, above the waist).",
+        "def_question": "Does the video end with the camera at eye level (roughly at a person's eye height, above the waist)?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_eye_level",
+        "label_name": "height_wrt_ground_end_with_eye_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera positioned high at an aerial level.",
+        "def_question": "Does the video end with the camera positioned high at an aerial level?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_aerial_level",
+        "label_name": "height_wrt_ground_end_with_aerial_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera at ground level, positioned close to the ground.",
+        "def_question": "Does the video end with the camera at ground level, positioned close to the ground?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_ground_level",
+        "label_name": "height_wrt_ground_end_with_ground_level"
+      },
+      {
+        "def_prompt": "The video ends with the camera at an overhead level, above eye level but below aerial (around second-floor height).",
+        "def_question": "Does the video end with the camera at an overhead level, above eye level but below aerial (around second-floor height)?",
+        "full_key": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_overhead_level",
+        "label_name": "height_wrt_ground_end_with_overhead_level"
+      }
+    ],
+    "height_wrt_ground.is_always": [
+      {
+        "def_prompt": "The camera is positioned at an overhead level throughout the video, above eye level but below aerial (around second-floor height).",
+        "def_question": "Is the camera positioned at an overhead level throughout the video, above eye level but below aerial (around second-floor height)?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_overhead_level",
+        "label_name": "height_wrt_ground_is_overhead_level"
+      },
+      {
+        "def_prompt": "The camera is positioned at ground level throughout the video, positioned close to the ground.",
+        "def_question": "Is the camera positioned at ground level throughout the video, positioned close to the ground?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_ground_level",
+        "label_name": "height_wrt_ground_is_ground_level"
+      },
+      {
+        "def_prompt": "The camera remains at an aerial level height throughout the video.",
+        "def_question": "Is the camera positioned at an aerial level throughout the video?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_aerial_level",
+        "label_name": "height_wrt_ground_is_aerial_level"
+      },
+      {
+        "def_prompt": "The camera is positioned at eye level throughout the video (roughly at a person's eye height, above the waist).",
+        "def_question": "Is the camera positioned at eye level throughout the video (roughly at a person's eye height, above the waist)?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_eye_level",
+        "label_name": "height_wrt_ground_is_eye_level"
+      },
+      {
+        "def_prompt": "The camera is positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present.",
+        "def_question": "Is the camera positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_hip_level",
+        "label_name": "height_wrt_ground_is_hip_level"
+      },
+      {
+        "def_prompt": "The camera is fully submerged underwater throughout the video, capturing scenes beneath the water\u2019s surface.",
+        "def_question": "Is the camera fully submerged underwater throughout the video, capturing scenes beneath the water\u2019s surface?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_underwater_level",
+        "label_name": "height_wrt_ground_is_underwater_level"
+      },
+      {
+        "def_prompt": "The camera is positioned at water level throughout the video, above the water surface with the waterline clearly visible.",
+        "def_question": "Is the camera positioned at water level throughout the video, above the water surface with the waterline clearly visible?",
+        "full_key": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_water_level",
+        "label_name": "height_wrt_ground_is_water_level"
+      }
+    ],
+    "height_wrt_ground.start_with": [
+      {
+        "def_prompt": "The video begins with the camera at an overhead level, above eye level but below aerial (around second-floor height).",
+        "def_question": "Does the video begin with the camera at an overhead level, above eye level but below aerial (around second-floor height)?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_overhead_level",
+        "label_name": "height_wrt_ground_start_with_overhead_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera positioned high at an aerial level.",
+        "def_question": "Does the video start with the camera positioned high at an aerial level?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_aerial_level",
+        "label_name": "height_wrt_ground_start_with_aerial_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera positioned at eye level (roughly at a person's eye height, above the waist).",
+        "def_question": "Does the video start with the camera at eye level (roughly at a person\u2019s eye height, above the waist)?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_eye_level",
+        "label_name": "height_wrt_ground_start_with_eye_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera positioned near water level, showing the waterline clearly and not from an aerial view.",
+        "def_question": "Does the video start with the camera near water level, showing the waterline clearly and not from an aerial view?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_water_level",
+        "label_name": "height_wrt_ground_start_with_water_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.",
+        "def_question": "Does the video start with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_hip_level",
+        "label_name": "height_wrt_ground_start_with_hip_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera at ground level, positioned close to the ground.",
+        "def_question": "Does the video start with the camera at ground level, positioned close to the ground?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_ground_level",
+        "label_name": "height_wrt_ground_start_with_ground_level"
+      },
+      {
+        "def_prompt": "The video starts with the camera fully submerged underwater.",
+        "def_question": "Does the video start with the camera fully submerged underwater?",
+        "full_key": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_underwater_level",
+        "label_name": "height_wrt_ground_start_with_underwater_level"
+      }
+    ],
+    "height_wrt_subject": [
+      {
+        "def_prompt": "The camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.",
+        "def_question": "Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?",
+        "full_key": "cam_setup.height_wrt_subject.height_wrt_subject_change",
+        "label_name": "height_wrt_subject_change"
+      },
+      {
+        "def_prompt": "The subject starts above and ends at or below the camera\u2019s height, or starts level and ends below.",
+        "def_question": "Does the subject start above and end at or below the camera\u2019s height, or start level and end below?",
+        "full_key": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_high_to_low",
+        "label_name": "height_wrt_subject_change_from_high_to_low"
+      },
+      {
+        "def_prompt": "The camera height relative to the subject is clear enough to be classified or described.",
+        "def_question": "Is the camera height relative to the subject clear enough to be classified or described?",
+        "full_key": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+        "label_name": "is_subject_height_applicable"
+      },
+      {
+        "def_prompt": "The subject starts below and ends at or above the camera\u2019s height, or starts level and ends above.",
+        "def_question": "Does the subject start below and end at or above the camera\u2019s height, or start level and end above?",
+        "full_key": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_low_to_high",
+        "label_name": "height_wrt_subject_change_from_low_to_high"
+      }
+    ],
+    "height_wrt_subject.end_with": [
+      {
+        "def_prompt": "The video ends with the camera positioned at about the same height as the subject.",
+        "def_question": "Does the video end with the camera positioned at about the same height as the subject?",
+        "full_key": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_at_subject",
+        "label_name": "height_wrt_subject_end_with_at_subject"
+      },
+      {
+        "def_prompt": "The video ends with the camera positioned below the subject.",
+        "def_question": "Does the video end with the camera positioned below the subject?",
+        "full_key": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_below_subject",
+        "label_name": "height_wrt_subject_end_with_below_subject"
+      },
+      {
+        "def_prompt": "The video ends with the camera positioned above the subject.",
+        "def_question": "Does the video end with the camera positioned above the subject?",
+        "full_key": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_above_subject",
+        "label_name": "height_wrt_subject_end_with_above_subject"
+      }
+    ],
+    "height_wrt_subject.from_to": [
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts above and ends at the subject\u2019s height.",
+        "def_question": "Does the camera\u2019s height relative to the subject start above and end at the subject\u2019s height?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_at_subject",
+        "label_name": "height_wrt_subject_from_above_subject_to_at_subject"
+      },
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts at the subject\u2019s height and ends below.",
+        "def_question": "Does the camera\u2019s height relative to the subject start at the subject\u2019s height and end below?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject",
+        "label_name": "height_wrt_subject_from_at_subject_to_below_subject"
+      },
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts below and ends at the subject\u2019s height.",
+        "def_question": "Does the camera\u2019s height relative to the subject start below and end at the subject\u2019s height?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject",
+        "label_name": "height_wrt_subject_from_below_subject_to_at_subject"
+      },
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts at the subject\u2019s height and ends above.",
+        "def_question": "Does the camera\u2019s height relative to the subject start at the subject\u2019s height and end above?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_above_subject",
+        "label_name": "height_wrt_subject_from_at_subject_to_above_subject"
+      },
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts above and ends below.",
+        "def_question": "Does the camera\u2019s height relative to the subject start above and end below?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject",
+        "label_name": "height_wrt_subject_from_above_subject_to_below_subject"
+      },
+      {
+        "def_prompt": "The camera\u2019s height relative to the subject starts below and ends above.",
+        "def_question": "Does the camera\u2019s height relative to the subject start below and end above?",
+        "full_key": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject",
+        "label_name": "height_wrt_subject_from_below_subject_to_above_subject"
+      }
+    ],
+    "height_wrt_subject.is_always": [
+      {
+        "def_prompt": "The camera remains positioned below the subject throughout the video.",
+        "def_question": "Is the camera positioned below the subject throughout the video?",
+        "full_key": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_below_subject",
+        "label_name": "height_wrt_subject_is_below_subject"
+      },
+      {
+        "def_prompt": "The camera remains positioned above the subject throughout the video.",
+        "def_question": "Is the camera positioned above the subject throughout the video?",
+        "full_key": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_above_subject",
+        "label_name": "height_wrt_subject_is_above_subject"
+      },
+      {
+        "def_prompt": "The camera remains positioned at about the same height as the subject throughout the video.",
+        "def_question": "Is the camera positioned at about the same height as the subject throughout the video?",
+        "full_key": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_at_subject",
+        "label_name": "height_wrt_subject_is_at_subject"
+      }
+    ],
+    "height_wrt_subject.start_with": [
+      {
+        "def_prompt": "The video starts with the camera positioned below the subject.",
+        "def_question": "Does the video start with the camera positioned below the subject?",
+        "full_key": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_below_subject",
+        "label_name": "height_wrt_subject_start_with_below_subject"
+      },
+      {
+        "def_prompt": "The video starts with the camera positioned above the subject.",
+        "def_question": "Does the video start with the camera positioned above the subject?",
+        "full_key": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_above_subject",
+        "label_name": "height_wrt_subject_start_with_above_subject"
+      },
+      {
+        "def_prompt": "The video starts with the camera positioned at about the same height as the subject.",
+        "def_question": "Does the video start with the camera positioned at about the same height as the subject?",
+        "full_key": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_at_subject",
+        "label_name": "height_wrt_subject_start_with_at_subject"
+      }
+    ],
+    "lens_distortion": [
+      {
+        "def_prompt": "A shot captured with noticeable yet slight barrel distortion.",
+        "def_question": "Does this shot contain noticeable yet slight barrel distortion?",
+        "full_key": "cam_setup.lens_distortion.barrel_distortion",
+        "label_name": "barrel_distortion"
+      },
+      {
+        "def_prompt": "The video shows extreme fisheye lens distortion, where most lines curve strongly outward.",
+        "def_question": "Does the video show extreme fisheye lens distortion, where most lines curve strongly outward?",
+        "full_key": "cam_setup.lens_distortion.fisheye_distortion",
+        "label_name": "fisheye_distortion"
+      },
+      {
+        "def_prompt": "The video shows mild barrel distortion or extreme fisheye distortion, where lines, especially near the frame edges, bend outward.",
+        "def_question": "Does the video show mild barrel distortion or extreme fisheye distortion, where lines, especially near the frame edges, bend outward?",
+        "full_key": "cam_setup.lens_distortion.with_lens_distortion",
+        "label_name": "with_lens_distortion"
+      },
+      {
+        "def_prompt": "A shot without noticeable lens distortion.",
+        "def_question": "Does this shot have no noticeable lens distortion?",
+        "full_key": "cam_setup.lens_distortion.no_lens_distortion",
+        "label_name": "no_lens_distortion"
+      }
+    ],
+    "point_of_view": [
+      {
+        "def_prompt": "A video filmed by a drone.",
+        "def_question": "Is this video captured by a drone?",
+        "full_key": "cam_setup.point_of_view.drone_pov",
+        "label_name": "drone_pov"
+      },
+      {
+        "def_prompt": "A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed to that object.",
+        "def_question": "Is the camera physically mounted on an object, keeping its perspective locked to that object?",
+        "full_key": "cam_setup.point_of_view.locked_on_pov",
+        "label_name": "locked_on_pov"
+      },
+      {
+        "def_prompt": "A first-person POV shot, filmed as if seen directly through the character\u2019s eyes.",
+        "def_question": "Is it a first-person POV shot, filmed as if seen directly through the character\u2019s eyes?",
+        "full_key": "cam_setup.point_of_view.first_person_pov",
+        "label_name": "first_person_pov"
+      },
+      {
+        "def_prompt": "An objective POV shot where the camera captures the scene from a detached, observational perspective.",
+        "def_question": "Is this an objective, detached perspective where the camera does not represent any character's point of view?",
+        "full_key": "cam_setup.point_of_view.objective_pov",
+        "label_name": "objective_pov"
+      },
+      {
+        "def_prompt": "A gaming video with a top-down or oblique top-down view, where the camera is placed above the character and environment, looking downward to show mostly the tops of objects with limited sides.",
+        "def_question": "Is this a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and environment, looking downward to show mostly the tops of objects with limited sides?",
+        "full_key": "cam_setup.point_of_view.third_person_top_down_game_pov",
+        "label_name": "third_person_top_down_game_pov"
+      },
+      {
+        "def_prompt": "A third-person over-the-hip POV shot framing the character from the hip up.",
+        "def_question": "Is this an over-the-hip third-person view, framing the character from the hip up?",
+        "full_key": "cam_setup.point_of_view.third_person_over_hip_pov",
+        "label_name": "third_person_over_hip_pov"
+      },
+      {
+        "def_prompt": "A third-person 3D game video where the entire character is visible on screen.",
+        "def_question": "Is this a 3D gaming video featuring a third-person perspective with the character\u2019s full body visible?",
+        "full_key": "cam_setup.point_of_view.third_person_full_body_game_pov",
+        "label_name": "third_person_full_body_game_pov"
+      },
+      {
+        "def_prompt": "An over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.",
+        "def_question": "Is this an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead?",
+        "full_key": "cam_setup.point_of_view.third_person_over_shoulder_pov",
+        "label_name": "third_person_over_shoulder_pov"
+      },
+      {
+        "def_prompt": "A forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead.",
+        "def_question": "Is this a forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead?",
+        "full_key": "cam_setup.point_of_view.dashcam_pov",
+        "label_name": "dashcam_pov"
+      },
+      {
+        "def_prompt": "A selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them.",
+        "def_question": "Is it a selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them?",
+        "full_key": "cam_setup.point_of_view.selfie_pov",
+        "label_name": "selfie_pov"
+      },
+      {
+        "def_prompt": "A side-view gaming video where the camera is placed to the side, capturing the scene or character in profile.",
+        "def_question": "Is this a side-view gaming video where the camera is placed to the side, capturing the scene or character in profile?",
+        "full_key": "cam_setup.point_of_view.third_person_side_view_game_pov",
+        "label_name": "third_person_side_view_game_pov"
+      },
+      {
+        "def_prompt": "The video shows a broadcast-style viewpoint used in television production.",
+        "def_question": "Does the video show a broadcast-style viewpoint used in television production?",
+        "full_key": "cam_setup.point_of_view.broadcast_pov",
+        "label_name": "broadcast_pov"
+      },
+      {
+        "def_prompt": "A screen recording of a software or system interface (e.g., menus, windows, toolbars).",
+        "def_question": "Is this a screen recording of a software or system interface (e.g., menus, windows, toolbars)?",
+        "full_key": "cam_setup.point_of_view.screen_recording_pov",
+        "label_name": "screen_recording_pov"
+      },
+      {
+        "def_prompt": "An overhead POV shot where the camera is positioned directly above the subject for a top-down perspective.",
+        "def_question": "Is the camera positioned directly above the subject for a top-down perspective?",
+        "full_key": "cam_setup.point_of_view.overhead_pov",
+        "label_name": "overhead_pov"
+      },
+      {
+        "def_prompt": "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
+        "def_question": "Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion?",
+        "full_key": "cam_setup.point_of_view.third_person_isometric_game_pov",
+        "label_name": "third_person_isometric_game_pov"
+      }
+    ],
+    "root": [
+      {
+        "def_prompt": "The video includes a shot transition.",
+        "def_question": "Does the video include a shot transition?",
+        "full_key": "cam_setup.has_shot_transition_cam_setup",
+        "label_name": "has_shot_transition_cam_setup"
+      },
+      {
+        "def_prompt": "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements.",
+        "def_question": "Does the shot contain any on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements?",
+        "full_key": "cam_setup.has_overlays",
+        "label_name": "has_overlays"
+      }
+    ],
+    "shot_size": [
+      {
+        "def_prompt": "A revealing shot where the subject comes into view on screen.",
+        "def_question": "Is it a revealing shot where the subject comes into view on screen?",
+        "full_key": "cam_setup.shot_size.subject_revealing",
+        "label_name": "subject_revealing"
+      },
+      {
+        "def_prompt": "The shot size can be meaningfully classified or described.",
+        "def_question": "Can the shot size be meaningfully classified or described?",
+        "full_key": "cam_setup.shot_size.is_shot_size_applicable",
+        "label_name": "is_shot_size_applicable"
+      },
+      {
+        "def_prompt": "The shot size changes noticeably from a wider to a tighter framing.",
+        "def_question": "Does the shot size change noticeably from a wider to a tighter framing?",
+        "full_key": "cam_setup.shot_size.shot_size_change_from_large_to_small",
+        "label_name": "shot_size_change_from_large_to_small"
+      },
+      {
+        "def_prompt": "The shot size changes noticeably from a tighter to a wider framing.",
+        "def_question": "Does the shot size change noticeably from a tighter to a wider framing?",
+        "full_key": "cam_setup.shot_size.shot_size_change_from_small_to_large",
+        "label_name": "shot_size_change_from_small_to_large"
+      },
+      {
+        "def_prompt": "The shot size changes noticeably throughout the video.",
+        "def_question": "Does the shot size change noticeably throughout the video?",
+        "full_key": "cam_setup.shot_size.shot_size_change",
+        "label_name": "shot_size_change"
+      },
+      {
+        "def_prompt": "The video shows the main subject disappearing or leaving the frame.",
+        "def_question": "Does the video show the main subject disappearing or leaving the frame?",
+        "full_key": "cam_setup.shot_size.subject_disappearing",
+        "label_name": "subject_disappearing"
+      },
+      {
+        "def_prompt": "The main subject changes to another subject.",
+        "def_question": "Does the main subject change to another subject?",
+        "full_key": "cam_setup.shot_size.subject_switching",
+        "label_name": "subject_switching"
+      }
+    ],
+    "shot_size.end_with": [
+      {
+        "def_prompt": "The video ends with a medium full shot, framing the human subject from mid-thigh (or knee) upward.",
+        "def_question": "Does the video end with a medium full shot that frames the human subject from the mid-thigh (or knee) upward?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_medium_full",
+        "label_name": "shot_size_end_with_medium_full"
+      },
+      {
+        "def_prompt": "The video ends with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+        "def_question": "Does the video end with an extreme close-up shot that isolates a very small detail of the subject or scene?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_close_up",
+        "label_name": "shot_size_end_with_extreme_close_up"
+      },
+      {
+        "def_prompt": "A video that ends with a medium shot, framing about half of the subject.",
+        "def_question": "Does the video end with a medium shot that frames about half of the subject?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_medium",
+        "label_name": "shot_size_end_with_medium"
+      },
+      {
+        "def_prompt": "The video ends with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+        "def_question": "Does the video end with a full shot that frames the entire body of the salient subject without showing excessive surrounding scenery?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_full",
+        "label_name": "shot_size_end_with_full"
+      },
+      {
+        "def_prompt": "The video ends with a medium close-up shot, framing the human subject from the chest upward.",
+        "def_question": "Does the video end with a medium close-up shot that frames the human subject from the chest upward?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_medium_close_up",
+        "label_name": "shot_size_end_with_medium_close_up"
+      },
+      {
+        "def_prompt": "The video ends with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
+        "def_question": "Does the video end with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_close_up",
+        "label_name": "shot_size_end_with_close_up"
+      },
+      {
+        "def_prompt": "The video ends either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+        "def_question": "Does the video end either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_wide",
+        "label_name": "shot_size_end_with_wide"
+      },
+      {
+        "def_prompt": "The video ends with an extreme wide shot, emphasizing the vast environment over any subjects.",
+        "def_question": "Does the video end with an extreme wide shot, emphasizing the vast environment over any subjects?",
+        "full_key": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_wide",
+        "label_name": "shot_size_end_with_extreme_wide"
+      }
+    ],
+    "shot_size.is_always": [
+      {
+        "def_prompt": "The video maintains a medium close-up shot throughout, consistently framing the human subject from the chest upward.",
+        "def_question": "Does the video maintain a medium close-up shot throughout, consistently framing the human subject from the chest upward?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_medium_close_up",
+        "label_name": "shot_size_is_medium_close_up"
+      },
+      {
+        "def_prompt": "The video maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context.",
+        "def_question": "Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_close_up",
+        "label_name": "shot_size_is_close_up"
+      },
+      {
+        "def_prompt": "The video maintains a full shot throughout, consistently framing the entire body of the salient subject without showing excessive surrounding scenery.",
+        "def_question": "Does the video maintain a full shot throughout, consistently framing the entire body of the salient subject without showing excessive surrounding scenery?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_full",
+        "label_name": "shot_size_is_full"
+      },
+      {
+        "def_prompt": "The video maintains an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene.",
+        "def_question": "Does the video maintain an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_extreme_close_up",
+        "label_name": "shot_size_is_extreme_close_up"
+      },
+      {
+        "def_prompt": "The video maintains a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context.",
+        "def_question": "Does the video maintain a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_wide",
+        "label_name": "shot_size_is_wide"
+      },
+      {
+        "def_prompt": "The video maintains a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward.",
+        "def_question": "Does the video maintain a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_medium_full",
+        "label_name": "shot_size_is_medium_full"
+      },
+      {
+        "def_prompt": "The video maintains an extreme wide shot throughout, consistently emphasizing the vast environment over any subjects.",
+        "def_question": "Does the video maintain an extreme wide shot throughout, consistently emphasizing the vast environment over any subjects?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_extreme_wide",
+        "label_name": "shot_size_is_extreme_wide"
+      },
+      {
+        "def_prompt": "The video maintains a medium shot throughout, consistently framing about half of the human subject.",
+        "def_question": "Does the video maintain a medium shot throughout, consistently framing about half of the human subject?",
+        "full_key": "cam_setup.shot_size.is_always.shot_size_is_medium",
+        "label_name": "shot_size_is_medium"
+      }
+    ],
+    "shot_size.start_with": [
+      {
+        "def_prompt": "The video starts with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+        "def_question": "Does the video start with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_full",
+        "label_name": "shot_size_start_with_full"
+      },
+      {
+        "def_prompt": "The video starts with a medium-full shot, framing the human subject from the mid-thigh (or knee) upward.",
+        "def_question": "Does the video start with a medium-full shot that frames the human subject from mid-thigh (or knee) upward?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_medium_full",
+        "label_name": "shot_size_start_with_medium_full"
+      },
+      {
+        "def_prompt": "The video starts with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
+        "def_question": "Does the video start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_close_up",
+        "label_name": "shot_size_start_with_close_up"
+      },
+      {
+        "def_prompt": "A video that starts with a medium close-up shot, framing the human subject from the chest upward.",
+        "def_question": "Does the video start with a medium close-up shot that frames the human subject from the chest upward?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_medium_close_up",
+        "label_name": "shot_size_start_with_medium_close_up"
+      },
+      {
+        "def_prompt": "The video starts with an extreme wide shot, emphasizing the vast environment over any subjects.",
+        "def_question": "Does the video start with an extreme wide shot that emphasizes the vast environment over any subjects?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_wide",
+        "label_name": "shot_size_start_with_extreme_wide"
+      },
+      {
+        "def_prompt": "The video starts with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+        "def_question": "Does the video start with an extreme close-up shot that isolates a very small detail of the subject or scene?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_close_up",
+        "label_name": "shot_size_start_with_extreme_close_up"
+      },
+      {
+        "def_prompt": "The video starts either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+        "def_question": "Does the video start either with a wide shot of scenery or by framing the entire body of the salient subject with ample background context?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_wide",
+        "label_name": "shot_size_start_with_wide"
+      },
+      {
+        "def_prompt": "The video starts with a medium shot, framing about half of the subject.",
+        "def_question": "Does the video start with a medium shot that frames about half of the subject?",
+        "full_key": "cam_setup.shot_size.start_with.shot_size_start_with_medium",
+        "label_name": "shot_size_start_with_medium"
+      }
+    ],
+    "shot_type": [
+      {
+        "def_prompt": "A shot that primarily focuses on non-human subjects.",
+        "def_question": "Is the shot focused on non-human subjects?",
+        "full_key": "cam_setup.shot_type.is_non_human_shot",
+        "label_name": "is_non_human_shot"
+      },
+      {
+        "def_prompt": "A shot that primarily focuses on human subjects.",
+        "def_question": "Is the shot focused on human subjects?",
+        "full_key": "cam_setup.shot_type.is_human_shot",
+        "label_name": "is_human_shot"
+      },
+      {
+        "def_prompt": "The video shows scenery or environment without focusing on any subjects.",
+        "def_question": "Does the video show scenery or environment without focusing on any subjects?",
+        "full_key": "cam_setup.shot_type.is_just_scenery_shot",
+        "label_name": "is_just_scenery_shot"
+      },
+      {
+        "def_prompt": "A video with one or two salient non-human subjects.",
+        "def_question": "Does the video consistently feature one or two salient non-human subjects?",
+        "full_key": "cam_setup.shot_type.is_just_non_human_shot",
+        "label_name": "is_just_non_human_shot"
+      },
+      {
+        "def_prompt": "The video features a subject and scene that do not match in framing, making it hard to classify the shot size.",
+        "def_question": "Is there a mismatch between the subject and scene framing that makes it hard to classify the shot size?",
+        "full_key": "cam_setup.shot_type.is_just_subject_scene_mismatch_shot",
+        "label_name": "is_just_subject_scene_mismatch_shot"
+      },
+      {
+        "def_prompt": "There is a clear subject, but the framing is unstable, making the exact shot size difficult to classify.",
+        "def_question": "Is there a clear subject, but the framing is unstable, making the exact shot size difficult to classify?",
+        "full_key": "cam_setup.shot_type.is_just_clear_subject_dynamic_size_shot",
+        "label_name": "is_just_clear_subject_dynamic_size_shot"
+      },
+      {
+        "def_prompt": "A video with one or two salient human subjects.",
+        "def_question": "Does the video consistently feature one or two salient human subjects?",
+        "full_key": "cam_setup.shot_type.is_just_human_shot",
+        "label_name": "is_just_human_shot"
+      },
+      {
+        "def_prompt": "The video includes a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another.",
+        "def_question": "Does the video include a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another?",
+        "full_key": "cam_setup.shot_type.is_just_change_of_subject_shot",
+        "label_name": "is_just_change_of_subject_shot"
+      },
+      {
+        "def_prompt": "The video features multiple subjects in focus, with no single subject standing out as dominant.",
+        "def_question": "Does the video feature multiple subjects in focus, with no single subject standing out as dominant?",
+        "full_key": "cam_setup.shot_type.is_just_many_subject_no_focus_shot",
+        "label_name": "is_just_many_subject_no_focus_shot"
+      },
+      {
+        "def_prompt": "The video features a clear subject with anatomy that looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify.",
+        "def_question": "Does the video feature a clear subject whose anatomy looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify?",
+        "full_key": "cam_setup.shot_type.is_just_clear_subject_atypical_shot",
+        "label_name": "is_just_clear_subject_atypical_shot"
+      },
+      {
+        "def_prompt": "The video features multiple salient subjects differing in type or framing, making it hard to classify the exact shot size.",
+        "def_question": "Does the video feature multiple salient subjects differing in type or framing, making it hard to classify the exact shot size?",
+        "full_key": "cam_setup.shot_type.is_just_different_subject_in_focus_shot",
+        "label_name": "is_just_different_subject_in_focus_shot"
+      },
+      {
+        "def_prompt": "The video has a clear subject with back-and-forth changes in shot size.",
+        "def_question": "Does the video have a clear subject with back-and-forth changes in shot size?",
+        "full_key": "cam_setup.shot_type.is_just_back_and_forth_change_shot",
+        "label_name": "is_just_back_and_forth_change_shot"
+      },
+      {
+        "def_prompt": "The video features multiple subjects where one clearly dominates as the main focus.",
+        "def_question": "Does the video feature multiple subjects, but one clearly stands out as the main focus?",
+        "full_key": "cam_setup.shot_type.is_just_many_subject_one_focus_shot",
+        "label_name": "is_just_many_subject_one_focus_shot"
+      }
+    ],
+    "subject_framing": [
+      {
+        "def_prompt": "The subject changes in the video, such as appearing, disappearing, or transitioning to another subject.",
+        "def_question": "Does the subject change in the video, such as appearing, disappearing, or transitioning to another subject?",
+        "full_key": "cam_setup.subject_framing.has_subject_change",
+        "label_name": "has_subject_change"
+      },
+      {
+        "def_prompt": "A video that maintains a single or two dominant subjects throughout.",
+        "def_question": "Does the video maintain a single or two dominant subjects throughout?",
+        "full_key": "cam_setup.subject_framing.has_single_dominant_subject",
+        "label_name": "has_single_dominant_subject"
+      },
+      {
+        "def_prompt": "The video shows three or more main subjects in clear focus, or shifts focus from one subject to another.",
+        "def_question": "Does the video either show three or more main subjects in clear focus, or shift focus from one subject to another?",
+        "full_key": "cam_setup.subject_framing.has_many_subjects",
+        "label_name": "has_many_subjects"
+      },
+      {
+        "def_prompt": "The video includes one or more salient subjects in the frame at any point.",
+        "def_question": "Does the video include one or more salient subjects in the frame at any point?",
+        "full_key": "cam_setup.subject_framing.is_framing_subject",
+        "label_name": "is_framing_subject"
+      }
+    ],
+    "video_speed": [
+      {
+        "def_prompt": "The playback is forward at real-time speed without noticeable speed-up or slowdown.",
+        "def_question": "Is the playback forward at real-time speed without noticeable speed-up or slowdown?",
+        "full_key": "cam_setup.video_speed.regular_speed",
+        "label_name": "regular_speed"
+      },
+      {
+        "def_prompt": "A slow-motion video with forward playback speed slower than real-time.",
+        "def_question": "Is it a slow-motion video with forward playback slower than real-time?",
+        "full_key": "cam_setup.video_speed.slow_motion",
+        "label_name": "slow_motion"
+      },
+      {
+        "def_prompt": "A fast-motion video where playback is forward and moderately faster than real-time (about 1.5\u00d7\u20133\u00d7).",
+        "def_question": "Is it a fast-motion video with forward playback moderately faster than real-time (about 1.5\u00d7\u20133\u00d7)?",
+        "full_key": "cam_setup.video_speed.fast_motion",
+        "label_name": "fast_motion"
+      },
+      {
+        "def_prompt": "A stop-motion video using frame-by-frame changes to simulate motion.",
+        "def_question": "Is it a stop-motion video using frame-by-frame changes to simulate motion?",
+        "full_key": "cam_setup.video_speed.stop_motion",
+        "label_name": "stop_motion"
+      },
+      {
+        "def_prompt": "A time-lapse video played forward at a greatly accelerated speed (more than 3\u00d7 real-time), showing time passing rapidly over a long period.",
+        "def_question": "Is this a time-lapse video played forward at greatly accelerated speed (more than 3\u00d7 real-time), showing time passing rapidly over a long period?",
+        "full_key": "cam_setup.video_speed.time_lapse",
+        "label_name": "time_lapse"
+      },
+      {
+        "def_prompt": "A fast-motion video with forward playback speed moderately faster than real time (about 1.5\u00d7\u20133\u00d7), but not a time-lapse where the speed is greatly accelerated over a long duration.",
+        "def_question": "Is it a fast-motion video with forward playback speed slightly faster than real-time (about 1.5\u00d7\u20133\u00d7), but not a time-lapse where the speed is greatly accelerated over a long duration?",
+        "full_key": "cam_setup.video_speed.fast_motion_without_time_lapse",
+        "label_name": "fast_motion_without_time_lapse"
+      },
+      {
+        "def_prompt": "A time-reversed video where events play backward in time.",
+        "def_question": "Is this video played in reverse, with events playing backward in time?",
+        "full_key": "cam_setup.video_speed.time_reversed",
+        "label_name": "time_reversed"
+      },
+      {
+        "def_prompt": "The video shows a speed ramp effect, where playback speed changes between faster and slower rates.",
+        "def_question": "Does the video show a speed ramp effect, where playback speed changes between faster and slower rates?",
+        "full_key": "cam_setup.video_speed.speed_ramp",
+        "label_name": "speed_ramp"
+      }
+    ]
+  }
+}

@@ -13,6 +13,19 @@
   "subject": 4,
   "motion": 4,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:56:51.741Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:20:55.134Z",
+  "video_path": "UltraVideo/f49f648c-0fb2-4149-934e-530293778d88.mp4",
+  "video_id": "f49f648c-0fb2-4149-934e-530293778d88.mp4",
+  "captions": {
+    "single": "The video showcases a modern bedroom interior with a focus on a stylish ceiling fan and a neatly arranged bed. The room features a vaulted ceiling with exposed wooden beams and recessed lighting, casting a soft glow throughout the space. The ceiling fan has a sleek design with white blades and a metallic body, and it rotates smoothly. The bed is large and neatly made, adorned with a gray quilt and an array of black and white pillows. A wooden canopy frame adds an element of elegance. On either side of the bed, there are matching bedside tables, each topped with a lamp and a mirror, enhancing the symmetry and aesthetic appeal of the room. The walls are painted in a muted gray tone, creating a calm and sophisticated atmosphere. A large window with curtains allows natural light to enter, contributing to the bright and airy feel of the space. The video captures the essence of a well-designed, tranquil bedroom, emphasizing both functionality and style. The camera starts with a static shot of the ceiling fan, then pans down smoothly to reveal the bed and surrounding area, providing a comprehensive and fluid view of the room. The lighting is a combination of natural light from the window and artificial light from the recessed ceiling fixtures, enhancing the modern and elegant ambiance. The overall atmosphere is comfortable and healing, with a warm, peaceful, and homely feeling."
+  },
+  "metadata": {
+    "duration": 9.97,
+    "resolution": "3840x2160",
+    "fps": 30.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

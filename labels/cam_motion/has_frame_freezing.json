@@ -2,7 +2,7 @@
     "label": "Has Frame Freezing Effect",
     "label_name": "has_frame_freezing",
     "def_question": [
-        "Does the video contain a frame freeze effect at any point?",
+        "Does the video contain a frame freezing effect at any point?",
         "Does the shot feature a frame that stays still while the video continues?",
         "Is there a paused frame effect within the video?",
         "Does the video include a sudden freeze of a specific frame?"

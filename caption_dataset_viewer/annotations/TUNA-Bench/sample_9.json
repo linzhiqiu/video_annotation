@@ -20,5 +20,21 @@
   "motion": 4,
   "scene": 4,
   "spatial": 3,
-  "timestamp": "2025-11-04T06:37:09.120Z"
+  "timestamp": "2025-11-04T06:37:09.120Z",
+  "video_path": "TUNA-Bench/DREAM-1K_278.mp4",
+  "video_id": "TUNA_0049",
+  "captions": {
+    "single": "The video begins with the camera shooting closely on two male wrestlers. One wrestler is on top of another wrestler. Both wrestlers wear dark sports vests with yellow trim. The wrestler on top has black guards over his ears, while the wrestler below has blue guards over his ears. Behind them is a male referee wearing a black and white striped T-shirt and a red wristband. He is obese and has a whistle around his neck. He lies on his stomach as his left hand props on the ground and looks at the two wrestlers. He moves his body a little to his right. There is a seated female spectator in the background.\nThe camera switches to an adult man in a blue shirt. He stands with his head slightly bowed and his hands on his hips and stars forward with a serious expression. In the background, two wrestlers in black tights are painted on the wall with the word \"DOWN\" underneath.\nThe camera switches to film the match from a distant angle and gradually moves forwards. The referee waves his right hand twice to his right rear as he speaks. In the background, some spectators in the audience wave yellow flower balls and placards in their hands. There is a cartoon of a husky on the wall to the right of the frame."
+  },
+  "metadata": {
+    "duration": 5.25,
+    "resolution": "1840x1024",
+    "fps": 8.0,
+    "width": 1840,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

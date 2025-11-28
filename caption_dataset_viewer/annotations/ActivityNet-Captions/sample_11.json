@@ -14,5 +14,35 @@
   "motion": 4,
   "scene": 1,
   "spatial": 2,
-  "timestamp": "2025-11-04T15:33:26.197Z"
+  "timestamp": "2025-11-04T15:33:26.197Z",
+  "video_path": "ActivityNet-Captions/v_bzJTmN6wAC4.mp4",
+  "video_id": "v_bzJTmN6wAC4",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 17.82,
+        "caption": "A man is seated in front of a canvas."
+      },
+      {
+        "start_time": 26.2,
+        "end_time": 128.91,
+        "caption": "He is using a palette to paint an ombre scene."
+      },
+      {
+        "start_time": 129.96,
+        "end_time": 209.61,
+        "caption": "He then covers the ombre to a silhouette of a tree on a hill."
+      }
+    ],
+    "full": "A man is seated in front of a canvas. He is using a palette to paint an ombre scene. He then covers the ombre to a silhouette of a tree on a hill."
+  },
+  "metadata": {
+    "duration": 209.61,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

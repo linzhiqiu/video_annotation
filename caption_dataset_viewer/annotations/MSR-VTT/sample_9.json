@@ -8,5 +8,22 @@
   "subject": 1,
   "motion": 2,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "MSR-VTT/video1437.mp4",
+  "video_id": "video1437",
+  "captions": {
+    "single": "a dog is playing in a pool"
+  },
+  "metadata": {
+    "duration": 11.21,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 3,
+    "youtube_url": "https://www.youtube.com/watch?v=Bh44DyW1KEc",
+    "start_time": 107.02,
+    "end_time": 118.23
+  }
 }

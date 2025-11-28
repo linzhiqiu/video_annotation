@@ -7,5 +7,45 @@
   "motion": 5,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:30:56.885Z"
+  "timestamp": "2025-11-04T15:30:56.885Z",
+  "video_path": "ActivityNet-Captions/v_ZT63nK4lexg.mp4",
+  "video_id": "v_ZT63nK4lexg",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 31.22,
+        "caption": "A man walks over and chalks his hands."
+      },
+      {
+        "start_time": 32.15,
+        "end_time": 44.26,
+        "caption": "The man walks the bars, stretches and stands there."
+      },
+      {
+        "start_time": 45.19,
+        "end_time": 78.74,
+        "caption": "The man mounts the bars and begins to spin."
+      },
+      {
+        "start_time": 78.27,
+        "end_time": 83.86,
+        "caption": "The man flips and dismounts."
+      },
+      {
+        "start_time": 84.33,
+        "end_time": 93.18,
+        "caption": "The man walks away from the bars."
+      }
+    ],
+    "full": "A man walks over and chalks his hands. The man walks the bars, stretches and stands there. The man mounts the bars and begins to spin. The man flips and dismounts. The man walks away from the bars."
+  },
+  "metadata": {
+    "duration": 93.18,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

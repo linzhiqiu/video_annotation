@@ -10,9 +10,22 @@
   "critique": "1. There is also annotated text at the bottom of the frame that appears to be a reference citation, but it was omitted.\n\n2. The video is not static \u2014 the camera zooms in during the shot, so the final sentence is inaccurate.",
   "overall": 3,
   "camera": 1,
-  "subject": 4,
-  "motion": 4,
+  "subject": 5,
+  "motion": 5,
   "scene": 4,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:56:44.733Z"
+  "timestamp": "2025-11-08T06:40:30.639Z",
+  "video_path": "ShareGPT4Video/bzSbktTPrGE.mp4",
+  "video_id": "bzSbktTPrGE",
+  "captions": {
+    "single": "The video features two medical brain scan images shown side by side throughout its duration. On the left, there's a greyscale CT scan of a human brain, highlighting different densities in varying shades. This CT scan is annotated with multiple arrows pointing to areas of interest and includes a star symbol marking a particular feature within the brain matter. Next to it, on the right, is a perfusion scan illustrated in vivid colors that denote varying levels of blood flow or brain activity. This colorful scan has a white arrow pointing to a specific region, and it demonstrates a color gradient scale that ranges from blue to red, indicating the spectrum of perfusion from low to high within the brain. An arrow marker also points to this gradient scale for reference. Both images, suggestive of an academic or clinical setting, include a citation from a medical journal article at the bottom, which implies their usage for educational or diagnostic purposes. Throughout the observed period, there is no visible change between the frames, suggesting a steady focus on detailing these scans without any alternation or additional contextual movement."
+  },
+  "metadata": {
+    "duration": 12.89,
+    "resolution": "1280x720",
+    "fps": 23.98,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

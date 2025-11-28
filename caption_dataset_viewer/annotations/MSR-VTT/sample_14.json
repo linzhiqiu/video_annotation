@@ -1,18 +1,28 @@
 {
-  "segments": [
-    {
-      "text": "cabin",
-      "context": "Single caption",
-      "startIndex": 17,
-      "endIndex": 22
-    }
-  ],
-  "critique": "It should be a studio, rather than a cabin.",
-  "overall": 4,
+  "segments": [],
+  "critique": "",
+  "overall": 5,
   "camera": 1,
   "subject": 2,
   "motion": 5,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:45:10.413Z"
+  "timestamp": "2025-11-08T02:42:58.972Z",
+  "video_path": "MSR-VTT/video1673.mp4",
+  "video_id": "video1673",
+  "captions": {
+    "single": "four people in a cabin discussing some matter"
+  },
+  "metadata": {
+    "duration": 13.61,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 15,
+    "youtube_url": "https://www.youtube.com/watch?v=xz4VTnd9NLs",
+    "start_time": 1278.29,
+    "end_time": 1291.9
+  }
 }

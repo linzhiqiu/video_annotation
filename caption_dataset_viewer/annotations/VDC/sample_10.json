@@ -1,0 +1,44 @@
+{
+  "segments": [
+    {
+      "text": "As the camera zooms in",
+      "context": "Single caption",
+      "startIndex": 617,
+      "endIndex": 639
+    },
+    {
+      "text": "One hand is poised above a notepad, ready to jot down notes or ideas",
+      "context": "Single caption",
+      "startIndex": 835,
+      "endIndex": 903
+    },
+    {
+      "text": "A tall, translucent container, likely a water bottle, stands nearby",
+      "context": "Single caption",
+      "startIndex": 1533,
+      "endIndex": 1600
+    }
+  ],
+  "critique": "The camera doesn\u2019t zoom in; it almost remains still.\nTwo hands are typing, with none poised above the notepad.\nNo translucent container is visible.",
+  "overall": 4,
+  "camera": 3,
+  "subject": 5,
+  "motion": 4,
+  "scene": 4,
+  "spatial": 3,
+  "timestamp": "2025-11-04T19:20:03.111Z",
+  "video_path": "VDC/0423b4460685c13f45da0075dcf0ecb3fb7a6898b0e38f09d9a7b89090d863f3.mp4",
+  "video_id": "0423b4460685c13f45da0075dcf0ecb3fb7a6898b0e38f09d9a7b89090d863f3",
+  "captions": {
+    "single": "The video immerses viewers in a focused work session, capturing a close-up of a person's hands as they deftly type on a sleek, white keyboard. The scene is set in a contemporary office space, characterized by a clean and minimalist design that exudes a sense of order and productivity. The workspace features a white table, which is neatly arranged with a few essential items, including a notepad and a blue pen, hinting at the individual's organized approach to their tasks. The soft, warm lighting envelops the area, suggesting a late morning or early afternoon ambiance that fosters concentration and creativity.\n\nAs the camera zooms in, the viewer is drawn to the person's hands, which move with purpose and agility across the keyboard. The fingers dance over the keys, reflecting a high level of engagement with the work at hand. One hand is poised above a notepad, ready to jot down notes or ideas, while the other continues to type, showcasing a multitasking capability that is essential in today\u2019s fast-paced work environment. The skin tone of the hands is warm, and they exhibit a natural elegance, with well-groomed nails that add to the overall impression of professionalism.\n\nIn the softly blurred background, a raised laptop screen is visible, indicating that the individual is not only focused on the primary task but is also part of a multi-device setup. This setup is further emphasized by the presence of a second open laptop, suggesting a collaborative or multitasking scenario that is common in modern workspaces. A tall, translucent container, likely a water bottle, stands nearby, contributing to the well-lit indoor space that feels both inviting and conducive to productivity. The background elements, including additional laptops and a blurred monitor, enhance the sense of a busy yet orderly workstation, where subtle sounds of typing and the faint rustle of paper can be heard, reinforcing the atmosphere of concentration.\n\nThe camera employs a close-up shot that creates an intimate perspective of the typing process, with a slightly tilted angle that adds a dynamic feel to the composition. The shallow depth of field blurs the background elements while keeping the hands and keyboard in sharp focus, drawing the viewer's attention directly to the action of typing. This technique allows for a seamless viewing experience, where the viewer can absorb the details of the scene without distraction. Throughout the video, there is a notable continuity in the scenario, with minimal changes observed. The person's hands maintain a steady pace, reflecting a consistent work process that captures the essence of a focused and uninterrupted work session.\n\nOverall, the video encapsulates the spirit of a vibrant work environment, where laughter and adventure may intertwine with the serious undertones of productivity. It portrays a well-equipped workspace that is both functional and aesthetically pleasing, inviting viewers to appreciate the beauty of concentration and the art of multitasking in a modern office setting."
+  },
+  "metadata": {
+    "duration": 10.01,
+    "resolution": "2160x3840",
+    "fps": 23.98,
+    "width": 2160,
+    "height": 3840,
+    "source": "vdc",
+    "original_source": "pexels"
+  }
+}

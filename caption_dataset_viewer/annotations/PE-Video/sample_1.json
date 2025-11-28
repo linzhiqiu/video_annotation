@@ -8,5 +8,22 @@
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "PE-Video/441528192.mp4",
+  "video_id": "441528192",
+  "captions": {
+    "single": "The video shows water flowing over stones. The water is moving quickly, and the color of the rocks is a combination of brown and black."
+  },
+  "metadata": {
+    "duration": 16.48,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 1,
+    "category_name": "Water Scenes",
+    "num_frames": 494.0,
+    "has_face": false
+  }
 }

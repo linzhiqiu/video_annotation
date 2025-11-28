@@ -2,11 +2,28 @@
   "segments": [],
   "critique": "1. The description lacks information about the camera\u2019s shaking, angle, and height, together with the spatial description.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T14:55:23.429Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T04:55:11.952Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 1,
+  "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 5
+  "scene": 2,
+  "spatial": 1,
+  "video_path": "DREAM-1K/736.mp4",
+  "video_id": "dream1k_736",
+  "captions": {
+    "single": "The golf ball rolls into the hole, a foot steps forward, and then a hand picks the ball out of the hole and leaves the frame."
+  },
+  "metadata": {
+    "duration": 6.84,
+    "resolution": "1280x720",
+    "fps": 50.0,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 3
+  }
 }

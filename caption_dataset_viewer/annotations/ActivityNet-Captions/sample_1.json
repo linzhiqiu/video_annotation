@@ -21,5 +21,35 @@
   "subject": 1,
   "motion": 3,
   "scene": 1,
-  "spatial": 2
+  "spatial": 2,
+  "video_path": "ActivityNet-Captions/v_x4iCAIPRDVQ.mp4",
+  "video_id": "v_x4iCAIPRDVQ",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 23.38,
+        "caption": "People exercise on fitness machines while people sits on front and watch."
+      },
+      {
+        "start_time": 11.69,
+        "end_time": 21.63,
+        "caption": "A man pass on front holding a jacket and stand next a TV."
+      },
+      {
+        "start_time": 21.63,
+        "end_time": 23.38,
+        "caption": "A group of woman walk on front people exercising."
+      }
+    ],
+    "full": "People exercise on fitness machines while people sits on front and watch. A man pass on front holding a jacket and stand next a TV. A group of woman walk on front people exercising."
+  },
+  "metadata": {
+    "duration": 23.38,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

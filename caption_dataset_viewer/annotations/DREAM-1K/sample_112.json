@@ -15,11 +15,28 @@
   ],
   "critique": "1. At the end, the camera doesn't move to the right but pans right\n\n2. The final shot is not a close-up of the lock but a close-up of the room's door",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:32:51.338Z",
+  "timestamp": "2025-11-08T04:50:10.192Z",
   "overall": 4,
-  "camera": 4,
+  "camera": 3,
   "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 4
+  "scene": 2,
+  "spatial": 3,
+  "video_path": "DREAM-1K/611.mp4",
+  "video_id": "dream1k_611",
+  "captions": {
+    "single": "The background features a blurry silhouette of a person. After waving goodbye, the figure turns and leaves to the left, lightly pushing the door with their left hand. A hand lightly sways in front of the camera, and the man reaches forward to close the door before leaving. The camera then moves to the right, ending with a close-up of the room's door lock."
+  },
+  "metadata": {
+    "duration": 8.68,
+    "resolution": "1280x720",
+    "fps": 50.0,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 9
+  }
 }

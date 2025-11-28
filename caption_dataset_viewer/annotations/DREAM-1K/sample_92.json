@@ -2,11 +2,28 @@
   "segments": [],
   "critique": "1. The description lacks important details such as camera movement and shot cuts.",
   "likert_score": null,
-  "timestamp": "2025-11-04T04:59:38.946Z",
+  "timestamp": "2025-11-08T04:36:23.634Z",
   "overall": 4,
   "camera": 1,
-  "subject": 5,
+  "subject": 2,
   "motion": 5,
   "scene": 4,
-  "spatial": 4
+  "spatial": 2,
+  "video_path": "DREAM-1K/480.mp4",
+  "video_id": "dream1k_480",
+  "captions": {
+    "single": "During a speed climbing competition, a Chinese female athlete grasped a protruding rock with both hands, pushed against the wall with her right foot, and pointed her left toe to the ground. When the signal to start was given, the athlete quickly ascended upward, using her hands and feet without pause. Upon reaching the summit, she leaped to slap a red square with her hand, and the display above showed the abbreviation for China, the national flag, the athlete's name, and her time of 6.54. Following that, the rope attached to the athlete began to slide downward, while the athlete herself raised her arms in cheer. Below the display appeared orange text displaying \"First place, 6.54 seconds,\" and in smaller font below, the name and score of the second-place athlete were shown."
+  },
+  "metadata": {
+    "duration": 12.27,
+    "resolution": "532x948",
+    "fps": 30.0,
+    "width": 532,
+    "height": 948,
+    "source": "dream-1k",
+    "video_source": "DREAM/shorts",
+    "n_subjects": 1,
+    "n_shots": 1,
+    "n_events": 10
+  }
 }

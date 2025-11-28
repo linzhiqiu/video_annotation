@@ -21,11 +21,28 @@
   ],
   "critique": "1. The entire video contains no camera panning, only cuts between shots and camera shake\n\n2. Before \"the man pulls the woman away\", need to add \"the shot transitions to a low angle again\"\n\n3. Finally, \"the shot transitions to a low angle\" instead of \"level perspective\"",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:19:00.720Z",
+  "timestamp": "2025-11-08T04:33:14.360Z",
   "overall": 3,
   "camera": 4,
   "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 4
+  "scene": 2,
+  "spatial": 2,
+  "video_path": "DREAM-1K/282.mp4",
+  "video_id": "dream1k_282",
+  "captions": {
+    "single": "The shot pans from a low angle upwards, capturing a woman looking down from a railing. A man runs over and also looks down. The shot then switches to a bird's-eye view, showing a person lying on the ground in the middle of a building. The man pulls the woman away from the railing, and the shot changes to a level perspective as the man is seen leading the woman away."
+  },
+  "metadata": {
+    "duration": 7.0,
+    "resolution": "1920x1024",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 2,
+    "n_shots": 3,
+    "n_events": 8
+  }
 }

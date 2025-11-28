@@ -1,11 +1,79 @@
 {
   "segments": [
     {
-      "text": "After,the ball is placed on the ground and he picks it up and hits it as if he's playing baseball.",
-      "context": "Temporal segment 4"
+      "text": "After,the ball is placed on the ground and he picks it up and hits it as if he's playing baseball",
+      "context": "Temporal segment 4",
+      "startIndex": 0,
+      "endIndex": 97
     }
   ],
   "critique": "There should be two separate events here: first, the ball is placed on the ground and he plays baseball; the second event is when he uses the wooden board to pick up the ball and hit it.",
   "likert_score": 4,
-  "timestamp": "2025-11-02T07:02:33.941Z"
+  "timestamp": "2025-11-08T17:05:44.112Z",
+  "overall": 4,
+  "camera": 1,
+  "subject": 3,
+  "motion": 4,
+  "scene": 2,
+  "spatial": 3,
+  "video_path": "ActivityNet-Captions/v_fzp5ooc727c.mkv",
+  "video_id": "v_fzp5ooc727c",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 14.83,
+        "caption": "Two lines of young men are walking side by side down a road."
+      },
+      {
+        "start_time": 15.57,
+        "end_time": 32.63,
+        "caption": "Then one man stands in a field holding a wooden object and begins twisting it."
+      },
+      {
+        "start_time": 32.63,
+        "end_time": 44.5,
+        "caption": "He then bends down and grabs a ball."
+      },
+      {
+        "start_time": 44.5,
+        "end_time": 65.26,
+        "caption": "After,the ball is placed on the ground and he picks it up and hits it as if he's playing baseball."
+      },
+      {
+        "start_time": 66.74,
+        "end_time": 72.68,
+        "caption": "The ball is thrown back and he its it again."
+      },
+      {
+        "start_time": 74.16,
+        "end_time": 107.53,
+        "caption": "Shortly after, a field of men are shown and they begin playing a game against one another."
+      },
+      {
+        "start_time": 106.05,
+        "end_time": 130.52,
+        "caption": "There was a penalty and one players attempts to hit the ball into the goal from the side."
+      },
+      {
+        "start_time": 129.78,
+        "end_time": 137.94,
+        "caption": "After,everyone is pictured lying down on the ground as if they are dead but one person begins to sit up but gets hit in the head by the ball and lays back down."
+      },
+      {
+        "start_time": 137.94,
+        "end_time": 148.32,
+        "caption": "Lastly,the screen flashes to a black screen and the words The End are shown."
+      }
+    ],
+    "full": "Two lines of young men are walking side by side down a road. Then one man stands in a field holding a wooden object and begins twisting it. He then bends down and grabs a ball. After,the ball is placed on the ground and he picks it up and hits it as if he's playing baseball. The ball is thrown back and he its it again. Shortly after, a field of men are shown and they begin playing a game against one another. There was a penalty and one players attempts to hit the ball into the goal from the side. After,everyone is pictured lying down on the ground as if they are dead but one person begins to sit up but gets hit in the head by the ball and lays back down. Lastly,the screen flashes to a black screen and the words The End are shown."
+  },
+  "metadata": {
+    "duration": 148.32,
+    "resolution": "396x224",
+    "fps": 3.0,
+    "width": 396,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

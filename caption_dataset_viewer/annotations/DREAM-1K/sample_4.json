@@ -9,11 +9,28 @@
   ],
   "critique": "1. The dog is not standing on the drum; instead, it is standing on a stool and using its tail to play the drums, not wagging its tail to DJ.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:08:15.814Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T03:25:38.971Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 5,
-  "motion": 3,
+  "subject": 2,
+  "motion": 4,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/28.mp4",
+  "video_id": "dream1k_28",
+  "captions": {
+    "single": "The dog is standing on a drum, wagging its tail to DJ, while the green creature is playing the piano."
+  },
+  "metadata": {
+    "duration": 3.75,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 2,
+    "n_shots": 2,
+    "n_events": 4
+  }
 }

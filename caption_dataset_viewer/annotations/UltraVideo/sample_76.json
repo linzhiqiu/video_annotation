@@ -6,6 +6,19 @@
   "subject": 5,
   "motion": 4,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T15:05:35.308Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:17:22.810Z",
+  "video_path": "UltraVideo/adb9871a-2af5-48f6-b858-292f06b66bb0.mp4",
+  "video_id": "adb9871a-2af5-48f6-b858-292f06b66bb0.mp4",
+  "captions": {
+    "single": "The video captures a serene and enjoyable moment on a calm body of water, likely a lake or a sheltered bay. The main subject is a shirtless man seated in a small, transparent boat, holding a bright yellow drink in his hand. He wears sunglasses and a cap, and his relaxed and happy demeanor is evident as he smiles and looks directly at the camera. His body language suggests he is thoroughly enjoying the moment. The camera angle is slightly tilted, adding a dynamic feel to the scene. In the background, a larger white boat with a modern design is visible, equipped with fishing rods and other boating accessories. Several people on the larger boat are engaged in conversation or enjoying the view, some standing and others seated. The water is calm and clear, reflecting the bright sunlight, which enhances the overall cheerful atmosphere. A sandy shoreline is visible in the distance, contributing to the tranquil and picturesque environment. The video has a casual, vlog-style aesthetic, capturing spontaneous moments of joy and relaxation. The natural lighting and candid expressions of the subjects give it an authentic and relatable feel. The slight tilt of the camera adds a dynamic element, making the scene more engaging and visually interesting. The overall mood is one of happiness and contentment, characterized by its warm, peaceful, and lazy vibe."
+  },
+  "metadata": {
+    "duration": 7.48,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

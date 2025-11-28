@@ -1,5 +1,5 @@
 {
-    "label": "Height Wrt Subject From Below Subject To Above Subject",
+    "label": "Height Starts Below Subject And Ends Above Subject",
     "label_name": "height_wrt_subject_from_below_subject_to_above_subject",
     "def_question": [
         "Does the camera’s height relative to the subject start below and end above?"

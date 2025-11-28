@@ -1,0 +1,8 @@
+{
+    "video_id": "KAer-wHAd38.5.5.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "These images show a peaceful rural scene with a road leading into a village. The entrance is marked by a red archway with Vietnamese text, and the area is surrounded by greenery, houses, and a partly cloudy sky. The video captures the tranquil atmosphere of the countryside.",
+    "pre_caption_llm": "gpt-4.1-2025-04-14",
+    "pre_caption_mode": "Image (First-and-Last-Frame)",
+    "timestamp": "2025-11-11T00:45:19.015893"
+}

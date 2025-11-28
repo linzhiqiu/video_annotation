@@ -14,5 +14,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 4,
-  "timestamp": "2025-11-04T07:09:41.955Z"
+  "timestamp": "2025-11-04T07:09:41.955Z",
+  "video_path": "TUNA-Bench/DREAM-1K_306.mp4",
+  "video_id": "TUNA_0058",
+  "captions": {
+    "single": "The video shows a man and a woman standing in a corridor. The man wears a dark coat, while the woman wears a red jacket with a white collar. The background is an ornately decorated corridor with wall lamps, red carpeted floor and a door at the end.\nIn the video, the camera focuses mainly on the two characters. The woman closes her eyes with her head down. She is frowning and sobbing quietly. The man gently strokes the woman's chin with his left hand and then puts his left hand down. Next, The man raises his right hand to stroke the woman's chin and then gets closer to her to kiss her forehead."
+  },
+  "metadata": {
+    "duration": 5.62,
+    "resolution": "1920x1024",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Subject"
+  }
 }

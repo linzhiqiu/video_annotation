@@ -2,11 +2,28 @@
   "segments": [],
   "critique": "1. No cut was mentioned. At the end, the video cuts to a medium shot of the dog, focusing on the interaction of the two birds pulling the dog's ear upward.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T09:50:22.181Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T03:05:01.963Z",
+  "overall": 3,
   "camera": 2,
-  "subject": 5,
+  "subject": 3,
   "motion": 5,
-  "scene": 1,
-  "spatial": 1
+  "scene": 2,
+  "spatial": 1,
+  "video_path": "DREAM-1K/7.mp4",
+  "video_id": "dream1k_7",
+  "captions": {
+    "single": "Two birds hover over a dog and pull the dog's ears upwards. A white horse appears in the doorway of the cottage, observing the interaction between the birds and the dog."
+  },
+  "metadata": {
+    "duration": 8.22,
+    "resolution": "1456x1080",
+    "fps": 23.98,
+    "width": 1456,
+    "height": 1080,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 1,
+    "n_events": 4
+  }
 }

@@ -1,19 +1,29 @@
 {
-  "segments": [
-    {
-      "text": "The platter rotates counterclockwise as it is filmed.",
-      "context": "Single caption",
-      "startIndex": 52,
-      "endIndex": 106
-    }
-  ],
-  "critique": "1. The camera is actually static, it's the food on the table that's rotating counterclockwise on the turntable.",
+  "segments": [],
+  "critique": "1. The caption should mention the appearance of the sushi platter, the camera motion, the surrounding scenes and the spatial information.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:37:05.960Z",
-  "overall": 4,
-  "camera": 4,
-  "subject": 1,
-  "motion": 1,
+  "timestamp": "2025-11-08T04:57:34.472Z",
+  "overall": 3,
+  "camera": 1,
+  "subject": 2,
+  "motion": 5,
   "scene": 1,
-  "spatial": 5
+  "spatial": 3,
+  "video_path": "PE-Video/179235024.mp4",
+  "video_id": "179235024",
+  "captions": {
+    "single": "The video shows a close-up shot of a sushi platter. The platter rotates counterclockwise as it is filmed. "
+  },
+  "metadata": {
+    "duration": 15.08,
+    "resolution": "608x342",
+    "fps": 25.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 3,
+    "category_name": "Close-up Shots",
+    "num_frames": 377.0,
+    "has_face": false
+  }
 }

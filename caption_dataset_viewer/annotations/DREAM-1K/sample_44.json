@@ -7,13 +7,30 @@
       "endIndex": 55
     }
   ],
-  "critique": "1. There are grammatical issues.\n\n2. The transition between the two scenes is not smooth enough.",
+  "critique": "1. There are grammatical issues. It should be written as: \"As the camera pans left, the video shows that a man stands up and steps back while a woman holding flowers walks forward.\"\n3. The caption lacks the description of the camera angle and height.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:14:51.656Z",
-  "overall": 4,
-  "camera": 5,
+  "timestamp": "2025-11-08T04:17:28.307Z",
+  "overall": 3,
+  "camera": 3,
   "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 1
+  "scene": 2,
+  "spatial": 1,
+  "video_path": "DREAM-1K/224.mp4",
+  "video_id": "dream1k_224",
+  "captions": {
+    "single": "The camera pans left, the man stands up and steps back, a woman holding flowers walks forward, and the girl is sitting on the bed, holding something in her hand."
+  },
+  "metadata": {
+    "duration": 4.88,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 6
+  }
 }

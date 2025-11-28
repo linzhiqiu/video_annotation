@@ -1,11 +1,24 @@
 {
   "segments": [],
-  "critique": "",
-  "overall": 5,
-  "camera": 4,
+  "critique": "The camera information is omitted.",
+  "overall": 4,
+  "camera": 3,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 5,
-  "timestamp": "2025-11-04T05:25:25.968Z"
+  "timestamp": "2025-11-08T06:13:53.350Z",
+  "video_path": "ShareGPT4Video/69f3f871fbe14a56ebbb0d71ca96ed33fc8d14cc28bf283da4478d234d13aa24.mp4",
+  "video_id": "69f3f871fbe14a56ebbb0d71ca96ed33fc8d14cc28bf283da4478d234d13aa24",
+  "captions": {
+    "single": "The video captures a tranquil coastal scene from a fixed perspective, showcasing a seamless and serene seascape. It starts with a view of calm waters transitioning in color from turquoise near the shore to deeper blue further out, with driftwood and young plants in the foreground. A gentle breeze is suggested by the slight lean of the vegetation. Scattered boats across the water and rolling hills with a town in the distance complete the picturesque backdrop. Throughout the video, the scene maintains its peacefulness with minimal changes; the boats remain stationary, and the natural arrangement of the foreground elements is consistent. The gentle sway of vegetation and subtle shifts in the lighting on the water's surface are the only indicators of time passing, preserving the uninterrupted tranquility of the coastal landscape."
+  },
+  "metadata": {
+    "duration": 60.03,
+    "resolution": "1920x1080",
+    "fps": 29.97,
+    "width": 1920,
+    "height": 1080,
+    "source": "pixabay"
+  }
 }

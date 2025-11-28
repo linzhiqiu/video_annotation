@@ -1,0 +1,8 @@
+{
+    "video_id": "1a1cecb8-2476-4966-9786-3fe0dce1ec0f.28.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot, likely captured from a moving perspective such as a vehicle. The wide-angle view shows a street intersection with a crosswalk in the foreground. Trees and buildings line the road under a bright, overcast sky.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-21T04:26:17.492819"
+}

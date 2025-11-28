@@ -14,5 +14,40 @@
   "motion": 4,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T14:06:02.873Z"
+  "timestamp": "2025-11-03T14:06:02.873Z",
+  "video_path": "ActivityNet-Captions/v_w-st-23ZQSs.mp4",
+  "video_id": "v_w-st-23ZQSs",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 34.02,
+        "caption": "Stacy is clapping and getting pumped up and ready to perform."
+      },
+      {
+        "start_time": 34.02,
+        "end_time": 62.17,
+        "caption": "She gets her pole and starts running with it and jumps onto the cushion."
+      },
+      {
+        "start_time": 62.17,
+        "end_time": 129.04,
+        "caption": "Then, other women follow suit doing the same after her scoring differently."
+      },
+      {
+        "start_time": 129.04,
+        "end_time": 234.62,
+        "caption": "Next is the men's turn to take their turns one by one following the women."
+      }
+    ],
+    "full": "Stacy is clapping and getting pumped up and ready to perform. She gets her pole and starts running with it and jumps onto the cushion. Then, other women follow suit doing the same after her scoring differently. Next is the men's turn to take their turns one by one following the women."
+  },
+  "metadata": {
+    "duration": 234.62,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

@@ -7,5 +7,22 @@
   "motion": 2,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:36:56.764Z"
+  "timestamp": "2025-11-03T15:36:56.764Z",
+  "video_path": "MSR-VTT/video1460.mp4",
+  "video_id": "video1460",
+  "captions": {
+    "single": "a girl describes her side of a story for dr"
+  },
+  "metadata": {
+    "duration": 10.48,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 6,
+    "youtube_url": "https://www.youtube.com/watch?v=-DK0JKe88cU",
+    "start_time": 981.86,
+    "end_time": 992.34
+  }
 }

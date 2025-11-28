@@ -1,0 +1,44 @@
+{
+  "segments": [
+    {
+      "text": "the camera zooms in",
+      "context": "Single caption",
+      "startIndex": 852,
+      "endIndex": 871
+    },
+    {
+      "text": "medium close-up shot",
+      "context": "Single caption",
+      "startIndex": 1640,
+      "endIndex": 1661
+    },
+    {
+      "text": "zoom-ins",
+      "context": "Single caption",
+      "startIndex": 1862,
+      "endIndex": 1870
+    }
+  ],
+  "critique": "The camera doesn\u2019t zoom in; it moves forward instead.\nIt\u2019s not a medium close-up shot; it changes from a full shot to a medium shot.",
+  "overall": 4,
+  "camera": 2,
+  "subject": 4,
+  "motion": 4,
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-04T19:26:59.109Z",
+  "video_path": "VDC/046475d7fe5d967ea389d4db1ce8df76a242b0e3183fb1288dab476d7d2db4de.mp4",
+  "video_id": "046475d7fe5d967ea389d4db1ce8df76a242b0e3183fb1288dab476d7d2db4de",
+  "captions": {
+    "single": "The video unfolds in a visually captivating laboratory setting, where two individuals stand side by side, embodying the spirit of scientific inquiry and collaboration. Both are clad in pristine white protective suits that include hoods, yellow gloves, and comfortable white crocs-style footwear, emphasizing their commitment to safety and professionalism in their experimental environment. The scene is set against a smooth gradient backdrop that transitions seamlessly from a soft purple to a warm pink, creating a calming yet intriguing atmosphere that draws the viewer in. The lighting is soft yet focused, casting gentle shadows that enhance the contours of the scientists and their equipment, while the uncluttered environment ensures that all attention is directed towards the two figures and their colorful test tubes.\n\nAs the video progresses, the camera zooms in, capturing the scientists from the waist up, allowing for a detailed view of their expressions and the vibrant liquids they hold. The male scientist, with a thoughtful demeanor, grips a test tube filled with a striking blue liquid in his left hand. His right hand gestures towards the female scientist, indicating a moment of discussion or inquiry, suggesting a dynamic exchange of ideas. The female scientist, exuding focus and concentration, holds a test tube filled with a vivid green liquid, her brow slightly furrowed as she attentively listens to her counterpart. Their body language conveys a sense of collaboration and engagement, as they lean slightly towards each other, sharing insights and observations about their respective liquids.\n\nThe camera employs a medium close-up shot, creating a dynamic perspective that draws the viewer's attention to the colorful liquids in their test tubes. The angle is slightly tilted, adding a sense of movement and energy to the scene. Subtle zoom-ins emphasize the contrasting colors of the blue and green liquids, highlighting the potential for a fascinating chemical reaction. As they tilt their test tubes towards each other, the implication of combining the two liquids becomes evident, suggesting a careful and deliberate action that is both scientific and artistic in nature. The background remains unchanged throughout this interaction, maintaining a sense of focus on the scientists and their experiment.\n\nImaginary sounds of bubbling liquids and faint electronic beeps from laboratory equipment can be envisioned, enhancing the scientific ambiance of the scene. The overall composition of the video, with its smooth transitions and steady focus on the subjects, creates a cohesive flow that captivates the viewer, inviting them to witness the unfolding of a moment filled with curiosity and potential discovery. The combination of vibrant colors, engaging body language, and a serene yet stimulating backdrop culminates in a rich portrayal of scientific exploration, leaving the audience eager to see the outcome of this intriguing experiment."
+  },
+  "metadata": {
+    "duration": 12.04,
+    "resolution": "2160x3840",
+    "fps": 25.0,
+    "width": 2160,
+    "height": 3840,
+    "source": "vdc",
+    "original_source": "pexels"
+  }
+}

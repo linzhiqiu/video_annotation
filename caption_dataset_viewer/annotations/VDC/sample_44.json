@@ -1,0 +1,32 @@
+{
+  "segments": [
+    {
+      "text": "The camera angles are slightly tilted",
+      "context": "Single caption",
+      "startIndex": 1008,
+      "endIndex": 1045
+    }
+  ],
+  "critique": "The camera angle is not noticeably tilted.",
+  "overall": 4,
+  "camera": 4,
+  "subject": 5,
+  "motion": 5,
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-05T16:56:21.196Z",
+  "video_path": "VDC/6a732675b5c0324252530d920d178893b579c48f337f53a69d2d305ed625406f.mp4",
+  "video_id": "6a732675b5c0324252530d920d178893b579c48f337f53a69d2d305ed625406f",
+  "captions": {
+    "single": "The video unfolds in a serene and unchanging tableau, where the focal point is a clenched fist belonging to an individual with a dark complexion. This hand, adorned with a sleek black smartwatch that features a bright white screen, is set against a solid, muted green background that exudes a calming ambiance. The individual is dressed in a long-sleeved black garment, which is only partially visible, adding an element of intrigue to the scene. The lighting is warm and even, casting gentle shadows that enhance the natural textures of the skin and the smartwatch, creating a visually appealing contrast that draws the viewer's attention.\n\nAs the camera captures this intimate moment, it employs close-up shots that reveal the intricate details of the hand and the smartwatch. The hand is well-defined, showcasing the natural texture of the skin, with visible details such as hair follicles and the contours of the fingers. The fist is formed deliberately, conveying a sense of strength and determination. The camera angles are slightly tilted, providing a dynamic perspective that enhances the visual interest while maintaining a steady focus on the hand and watch.\n\nThroughout the video, the scene remains static, with no movement or change, allowing the viewer to fully absorb the details of the fist and the smartwatch. The hand transitions from a clenched fist to a relaxed posture, as the index finger approaches the watch face. This gentle movement indicates a sense of engagement and curiosity, as the finger taps and swipes across the watch, suggesting interaction with the device. The fluidity of the hand's movements reflects a purposeful exploration, inviting the viewer to contemplate the relationship between the individual and their technology.\n\nThe muted green background serves to emphasize the simplicity of the scene, creating a minimalist aesthetic that allows the actions taking place to take center stage. The environment is quiet, devoid of any discernible sounds, which further enhances the focus on the hand and the smartwatch. The lighting accentuates the watch's screen, illuminating the interface and highlighting the interaction between the finger and the device.\n\nAs the video progresses, the steady camera work ensures that the viewer remains engaged with the subtle movements of the hand, allowing for a seamless flow from one action to the next. The absence of abrupt transitions maintains a cohesive narrative, inviting the audience to immerse themselves in this moment of stillness and contemplation. The overall effect is one of tranquility and focus, as the viewer is drawn into the intimate connection between the individual and their smartwatch, set against a backdrop that is both calming and visually striking."
+  },
+  "metadata": {
+    "duration": 13.96,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "vdc",
+    "original_source": "pexels"
+  }
+}

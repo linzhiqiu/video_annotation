@@ -8,5 +8,22 @@
   "subject": 5,
   "motion": 5,
   "scene": 1,
-  "spatial": 2
+  "spatial": 2,
+  "video_path": "PE-Video/312275998.mp4",
+  "video_id": "312275998",
+  "captions": {
+    "single": "The video shows a cup of coffee being sprinkled with white ingredient. The coffee is floating towards the brim of the cup. The cup is white and has a handle on the right side. \n"
+  },
+  "metadata": {
+    "duration": 14.15,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 2,
+    "category_name": "Object Handling",
+    "num_frames": 424.0,
+    "has_face": false
+  }
 }

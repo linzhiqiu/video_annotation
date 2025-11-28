@@ -1,0 +1,38 @@
+{
+  "segments": [
+    {
+      "text": "deepening to a darker shade near the edges",
+      "context": "Single caption",
+      "startIndex": 269,
+      "endIndex": 311
+    },
+    {
+      "text": "while occasional pulls back",
+      "context": "Single caption",
+      "startIndex": 1617,
+      "endIndex": 1644
+    }
+  ],
+  "critique": "The color of the petals doesn\u2019t become a darker shade near the edges.\nThe camera stays still rather than pulling back.",
+  "overall": 4,
+  "camera": 3,
+  "subject": 4,
+  "motion": 5,
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-05T16:05:23.995Z",
+  "video_path": "VDC/3591935d57fddd9b6c135372a78436a8ecc13fe8299d39fb0877c615f77cb192.mp4",
+  "video_id": "3591935d57fddd9b6c135372a78436a8ecc13fe8299d39fb0877c615f77cb192",
+  "captions": {
+    "single": "The video opens with a stunning portrayal of a single red poppy flower, resplendent in its full bloom, standing prominently against a softly blurred backdrop of lush green plants. The poppy, with its wide-open petals, showcases a vibrant red hue that captures the eye, deepening to a darker shade near the edges, creating a striking visual contrast. At the heart of the flower, a captivating dark purple-brown pattern encircles the stamen, which is adorned with a cluster of pollen-dusted anthers, delicately perched above a white-tipped pistil. This intricate detail highlights the poppy's natural beauty and complexity.\n\nThe scene is bathed in bright, natural daylight, which enhances the vivid colors of the poppy and the surrounding greenery, creating a warm and inviting atmosphere. The sunlight casts a gentle glow over the meadow, illuminating the various shades of green in the background, where tall grasses and wild plants sway softly in a gentle breeze. The serene ambiance is further enriched by the soft rustling of leaves and the distant chirping of birds, evoking a sense of tranquility and connection to nature.\n\nAs the video progresses, the focus remains steadfastly on the poppy, which continues to stand tall and vibrant amidst the lush grass. The flower's petals flutter slightly in the breeze, adding a sense of life and movement to the scene. The camera work is characterized by close-up shots that capture the intricate details of the poppy, allowing viewers to appreciate its stunning structure and rich colors. The angles are primarily frontal, providing a clear view of the flower's beauty, while occasional pulls back reveal more of the surrounding greenery, emphasizing the poppy's prominence in its natural setting.\n\nThe use of shallow depth of field effectively blurs the background, drawing attention to the poppy's vibrant colors and intricate features. The overall composition remains consistent throughout the video, with no noticeable changes in lighting or perspective, reinforcing the static yet captivating representation of the poppy in its environment. This seamless continuation of the scene allows viewers to immerse themselves in the beauty of the flower and the serene meadow, embodying the essence of spring and the tranquility of nature."
+  },
+  "metadata": {
+    "duration": 11.04,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "vdc",
+    "original_source": "pixabay"
+  }
+}

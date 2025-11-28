@@ -9,11 +9,28 @@
   ],
   "critique": "1. The water channel is located in the middle ground, the first sentence can be rewritten as: the scene is set at a water channel at the foot of a mountain",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:26:36.825Z",
+  "timestamp": "2025-11-08T04:45:53.406Z",
   "overall": 4,
-  "camera": 4,
+  "camera": 3,
   "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 4
+  "scene": 2,
+  "spatial": 2,
+  "video_path": "DREAM-1K/599.mp4",
+  "video_id": "dream1k_599",
+  "captions": {
+    "single": "The background is a water channel at the foot of a mountain. A sheep walks out of the channel, shakes its head, and moves forward. The man retracts his stick, placing it on another sheep, holding its neck as he guides it forward, while several other men are busy within the sheep pen. The camera angle remains fixed and unchanged."
+  },
+  "metadata": {
+    "duration": 5.83,
+    "resolution": "720x1280",
+    "fps": 30.0,
+    "width": 720,
+    "height": 1280,
+    "source": "dream-1k",
+    "video_source": "DREAM/shorts",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 8
+  }
 }

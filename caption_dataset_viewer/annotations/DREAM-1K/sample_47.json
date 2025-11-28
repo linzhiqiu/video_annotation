@@ -7,13 +7,30 @@
       "endIndex": 77
     }
   ],
-  "critique": "1. There are grammatical issues and problems with the description of the elephant's actions. It should be changed as: Initially, the camera captures the elephant from the front, then cuts to ground level profile showing the elephant using its trunk to push against the ground and grass, not feathers",
+  "critique": "1. There are grammatical issues and problems with the description of the elephant's actions. It should be changed as: Initially, the camera captures the elephant from the front, then cuts to ground level profile showing the elephant using its trunk to push against the ground and grass, not feathers.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T14:48:42.029Z",
-  "overall": 4,
-  "camera": 3,
-  "subject": 4,
+  "timestamp": "2025-11-08T04:31:33.782Z",
+  "overall": 3,
+  "camera": 2,
+  "subject": 2,
   "motion": 4,
-  "scene": 1,
-  "spatial": 4
+  "scene": 2,
+  "spatial": 2,
+  "video_path": "DREAM-1K/229.mp4",
+  "video_id": "dream1k_229",
+  "captions": {
+    "single": "Underneath the elephant's body, it uses its trunk to blow the feathers away. The camera cuts to a boy behind two railings speaking as he looks ahead, and the girl turns her head to look forward as well."
+  },
+  "metadata": {
+    "duration": 6.12,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_live_action",
+    "n_subjects": 3,
+    "n_shots": 3,
+    "n_events": 3
+  }
 }

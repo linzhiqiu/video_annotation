@@ -2,7 +2,7 @@
     "label": "Moving Camera",
     "label_name": "moving_camera",
     "def_question": [
-      "Is there any camera movement?",
+      "Is there any camera movement (including shaking or wobbling)?",
       "Does the camera move at all?",
       "Does the camera exhibit motion at any point?",
       "Is the camera moving instead of remaining still?",
@@ -25,7 +25,7 @@
       "Does the camera track a subject or change viewpoints?"
     ],
     "def_prompt": [
-      "A video where the camera moves.",
+      "A video where the camera moves (including shaking or wobbling).",
       "A scene where the camera exhibits movement.",
       "A shot featuring a moving camera.",
       "The camera moves.",

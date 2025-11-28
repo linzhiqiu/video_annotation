@@ -9,11 +9,28 @@
   ],
   "critique": "1. The camera does not remain fixed. Initially, the camera moves to the left, then slightly pans right, and finally pans left again.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:29:28.838Z",
+  "timestamp": "2025-11-08T04:48:29.246Z",
   "overall": 4,
   "camera": 3,
-  "subject": 4,
+  "subject": 2,
   "motion": 5,
-  "scene": 3,
-  "spatial": 5
+  "scene": 4,
+  "spatial": 3,
+  "video_path": "DREAM-1K/605.mp4",
+  "video_id": "dream1k_605",
+  "captions": {
+    "single": "The background is a grassy field. Many bubbles are drifting in from the left, and the girl on the right reaches out to catch them. The girl on the left spins around, and then the two of them grasp hands tightly and happily spin around on the grass. Afterwards, they continue to catch bubbles. The camera remains fixed."
+  },
+  "metadata": {
+    "duration": 7.7,
+    "resolution": "1280x720",
+    "fps": 60.0,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 2,
+    "n_shots": 1,
+    "n_events": 6
+  }
 }

@@ -14,5 +14,40 @@
   "motion": 3,
   "scene": 2,
   "spatial": 2,
-  "timestamp": "2025-11-04T15:29:10.692Z"
+  "timestamp": "2025-11-04T15:29:10.692Z",
+  "video_path": "ActivityNet-Captions/v_NSdBL6HqlWk.mp4",
+  "video_id": "v_NSdBL6HqlWk",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 13.34,
+        "caption": "A man is playing cymbals under a bright light on a stage."
+      },
+      {
+        "start_time": 15.25,
+        "end_time": 29.55,
+        "caption": "He is joined by a woman on a bass drum."
+      },
+      {
+        "start_time": 37.17,
+        "end_time": 148.68,
+        "caption": "Then they are joined by other drummers, and a man on a huge set in the background."
+      },
+      {
+        "start_time": 154.4,
+        "end_time": 190.61,
+        "caption": "Lights flash as they perform in unison."
+      }
+    ],
+    "full": "A man is playing cymbals under a bright light on a stage. He is joined by a woman on a bass drum. Then they are joined by other drummers, and a man on a huge set in the background. Lights flash as they perform in unison."
+  },
+  "metadata": {
+    "duration": 190.61,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

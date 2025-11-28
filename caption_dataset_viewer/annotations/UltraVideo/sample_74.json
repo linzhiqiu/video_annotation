@@ -20,11 +20,24 @@
     }
   ],
   "critique": "1. The camera does not zoom in but rather moves forward while panning right.\n\n2. The bed is located on the right side of the frame, while the television is centered in the frame.\n\n3. The scene features only a wide shot, not \u201ca combination of wide and medium shots.\u201d",
-  "overall": 3,
+  "overall": 4,
   "camera": 3,
-  "subject": 4,
-  "motion": 3,
-  "scene": 4,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:38:31.236Z"
+  "subject": 5,
+  "motion": 5,
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-08T12:15:51.371Z",
+  "video_path": "UltraVideo/aa26792f-9317-4da6-bb82-c803bc74a9b4.mp4",
+  "video_id": "aa26792f-9317-4da6-bb82-c803bc74a9b4.mp4",
+  "captions": {
+    "single": "The video showcases a modern, luxurious bedroom with a minimalist design. It begins with a wide shot emphasizing the room's spaciousness and elegant design. The camera slowly pans across the room, highlighting various elements that contribute to its luxurious feel. The bed, positioned centrally, is adorned with crisp white linens and a few plush pillows, inviting relaxation. To the left, a sleek desk with a modern chair suggests a workspace seamlessly integrated into the living area. A wall-mounted television, placed above a floating shelf, adds a touch of modern technology. Large windows dominate one side of the room, allowing natural light to flood the space and offering a glimpse of the outside world. The camera then zooms in slightly on the television screen, which displays a serene image, enhancing the calming atmosphere. The setting is an indoor environment, characterized by clean lines, neutral colors, and high-quality materials, suggesting a modern home or luxury hotel suite. The large windows and ample sunlight indicate a daytime scene, while the absence of clutter and the presence of high-end furnishings emphasize minimalism and comfort. The primary theme is the depiction of a luxurious and modern living space, where the bed symbolizes rest and rejuvenation, the desk represents productivity, and the television contributes to a sense of calm. The large windows create a connection between the interior and exterior, adding to the room's openness. The materials used, such as matte surfaces and soft lighting, enhance the sophisticated and inviting atmosphere. The video employs a documentary-style approach with smooth camera movements and well-placed lighting, creating a cinematic quality. The combination of wide and medium shots, along with the steady and deliberate camera movements, allows viewers to appreciate the room's overall design. The lighting is a mix of natural and artificial sources, casting a warm and inviting glow and avoiding harsh shadows. The video exudes a comfortable and healing atmosphere, with a warm, peaceful lighting and minimalist design creating a sense of tranquility and sophistication, ideal for a luxurious retreat."
+  },
+  "metadata": {
+    "duration": 4.51,
+    "resolution": "3840x2160",
+    "fps": 29.97,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

@@ -2,7 +2,7 @@
     "label": "Has Minor Motion",
     "label_name": "is_minor_motion",
     "def_question": [
-        "Is the camera motion minimal, hard to discern, or very subtle?",
+        "Is the camera motion minimal, subtle, or difficult to perceive?",
         "Does the shot feature only slight or barely noticeable movement?"
     ],
     "alt_question": [
@@ -13,7 +13,7 @@
         "Is there barely any noticeable movement in the shot?"
     ],
     "def_prompt": [
-        "A scene where the camera movement is minimal or difficult to perceive.",
+        "The camera movement is minimal, subtle, or difficult to perceive.",
         "A shot with barely noticeable or insignificant camera motion."
     ],
     "alt_prompt": [

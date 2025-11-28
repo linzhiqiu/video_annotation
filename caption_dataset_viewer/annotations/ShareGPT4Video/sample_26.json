@@ -7,12 +7,25 @@
       "endIndex": 649
     }
   ],
-  "critique": "1. It should be noted that the camera has minor movement, slightly panning to the right.\n\n2. The description lacks information about spatial layout or positioning.",
+  "critique": "1. It should be noted that the camera has minor movement, slightly panning to the right.\n\n2. The description lacks information about spatial information.",
   "overall": 4,
   "camera": 4,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:06:55.613Z"
+  "timestamp": "2025-11-08T06:38:57.905Z",
+  "video_path": "ShareGPT4Video/36da4218a7f40e3657e92b7682efbf6a274704d0445a368bb8685af1878b1a89.mp4",
+  "video_id": "36da4218a7f40e3657e92b7682efbf6a274704d0445a368bb8685af1878b1a89",
+  "captions": {
+    "single": "The video captures a peaceful river scene surrounded by the beauty of autumn. Gentle sunlight filters through the foliage of overhanging trees, casting a dappled light that dances across the water\u2019s surface amid the play of shadows and light. The banks are carpeted with a rich tapestry of fall leaves in shades of brown and orange. Branches from the trees dip into the calm river, generating soft ripples that spread across the water. The scene is static and tranquil; the only movement comes from the subtle ripple of water and the slight elongation of shadows, possibly indicating a small change in the sun's position or the camera's perspective. Overall, the video conveys a serene and reflective ambiance set amidst a serene natural landscape."
+  },
+  "metadata": {
+    "duration": 17.28,
+    "resolution": "3840x2160",
+    "fps": 50.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "pixabay"
+  }
 }

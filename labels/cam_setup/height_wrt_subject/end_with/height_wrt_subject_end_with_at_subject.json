@@ -1,5 +1,5 @@
 {
-    "label": "Height Wrt Subject End With At Subject",
+    "label": "Height Ends With At Subject",
     "label_name": "height_wrt_subject_end_with_at_subject",
     "def_question": [
         "Does the video end with the camera positioned at about the same height as the subject?"

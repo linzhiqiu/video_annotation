@@ -1,0 +1,46 @@
+{
+  "segments": [
+    {
+      "text": "The camera slightly pans to the right.",
+      "context": "Single caption",
+      "startIndex": 795,
+      "endIndex": 833
+    },
+    {
+      "text": "On either side of the street are elaborately decorated lamp posts and green landscaping.",
+      "context": "Single caption",
+      "startIndex": 321,
+      "endIndex": 409
+    },
+    {
+      "text": "Then, he lowers his left hand and places it back into his coat pocket. A woman in a light-colored coat enters from the right side of the frame, with her back to the camera.",
+      "context": "Single caption",
+      "startIndex": 502,
+      "endIndex": 674
+    }
+  ],
+  "critique": "Only the left side of the street is visible, which features elaborately decorated lamp posts and green landscaping.\nThe camera doesn\u2019t pan right; it moves slightly to the right and then pans slightly to the left.\nThe woman appears first, and then the man lowers his hand.",
+  "overall": 3,
+  "camera": 1,
+  "subject": 4,
+  "motion": 4,
+  "scene": 4,
+  "spatial": 4,
+  "timestamp": "2025-11-16T05:23:29.757Z",
+  "video_path": "TUNA-Bench/DREAM-1K_394.mp4",
+  "video_id": "TUNA_0143",
+  "captions": {
+    "single": "At the beginning of the video, the camera focuses on a man wearing a brown coat, standing by a stone railing at the riverbank. The background features the river and a bridge in the distance.\nThe camera then cuts to the man in the brown coat. The man, with both hands in his coat pockets, walks down a cobblestone street. On either side of the street are elaborately decorated lamp posts and green landscaping. Next, the man in the brown coat raises his left hand and glances at the watch on his wrist. Then, he lowers his left hand and places it back into his coat pocket. A woman in a light-colored coat enters from the right side of the frame, with her back to the camera. She walks from the right side of the frame to the left, heading in the opposite direction of the man in the brown coat. The camera slightly pans to the right."
+  },
+  "metadata": {
+    "duration": 5.12,
+    "resolution": "1920x1024",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene"
+  }
+}

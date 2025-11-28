@@ -1,12 +1,29 @@
 {
   "segments": [],
-  "critique": "The description omits a hard cut and only describes the segment after the cut.",
+  "critique": "The description omits three hard cuts and only describes the segment after the first cut.\nAt the beginning, two men are speaking to the camera.",
   "likert_score": 2,
-  "timestamp": "2025-11-02T20:20:58.345Z",
-  "overall": 1,
+  "timestamp": "2025-11-08T02:38:58.782Z",
+  "overall": 2,
   "camera": 1,
   "subject": 2,
   "motion": 2,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "MSR-VTT/video1005.mp4",
+  "video_id": "video1005",
+  "captions": {
+    "single": "a man is hailing a cab"
+  },
+  "metadata": {
+    "duration": 10.24,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 11,
+    "youtube_url": "https://www.youtube.com/watch?v=CX8tDb-jzXM",
+    "start_time": 174.96,
+    "end_time": 185.2
+  }
 }

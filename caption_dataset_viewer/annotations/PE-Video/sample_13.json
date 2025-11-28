@@ -10,9 +10,26 @@
   "critique": "1. This is grammar issue. This should be \"sitting\" rather than \"siting\".",
   "overall": 4,
   "camera": 1,
-  "subject": 5,
+  "subject": 3,
   "motion": 5,
-  "scene": 4,
-  "spatial": 5,
-  "timestamp": "2025-11-03T13:44:32.258Z"
+  "scene": 5,
+  "spatial": 3,
+  "timestamp": "2025-11-08T05:13:36.436Z",
+  "video_path": "PE-Video/199091666.mp4",
+  "video_id": "199091666",
+  "captions": {
+    "single": "The video shows a man at the left side of the frame who is sitting down in a crouched position while holding a camera in his hands, kept near to his eye and is moving here and there while facing towards a woman and a baby. The woman is siting on the grass, in a sit-up position while holding a child with her hands. Her knees are raised and she is rocking the toddler while making them lie down on her legs. Then, she slightly moves forward as she keeps down her legs along with the child and then she swings backwards and lies down on the grass while keeping her legs up and holding the baby above, in front of her with her hands and then she brings the toddler down and makes them sit on her stomach. The video is taken in an outside area with green grass and trees. Some buildings can be seen in the background."
+  },
+  "metadata": {
+    "duration": 11.01,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 7,
+    "category_name": "Hand Actions",
+    "num_frames": 330.0,
+    "has_face": false
+  }
 }

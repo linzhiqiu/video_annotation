@@ -7,19 +7,36 @@
       "endIndex": 98
     },
     {
-      "text": "What the ruffian boss said,",
+      "text": "What the ruffian boss said, after turning around and pressing the red button,",
       "context": "Single caption",
       "startIndex": 0,
-      "endIndex": 27
+      "endIndex": 78
     }
   ],
-  "critique": "1. This is a 2D video without a parallax effect, so \u201cmove up\u201d is incorrect \u2014 use \u201cscroll up\u201d instead.\n2. Grammar issues",
+  "critique": "1. This is a 2D video without a parallax effect, so \u201cmove up\u201d is incorrect \u2014 use \u201cscroll up\u201d instead.\n2. After the ruffian boss finishes speaking, he turns around and presses the red button",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:12:35.319Z",
+  "timestamp": "2025-11-08T04:13:55.507Z",
   "overall": 3,
-  "camera": 4,
-  "subject": 1,
+  "camera": 3,
+  "subject": 2,
   "motion": 5,
   "scene": 1,
-  "spatial": 5
+  "spatial": 2,
+  "video_path": "DREAM-1K/197.mp4",
+  "video_id": "dream1k_197",
+  "captions": {
+    "single": "What the ruffian boss said, after turning around and pressing the red button, the camera moves up, Brother Octopus looks up at the moving lines within the machine, while the other creatures behind him are eating, their bodies slightly moving."
+  },
+  "metadata": {
+    "duration": 4.88,
+    "resolution": "1840x1024",
+    "fps": 8.0,
+    "width": 1840,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 6
+  }
 }

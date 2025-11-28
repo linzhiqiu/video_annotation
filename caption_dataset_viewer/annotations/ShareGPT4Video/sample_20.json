@@ -7,12 +7,25 @@
       "endIndex": 349
     }
   ],
-  "critique": "1. It is not \u201ca plain dark background,\u201d but rather a plain gray background.",
+  "critique": "The details of the camera and the spatial information are omitted.",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 4,
-  "spatial": 1,
-  "timestamp": "2025-11-04T06:46:39.163Z"
+  "spatial": 2,
+  "timestamp": "2025-11-18T15:33:05.628Z",
+  "video_path": "ShareGPT4Video/-_0iUxFUv8Q.mp4",
+  "video_id": "-_0iUxFUv8Q",
+  "captions": {
+    "single": "The video features a highly detailed representation of a modern tactical rifle with a scope, laser sight, large capacity magazine, and fully extended stock. Its color scheme of matte black and desert tan suggests versatility for use in various environments. Positioned with the muzzle to the left, the rifle is static against a plain dark background throughout the video. There are no visible changes in lighting, position, composition, or details, including no alterations to the rifle or the \"LONEWOLF\" logo located in the lower-left corner. The rifle's appearance is exactly the same in both frames presented."
+  },
+  "metadata": {
+    "duration": 11.61,
+    "resolution": "1280x720",
+    "fps": 29.97,
+    "width": 1280,
+    "height": 720,
+    "source": "panda"
+  }
 }

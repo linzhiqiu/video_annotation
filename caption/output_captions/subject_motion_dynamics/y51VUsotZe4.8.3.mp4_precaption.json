@@ -1,0 +1,8 @@
+{
+    "video_id": "y51VUsotZe4.8.3.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video consists of a single, static, high-angle shot of a bustling city street at night. The narrow street is packed with people and illuminated by a dense array of colorful neon signs featuring Chinese characters. Dark, towering buildings flank the street, creating a vibrant yet claustrophobic urban atmosphere.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-06T12:14:37.950821"
+}

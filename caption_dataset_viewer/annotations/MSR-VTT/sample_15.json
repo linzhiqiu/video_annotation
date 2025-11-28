@@ -1,11 +1,28 @@
 {
   "segments": [],
-  "critique": "Hard to tell whether it\u2019s a boy or a girl.",
+  "critique": "The cartoon starts with a boy, then cuts to a boy with a train.",
   "overall": 4,
   "camera": 1,
-  "subject": 3,
-  "motion": 5,
+  "subject": 2,
+  "motion": 4,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T16:54:47.750Z"
+  "timestamp": "2025-11-04T19:44:53.025Z",
+  "video_path": "MSR-VTT/video1692.mp4",
+  "video_id": "video1692",
+  "captions": {
+    "single": "cartoon video showing a boy and a train"
+  },
+  "metadata": {
+    "duration": 16.66,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 7,
+    "youtube_url": "https://www.youtube.com/watch?v=ulcZMQ3QY-w",
+    "start_time": 40.35,
+    "end_time": 57.01
+  }
 }

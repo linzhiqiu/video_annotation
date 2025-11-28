@@ -7,5 +7,30 @@
   "motion": 5,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-03T13:55:21.743Z"
+  "timestamp": "2025-11-03T13:55:21.743Z",
+  "video_path": "ActivityNet-Captions/v_DmTI8y6Anvo.mp4",
+  "video_id": "v_DmTI8y6Anvo",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 19.29,
+        "caption": "A basketball player is seen jumping under a basketball ball net and shooting a ball continuously at the net."
+      },
+      {
+        "start_time": 18.54,
+        "end_time": 37.45,
+        "caption": "She continues shooting and the video ends with various text across the screen."
+      }
+    ],
+    "full": "A basketball player is seen jumping under a basketball ball net and shooting a ball continuously at the net. She continues shooting and the video ends with various text across the screen."
+  },
+  "metadata": {
+    "duration": 37.45,
+    "resolution": "300x224",
+    "fps": 3.0,
+    "width": 300,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

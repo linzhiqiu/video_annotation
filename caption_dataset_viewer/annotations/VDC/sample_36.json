@@ -1,0 +1,44 @@
+{
+  "segments": [
+    {
+      "text": "creating shimmering reflections on the right side of the vessel",
+      "context": "Single caption",
+      "startIndex": 526,
+      "endIndex": 590
+    },
+    {
+      "text": "The calm surface of the water reflects the clear blue sky above,",
+      "context": "Single caption",
+      "startIndex": 930,
+      "endIndex": 994
+    },
+    {
+      "text": "a subtle zoom",
+      "context": "Single caption",
+      "startIndex": 2021,
+      "endIndex": 2035
+    }
+  ],
+  "critique": "No reflections are visible on the water.\nThe water doesn\u2019t reflect the sky.\nThe camera doesn\u2019t zoom.",
+  "overall": 4,
+  "camera": 3,
+  "subject": 5,
+  "motion": 5,
+  "scene": 4,
+  "spatial": 3,
+  "timestamp": "2025-11-05T15:41:30.149Z",
+  "video_path": "VDC/3353049e18b3c9761e8234c3da4d8e487b48bc304eef6761711307bd994c9454.mp4",
+  "video_id": "3353049e18b3c9761e8234c3da4d8e487b48bc304eef6761711307bd994c9454",
+  "captions": {
+    "single": "The video presents a captivating overhead view of a sleek white speedboat gliding effortlessly across a vast expanse of deep blue water, its streamlined hull cutting through the surface with remarkable grace and speed. As the boat accelerates, it generates a distinct V-shaped wake pattern that fans out behind it, creating frothy white waves that spread further apart, accentuating the vessel's dynamic movement. The sun hangs high in the sky, casting a warm, golden glow that illuminates the boat and the surrounding water, creating shimmering reflections on the right side of the vessel while simultaneously casting soft shadows beneath it. This interplay of light and shadow adds depth to the scene, enhancing the visual appeal of the tranquil aquatic environment.\n\nThe serene backdrop is devoid of any other vessels or figures, allowing the viewer to fully immerse themselves in the boat's solitary journey across the water. The calm surface of the water reflects the clear blue sky above, contributing to the overall sense of tranquility and peace that permeates the scene. Gentle ripples dance across the surface, and the soft sound of water lapping against the hull of the boat can be imagined, further enriching the atmosphere of relaxation and adventure.\n\nThe motorboat itself is a marvel of design, featuring a polished exterior that gleams in the sunlight. Its deck is adorned with plush seating, hinting at a luxurious experience for those aboard. As the boat navigates the water, it showcases its agility with smooth movements and slight tilts, responding effortlessly to the gentle undulations of the waves. The steady hum of the engine adds a rhythmic backdrop to the visual spectacle, while light sprays of water erupt around the stern, introducing a dynamic element to the otherwise serene setting.\n\nCaptured from a high, aerial perspective, the camera provides a bird's-eye view that emphasizes the boat's sleek lines and the expansive water surrounding it. The shots are steady and well-composed, with a subtle zoom that draws attention to the intricate details of the boat and the mesmerizing wake it leaves in its path. The framing remains tight, focusing on the vessel as it traverses the vastness of the water, while the angles shift gently to maintain visual interest and engagement. Transitions between shots are seamless, enhancing the fluidity of the boat's movement and contributing to the overall cinematic quality of the video.\n\nAs the video progresses, the speedboat continues its journey at the center of the frame, maintaining its characteristic V-shaped wake and the frothy white waves that trail behind it. The consistent lighting conditions throughout the video ensure that the boat's shadows remain visible on the water's surface, further anchoring the viewer's attention on the vessel's interaction with its environment. The composition of the scene remains largely unchanged, reinforcing the focus on the boat's passage through the deep blue water, creating a vivid portrayal of adventure and tranquility that invites viewers to experience the beauty of this aquatic journey."
+  },
+  "metadata": {
+    "duration": 18.97,
+    "resolution": "2160x3840",
+    "fps": 59.94,
+    "width": 2160,
+    "height": 3840,
+    "source": "vdc",
+    "original_source": "pexels"
+  }
+}

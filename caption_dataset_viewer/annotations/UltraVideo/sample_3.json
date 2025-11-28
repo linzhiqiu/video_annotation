@@ -11,8 +11,21 @@
   "overall": 4,
   "camera": 2,
   "subject": 5,
-  "motion": 2,
+  "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T13:21:59.053Z"
+  "timestamp": "2025-11-08T11:01:47.771Z",
+  "video_path": "UltraVideo/088fa6c6-a687-4d24-94a2-789809f82d26.mp4",
+  "video_id": "088fa6c6-a687-4d24-94a2-789809f82d26.mp4",
+  "captions": {
+    "single": "The video showcases a stack of ornate wooden frames, each adorned with elaborate gold detailing. The frames are neatly stacked, and the camera slowly pans horizontally across them, capturing the fine craftsmanship and unique design elements of each frame. The frames vary slightly in size and pattern but share a common theme of elegance and sophistication. The camera movement is smooth and deliberate, allowing viewers to appreciate the texture and finish of the wood and gold. The background is minimalistic and softly blurred, likely an indoor setting such as a workshop or a gallery, ensuring that the viewer's attention remains focused on the frames. The lighting is soft and even, enhancing the details of the frames without creating harsh shadows. The video has a documentary style, emphasizing craftsmanship and artistry, with a clean and professional aesthetic. The slow, steady camera movements and soft lighting contribute to a calm and appreciative atmosphere, creating a sense of tranquility and appreciation for beauty. The video primarily uses close-up shots to capture the intricate details of the frames, maintaining a consistent distance and perspective throughout. There are no abrupt scene transitions or changes in shot sizes, and the focus remains consistently on the frames."
+  },
+  "metadata": {
+    "duration": 3.67,
+    "resolution": "3840x2160",
+    "fps": 23.98,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

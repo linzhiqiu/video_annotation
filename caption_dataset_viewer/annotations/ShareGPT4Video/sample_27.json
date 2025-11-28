@@ -32,5 +32,18 @@
   "motion": 3,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:01:59.049Z"
+  "timestamp": "2025-11-04T06:01:59.049Z",
+  "video_path": "ShareGPT4Video/46355fccc07064647bf8427a688dd277b9597f90f41f9cb42023a174a372c92b.mp4",
+  "video_id": "46355fccc07064647bf8427a688dd277b9597f90f41f9cb42023a174a372c92b",
+  "captions": {
+    "single": "The video depicts an evolving display of unfocused lights with a central bright light source initially dominated by a warm color palette of yellows and ambers. Throughout the sequence, the intensity and distribution of the central light and the surrounding orbs of light shift minimally, suggesting either slight changes in light dynamics or minor camera adjustments, as the background remains constantly blurred and indistinct. At one point, the scene becomes more vivid with a blooming brightness at the center and dispersed orbs. Eventually, the number of visible light sources diminishes, with moments of increased and decreased luminosity, hinting at the camera's subtle zooming or focusing on specific areas.\n\nAs the video progresses, the visible orbs contract and expand with alterations in shape, potentially indicating gentle movement or focus changes. Later, the light distribution fluctuates, with the central source reducing in intensity and the orbs retreating to the top half of the frame.\n\nTowards the end of the sequence, a notable transition occurs, where the frame is overtaken by darkness, with only two orange glows visible at the bottom left. This suggests a tighter field of focus or a camera movement that zooms in or isolates particular areas. In subsequent changes, the number of glows reduces to one, centralizing and then transforming into a single, deep red glow lower in the frame, possibly due to camera zooming out or movement within the scene. The video concludes with this singular, smaller red glow against a consistently dark and featureless background."
+  },
+  "metadata": {
+    "duration": 24.29,
+    "resolution": "4096x2160",
+    "fps": 29.97,
+    "width": 4096,
+    "height": 2160,
+    "source": "pixabay"
+  }
 }

@@ -15,5 +15,21 @@
   "subject": 5,
   "motion": 5,
   "scene": 5,
-  "spatial": 5
+  "spatial": 5,
+  "video_path": "TUNA-Bench/DREAM-1K_232.mp4",
+  "video_id": "TUNA_0026",
+  "captions": {
+    "single": "At the beginning of the video, the camera is focused on the front of an elephant. The background is dim. The elephant is on the right side of the screen, with large, drooping ears. On the left side of the screen is a bald man wearing a dark suit. The elephant waves its ears and walks to the right side of the screen. The man tilts his head to the right and follows the elephant with his eyes.\nThe camera switches to the back of the elephant, where the bald man stands on the right side of the elephant. Behind the elephant is a man wearing a red hat and a dark shirt, who lowers his head and pushes the elephant forward.\nThen, the camera zooms in and shoots from the side of the man in the hat. The bald man continues to follow the elephant. To his right is a man wearing a blue hat and a blue uniform. The uniformed man stands tall and looks to his right. To the right of the uniformed man stands another man wearing dark clothes and a dark hat.\nFinally, the camera switches to a scene inside a gate, where some people are crowding and reaching their hands through the gap in the gate."
+  },
+  "metadata": {
+    "duration": 8.5,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

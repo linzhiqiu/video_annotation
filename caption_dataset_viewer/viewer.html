@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caption Dataset Viewer (Read-Only)</title>
+    <style>
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #2a2a2a;
+            --accent: #6366f1;
+            --positive: #10b981;
+            --negative: #ef4444;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.125rem;
+        }
+
+        .btn {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--border-color);
+            border-color: var(--accent);
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            height: calc(100vh - 61px);
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-section {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-section h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .dataset-list,
+        .sample-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .dataset-item {
+            padding: 0.6rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dataset-item:hover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .dataset-item.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .dataset-name {
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .dataset-meta {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .dataset-item.active .dataset-meta {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .sample-item {
+            padding: 0.6rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--positive);
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .sample-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sample-item.active {
+            background: var(--positive);
+            border-color: var(--positive);
+            color: white;
+        }
+
+        .sample-number {
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .content-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .video-section {
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-info {
+            margin-top: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .info-item {
+            font-size: 0.75rem;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            margin-top: 0.125rem;
+        }
+
+        /* Caption Section */
+        .caption-section {
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .caption-type-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            margin-left: 0.5rem;
+        }
+
+        .caption-content {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .caption-text {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Text Highlighting */
+        .highlight {
+            background: rgba(239, 68, 68, 0.25);
+            border-bottom: 2px solid var(--negative);
+            padding: 2px 0;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .highlight:hover {
+            background: rgba(239, 68, 68, 0.35);
+        }
+
+        .highlight::before {
+            content: "Issue " attr(data-issue-number);
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: var(--negative);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            margin-bottom: 0.25rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 10;
+        }
+
+        .highlight:hover::before {
+            opacity: 1;
+        }
+
+        /* Temporal Captions */
+        .temporal-caption-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .temporal-caption-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.85rem;
+        }
+
+        .temporal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .time-range {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Structured Captions */
+        .structured-caption-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .structured-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.85rem;
+        }
+
+        .structured-key {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        /* Annotation Section (Read-Only) */
+        .annotation-section {
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .highlighted-segments {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .segment-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--negative);
+            border-left: 3px solid var(--negative);
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+        }
+
+        .segment-text {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            font-style: italic;
+        }
+
+        .segment-meta {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .critique-display {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+        }
+
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .score-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>👀 Caption Dataset Viewer (Read-Only)</h1>
+                <div class="header-subtitle">Completed Annotations Only</div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div style="font-size: 0.8rem;">
+                    <span style="color: var(--text-secondary);">Total:</span>
+                    <span style="color: var(--positive); font-weight: 600; margin-left: 0.25rem;"
+                        id="headerTotal">0</span>
+                </div>
+                <button class="btn" onclick="showStats()">📊 Stats</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Datasets -->
+            <div class="sidebar-section">
+                <h2>Datasets</h2>
+                <div class="dataset-list" id="datasetList">
+                    <div class="loading">Loading datasets...</div>
+                </div>
+            </div>
+
+            <!-- Samples -->
+            <div class="sidebar-section" id="samplesSection" style="display: none;">
+                <h2>Completed Samples</h2>
+                <div class="sample-list" id="sampleList"></div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="content-scroll" id="contentArea">
+                <div class="empty-state">
+                    <h2>👈 Select a dataset to begin</h2>
+                    <p>Choose a dataset from the sidebar to view completed annotations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let currentDataset = null;
+        let currentSample = null;
+        let currentSampleIndex = null;
+        let datasets = [];
+        let samples = [];
+        let annotation = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            loadDatasets();
+        });
+
+        // API Functions
+        async function loadDatasets() {
+            try {
+                const response = await fetch('/api/datasets');
+                datasets = await response.json();
+                renderDatasets();
+            } catch (error) {
+                console.error('Error loading datasets:', error);
+            }
+        }
+
+        async function loadDataset(datasetName) {
+            try {
+                const response = await fetch(`/api/dataset/${encodeURIComponent(datasetName)}`);
+                const data = await response.json();
+                currentDataset = datasetName;
+                samples = data.samples || [];
+
+                renderSamples();
+                renderDatasets();
+                updateHeaderStats();
+
+                // Auto-select first sample
+                if (samples.length > 0) {
+                    loadSample(0);
+                }
+            } catch (error) {
+                console.error('Error loading dataset:', error);
+            }
+        }
+
+        async function loadSample(index) {
+            try {
+                const sample = samples[index];
+                const sampleIndex = sample.sample_index;
+
+                const response = await fetch(`/api/sample/${encodeURIComponent(currentDataset)}/${sampleIndex}`);
+                const data = await response.json();
+
+                currentSample = data.sample;
+                currentSampleIndex = index;
+                annotation = data.annotation;
+
+                renderSample();
+                updateSampleSelection();
+            } catch (error) {
+                console.error('Error loading sample:', error);
+            }
+        }
+
+        // Rendering Functions
+        function renderDatasets() {
+            const datasetList = document.getElementById('datasetList');
+            if (datasets.length === 0) {
+                datasetList.innerHTML = '<div class="loading">No datasets with completed annotations</div>';
+                return;
+            }
+
+            datasetList.innerHTML = datasets.map(dataset => `
+                <div class="dataset-item ${currentDataset === dataset.name ? 'active' : ''}" 
+                     onclick="loadDataset('${dataset.name}')">
+                    <div class="dataset-name">${dataset.name}</div>
+                    <div class="dataset-meta">${dataset.completed_count} completed</div>
+                </div>
+            `).join('');
+        }
+
+        function renderSamples() {
+            const sampleList = document.getElementById('sampleList');
+            const samplesSection = document.getElementById('samplesSection');
+
+            samplesSection.style.display = 'block';
+            sampleList.innerHTML = samples.map((sample, index) => `
+                <div class="sample-item ${index === currentSampleIndex ? 'active' : ''}"
+                     onclick="loadSample(${index})">
+                    <span class="sample-number">Sample ${sample.sample_index}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderSample() {
+            const contentArea = document.getElementById('contentArea');
+
+            if (!currentSample || !annotation) {
+                contentArea.innerHTML = '<div class="empty-state"><h2>No sample selected</h2></div>';
+                return;
+            }
+
+            // Determine caption type
+            const captionType = Object.keys(currentSample.captions)[0];
+            const captionData = currentSample.captions[captionType];
+
+            // Use local video path
+            const videoSource = `/videos/${currentSample.video_path}`;
+            const videoType = getVideoType(currentSample.video_path);
+
+            contentArea.innerHTML = `
+                <!-- Video Section -->
+                <div class="video-section">
+                    <div class="video-container">
+                        <video controls id="videoPlayer" preload="metadata">
+                            <source src="${videoSource}" type="${videoType}">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <div class="info-item">
+                            <div class="info-label">Video ID</div>
+                            <div class="info-value">${currentSample.video_id || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Duration</div>
+                            <div class="info-value">${currentSample.metadata?.duration || 'N/A'}s</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Resolution</div>
+                            <div class="info-value">${currentSample.metadata?.resolution || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">FPS</div>
+                            <div class="info-value">${currentSample.metadata?.fps || 'N/A'}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caption Section -->
+                <div class="caption-section">
+                    <h2 class="section-title">
+                        Caption
+                        <span class="caption-type-badge">${captionType}</span>
+                    </h2>
+                    ${renderCaptionByType(captionType, captionData)}
+                </div>
+
+                <!-- Annotation Section (Read-Only) -->
+                <div class="annotation-section">
+                    <h2 class="section-title">Annotation</h2>
+                    
+                    ${annotation.segments && annotation.segments.length > 0 ? `
+                        <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--negative);">Highlighted Issues (${annotation.segments.length})</h3>
+                        <div class="highlighted-segments">
+                            ${annotation.segments.map((seg, idx) => `
+                                <div class="segment-item">
+                                    <div class="segment-text">"${escapeHtml(seg.text)}"</div>
+                                    <div class="segment-meta">Issue ${idx + 1} • ${seg.context || 'N/A'}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : '<p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">No issues highlighted</p>'}
+
+                    ${annotation.critique ? `
+                        <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem;">Critique</h3>
+                        <div class="critique-display">${escapeHtml(annotation.critique)}</div>
+                    ` : ''}
+
+                    <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem;">Quality Scores</h3>
+                    <div class="scores-grid">
+                        <div class="score-item">
+                            <div class="score-label">Overall</div>
+                            <div class="score-value">${annotation.overall || 'N/A'}</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Camera</div>
+                            <div class="score-value">${annotation.camera || 'N/A'}</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Subject</div>
+                            <div class="score-value">${annotation.subject || 'N/A'}</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Motion</div>
+                            <div class="score-value">${annotation.motion || 'N/A'}</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Scene</div>
+                            <div class="score-value">${annotation.scene || 'N/A'}</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Spatial</div>
+                            <div class="score-value">${annotation.spatial || 'N/A'}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Highlight issues in caption text
+            highlightCaptionText();
+
+            // Setup video player
+            const videoPlayer = document.getElementById('videoPlayer');
+            if (videoPlayer) {
+                videoPlayer.load();
+            }
+        }
+
+        function getVideoType(videoPath) {
+            const lowerPath = videoPath.toLowerCase();
+            if (lowerPath.endsWith('.mkv')) return 'video/x-matroska';
+            if (lowerPath.endsWith('.webm')) return 'video/webm';
+            if (lowerPath.endsWith('.mp4')) return 'video/mp4';
+            return 'video/mp4';
+        }
+
+        function highlightCaptionText() {
+            if (!annotation || !annotation.segments || annotation.segments.length === 0) {
+                return;
+            }
+
+            const captionElements = document.querySelectorAll('.caption-text');
+
+            captionElements.forEach(captionEl => {
+                // Store original text
+                if (!captionEl.dataset.originalText) {
+                    captionEl.dataset.originalText = captionEl.textContent;
+                }
+
+                const originalText = captionEl.dataset.originalText;
+
+                // Get context for this caption element
+                const parentContent = captionEl.closest('.caption-content');
+                let elementContext = 'Single caption';
+                if (parentContent) {
+                    if (parentContent.dataset.field) {
+                        elementContext = `Field: ${parentContent.dataset.field}`;
+                    } else if (parentContent.dataset.segment) {
+                        elementContext = `Temporal segment ${parseInt(parentContent.dataset.segment) + 1}`;
+                    } else if (parentContent.dataset.annotator) {
+                        elementContext = `Annotator ${parseInt(parentContent.dataset.annotator) + 1}`;
+                    }
+                }
+
+                // Filter segments for this context
+                const matchingSegments = annotation.segments.filter(seg => seg.context === elementContext);
+
+                if (matchingSegments.length === 0) {
+                    captionEl.textContent = originalText;
+                    return;
+                }
+
+                // Build ranges to highlight
+                const ranges = [];
+                annotation.segments.forEach((segment, globalIndex) => {
+                    if (segment.context !== elementContext) return;
+
+                    if (segment.startIndex !== undefined && segment.endIndex !== undefined) {
+                        ranges.push({
+                            start: segment.startIndex,
+                            end: segment.endIndex,
+                            index: globalIndex
+                        });
+                    }
+                });
+
+                if (ranges.length === 0) {
+                    captionEl.textContent = originalText;
+                    return;
+                }
+
+                // Sort and build highlighted HTML
+                ranges.sort((a, b) => a.start - b.start);
+
+                let html = '';
+                let lastPos = 0;
+
+                ranges.forEach(range => {
+                    if (range.start < lastPos) return;
+
+                    if (range.start > lastPos) {
+                        html += escapeHtml(originalText.substring(lastPos, range.start));
+                    }
+
+                    const highlightedText = originalText.substring(range.start, range.end);
+                    html += `<span class="highlight" data-issue-number="${range.index + 1}">${escapeHtml(highlightedText)}</span>`;
+
+                    lastPos = range.end;
+                });
+
+                if (lastPos < originalText.length) {
+                    html += escapeHtml(originalText.substring(lastPos));
+                }
+
+                captionEl.innerHTML = html;
+            });
+        }
+
+        function renderCaptionByType(type, data) {
+            switch (type) {
+                case 'single':
+                    return `
+                        <div class="caption-content">
+                            <div class="caption-text" id="captionText">${escapeHtml(data)}</div>
+                        </div>
+                    `;
+
+                case 'structured':
+                    return `
+                        <div class="structured-caption-grid">
+                            ${Object.entries(data).map(([key, value]) => `
+                                <div class="structured-item">
+                                    <div class="structured-key">${escapeHtml(key)}</div>
+                                    <div class="caption-content" data-field="${escapeHtml(key)}">
+                                        <div class="caption-text">${escapeHtml(value)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+
+                case 'temporal':
+                    return `
+                        <div class="temporal-caption-list">
+                            ${data.map((item, index) => `
+                                <div class="temporal-caption-item">
+                                    <div class="temporal-header">
+                                        <span class="time-range">${item.start || item.start_time || 0}s - ${item.end || item.end_time || 0}s</span>
+                                    </div>
+                                    <div class="caption-content" data-segment="${index}">
+                                        <div class="caption-text">${escapeHtml(item.caption || item.content || '')}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+
+                case 'multiple_annotators':
+                    return `
+                        <div class="temporal-caption-list">
+                            ${data.map((annotatorCaptions, annotatorIndex) => `
+                                <div class="temporal-caption-item">
+                                    <div class="temporal-header">
+                                        <span class="time-range">Annotator ${annotatorIndex + 1}</span>
+                                    </div>
+                                    <div class="caption-content" data-annotator="${annotatorIndex}">
+                                        <div class="caption-text">${Array.isArray(annotatorCaptions)
+                            ? annotatorCaptions.map(caption => escapeHtml(caption)).join('\n')
+                            : escapeHtml(annotatorCaptions)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+
+                default:
+                    return `<p>Unknown caption type: ${type}</p>`;
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function updateSampleSelection() {
+            const sampleItems = document.querySelectorAll('.sample-item');
+            sampleItems.forEach((item, index) => {
+                if (index === currentSampleIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function updateHeaderStats() {
+            if (currentDataset && samples.length > 0) {
+                document.getElementById('headerTotal').textContent = samples.length;
+            }
+        }
+
+        async function showStats() {
+            if (!currentDataset) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/stats/${encodeURIComponent(currentDataset)}`);
+                const stats = await response.json();
+
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+                modal.innerHTML = `
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2rem; max-width: 500px; width: 90%;">
+                        <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">📊 Dataset Statistics</h2>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Summary</h3>
+                            <div style="color: var(--positive); font-size: 1.1rem;">
+                                Completed Annotations: <strong>${stats.total}</strong>
+                            </div>
+                            <div style="color: var(--text-secondary); margin-top: 0.75rem;">
+                                Avg Highlighted Issues: <strong>${stats.avg_segments || 'N/A'}</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Average Scores</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; color: var(--text-primary);">
+                                <div>Overall: <strong>${stats.avg_scores.overall || 'N/A'}</strong></div>
+                                <div>Camera: <strong>${stats.avg_scores.camera || 'N/A'}</strong></div>
+                                <div>Subject: <strong>${stats.avg_scores.subject || 'N/A'}</strong></div>
+                                <div>Motion: <strong>${stats.avg_scores.motion || 'N/A'}</strong></div>
+                                <div>Scene: <strong>${stats.avg_scores.scene || 'N/A'}</strong></div>
+                                <div>Spatial: <strong>${stats.avg_scores.spatial || 'N/A'}</strong></div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="this.closest('div').parentElement.remove()" style="
+                            width: 100%;
+                            padding: 0.75rem;
+                            background: var(--accent);
+                            border: none;
+                            border-radius: 0.5rem;
+                            color: white;
+                            font-weight: 600;
+                            cursor: pointer;
+                        ">Close</button>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+                modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>

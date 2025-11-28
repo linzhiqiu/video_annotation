@@ -11,14 +11,50 @@
       "context": "Temporal segment 1",
       "startIndex": 83,
       "endIndex": 88
+    },
+    {
+      "text": "docks",
+      "context": "Temporal segment 1",
+      "startIndex": 66,
+      "endIndex": 71
     }
   ],
-  "critique": "\u201cspeak\u201d \u2192 \u201cspeaking\u201d\n\u201cthe are\u201d \u2192 \u201cthe area\u201d\nAt least two events were missed:\n(1) They sit inside the boat, seemingly about to write something on the paper.\n(2) Many people are on the shore, and two people are hugging.",
+  "critique": "\u201cspeak\u201d \u2192 \u201cspeaking\u201d\n\u201cthe are\u201d \u2192 \u201cthe area\u201d\nThey are on the boat rather than on the docks.\nAt least two events were missed:\n(1) They sit inside the boat, seemingly about to write something on a piece of paper.\n(2) Many people are on the shore, and two of them are hugging.",
   "overall": 3,
   "camera": 1,
-  "subject": 1,
+  "subject": 2,
   "motion": 3,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:29:33.375Z"
+  "timestamp": "2025-11-09T03:28:31.453Z",
+  "video_path": "ActivityNet-Captions/v_p1JSdZmztGk.mp4",
+  "video_id": "v_p1JSdZmztGk",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 5.6,
+        "end_time": 79.57,
+        "caption": "Two people are seen speaking to one another while standing on the docks as well as speak to the camera."
+      },
+      {
+        "start_time": 59.4,
+        "end_time": 184.92,
+        "caption": "The people enjoy themselves around the are by getting their hair cut, eating food, and the man preparing a boat."
+      },
+      {
+        "start_time": 163.62,
+        "end_time": 219.66,
+        "caption": "Several shots are shown of a kitchen as well as people riding on the boat and still continue to speak to the camera."
+      }
+    ],
+    "full": "Two people are seen speaking to one another while standing on the docks as well as speak to the camera. The people enjoy themselves around the are by getting their hair cut, eating food, and the man preparing a boat. Several shots are shown of a kitchen as well as people riding on the boat and still continue to speak to the camera."
+  },
+  "metadata": {
+    "duration": 224.14,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

@@ -1,0 +1,8 @@
+{
+    "video_id": "0OFBj7EjZ-g.0.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video is a scenery shot of an architectural rendering. The camera performs a slow aerial fly-over, moving across a foreground of abstract, low-polygon trees. The view proceeds toward a detailed model of two large, modern buildings with glass roofs, which are set within a simplified, all-white city model.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-11T03:05:47.655370"
+}

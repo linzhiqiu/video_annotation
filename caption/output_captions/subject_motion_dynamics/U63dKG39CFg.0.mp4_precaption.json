@@ -1,0 +1,8 @@
+{
+    "video_id": "U63dKG39CFg.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "These images depict wide, open landscapes. The first image shows a quiet, sandy beach with calm water in the background. The second image features a dry, barren area with mountains in the distance and a few scattered structures.",
+    "pre_caption_llm": "gpt-4.1-2025-04-14",
+    "pre_caption_mode": "Image (First-and-Last-Frame)",
+    "timestamp": "2025-11-21T23:32:58.077339"
+}

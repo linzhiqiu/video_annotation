@@ -1,0 +1,44 @@
+{
+  "segments": [
+    {
+      "text": "subtle zoom-ins",
+      "context": "Single caption",
+      "startIndex": 1498,
+      "endIndex": 1514
+    },
+    {
+      "text": "with a faint glow illuminating the horizon",
+      "context": "Single caption",
+      "startIndex": 1708,
+      "endIndex": 1750
+    },
+    {
+      "text": "The air is crisp and invigorating",
+      "context": "Single caption",
+      "startIndex": 1752,
+      "endIndex": 1785
+    }
+  ],
+  "critique": "The camera doesn\u2019t zoom.\nThe horizon is not visible in the scene.\nIt\u2019s impossible to know what the air is like there just from the video.",
+  "overall": 4,
+  "camera": 4,
+  "subject": 5,
+  "motion": 5,
+  "scene": 4,
+  "spatial": 3,
+  "timestamp": "2025-11-05T16:33:48.039Z",
+  "video_path": "VDC/5jDsPkPjVK4.mp4",
+  "video_id": "5jDsPkPjVK4",
+  "captions": {
+    "single": "The video immerses viewers in a breathtaking winter landscape, where the night sky is transformed into a mesmerizing spectacle by the enchanting aurora borealis. This natural phenomenon unfolds in a stunning display of vibrant greens and soft pinks, as the lights ripple and dance gracefully across the vast expanse of the sky. The colors blend seamlessly, creating a dynamic and ever-changing canvas that captivates the senses and evokes a profound sense of wonder. \n\nBeneath this celestial show, a dense cluster of coniferous trees stands in silhouette, their dark forms contrasting beautifully with the luminous hues above. These evergreen giants frame the scene, adding depth and a sense of grounding to the ethereal display overhead. The tranquility of the setting is further enhanced by the gentle descent of countless snowflakes, which float softly through the air, each one contributing to the serene ambiance of this peaceful winter night. The snowflakes, delicate and unique, create a soft, whispering sound as they land, adding to the overall stillness of the environment.\n\nAs the video unfolds, the camera captures the expansive view of the sky, employing smooth and steady movements that allow viewers to fully appreciate the grandeur of the aurora. Wide shots encompass the full breadth of the lights, inviting the audience to lose themselves in the beauty of the moment. The angles are thoughtfully tilted upwards, emphasizing the height and fluidity of the aurora's movement, while subtle zoom-ins highlight particularly vibrant sections, drawing attention to the most captivating displays of color.\n\nThe time of day appears to be late evening, as the sky transitions from twilight to night, with a faint glow illuminating the horizon. The air is crisp and invigorating, enhancing the feeling of being immersed in this tranquil winter wonderland. Throughout the video, the continuous, undisturbed display of the northern lights remains a focal point, showcasing the steady fall of snow and the harmonious interplay between the vibrant colors and the serene landscape below. This captivating scene invites viewers to pause, reflect, and appreciate the beauty of nature in its purest form, creating an unforgettable experience that lingers long after the video ends."
+  },
+  "metadata": {
+    "duration": 16.0,
+    "resolution": "1280x720",
+    "fps": 30.0,
+    "width": 1280,
+    "height": 720,
+    "source": "vdc",
+    "original_source": "panda"
+  }
+}

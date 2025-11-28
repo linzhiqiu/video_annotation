@@ -14,5 +14,30 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:33:47.311Z"
+  "timestamp": "2025-11-04T15:33:47.311Z",
+  "video_path": "ActivityNet-Captions/v_fTGtoTlJyh0.mp4",
+  "video_id": "v_fTGtoTlJyh0",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.0,
+        "end_time": 192.82,
+        "caption": "A person is spray painting bars that are taped together different colors."
+      },
+      {
+        "start_time": 93.52,
+        "end_time": 115.69,
+        "caption": "They put a sticker of words onto the bars."
+      }
+    ],
+    "full": "A person is spray painting bars that are taped together different colors. They put a sticker of words onto the bars."
+  },
+  "metadata": {
+    "duration": 192.82,
+    "resolution": "406x224",
+    "fps": 3.0,
+    "width": 406,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

@@ -7,5 +7,22 @@
   "motion": 5,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:32:00.815Z"
+  "timestamp": "2025-11-03T15:32:00.815Z",
+  "video_path": "MSR-VTT/video1389.mp4",
+  "video_id": "video1389",
+  "captions": {
+    "single": "a woman poured sauce on chicken and began stirring it"
+  },
+  "metadata": {
+    "duration": 16.38,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 16,
+    "youtube_url": "https://www.youtube.com/watch?v=YJ6A0CGWErE",
+    "start_time": 146.76,
+    "end_time": 163.14
+  }
 }

@@ -1,12 +1,29 @@
 {
   "segments": [],
-  "critique": "",
+  "critique": "1. The description lacks details about the appearance of the two dogs.\n\n2. After the cut, the park scene does not mention that the camera simulates a pan to the right, which is a significant detail.\n\n3. There is a lack of description of the overall scene.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T09:58:55.429Z",
-  "overall": 4,
-  "camera": 5,
-  "subject": 3,
+  "timestamp": "2025-11-08T03:27:22.013Z",
+  "overall": 3,
+  "camera": 1,
+  "subject": 2,
   "motion": 5,
-  "scene": 1,
-  "spatial": 5
+  "scene": 2,
+  "spatial": 2,
+  "video_path": "DREAM-1K/31.mp4",
+  "video_id": "dream1k_31",
+  "captions": {
+    "single": "Two dogs on the grass look forward and wag their tails, behind them a flock of sheep. The camera then cuts to a city park, where a black wolf enters the frame from the left, baring its teeth and looking ahead before lowering its mouth to the ground."
+  },
+  "metadata": {
+    "duration": 5.75,
+    "resolution": "1920x1024",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 2,
+    "n_events": 7
+  }
 }

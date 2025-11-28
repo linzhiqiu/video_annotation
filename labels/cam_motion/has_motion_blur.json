@@ -2,7 +2,7 @@
     "label": "Has Motion Blur Effect",
     "label_name": "has_motion_blur",
     "def_question": [
-        "Does the video contain noticeable motion blur?",
+        "Does the video show a noticeable motion blur effect?",
         "Is there a motion blur effect present in the shot?",
         "Does fast movement in the video create a blurred effect?",
         "Does the shot exhibit motion blur due to rapid movement?"
@@ -18,7 +18,7 @@
         "Is the video affected by a loss of clarity due to motion?"
     ],
     "def_prompt": [
-        "The video exhibits a motion blur effect.",
+        "The video shows a noticeable motion blur effect.",
         "A shot where moving objects appear blurred due to rapid motion.",
         "A video where motion creates a smeared visual effect.",
         "The camera movement results in noticeable motion blur.",

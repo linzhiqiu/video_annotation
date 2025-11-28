@@ -15,11 +15,28 @@
   ],
   "critique": "1. The watch is on his right hand, rather than his left hand.\n2. The screen is covered by green paper rather than turning on.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T11:02:52.745Z",
-  "overall": 3,
+  "timestamp": "2025-11-08T05:06:45.962Z",
+  "overall": 4,
   "camera": 1,
   "subject": 4,
   "motion": 5,
-  "scene": 1,
-  "spatial": 2
+  "scene": 5,
+  "spatial": 3,
+  "video_path": "PE-Video/37161907.mp4",
+  "video_id": "37161907",
+  "captions": {
+    "single": "The video shows a man sitting in front of a computer, typing on the keyboard. The man is wearing a blue shirt and a watch on his left hand. The background is a green wall, and the computer monitor is turned on with a green screen. "
+  },
+  "metadata": {
+    "duration": 21.92,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 7,
+    "category_name": "Hand Actions",
+    "num_frames": 657.0,
+    "has_face": false
+  }
 }

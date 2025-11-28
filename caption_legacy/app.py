@@ -224,23 +224,23 @@ def main():
         st.subheader("Conversation History")
         if "initial_feedback" in st.session_state.feedback_data:
             st.markdown("**Your Initial Feedback:**")
-            st.write(st.session_state.feedback_data["initial_feedback"])
+            st.text(st.session_state.feedback_data["initial_feedback"])
         
         if "gpt_feedback" in st.session_state.feedback_data:
             st.markdown("**AI-Polished Feedback:**")
-            st.write(st.session_state.feedback_data["gpt_feedback"])
+            st.text(st.session_state.feedback_data["gpt_feedback"])
         
         if "final_feedback" in st.session_state.feedback_data:
             st.markdown("**Final Feedback:**")
-            st.write(st.session_state.feedback_data["final_feedback"])
+            st.text(st.session_state.feedback_data["final_feedback"])
         
         if "gpt_caption" in st.session_state.feedback_data:
             st.markdown("**AI-Improved Caption:**")
-            st.write(st.session_state.feedback_data["gpt_caption"])
+            st.text(st.session_state.feedback_data["gpt_caption"])
         
         if "final_caption" in st.session_state.feedback_data:
             st.markdown("**Final Caption:**")
-            st.write(st.session_state.feedback_data["final_caption"])
+            st.text(st.session_state.feedback_data["final_caption"])
     
     # Step 0: Rate the initial caption
     if st.session_state.current_step == 0:

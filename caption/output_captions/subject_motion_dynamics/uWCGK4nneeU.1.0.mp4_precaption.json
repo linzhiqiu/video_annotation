@@ -1,0 +1,8 @@
+{
+    "video_id": "uWCGK4nneeU.1.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot viewed through a pair of binoculars, showing a dry, hilly landscape under a pale sky. The viewpoint pans slowly across the terrain, as if someone is scanning the horizon.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-19T05:56:27.050332"
+}

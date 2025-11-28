@@ -7,5 +7,22 @@
   "motion": 2,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:39:30.254Z"
+  "timestamp": "2025-11-03T15:39:30.254Z",
+  "video_path": "MSR-VTT/video1466.mp4",
+  "video_id": "video1466",
+  "captions": {
+    "single": "a cat is looking"
+  },
+  "metadata": {
+    "duration": 12.16,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 13,
+    "youtube_url": "https://www.youtube.com/watch?v=-7_6jPUrRVg",
+    "start_time": 618.05,
+    "end_time": 630.21
+  }
 }

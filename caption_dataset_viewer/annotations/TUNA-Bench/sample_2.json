@@ -26,5 +26,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 5,
-  "timestamp": "2025-11-03T18:37:08.091Z"
+  "timestamp": "2025-11-03T18:37:08.091Z",
+  "video_path": "TUNA-Bench/DREAM-1K_212.mp4",
+  "video_id": "TUNA_0012",
+  "captions": {
+    "single": "The video begins with the camera focused on the face of a young woman. Her hair is brown and falls on her shoulders. She is looking at a blurry object in front of her. The background is blurred, showing a green environment. The camera shakes and pulls away.\nNext, the camera switches to a leafy sky, with branches and leaves interlaced, and sunlight shining through the leaves, casting mottled shadows.\nThe camera slowly moves to the lower left, and a man appears on the left side of the screen. The man is facing the camera sideways, has brown hair, wears dark clothes, and looks up at the sky in the distance. The background is green trees and sky. Finally, the camera gradually rotates to the right and stays behind the man."
+  },
+  "metadata": {
+    "duration": 7.12,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

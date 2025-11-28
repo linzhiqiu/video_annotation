@@ -7,12 +7,25 @@
       "endIndex": 717
     }
   ],
-  "critique": "1. camera\u4e00\u5f00\u59cb\u662ffixed\u4f46\u662f\u6709shaking\uff0c\u7136\u540e\u6709pan right\u7684\u52a8\u4f5c\uff0c\u5e76\u975ewith no noticeable camera movements,",
+  "critique": "1. The camera is initially fixed but slightly shaking, and then it pans to the right; it is not \u201cwith no noticeable camera movements.\u201d",
   "overall": 4,
   "camera": 3,
   "subject": 4,
   "motion": 5,
   "scene": 4,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:30:02.066Z"
+  "timestamp": "2025-11-04T19:16:52.226Z",
+  "video_path": "ShareGPT4Video/00f860f668189de18e08164e763a3c2d34e2d9c526d0b90391772f50ca6f4cc1.mp4",
+  "video_id": "00f860f668189de18e08164e763a3c2d34e2d9c526d0b90391772f50ca6f4cc1",
+  "captions": {
+    "single": "The video depicts a scene set in a well-stocked store, where a warm and inviting atmosphere is established. It opens with three people engaged in what appears to be a friendly conversation. A person, presumably a store clerk wearing an apron, is facing two others who are most likely customers given their casual attire. As the video progresses, the clerk makes a gesturing motion with his hand toward one of the customers, possibly explaining or presenting a product. Shortly thereafter, the clerk's hand is retracted, suggesting the end of the gesture or a transition in the conversation. Throughout these interactions, the store environment and warm lighting remain consistent, with no noticeable camera movements, keeping the focus squarely on the individuals and their exchange."
+  },
+  "metadata": {
+    "duration": 10.72,
+    "resolution": "3840x2160",
+    "fps": 25.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "pexels"
+  }
 }

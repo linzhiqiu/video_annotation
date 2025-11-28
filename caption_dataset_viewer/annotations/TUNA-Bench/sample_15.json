@@ -1,18 +1,27 @@
 {
-  "segments": [
-    {
-      "text": "close-up",
-      "context": "Single caption",
-      "startIndex": 521,
-      "endIndex": 529
-    }
-  ],
-  "critique": "It should be a medium close-up shot, rather than a close-up.",
+  "segments": [],
+  "critique": "The camera-related information and detailed spatial information were missed.",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 1,
-  "spatial": 4,
-  "timestamp": "2025-11-04T08:44:11.906Z"
+  "spatial": 3,
+  "timestamp": "2025-11-05T09:04:48.667Z",
+  "video_path": "TUNA-Bench/DREAM-1K_329.mp4",
+  "video_id": "TUNA_0081",
+  "captions": {
+    "single": "The video begins with the camera focusing on a group of young people who are attending a lively party. Many young men and women are dancing in the frame. A woman in a pink blouse is in the crowd. She stands in the middle of the frame and raises her arms in the air as she dances to the music. Next to her is a man in a colourful shirt who is also waving his arms to the music. Below the centre of the screen, a short haired woman in a purple top dances among the crowd with her tongue out.\nNext, the camera switches to a close-up focusing on the first man and woman. The woman in pink top puts her arms around the man's neck. The two then kiss. They are surrounded by many other young people who are jumping around with their hands up."
+  },
+  "metadata": {
+    "duration": 6.38,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

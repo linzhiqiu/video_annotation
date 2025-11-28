@@ -10,9 +10,26 @@
   "critique": "It should start lowering its head and walking away from the camera, moving from right to left.",
   "overall": 4,
   "camera": 1,
-  "subject": 5,
+  "subject": 2,
   "motion": 4,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T11:32:20.297Z"
+  "timestamp": "2025-11-08T07:59:32.860Z",
+  "video_path": "PE-Video/637664864.mp4",
+  "video_id": "637664864",
+  "captions": {
+    "single": "The video shows an animal standing in the snow moving ears. The animal is standing still for a while and then it starts walking from right to left."
+  },
+  "metadata": {
+    "duration": 12.31,
+    "resolution": "608x342",
+    "fps": 29.97,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 8,
+    "category_name": "Animals",
+    "num_frames": 369.0,
+    "has_face": false
+  }
 }

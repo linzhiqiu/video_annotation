@@ -21,10 +21,23 @@
   ],
   "critique": "1. From a first-person POV, the camera first moves downward. After the hand reaches out, it quickly retracts, adjusts the watch on the right wrist, and then takes an item out from the open package.\n\n2. The camera does not capture these interactions from varying angles \u2014 it remains entirely in a first-person perspective.\n\n3. The person is not \u201cremoving a red ribbon and the plastic layers to reveal the item,\u201d but rather removes a blue ribbon, unfolds the packaging, examines the item closely, then refolds it, ties it again with the blue ribbon, and places it back on the table.",
   "overall": 3,
-  "camera": 1,
+  "camera": 2,
   "subject": 3,
   "motion": 3,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T06:53:41.889Z"
+  "timestamp": "2025-11-04T19:15:09.462Z",
+  "video_path": "ShareGPT4Video/1b9c07d3-0656-48ad-bae4-cca25f6664c9.mp4",
+  "video_id": "1b9c07d3-0656-48ad-bae4-cca25f6664c9",
+  "captions": {
+    "single": "In this video, a person interacts with various items within a pantry over several seconds, initially reaching into an open, somewhat cluttered but organized cabinet, and undergoing a noticeable change in attire marked by different sleeves. The individual's actions cause slight rearrangements within the pantry without altering its overall state. The camera captures these interactions from varying angles, emphasizing the cabinet's contents and the person's movements. The scene transitions to the person, now with a pale-colored garment sleeve, retrieving a package presumed to contain nuts from the cabinet. The focus then broadens to display the disorganized contents of the cabinet before shifting to a cleaner kitchen area where a pair of hands are seen handling a transparent bag filled with various nuts. The video proceeds to a cluttered kitchen countertop where the hands unwrap a pastry or baked item, meticulously removing a red ribbon and the plastic layers to reveal the item, set against a domestic backdrop blending kitchen and office elements, hinting at a multifunctional space. The unwrapping action is detailed, introducing more of the congested surroundings and suggesting a focal point on the act of revealing the packaged item within this home office environment."
+  },
+  "metadata": {
+    "duration": 60.0,
+    "resolution": "1920x1440",
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1440,
+    "source": "ego4d"
+  }
 }

@@ -7,5 +7,35 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-04T15:29:49.501Z"
+  "timestamp": "2025-11-04T15:29:49.501Z",
+  "video_path": "ActivityNet-Captions/v_EU-IdUKbLSg.mp4",
+  "video_id": "v_EU-IdUKbLSg",
+  "captions": {
+    "temporal": [
+      {
+        "start_time": 0.79,
+        "end_time": 25.77,
+        "caption": "A large group of people are seen swimming around a pool while a coach yells on the sides."
+      },
+      {
+        "start_time": 21.01,
+        "end_time": 61.06,
+        "caption": "Shots of people playing are shown when one hits the other."
+      },
+      {
+        "start_time": 53.53,
+        "end_time": 74.94,
+        "caption": "The coaches yell to one another while people still play the game."
+      }
+    ],
+    "full": "A large group of people are seen swimming around a pool while a coach yells on the sides. Shots of people playing are shown when one hits the other. The coaches yell to one another while people still play the game."
+  },
+  "metadata": {
+    "duration": 79.3,
+    "resolution": "398x224",
+    "fps": 3.0,
+    "width": 398,
+    "height": 224,
+    "source": "activitynet-captions"
+  }
 }

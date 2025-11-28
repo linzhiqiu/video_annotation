@@ -15,11 +15,28 @@
   ],
   "critique": "She walks towards the left, rather than toward the man.\nThe outfit should be rose red, rather than red.",
   "likert_score": 3,
-  "timestamp": "2025-11-03T10:10:40.994Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T03:39:03.239Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 4,
+  "subject": 3,
   "motion": 4,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/143.mp4",
+  "video_id": "dream1k_143",
+  "captions": {
+    "single": "A man in a red outfit is posed with one hand behind him and the other over his chest, leans forward, and then straightens his body with one hand behind and the other placed in front of his stomach. A blonde woman comes over and supports the man's arm. A short woman walks past the camera toward the man in the red outfit and the blonde woman, and both the man in red and the blonde woman look towards the short woman."
+  },
+  "metadata": {
+    "duration": 4.12,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 5
+  }
 }

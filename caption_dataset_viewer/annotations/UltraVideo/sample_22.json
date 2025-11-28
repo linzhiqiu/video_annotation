@@ -19,6 +19,19 @@
   "subject": 5,
   "motion": 5,
   "scene": 4,
-  "spatial": 1,
-  "timestamp": "2025-11-04T14:26:15.606Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:00:52.134Z",
+  "video_path": "UltraVideo/380c7bec-9db3-44e8-b428-f09481ec23e8.mp4",
+  "video_id": "380c7bec-9db3-44e8-b428-f09481ec23e8.mp4",
+  "captions": {
+    "single": "The video begins with a close-up shot of a small white bowl filled with a vibrant yellow dipping sauce, placed on a rustic wooden table. As the camera slowly pans to the right, it reveals a rectangular white plate containing three golden-brown fried spring rolls. The spring rolls are neatly arranged in a row, their crispy texture and appetizing appearance highlighted by the warm, natural lighting. The camera then zooms in slightly, focusing on the intricate details of the spring rolls, showcasing their flaky layers and the glistening oil that gives them a mouthwatering sheen. The scene transitions smoothly, maintaining a steady pace that allows viewers to fully appreciate the visual appeal of the dish. The background consists of a wooden table with a natural, rustic finish, providing a warm and inviting setting for the food and enhancing the overall aesthetic of the scene. The video has a clean and straightforward style, focusing on the food with minimal distractions. The warm lighting and simple background create a comfortable and inviting atmosphere, making the dish look even more appealing and creating a sense of anticipation and enjoyment."
+  },
+  "metadata": {
+    "duration": 4.0,
+    "resolution": "7680x4320",
+    "fps": 24.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

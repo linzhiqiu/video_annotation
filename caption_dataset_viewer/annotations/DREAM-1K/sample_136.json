@@ -2,11 +2,28 @@
   "segments": [],
   "critique": "1. The woman also makes a few surprised gestures.\n\n2. After hugging the three people, she separately hugs the woman in the middle.\n\n",
   "likert_score": 4,
-  "timestamp": "2025-11-03T14:54:08.368Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T04:54:26.952Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 1,
+  "subject": 2,
   "motion": 4,
   "scene": 1,
-  "spatial": 3
+  "spatial": 2,
+  "video_path": "DREAM-1K/719.mp4",
+  "video_id": "dream1k_719",
+  "captions": {
+    "single": "A lady shows an expression of surprise at something ahead, then opens her arms and runs over to embrace the three ladies in front of the camera."
+  },
+  "metadata": {
+    "duration": 14.3,
+    "resolution": "1280x720",
+    "fps": 50.0,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 4,
+    "n_shots": 1,
+    "n_events": 4
+  }
 }

@@ -7,5 +7,22 @@
   "motion": 5,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T15:40:39.914Z"
+  "timestamp": "2025-11-03T15:40:39.914Z",
+  "video_path": "MSR-VTT/video1470.mp4",
+  "video_id": "video1470",
+  "captions": {
+    "single": "a clip of hillary clinton addressing a crowd"
+  },
+  "metadata": {
+    "duration": 30.0,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 15,
+    "youtube_url": "https://www.youtube.com/watch?v=iqkNxy-mrPk",
+    "start_time": 0.0,
+    "end_time": 30.0
+  }
 }

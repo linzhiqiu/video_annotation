@@ -12,7 +12,24 @@
   "camera": 1,
   "subject": 5,
   "motion": 5,
-  "scene": 4,
-  "spatial": 1,
-  "timestamp": "2025-11-03T13:41:52.801Z"
+  "scene": 5,
+  "spatial": 2,
+  "timestamp": "2025-11-08T05:09:28.259Z",
+  "video_path": "PE-Video/720582406.mp4",
+  "video_id": "720582406",
+  "captions": {
+    "single": "The video shows a person wearing a white shirt that is unbuttoned and black pants with an open zipper, standing in front of a white wall. The person's stomach is visible, and they are dancing, focusing on their stomach area. They place both hands on their stomach over the belly button and then remove their hands afterward. The video is presented as a collage of four different frames. The person's hands are clearly visible in each frame."
+  },
+  "metadata": {
+    "duration": 11.0,
+    "resolution": "608x342",
+    "fps": 24.0,
+    "width": 608,
+    "height": 342,
+    "source": "pe-video",
+    "category": 7,
+    "category_name": "Hand Actions",
+    "num_frames": 264.0,
+    "has_face": false
+  }
 }

@@ -7,5 +7,18 @@
   "motion": 2,
   "scene": 5,
   "spatial": 1,
-  "timestamp": "2025-11-04T07:22:53.043Z"
+  "timestamp": "2025-11-04T07:22:53.043Z",
+  "video_path": "ShareGPT4Video/9aca4a889d089bdf1cdd3e781c64d42943ed64f2108a6ab5e6dae093b2c59203.mp4",
+  "video_id": "9aca4a889d089bdf1cdd3e781c64d42943ed64f2108a6ab5e6dae093b2c59203",
+  "captions": {
+    "single": "The video features an outdoor dining scene set along a narrow street adjacent to a restaurant identified by a \"TRATTORIA\" sign, suggesting an Italian setting. It depicts several people seated at tables covered with colorful, checkered tablecloths outside the restaurant, engaged in what appears to be leisurely dining and conversation. This setting is situated in what looks like a historical area, characterized by weather-worn building facades and shuttered windows. Multicolored pennant flags span across the street overhead, contributing to the festive atmosphere of the scene. The overall mood is that of a tranquil evening, likely in an urban European locale, captured during the twilight hours as daylight begins to fade. As the video progresses, diners are observed adjusting their sitting positions and interacting with one another, indicating movement and social engagement without significant changes to the natural lighting or the surrounding environment, thus maintaining the continuity of the setting and time of day."
+  },
+  "metadata": {
+    "duration": 11.41,
+    "resolution": "1920x1080",
+    "fps": 29.97,
+    "width": 1920,
+    "height": 1080,
+    "source": "pexels"
+  }
 }

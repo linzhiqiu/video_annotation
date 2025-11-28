@@ -2,11 +2,28 @@
   "segments": [],
   "critique": "The video lacks a description of the scene and spatial location information.",
   "likert_score": 5,
-  "timestamp": "2025-11-03T14:51:11.953Z",
+  "timestamp": "2025-11-08T04:47:28.104Z",
   "overall": 4,
-  "camera": 5,
-  "subject": 4,
+  "camera": 4,
+  "subject": 3,
   "motion": 5,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/604.mp4",
+  "video_id": "dream1k_604",
+  "captions": {
+    "single": "A person opens the cover of a book, places a green twig inside, and then closes the book. The camera remains fixed."
+  },
+  "metadata": {
+    "duration": 9.16,
+    "resolution": "1280x720",
+    "fps": 59.94,
+    "width": 1280,
+    "height": 720,
+    "source": "dream-1k",
+    "video_source": "DREAM/stock",
+    "n_subjects": 1,
+    "n_shots": 1,
+    "n_events": 4
+  }
 }

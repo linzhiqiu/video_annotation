@@ -8,11 +8,28 @@
     }
   ],
   "critique": "The woman is just talking to the camera \u2014 it\u2019s not clear whether she\u2019s cooking pasta and meatballs, but it seems that she\u2019s cutting onions.",
-  "overall": 1,
+  "overall": 2,
   "camera": 1,
-  "subject": 1,
-  "motion": 1,
+  "subject": 2,
+  "motion": 2,
   "scene": 2,
   "spatial": 1,
-  "timestamp": "2025-11-03T14:57:38.347Z"
+  "timestamp": "2025-11-08T02:39:41.606Z",
+  "video_path": "MSR-VTT/video1093.mp4",
+  "video_id": "video1093",
+  "captions": {
+    "single": "a woman is cooking pasta and meatballs in the kitchen"
+  },
+  "metadata": {
+    "duration": 12.52,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 16,
+    "youtube_url": "https://www.youtube.com/watch?v=W3YVmSMl-fY",
+    "start_time": 13.93,
+    "end_time": 26.45
+  }
 }

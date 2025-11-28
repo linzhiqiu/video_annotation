@@ -14,5 +14,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 4,
-  "timestamp": "2025-11-03T19:20:15.226Z"
+  "timestamp": "2025-11-03T19:20:15.226Z",
+  "video_path": "TUNA-Bench/DREAM-1K_234.mp4",
+  "video_id": "TUNA_0028",
+  "captions": {
+    "single": "At the beginning of the video, the camera is focused on a woman. She is wearing a yellow dress and riding a white horse. It is night time and the background is an ancient stone building. There is also a black horse on the right side of the screen. The woman holds the black reins in her left hand and looks to her left.\nThe camera switches to an elderly man wearing a black uniform, a white wig and a black hat, sitting in the front of the carriage with a serious look on his face. Behind the carriage, there are several lines of people walking with torches.\nThen, the camera switches to the front of the two black horses. Then the camera switches again, with a close-up of the horses' hooves. Then, the camera switches to a farther distance. A crowd gathers in the square in front of the building, holding torches. In front of the crowd, the woman is still riding on the white horse, and the two black horses are walking towards the woman.\nThe camera cuts back to the woman, who jumps off the white horse and then faces the left side of the screen. Then, the camera switches again, and a middle-aged man in a red coat stands in front of the crowd, with dense crowds and torches in the background.\nThe camera follows the woman from behind. The woman runs straight toward the crowd, holding an object in her right hand. She then turns to the carriage on her left. The crowd watches the woman and witnesses this process."
+  },
+  "metadata": {
+    "duration": 10.62,
+    "resolution": "1920x800",
+    "fps": 8.0,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }

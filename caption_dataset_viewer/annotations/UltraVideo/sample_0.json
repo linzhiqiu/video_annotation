@@ -1,18 +1,24 @@
 {
-  "segments": [
-    {
-      "text": "The camera remains mostly stationary",
-      "context": "Single caption",
-      "startIndex": 1014,
-      "endIndex": 1050
-    }
-  ],
-  "critique": "1. The camera has no significant movement but shows noticeable shaking.",
-  "overall": 4,
-  "camera": 2,
+  "segments": [],
+  "critique": "",
+  "overall": 5,
+  "camera": 4,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 5,
-  "timestamp": "2025-11-04T13:04:39.866Z"
+  "timestamp": "2025-11-16T03:18:37.037Z",
+  "video_path": "UltraVideo/0328a2ca-55e5-4d90-b292-d9d3e4133371.mp4",
+  "video_id": "0328a2ca-55e5-4d90-b292-d9d3e4133371.mp4",
+  "captions": {
+    "single": "The video captures a close-up view of a spotted eel in an underwater setting, showcasing its detailed texture and vibrant colors. The eel's body is covered in a distinctive pattern of black spots against a pale yellowish base, giving it a striking appearance. The eel's head is prominently featured, with its mouth slightly open, revealing sharp teeth and a glimpse of its gills. The eel's skin has a matte texture, and its movements are slow and deliberate, with the mouth opening and closing gently and the body undulating slightly. The background is a blurred mix of green and brown hues, suggesting an underwater environment with rocks and possibly some aquatic plants. The soft focus on the background helps to emphasize the eel in the foreground, creating a sense of depth and immersion in the underwater world. The lighting is soft and diffused, likely due to natural sunlight filtering through the water, enhancing the colors and textures of the eel and contributing to the serene and tranquil atmosphere. The camera remains mostly stationary, with minimal movement, focusing steadily on the eel and capturing its subtle movements and expressions. The video maintains a consistent close-up perspective throughout, creating a peaceful and almost meditative viewing experience."
+  },
+  "metadata": {
+    "duration": 4.37,
+    "resolution": "7680x4320",
+    "fps": 60.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

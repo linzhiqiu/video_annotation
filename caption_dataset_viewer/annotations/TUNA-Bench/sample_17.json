@@ -1,11 +1,27 @@
 {
   "segments": [],
-  "critique": "The camera is static, which should be mentioned.",
-  "overall": 5,
+  "critique": "The camera is static, which should be mentioned.\nThe spatial information is missed",
+  "overall": 3,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T09:01:10.541Z"
+  "timestamp": "2025-11-05T05:10:24.555Z",
+  "video_path": "TUNA-Bench/DREAM-1K_338.mp4",
+  "video_id": "TUNA_0090",
+  "captions": {
+    "single": "The video begins with the camera focusing on a middle-aged man sitting in a car. He wears glasses and a dark coat. He sits in the driver's seat, with his body leaning to the right and his face turning back to the camera. The inside of the car is dim and a blurred background of buildings can be seen outside the window.\nNext, the man picks up a brown paper bag next to his seat, turns around and places the bag on his chest. The man lowers his head as he holds the bag in his left hand and reaches his right hand inside the bag to rummage around. At the same time, the man is chewing something in his mouth. The man then takes a piece of dessert out of the bag with his right hand. Finally, the man puts the dessert into his mouth. The man opens his mouth and takes a bite."
+  },
+  "metadata": {
+    "duration": 5.5,
+    "resolution": "1712x1024",
+    "fps": 8.0,
+    "width": 1712,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic"
+  }
 }

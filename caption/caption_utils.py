@@ -673,7 +673,7 @@ def display_caption_expander(data, user, timestamp):
     st.write(f"**Annotator:** {user}")
     st.write(f"**Timestamp:** {format_timestamp(timestamp)}")
     st.write("##### Pre-caption")
-    st.write(data.get("pre_caption", "No pre-caption available"))
+    st.text(data.get("pre_caption", "No pre-caption available"))
     
     # Use the existing display_feedback_info function
     display_feedback_info(data, display_pre_caption_instead_of_final_caption=False)
@@ -830,4 +830,4 @@ def feedback_interface(video_id, config, output_dir, caption_program, video_data
                 pre_caption = generate_precaption(video_id, config, output_dir, caption_program, video_data_dict, selected_video, args)
                 if pre_caption:
                     st.success("Pre-caption generated successfully!")
-                    st.write(pre_caption)
+                    st.text(pre_caption)

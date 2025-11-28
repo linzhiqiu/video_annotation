@@ -11,14 +11,33 @@
       "context": "Single caption",
       "startIndex": 845,
       "endIndex": 884
+    },
+    {
+      "text": "including wide, medium, and close-up shots",
+      "context": "Single caption",
+      "startIndex": 801,
+      "endIndex": 844
     }
   ],
-  "critique": "The description of the camera movement is inaccurate \u2014 there is no panning. The camera continuously moves forward and slightly upward toward the end.",
+  "critique": "The description of the camera movement is inaccurate \u2014 there is no panning. The camera continuously moves forward and slightly upward toward the end.\nThe shot size changes from an extreme wide shot to a wide shot, rather than medium and close-up shots.",
   "overall": 3,
   "camera": 3,
   "subject": 4,
   "motion": 4,
   "scene": 5,
-  "spatial": 1,
-  "timestamp": "2025-11-04T15:01:07.145Z"
+  "spatial": 2,
+  "timestamp": "2025-11-08T12:19:52.892Z",
+  "video_path": "UltraVideo/eba9bcf7-5aa3-4ce3-9f78-c47c5ba19869.mp4",
+  "video_id": "eba9bcf7-5aa3-4ce3-9f78-c47c5ba19869.mp4",
+  "captions": {
+    "single": "The video showcases ancient ruins set against a backdrop of rolling hills and a clear blue sky, with fluffy white clouds. The ruins, made of large stone blocks, exhibit both grandeur and decay, with some structures standing tall and others crumbled over time. The camera begins with a wide shot, capturing the expansive landscape and the intricate details of the stone structures. It then pans across the site, revealing the craftsmanship and weathering of the stones. The ruins are nestled among dry grass and scattered trees, blending seamlessly into the natural, possibly arid, landscape. Visitors can be seen walking around, taking photos, and examining the remains, adding a human element and a sense of scale. The video uses a documentary style with natural lighting and steady camera movements, including wide, medium, and close-up shots, as well as panning and tracking shots. The high contrast lighting enhances the texture and depth of the scene, creating a serene and contemplative atmosphere that evokes a sense of wonder and respect for the ancient civilization."
+  },
+  "metadata": {
+    "duration": 4.97,
+    "resolution": "3840x2160",
+    "fps": 30.0,
+    "width": 3840,
+    "height": 2160,
+    "source": "ultravideo"
+  }
 }

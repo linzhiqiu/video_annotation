@@ -1,5 +1,5 @@
 {
-    "label": "Height Wrt Subject Is Below Subject",
+    "label": "Height Is Always Below Subject",
     "label_name": "height_wrt_subject_is_below_subject",
     "def_question": [
         "Is the camera positioned below the subject throughout the video?"

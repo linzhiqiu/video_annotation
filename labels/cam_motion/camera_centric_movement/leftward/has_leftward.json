@@ -2,7 +2,7 @@
     "label": "Has Leftward Movement",
     "label_name": "has_leftward",
     "def_question": [
-        "Does the camera move physically leftward (or trucks left)?",
+        "Does the camera move physically leftward (or truck left)?",
         "Does the camera move left in the scene?",
         "Does the camera move from right to left?",
         "Does the camera truck left in the scene?",

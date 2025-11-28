@@ -1,0 +1,8 @@
+{
+    "video_id": "CQtFHWCSeXM.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot with no significant subject motion. The video shows a low-angle view of a two-story brick house with a dark gabled roof. In the foreground, a multi-trunked yucca tree and other green foliage stand in front of the house, which features a prominent white stucco section with dark blue timber framing. The sky above is overcast.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-11-07T07:01:27.538914"
+}

@@ -32,11 +32,24 @@
     }
   ],
   "critique": "1. After the transition, regarding the overpass scene, the camera moves backward and rightward while panning left. There is no instance of the camera zooming in to focus on specific areas of congestion or notable vehicle movements, nor does it pull back for a broader view of the entire system.\n\n2. There are no close-up shots \u2014 only wide and extreme wide shots are present.\n\n3. There is no tracking movement in the video.\n\n4. The perspective changes through cuts, but this was not mentioned.",
-  "overall": 2,
+  "overall": 3,
   "camera": 2,
   "subject": 4,
   "motion": 4,
   "scene": 4,
   "spatial": 2,
-  "timestamp": "2025-11-04T14:30:51.064Z"
+  "timestamp": "2025-11-08T12:06:29.280Z",
+  "video_path": "UltraVideo/6dba9112-fc5e-4f3e-8fee-1742486ce312.mp4",
+  "video_id": "6dba9112-fc5e-4f3e-8fee-1742486ce312.mp4",
+  "captions": {
+    "single": "The video captures a bustling highway interchange with multiple lanes of traffic moving in various directions, set during the day with clear skies. The camera provides an aerial view, highlighting the complexity and efficiency of modern transportation infrastructure. Viewers can observe the smooth flow of vehicles, including cars, trucks, and buses, navigating the curves and intersections with precision. The scene transitions seamlessly, showcasing different angles and perspectives of the interchange, emphasizing its scale and design. The camera occasionally zooms in to focus on specific areas of congestion or notable vehicle movements, then pulls back to provide a broader view of the entire system. The surrounding landscape includes patches of greenery and industrial structures, adding depth and context to the urban setting. The lighting is bright and natural, enhancing the visibility and clarity of the video. The combination of aerial shots, close-ups, medium shots, and long shots effectively conveys the scale and complexity of the interchange. The camera movements, including panning, zooming, and tracking, are smooth and coordinated, ensuring a seamless viewing experience. The atmosphere is dynamic and energetic, reflecting the constant movement and activity, with a sense of clarity and order created by the bright lighting and flowing traffic. The natural and man-made elements contribute to a balanced and harmonious scene, evoking a feeling of progress and efficiency."
+  },
+  "metadata": {
+    "duration": 4.53,
+    "resolution": "7680x4320",
+    "fps": 60.0,
+    "width": 7680,
+    "height": 4320,
+    "source": "ultravideo"
+  }
 }

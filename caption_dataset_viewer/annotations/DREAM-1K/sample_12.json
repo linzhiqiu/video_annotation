@@ -9,11 +9,28 @@
   ],
   "critique": "Not just green \u2014 her hair is multicolored.",
   "likert_score": 4,
-  "timestamp": "2025-11-03T10:04:33.152Z",
-  "overall": 4,
+  "timestamp": "2025-11-08T03:32:19.753Z",
+  "overall": 3,
   "camera": 1,
-  "subject": 4,
+  "subject": 2,
   "motion": 5,
   "scene": 1,
-  "spatial": 5
+  "spatial": 2,
+  "video_path": "DREAM-1K/68.mp4",
+  "video_id": "dream1k_68",
+  "captions": {
+    "single": "A woman is holding a microphone and speaking. Next to her, a man is watching her. The woman extends the microphone forward, and the scene switches to six girls on the opposite side, where a character with green hair raises her hand to speak."
+  },
+  "metadata": {
+    "duration": 2.62,
+    "resolution": "1824x1024",
+    "fps": 8.0,
+    "width": 1824,
+    "height": 1024,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 4,
+    "n_shots": 2,
+    "n_events": 5
+  }
 }

@@ -7,5 +7,21 @@
   "motion": 5,
   "scene": 5,
   "spatial": 5,
-  "timestamp": "2025-11-03T18:19:12.143Z"
+  "timestamp": "2025-11-03T18:19:12.143Z",
+  "video_path": "TUNA-Bench/DREAM-1K_207.mp4",
+  "video_id": "TUNA_0007",
+  "captions": {
+    "single": "The video begins with the camera focusing on an adult man. He is wearing a dark suit, white shirt and dark tie. The background is blurred and there are many people behind the man. The man stands face to face with a woman and smiles at her.\nThe camera then switches to the woman. She is a young woman with long blond hair and wearing dark clothes. She is talking to the man. The background is a relatively spacious public scene. Behind the woman, many people in different clothes gather together, and some are happily talking.\nThe woman leans forward, closes her eyes, and moves her head closer to the man. The man also moves his head closer to the woman, ready to give her a kiss."
+  },
+  "metadata": {
+    "duration": 4.42,
+    "resolution": "1920x800",
+    "fps": 23.98,
+    "width": 1920,
+    "height": 800,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "Low-Dynamic,Multi-Subject"
+  }
 }

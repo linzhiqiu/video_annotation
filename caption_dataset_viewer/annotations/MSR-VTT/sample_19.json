@@ -7,5 +7,22 @@
   "motion": 3,
   "scene": 1,
   "spatial": 1,
-  "timestamp": "2025-11-03T17:48:37.324Z"
+  "timestamp": "2025-11-03T17:48:37.324Z",
+  "video_path": "MSR-VTT/video1866.mp4",
+  "video_id": "video1866",
+  "captions": {
+    "single": "a guying giving santa a check"
+  },
+  "metadata": {
+    "duration": 11.41,
+    "resolution": "298x224",
+    "fps": 3.0,
+    "width": 298,
+    "height": 224,
+    "source": "msr-vtt",
+    "category": 4,
+    "youtube_url": "https://www.youtube.com/watch?v=At7o7gfyxTY",
+    "start_time": 5.62,
+    "end_time": 17.03
+  }
 }

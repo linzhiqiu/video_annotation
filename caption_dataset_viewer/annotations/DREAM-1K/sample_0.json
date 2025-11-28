@@ -5,21 +5,32 @@
       "context": "Single caption",
       "startIndex": 158,
       "endIndex": 185
-    },
-    {
-      "text": "causing the bowl to fly up.",
-      "context": "Single caption",
-      "startIndex": 82,
-      "endIndex": 109
     }
   ],
-  "critique": "1. causing the bowl to fly up and reveal another mouse holding a key that was hidden underneath it.\n\n2. The camera remains static at first, then zooms in at the end to focus on the cat.\n\n3. Grammar issues. It should be \"The mouse is then covered by the bowl again as the cat steps forward to grab it.\"",
+  "critique": "There is a grammatical issue.\nThe first mouse pushes a bowl and then exits the frame. Another mouse, holding the key, is initially under the bowl. It briefly appears as the cat falls, causing the bowl to fly up, then falls back and covers the cat again. Finally, the cat grabs the bowl. You should make it clear that these are two different mouse to reduce ambiguity. ",
   "likert_score": 3,
-  "timestamp": "2025-11-04T04:56:34.838Z",
+  "timestamp": "2025-11-16T08:52:16.816Z",
   "overall": 3,
   "camera": 1,
   "subject": 2,
   "motion": 4,
   "scene": 1,
-  "spatial": 1
+  "spatial": 1,
+  "video_path": "DREAM-1K/4.mp4",
+  "video_id": "dream1k_4",
+  "captions": {
+    "single": "A mouse is pushing a bowl and making a frightened expression. A cat falling down, causing the bowl to fly up. A mouse holding a key is covered under the bowl. The cat grabbing the bowl."
+  },
+  "metadata": {
+    "duration": 4.05,
+    "resolution": "1456x1080",
+    "fps": 23.98,
+    "width": 1456,
+    "height": 1080,
+    "source": "dream-1k",
+    "video_source": "DREAM/movie_animation",
+    "n_subjects": 3,
+    "n_shots": 1,
+    "n_events": 7
+  }
 }

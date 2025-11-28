@@ -7,12 +7,28 @@
       "endIndex": 1241
     }
   ],
-  "critique": "1. He kneels and moves forward a few steps, rather than climbing.",
+  "critique": "He kneels and moves forward a few steps, rather than climbing.\nThe camera-related information and spatial information were missed.",
   "overall": 4,
   "camera": 1,
   "subject": 5,
   "motion": 5,
   "scene": 5,
   "spatial": 3,
-  "timestamp": "2025-11-04T15:02:51.973Z"
+  "timestamp": "2025-11-05T05:26:33.582Z",
+  "video_path": "TUNA-Bench/DREAM-1K_344.mp4",
+  "video_id": "TUNA_0096",
+  "captions": {
+    "single": "The video begins with the camera focusing on a boxing ring where two male boxers are engaged in a fierce battle. Both men are bare-chested and have white bandages on their hands. In the background, red ropes can be seen surrounding the ring and spectators outside the ring are watching the fight.\nThe camera first focuses on a boxer with a buzz cut. In the foreground is the back of the boxer with a buzz cut. The boxer with a buzz cut leans forward and throws a punch at his opponent opposite him.\nThe camera switches to the back of the boxer with a buzz cut. The opponent of the boxer with a buzz cut bends over to avoid the attack. The boxer with a buzz cut wears red shorts, while his opponent wears black shorts.\nThe camera switches to an overhead view again, showing the panoramic view of the boxing ring. The boxer with a buzz cut in red shorts then throws the boxer in black shorts to the ground with both hands. The auditorium around the ring is filled up with people standing up and waving their arms. The referee immediately steps forward and reaches out to stop the boxer in red shorts. The boxer in red shorts moves to his right. The boxer in red shorts looks at his fallen opponent. The boxer in black shorts climbs a few steps in the ring before getting up and moving forward."
+  },
+  "metadata": {
+    "duration": 7.0,
+    "resolution": "1904x1024",
+    "fps": 8.0,
+    "width": 1904,
+    "height": 1024,
+    "source": "tuna-bench",
+    "video_source": "DREAM-1K",
+    "domain": "Film",
+    "visual_characteristic": "High-Dynamic,Multi-Scene,Multi-Subject"
+  }
 }
