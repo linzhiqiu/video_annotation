@@ -654,591 +654,552 @@ def _validate_task_dict(task_dict):
     assert "label" in task_dict and "type" in task_dict, "Task specification must have 'label' and 'type' keys"
 
 
-# def generate_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, labels_filename="label_names.json"):
-#     """
-#     Generate pairwise tasks from label definitions.
-    
-#     Args:
-#         pairwise_labels: Dictionary containing skill and task definitions
-#         root: Root directory
-#         video_root: Video root directory
-#         video_labels_dir: Directory containing video labels
-#         labels_filename: Filename for labels (default: "label_names.json")
-        
-#     Returns:
-#         Dictionary of pairwise tasks organized by skill and task name
-#     """
-#     pairwise_tasks = {}
-#     video_labels_dir = Path(video_labels_dir)
-
-#     for skill_name, tasks in pairwise_labels.items():
-#         pairwise_tasks[skill_name] = {}
-        
-#         for task_dict in tasks:
-#             # Load labels for this task
-#             video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
-#             label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
-            
-#             # Get positive and negative videos
-#             pos_videos = get_videos(label_dicts, task_dict["pos"])
-#             neg_videos = get_videos(label_dicts, task_dict["neg"])
-            
-#             # Convert Path objects to strings
-#             pos_videos = [str(video) for video in pos_videos]
-#             neg_videos = [str(video) for video in neg_videos]
-            
-#             # Ensure positive and negative sets are disjoint
-#             assert set(pos_videos).isdisjoint(neg_videos), \
-#                 f"Positive and negative videos overlap for task {task_dict['name']}"
-            
-#             # Store task information
-#             pairwise_tasks[skill_name][task_dict["name"]] = {
-#                 "task_dict": task_dict,
-#                 "pos": pos_videos,
-#                 "neg": neg_videos
-#             }
-            
-#     return pairwise_tasks
-
-# Below version is before adding folder_name (Before Oct 12 2025)
-# def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, 
-#                                      train_ratio=TRAIN_RATIO, max_test_sample=MAX_SAMPLES, 
-#                                      labels_filename="label_names.json"):
-
-#     """
-#     Generate balanced pairwise tasks, ensuring exclusive train/test splits while prioritizing tasks with fewer available samples.
-#     Also returns the original task distribution and lists of train/test videos.
-
-#     Test samples are capped at `max_test_sample` per task. 
-#     If a task has fewer than `max_test_sample / (1 - train_ratio)`, 
-#     the train/test split follows `train_ratio`. Otherwise, up to `max_test_sample` is allocated to the test set, and the rest go to the train set.
-
-#     Args:
-#         pairwise_labels: Dictionary containing skill and task definitions.
-#         root: Root directory.
-#         video_root: Video root directory.
-#         video_labels_dir: Directory containing video labels.
-#         train_ratio: Guideline ratio of videos assigned to the training set (only applied when `min_count < max_test_sample / (1 - train_ratio)`).
-#         max_test_sample: Maximum number of test samples per task (default: 50).
-#         labels_filename: Filename for labels (default: "label_names.json").
-
-#     Returns:
-#         Dictionary with:
-#         - "raw": The full set of tasks before splitting.
-#         - "train": The train set.
-#         - "test": The test set.
-#         - "train_videos": Set of all videos assigned to train.
-#         - "test_videos": Set of all videos assigned to test.
-#     """
-
-#     video_labels_dir = Path(video_labels_dir)
-#     video_usage = defaultdict(set)  # Track tasks where each video appears
-#     task_metadata = []  # Store task details for prioritization
-#     all_videos = set()
-#     raw_tasks = defaultdict(dict)
-
-#     # Step 1: Collect all videos and track their occurrences
-#     for skill_name, tasks in pairwise_labels.items():
-#         for task_dict in tasks:
-#             task_name = task_dict["name"]
-#             video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
-#             label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
-
-#             # Get positive and negative videos
-#             try:
-#                 pos_videos = get_videos(label_dicts, task_dict["pos"])
-#                 neg_videos = get_videos(label_dicts, task_dict["neg"])
-#             except Exception as e:
-#                 print(f"Error loading label dictionary for task {task_name}: {e}")
-#                 import pdb; pdb.set_trace()
-#                 continue
-
-#             # Convert Path objects to strings
-#             pos_videos = [str(video) for video in pos_videos]
-#             neg_videos = [str(video) for video in neg_videos]
-
-#             # Ensure no overlap between positive and negative lists
-#             assert set(pos_videos).isdisjoint(set(neg_videos)), \
-#                 f"Positive and negative videos overlap for task {task_name}"
-
-#             # Store original dataset
-#             raw_tasks[skill_name][task_name] = {
-#                 "task_dict": task_dict,
-#                 "pos": pos_videos,
-#                 "neg": neg_videos
-#             }
-
-#             # Track video occurrences
-#             for video in pos_videos:
-#                 video_usage[video].add((skill_name, task_name, "pos"))
-#             for video in neg_videos:
-#                 video_usage[video].add((skill_name, task_name, "neg"))
-
-#             # Collect all videos
-#             all_videos.update(pos_videos)
-#             all_videos.update(neg_videos)
-
-#             # Store metadata for sorting
-#             task_metadata.append({
-#                 "skill": skill_name,
-#                 "task": task_name,
-#                 "task_dict": task_dict,
-#                 "pos_videos": pos_videos,
-#                 "neg_videos": neg_videos,
-#                 "min_count": min(len(pos_videos), len(neg_videos))  # Sorting priority
-#             })
-
-#     # Step 2: Sort tasks by the minimum available positive/negative samples (smallest first) and Move tasks["task"] == "has_crane_down" to the first
-#     task_metadata.sort(key=lambda x: x["min_count"])
-#     task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "has_crane_down")
-#     task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "is_the_camera_fixed_or_moving")
-    
-#     # Step 3: Assign videos to train or test, prioritizing constrained tasks
-#     train_videos = set()
-#     test_videos = set()
-
-#     for task in task_metadata:
-#         skill_name, task_name = task["skill"], task["task"]
-#         pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
-
-#         # Filter available videos (ensuring no overlap)
-#         available_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
-#         available_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-        
-#         existing_pos_train = [v for v in pos_videos if v in train_videos]
-#         existing_neg_train = [v for v in neg_videos if v in train_videos]
-#         existing_pos_test = [v for v in pos_videos if v in test_videos]
-#         existing_neg_test = [v for v in neg_videos if v in test_videos]
-        
-#         expected_train_size = max_test_sample * train_ratio / (1 - train_ratio)
-#         expected_test_size = max_test_sample
-        
-#         missing_pos_train = max(0, expected_train_size - len(existing_pos_train))
-#         missing_neg_train = max(0, expected_train_size - len(existing_neg_train))
-#         missing_train = max(missing_pos_train, missing_neg_train)
-#         missing_pos_test = max(0, expected_test_size - len(existing_pos_test))
-#         missing_neg_test = max(0, expected_test_size - len(existing_neg_test))
-#         missing_test = max(missing_pos_test, missing_neg_test)
-        
-#         available_num = min(len(available_pos), len(available_neg))
-#         if available_num > missing_train + missing_test:
-#             # No need to follow `train_ratio`
-#             continue
-        
-#         # if len(available_pos) <= 1 or len(available_neg) <= 1:
-#         #     print(f"Skipping task {task_name} due to insufficient samples")
-#             # import pdb; pdb.set_trace()
-#         # Determine how many can be assigned to train vs test
-#         num_train = int(len(available_pos) * train_ratio)
-#         num_test = len(available_pos) - num_train  # Ensure balance
-
-#         # Assign videos to train and test
-#         train_pos = available_pos[:num_train]
-#         train_neg = available_neg[:num_train]
-#         test_pos = available_pos[num_train:num_train + num_test]
-#         test_neg = available_neg[num_train:num_train + num_test]
-
-#         # if task_name == "has_crane_down":
-#         #     import pdb; pdb.set_trace()
-#         # Add to the respective sets
-#         train_videos.update(train_pos + train_neg)
-#         test_videos.update(test_pos + test_neg)
-        
-#     # Step 4: Construct final train and test task dictionaries
-#     train_tasks = defaultdict(dict)
-#     test_tasks = defaultdict(dict)
-
-#     # task_metadata.sort(key=lambda x: x["task"] != "has_crane_down")
-#     for task in task_metadata:
-#         skill_name, task_name = task["skill"], task["task"]
-#         pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
-
-#         # Assign based on the video sets
-#         unassigned_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
-#         unassigned_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-#         # assign half of the unassigned videos to train and the other half to test
-#         train_videos.update(unassigned_pos[:len(unassigned_pos)//2] + unassigned_neg[:len(unassigned_neg)//2])
-#         test_videos.update(unassigned_pos[len(unassigned_pos)//2:] + unassigned_neg[len(unassigned_neg)//2:])
-#         # train_videos.update(unassigned_pos + unassigned_neg)
-#         train_pos = [v for v in pos_videos if v in train_videos]
-#         train_neg = [v for v in neg_videos if v in train_videos]
-#         test_pos = [v for v in pos_videos if v in test_videos]
-#         test_neg = [v for v in neg_videos if v in test_videos]
-
-#         # Ensure balance by trimming excess samples
-#         # min_train_samples = min(len(train_pos), len(train_neg))
-#         # min_test_samples = min(len(test_pos), len(test_neg))
-
-#         train_tasks[skill_name][task_name] = {
-#             "task_dict": task["task_dict"],
-#             "pos": train_pos + unassigned_pos[:len(unassigned_pos)//2],
-#             "neg": train_neg + unassigned_neg[:len(unassigned_neg)//2]
-#         }
-
-#         test_tasks[skill_name][task_name] = {
-#             "task_dict": task["task_dict"],
-#             "pos": test_pos + unassigned_pos[len(unassigned_pos)//2:],
-#             "neg": test_neg + unassigned_neg[len(unassigned_neg)//2:]
-#         }
-        
-
-#     return {
-#         "raw": raw_tasks,
-#         "train": train_tasks,
-#         "test": test_tasks,
-#         "train_videos": list(train_videos),
-#         "test_videos": list(test_videos)
-#     }
-
-
-def generate_balanced_pairwise_tasks(
+def generate_all_to_train_tasks(
     pairwise_labels, 
     root, 
     video_root, 
     video_labels_dir, 
-    train_ratio=TRAIN_RATIO, 
-    max_test_sample=MAX_SAMPLES, 
     labels_filename="label_names.json",
-    folder_name="motion_dataset",  # NEW: added parameter
-    min_samples_threshold=None     # NEW
+    folder_name="motion_dataset"
 ):
     """
-    Generate balanced pairwise tasks, ensuring exclusive train/test splits while prioritizing tasks with fewer available samples.
-    Also returns the original task distribution and lists of train/test videos.
-
-    Test samples are capped at `max_test_sample` per task. 
-    If a task has fewer than `max_test_sample / (1 - train_ratio)`, 
-    the train/test split follows `train_ratio`.
-    
-    Some tasks can be marked as train-only via folder_name configuration.
-
-    Args:
-        pairwise_labels: Dictionary containing skill and task definitions.
-        root: Root directory.
-        video_root: Video root directory.
-        video_labels_dir: Directory containing video labels.
-        train_ratio: Guideline ratio of videos assigned to the training set (only applied when `min_count < max_test_sample / (1 - train_ratio)`).
-        max_test_sample: Maximum number of test samples per task (default: 50).
-        labels_filename: Filename for labels (default: "label_names.json").
-        folder_name: Name of the folder (default: "motion_dataset").
-        min_samples_threshold: Minimum number of samples per task (default: None).
-
-    Returns:
-        Dictionary with:
-        - "raw": The full set of tasks before splitting.
-        - "train": The train set.
-        - "test": The test set.
-        - "train_videos": Set of all videos assigned to train.
-        - "test_videos": Set of all videos assigned to test.
+    Minimal version: no Train/Test split, all positive and negative sample videos are directly stored in the train dictionary.
     """
-
     video_labels_dir = Path(video_labels_dir)
-    video_usage = defaultdict(set)  # Track tasks where each video appears
-    task_metadata = []  # Store task details for prioritization
-    all_videos = set()
     raw_tasks = defaultdict(dict)
+    train_tasks = defaultdict(dict)
+    test_tasks = defaultdict(dict) # Kept empty
+    train_videos = set()
 
-    # Step 1: Collect all videos and track their occurrences
+    print(f"\n🚀 Extracting all data into Training Set (folder: {folder_name})...")
+
     for skill_name, tasks in pairwise_labels.items():
         for task_dict in tasks:
             task_name = task_dict["name"]
             video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
-            label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
-
-            # Get positive and negative videos
+            
             try:
+                label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
                 pos_videos = get_videos(label_dicts, task_dict["pos"])
                 neg_videos = get_videos(label_dicts, task_dict["neg"])
+                
+                # Convert to string paths
+                pos_videos = [str(v) for v in pos_videos]
+                neg_videos = [str(v) for v in neg_videos]
+                
+                if not pos_videos or not neg_videos:
+                    print(f"  ⚠️ Skipping task '{task_name}': insufficient samples (Pos:{len(pos_videos)}, Neg:{len(neg_videos)})")
+                    continue
+
+                # Store in raw for statistics
+                raw_tasks[skill_name][task_name] = {
+                    "task_dict": task_dict,
+                    "pos": pos_videos,
+                    "neg": neg_videos
+                }
+
+                # Assign everything directly to train_tasks
+                train_tasks[skill_name][task_name] = {
+                    "task_dict": task_dict,
+                    "pos": pos_videos,
+                    "neg": neg_videos
+                }
+                
+                train_videos.update(pos_videos)
+                train_videos.update(neg_videos)
+
             except Exception as e:
-                print(f"Error loading label dictionary for task {task_name}: {e}")
-                import pdb; pdb.set_trace()
+                print(f"  ❌ Failed to load task '{task_name}': {e}")
                 continue
 
-            # Convert Path objects to strings
-            pos_videos = [str(video) for video in pos_videos]
-            neg_videos = [str(video) for video in neg_videos]
-
-            # Ensure no overlap between positive and negative lists
-            assert set(pos_videos).isdisjoint(set(neg_videos)), \
-                f"Positive and negative videos overlap for task {task_name}"
-
-            # Store original dataset
-            raw_tasks[skill_name][task_name] = {
-                "task_dict": task_dict,
-                "pos": pos_videos,
-                "neg": neg_videos
-            }
-
-            # Track video occurrences
-            for video in pos_videos:
-                video_usage[video].add((skill_name, task_name, "pos"))
-            for video in neg_videos:
-                video_usage[video].add((skill_name, task_name, "neg"))
-
-            # Collect all videos
-            all_videos.update(pos_videos)
-            all_videos.update(neg_videos)
-
-            # Store metadata for sorting
-            task_metadata.append({
-                "skill": skill_name,
-                "task": task_name,
-                "task_dict": task_dict,
-                "pos_videos": pos_videos,
-                "neg_videos": neg_videos,
-                "min_count": min(len(pos_videos), len(neg_videos))  # Sorting priority
-            })
-
-    # Step 2: Sort tasks by the minimum available positive/negative samples (smallest first) and Move tasks["task"] == "has_crane_down" to the first
-    task_metadata.sort(key=lambda x: x["min_count"])
-    # task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "has_crane_down")
-    # task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "is_the_camera_fixed_or_moving")
-    
-    # Step 3: Assign videos to train or test, prioritizing constrained tasks
-    train_videos = set()
-    test_videos = set()
-
-    for task in task_metadata:
-        skill_name, task_name = task["skill"], task["task"]
-        pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
-
-        # Filter available videos (ensuring no overlap)
-        available_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
-        available_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-        
-        existing_pos_train = [v for v in pos_videos if v in train_videos]
-        existing_neg_train = [v for v in neg_videos if v in train_videos]
-        existing_pos_test = [v for v in pos_videos if v in test_videos]
-        existing_neg_test = [v for v in neg_videos if v in test_videos]
-        
-        expected_train_size = max_test_sample * train_ratio / (1 - train_ratio)
-        expected_test_size = max_test_sample
-        
-        missing_pos_train = max(0, expected_train_size - len(existing_pos_train))
-        missing_neg_train = max(0, expected_train_size - len(existing_neg_train))
-        missing_train = max(missing_pos_train, missing_neg_train)
-        missing_pos_test = max(0, expected_test_size - len(existing_pos_test))
-        missing_neg_test = max(0, expected_test_size - len(existing_neg_test))
-        missing_test = max(missing_pos_test, missing_neg_test)
-        
-        available_num = min(len(available_pos), len(available_neg))
-        if available_num > missing_train + missing_test:
-            # No need to follow `train_ratio`
-            continue
-        
-        # if len(available_pos) <= 1 or len(available_neg) <= 1:
-        #     print(f"Skipping task {task_name} due to insufficient samples")
-            # import pdb; pdb.set_trace()
-        # Determine how many can be assigned to train vs test
-        num_train = int(len(available_pos) * train_ratio)
-        num_test = len(available_pos) - num_train  # Ensure balance
-
-        # Assign videos to train and test
-        train_pos = available_pos[:num_train]
-        train_neg = available_neg[:num_train]
-        test_pos = available_pos[num_train:num_train + num_test]
-        test_neg = available_neg[num_train:num_train + num_test]
-
-        # if task_name == "has_crane_down":
-        #     import pdb; pdb.set_trace()
-        # Add to the respective sets
-        train_videos.update(train_pos + train_neg)
-        test_videos.update(test_pos + test_neg)
-    
-    # Step 4: Construct final train and test task dictionaries
-    
-    # NEW: Get test-skip tasks for this folder
-    test_skip_tasks = get_test_skip_tasks(folder_name)
-    if test_skip_tasks:
-        print(f"\n⚠️  Test-skip tasks for '{folder_name}': {len(test_skip_tasks)} tasks")
-        for task_name in test_skip_tasks:
-            print(f"   - {task_name}")
-        print()
-    
-    train_tasks = defaultdict(dict)
-    test_tasks = defaultdict(dict)
-
-    # task_metadata.sort(key=lambda x: x["task"] != "has_crane_down")
-    for task in task_metadata:
-        skill_name, task_name = task["skill"], task["task"]
-        pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
-
-        # Assign based on the video sets
-        unassigned_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
-        unassigned_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-        # assign half of the unassigned videos to train and the other half to test
-        train_videos.update(unassigned_pos[:len(unassigned_pos)//2] + unassigned_neg[:len(unassigned_neg)//2])
-        test_videos.update(unassigned_pos[len(unassigned_pos)//2:] + unassigned_neg[len(unassigned_neg)//2:])
-        # train_videos.update(unassigned_pos + unassigned_neg)
-        train_pos = [v for v in pos_videos if v in train_videos]
-        train_neg = [v for v in neg_videos if v in train_videos]
-        test_pos = [v for v in pos_videos if v in test_videos]
-        test_neg = [v for v in neg_videos if v in test_videos]
-
-        # Ensure balance by trimming excess samples
-        # min_train_samples = min(len(train_pos), len(train_neg))
-        # min_test_samples = min(len(test_pos), len(test_neg))
-
-        # Always add to train (regardless of skip list)
-        train_tasks[skill_name][task_name] = {
-            "task_dict": task["task_dict"],
-            "pos": train_pos + unassigned_pos[:len(unassigned_pos)//2],
-            "neg": train_neg + unassigned_neg[:len(unassigned_neg)//2]
-        }
-
-        # NEW: Only add to test if not in skip list
-        if task_name not in test_skip_tasks:
-            test_tasks[skill_name][task_name] = {
-                "task_dict": task["task_dict"],
-                "pos": test_pos + unassigned_pos[len(unassigned_pos)//2:],
-                "neg": test_neg + unassigned_neg[len(unassigned_neg)//2:]
-            }
-        else:
-            print(f"  ⏩ Skipping task '{task_name}' in test set (train-only)")
-        
-    # # Step 4: Construct final train and test task dictionaries
-    # train_tasks = defaultdict(dict)
-    # test_tasks = defaultdict(dict)
-
-    # # task_metadata.sort(key=lambda x: x["task"] != "has_crane_down")
-    # for task in task_metadata:
-    #     skill_name, task_name = task["skill"], task["task"]
-    #     pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
-
-    #     # Assign based on the video sets
-    #     unassigned_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
-    #     unassigned_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-    #     # assign half of the unassigned videos to train and the other half to test
-    #     train_videos.update(unassigned_pos[:len(unassigned_pos)//2] + unassigned_neg[:len(unassigned_neg)//2])
-    #     test_videos.update(unassigned_pos[len(unassigned_pos)//2:] + unassigned_neg[len(unassigned_neg)//2:])
-    #     # train_videos.update(unassigned_pos + unassigned_neg)
-    #     train_pos = [v for v in pos_videos if v in train_videos]
-    #     train_neg = [v for v in neg_videos if v in train_videos]
-    #     test_pos = [v for v in pos_videos if v in test_videos]
-    #     test_neg = [v for v in neg_videos if v in test_videos]
-
-    #     # Ensure balance by trimming excess samples
-    #     # min_train_samples = min(len(train_pos), len(train_neg))
-    #     # min_test_samples = min(len(test_pos), len(test_neg))
-
-    #     train_tasks[skill_name][task_name] = {
-    #         "task_dict": task["task_dict"],
-    #         "pos": train_pos + unassigned_pos[:len(unassigned_pos)//2],
-    #         "neg": train_neg + unassigned_neg[:len(unassigned_neg)//2]
-    #     }
-
-    #     test_tasks[skill_name][task_name] = {
-    #         "task_dict": task["task_dict"],
-    #         "pos": test_pos + unassigned_pos[len(unassigned_pos)//2:],
-    #         "neg": test_neg + unassigned_neg[len(unassigned_neg)//2:]
-    #     }
-    
-    # ============================================
-    # VALIDATION: Check for insufficient samples
-    # ============================================
-    
-    print("\n" + "="*70)
-    print("📊 Sample Count Validation")
-    print("="*70)
-    
-    # Track problematic tasks
-    train_insufficient = []
-    test_insufficient = []
-    
-    # Check train tasks
-    for skill_name, skill_tasks in train_tasks.items():
-        for task_name, task_data in skill_tasks.items():
-            pos_count = len(task_data["pos"])
-            neg_count = len(task_data["neg"])
-            min_count = min(pos_count, neg_count)
-            
-            if min_count < min_samples_threshold:
-                train_insufficient.append({
-                    "skill": skill_name,
-                    "task": task_name,
-                    "pos": pos_count,
-                    "neg": neg_count,
-                    "min": min_count
-                })
-    
-    # Check test tasks
-    for skill_name, skill_tasks in test_tasks.items():
-        for task_name, task_data in skill_tasks.items():
-            pos_count = len(task_data["pos"])
-            neg_count = len(task_data["neg"])
-            min_count = min(pos_count, neg_count)
-            
-            if min_count < min_samples_threshold:
-                test_insufficient.append({
-                    "skill": skill_name,
-                    "task": task_name,
-                    "pos": pos_count,
-                    "neg": neg_count,
-                    "min": min_count
-                })
-    
-    # Report findings
-    has_issues = train_insufficient or test_insufficient
-    
-    if has_issues:
-        print(f"\n⚠️  WARNING: Found tasks with insufficient samples (threshold: {min_samples_threshold})\n")
-        
-        if train_insufficient:
-            print(f"🔴 TRAIN SET - {len(train_insufficient)} tasks below threshold:")
-            print(f"{'Skill/Task':<100} {'Pos':<8} {'Neg':<8} {'Min':<8}")
-            print("-" * 124)
-            for item in sorted(train_insufficient, key=lambda x: x['min']):
-                display_name = f"{item['skill']}/{item['task']}"
-                print(f"{display_name:<100} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
-            print()
-
-        if test_insufficient:
-            print(f"🔴 TEST SET - {len(test_insufficient)} tasks below threshold:")
-            print(f"{'Skill/Task':<100} {'Pos':<8} {'Neg':<8} {'Min':<8}")
-            print("-" * 124)
-            for item in sorted(test_insufficient, key=lambda x: x['min']):
-                display_name = f"{item['skill']}/{item['task']}"
-                print(f"{display_name:<100} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
-            print()
-
-        print("💡 Recommendations:")
-        print("   1. Reduce --max_samples to require fewer test samples")
-        print("   2. Adjust --train_ratio to allocate more videos to the deficient split")
-        print("   3. Add more videos for the problematic tasks")
-        print("   4. Consider removing tasks with very few samples")
-        print("="*70)
-        
-        # Ask user for confirmation
-        print("\n❓ Do you want to continue and save this dataset? [y/N]: ", end='', flush=True)
-        user_input = input().strip().lower()
-        
-        if user_input not in ['y', 'yes']:
-            print("\n❌ Dataset generation cancelled by user.")
-            print("   No files were saved to disk.")
-            raise SystemExit(0)  # Clean exit without error
-        else:
-            print("\n✅ Continuing with dataset generation...\n")
-    else:
-        print(f"✅ All tasks have sufficient samples (>= {min_samples_threshold})")
-        print("="*70 + "\n")
-    
-    # Save validation report
-    validation_report = {
-        "threshold": min_samples_threshold,
-        "train_insufficient": train_insufficient,
-        "test_insufficient": test_insufficient,
-        "validation_passed": not has_issues,
-        "total_train_tasks": sum(len(tasks) for tasks in train_tasks.values()),
-        "total_test_tasks": sum(len(tasks) for tasks in test_tasks.values())
-    }
-    
     return {
         "raw": raw_tasks,
         "train": train_tasks,
-        "test": test_tasks,
+        "test": test_tasks, # Empty
         "train_videos": list(train_videos),
-        "test_videos": list(test_videos),
-        "validation_report": validation_report
+        "test_videos": []   # Empty
+    }
+
+from pathlib import Path
+from collections import defaultdict
+
+
+def compute_test_size(n, max_test_samples):
+    """
+    Compute the number of test samples for a task based on its total sample count.
+
+    Tier rules:
+      - n <= 10:        no test set (train only)
+      - 10 < n <= 20:   even split (half test, half train)
+      - 20 < n <= 40:   test gets exactly 10
+      - n > 40:         test gets min(n // 2, max_test_samples)
+
+    Args:
+        n: Total number of available samples (min of pos/neg count)
+        max_test_samples: Maximum allowed test samples (from --max_samples arg)
+
+    Returns:
+        Number of samples to assign to test set (0 means train-only)
+    """
+    if n <= 10:
+        return 0
+    elif n <= 20:
+        return n // 2
+    elif n <= 40:
+        return 10
+    else:
+        return min(n // 2, max_test_samples)
+
+
+from pathlib import Path
+from collections import defaultdict
+
+
+def compute_test_size(n, max_test_samples):
+    """
+    Compute the number of test samples for a task based on its total sample count.
+
+    Tier rules:
+      - n <= 10:        no test set (train only)
+      - 10 < n <= 20:   even split (half test, half train)
+      - 20 < n <= 40:   test gets exactly 10
+      - n > 40:         test gets min(n // 2, max_test_samples)
+
+    Args:
+        n: Total number of available samples (min of pos/neg count)
+        max_test_samples: Maximum allowed test samples (from --max_samples arg)
+
+    Returns:
+        Number of samples to assign to test set (0 means train-only)
+    """
+    if n <= 10:
+        return 0
+    elif n <= 20:
+        return n // 2
+    elif n <= 40:
+        return 10
+    else:
+        return min(n // 2, max_test_samples)
+
+
+from pathlib import Path
+from collections import defaultdict
+
+
+def compute_test_size(n, max_test_samples):
+    """
+    Compute the number of test samples for a task based on its total sample count.
+
+    Tier rules:
+      - n <= 10:        no test set (train only)
+      - 10 < n <= 20:   even split (half test, half train)
+      - 20 < n <= 40:   test gets exactly 10
+      - n > 40:         test gets min(n // 2, max_test_samples)
+
+    Args:
+        n: Total number of available samples (min of pos/neg count)
+        max_test_samples: Maximum allowed test samples (from --max_samples arg)
+
+    Returns:
+        Number of samples to assign to test set (0 means train-only)
+    """
+    if n <= 10:
+        return 0
+    elif n <= 20:
+        return n // 2
+    elif n <= 40:
+        return 10
+    else:
+        return min(n // 2, max_test_samples)
+
+
+def generate_balanced_pairwise_tasks(
+    pairwise_labels,
+    root,
+    video_root,
+    video_labels_dir,
+    train_ratio=0.5,
+    max_test_sample=20,
+    labels_filename="label_names.json",
+    folder_name="motion_dataset",
+    min_samples_threshold=None,
+    split_log_path='./syc_log.jsonl',
+):
+    """
+    Generate balanced pairwise tasks with a global video-level train/test split.
+
+    For each task, both pos and neg independently target `target_test`:
+      - Count already-in-test for that side
+      - If >= target_test, skip (ALREADY_SATISFIED)
+      - Otherwise pick from unassigned to reach target_test
+
+    Processing Order (smallest n first within each tier, n = min(pos, neg)):
+    -----------------------------------------------------------------------
+    Step 1 — 10 < n <= 20  (even split, target_test = n // 2)
+    Step 2 — 20 < n <= 40  (test >= 10, target_test = 10)
+    Step 3 — n <= 10       (train only, no test)
+    Step 4 — n > 40        (capped test, target_test = min(max_test_sample, n // 2))
+    Finalize — All videos not in test_videos → train.
+
+    train ∩ test = ∅ guaranteed.
+    """
+    import json
+    from collections import defaultdict
+    from pathlib import Path
+    from benchmark import labels_as_dict
+    from benchmark_config import get_test_skip_tasks
+
+    video_labels_dir = Path(video_labels_dir)
+
+    # ================================================================== #
+    #  Log setup                                                           #
+    # ================================================================== #
+    _log_file = None
+    if split_log_path:
+        _log_path = Path(split_log_path)
+        _log_path.parent.mkdir(parents=True, exist_ok=True)
+        _log_file = open(_log_path, "w")
+        print(f"📝 Split log: {_log_path}")
+
+    def log(entry):
+        if _log_file:
+            _log_file.write(json.dumps(entry, ensure_ascii=False) + "\n")
+            _log_file.flush()
+
+    # ================================================================== #
+    #  Phase 0: Load all tasks                                             #
+    # ================================================================== #
+    raw_tasks = defaultdict(dict)
+    task_metadata = []
+
+    for skill_name, tasks in pairwise_labels.items():
+        for task_dict in tasks:
+            task_name = task_dict["name"]
+            video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
+
+            try:
+                label_dicts = labels_as_dict(
+                    root=root,
+                    video_root=video_root,
+                    video_label_file=video_label_file
+                )
+                pos_videos = get_videos(label_dicts, task_dict["pos"])
+                neg_videos = get_videos(label_dicts, task_dict["neg"])
+            except Exception as e:
+                print(f"  ❌ Failed to load task '{task_name}': {e}")
+                continue
+
+            pos_videos = [str(v) for v in pos_videos]
+            neg_videos = [str(v) for v in neg_videos]
+
+            if not pos_videos or not neg_videos:
+                print(f"  ⚠️  Skipping '{task_name}': empty pos or neg list")
+                continue
+
+            assert set(pos_videos).isdisjoint(set(neg_videos)), \
+                f"Pos/neg overlap in task '{task_name}'"
+
+            n = min(len(pos_videos), len(neg_videos))
+
+            raw_tasks[skill_name][task_name] = {
+                "task_dict": task_dict,
+                "pos": pos_videos,
+                "neg": neg_videos,
+            }
+
+            task_metadata.append({
+                "skill":      skill_name,
+                "task":       task_name,
+                "task_dict":  task_dict,
+                "pos_videos": pos_videos,
+                "neg_videos": neg_videos,
+                "n":          n,
+            })
+
+    # ================================================================== #
+    #  Tier distribution                                                   #
+    # ================================================================== #
+    tier_counts = {"n<=10": 0, "10<n<=20": 0, "20<n<=40": 0, "n>40": 0}
+    for t in task_metadata:
+        if t["n"] <= 10:     tier_counts["n<=10"] += 1
+        elif t["n"] <= 20:   tier_counts["10<n<=20"] += 1
+        elif t["n"] <= 40:   tier_counts["20<n<=40"] += 1
+        else:                tier_counts["n>40"] += 1
+    print(f"\n[Tier Distribution] {tier_counts}")
+    print(f"  Total tasks: {len(task_metadata)}")
+    log({"step": "TIER_DISTRIBUTION", **tier_counts, "total_tasks": len(task_metadata)})
+
+    # ================================================================== #
+    #  Global state                                                        #
+    # ================================================================== #
+    test_videos: set = set()
+
+    # ================================================================== #
+    #  Helper: assign one side to test                                     #
+    # ================================================================== #
+
+    def assign_side(video_list, target_test):
+        """
+        For one side (pos or neg), check already-in-test count.
+        If < target_test, pick from unassigned to reach target_test.
+
+        Returns: (n_already, n_new, note)
+        """
+        already = [v for v in video_list if v in test_videos]
+        if len(already) >= target_test:
+            return len(already), 0, "ALREADY_SATISFIED"
+
+        unassigned = [v for v in video_list if v not in test_videos]
+        needed = target_test - len(already)
+        new = unassigned[:needed]
+        test_videos.update(new)
+
+        note = ""
+        if len(new) < needed:
+            note = f"SHORTFALL: needed {needed}, got {len(new)}"
+
+        return len(already), len(new), note
+
+    # ================================================================== #
+    #  Helper: assign both sides of a task                                 #
+    # ================================================================== #
+
+    def assign_test(task, target_test, step):
+        """
+        Assign test videos for both pos and neg sides independently.
+        Both target target_test. No cross-linking.
+        """
+        pos = task["pos_videos"]
+        neg = task["neg_videos"]
+
+        pos_already, pos_new, pos_note = assign_side(pos, target_test)
+        neg_already, neg_new, neg_note = assign_side(neg, target_test)
+
+        note_parts = []
+        if pos_note: note_parts.append(f"pos:{pos_note}")
+        if neg_note: note_parts.append(f"neg:{neg_note}")
+        note = "; ".join(note_parts)
+
+        entry = {
+            "step":             step,
+            "task":             task["task"],
+            "n":                task["n"],
+            "target_test":      target_test,
+            "total_pos":        len(pos),
+            "pos_already_test": pos_already,
+            "pos_new_test":     pos_new,
+            "total_neg":        len(neg),
+            "neg_already_test": neg_already,
+            "neg_new_test":     neg_new,
+            "global_test_size": len(test_videos),
+            "note":             note,
+        }
+        log(entry)
+
+        print(f"  [{step}] '{task['task']}': n={task['n']}, target={target_test} | "
+              f"pos: {pos_already}+{pos_new}={pos_already+pos_new} | "
+              f"neg: {neg_already}+{neg_new}={neg_already+neg_new}"
+              + (f"  [{note}]" if note else ""))
+
+    # ================================================================== #
+    #  Step 1: 10 < n <= 20 — even split                                   #
+    # ================================================================== #
+    print("\n[Step 1] Tasks with 10 < n <= 20 (even split) ...")
+    step1_tasks = sorted(
+        [t for t in task_metadata if 10 < t["n"] <= 20],
+        key=lambda x: x["n"]
+    )
+    print(f"  ({len(step1_tasks)} tasks)")
+    for task in step1_tasks:
+        assign_test(task, task["n"] // 2, "Step1")
+
+    # ================================================================== #
+    #  Step 2: 20 < n <= 40 — test >= 10                                   #
+    # ================================================================== #
+    print("\n[Step 2] Tasks with 20 < n <= 40 (test ≥ 10) ...")
+    step2_tasks = sorted(
+        [t for t in task_metadata if 20 < t["n"] <= 40],
+        key=lambda x: x["n"]
+    )
+    print(f"  ({len(step2_tasks)} tasks)")
+    for task in step2_tasks:
+        assign_test(task, 10, "Step2")
+
+    # ================================================================== #
+    #  Step 3: n <= 10 — train only (nothing to do)                        #
+    # ================================================================== #
+    print("\n[Step 3] Tasks with n <= 10 (train-only) ...")
+    step3_tasks = sorted(
+        [t for t in task_metadata if t["n"] <= 10],
+        key=lambda x: x["n"]
+    )
+    print(f"  ({len(step3_tasks)} tasks)")
+    for task in step3_tasks:
+        pos_in_test = sum(1 for v in task["pos_videos"] if v in test_videos)
+        neg_in_test = sum(1 for v in task["neg_videos"] if v in test_videos)
+        log({
+            "step": "Step3", "task": task["task"], "n": task["n"],
+            "total_pos": len(task["pos_videos"]),
+            "total_neg": len(task["neg_videos"]),
+            "pos_in_test": pos_in_test, "neg_in_test": neg_in_test,
+            "note": "TRAIN_ONLY",
+        })
+        print(f"  [Step3] '{task['task']}': n={task['n']}, "
+              f"pos_in_test={pos_in_test}, neg_in_test={neg_in_test}")
+
+    # ================================================================== #
+    #  Step 4: n > 40 — capped test                                        #
+    # ================================================================== #
+    print(f"\n[Step 4] Tasks with n > 40 (capped test, max={max_test_sample}) ...")
+    step4_tasks = sorted(
+        [t for t in task_metadata if t["n"] > 40],
+        key=lambda x: x["n"]
+    )
+    print(f"  ({len(step4_tasks)} tasks)")
+    for task in step4_tasks:
+        target_test = min(max_test_sample, task["n"] // 2)
+        assign_test(task, target_test, "Step4")
+
+    # ================================================================== #
+    #  Finalize: everything not in test → train                            #
+    # ================================================================== #
+    all_videos = set()
+    for task in task_metadata:
+        all_videos.update(task["pos_videos"])
+        all_videos.update(task["neg_videos"])
+
+    train_videos = all_videos - test_videos
+
+    assert len(test_videos & train_videos) == 0, "FATAL: train/test overlap!"
+
+    print(f"\n[Finalize] Total: {len(all_videos)} | "
+          f"Test: {len(test_videos)} | Train: {len(train_videos)}")
+
+    log({
+        "step": "SUMMARY",
+        "total_videos": len(all_videos),
+        "test_videos": len(test_videos),
+        "train_videos": len(train_videos),
+    })
+
+    if _log_file:
+        _log_file.close()
+        print(f"📝 Split log finalized: {split_log_path}")
+
+    # ================================================================== #
+    #  Build train/test task dicts                                         #
+    # ================================================================== #
+    test_skip_tasks = get_test_skip_tasks(folder_name)
+    if test_skip_tasks:
+        print(f"\n⚠️  Test-skip tasks for '{folder_name}': {test_skip_tasks}")
+
+    train_tasks = defaultdict(dict)
+    test_tasks  = defaultdict(dict)
+
+    for task in task_metadata:
+        skill_name = task["skill"]
+        task_name  = task["task"]
+        pos = task["pos_videos"]
+        neg = task["neg_videos"]
+
+        train_pos = [v for v in pos if v in train_videos]
+        train_neg = [v for v in neg if v in train_videos]
+        test_pos  = [v for v in pos if v in test_videos]
+        test_neg  = [v for v in neg if v in test_videos]
+
+        train_tasks[skill_name][task_name] = {
+            "task_dict": task["task_dict"],
+            "pos": train_pos,
+            "neg": train_neg,
+        }
+
+        if task_name not in test_skip_tasks:
+            if test_pos and test_neg:
+                test_tasks[skill_name][task_name] = {
+                    "task_dict": task["task_dict"],
+                    "pos": test_pos,
+                    "neg": test_neg,
+                }
+        else:
+            print(f"  ⏩ Skipping task '{task_name}' in test set (train-only)")
+
+    # ================================================================== #
+    #  Validation                                                          #
+    # ================================================================== #
+    train_insufficient = []
+    test_insufficient  = []
+
+    if min_samples_threshold is not None:
+        print("\n" + "=" * 70)
+        print("📊 Sample Count Validation")
+        print("=" * 70)
+
+        for skill_name, skill_tasks in train_tasks.items():
+            for task_name, task_data in skill_tasks.items():
+                mn = min(len(task_data["pos"]), len(task_data["neg"]))
+                if mn < min_samples_threshold:
+                    train_insufficient.append({
+                        "skill": skill_name, "task": task_name,
+                        "pos": len(task_data["pos"]),
+                        "neg": len(task_data["neg"]), "min": mn
+                    })
+
+        for skill_name, skill_tasks in test_tasks.items():
+            for task_name, task_data in skill_tasks.items():
+                mn = min(len(task_data["pos"]), len(task_data["neg"]))
+                if mn < min_samples_threshold:
+                    test_insufficient.append({
+                        "skill": skill_name, "task": task_name,
+                        "pos": len(task_data["pos"]),
+                        "neg": len(task_data["neg"]), "min": mn
+                    })
+
+        has_issues = train_insufficient or test_insufficient
+
+        if has_issues:
+            print(f"\n⚠️  WARNING: Tasks below threshold ({min_samples_threshold}):\n")
+            for lbl, items in [("TRAIN", train_insufficient),
+                               ("TEST", test_insufficient)]:
+                if items:
+                    print(f"🔴 {lbl} SET — {len(items)} tasks:")
+                    print(f"  {'Skill/Task':<80} {'Pos':<6} {'Neg':<6} {'Min':<6}")
+                    print("  " + "-" * 100)
+                    for item in sorted(items, key=lambda x: x["min"]):
+                        name = f"{item['skill']}/{item['task']}"
+                        print(f"  {name:<80} {item['pos']:<6} {item['neg']:<6} {item['min']:<6}")
+                    print()
+
+            print("💡 Recommendations:")
+            print("   1. Reduce --max_samples")
+            print("   2. Add more videos for the problematic tasks")
+            print("   3. Consider removing tasks with very few samples")
+            print("=" * 70)
+
+            print("\n❓ Continue and save this dataset? [y/N]: ", end="", flush=True)
+            if input().strip().lower() not in ("y", "yes"):
+                print("\n❌ Cancelled by user.")
+                raise SystemExit(0)
+            print("\n✅ Continuing ...\n")
+        else:
+            print(f"✅ All tasks have sufficient samples (>= {min_samples_threshold})")
+            print("=" * 70 + "\n")
+
+    validation_report = {
+        "threshold":           min_samples_threshold,
+        "train_insufficient":  train_insufficient,
+        "test_insufficient":   test_insufficient,
+        "validation_passed":   not (train_insufficient or test_insufficient),
+        "total_train_tasks":   sum(len(t) for t in train_tasks.values()),
+        "total_test_tasks":    sum(len(t) for t in test_tasks.values()),
+    }
+
+    return {
+        "raw":              raw_tasks,
+        "train":            train_tasks,
+        "test":             test_tasks,
+        "train_videos":     list(train_videos),
+        "test_videos":      list(test_videos),
+        "validation_report": validation_report,
     }
 
     # return {
@@ -1457,162 +1418,7 @@ def sample_from_tasks(
     
     return sampled_tasks
 
-# Below version is before adding max_train_samples and max_imbalance_ratio and balance_train (Before Oct 12 2025)
-# def sample_from_tasks(
-#     original_tasks,
-#     max_samples=None,
-#     max_train_samples=None,
-#     max_test_samples=MAX_SAMPLES,
-#     sampling=SAMPLING,
-#     seed=SEED):
-#     """
-#     Sample a subset of videos from pairwise tasks.
-    
-#     Args:
-#         pairwise_tasks: Dictionary of pairwise tasks
-#         max_samples: Maximum number of samples per task (default: 30)
-#         sampling: Sampling method, either "random" or "top" (default: "random")
-#         seed: Random seed for reproducibility (default: 0)
-        
-#     Returns:
-#         Dictionary of sampled pairwise tasks
-#     """
-#     assert sampling in ["random", "top"], "Sampling method must be 'random' or 'top'"
-#     import copy
-#     sampled_tasks = copy.deepcopy(original_tasks)
-#     # Create a deep copy to avoid modifying the original
-#     for split_name, sample_num in [("raw", max_samples), ("train", max_train_samples), ("test", max_test_samples)]:
-#         for skill_name, skill_tasks in sampled_tasks[split_name].items():
-#             for task_name, task_data in skill_tasks.items():
-#                 pos_videos = task_data["pos"]
-#                 neg_videos = task_data["neg"]
-                
-#                 # Determine number of samples
-#                 if sample_num is None:
-#                     # Use all available samples
-#                     sample_count = min(len(pos_videos), len(neg_videos))
-#                 else:
-#                     sample_count = min(sample_num, len(pos_videos), len(neg_videos))
-                
-#                 if sampling == "random":
-#                     # Use random sampling with seed for reproducibility
-#                     random.seed(seed)
-#                     sampled_tasks[split_name][skill_name][task_name]["pos"] = random.sample(pos_videos, sample_count)
-#                     sampled_tasks[split_name][skill_name][task_name]["neg"] = random.sample(neg_videos, sample_count)
-#                 else:  # "top" sampling
-#                     # Take the first N videos
-#                     sampled_tasks[split_name][skill_name][task_name]["pos"] = pos_videos[:sample_count]
-#                     sampled_tasks[split_name][skill_name][task_name]["neg"] = neg_videos[:sample_count]
-#     # Update train_videos and test_videos
-#     new_train_videos = set()
-#     new_test_videos = set()
-#     for split_name, videos in [("train", new_train_videos), ("test", new_test_videos)]:
-#         for skill_name, skill_tasks in sampled_tasks[split_name].items():
-#             for task_name, task_data in skill_tasks.items():
-#                 videos.update(task_data["pos"])
-#                 videos.update(task_data["neg"])  
-#     sampled_tasks["train_videos"] = list(new_train_videos)
-#     sampled_tasks["test_videos"] = list(new_test_videos) 
-#     return sampled_tasks
 
-# Below version is before adding max_imbalance_ratio and balance_train (Before Oct 12 2025)
-# def generate_pairwise_datasets(
-#     max_samples=MAX_SAMPLES,
-#     sampling=SAMPLING,
-#     seed=SEED,
-#     root=ROOT,
-#     video_root=VIDEO_ROOT,
-#     video_labels_dir=VIDEO_LABELS_DIR,
-#     labels_filename="label_names.json",
-#     pairwise_labels=get_pairwise_labels(folder_name="motion_dataset"),
-#     train_ratio=TRAIN_RATIO,
-#     folder_name="motion_dataset"
-# ):
-#     """
-#     Generate a pairwise benchmark by sampling from pairwise tasks.
-    
-#     Args:
-#         pairwise_labels: Dictionary containing skill and task definitions
-#         max_samples: Maximum number of samples per task
-#         root: Root directory
-#         video_root: Video root directory
-#         video_labels_dir: Directory containing video labels
-#         labels_filename: Filename for labels
-#         mode: Benchmark mode
-        
-#     Returns:
-#         Tuple of (sampled_tasks, sampled_config)
-#     """
-#     # Get the directory for sampled tasks
-#     video_labels_dir = Path(video_labels_dir)
-#     sampling_str = "top" if sampling == "top" else f"random_seed_{seed}"
-#     sampled_dir = video_labels_dir / folder_name / f"test_ratio_{1 - train_ratio:.2f}_num_{max_samples}_sampling_{sampling_str}"
-    
-#     # Check if sampled tasks already exist
-#     if not sampled_dir.exists():
-#         # Generate and sample tasks
-#         original_tasks = generate_balanced_pairwise_tasks(
-#             pairwise_labels=pairwise_labels,
-#             root=root,
-#             video_root=video_root,
-#             video_labels_dir=video_labels_dir,
-#             train_ratio=train_ratio,
-#             labels_filename=labels_filename
-#         )
-        
-#         verify_tasks(original_tasks["train"], original_tasks["test"], original_tasks["train_videos"], original_tasks["test_videos"])
-        
-#         sampled_tasks = sample_from_tasks(
-#             original_tasks,
-#             max_samples=None,
-#             max_train_samples=None,
-#             max_test_samples=max_samples,
-#             sampling=sampling,
-#             seed=seed
-#         )
-        
-#         verify_tasks(sampled_tasks["train"], sampled_tasks["test"], sampled_tasks["train_videos"], sampled_tasks["test_videos"])
-        
-        
-#         # Save configuration and tasks
-#         sampled_config = {
-#             "max_samples": max_samples,
-#             "sampling": sampling,
-#             "train_ratio": train_ratio,
-#             "seed": seed,
-#             "video_labels_dir": str(video_labels_dir),
-#             "root": str(root),
-#             "video_root": str(video_root),
-#             "pairwise_labels": pairwise_labels
-#         }
-        
-#         # Create directory and save files
-#         sampled_dir.mkdir(parents=True, exist_ok=True)
-        
-#         with open(sampled_dir / "sampled_config.json", "w") as f:
-#             json.dump(sampled_config, f, indent=4)
-            
-#         with open(sampled_dir / "sampled_tasks.json", "w") as f:
-#             json.dump(sampled_tasks, f, indent=4)
-            
-#         with open(sampled_dir / "original_tasks.json", "w") as f:
-#             json.dump(original_tasks, f, indent=4)
-#     else:
-#         # Load existing sampled tasks and config
-#         with open(sampled_dir / "sampled_tasks.json", "r") as f:
-#             sampled_tasks = json.load(f)
-            
-#         with open(sampled_dir / "sampled_config.json", "r") as f:
-#             sampled_config = json.load(f)
-        
-#         with open(sampled_dir / "original_tasks.json", "r") as f:
-#             original_tasks = json.load(f)
-    
-#     return {
-#         "original_tasks": original_tasks,
-#         "sampled_tasks": sampled_tasks,
-#         "sampled_config": sampled_config,
-#     }
 
 
 def generate_pairwise_datasets(
@@ -1656,10 +1462,28 @@ def generate_pairwise_datasets(
     # video_labels_dir = Path(video_labels_dir)
     # sampling_str = "top" if sampling == "top" else f"random_seed_{seed}"
     # sampled_dir = video_labels_dir / folder_name / f"test_ratio_{1 - train_ratio:.2f}_num_{max_samples}_sampling_{sampling_str}"
+    # video_labels_dir = Path(video_labels_dir)
+    # sampling_str = "top" if sampling == "top" else f"random_seed_{seed}"
+    
+    # # NEW: Build train configuration string for folder name
+    # if balance_train:
+    #     train_config_str = "train_balanced"
+    # elif max_imbalance_ratio is not None:
+    #     train_config_str = f"train_posneg_max_ratio_{max_imbalance_ratio:.1f}"
+    # else:
+    #     train_config_str = "train_fully_imbal"
+    
+    # # Include train configuration in folder name
+    # sampled_dir = video_labels_dir / folder_name / \
+    #     f"test_ratio_{1 - train_ratio:.2f}_num_{max_samples}_sampling_{sampling_str}_{train_config_str}"
+    
     video_labels_dir = Path(video_labels_dir)
     sampling_str = "top" if sampling == "top" else f"random_seed_{seed}"
     
-    # NEW: Build train configuration string for folder name
+    # 获取当前日期，格式为 YYYY_MM_DD
+    date_str = datetime.now().strftime("%Y_%m_%d")
+    
+    # 构建训练配置字符串
     if balance_train:
         train_config_str = "train_balanced"
     elif max_imbalance_ratio is not None:
@@ -1667,9 +1491,18 @@ def generate_pairwise_datasets(
     else:
         train_config_str = "train_fully_imbal"
     
-    # Include train configuration in folder name
-    sampled_dir = video_labels_dir / folder_name / \
-        f"test_ratio_{1 - train_ratio:.2f}_num_{max_samples}_sampling_{sampling_str}_{train_config_str}"
+    # --- 修改这里：构建新的文件夹名称 ---
+    test_ratio = 1 - train_ratio
+    # 使用 f-string 组合 test_ratio, 日期, 采样方式和训练配置
+    folder_alias = (
+        f"test_ratio_{test_ratio:.2f}_"
+        f"{date_str}_"
+        f"num_{max_samples}_"
+        f"sampling_{sampling_str}_"
+        f"{train_config_str}"
+    )
+    
+    sampled_dir = video_labels_dir / folder_name / folder_alias
     
     current_test_skip_tasks = get_test_skip_tasks(folder_name)
     test_skip_config_file = sampled_dir / "test_skip_tasks.json"
@@ -1679,18 +1512,28 @@ def generate_pairwise_datasets(
         # First time generation - create directory and save config
         print(f"📁 Creating new dataset directory: {sampled_dir.name}")
         
-
-        # Generate and sample tasks
-        original_tasks = generate_balanced_pairwise_tasks(
-            pairwise_labels=pairwise_labels,
-            root=root,
-            video_root=video_root,
-            video_labels_dir=video_labels_dir,
-            train_ratio=train_ratio,
-            labels_filename=labels_filename,
-            folder_name=folder_name,  # NEW: pass folder_name for test-skip logic
-            min_samples_threshold=min_samples_threshold # NEW: pass min_samples_threshold for ensuring the number of samples is greater than the threshold
-        )
+        if train_ratio >= 1.0:
+            # If the ratio is or larger than 1.0, directly call the simplified full extraction function
+            original_tasks = generate_all_to_train_tasks(
+                pairwise_labels=pairwise_labels,
+                root=root,
+                video_root=video_root,
+                video_labels_dir=video_labels_dir,
+                labels_filename=labels_filename,
+                folder_name=folder_name
+            )
+        else:
+            # Generate and sample tasks
+            original_tasks = generate_balanced_pairwise_tasks(
+                pairwise_labels=pairwise_labels,
+                root=root,
+                video_root=video_root,
+                video_labels_dir=video_labels_dir,
+                train_ratio=train_ratio,
+                labels_filename=labels_filename,
+                folder_name=folder_name,  # NEW: pass folder_name for test-skip logic
+                min_samples_threshold=min_samples_threshold # NEW: pass min_samples_threshold for ensuring the number of samples is greater than the threshold
+            )
         
         verify_tasks(original_tasks["train"], original_tasks["test"], original_tasks["train_videos"], original_tasks["test_videos"])
         
@@ -1790,204 +1633,8 @@ def generate_pairwise_datasets(
     }
 
 
-# def print_task_statistics(sampled_tasks):
-#     """
-#     Print statistics about the sampled tasks.
-    
-#     Args:
-#         sampled_tasks: Dictionary of sampled pairwise tasks
-#     """
-#     total_samples = 0
-    
-#     print("\n===== Task Statistics =====")
-#     print(f"{'Skill/Task':<60} {'Positive':<10} {'Negative':<10}")
-#     print("-" * 80)
-    
-#     for skill_name in sampled_tasks:
-#         print(f"\n{skill_name}:")
-#         skill_samples = 0
-        
-#         for task_name in sampled_tasks[skill_name]:
-#             pos_count = len(sampled_tasks[skill_name][task_name]["pos"])
-#             neg_count = len(sampled_tasks[skill_name][task_name]["neg"])
-#             skill_samples += pos_count
-            
-#             # Truncate task name if too long
-#             display_name = task_name
-#             if len(display_name) > 50:
-#                 display_name = display_name[:47] + "..."
-                
-#             print(f"  {display_name:<58} {pos_count:<10} {neg_count:<10}")
-        
-#         total_samples += skill_samples
-#         print(f"  {'Total skill samples:':<58} {skill_samples:<10}")
-    
-#     print("\n" + "-" * 80)
-#     print(f"{'Total benchmark samples:':<60} {total_samples:<10}")
-
-
-# def sample_from_pairwise_tasks(pairwise_tasks, max_samples=30, sampling="random", seed=0):
-#     """
-#     Sample a subset of videos from pairwise tasks.
-    
-#     Args:
-#         pairwise_tasks: Dictionary of pairwise tasks
-#         max_samples: Maximum number of samples per task (default: 30)
-#         sampling: Sampling method, either "random" or "top" (default: "random")
-#         seed: Random seed for reproducibility (default: 0)
-        
-#     Returns:
-#         Dictionary of sampled pairwise tasks
-#     """
-#     assert sampling in ["random", "top"], "Sampling method must be 'random' or 'top'"
-    
-#     # Create a deep copy to avoid modifying the original
-#     sampled_tasks = pairwise_tasks.copy()
-    
-#     for skill_name, skill_tasks in sampled_tasks.items():
-#         for task_name, task_data in skill_tasks.items():
-#             pos_videos = task_data["pos"]
-#             neg_videos = task_data["neg"]
-            
-#             # Determine number of samples
-#             sample_count = min(max_samples, len(pos_videos), len(neg_videos))
-            
-#             if sampling == "random":
-#                 # Use random sampling with seed for reproducibility
-#                 random.seed(seed)
-#                 sampled_tasks[skill_name][task_name]["pos"] = random.sample(pos_videos, sample_count)
-#                 sampled_tasks[skill_name][task_name]["neg"] = random.sample(neg_videos, sample_count)
-#             else:  # "top" sampling
-#                 # Take the first N videos
-#                 sampled_tasks[skill_name][task_name]["pos"] = pos_videos[:sample_count]
-#                 sampled_tasks[skill_name][task_name]["neg"] = neg_videos[:sample_count]
-                
-#     return sampled_tasks
-
-
-# def get_sampled_tasks_dir(video_labels_dir, max_samples=30, sampling="random", seed=0, folder_name="pairwise_tasks"):
-#     """
-#     Get the directory for sampled tasks.
-    
-#     Args:
-#         video_labels_dir: Directory containing video labels
-#         max_samples: Maximum number of samples per task
-#         sampling: Sampling method
-#         seed: Random seed
-#         folder_name: Folder name for pairwise tasks
-        
-#     Returns:
-#         Path to the sampled tasks directory
-#     """
-#     video_labels_dir = Path(video_labels_dir)
-#     sampled_dir = video_labels_dir / folder_name / f"sampled_{sampling}_num_{max_samples}_seed_{seed}"
-#     return sampled_dir
-
-
-# def generate_pairwise_benchmark(
-#     sampling="random",
-#     max_samples=30,
-#     seed=42,
-#     root=None,
-#     video_root=None,
-#     video_labels_dir=None,
-#     labels_filename="label_names.json",
-#     pairwise_labels=None,
-# ):
-#     """
-#     Generate a pairwise benchmark by sampling from pairwise tasks.
-    
-#     Args:
-#         pairwise_labels: Dictionary containing skill and task definitions
-#         sampling: Sampling method, either "random" or "top"
-#         max_samples: Maximum number of samples per task
-#         seed: Random seed for reproducibility
-#         root: Root directory
-#         video_root: Video root directory
-#         video_labels_dir: Directory containing video labels
-#         labels_filename: Filename for labels
-#         mode: Benchmark mode
-        
-#     Returns:
-#         Tuple of (sampled_tasks, sampled_config)
-#     """
-#     # Get the directory for sampled tasks
-#     sampled_dir = get_sampled_tasks_dir(
-#         video_labels_dir=video_labels_dir,
-#         max_samples=max_samples,
-#         sampling=sampling,
-#         seed=seed
-#     )
-    
-#     # Check if sampled tasks already exist
-#     if not sampled_dir.exists():
-#         # Generate and sample tasks
-#         pairwise_tasks = generate_pairwise_tasks(
-#             pairwise_labels=pairwise_labels,
-#             root=root,
-#             video_root=video_root,
-#             video_labels_dir=video_labels_dir,
-#             labels_filename=labels_filename
-#         )
-        
-#         sampled_tasks = sample_from_pairwise_tasks(
-#             pairwise_tasks,
-#             max_samples=max_samples,
-#             sampling=sampling,
-#             seed=seed
-#         )
-        
-#         # Save configuration and tasks
-#         sampled_config = {
-#             "max_samples": max_samples,
-#             "sampling": sampling,
-#             "seed": seed,
-#             "video_labels_dir": str(video_labels_dir),
-#             "root": str(root),
-#             "video_root": str(video_root),
-#             "pairwise_labels": pairwise_labels
-#         }
-        
-#         # Create directory and save files
-#         sampled_dir.mkdir(parents=True, exist_ok=True)
-        
-#         with open(sampled_dir / "sampled_config.json", "w") as f:
-#             json.dump(sampled_config, f, indent=4)
-            
-#         with open(sampled_dir / "sampled_tasks.json", "w") as f:
-#             json.dump(sampled_tasks, f, indent=4)
-#     else:
-#         # Load existing sampled tasks and config
-#         with open(sampled_dir / "sampled_tasks.json", "r") as f:
-#             sampled_tasks = json.load(f)
-            
-#         with open(sampled_dir / "sampled_config.json", "r") as f:
-#             sampled_config = json.load(f)
-    
-#     return sampled_tasks, sampled_config
-
 
 if __name__ == "__main__":
-    # Import constants from config
-    # Generate the benchmark
-    # sampled_tasks, sampled_config = generate_pairwise_benchmark(
-    #     pairwise_labels=PAIRWISE_LABELS,
-    #     sampling=SAMPLING,
-    #     max_samples=MAX_SAMPLES,
-    #     seed=SEED,
-    #     root=ROOT,
-    #     video_root=VIDEO_ROOT,
-    #     video_labels_dir=VIDEO_LABELS_DIR,
-    #     labels_filename="label_names.json"
-    # )
-    
-    # import argparse
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("--max_samples", type=int, default=MAX_SAMPLES, help="A (rough) maximum number of (test) samples per task")
-    # parser.add_argument("--folder_name", type=str, default="motion_dataset", 
-    #                     choices=FOLDER_NAMES,
-    #                     help="Folder name for the dataset")
-    # args = parser.parse_args()
     
     import argparse
     parser = argparse.ArgumentParser(
