@@ -823,7 +823,7 @@ def generate_balanced_pairwise_tasks(
     labels_filename="label_names.json",
     folder_name="motion_dataset",
     min_samples_threshold=None,
-    split_log_path='./syc_log.jsonl',
+    split_log_path=None,
 ):
     """
     Generate balanced pairwise tasks with a global video-level train/test split.

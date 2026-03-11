@@ -1,0 +1,7 @@
+{
+    "label": "cam_motion.scene_movement.static_scene",
+    "label_name": "Static Scene",
+    "definition": "Is the scene in the video completely static?",
+    "pos": [],
+    "neg": []
+}

@@ -14,6 +14,7 @@ caption/credentials.json
 caption/credentials_token.json
 temp_videos/
 shotbench_viewer/media/
+video_labels/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

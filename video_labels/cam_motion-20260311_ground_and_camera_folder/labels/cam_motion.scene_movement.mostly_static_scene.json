@@ -1,0 +1,7 @@
+{
+    "label": "cam_motion.scene_movement.mostly_static_scene",
+    "label_name": "Mostly Static Scene",
+    "definition": "Is the scene in the video mostly static with minimal movement?",
+    "pos": [],
+    "neg": []
+}

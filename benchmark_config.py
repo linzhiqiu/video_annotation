@@ -42,7 +42,7 @@ FOLDERS = {
     "camerabench_pro": {
         "description": "CameraBench Pro without camera-centric motion analysis",
         "test_skip_tasks": [
-            "focus_from_background_to_middle_ground"
+            "focus_from_background_to_middle_ground",
             "is_shot_size_applicable",
             "is_subject_height_applicable",
             "is_height_wrt_ground_applicable",

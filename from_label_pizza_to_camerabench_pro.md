@@ -12,6 +12,7 @@ Then build your environment following the `README.md` under this repo.
 ### 2. Clone LabelPizza repo
 
 ```bash
+cd ..
 # Omit building conda environment here
 # clone and set up
 git clone https://github.com/linzhiqiu/label_pizza.git
@@ -20,24 +21,30 @@ cd label_pizza
 
 Then build your environment following the `README.md` under this repo.
 
-### 3. Export videos and raw annotating labels
+### 3. Export videos and raw annotating labels (under `label_pizza` repo)
 
 ```python
+import os
+
+WORKSPACE_FOLDER = "./workspace_0311"
+
+os.makedirs(WORKSPACE_FOLDER, exist_ok=True) # Or you can use your own workspace folder
+
 from label_pizza.db import init_database
-init_database("DBURL")
+init_database("DBURL") # You can use your own DBURL
 
 from label_pizza.export_utils import export_videos
-export_videos(output_path="./workspace/videos.json")
+export_videos(output_path=f"{WORKSPACE_FOLDER}/videos.json")
 
 from label_pizza.export_utils import export_ground_truths
-export_ground_truths(output_folder="./workspace/ground_truths")
+export_ground_truths(output_folder=f"{WORKSPACE_FOLDER}/ground_truths")
 ```
 
 ### 4. Modify annotating labels to caption labels
 
 ```bash
 # Go back to Video Annotation repo
-cd ..
+cd ../video_annotation
 ```
 
 Run `python transfer_caption_labels.py`
@@ -93,11 +100,11 @@ First, edit `benchmark_config.py` to add your newest folders:
 
 ```
 # Update these lines in benchmark_config.py:
-CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-20260311_ground_folder"
-CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-20260311_setup_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-20260311_ground_and_setup_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-20260311_ground_and_camera_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-20260311_ground_and_camera_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-<YYYYMMDD>_ground_folder"
+CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-<YYYYMMDD>_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-<YYYYMMDD>_ground_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-<YYYYMMDD>_ground_and_camera_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-<YYYYMMDD>_ground_and_camera_and_setup_folder"
 ```
 
 #### 6.2. Run benchmark generation
@@ -158,7 +165,10 @@ Run the following code to check the rare labels:
 ```python
 import json
 
-with open('./video_labels/camerabench_pro/test_ratio_0.20_<YYYY_MM_DD>_num_20_sampling_random_seed_0_train_posneg_max_ratio_3.0/sampled_tasks.json', 'r') as f:
+YYYYMMDD = "2026_03_11"
+sample_task_folder = f'./video_labels/camerabench_pro/test_ratio_0.20_{YYYYMMDD}_num_20_sampling_random_seed_0_train_posneg_max_ratio_3.0'
+
+with open(f'{sample_task_folder}/sampled_tasks.json', 'r') as f:
     sampled_tasks = json.load(f)
 
 test_tasks = sampled_tasks['test']
@@ -205,7 +215,7 @@ Run `python remove_rare_labels_testset.py --json_path path/to/sampled_tasks.json
 
 For example, run `python remove_rare_labels_testset.py --json_path ./video_labels/camerabench_pro/test_ratio_0.20_2026_03_11_num_20_sampling_random_seed_0_train_posneg_max_ratio_3.0/sampled_tasks.json`
 
-### 9. Add rack focus into 8:2 and 10:0 dataset
+<!-- ### 9. Add rack focus into 8:2 and 10:0 dataset
 
 ```bash
 # Add rack focus videos (default: split across train/test)
@@ -234,7 +244,7 @@ and
 python add_rack_focus.py --json_path ./video_labels/camerabench_pro/test_ratio_0.00_2026_03_11_num_20_sampling_random_seed_0_train_posneg_max_ratio_3.0/sampled_tasks.json --is_full_train True
 ```
 
-Separately.
+Separately. -->
 
 ### 10. Generate rare labels
 
