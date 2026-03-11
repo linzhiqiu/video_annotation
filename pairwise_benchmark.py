@@ -12,6 +12,8 @@ from benchmark_config import (
     get_test_skip_tasks,
     get_folder_description
 )
+import os
+from dotenv import load_dotenv
 
 # SAMPLING = "random"
 SAMPLING = "top"
@@ -21,6 +23,69 @@ MAX_SAMPLES = 80
 # MAX_SAMPLES = 50
 SEED = 0
 TRAIN_RATIO = 0.5
+
+
+def push_dataset_to_hf(sampled_dir: Path, folder_alias: str, repo_id: str = "zhiqiulin/camerabench_pro"):
+    """
+    Push the generated dataset files to a HuggingFace dataset repo in a single commit.
+    Reads HF_TOKEN from .env file.
+    """
+    load_dotenv()
+    hf_token = os.getenv("HF_TOKEN")
+    if not hf_token:
+        print("⚠️  HF_TOKEN not found in .env, skipping HuggingFace upload.")
+        return
+
+    try:
+        from huggingface_hub import HfApi, CommitOperationAdd
+    except ImportError:
+        print("⚠️  huggingface_hub not installed. Run: pip install huggingface_hub")
+        return
+
+    api = HfApi(token=hf_token)
+
+    # Ensure repo exists (creates if missing, no-op if it does)
+    api.create_repo(
+        repo_id=repo_id,
+        repo_type="dataset",
+        exist_ok=True,
+        private=False,
+    )
+
+    # Files to upload
+    files_to_upload = [
+        "sampled_tasks.json",
+        "original_tasks.json",
+        "sampled_config.json",
+        "test_skip_tasks.json",
+    ]
+
+    operations = []
+    for filename in files_to_upload:
+        local_path = sampled_dir / filename
+        if local_path.exists():
+            operations.append(
+                CommitOperationAdd(
+                    path_in_repo=f"{folder_alias}/{filename}",
+                    path_or_fileobj=str(local_path),
+                )
+            )
+            print(f"  📦 Queued: {filename}")
+        else:
+            print(f"  ⚠️  Missing (skipped): {filename}")
+
+    if not operations:
+        print("⚠️  No files to upload.")
+        return
+
+    # Single commit for all files
+    api.create_commit(
+        repo_id=repo_id,
+        repo_type="dataset",
+        operations=operations,
+        commit_message=f"[add] {folder_alias}",
+    )
+    print(f"✅ Pushed {len(operations)} files to hf.co/datasets/{repo_id}/{folder_alias}")
 
 def get_pairwise_scores(scores_matrix):
     """
@@ -1583,6 +1648,8 @@ def generate_pairwise_datasets(
                 "created_at": datetime.now().isoformat()
             }, f, indent=4)
         print(f"✅ Saved test-skip configuration to {test_skip_config_file.name}")
+
+        push_dataset_to_hf(sampled_dir, folder_alias)
         
     else:
         # Dataset exists - validate test-skip configuration
