@@ -1,0 +1,8 @@
+{
+    "video_id": "oRt5NPY7yYA.0.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery video. The clip begins with a top-down aerial view of a long, concrete entrance to an underground structure in a desert landscape. The camera then pulls back and pans to reveal the surrounding area, showing a wider view of the arid complex with roads and distant buildings.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-01T03:46:56.744672"
+}

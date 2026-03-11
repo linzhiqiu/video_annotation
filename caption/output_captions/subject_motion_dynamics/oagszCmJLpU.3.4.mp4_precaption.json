@@ -1,0 +1,8 @@
+{
+    "video_id": "oagszCmJLpU.3.4.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot of a massive, dark storm cloud looming over a vibrant green field. A powerful bolt of lightning flashes from within the storm, briefly illuminating the distant town on the horizon. The dramatic, greenish-blue sky enhances the ominous and powerful atmosphere of the scene.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-02-28T07:43:30.351689"
+}

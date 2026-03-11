@@ -1,0 +1,8 @@
+{
+    "video_id": "l5RWa1D00ck.0.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, wide shot of a cobblestone square at dusk, bathed in a cool blue light. Several vintage buses are parked in a row with their headlights on, illuminating a woman in a light-colored dress standing between them. In the foreground, the silhouette of a child is seen from behind, observing the scene.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-01T00:00:42.616845"
+}

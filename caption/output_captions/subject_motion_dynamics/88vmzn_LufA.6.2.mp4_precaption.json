@@ -1,0 +1,8 @@
+{
+    "video_id": "88vmzn_LufA.6.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot of a city street from a high-angle perspective. A dense cloud of grey smoke fills the street, obscuring much of the view. A crosswalk, a sidewalk with two traffic cones, and the corner of a modern building are visible through the haze.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-05T03:13:08.535759"
+}
