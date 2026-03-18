@@ -1,0 +1,8 @@
+{
+    "video_id": "msq-gMZljU0_04_16_04_17.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot of a tranquil underwater environment. The camera is stationary, providing a wide view of the ocean floor. There is no significant subject motion in the clip.\n\nThe scene is dominated by large, rounded boulders, some of which are covered in green moss and brown, shelf-like growths. Between the rocks, the seafloor is carpeted with vibrant green seagrass. In the background, the water is a deep blue, with rays of sunlight filtering down from the surface, illuminating the water. A few small, indistinct fish can be seen swimming in the distance.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-16T00:26:54.471731"
+}

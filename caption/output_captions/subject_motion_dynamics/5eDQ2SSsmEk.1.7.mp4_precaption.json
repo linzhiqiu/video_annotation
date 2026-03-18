@@ -1,0 +1,8 @@
+{
+    "video_id": "5eDQ2SSsmEk.1.7.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot of a dark, futuristic industrial landscape at night. A massive, illuminated vessel hovers in the foggy sky above other blocky, hovering structures and cranes. The entire scene is shrouded in a thick, atmospheric haze, punctuated by glowing blue and white lights, creating a moody, dystopian sci-fi aesthetic.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-16T08:48:02.569433"
+}
