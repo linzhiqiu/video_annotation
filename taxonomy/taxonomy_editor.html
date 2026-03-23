@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CameraBench-Pro Taxonomy Editor</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #070b12;
+            color: #e2e8f0;
+            font-family: 'DM Mono', 'JetBrains Mono', monospace
+        }
+
+        .btn {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            border: 1px solid #1e293b;
+            background: #1e293b50;
+            color: #94a3b8
+        }
+
+        .btn:hover {
+            border-color: #334155;
+            color: #cbd5e1
+        }
+
+        .btn.active {
+            border-color: #f59e0b40;
+            background: #f59e0b12;
+            color: #fcd34d
+        }
+
+        .btn.green {
+            border-color: #10b98150;
+            background: #10b98112;
+            color: #6ee7b7
+        }
+
+        .btn.purple {
+            border-color: #7c3aed40;
+            background: #7c3aed12;
+            color: #c4b5fd
+        }
+
+        .btn.cyan {
+            border-color: #06b6d450;
+            background: #06b6d412;
+            color: #67e8f9
+        }
+
+        .tree-row {
+            display: flex;
+            align-items: center;
+            padding: 2px 8px;
+            cursor: pointer;
+            border-radius: 4px
+        }
+
+        .tree-row:hover {
+            background: #ffffff05
+        }
+
+        .label-row {
+            display: flex;
+            align-items: center;
+            padding: 2px 8px
+        }
+
+        .label-row:hover {
+            background: #ffffff03
+        }
+
+        .badge {
+            font-size: 8px;
+            font-family: monospace;
+            padding: 0 4px;
+            border-radius: 3px;
+            line-height: 16px
+        }
+
+        .badge-dis {
+            background: #7f1d1d40;
+            border: 1px solid #b91c1c55;
+            color: #fca5a5
+        }
+
+        .badge-mrg {
+            background: #581c8740;
+            border: 1px solid #7c3aed55;
+            color: #c4b5fd
+        }
+
+        .edit-panel {
+            position: fixed;
+            right: 16px;
+            top: 80px;
+            width: 480px;
+            max-height: calc(100vh - 100px);
+            overflow: auto;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 14px 16px;
+            z-index: 100;
+            box-shadow: 0 8px 32px #00000080
+        }
+
+        .field-input {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            padding: 4px 6px;
+            font-size: 11px;
+            color: #cbd5e1;
+            font-family: inherit;
+            resize: vertical;
+            outline: none
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1e293b40;
+            border: 1px solid #1e293b;
+            border-radius: 5px;
+            padding: 3px 8px
+        }
+
+        #json-editor {
+            flex: 1;
+            resize: none;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 10px;
+            line-height: 1.45;
+            color: #7b8fb5;
+            font-family: 'DM Mono', 'JetBrains Mono', monospace;
+            tab-size: 2
+        }
+
+        .divider {
+            width: 6px;
+            cursor: col-resize;
+            background: #1e293b;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 5
+        }
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 1px;
+            width: 4px;
+            height: 32px;
+            border-radius: 2px;
+            background: #334155;
+            transform: translateY(-50%)
+        }
+
+        .loading-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 16px
+        }
+
+        .loading-screen h2 {
+            font-family: 'DM Sans', sans-serif;
+            color: #fcd34d;
+            font-size: 18px
+        }
+
+        .loading-screen p {
+            color: #475569;
+            font-size: 12px
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #1e293b;
+            border-top-color: #f59e0b;
+            border-radius: 50%;
+            animation: spin .8s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .error-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 12px;
+            padding: 40px;
+            text-align: center
+        }
+
+        .error-screen h2 {
+            font-family: 'DM Sans', sans-serif;
+            color: #f87171;
+            font-size: 16px
+        }
+
+        .error-screen pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 11px;
+            color: #94a3b8;
+            max-width: 600px;
+            overflow-x: auto;
+            text-align: left
+        }
+
+        .error-screen .hint {
+            color: #475569;
+            font-size: 11px;
+            max-width: 500px;
+            line-height: 1.6
+        }
+
+        .tut-md {
+            font-size: 12px;
+            line-height: 1.65;
+            color: #94a3b8;
+            font-family: 'DM Sans', sans-serif
+        }
+
+        .tut-md h1 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fcd34d;
+            margin: 0 0 8px 0;
+            font-family: 'DM Sans', sans-serif
+        }
+
+        .tut-md p {
+            margin: 0 0 8px 0
+        }
+
+        .tut-md strong {
+            color: #e2e8f0;
+            font-weight: 600
+        }
+
+        .tut-md em {
+            color: #b8c5d8;
+            font-style: italic
+        }
+
+        .tut-md a {
+            color: #60a5fa;
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        .tut-md a:hover {
+            color: #93bbfc
+        }
+
+        .tut-md .tax-link {
+            color: #fbbf24;
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+            padding: 0
+        }
+
+        .tut-md .tax-link:hover {
+            color: #fde68a
+        }
+
+        .tut-md ul {
+            margin: 4px 0 8px 0;
+            padding-left: 18px
+        }
+
+        .tut-md li {
+            margin: 2px 0;
+            color: #64748b
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        async function loadTaxonomyFiles() {
+            const result = { datasets: {}, errors: [] };
+            let files = null;
+            try { const r = await fetch('/manifest'); if (r.ok) files = await r.json() } catch (e) { }
+            if (files && Array.isArray(files)) {
+                for (const f of files) {
+                    try {
+                        const r = await fetch('./' + f); if (!r.ok) continue; const d = await r.json(); if (!d.properties) continue;
+                        let name = f.replace('taxonomy_', '').replace('.json', '');
+                        if (name === 'v1_original') name = 'V1 Original';
+                        else name = name.toUpperCase();
+                        result.datasets[name] = d
+                    } catch (e) { result.errors.push(f + ': ' + e.message) }
+                }
+            } else {
+                const fallback = ['taxonomy_v1_original.json', 'taxonomy_v2.json'];
+                for (const f of fallback) {
+                    try {
+                        const r = await fetch('./' + f); if (!r.ok) continue; const d = await r.json(); if (!d.properties) continue;
+                        const name = f === 'taxonomy_v1_original.json' ? 'V1 Original' : 'V2';
+                        result.datasets[name] = d
+                    } catch (e) { }
+                }
+            }
+            return result
+        }
+        async function saveToServer(filename, data) {
+            try {
+                const r = await fetch('/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ filename, data }) });
+                if (!r.ok) throw new Error('HTTP ' + r.status); return await r.json()
+            }
+            catch (e) { return { ok: false, error: e.message } }
+        }
+    </script>
+    <script type="text/babel">
+        const { useState, useMemo, useCallback, useRef, useEffect } = React;
+        function stats(d) { let t = 0, a = 0, dis = 0, m = 0; const w = n => { (n.labels || []).forEach(l => { t++; l.disabled ? dis++ : a++; if (l.merged) m++ }); (n.children || []).forEach(w) }; (d.properties || []).forEach(w); return { t, a, d: dis, m, p: (d.properties || []).length } }
+        function mkDiffMap(a, b) { const map = new Map(), al = new Map(), ag = new Map(); const w1 = n => { ag.set(n.id, n.display_name?.en); (n.labels || []).forEach(l => al.set(l.id, l.display_name?.en)); (n.children || []).forEach(w1) }; (a.properties || []).forEach(w1); const w2 = n => { const o = ag.get(n.id); if (o && o !== n.display_name?.en) map.set("g" + n.id, { o, n: n.display_name?.en }); (n.labels || []).forEach(l => { const o2 = al.get(l.id); if (o2 && o2 !== l.display_name?.en) map.set("l" + l.id, { o: o2, n: l.display_name?.en }) }); (n.children || []).forEach(w2) }; (b.properties || []).forEach(w2); return map }
+        function buildLabelIndex(d) { const idx = new Map(); const w = n => { (n.labels || []).forEach(l => idx.set(l.id, l)); (n.children || []).forEach(w) }; (d.properties || []).forEach(w); return idx }
+        function deepUpdateLabel(data, labelId, updater) { const d = JSON.parse(JSON.stringify(data)); const w = n => { for (let i = 0; i < (n.labels || []).length; i++) { if (n.labels[i].id === labelId) { updater(n.labels[i]); return true } } for (const c of (n.children || [])) { if (w(c)) return true } return false }; for (const p of d.properties) { if (w(p)) break } return d }
+        function deepUpdateFolder(data, folderId, updater) { const d = JSON.parse(JSON.stringify(data)); const w = n => { if (n.id === folderId) { updater(n); return true } for (const c of (n.children || [])) { if (w(c)) return true } return false }; for (const p of d.properties) { if (w(p)) break } return d }
+        function DiffLine({ o, n }) { if (!o || o === n) return null; return React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 4, marginTop: 2, paddingLeft: 4, fontSize: 10 } }, React.createElement('span', { style: { color: '#f87171', opacity: .55, textDecoration: 'line-through' } }, o), React.createElement('span', { style: { color: '#475569' } }, '→'), React.createElement('span', { style: { color: '#fbbf24', opacity: .75 } }, n)) }
+
+        function TutorialMarkdown({ text, labelIndex, onLabelClick }) {
+            if (!text) return React.createElement('span', { style: { color: '#334155', fontStyle: 'italic', fontSize: 11 } }, 'empty');
+            const lines = text.split('\n'); const blocks = []; let i = 0;
+            while (i < lines.length) {
+                const line = lines[i];
+                if (line.startsWith('# ')) { blocks.push({ type: 'h1', text: line.slice(2) }); i++ }
+                else if (line.startsWith('- ')) { const items = []; while (i < lines.length && lines[i].startsWith('- ')) { items.push(lines[i].slice(2)); i++ } blocks.push({ type: 'ul', items }) }
+                else if (line.trim() === '') { i++ }
+                else { let para = line; i++; while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('# ') && !lines[i].startsWith('- ')) { para += '\n' + lines[i]; i++ } blocks.push({ type: 'p', text: para }) }
+            }
+            function fmtText(str, k) {
+                const p = []; const re2 = /\*\*(.+?)\*\*|\*([^*\n]+?)\*/g; let l2 = 0, m2;
+                while ((m2 = re2.exec(str)) !== null) {
+                    if (m2.index > l2) p.push(React.createElement('span', { key: k.v++ }, str.slice(l2, m2.index)));
+                    if (m2[1]) p.push(React.createElement('strong', { key: k.v++ }, m2[1]));
+                    else if (m2[2]) p.push(React.createElement('em', { key: k.v++, style: { fontStyle: 'italic', color: '#b8c5d8' } }, m2[2]));
+                    l2 = m2.index + m2[0].length;
+                }
+                if (l2 < str.length) p.push(React.createElement('span', { key: k.v++ }, str.slice(l2))); return p;
+            }
+            function parseInline(str) {
+                const parts = []; const k = { v: 0 }; const re = /\*\*(.+?)\*\*|\*([^*\n]+?)\*|\[([^\]]+)\]\(taxonomy:(\d+)\)|\[([^\]]+)\]\(([^()\s]*(?:\([^)]*\))*[^()\s]*)\)/g; let last = 0, m;
+                while ((m = re.exec(str)) !== null) {
+                    if (m.index > last) parts.push(React.createElement('span', { key: k.v++ }, str.slice(last, m.index)));
+                    if (m[1]) parts.push(React.createElement('strong', { key: k.v++ }, m[1]));
+                    else if (m[2]) parts.push(React.createElement('em', { key: k.v++, style: { fontStyle: 'italic', color: '#b8c5d8' } }, m[2]));
+                    else if (m[3] && m[4]) { const id = parseInt(m[4]); const target = labelIndex?.get(id); parts.push(React.createElement('button', { key: k.v++, className: 'tax-link', onClick: () => onLabelClick?.(id), title: target ? target.display_name?.en : '#' + id }, ...fmtText(m[3], k))) }
+                    else if (m[5] && m[6]) parts.push(React.createElement('a', { key: k.v++, href: m[6], target: '_blank', rel: 'noopener noreferrer' }, ...fmtText(m[5], k)));
+                    last = m.index + m[0].length;
+                }
+                if (last < str.length) parts.push(React.createElement('span', { key: k.v++ }, str.slice(last))); return parts;
+            }
+            return React.createElement('div', { className: 'tut-md' }, blocks.map((b, bi) => {
+                if (b.type === 'h1') return React.createElement('h1', { key: bi }, b.text);
+                if (b.type === 'p') return React.createElement('p', { key: bi }, ...parseInline(b.text));
+                if (b.type === 'ul') return React.createElement('ul', { key: bi }, b.items.map((item, ii) => React.createElement('li', { key: ii }, ...parseInline(item))));
+                return null;
+            }));
+        }
+
+        function FolderEditPanel({ folder, onClose, onUpdate }) {
+            const ref = useRef(null);
+            useEffect(() => { const h = e => { if (ref.current && !ref.current.contains(e.target)) onClose() }; document.addEventListener('mousedown', h); return () => document.removeEventListener('mousedown', h) }, [onClose]);
+            const [editing, setEditing] = useState(null); const [editVal, setEditVal] = useState('');
+            const startEdit = (field, val) => { setEditing(field); setEditVal(val || '') };
+            const saveEdit = () => { if (!editing) return; onUpdate(folder.id, editing, editVal); setEditing(null) };
+            const fieldRow = (lbl, field, value) => {
+                const isEd = editing === field;
+                return React.createElement('div', { style: { marginBottom: 8 } },
+                    React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 8, fontSize: 9, color: '#475569', marginBottom: 3 } },
+                        React.createElement('span', null, lbl),
+                        !isEd && React.createElement('button', { onClick: () => startEdit(field, value), style: { background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', padding: 0, fontSize: 9 } }, '✏️')),
+                    isEd ? React.createElement('div', { style: { display: 'flex', gap: 4 } },
+                        React.createElement('input', { value: editVal, onChange: e => setEditVal(e.target.value), className: 'field-input' }),
+                        React.createElement('div', { style: { display: 'flex', gap: 4 } },
+                            React.createElement('button', { onClick: saveEdit, className: 'btn green', style: { fontSize: 9 } }, 'Save'),
+                            React.createElement('button', { onClick: () => setEditing(null), className: 'btn', style: { fontSize: 9 } }, 'Cancel')))
+                        : React.createElement('div', { style: { fontSize: 12, color: '#94a3b8', lineHeight: 1.5, minHeight: 16 } }, value || React.createElement('span', { style: { color: '#334155', fontStyle: 'italic' } }, 'empty')))
+            };
+            return React.createElement('div', { ref, className: 'edit-panel', style: { fontSize: 12, color: '#94a3b8', width: 360 } },
+                React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 } },
+                    React.createElement('div', null,
+                        React.createElement('div', { style: { fontWeight: 700, color: '#cbd5e1', fontSize: 14, fontFamily: "'DM Sans',sans-serif" } }, '📁 ' + folder.display_name?.en),
+                        folder.display_name?.zh && React.createElement('div', { style: { fontSize: 12, color: '#94a3b8', marginTop: 1 } }, folder.display_name?.zh),
+                        React.createElement('div', { style: { fontSize: 10, color: '#64748b', marginTop: 2 } }, 'Folder ID: ' + folder.id)),
+                    React.createElement('button', { onClick: onClose, style: { background: 'none', border: 'none', cursor: 'pointer', color: '#475569', padding: 2, fontSize: 16 } }, '✕')),
+                fieldRow('Name (EN)', 'en', folder.display_name?.en),
+                fieldRow('Name (ZH)', 'zh', folder.display_name?.zh),
+                React.createElement('div', { style: { fontSize: 9, color: '#334155', marginTop: 8 } },
+                    'disabled: ' + (folder.disabled ? 'true' : 'false')))
+        }
+
+        function EditPanel({ label, onClose, labelIndex, onLabelClick, lang, onUpdate }) {
+            const ref = useRef(null);
+            useEffect(() => { const h = e => { if (ref.current && !ref.current.contains(e.target)) onClose() }; document.addEventListener('mousedown', h); return () => document.removeEventListener('mousedown', h) }, [onClose]);
+            const cls = label.classifier_names || []; const [editing, setEditing] = useState(null); const [editVal, setEditVal] = useState('');
+            const startEdit = (field, val) => { setEditing(field); setEditVal(val || '') }; const saveEdit = () => { if (!editing) return; onUpdate(label.id, editing, editVal); setEditing(null) };
+            const fieldRow = (lbl, field, value) => {
+                const isEd = editing === field; const isTut = field.includes('tutorial');
+                return React.createElement('div', { style: { marginBottom: 8 } },
+                    React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 8, fontSize: 9, color: '#475569', marginBottom: 3 } },
+                        React.createElement('span', null, lbl),
+                        !isEd && React.createElement('button', { onClick: () => startEdit(field, value), style: { background: 'none', border: 'none', cursor: 'pointer', color: '#64748b', padding: 0, fontSize: 9 } }, '✏️')),
+                    isEd ? React.createElement('div', { style: { display: 'flex', gap: 4 } },
+                        React.createElement('textarea', { value: editVal, onChange: e => setEditVal(e.target.value), rows: isTut ? 8 : 1, className: 'field-input', style: { minHeight: isTut ? 120 : undefined } }),
+                        React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 4 } },
+                            React.createElement('button', { onClick: saveEdit, className: 'btn green', style: { fontSize: 9 } }, 'Save'),
+                            React.createElement('button', { onClick: () => setEditing(null), className: 'btn', style: { fontSize: 9 } }, 'Cancel')))
+                        : isTut ? React.createElement(TutorialMarkdown, { text: value, labelIndex, onLabelClick })
+                            : React.createElement('div', { style: { fontSize: 11, color: '#94a3b8', lineHeight: 1.5, minHeight: 16 } }, value || React.createElement('span', { style: { color: '#334155', fontStyle: 'italic' } }, 'empty')))
+            };
+            return React.createElement('div', { ref, className: 'edit-panel', style: { fontSize: 12, color: '#94a3b8' } },
+                React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 } },
+                    React.createElement('div', null,
+                        React.createElement('div', { style: { fontWeight: 700, color: '#fcd34d', fontSize: 14, fontFamily: "'DM Sans',sans-serif" } }, label.display_name?.en),
+                        label.display_name?.zh && React.createElement('div', { style: { fontSize: 12, color: '#94a3b8', marginTop: 1 } }, label.display_name?.zh),
+                        React.createElement('div', { style: { fontSize: 10, color: '#64748b', marginTop: 2 } }, 'ID: ' + label.id + ' | raw: ' + label.raw_name)),
+                    React.createElement('button', { onClick: onClose, style: { background: 'none', border: 'none', cursor: 'pointer', color: '#475569', padding: 2, fontSize: 16 } }, '✕')),
+                React.createElement('div', { style: { borderBottom: '1px solid #1e293b', marginBottom: 8, paddingBottom: 8 } }, fieldRow('Name (EN)', 'display_name.en', label.display_name?.en), fieldRow('Name (ZH)', 'display_name.zh', label.display_name?.zh)),
+                React.createElement('div', { style: { borderBottom: '1px solid #1e293b', marginBottom: 8, paddingBottom: 8 } }, fieldRow('Tutorial (EN)', 'tutorial.en', label.tutorial?.en), fieldRow('Tutorial (ZH)', 'tutorial.zh', label.tutorial?.zh)),
+                cls.length > 0 && React.createElement('div', { style: { marginBottom: 8 } },
+                    React.createElement('div', { style: { fontSize: 9, color: '#475569', marginBottom: 3 } }, 'Classifiers (' + cls.length + '):'),
+                    ...cls.map((c, i) => React.createElement('div', { key: i, style: { fontSize: 9, color: '#a78bfa', fontFamily: 'monospace', padding: '1px 0' } }, c))),
+                React.createElement('div', { style: { display: 'flex', gap: 12, fontSize: 9, color: '#334155' } },
+                    React.createElement('span', null, 'disabled: ' + (label.disabled ? 'true' : 'false')),
+                    React.createElement('span', null, 'merged: ' + (label.merged ? 'true' : 'false'))))
+        }
+
+        function TNode({ node, depth, exp, toggle, admin, search, dm, labelIndex, onTutClick, onFolderEdit, lang }) {
+            const isDis = node.disabled; if (!admin && isDis) return null;
+            const vLabels = useMemo(() => { let ls = node.labels || []; if (!admin) ls = ls.filter(l => !l.disabled); if (search) ls = ls.filter(l => (l.display_name?.en || '').toLowerCase().includes(search) || (l.display_name?.zh || '').includes(search) || (l.raw_name || '').toLowerCase().includes(search)); return ls }, [node.labels, admin, search]);
+            const vKids = useMemo(() => { let cs = node.children || []; if (!admin) cs = cs.filter(c => !c.disabled); return cs }, [node.children, admin]);
+            const selfMatch = search && (node.display_name?.en || '').toLowerCase().includes(search);
+            if (search && !selfMatch && vLabels.length === 0) { let deep = false; const chk = n => { if (deep) return; if ((n.display_name?.en || '').toLowerCase().includes(search)) { deep = true; return } (n.labels || []).forEach(l => { if ((l.display_name?.en || '').toLowerCase().includes(search) || (l.raw_name || '').toLowerCase().includes(search)) deep = true }); (n.children || []).forEach(chk) }; vKids.forEach(chk); if (!deep) return null }
+            const isExp = exp.has(node.id); const pad = depth * 16 + 10; const gd = dm?.get('g' + node.id); const zh = node.display_name?.zh;
+            return React.createElement('div', null,
+                React.createElement('div', { className: 'tree-row', onClick: () => toggle(node.id), style: { paddingLeft: pad, opacity: isDis ? .3 : 1, background: selfMatch ? '#78350f18' : 'transparent' } },
+                    (vKids.length > 0 || vLabels.length > 0) ? React.createElement('span', { style: { color: '#64748b', marginRight: 4, fontSize: 12, userSelect: 'none' } }, isExp ? '▾' : '▸') : React.createElement('span', { style: { width: 12, marginRight: 4 } }),
+                    React.createElement('span', { style: { fontSize: 12, fontWeight: depth === 0 ? 700 : 500, color: depth === 0 ? '#fcd34d' : '#cbd5e1', textDecoration: isDis ? 'line-through' : 'none', fontFamily: "'DM Sans',sans-serif" } }, node.display_name?.en),
+                    zh && React.createElement('span', { style: { marginLeft: 6, color: '#475569', fontSize: 10 } }, zh),
+                    isDis && admin && React.createElement('span', { className: 'badge badge-dis', style: { marginLeft: 4 } }, 'DIS'),
+                    React.createElement('button', { onClick: e => { e.stopPropagation(); onFolderEdit(node) }, style: { marginLeft: 6, background: 'none', border: 'none', cursor: 'pointer', color: '#334155', padding: 1, fontSize: 10 }, title: 'Edit folder name' }, '✏️')),
+                gd && React.createElement('div', { style: { paddingLeft: pad + 16 } }, React.createElement(DiffLine, { o: gd.o, n: gd.n })),
+                isExp && React.createElement('div', null,
+                    ...vLabels.map(label => {
+                        const ld = dm?.get('l' + label.id); const lm = search && ((label.display_name?.en || '').toLowerCase().includes(search) || (label.raw_name || '').toLowerCase().includes(search));
+                        return React.createElement('div', { key: label.id },
+                            React.createElement('div', { className: 'label-row', style: { paddingLeft: pad + 20, opacity: label.disabled ? .28 : 1, background: lm ? '#78350f12' : 'transparent' } },
+                                React.createElement('span', { style: { color: label.disabled ? '#ef4444' : '#34d399', marginRight: 6, fontSize: 9, opacity: .65 } }, '●'),
+                                React.createElement('span', { style: { fontSize: 11.5, color: label.disabled ? '#64748b' : '#94a3b8', textDecoration: label.disabled ? 'line-through' : 'none' } }, label.display_name?.en),
+                                label.display_name?.zh && React.createElement('span', { style: { marginLeft: 6, color: '#475569', fontSize: 10 } }, label.display_name?.zh),
+                                label.disabled && React.createElement('span', { className: 'badge badge-dis', style: { marginLeft: 6 } }, 'DIS'),
+                                label.merged && React.createElement('span', { className: 'badge badge-mrg', style: { marginLeft: 4 } }, 'MRG'),
+                                React.createElement('button', { onClick: e => { e.stopPropagation(); onTutClick(label) }, style: { marginLeft: 6, background: 'none', border: 'none', cursor: 'pointer', color: '#475569', padding: 1, fontSize: 10 }, title: 'View/edit' }, '📖'),
+                                React.createElement('span', { style: { marginLeft: 'auto', fontSize: 9, color: '#1e293b', fontFamily: 'monospace' } }, '#' + label.id)),
+                            ld && React.createElement('div', { style: { paddingLeft: pad + 36 } }, React.createElement(DiffLine, { o: ld.o, n: ld.n })))
+                    }),
+                    ...vKids.map(c => React.createElement(TNode, { key: c.id, node: c, depth: depth + 1, exp, toggle, admin, search, dm, labelIndex, onTutClick, onFolderEdit, lang }))))
+        }
+
+        function App() {
+            const [loading, setLoading] = useState(true); const [loadErrors, setLoadErrors] = useState([]);
+            const [builtin, setBuiltin] = useState({}); const [v1Ref, setV1Ref] = useState(null);
+            const [curName, setCurName] = useState(''); const [data, setData] = useState(null);
+            const [jsonText, setJsonText] = useState(''); const [err, setErr] = useState(null);
+            const [admin, setAdmin] = useState(true);
+            const [diff, setDiff] = useState(false); // OFF by default
+            const [search, setSearch] = useState(''); const [lang, setLang] = useState('en');
+            const [showEditor, setShowEditor] = useState(true); const [editorWidth, setEditorWidth] = useState(42);
+            const [exp, setExp] = useState(new Set()); const [editLabel, setEditLabel] = useState(null); const [editFolder, setEditFolder] = useState(null);
+            const dragging = useRef(false);
+            const [saveMsg, setSaveMsg] = useState(null);
+            const nextVer = useMemo(() => {
+                let max = 2; Object.keys(builtin).forEach(k => { const m = k.match(/^V(\d+)/); if (m) max = Math.max(max, parseInt(m[1])) }); return max + 1;
+            }, [builtin]);
+
+            useEffect(() => {
+                loadTaxonomyFiles().then(result => {
+                    const b = result.datasets; setBuiltin(b); setLoadErrors(result.errors); if (b['V1 Original']) setV1Ref(b['V1 Original']);
+                    // Pick best default: highest V number, or V1 Original
+                    const keys = Object.keys(b); const vKeys = keys.filter(k => k.match(/^V\d+$/)).sort((a, b_) => parseInt(b_.slice(1)) - parseInt(a.slice(1)));
+                    const dk = vKeys[0] || keys[0]; const dd = b[dk];
+                    if (dd) { setCurName(dk); setData(dd); setJsonText(JSON.stringify(dd, null, 2)); const s = new Set(); (dd.properties || []).forEach(p => s.add(p.id)); setExp(s) } setLoading(false)
+                })
+            }, []);
+
+            const labelIndex = useMemo(() => data ? buildLabelIndex(data) : new Map(), [data]);
+            const load = useCallback((name, d) => { setCurName(name); setData(d); setJsonText(JSON.stringify(d, null, 2)); setErr(null); const s = new Set(); (d.properties || []).forEach(p => s.add(p.id)); setExp(s) }, []);
+            const handleJson = useCallback(val => { setJsonText(val); setCurName('Editing...'); try { const p = JSON.parse(val); if (p.properties) { setData(p); setErr(null) } else setErr('Missing properties') } catch (e) { setErr(e.message) } }, []);
+            const onLabelUpdate = useCallback((labelId, field, value) => { const newData = deepUpdateLabel(data, labelId, l => { const parts = field.split('.'); if (parts.length === 2) { if (!l[parts[0]]) l[parts[0]] = {}; l[parts[0]][parts[1]] = value } }); setData(newData); setJsonText(JSON.stringify(newData, null, 2)); setCurName('Editing...'); const newIdx = buildLabelIndex(newData); const updated = newIdx.get(labelId); if (updated) setEditLabel(updated) }, [data]);
+
+            // Save: POST to server, add to version list
+            const handleSaveJson = useCallback(async () => {
+                if (!data) return;
+                const ver = nextVer;
+                const vName = 'V' + ver;
+                const fname = 'taxonomy_v' + ver + '.json';
+                setSaveMsg('Saving...');
+                const snapshot = JSON.parse(JSON.stringify(data));
+                const result = await saveToServer(fname, snapshot);
+                if (result.ok) {
+                    setBuiltin(prev => { const next = { ...prev }; next[vName] = snapshot; return next });
+                    setCurName(vName);
+                    setSaveMsg('✓ Saved ' + fname);
+                    setTimeout(() => setSaveMsg(null), 3000);
+                } else {
+                    // Fallback: browser download
+                    setSaveMsg('Server unavailable, downloading...');
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = fname;
+                    document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+                    setBuiltin(prev => { const next = { ...prev }; next[vName] = snapshot; return next });
+                    setCurName(vName);
+                    setTimeout(() => setSaveMsg(null), 3000);
+                }
+            }, [data, nextVer]);
+
+            const s = useMemo(() => data ? stats(data) : { t: 0, a: 0, d: 0, m: 0, p: 0 }, [data]);
+            const dm = useMemo(() => { if (!diff || !data) return null; const ref = v1Ref || builtin['V1 Original']; return ref ? mkDiffMap(ref, data) : null }, [diff, data, v1Ref, builtin]);
+            const toggle = useCallback(id => setExp(p => { const n = new Set(p); n.has(id) ? n.delete(id) : n.add(id); return n }), []);
+            const expandAll = useCallback(() => { if (!data) return; const s = new Set(); const w = n => { s.add(n.id); (n.children || []).forEach(w) }; (data.properties || []).forEach(w); setExp(s) }, [data]);
+            const collapse = useCallback(() => { if (!data) return; const s = new Set(); (data.properties || []).forEach(p => s.add(p.id)); setExp(s) }, [data]);
+            const onMouseDown = useCallback(e => { e.preventDefault(); dragging.current = true; const onMove = ev => { if (!dragging.current) return; const pct = (ev.clientX / window.innerWidth) * 100; setEditorWidth(Math.max(20, Math.min(70, pct))) }; const onUp = () => { dragging.current = false; document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp) }; document.addEventListener('mousemove', onMove); document.addEventListener('mouseup', onUp) }, []);
+            const onTutClick = useCallback(label => { setEditFolder(null); setEditLabel(label) }, []);
+            const onLabelClick = useCallback(id => { const label = labelIndex.get(id); if (label) { setEditFolder(null); setEditLabel(label) } }, [labelIndex]);
+            const onFolderEdit = useCallback(folder => { setEditLabel(null); setEditFolder(folder) }, []);
+            const onFolderUpdate = useCallback((folderId, field, value) => {
+                const newData = deepUpdateFolder(data, folderId, f => { if (!f.display_name) f.display_name = {}; f.display_name[field] = value });
+                setData(newData); setJsonText(JSON.stringify(newData, null, 2)); setCurName('Editing...');
+                // Re-find the folder to update the panel
+                const findF = (n) => { if (n.id === folderId) return n; for (const c of (n.children || [])) { const r = findF(c); if (r) return r } return null };
+                for (const p of newData.properties) { const f = findF(p); if (f) { setEditFolder(f); break } }
+            }, [data]);
+
+            if (loading) return React.createElement('div', { className: 'loading-screen' }, React.createElement('div', { className: 'loading-spinner' }), React.createElement('h2', null, 'CameraBench-Pro Taxonomy Editor'), React.createElement('p', null, 'Loading taxonomy files...'));
+            if (!data) return React.createElement('div', { className: 'error-screen' }, React.createElement('h2', null, 'Failed to load taxonomy files'), loadErrors.length > 0 && React.createElement('pre', null, loadErrors.join('\n')), React.createElement('div', { className: 'hint' }, 'Place taxonomy JSON files in same folder as this HTML. Run: python3 server.py'));
+
+            // Build version buttons: file-loaded first, then saved versions
+            const versionButtons = Object.entries(builtin).map(([name]) => {
+                const isSaved = name.includes('Saved');
+                return React.createElement('button', { key: name, onClick: () => load(name, builtin[name]), className: 'btn' + (curName === name ? ' active' : '') + (isSaved ? ' cyan' : '') }, name)
+            });
+
+            return React.createElement('div', { style: { minHeight: '100vh', display: 'flex', flexDirection: 'column' } },
+                React.createElement('div', { style: { borderBottom: '1px solid #1e293b', background: '#0a0f1a', padding: '8px 14px', position: 'sticky', top: 0, zIndex: 20 } },
+                    React.createElement('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 } },
+                        React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 10 } },
+                            React.createElement('div', { style: { width: 28, height: 28, borderRadius: 5, background: '#f59e0b15', border: '1px solid #f59e0b25', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fbbf24', fontSize: 14 } }, '⎔'),
+                            React.createElement('div', null, React.createElement('h1', { style: { fontSize: 14, fontWeight: 700, color: '#f1f5f9', fontFamily: "'DM Sans'" } }, 'CameraBench-Pro Taxonomy'), React.createElement('p', { style: { fontSize: 9, color: '#475569' } }, curName))),
+                        React.createElement('div', { style: { display: 'flex', gap: 6, flexWrap: 'wrap' } },
+                            ...versionButtons,
+                            React.createElement('button', { onClick: handleSaveJson, className: 'btn green', title: 'Save to folder as new version' }, '💾 Save as V' + nextVer),
+                            saveMsg && React.createElement('span', { style: { fontSize: 9, color: saveMsg.startsWith('✓') ? '#34d399' : '#fbbf24', marginLeft: 4 } }, saveMsg))),
+                    React.createElement('div', { style: { display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' } },
+                        React.createElement('input', { type: 'text', placeholder: 'Search...', value: search, onChange: e => setSearch(e.target.value), style: { background: '#0f172a', border: '1px solid #1e293b', borderRadius: 4, padding: '4px 8px', fontSize: 10, color: '#cbd5e1', outline: 'none', fontFamily: 'inherit', flex: '1 1 160px', maxWidth: 240 } }),
+                        React.createElement('button', { onClick: () => setAdmin(!admin), className: 'btn' + (admin ? ' purple' : '') }, admin ? '👁 Admin' : '👁 User'),
+                        React.createElement('button', { onClick: () => setDiff(!diff), className: 'btn' + (diff ? ' active' : '') }, diff ? 'Diff On' : 'Diff Off'),
+                        React.createElement('button', { onClick: () => setShowEditor(!showEditor), className: 'btn' + (showEditor ? ' active' : '') }, showEditor ? 'JSON ✓' : 'JSON'),
+                        React.createElement('button', { onClick: () => setLang(l => l === 'en' ? 'zh' : 'en'), className: 'btn' }, '🌐 ' + lang.toUpperCase()),
+                        React.createElement('button', { onClick: expandAll, className: 'btn' }, 'Expand'),
+                        React.createElement('button', { onClick: collapse, className: 'btn' }, 'Collapse'))),
+                React.createElement('div', { style: { padding: '6px 14px', display: 'flex', gap: 6, flexWrap: 'wrap', borderBottom: '1px solid #1e293b30' } },
+                    ...[['Total', s.t, '#94a3b8'], ['Active', s.a, '#34d399'], ['Disabled', s.d, '#f87171'], ['Merged', s.m, '#a78bfa'], ['Properties', s.p, '#fbbf24']].map(([l, v, c]) => React.createElement('span', { key: l, className: 'pill' }, React.createElement('span', { style: { fontSize: 9, color: '#64748b' } }, l), React.createElement('span', { style: { fontSize: 12, fontWeight: 600, color: c } }, v))),
+                    dm && React.createElement('span', { className: 'pill', style: { background: '#78350f18', borderColor: '#92400e30', fontSize: 9, color: '#fbbf24' } }, '→ ' + dm.size + ' renames')),
+                React.createElement('div', { style: { display: 'flex', flex: 1, overflow: 'hidden' } },
+                    showEditor && React.createElement(React.Fragment, null,
+                        React.createElement('div', { style: { width: editorWidth + '%', minWidth: 200, display: 'flex', flexDirection: 'column', background: '#060910' } },
+                            React.createElement('div', { style: { padding: '5px 10px', borderBottom: '1px solid #1e293b30', display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+                                React.createElement('span', { style: { fontSize: 10, color: '#475569' } }, 'Full JSON'),
+                                err ? React.createElement('span', { style: { fontSize: 9, color: '#f87171' } }, '⚠ ' + err) : curName === 'Editing...' && React.createElement('span', { style: { fontSize: 9, color: '#34d399' } }, '✓ Valid')),
+                            React.createElement('textarea', { id: 'json-editor', value: jsonText, onChange: e => handleJson(e.target.value), spellCheck: false })),
+                        React.createElement('div', { className: 'divider', onMouseDown })),
+                    React.createElement('div', { style: { flex: 1, overflow: 'auto', padding: '6px 0' } },
+                        React.createElement('div', { style: { padding: '2px 14px 6px', fontSize: 10, color: '#475569' } }, (admin ? 'Admin' : 'User') + ' · ' + (admin ? s.t : s.a) + ' labels · click 📖 to view/edit'),
+                        ...(data.properties || []).map(p => React.createElement(TNode, { key: p.id, node: p, depth: 0, exp, toggle, admin, search: search.toLowerCase(), dm, labelIndex, onTutClick, onFolderEdit, lang })),
+                        React.createElement('div', { style: { padding: '14px', fontSize: 9, color: '#334155' } }, '● Active  ● Disabled  MRG = Merged classifiers'))),
+                editLabel && React.createElement(EditPanel, { label: editLabel, onClose: () => setEditLabel(null), labelIndex, onLabelClick, lang, onUpdate: onLabelUpdate }),
+                editFolder && React.createElement(FolderEditPanel, { folder: editFolder, onClose: () => setEditFolder(null), onUpdate: onFolderUpdate }))
+        }
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+</body>
+
+</html>

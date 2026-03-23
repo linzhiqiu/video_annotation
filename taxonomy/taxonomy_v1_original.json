@@ -1,0 +1,4870 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "display_order": 1,
+      "disabled": false,
+      "display_name": {
+        "en": "Cam Motion",
+        "zh": "相机运动"
+      },
+      "labels": [
+        {
+          "id": 39,
+          "raw_name": "cam_motion.has_frame_freezing",
+          "display_order": 1,
+          "disabled": false,
+          "merged": false,
+          "classifier_names": [
+            "camera_movement_speed.has_frame_freeze_or_not"
+          ],
+          "display_name": {
+            "en": "Has Frame Freezing Effect",
+            "zh": "有帧冻结效果"
+          },
+          "tutorial": {
+            "en": "A video that contains a **frame freeze effect** at some point. [label](https://example.com)",
+            "zh": "一段在某个时刻包含画面**冻结效果**的视频。[标签](https://example.com)"
+          }
+        },
+        {
+          "id": 40,
+          "raw_name": "cam_motion.has_motion_blur",
+          "display_order": 2,
+          "disabled": false,
+          "merged": false,
+          "classifier_names": [
+            "camera_movement_speed.has_motion_blur_or_not"
+          ],
+          "display_name": {
+            "en": "Has Motion Blur Effect",
+            "zh": "有运动模糊效果"
+          },
+          "tutorial": {
+            "en": "The video exhibits a motion blur effect.",
+            "zh": "该视频呈现出运动模糊效果"
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": 2,
+          "display_order": 1,
+          "disabled": false,
+          "display_name": {
+            "en": "Arc Crane Movement",
+            "zh": ""
+          },
+          "labels": [],
+          "children": [
+            {
+              "id": 3,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "Arc Clockwise",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 1,
+                  "raw_name": "cam_motion.arc_crane_movement.arc_clockwise.has_arc_clockwise",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_arc_crane.has_arc_clockwise",
+                    "object_centric_direction.arc_ccw_vs_arc_cc_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Clockwise Arc Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera arcs clockwise.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 4,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "Arc Counterclockwise",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 2,
+                  "raw_name": "cam_motion.arc_crane_movement.arc_counterclockwise.has_arc_counterclockwise",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_arc_crane.has_arc_counterclockwise",
+                    "object_centric_direction.arc_ccw_vs_arc_cc"
+                  ],
+                  "display_name": {
+                    "en": "Has Counterclockwise Arc Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera arcs counterclockwise.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 5,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Crane Down",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 3,
+                  "raw_name": "cam_motion.arc_crane_movement.crane_down.has_crane_down",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_arc_crane.has_crane_down",
+                    "object_centric_direction.crane_up_vs_crane_down_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Crane Down Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera cranes downward in an arc relative to its own frame.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 6,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Crane Up",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 4,
+                  "raw_name": "cam_motion.arc_crane_movement.crane_up.has_crane_up",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_arc_crane.has_crane_up",
+                    "object_centric_direction.crane_up_vs_crane_down"
+                  ],
+                  "display_name": {
+                    "en": "Has Crane Up Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera cranes upward in an arc relative to its own frame.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "display_order": 2,
+          "disabled": false,
+          "display_name": {
+            "en": "Camera Centric Movement",
+            "zh": ""
+          },
+          "labels": [],
+          "children": [
+            {
+              "id": 8,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "Leftward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 5,
+                  "raw_name": "cam_motion.camera_centric_movement.leftward.has_leftward",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_truck_left",
+                    "translation_direction.has_leftward_vs_rightward"
+                  ],
+                  "display_name": {
+                    "en": "Has Leftward Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically leftward (or truck left).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 6,
+                  "raw_name": "cam_motion.camera_centric_movement.leftward.only_leftward",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_translation.only_truck_left_vs_has_truck_left_and_not_only",
+                    "rotation_vs_translation.only_pan_left_vs_only_truck_left_negated"
+                  ],
+                  "display_name": {
+                    "en": "Only Leftward Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves laterally leftward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 9,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "Pan Left",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 7,
+                  "raw_name": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_pan_left",
+                    "rotation_direction.pan_left_vs_pan_right"
+                  ],
+                  "display_name": {
+                    "en": "Has Pan Left Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera pans to the left.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 8,
+                  "raw_name": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_rotation.only_pan_left_vs_has_pan_left_and_not_only",
+                    "rotation_vs_translation.only_pan_left_vs_only_truck_left"
+                  ],
+                  "display_name": {
+                    "en": "Only Pan Left Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only pans leftward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 10,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Pan Right",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 9,
+                  "raw_name": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_pan_right",
+                    "rotation_direction.pan_left_vs_pan_right_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Pan Right Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera pans to the right.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 10,
+                  "raw_name": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_rotation.only_pan_right_vs_has_pan_right_and_not_only",
+                    "rotation_vs_translation.only_pan_right_vs_only_truck_right"
+                  ],
+                  "display_name": {
+                    "en": "Only Pan Right Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only pans rightward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 11,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Rightward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 11,
+                  "raw_name": "cam_motion.camera_centric_movement.rightward.has_rightward",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_truck_right",
+                    "translation_direction.has_leftward_vs_rightward_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Rightward Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically rightward (or truck right).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 12,
+                  "raw_name": "cam_motion.camera_centric_movement.rightward.only_rightward",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_translation.only_truck_right_vs_has_truck_right_and_not_only",
+                    "rotation_vs_translation.only_pan_right_vs_only_truck_right_negated"
+                  ],
+                  "display_name": {
+                    "en": "Only Rightward Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves laterally rightward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 12,
+              "display_order": 5,
+              "disabled": false,
+              "display_name": {
+                "en": "Roll Clockwise",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 13,
+                  "raw_name": "cam_motion.camera_centric_movement.roll_clockwise.has_roll_clockwise",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_roll_clockwise",
+                    "rotation_direction.roll_cc_vs_roll_ccw"
+                  ],
+                  "display_name": {
+                    "en": "Has Clockwise Roll Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera rolls clockwise.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 14,
+                  "raw_name": "cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_rotation.only_roll_cc_vs_has_roll_cc_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Clockwise Roll Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only rolls clockwise without any other camera movements.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 13,
+              "display_order": 6,
+              "disabled": false,
+              "display_name": {
+                "en": "Roll Counterclockwise",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 15,
+                  "raw_name": "cam_motion.camera_centric_movement.roll_counterclockwise.has_roll_counterclockwise",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_roll_counterclockwise",
+                    "rotation_direction.roll_cc_vs_roll_ccw_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Counterclockwise Roll Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera rolls counterclockwise.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 16,
+                  "raw_name": "cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_rotation.only_roll_ccw_vs_has_roll_ccw_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Counterclockwise Roll Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only rolls counterclockwise without any other camera movements.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 14,
+              "display_order": 7,
+              "disabled": false,
+              "display_name": {
+                "en": "Tilt Down",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 17,
+                  "raw_name": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_tilt_down",
+                    "rotation_direction.tilt_up_vs_tilt_down_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Tilt Down Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera tilts downward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 18,
+                  "raw_name": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_rotation.only_tilt_down_vs_has_tilt_down_and_not_only",
+                    "rotation_vs_translation.only_tilt_down_vs_only_pedestal_down"
+                  ],
+                  "display_name": {
+                    "en": "Only Tilt Down Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only tilts downward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 15,
+              "display_order": 8,
+              "disabled": false,
+              "display_name": {
+                "en": "Tilt Up",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 19,
+                  "raw_name": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_rotation.has_tilt_up",
+                    "rotation_direction.tilt_up_vs_tilt_down"
+                  ],
+                  "display_name": {
+                    "en": "Has Tilt Up Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera tilts upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 20,
+                  "raw_name": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_rotation.only_tilt_up_vs_has_tilt_up_and_not_only",
+                    "rotation_vs_translation.only_tilt_up_vs_only_pedestal_up"
+                  ],
+                  "display_name": {
+                    "en": "Only Tilt Up Movement",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only tilts upward without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 16,
+              "display_order": 9,
+              "disabled": false,
+              "display_name": {
+                "en": "Zoom In",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 21,
+                  "raw_name": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_intrinsic_change.has_zoom_in",
+                    "intrinsic_direction.zoom_in_vs_zoom_out"
+                  ],
+                  "display_name": {
+                    "en": "Has Zoom In (Relative to Camera)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera zooms in.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 22,
+                  "raw_name": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_intrinsic_change.only_zoom_in_vs_has_zoom_in_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Zoom In (Relative to Camera)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only zooms in without any other movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 17,
+              "display_order": 10,
+              "disabled": false,
+              "display_name": {
+                "en": "Zoom Out",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 23,
+                  "raw_name": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_intrinsic_change.has_zoom_out",
+                    "intrinsic_direction.zoom_in_vs_zoom_out_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Zoom Out (Relative to Camera)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera zooms out.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 24,
+                  "raw_name": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_intrinsic_change.only_zoom_out_vs_has_zoom_out_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Zoom Out (Relative to Camera)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only zooms out with no other movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "display_order": 3,
+          "disabled": false,
+          "display_name": {
+            "en": "Dolly Zoom Movement",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 25,
+              "raw_name": "cam_motion.dolly_zoom_movement.has_dolly_in_zoom_out",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "intrinsic_direction.dolly_zoom_in_vs_dolly_zoom_out_negated"
+              ],
+              "display_name": {
+                "en": "Has Dolly In and Zoom Out Movement",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "# Dolly Zoom In\n\nThe **dolly zoom in** (also called the **Vertigo effect**) combines a forward dolly movement with a simultaneous zoom out. The background appears to stretch away from the subject, producing a strong sense of **spatial unease**. A common variant keeps the subject roughly the same size in frame while the background warps dramatically around them.\n\nFilmmakers use this technique to convey **psychological realization, shock, or disorientation** — making it a go-to tool for moments of sudden emotional shift. First popularized by Alfred Hitchcock in [*Vertigo* (1958)](https://en.wikipedia.org/wiki/Vertigo_(1958_film)), the effect has since appeared in iconic scenes in [*Jaws* (1975)](https://en.wikipedia.org/wiki/Jaws_(film)) and [*The Lord of the Rings* (2001)](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings_(film_series)).\n\n- Related technique: [Dolly Zoom Out](taxonomy:26)",
+                "zh": ""
+              }
+            },
+            {
+              "id": 26,
+              "raw_name": "cam_motion.dolly_zoom_movement.has_dolly_out_zoom_in",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "intrinsic_direction.dolly_zoom_in_vs_dolly_zoom_out"
+              ],
+              "display_name": {
+                "en": "Has Dolly Out and Zoom In Movement",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera performs a dolly zoom effect with backward movement and zoom-in.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 19,
+          "display_order": 4,
+          "disabled": false,
+          "display_name": {
+            "en": "Ground Centric Movement",
+            "zh": ""
+          },
+          "labels": [],
+          "children": [
+            {
+              "id": 20,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "Backward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 27,
+                  "raw_name": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_backward_motion",
+                    "translation_direction.has_forward_vs_backward_ground_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically backward (or dolly out) in the scene.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 28,
+                  "raw_name": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground_birds_worms_included",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "reference_frame.backward_bird_worm_included_vs_not_backward_bird_worm_included"
+                  ],
+                  "display_name": {
+                    "en": "Has Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 29,
+                  "raw_name": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_translation.only_backward_vs_has_backward_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves physically backward (not zoom out) relative to the ground.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 21,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "Downward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 30,
+                  "raw_name": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_pedestal_down",
+                    "translation_direction.has_upward_vs_downward_ground_negated"
+                  ],
+                  "display_name": {
+                    "en": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically downward (or pedestals down) relative to the ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 31,
+                  "raw_name": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground_birds_worms_included",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "reference_frame.downward_bird_worm_included_vs_not_downward_bird_worm_included"
+                  ],
+                  "display_name": {
+                    "en": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 32,
+                  "raw_name": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_translation.only_pedestal_down_vs_has_pedestal_down_and_not_only",
+                    "rotation_vs_translation.only_tilt_down_vs_only_pedestal_down_negated"
+                  ],
+                  "display_name": {
+                    "en": "Only Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves physically downward (not tilt down) relative to the ground without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 22,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Forward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 33,
+                  "raw_name": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_forward_motion",
+                    "translation_direction.has_forward_vs_backward_ground"
+                  ],
+                  "display_name": {
+                    "en": "Has Forward Movement (Relative to Ground, Bird’s/Worm’s Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically forward (or dolly in) in the scene.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 34,
+                  "raw_name": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground_birds_worms_included",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "reference_frame.forward_bird_worm_included_vs_not_forward_bird_worm_included"
+                  ],
+                  "display_name": {
+                    "en": "Has Forward Movement (Relative to Ground, Bird’s/Worm’s Eye Views Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves forward relative to the scene (forward normally, north from a bird's-eye view, or south from a worm's eye view).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 35,
+                  "raw_name": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "only_translation.only_forward_vs_has_forward_and_not_only"
+                  ],
+                  "display_name": {
+                    "en": "Only Forward Movement (Relative to Ground, Bird’s/Worm’s Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves physically forward (not zoom in) relative to the ground.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 23,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Upward",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 36,
+                  "raw_name": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "has_translation.has_pedestal_up",
+                    "translation_direction.has_upward_vs_downward_ground"
+                  ],
+                  "display_name": {
+                    "en": "Has Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically upward (or pedestals up) relative to the ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 37,
+                  "raw_name": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground_birds_worms_included",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "reference_frame.upward_bird_worm_included_vs_not_upward_bird_worm_included"
+                  ],
+                  "display_name": {
+                    "en": "Has Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera moves physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 38,
+                  "raw_name": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": true,
+                  "classifier_names": [
+                    "only_translation.only_pedestal_up_vs_has_pedestal_up_and_not_only",
+                    "rotation_vs_translation.only_tilt_up_vs_only_pedestal_up_negated"
+                  ],
+                  "display_name": {
+                    "en": "Only Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera only moves physically upward (not tilt up) relative to the ground without any other camera movement.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "display_order": 5,
+          "disabled": false,
+          "display_name": {
+            "en": "Object Centric Movement",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 41,
+              "raw_name": "cam_motion.object_centric_movement.aerial_tracking_shot",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_aerial_tracking"
+              ],
+              "display_name": {
+                "en": "Aerial Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "An aerial tracking shot where the camera follows the moving subject from an aerial view.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 42,
+              "raw_name": "cam_motion.object_centric_movement.arc_tracking_shot",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_arc_tracking"
+              ],
+              "display_name": {
+                "en": "Arc Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "An arc tracking shot where the camera follows the moving subject while arcing around them.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 43,
+              "raw_name": "cam_motion.object_centric_movement.front_side_tracking_shot",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_front_side_tracking"
+              ],
+              "display_name": {
+                "en": "Front-Side Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A front-side tracking shot where the camera leads the moving subject from a front-side angle.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 44,
+              "raw_name": "cam_motion.object_centric_movement.lead_tracking_shot",
+              "display_order": 4,
+              "disabled": false,
+              "merged": true,
+              "classifier_names": [
+                "object_centric_direction.lead_tracking_vs_tail_tracking",
+                "special_tracking.has_lead_tracking"
+              ],
+              "display_name": {
+                "en": "Lead Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 45,
+              "raw_name": "cam_motion.object_centric_movement.pan_tracking_shot",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_pan_tracking"
+              ],
+              "display_name": {
+                "en": "Pan Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera pans to track the moving subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 46,
+              "raw_name": "cam_motion.object_centric_movement.rear_side_tracking_shot",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_rear_side_tracking"
+              ],
+              "display_name": {
+                "en": "Rear-Side Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A rear-side tracking shot where the camera follows the moving subject at a rear-side angle.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 47,
+              "raw_name": "cam_motion.object_centric_movement.side_tracking_shot",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_side_tracking"
+              ],
+              "display_name": {
+                "en": "Side Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A side tracking shot with the camera moving from the side to follow the moving subject.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 48,
+              "raw_name": "cam_motion.object_centric_movement.side_tracking_shot_leftward",
+              "display_order": 8,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "object_centric_direction.side_tracking_leftward_vs_rightward"
+              ],
+              "display_name": {
+                "en": "Side Tracking Shot (Leftward)",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A side tracking shot where the camera moves left to follow the subject.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 49,
+              "raw_name": "cam_motion.object_centric_movement.side_tracking_shot_rightward",
+              "display_order": 9,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "object_centric_direction.side_tracking_leftward_vs_rightward_negated"
+              ],
+              "display_name": {
+                "en": "Side Tracking Shot (Rightward)",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A side tracking shot where the camera moves right to follow the subject.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 50,
+              "raw_name": "cam_motion.object_centric_movement.tail_tracking_shot",
+              "display_order": 10,
+              "disabled": false,
+              "merged": true,
+              "classifier_names": [
+                "object_centric_direction.lead_tracking_vs_tail_tracking_negated",
+                "special_tracking.has_tail_tracking"
+              ],
+              "display_name": {
+                "en": "Follow Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 51,
+              "raw_name": "cam_motion.object_centric_movement.tilt_tracking_shot",
+              "display_order": 11,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "special_tracking.has_tilt_tracking"
+              ],
+              "display_name": {
+                "en": "Tilt Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera tilts to track the moving subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 52,
+              "raw_name": "cam_motion.object_centric_movement.track_shot",
+              "display_order": 12,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "general_tracking.is_tracking"
+              ],
+              "display_name": {
+                "en": "Tracking Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera tracks the subject as they move.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 53,
+              "raw_name": "cam_motion.object_centric_movement.tracking_subject_larger_size",
+              "display_order": 13,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "general_tracking.tracking_subject_larger"
+              ],
+              "display_name": {
+                "en": "Tracking Shot: Subject Larger",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The subject appears larger during the tracking shot.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 54,
+              "raw_name": "cam_motion.object_centric_movement.tracking_subject_smaller_size",
+              "display_order": 14,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "general_tracking.tracking_subject_smaller"
+              ],
+              "display_name": {
+                "en": "Tracking Shot: Subject Smaller",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The subject appears smaller during the tracking shot.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 25,
+          "display_order": 6,
+          "disabled": false,
+          "display_name": {
+            "en": "Steadiness And Movement",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 55,
+              "raw_name": "cam_motion.steadiness_and_movement.clear_moving_camera",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "movement_and_steadiness.is_the_camera_clearly_moving_or_not"
+              ],
+              "display_name": {
+                "en": "Clearly Moving Camera",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video has noticeable camera motion beyond minor shake or wobble.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 56,
+              "raw_name": "cam_motion.steadiness_and_movement.fast_moving_camera",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "camera_movement_speed.is_camera_movement_slow_or_fast_negated"
+              ],
+              "display_name": {
+                "en": "Fast Moving Camera",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera has noticeable motion but at a fast motion speed.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 57,
+              "raw_name": "cam_motion.steadiness_and_movement.fixed_camera",
+              "display_order": 3,
+              "disabled": false,
+              "merged": true,
+              "classifier_names": [
+                "movement_and_steadiness.is_the_camera_fixed_or_moving",
+                "movement_and_steadiness.is_the_fixed_camera_shaking_or_not"
+              ],
+              "display_name": {
+                "en": "Fixed Camera (Stable)",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows a completely still camera with no motion or shaking.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 58,
+              "raw_name": "cam_motion.steadiness_and_movement.fixed_camera_with_shake",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "movement_and_steadiness.is_the_fixed_camera_shaking_or_not_negated"
+              ],
+              "display_name": {
+                "en": "Fixed Camera (Somewhat Shaky)",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video has a mostly stationary camera with only minor vibrations or shaking.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 59,
+              "raw_name": "cam_motion.steadiness_and_movement.slow_moving_camera",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "camera_movement_speed.is_camera_movement_slow_or_fast"
+              ],
+              "display_name": {
+                "en": "Slowly Moving Camera",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera has noticeable motion but at a slow motion speed.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 60,
+              "raw_name": "cam_motion.steadiness_and_movement.very_shaky_camera",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "movement_and_steadiness.is_the_camera_stable_or_shaky_negated"
+              ],
+              "display_name": {
+                "en": "Very Shaky Camera",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows noticable vibrations, shaking, or wobbling of the camera.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 61,
+              "raw_name": "cam_motion.steadiness_and_movement.very_stable_camera",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "movement_and_steadiness.is_the_camera_stable_or_shaky"
+              ],
+              "display_name": {
+                "en": "Very Stable Camera Motion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video has exceptionally smooth and highly stable camera movement.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "display_order": 2,
+      "disabled": false,
+      "display_name": {
+        "en": "Cam Setup",
+        "zh": ""
+      },
+      "labels": [
+        {
+          "id": 116,
+          "raw_name": "cam_setup.has_overlays",
+          "display_order": 1,
+          "disabled": false,
+          "merged": false,
+          "classifier_names": [
+            "overlays.has_overlays"
+          ],
+          "display_name": {
+            "en": "Has Overlays",
+            "zh": ""
+          },
+          "tutorial": {
+            "en": "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements.",
+            "zh": ""
+          }
+        },
+        {
+          "id": 117,
+          "raw_name": "cam_setup.has_shot_transition_cam_setup",
+          "display_order": 2,
+          "disabled": false,
+          "merged": false,
+          "classifier_names": [
+            "shot_transition.has_shot_transition_cam_setup"
+          ],
+          "display_name": {
+            "en": "Shot transition in camera setup",
+            "zh": ""
+          },
+          "tutorial": {
+            "en": "The video includes a shot transition.",
+            "zh": ""
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": 27,
+          "display_order": 1,
+          "disabled": false,
+          "display_name": {
+            "en": "Angle",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 62,
+              "raw_name": "cam_setup.angle.camera_angle_change",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "camera_angle_change.camera_angle_change"
+              ],
+              "display_name": {
+                "en": "Camera Angle Change",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 63,
+              "raw_name": "cam_setup.angle.camera_angle_change_from_high_to_low",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "camera_angle_change.camera_angle_change_from_high_to_low"
+              ],
+              "display_name": {
+                "en": "Camera Angle Change From High To Low",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 64,
+              "raw_name": "cam_setup.angle.camera_angle_change_from_low_to_high",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "camera_angle_change.camera_angle_change_from_low_to_high"
+              ],
+              "display_name": {
+                "en": "Camera Angle Change From Low To High",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera angle increases noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 81,
+              "raw_name": "cam_setup.angle.is_dutch_angle",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "dutch_angle.is_dutch_angle"
+              ],
+              "display_name": {
+                "en": "Is Dutch Angle",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "There is an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 82,
+              "raw_name": "cam_setup.angle.is_dutch_angle_fixed",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "dutch_angle.is_dutch_angle_fixed"
+              ],
+              "display_name": {
+                "en": "Is Dutch Angle Fixed",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The degree of the Dutch (canted) angle stays the same throughout the video.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 83,
+              "raw_name": "cam_setup.angle.is_dutch_angle_varying",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "dutch_angle.is_dutch_angle_varying"
+              ],
+              "display_name": {
+                "en": "Is Dutch Angle Varying",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "There is a Dutch (canted) angle that changes its degree during the video, with the horizon line not level.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": 28,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "End With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 65,
+                  "raw_name": "cam_setup.angle.end_with.camera_angle_end_with_bird_eye_angle",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_end.camera_angle_end_with_bird_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle End With Bird's Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at a bird's eye angle, looking straight down from above.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 66,
+                  "raw_name": "cam_setup.angle.end_with.camera_angle_end_with_high_angle",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_end.camera_angle_end_with_high_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle End With High Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 67,
+                  "raw_name": "cam_setup.angle.end_with.camera_angle_end_with_level_angle",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_end.camera_angle_end_with_level_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle End With Level Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned at a level angle, parallel to the ground (even if a Dutch angle is used).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 68,
+                  "raw_name": "cam_setup.angle.end_with.camera_angle_end_with_low_angle",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_end.camera_angle_end_with_low_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle End With Low Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 69,
+                  "raw_name": "cam_setup.angle.end_with.camera_angle_end_with_worm_eye_angle",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_end.camera_angle_end_with_worm_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle End With Worm Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at a worm's eye angle, looking straight up from below.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 29,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "From To",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 70,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_high_to_level",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_high_to_level"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from High Angle to Level Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a high angle and transitions to a level angle.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 71,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_high_to_low",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_high_to_low"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from High Angle to Low Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a high angle and transitions to a low angle.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 72,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_level_to_high",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_level_to_high"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from Level Angle to High Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a level angle and transitions to a high angle.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 73,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_level_to_low",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_level_to_low"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from Level Angle to Low Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a level angle and transitions to a low angle.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 74,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_low_to_high",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_low_to_high"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from Low Angle to High Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a low angle and transitions to a high angle.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 75,
+                  "raw_name": "cam_setup.angle.from_to.camera_angle_from_low_to_level",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_transition.camera_angle_from_low_to_level"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Shifts from Low Angle to Level Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a low angle and transitions to a level angle.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 30,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Is Always",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 76,
+                  "raw_name": "cam_setup.angle.is_always.camera_angle_is_bird_eye_angle",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_is.camera_angle_is_bird_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Is Bird's Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera maintains a bird's eye angle throughout, consistently looking straight down from above.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 77,
+                  "raw_name": "cam_setup.angle.is_always.camera_angle_is_high_angle",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_is.camera_angle_is_high_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Is High Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera maintains a high angle throughout, consistently looking downward compared to a level angle but not directly top-down.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 78,
+                  "raw_name": "cam_setup.angle.is_always.camera_angle_is_level_angle",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_is.camera_angle_is_level_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Is Level Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera maintains a level angle parallel to the ground (even if a Dutch angle is used) throughout the video.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 79,
+                  "raw_name": "cam_setup.angle.is_always.camera_angle_is_low_angle",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_is.camera_angle_is_low_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Is Low Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera maintains a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 80,
+                  "raw_name": "cam_setup.angle.is_always.camera_angle_is_worm_eye_angle",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_is.camera_angle_is_worm_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Is Worm Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera maintains a worm's eye angle throughout, consistently looking straight up from below.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 31,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Start With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 84,
+                  "raw_name": "cam_setup.angle.start_with.camera_angle_start_with_bird_eye_angle",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_start.camera_angle_start_with_bird_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Start With Bird's Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a bird's eye angle, looking straight down from above.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 85,
+                  "raw_name": "cam_setup.angle.start_with.camera_angle_start_with_high_angle",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_start.camera_angle_start_with_high_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Start With High Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 86,
+                  "raw_name": "cam_setup.angle.start_with.camera_angle_start_with_level_angle",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_start.camera_angle_start_with_level_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Start With Level Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "A video that starts with the camera at a level angle, parallel to the ground (even if a Dutch angle is used).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 87,
+                  "raw_name": "cam_setup.angle.start_with.camera_angle_start_with_low_angle",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_start.camera_angle_start_with_low_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Start With Low Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "A video that starts with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 88,
+                  "raw_name": "cam_setup.angle.start_with.camera_angle_start_with_worm_eye_angle",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "camera_angle_start.camera_angle_start_with_worm_eye_angle"
+                  ],
+                  "display_name": {
+                    "en": "Camera Angle Start With Worm Eye Angle",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "A video that starts with the camera at a worm's eye angle, looking straight up from below.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "display_order": 2,
+          "disabled": false,
+          "display_name": {
+            "en": "Focus",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 93,
+              "raw_name": "cam_setup.focus.focus_change",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.focus_change"
+              ],
+              "display_name": {
+                "en": "Focus Change",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The focal plane shifts noticeably between foreground, middle ground, or background regions.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 94,
+              "raw_name": "cam_setup.focus.focus_change_from_far_to_near",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.focus_change_from_far_to_near"
+              ],
+              "display_name": {
+                "en": "Focus Change From Far To Near",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The focal plane shifts from distant to close, moving between foreground, middle ground, or background.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 95,
+              "raw_name": "cam_setup.focus.focus_change_from_in_to_out_of_focus",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.focus_change_from_in_to_out_of_focus"
+              ],
+              "display_name": {
+                "en": "Focus Changes from In Focus to Out of Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera starts in sharp focus and then shifts out of focus.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 96,
+              "raw_name": "cam_setup.focus.focus_change_from_near_to_far",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.focus_change_from_near_to_far"
+              ],
+              "display_name": {
+                "en": "Focus Change From Near To Far",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The focal plane shifts from close to distant, moving between foreground, middle ground, or background.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 97,
+              "raw_name": "cam_setup.focus.focus_change_from_out_to_in_focus",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.focus_change_from_out_to_in_focus"
+              ],
+              "display_name": {
+                "en": "Focus Changes from Out of Focus to In Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera starts out of focus and then becomes in focus.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 107,
+              "raw_name": "cam_setup.focus.is_deep_focus",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.is_deep_focus"
+              ],
+              "display_name": {
+                "en": "Is Deep Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera uses a deep depth of field with distant details remaining sharp.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 108,
+              "raw_name": "cam_setup.focus.is_focus_tracking",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.is_focus_tracking"
+              ],
+              "display_name": {
+                "en": "Is Focus Tracking",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera uses focus tracking to keep a subject in focus in the video.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 109,
+              "raw_name": "cam_setup.focus.is_rack_pull_focus",
+              "display_order": 8,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.is_rack_pull_focus"
+              ],
+              "display_name": {
+                "en": "Is Rack Pull Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera uses rack focus or pull focus to shift the focal plane.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 110,
+              "raw_name": "cam_setup.focus.is_shallow_focus",
+              "display_order": 9,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.is_shallow_focus"
+              ],
+              "display_name": {
+                "en": "Is Shallow Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera uses shallow depth of field, with a limited but noticeable range of space in focus.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 111,
+              "raw_name": "cam_setup.focus.is_ultra_shallow_focus",
+              "display_order": 10,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "depth_of_field.is_ultra_shallow_focus"
+              ],
+              "display_name": {
+                "en": "Is Ultra Shallow Focus",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera uses extremely shallow depth of field, with only a narrow plane in focus.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": 33,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "End With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 89,
+                  "raw_name": "cam_setup.focus.end_with.focus_end_with_background",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_end_with.focus_end_with_background"
+                  ],
+                  "display_name": {
+                    "en": "Focus End With Background",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera focusing on the background, using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 90,
+                  "raw_name": "cam_setup.focus.end_with.focus_end_with_foreground",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_end_with.focus_end_with_foreground"
+                  ],
+                  "display_name": {
+                    "en": "Focus End With Foreground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera focusing on the foreground, using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 91,
+                  "raw_name": "cam_setup.focus.end_with.focus_end_with_middle_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_end_with.focus_end_with_middle_ground"
+                  ],
+                  "display_name": {
+                    "en": "Focus End With Middle Ground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 92,
+                  "raw_name": "cam_setup.focus.end_with.focus_end_with_out_of_focus",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_end_with.focus_end_with_out_of_focus"
+                  ],
+                  "display_name": {
+                    "en": "Focus End With Out of Focus",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera completely out of focus.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 34,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "From To",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 98,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_background_to_foreground",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_background_to_foreground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Background to Foreground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the background and then shifts the focus to the foreground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 99,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_background_to_middle_ground",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_background_to_middle_ground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Background to Middle Ground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the background and then shifts the focus to the middle ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 100,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_foreground_to_background",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_foreground_to_background"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Foreground to Background",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the foreground and then shifts the focus to the background.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 101,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_foreground_to_middle_ground",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_foreground_to_middle_ground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Foreground to Middle Ground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the foreground and then shifts the focus to the middle ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 102,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_middle_ground_to_background",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_middle_ground_to_background"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Middle Ground to Background",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the middle ground and then shifts the focus to the background.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 103,
+                  "raw_name": "cam_setup.focus.from_to.focus_from_middle_ground_to_foreground",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_from_to.focus_from_middle_ground_to_foreground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Shifts from Middle Ground to Foreground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focused on the middle ground and then shifts the focus to the foreground.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 35,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Is Always",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 104,
+                  "raw_name": "cam_setup.focus.is_always.focus_is_background",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_is_always.focus_is_always_background"
+                  ],
+                  "display_name": {
+                    "en": "Focus Is Background",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains focused on the background using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 105,
+                  "raw_name": "cam_setup.focus.is_always.focus_is_foreground",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_is_always.focus_is_always_foreground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Is Foreground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains focused on the foreground using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 106,
+                  "raw_name": "cam_setup.focus.is_always.focus_is_middle_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_is_always.focus_is_always_middle_ground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Is Middle Ground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains focused on the middle ground, keeping the foreground and background blurred.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 36,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Start With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 112,
+                  "raw_name": "cam_setup.focus.start_with.focus_start_with_background",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_start_with.focus_start_with_background"
+                  ],
+                  "display_name": {
+                    "en": "Focus Start With Background",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focusing on the background, using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 113,
+                  "raw_name": "cam_setup.focus.start_with.focus_start_with_foreground",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_start_with.focus_start_with_foreground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Start With Foreground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focusing on the foreground, using a shallow depth of field.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 114,
+                  "raw_name": "cam_setup.focus.start_with.focus_start_with_middle_ground",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_start_with.focus_start_with_middle_ground"
+                  ],
+                  "display_name": {
+                    "en": "Focus Start With Middle Ground",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 115,
+                  "raw_name": "cam_setup.focus.start_with.focus_start_with_out_of_focus",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "focus_start_with.focus_start_with_out_of_focus"
+                  ],
+                  "display_name": {
+                    "en": "Focus Start With Out of Focus",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera completely out of focus.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "display_order": 3,
+          "disabled": false,
+          "display_name": {
+            "en": "Height Wrt Ground",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 118,
+              "raw_name": "cam_setup.height_wrt_ground.above_water_to_underwater",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_ground_change.above_water_to_underwater"
+              ],
+              "display_name": {
+                "en": "Above Water To Underwater",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera transitions from above water to underwater.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 126,
+              "raw_name": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_high_to_low",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_ground_change.height_wrt_ground_change_from_high_to_low"
+              ],
+              "display_name": {
+                "en": "Height Wrt Ground Change From High To Low",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera height decreases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 127,
+              "raw_name": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_low_to_high",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_ground_change.height_wrt_ground_change_from_low_to_high"
+              ],
+              "display_name": {
+                "en": "Height Wrt Ground Change From Low To High",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera height increases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 142,
+              "raw_name": "cam_setup.height_wrt_ground.underwater_to_above_water",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_ground_change.underwater_to_above_water"
+              ],
+              "display_name": {
+                "en": "Underwater To Above Water",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera transitions from underwater to above water.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": 38,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "End With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 119,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_aerial_level",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_aerial_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Aerial Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned high at an aerial level.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 120,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_eye_level",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_eye_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Eye Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned at eye level (roughly at a person's eye height, above the waist).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 121,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_ground_level",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_ground_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Ground Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at ground level, positioned close to the ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 122,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_hip_level",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_hip_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Hip Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 123,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_overhead_level",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_overhead_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Overhead Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera at an overhead level, above eye level but below aerial (around second-floor height).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 124,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_underwater_level",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_underwater_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Underwater Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera fully submerged underwater.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 125,
+                  "raw_name": "cam_setup.height_wrt_ground.end_with.height_wrt_ground_end_with_water_level",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_end.height_wrt_ground_end_with_water_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground End With Water Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned near water level, showing the waterline clearly and not from an aerial view.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 39,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "Is Always",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 128,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_aerial_level",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_aerial_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Aerial Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains at an aerial level height throughout the video.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 129,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_eye_level",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_eye_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Eye Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is positioned at eye level throughout the video (roughly at a person's eye height, above the waist).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 130,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_ground_level",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_ground_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Ground Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is positioned at ground level throughout the video, positioned close to the ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 131,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_hip_level",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_hip_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Hip Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 132,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_overhead_level",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_overhead_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Overhead Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is positioned at an overhead level throughout the video, positioned above eye level but below aerial (around second-floor height).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 133,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_underwater_level",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_underwater_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Underwater Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is fully submerged underwater throughout the video.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 134,
+                  "raw_name": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_water_level",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_is.height_wrt_ground_is_water_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Is Water Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera is positioned at water level throughout the video, showing the waterline clearly and not from an aerial view.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 40,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Start With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 135,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_aerial_level",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_aerial_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Aerial Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned high at an aerial level.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 136,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_eye_level",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_eye_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Eye Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned at eye level (roughly at a person's eye height, above the waist).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 137,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_ground_level",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_ground_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Ground Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at ground level, positioned close to the ground.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 138,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_hip_level",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_hip_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Hip Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 139,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_overhead_level",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_overhead_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Overhead Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera at an overhead level, above eye level but below aerial (around second-floor height).",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 140,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_underwater_level",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_underwater_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Underwater Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera fully submerged underwater.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 141,
+                  "raw_name": "cam_setup.height_wrt_ground.start_with.height_wrt_ground_start_with_water_level",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_ground_start.height_wrt_ground_start_with_water_level"
+                  ],
+                  "display_name": {
+                    "en": "Height Wrt Ground Start With Water Level",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned near water level, showing the waterline clearly and not from an aerial view.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "display_order": 4,
+          "disabled": false,
+          "display_name": {
+            "en": "Height Wrt Subject",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 152,
+              "raw_name": "cam_setup.height_wrt_subject.height_wrt_subject_change",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_subject_change.height_wrt_subject_change"
+              ],
+              "display_name": {
+                "en": "Height With Respect To Subject Change",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The camera’s height relative to the subject (above, at level, or below) is different at the end compared to the beginning.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 153,
+              "raw_name": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_high_to_low",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_subject_change.height_wrt_subject_change_from_high_to_low"
+              ],
+              "display_name": {
+                "en": "Height Wrt Subject Change From High To Low",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The subject starts above and ends at or below the camera’s height, or starts level and ends below.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 154,
+              "raw_name": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_low_to_high",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "height_wrt_subject_change.height_wrt_subject_change_from_low_to_high"
+              ],
+              "display_name": {
+                "en": "Height Wrt Subject Change From Low To High",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The subject starts below and ends at or above the camera’s height, or starts level and ends above.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": 42,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "End With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 143,
+                  "raw_name": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_above_subject",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_end.height_wrt_subject_end_with_above_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Ends With Above Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned above the subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 144,
+                  "raw_name": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_at_subject",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_end.height_wrt_subject_end_with_at_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Ends With At Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned at about the same height as the subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 145,
+                  "raw_name": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_below_subject",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_end.height_wrt_subject_end_with_below_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Ends With Below Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with the camera positioned below the subject.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 43,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "From To",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 146,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_at_subject",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_above_subject_to_at_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts Above Subject And Ends At Subject's Height",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts above and ends at the subject’s height.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 147,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_above_subject_to_below_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts Above Subject And Ends Below Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts above and ends below.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 148,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_above_subject",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_at_subject_to_above_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts At Subject's Height And Ends Above Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts at the subject’s height and ends above.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 149,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_at_subject_to_below_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts At Subject's Height And Ends Below Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts at the subject’s height and ends below.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 150,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_below_subject_to_above_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts Below Subject And Ends Above Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts below and ends above.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 151,
+                  "raw_name": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_transition.height_wrt_subject_from_below_subject_to_at_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts Below Subject And Ends At Subject's Height",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera’s height relative to the subject starts below and ends at the subject’s height.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 44,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Is Always",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 155,
+                  "raw_name": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_above_subject",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_is.height_wrt_subject_is_above_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Is Always Above Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains positioned above the subject throughout the video.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 156,
+                  "raw_name": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_at_subject",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_is.height_wrt_subject_is_at_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Is Always At Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains positioned at about the same height as the subject throughout the video.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 157,
+                  "raw_name": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_below_subject",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_is.height_wrt_subject_is_below_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Is Always Below Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The camera remains positioned below the subject throughout the video.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 45,
+              "display_order": 4,
+              "disabled": false,
+              "display_name": {
+                "en": "Start With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 158,
+                  "raw_name": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_above_subject",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_start.height_wrt_subject_start_with_above_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts With Above Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned above the subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 159,
+                  "raw_name": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_at_subject",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_start.height_wrt_subject_start_with_at_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts With At Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned at about the same height as the subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 160,
+                  "raw_name": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_below_subject",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "height_wrt_subject_start.height_wrt_subject_start_with_below_subject"
+                  ],
+                  "display_name": {
+                    "en": "Height Starts With Below Subject",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with the camera positioned below the subject.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 46,
+          "display_order": 5,
+          "disabled": false,
+          "display_name": {
+            "en": "Lens Distortion",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 161,
+              "raw_name": "cam_setup.lens_distortion.fisheye_distortion",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "lens_distortion.fisheye_distortion"
+              ],
+              "display_name": {
+                "en": "Fisheye Distortion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows extreme fisheye lens distortion, where most lines curve strongly outward.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 162,
+              "raw_name": "cam_setup.lens_distortion.with_lens_distortion",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "lens_distortion.with_lens_distortion"
+              ],
+              "display_name": {
+                "en": "With Lens Distortion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows noticeable barrel or fisheye distortion.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 47,
+          "display_order": 6,
+          "disabled": false,
+          "display_name": {
+            "en": "Point Of View",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 163,
+              "raw_name": "cam_setup.point_of_view.broadcast_pov",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.broadcast_pov"
+              ],
+              "display_name": {
+                "en": "Broadcast POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows a broadcast-style viewpoint used in television production.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 164,
+              "raw_name": "cam_setup.point_of_view.dashcam_pov",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.dashcam_pov"
+              ],
+              "display_name": {
+                "en": "Dashcam POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 165,
+              "raw_name": "cam_setup.point_of_view.drone_pov",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.drone_pov"
+              ],
+              "display_name": {
+                "en": "Drone POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A drone POV showing an aerial view.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 166,
+              "raw_name": "cam_setup.point_of_view.first_person_pov",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.first_person_pov"
+              ],
+              "display_name": {
+                "en": "First-Person POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A first-person POV shot, filmed as if seen directly through the character’s eyes.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 167,
+              "raw_name": "cam_setup.point_of_view.locked_on_pov",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.locked_on_pov"
+              ],
+              "display_name": {
+                "en": "Locked-On POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed with that object.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 168,
+              "raw_name": "cam_setup.point_of_view.objective_pov",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.objective_pov"
+              ],
+              "display_name": {
+                "en": "Objective POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "An objective POV shot where the camera captures the scene from a detached, observational perspective.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 169,
+              "raw_name": "cam_setup.point_of_view.overhead_pov",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.overhead_pov"
+              ],
+              "display_name": {
+                "en": "Overhead POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "An overhead POV shot where the camera is positioned directly above the subject for a top-down perspective.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 170,
+              "raw_name": "cam_setup.point_of_view.screen_recording_pov",
+              "display_order": 8,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.screen_recording_pov"
+              ],
+              "display_name": {
+                "en": "Screen Recording POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A screen recording of a software or system interface (e.g., menus, windows, toolbars).",
+                "zh": ""
+              }
+            },
+            {
+              "id": 171,
+              "raw_name": "cam_setup.point_of_view.selfie_pov",
+              "display_order": 9,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.selfie_pov"
+              ],
+              "display_name": {
+                "en": "Selfie POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 172,
+              "raw_name": "cam_setup.point_of_view.third_person_full_body_game_pov",
+              "display_order": 10,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_full_body_game_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Full-Body Game POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A third-person 3D game video where the entire character is visible on screen.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 173,
+              "raw_name": "cam_setup.point_of_view.third_person_isometric_game_pov",
+              "display_order": 11,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_isometric_game_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Isometric Game POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 174,
+              "raw_name": "cam_setup.point_of_view.third_person_over_hip_pov",
+              "display_order": 12,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_over_hip_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Over-the-Hip POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A third-person over-the-hip POV shot framing the character from the hip up.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 175,
+              "raw_name": "cam_setup.point_of_view.third_person_over_shoulder_pov",
+              "display_order": 13,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_over_shoulder_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Over-the-Shoulder POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "An over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 176,
+              "raw_name": "cam_setup.point_of_view.third_person_side_view_game_pov",
+              "display_order": 14,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_side_view_game_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Side View Game POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A side-view gaming video where the camera is placed to the side, capturing the scene or character in profile.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 177,
+              "raw_name": "cam_setup.point_of_view.third_person_top_down_game_pov",
+              "display_order": 15,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "point_of_view.third_person_top_down_game_pov"
+              ],
+              "display_name": {
+                "en": "Third-Person Top-Down Game POV",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A gaming video with a top-down or oblique top-down view, where the camera is placed above the character and environment, looking downward to show mostly the tops of objects with limited sides.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 48,
+          "display_order": 7,
+          "disabled": false,
+          "display_name": {
+            "en": "Shot Size",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 194,
+              "raw_name": "cam_setup.shot_size.shot_size_change",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_size_change.shot_size_change"
+              ],
+              "display_name": {
+                "en": "Shot Size Change",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The shot size changes noticeably during the video.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 195,
+              "raw_name": "cam_setup.shot_size.shot_size_change_from_large_to_small",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_size_change.shot_size_change_from_large_to_small"
+              ],
+              "display_name": {
+                "en": "Shot Size Change From Large To Small",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The shot size changes noticeably from a wider to a tighter framing.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 196,
+              "raw_name": "cam_setup.shot_size.shot_size_change_from_small_to_large",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_size_change.shot_size_change_from_small_to_large"
+              ],
+              "display_name": {
+                "en": "Shot Size Change From Small To Large",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The shot size changes noticeably from a tighter to a wider framing.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 205,
+              "raw_name": "cam_setup.shot_size.subject_disappearing",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.subject_disappearing"
+              ],
+              "display_name": {
+                "en": "Is Subject Disappearing",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows the main subject disappearing or leaving the frame.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 206,
+              "raw_name": "cam_setup.shot_size.subject_revealing",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.subject_revealing"
+              ],
+              "display_name": {
+                "en": "Is Subject Revealing",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A revealing shot where the subject comes into view on screen.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 207,
+              "raw_name": "cam_setup.shot_size.subject_switching",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.subject_switching"
+              ],
+              "display_name": {
+                "en": "Subject Switch",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The main subject changes to another subject.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": 49,
+              "display_order": 1,
+              "disabled": false,
+              "display_name": {
+                "en": "End With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 178,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_close_up",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with a close-up shot, highlighting a distinct part of the subject while still preserving some surrounding context.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 179,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_close_up",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_extreme_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Extreme Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 180,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_wide",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_extreme_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Extreme Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with an extreme wide shot, emphasizing the vast environment over any subjects.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 181,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_full",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Full (Subject Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 182,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_medium",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_medium"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Medium (Subject Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with a medium shot, framing about half of the subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 183,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_medium_close_up",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_medium_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Medium Close Up (Human Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with a medium close-up shot, framing the human subject from the chest upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 184,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_medium_full",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_medium_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Medium Full (Human Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends with a medium full shot, framing the human subject from mid-thigh (or knee) upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 185,
+                  "raw_name": "cam_setup.shot_size.end_with.shot_size_end_with_wide",
+                  "display_order": 8,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_end.shot_size_end_with_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size End With Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video ends either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 50,
+              "display_order": 2,
+              "disabled": false,
+              "display_name": {
+                "en": "Is Always",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 186,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_close_up",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 187,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_extreme_close_up",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_extreme_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Extreme Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 188,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_extreme_wide",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_extreme_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Extreme Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains an extreme wide shot throughout, consistently emphasizing the vast environment over any subjects.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 189,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_full",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Full",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 190,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_medium",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_medium"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Medium",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a medium shot throughout, consistently framing about half of the human subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 191,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_medium_close_up",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_medium_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Medium Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a medium close-up shot throughout, consistently framing the human subject from the chest upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 192,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_medium_full",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_medium_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Medium Full",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 193,
+                  "raw_name": "cam_setup.shot_size.is_always.shot_size_is_wide",
+                  "display_order": 8,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_is.shot_size_is_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Is Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video maintains a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": 51,
+              "display_order": 3,
+              "disabled": false,
+              "display_name": {
+                "en": "Start With",
+                "zh": ""
+              },
+              "labels": [
+                {
+                  "id": 197,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_close_up",
+                  "display_order": 1,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 198,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_close_up",
+                  "display_order": 2,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_extreme_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Extreme Close Up",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 199,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_wide",
+                  "display_order": 3,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_extreme_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Extreme Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with an extreme wide shot, emphasizing the vast environment over any subjects.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 200,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_full",
+                  "display_order": 4,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Full (Subject Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 201,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_medium",
+                  "display_order": 5,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_medium"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Medium (Subject Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with a medium shot, framing about half of the human subject.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 202,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_medium_close_up",
+                  "display_order": 6,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_medium_close_up"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Medium Close Up (Human Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts with a medium close-up shot, framing the human subject from the chest upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 203,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_medium_full",
+                  "display_order": 7,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_medium_full"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Medium Full (Human Only)",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "A video that starts with a medium full shot, framing the human subject from mid-thigh (or knee) upward.",
+                    "zh": ""
+                  }
+                },
+                {
+                  "id": 204,
+                  "raw_name": "cam_setup.shot_size.start_with.shot_size_start_with_wide",
+                  "display_order": 8,
+                  "disabled": false,
+                  "merged": false,
+                  "classifier_names": [
+                    "shot_size_start.shot_size_start_with_wide"
+                  ],
+                  "display_name": {
+                    "en": "Shot Size Start With Wide",
+                    "zh": ""
+                  },
+                  "tutorial": {
+                    "en": "The video starts either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+                    "zh": ""
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "display_order": 8,
+          "disabled": false,
+          "display_name": {
+            "en": "Shot Type",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 208,
+              "raw_name": "cam_setup.shot_type.is_human_shot",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_human_shot"
+              ],
+              "display_name": {
+                "en": "Is Human Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A shot that primarily focuses on human subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 209,
+              "raw_name": "cam_setup.shot_type.is_just_back_and_forth_change_shot",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_back_and_forth_change_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Back And Forth Change Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video has a clear subject with back-and-forth changes in shot size.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 210,
+              "raw_name": "cam_setup.shot_type.is_just_change_of_subject_shot",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_change_of_subject_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Change Of Subject Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video includes a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 211,
+              "raw_name": "cam_setup.shot_type.is_just_clear_subject_atypical_shot",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_clear_subject_atypical_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Clear Subject Atypical Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video features a clear subject whose anatomy looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 212,
+              "raw_name": "cam_setup.shot_type.is_just_clear_subject_dynamic_size_shot",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_clear_subject_dynamic_size_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Clear Subject Dynamic Size Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "There is a clear subject, but the framing is unstable, making the exact shot size difficult to classify.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 213,
+              "raw_name": "cam_setup.shot_type.is_just_different_subject_in_focus_shot",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_different_subject_in_focus_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Different Subject In Focus Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video features multiple salient subjects differing in type or framing, making it hard to classify the exact shot size.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 214,
+              "raw_name": "cam_setup.shot_type.is_just_human_shot",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_human_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Human Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A video that consistently features one or two salient human subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 215,
+              "raw_name": "cam_setup.shot_type.is_just_many_subject_no_focus_shot",
+              "display_order": 8,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_many_subject_no_focus_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Many Subject No Focus Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video features multiple subjects in focus, with no single subject standing out as dominant.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 216,
+              "raw_name": "cam_setup.shot_type.is_just_many_subject_one_focus_shot",
+              "display_order": 9,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_many_subject_one_focus_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Many Subject One Focus Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video features multiple subjects, but one clearly stands out as the main focus.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 217,
+              "raw_name": "cam_setup.shot_type.is_just_non_human_shot",
+              "display_order": 10,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_non_human_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Non Human Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A video that consistently features one or two salient non-human subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 218,
+              "raw_name": "cam_setup.shot_type.is_just_scenery_shot",
+              "display_order": 11,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_scenery_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Scenery Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows scenery or environment without focusing on any subjects.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 219,
+              "raw_name": "cam_setup.shot_type.is_just_subject_scene_mismatch_shot",
+              "display_order": 12,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_just_subject_scene_mismatch_shot"
+              ],
+              "display_name": {
+                "en": "Is Just Subject Scene Mismatch Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video features a subject and scene that do not match in framing, making it hard to classify the shot size.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 220,
+              "raw_name": "cam_setup.shot_type.is_non_human_shot",
+              "display_order": 13,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "shot_type.is_non_human_shot"
+              ],
+              "display_name": {
+                "en": "Is Non Human Shot",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A shot that primarily focuses on non-human subjects.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 53,
+          "display_order": 9,
+          "disabled": false,
+          "display_name": {
+            "en": "Subject Framing",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 221,
+              "raw_name": "cam_setup.subject_framing.has_many_subjects",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.has_many_subjects"
+              ],
+              "display_name": {
+                "en": "Has Many Subjects",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows three or more main subjects in clear focus, or shifts focus from one subject to another.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 222,
+              "raw_name": "cam_setup.subject_framing.has_single_dominant_subject",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.has_single_dominant_subject"
+              ],
+              "display_name": {
+                "en": "Has Single Dominant Subject",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A video that maintains a single or two dominant subjects throughout.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 223,
+              "raw_name": "cam_setup.subject_framing.has_subject_change",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.has_subject_change"
+              ],
+              "display_name": {
+                "en": "Has Subject Change",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The subject changes in the video, such as appearing, disappearing, or transitioning to another subject.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 224,
+              "raw_name": "cam_setup.subject_framing.is_framing_subject",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "subject_framing.is_framing_subject"
+              ],
+              "display_name": {
+                "en": "Is Framing Subject",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video includes one or more salient subjects in the frame at any point.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 54,
+          "display_order": 10,
+          "disabled": false,
+          "display_name": {
+            "en": "Video Speed",
+            "zh": ""
+          },
+          "labels": [
+            {
+              "id": 225,
+              "raw_name": "cam_setup.video_speed.fast_motion",
+              "display_order": 1,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.fast_motion"
+              ],
+              "display_name": {
+                "en": "Fast-Motion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A fast-motion video where playback is forward and moderately faster than real-time (about 1.5×–3×).",
+                "zh": ""
+              }
+            },
+            {
+              "id": 226,
+              "raw_name": "cam_setup.video_speed.fast_motion_without_time_lapse",
+              "display_order": 2,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.fast_motion_without_time_lapse"
+              ],
+              "display_name": {
+                "en": "Fast-Motion Without Time-Lapse",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A fast-motion video with forward playback speed moderately faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 227,
+              "raw_name": "cam_setup.video_speed.regular_speed",
+              "display_order": 3,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.regular_speed"
+              ],
+              "display_name": {
+                "en": "Regular Speed",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The playback is forward at real-time speed without noticeable speed-up or slowdown.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 228,
+              "raw_name": "cam_setup.video_speed.slow_motion",
+              "display_order": 4,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.slow_motion"
+              ],
+              "display_name": {
+                "en": "Slow-Motion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A slow-motion video with forward playback speed slower than real-time.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 229,
+              "raw_name": "cam_setup.video_speed.speed_ramp",
+              "display_order": 5,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.speed_ramp"
+              ],
+              "display_name": {
+                "en": "Speed-Ramp",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "The video shows a speed ramp effect, where playback speed changes between faster and slower rates.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 230,
+              "raw_name": "cam_setup.video_speed.stop_motion",
+              "display_order": 6,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.stop_motion"
+              ],
+              "display_name": {
+                "en": "Stop-Motion",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A stop-motion video using frame-by-frame changes to simulate motion.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 231,
+              "raw_name": "cam_setup.video_speed.time_lapse",
+              "display_order": 7,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.time_lapse"
+              ],
+              "display_name": {
+                "en": "Time-Lapse",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A time-lapse video played forward at greatly accelerated speed (more than 3× real-time), showing time passing rapidly over a long period.",
+                "zh": ""
+              }
+            },
+            {
+              "id": 232,
+              "raw_name": "cam_setup.video_speed.time_reversed",
+              "display_order": 8,
+              "disabled": false,
+              "merged": false,
+              "classifier_names": [
+                "playback_speed.time_reversed"
+              ],
+              "display_name": {
+                "en": "Time-Reversed",
+                "zh": ""
+              },
+              "tutorial": {
+                "en": "A time-reversed video where events play backward in time.",
+                "zh": ""
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "total_labels": 232,
+    "disabled_labels": 0,
+    "merged_labels": 29,
+    "total_properties": 54
+  }
+}

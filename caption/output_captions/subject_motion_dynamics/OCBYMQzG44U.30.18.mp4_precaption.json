@@ -1,0 +1,8 @@
+{
+    "video_id": "OCBYMQzG44U.30.18.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This scenery shot shows a long, minimalist hallway with white tiled floors and walls. One wall is a smooth, dark, and curved surface, contrasting with the straight tilework opposite it under an arched ceiling. The scene itself is static, with the only movement being the camera's progression through the empty space toward a bright light in the distance.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-03-19T21:26:12.171452"
+}
