@@ -1,0 +1,8 @@
+{
+    "video_id": "ZnsMNnY0M0o6m1lkvi6b.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video shows a static, wide shot of a futuristic building in a snowy, remote location.\n\nThe scene is set at night in a vast, snow-covered mountain landscape under a starry sky. The focus is a large, bulbous, multi-lobed building with rows of small, illuminated windows. A small, tracked vehicle is parked near the building's entrance. In the final moment, yellow text appears at the bottom of the screen.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-04-12T03:59:14.898202"
+}

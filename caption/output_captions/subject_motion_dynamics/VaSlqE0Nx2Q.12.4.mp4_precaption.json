@@ -1,0 +1,8 @@
+{
+    "video_id": "VaSlqE0Nx2Q.12.4.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a black and white, atmospheric shot of a beach. The camera is low, focusing on the textured ground in the foreground. In the blurry background are the sea and a solitary, indistinct figure.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-04-26T12:26:53.829389"
+}

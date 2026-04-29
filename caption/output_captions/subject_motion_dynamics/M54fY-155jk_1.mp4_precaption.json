@@ -1,0 +1,8 @@
+{
+    "video_id": "M54fY-155jk_1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot with no subject motion.\n\nThe video shows a tranquil, autumnal landscape. A muddy path, heavily littered with fallen brown leaves, runs along a riverbank on the left. To the right, a calm river flows through the scene. The opposite bank is lined with trees, some bare and others with lingering autumn colors, under a hazy, overcast sky. In the distance, a stone bridge is faintly visible through the mist.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-04-13T13:45:18.985136"
+}

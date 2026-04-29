@@ -1,0 +1,8 @@
+{
+    "video_id": "WR9qz81WraE_0050_0054.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video presents a wide, stationary scenery shot. The camera looks out over a residential area in the foreground, across a wide, calm body of water. On the far side of the water, the dense skyline of a major city rises against a clear blue sky on a bright, sunny day.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-04-16T02:24:44.402758"
+}

@@ -1,0 +1,8 @@
+{
+    "video_id": "OCBYMQzG44U.21.13.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video presents a static scenery shot of a sterile and minimalist virtual environment. The white, tiled room features large, rounded structures and a small walkway with a simple railing. No movement occurs in this still frame.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-04-09T01:31:43.613198"
+}
