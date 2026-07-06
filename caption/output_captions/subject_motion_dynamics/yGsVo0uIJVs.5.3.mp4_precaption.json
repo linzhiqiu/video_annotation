@@ -1,0 +1,8 @@
+{
+    "video_id": "yGsVo0uIJVs.5.3.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot of a large, industrial structure, possibly a pipeline or conveyor system, submerged in murky, green-tinted water. The structure itself is static. The camera pans slowly along its length, providing a detailed view of its construction.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-06-29T20:22:44.284264"
+}

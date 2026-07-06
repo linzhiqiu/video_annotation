@@ -1,0 +1,8 @@
+{
+    "video_id": "VxeZwHQKGHo_1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot. The video presents a breathtaking top-down, bird's-eye view of a dense urban cityscape. The camera looks directly down onto a grid of streets packed with vehicles and surrounded by towering skyscrapers of various architectural styles, whose long shadows stretch across the concrete canyons.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-15T04:12:56.884961"
+}

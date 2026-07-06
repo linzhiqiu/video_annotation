@@ -1,0 +1,8 @@
+{
+    "video_id": "ti231UvSvfQ.12.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "The scene opens on a dark, debris-strewn floor, bathed in a murky blue-green light. As the camera slowly pulls back, it reveals a desolate, ruined corridor lined with fallen pillars and glowing rectangular panels. The overall atmosphere is one of ancient mystery, suggesting an underwater or alien setting.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-24T05:23:59.271738"
+}

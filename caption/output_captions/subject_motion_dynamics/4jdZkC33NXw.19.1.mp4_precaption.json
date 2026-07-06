@@ -1,0 +1,8 @@
+{
+    "video_id": "4jdZkC33NXw.19.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static shot of a quiet street in Japan on an overcast, rainy day. Cars can be seen driving on the wet road, which is flanked by residential buildings and lush greenery. A prominent feature is a large netted structure, likely a driving range, visible in the background.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-09T05:46:26.730451"
+}

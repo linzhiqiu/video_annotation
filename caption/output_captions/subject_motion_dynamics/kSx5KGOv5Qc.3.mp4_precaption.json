@@ -1,0 +1,8 @@
+{
+    "video_id": "kSx5KGOv5Qc.3.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This scenic video captures a stunning, high-angle view of a historic walled city on a peninsula, surrounded by the deep blue sea. The city is characterized by its dense cluster of buildings with orange-tiled roofs, enclosed by massive stone walls, with a harbor and a nearby island also in view. The camera slowly zooms in, providing a closer look at the magnificent coastal landscape.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-06-07T10:16:48.767379"
+}

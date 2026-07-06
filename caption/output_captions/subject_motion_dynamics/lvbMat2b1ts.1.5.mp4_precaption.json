@@ -1,0 +1,8 @@
+{
+    "video_id": "lvbMat2b1ts.1.5.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, high-angle shot of a city, likely Chicago, during what appears to be a large-scale evacuation. The streets and bridges over the river are completely gridlocked with cars and packed with massive crowds of people. The overall scene is one of mass congestion and urban crisis.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-11T07:24:46.537395"
+}

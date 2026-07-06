@@ -1,0 +1,8 @@
+{
+    "video_id": "Vm-b2AVwARw.7.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a high-angle scenery shot of a construction site, focusing on the newly laid foundations. The camera slowly pans across rows of concrete pillars with rebar protruding from the top. The scene itself is static, with the only motion being the slow drift of the camera.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-24T02:06:14.750022"
+}

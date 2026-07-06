@@ -1,0 +1,8 @@
+{
+    "video_id": "2254244.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenery shot with subtle camera movement.\n\nThe video presents a hazy, high-angle aerial view of a city. A prominent multi-story brick building with a white cupola and a flag stands in the center. To the left, a church with a tall, slender steeple is visible. The bright, glaring sun creates a misty, washed-out effect over the cityscape and the distant hills in the background.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-13T23:42:40.198278"
+}

@@ -1,0 +1,8 @@
+{
+    "video_id": "QYAWxJ8a7RA.2.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, high-angle shot of a computer-generated model of a building. The building is rendered in white, showing its roof, a side wall with windows and awnings, and textured ground below. The scene remains completely still throughout the clip.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-24T04:11:22.202450"
+}

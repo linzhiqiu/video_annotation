@@ -1,0 +1,8 @@
+{
+    "video_id": "J1xMyOK2ellCEX8VRHxQ.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is an aerial scenery shot of the historic coastal city of Acre. The view features a prominent mosque with a green dome and a clock tower, alongside a large stone building with an arched courtyard, all situated by a harbor. The camera slowly pans and zooms, offering a wider perspective of the old city against the sea.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-21T06:12:42.177122"
+}

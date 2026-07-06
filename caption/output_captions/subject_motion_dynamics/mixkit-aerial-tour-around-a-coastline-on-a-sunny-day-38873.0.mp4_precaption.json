@@ -1,0 +1,8 @@
+{
+    "video_id": "mixkit-aerial-tour-around-a-coastline-on-a-sunny-day-38873.0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a scenic, aerial shot that glides slowly over a calm, blue-green ocean. The camera moves towards a rugged coastline featuring rocky cliffs and headlands covered in lush, green vegetation. In the background, rolling green hills and mountains rise under a clear, pale sky, with a few distant buildings nestled in the landscape.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-06-29T11:45:05.928731"
+}

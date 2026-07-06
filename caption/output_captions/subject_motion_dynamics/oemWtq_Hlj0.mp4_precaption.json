@@ -1,0 +1,8 @@
+{
+    "video_id": "oemWtq_Hlj0.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static scenery shot with a slight zoom-out, showing the exterior of a business.\n\nThe video displays the storefront of \"Davidson's Furniture,\" a two-story building on a town street. The ground floor has a dark, shingled facade with large display windows and a green awning. A painted sign on the adjacent white brick wall advertises \"Davidson's Furniture Carpet & Window Treatments\" and notes the business has been a \"Furniture Family Since 1876.\" A dark SUV is parked on the street to the left.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-06-18T01:00:18.046146"
+}

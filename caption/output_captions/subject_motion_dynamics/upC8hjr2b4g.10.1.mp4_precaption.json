@@ -1,0 +1,8 @@
+{
+    "video_id": "upC8hjr2b4g.10.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a minimalist scenery shot. The camera starts with the top of a building visible at the bottom of the frame against a solid blue background. It then slowly tilts up, causing the building to exit the frame and leaving only the blue expanse.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-05-12T01:22:36.436099"
+}

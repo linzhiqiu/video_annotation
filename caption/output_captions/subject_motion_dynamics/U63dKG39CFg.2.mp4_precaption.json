@@ -1,0 +1,8 @@
+{
+    "video_id": "U63dKG39CFg.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video clip features a slow pan across a desolate, arid landscape under a clear blue sky.\n\nThe scene is dominated by a barren, sandy foreground littered with the splintered wooden remains of collapsed structures, scattered debris, and several utility poles. In the midground, beyond a dirt berm, a few small buildings and sparse desert vegetation like trees and bushes are visible. The entire scene is set against a backdrop of a long range of brown, rocky mountains. The overall impression is one of abandonment and decay.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-06-29T07:22:10.694243"
+}
