@@ -1,0 +1,8 @@
+{
+    "video_id": "uWCGK4nneeU.0.3.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video presents a slow, top-down aerial shot of a desolate, sandy landscape. The scene is littered with the wreckage of boats and other debris, suggesting a dried-up seabed or a post-apocalyptic setting. The camera gradually pulls back, revealing the vastness of the arid environment and the large, undulating formations in the sand.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-07-08T00:25:39.113236"
+}

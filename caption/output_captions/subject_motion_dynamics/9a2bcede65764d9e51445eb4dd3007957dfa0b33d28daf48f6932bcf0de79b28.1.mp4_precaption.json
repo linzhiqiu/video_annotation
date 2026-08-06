@@ -1,0 +1,8 @@
+{
+    "video_id": "9a2bcede65764d9e51445eb4dd3007957dfa0b33d28daf48f6932bcf0de79b28.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video presents a static, scenic shot of Independence Hall in Philadelphia. The historic red-brick building, with its prominent white clock tower, is centered in the frame, contrasted by modern skyscrapers rising behind it. In the foreground, a courtyard with a statue and an American flag on the left complete the iconic view.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-07-16T11:27:06.741748"
+}
