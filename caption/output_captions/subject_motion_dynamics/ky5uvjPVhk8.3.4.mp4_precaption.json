@@ -1,0 +1,8 @@
+{
+    "video_id": "ky5uvjPVhk8.3.4.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "These images depict a tranquil Japanese garden with vibrant autumn foliage, stone pathways, and a serene stream with small waterfalls. The scenery features lush greenery, carefully placed rocks, and traditional architectural elements, creating a peaceful and picturesque atmosphere. The video captures the beauty and calmness of the natural surroundings.",
+    "pre_caption_llm": "gpt-4.1-2025-04-14",
+    "pre_caption_mode": "Image (First-and-Last-Frame)",
+    "timestamp": "2026-08-26T04:56:02.974233"
+}

@@ -1,0 +1,8 @@
+{
+    "video_id": "sJsu7Tv-fRY.0.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This is a static, top-down aerial shot of a unique urban landscape. The scene features large, concrete residential buildings arranged in striking honeycomb or hexagonal patterns. These structures are surrounded by lush green spaces, parks, and dark waterways, with a railway line bisecting the area.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-08-26T04:17:31.214841"
+}

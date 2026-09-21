@@ -1,0 +1,8 @@
+{
+    "video_id": "QYAWxJ8a7RA.1.2.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video is a static, black and white photograph. It shows a wide, scenic view of a small town in a vast, arid landscape. The shot is taken from a high vantage point, with trees framing the scene in the foreground.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-09-06T01:06:34.221637"
+}

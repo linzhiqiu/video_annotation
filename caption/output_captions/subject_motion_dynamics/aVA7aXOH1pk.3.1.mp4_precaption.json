@@ -1,0 +1,8 @@
+{
+    "video_id": "aVA7aXOH1pk.3.1.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video shows a static, animated rendering of several white, block-like buildings from an aerial perspective. The surrounding landscape is also white, suggesting snow or a minimalist design, with a few stylized trees scattered about. The overall scene is calm and still, with no discernible action or characters present.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-08-12T03:21:50.858769"
+}

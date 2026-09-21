@@ -1,0 +1,8 @@
+{
+    "video_id": "QrQ0YKmDiqBysFiBDubZ.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video is a static scenery shot with no discernible motion. The camera remains still, capturing a single, quiet view of the room.\n\nThe scene is a dimly lit, vintage-style living room. Hazy sunlight streams through a large window dressed with sheer and patterned curtains, backlighting the space. The room is furnished with a dark sofa, a wooden armchair with a caned back in the foreground, another chair by the window, and various small tables. The decor includes patterned wallpaper, a tall floor lamp with a large scalloped shade, and a plant, all contributing to a quiet, mid-century atmosphere.",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2026-08-07T05:27:30.783986"
+}
